@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Social Twitter
+Bundle-SymbolicName: org.abchip.mimo.social.twitter
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: lib/twitter4j-core-4.0.1.jar,
+ .
+Require-Bundle: org.abchip.mimo.core,
+ org.abchip.mimo.social
+Import-Package: javax.inject
+Export-Package: org.abchip.mimo.social.twitter.tw4j
