@@ -140,7 +140,7 @@
               catalog="">
             <credentials
                 user="root"
-                password="mysql2017"/>
+                password=""/>
           </connectionConfig>
           <generationStrategy/>
         </catalogContainers>

@@ -32,7 +32,7 @@ public class GFGrammarLoader {
 	private GFGrammarLoader() {
 		
 		try {
-			pgf = PGF.readPGF("/home/mattia/Dati/eclipse/abchip/org.abchip.mimo.language.gf/gf/app/App.pgf");
+			pgf = PGF.readPGF("/home/mattia/Dati/git/mimo/org.abchip.mimo.language.gf/gf/app/App.pgf");
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
