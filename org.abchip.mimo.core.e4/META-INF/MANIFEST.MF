@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Core E4
+Bundle-SymbolicName: org.abchip.mimo.core.e4
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.abchip.mimo.core,
+ org.eclipse.core.runtime,
+ org.eclipse.e4.core.contexts,
+ org.eclipse.e4.core.di
+Import-Package: javax.inject;version="1.0.0",
+ org.osgi.framework
+Export-Package: orb.abchip.mimo.core.e4
+Bundle-ClassPath: .

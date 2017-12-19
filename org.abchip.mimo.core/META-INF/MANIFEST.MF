@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Core
+Bundle-SymbolicName: org.abchip.mimo.core;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: ABChip
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.abchip.mimo,
+ org.abchip.mimo.context,
+ org.abchip.mimo.context.impl,
+ org.abchip.mimo.entity,
+ org.abchip.mimo.entity.impl,
+ org.abchip.mimo.expression,
+ org.abchip.mimo.expression.impl,
+ org.abchip.mimo.impl,
+ org.abchip.mimo.util,
+ org.abchip.mimo.util.impl
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional;x-installation:=greedy,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.emf.ecore.xmi.impl

@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Core Base
+Bundle-SymbolicName: org.abchip.mimo.core.base
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.abchip.mimo.core,
+ org.apache.commons.io,
+ org.apache.commons.lang,
+ org.abchip.mimo.application
+Import-Package: javax.inject,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.ecore.xmi.impl
+Bundle-ClassPath: lib/antlr-3.4.jar,
+ .
+Export-Package: org.abchip.mimo.core.base,
+ org.abchip.mimo.core.base.expr,
+ org.abchip.mimo.core.base.util
