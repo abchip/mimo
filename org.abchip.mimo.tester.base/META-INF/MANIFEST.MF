@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Tester Base
+Bundle-SymbolicName: org.abchip.mimo.tester.base
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: org.abchip.mimo.tester.base
+Bundle-Vendor: ABChip
+Export-Package: org.abchip.mimo.tester.base
+Require-Bundle: org.abchip.mimo.tester;visibility:=reexport,
+  org.eclipse.osgi,
+  org.abchip.mimo.application
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.inject,
+  org.osgi.framework;version="1.8.0",
+  org.osgi.framework.wiring;version="1.2.0"

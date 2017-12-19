@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Tester
+Bundle-SymbolicName: org.abchip.mimo.tester;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: org.abchip.mimo.tester
+Bundle-Vendor: ABChip
+Export-Package: org.abchip.mimo.tester,
+  org.abchip.mimo.tester.impl
+Require-Bundle: org.eclipse.core.runtime,
+  org.eclipse.emf.ecore;visibility:=reexport,
+  org.abchip.mimo.core;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

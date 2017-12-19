@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Tester Test
+Bundle-SymbolicName: org.abchip.mimo.tester.test
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: org.abchip.mimo.tester.test
+Bundle-Vendor: ABChip
+Export-Package: org.abchip.mimo.tester.test,
+  org.abchip.mimo.tester.test.runner
+Require-Bundle: org.abchip.mimo.tester,
+  org.abchip.mimo.tester.base
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.inject
