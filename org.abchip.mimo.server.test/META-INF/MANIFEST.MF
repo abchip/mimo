@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MIMO Server Test
 Bundle-SymbolicName: org.abchip.mimo.server.test
 Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: org.abchip.mimo.server.test
+Bundle-ClassPath: .
 Bundle-Vendor: ABChip
 Export-Package: org.abchip.mimo.server.test,
   org.abchip.mimo.server.test.runner

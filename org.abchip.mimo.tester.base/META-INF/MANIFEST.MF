@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MIMO Tester Base
 Bundle-SymbolicName: org.abchip.mimo.tester.base
 Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: org.abchip.mimo.tester.base
+Bundle-ClassPath: .
 Bundle-Vendor: ABChip
 Export-Package: org.abchip.mimo.tester.base
 Require-Bundle: org.abchip.mimo.tester;visibility:=reexport,

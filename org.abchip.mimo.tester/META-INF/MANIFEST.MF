@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MIMO Tester
 Bundle-SymbolicName: org.abchip.mimo.tester;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: org.abchip.mimo.tester
+Bundle-ClassPath: .
 Bundle-Vendor: ABChip
 Export-Package: org.abchip.mimo.tester,
   org.abchip.mimo.tester.impl

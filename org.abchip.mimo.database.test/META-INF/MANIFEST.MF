@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MIMO Database Test
 Bundle-SymbolicName: org.abchip.mimo.database.test
 Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: org.abchip.mimo.database.test
+Bundle-ClassPath: .
 Bundle-Vendor: ABChip
 Export-Package: org.abchip.mimo.database.test,
   org.abchip.mimo.database.test.runner
