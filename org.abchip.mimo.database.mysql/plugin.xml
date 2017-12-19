@@ -1,0 +1,81 @@
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2017, 2018 ABChip and others.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+-->
+
+<plugin>
+   <extension
+         point="org.eclipse.net4j.db.dbAdapters">
+      <dbAdapter
+            class="org.abchip.mimo.database.mysql.MySQLAdapter"
+            name="MySql"
+            version="5.1">
+      </dbAdapter>
+   </extension>
+       <extension
+         point="org.eclipse.datatools.connectivity.driverExtension">   
+    <driverTemplate
+            createDefault="false"
+            emptyJarListIsOK="false"
+            id="org.eclipse.datatools.enablement.mysql.mimo.driverTemplate"
+            jarList="lib/mariadb-java-client-1.1.8.jar"
+            name="MySql Data Server Driver for MIMO"
+            parentCategory="org.eclipse.datatools.enablement.mysql.driverCategory">
+         <properties>
+            <property
+                  generated="false"
+                  id="org.eclipse.datatools.connectivity.db.driverClass"
+                  name="Driver Class"
+                  value="org.mariadb.jdbc.Driver"
+                  required="true"
+                  visible="true"/>
+            <property
+                  generated="false"
+                  id="org.eclipse.datatools.connectivity.db.vendor"
+                  name="Vendor"
+                  value="MySql"
+                  required="true"
+                  visible="false"/>
+            <property
+                  generated="false"
+                  id="org.eclipse.datatools.connectivity.db.version"
+                  name="Version"
+                  value="5.1"
+                  required="true"
+                  visible="false"/>   
+            <property
+                  generated="false"
+                  id="org.eclipse.datatools.connectivity.db.databaseName"
+                  name="Database Name"
+                  value="MIMO_VRM"
+                  required="true"
+                  visible="true"/>                             
+            <property
+                  generated="false"
+                  id="org.eclipse.datatools.connectivity.db.URL"
+                  name="Connection URL"
+                  value="jdbc:mysql://localhost"
+                  required="true"
+                  visible="true"/>
+            <property
+                  generated="false"
+                  id="org.eclipse.datatools.connectivity.db.username"
+                  name="User ID"
+                  value=""
+                  required="false"
+                  visible="true"/>
+            <property
+                  generated="false"
+                  id="org.eclipse.datatools.connectivity.db.password"
+                  name="Password"
+                  required="false"
+                  visible="true"/>
+         </properties>
+      </driverTemplate>
+   </extension>
+</plugin>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="org.abchip.mimo.application.e4" uid="mimo-test" id="org.abchip.mimo.application.e4.test" application="org.abchip.mimo.application.e4.mimo-ap" version="0.1.0" useFeatures="false" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-console
+-clean
+-mimo.config ${container_loc}/mimo-test.xmi
+      </programArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+      <plugin id="com.ibm.icu"/>
+      <plugin id="javax.annotation"/>
+      <plugin id="javax.inject"/>
+      <plugin id="javax.servlet"/>
+      <plugin id="javax.xml"/>
+      <plugin id="net.sourceforge.lpg.lpgjavaruntime"/>
+      <plugin id="org.abchip.mimo.application"/>
+      <plugin id="org.abchip.mimo.application.e4"/>
+      <plugin id="org.abchip.mimo.audio"/>
+      <plugin id="org.abchip.mimo.audio.sph4"/>
+      <plugin id="org.abchip.mimo.audio.test"/>
+      <plugin id="org.abchip.mimo.core"/>
+      <plugin id="org.abchip.mimo.core.base"/>
+      <plugin id="org.abchip.mimo.core.e4"/>
+      <plugin id="org.abchip.mimo.core.osgi"/>
+      <plugin id="org.abchip.mimo.core.test"/>
+      <plugin id="org.abchip.mimo.database"/>
+      <plugin id="org.abchip.mimo.database.base"/>
+      <plugin id="org.abchip.mimo.database.db2"/>
+      <plugin id="org.abchip.mimo.database.jtds"/>
+      <plugin id="org.abchip.mimo.database.mysql"/>
+      <plugin id="org.abchip.mimo.database.test"/>
+      <plugin id="org.abchip.mimo.language"/>
+      <plugin id="org.abchip.mimo.language.base"/>
+      <plugin id="org.abchip.mimo.language.gf"/>
+      <plugin id="org.abchip.mimo.language.lp"/>
+      <plugin id="org.abchip.mimo.language.test"/>
+      <plugin id="org.abchip.mimo.server"/>
+      <plugin id="org.abchip.mimo.server.base"/>
+      <plugin id="org.abchip.mimo.server.test"/>
+      <plugin id="org.abchip.mimo.social"/>
+      <plugin id="org.abchip.mimo.social.test"/>
+      <plugin id="org.abchip.mimo.social.twitter"/>
+      <plugin id="org.abchip.mimo.tester"/>
+      <plugin id="org.abchip.mimo.tester.base"/>
+      <plugin id="org.abchip.mimo.tester.test"/>
+      <plugin id="org.apache.commons.io"/>
+      <plugin id="org.apache.commons.lang"/>
+      <plugin id="org.apache.felix.gogo.command"/>
+      <plugin id="org.apache.felix.gogo.runtime"/>
+      <plugin id="org.apache.felix.gogo.shell"/>
+      <plugin id="org.apache.lucene.analyzers-common"/>
+      <plugin id="org.apache.lucene.core"/>
+      <plugin id="org.apache.lucene.queryparser"/>
+      <plugin id="org.eclipse.ant.core"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.filesystem"/>
+      <plugin id="org.eclipse.core.filesystem.linux.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.resources"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.variables"/>
+      <plugin id="org.eclipse.datatools.connectivity"/>
+      <plugin id="org.eclipse.datatools.connectivity.sqm.core"/>
+      <plugin id="org.eclipse.datatools.enablement.ibm"/>
+      <plugin id="org.eclipse.datatools.enablement.ibm.db2"/>
+      <plugin id="org.eclipse.datatools.enablement.ibm.db2.luw"/>
+      <plugin id="org.eclipse.datatools.enablement.ibm.db2.luw.dbdefinition"/>
+      <plugin id="org.eclipse.datatools.enablement.mysql"/>
+      <plugin id="org.eclipse.datatools.enablement.mysql.dbdefinition"/>
+      <plugin id="org.eclipse.datatools.modelbase.dbdefinition"/>
+      <plugin id="org.eclipse.datatools.modelbase.sql"/>
+      <plugin id="org.eclipse.datatools.modelbase.sql.query"/>
+      <plugin id="org.eclipse.datatools.sqltools.data.core"/>
+      <plugin id="org.eclipse.datatools.sqltools.parsers.sql"/>
+      <plugin id="org.eclipse.datatools.sqltools.parsers.sql.lexer"/>
+      <plugin id="org.eclipse.datatools.sqltools.parsers.sql.query"/>
+      <plugin id="org.eclipse.datatools.sqltools.result"/>
+      <plugin id="org.eclipse.e4.core.contexts"/>
+      <plugin id="org.eclipse.e4.core.di"/>
+      <plugin id="org.eclipse.e4.core.di.annotations"/>
+      <plugin id="org.eclipse.emf.common"/>
+      <plugin id="org.eclipse.emf.ecore"/>
+      <plugin id="org.eclipse.emf.ecore.change"/>
+      <plugin id="org.eclipse.emf.ecore.xmi"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.console"/>
+      <plugin id="org.eclipse.equinox.p2.console"/>
+      <plugin id="org.eclipse.equinox.p2.core"/>
+      <plugin id="org.eclipse.equinox.p2.director"/>
+      <plugin id="org.eclipse.equinox.p2.engine"/>
+      <plugin id="org.eclipse.equinox.p2.metadata"/>
+      <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
+      <plugin id="org.eclipse.equinox.p2.repository"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.security"/>
+      <plugin id="org.eclipse.equinox.security.linux.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.equinox.simpleconfigurator"/>
+      <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.net4j.db"/>
+      <plugin id="org.eclipse.net4j.db.jdbc"/>
+      <plugin id="org.eclipse.net4j.db.mysql"/>
+      <plugin id="org.eclipse.net4j.util"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
+      <plugin id="org.eclipse.osgi.services"/>
+      <plugin id="org.eclipse.osgi.util"/>
+      <plugin id="org.sat4j.core"/>
+      <plugin id="org.sat4j.pb"/>
+      <plugin id="org.tukaani.xz"/>
+   </plugins>
+
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

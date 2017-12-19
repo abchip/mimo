@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Audio Test
+Bundle-SymbolicName: org.abchip.mimo.audio.test
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.abchip.mimo.audio,
+ org.abchip.mimo.tester.base,
+ org.abchip.mimo.language
+Import-Package: javax.inject
+Export-Package: org.abchip.mimo.audio.test,
+ org.abchip.mimo.audio.test.runner

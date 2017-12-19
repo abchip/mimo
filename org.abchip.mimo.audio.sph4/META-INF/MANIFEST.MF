@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Audio Sphinx4
+Bundle-SymbolicName: org.abchip.mimo.audio.sph4
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Carnegie Mellon University (CMU)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.abchip.mimo.audio
+Export-Package: org.abchip.mimo.audio.sph4,
+ org.abchip.mimo.audio.sph4.demo
+Bundle-ClassPath: .,
+ lib/jsapi.jar,
+ lib/sphinx4-core-5prealpha.jar,
+ lib/freetts-jsapi10.jar,
+ lib/freetts.jar,
+ lib/commons-math3-3.6.1.jar,
+ lib/sphinx4-data-5prealpha.jar,
+ lib/cmu_time_awb.jar,
+ lib/cmu_us_kal.jar,
+ lib/cmudict04.jar,
+ lib/cmulex.jar,
+ lib/cmutimelex.jar,
+ lib/en_us.jar,
+ lib/mbrola.jar

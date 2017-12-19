@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.abchip.mimo.server;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.abchip.mimo.server,
+ org.abchip.mimo.server.impl
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.abchip.mimo.core;visibility:=reexport
+Bundle-ActivationPolicy: lazy

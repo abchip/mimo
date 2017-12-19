@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Database MySQL
+Bundle-SymbolicName: org.abchip.mimo.database.mysql;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.abchip.mimo.database.mysql
+Bundle-ClassPath: lib/mariadb-java-client-1.1.8.jar
+Require-Bundle: org.abchip.mimo.database.base,
+ org.eclipse.datatools.modelbase.sql,
+ org.eclipse.net4j.db,
+ org.eclipse.net4j.db.mysql,
+ org.eclipse.datatools.enablement.mysql,
+ org.eclipse.datatools.enablement.mysql.dbdefinition
+Bundle-ActivationPolicy: lazy

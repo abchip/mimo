@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Database Base
+Bundle-SymbolicName: org.abchip.mimo.database.base;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.abchip.mimo.database;visibility:=reexport,
+ org.abchip.mimo.application,
+ org.eclipse.core.runtime,
+ org.eclipse.datatools.connectivity,
+ org.eclipse.datatools.connectivity.sqm.core,
+ org.eclipse.datatools.sqltools.parsers.sql.query
+Import-Package: javax.inject
+Export-Package: org.abchip.mimo.database.base
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Database DB2
+Bundle-SymbolicName: org.abchip.mimo.database.db2;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Require-Bundle: org.abchip.mimo.database.base,
+ org.eclipse.datatools.enablement.ibm;visibility:=reexport,
+ org.eclipse.datatools.enablement.ibm.db2;visibility:=reexport,
+ org.eclipse.datatools.enablement.ibm.db2.luw;visibility:=reexport,
+ org.eclipse.datatools.enablement.ibm.db2.luw.dbdefinition;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: lib/db2jcc4.jar
+Export-Package: org.abchip.mimo.database.db2

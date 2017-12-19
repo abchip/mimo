@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2017, 2018 ABChip and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/org.abchip.mimo.language/src" modelPluginID="org.abchip.mimo.language"
+    modelName="MIMO Language" rootExtendsInterface="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" language="EN" usedGenPackages="../../org.abchip.mimo.core/model/mimo.genmodel#//mimo"
+    importOrganizing="true">
+  <foreignModel>language.ecore</foreignModel>
+  <genPackages prefix="Language" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+      adapterFactory="false" ecorePackage="language.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//LanguageScope">
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Individual"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Macrolanguage"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Collections"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Reserved"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Specials"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Dialects"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//LanguageType">
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Living"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Extinct"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Ancient"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Historical"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Constructed"/>
+    </genEnums>
+    <genClasses ecoreClass="language.ecore#//Classification">
+      <genTypeParameters ecoreTypeParameter="language.ecore#//Classification/E"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Classification/score"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference language.ecore#//Classification/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="language.ecore#//Language">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/iso_639_1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/type"/>
+    </genClasses>
+    <genClasses ecoreClass="language.ecore#//LanguageExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguageExpression/expressionRow"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageManager">
+      <genOperations ecoreOperation="language.ecore#//LanguageManager/classifyLanguage">
+        <genParameters ecoreParameter="language.ecore#//LanguageManager/classifyLanguage/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageManager/classifyLanguage/text"/>
+      </genOperations>
+      <genOperations ecoreOperation="language.ecore#//LanguageManager/translate">
+        <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/languageSource"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/text"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/languageTarget"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageParser">
+      <genOperations ecoreOperation="language.ecore#//LanguageParser/parse">
+        <genParameters ecoreParameter="language.ecore#//LanguageParser/parse/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageParser/parse/language"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageParser/parse/text"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageParserRegistry"/>
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageWriter">
+      <genOperations ecoreOperation="language.ecore#//LanguageWriter/write">
+        <genParameters ecoreParameter="language.ecore#//LanguageWriter/write/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageWriter/write/language"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageWriter/write/expression"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageWriterRegistry"/>
+    <nestedGenPackages prefix="Grammar" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="language.ecore#//grammar">
+      <genClasses ecoreClass="language.ecore#//grammar/Adjective"/>
+      <genClasses ecoreClass="language.ecore#//grammar/Dialog"/>
+      <genClasses ecoreClass="language.ecore#//grammar/Grammar">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//grammar/Grammar/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//grammar/Grammar/text"/>
+      </genClasses>
+      <genClasses ecoreClass="language.ecore#//grammar/Noun"/>
+      <genClasses ecoreClass="language.ecore#//grammar/Phrase"/>
+      <genClasses ecoreClass="language.ecore#//grammar/Predicate"/>
+      <genClasses ecoreClass="language.ecore#//grammar/Pronoun"/>
+      <genClasses ecoreClass="language.ecore#//grammar/Sentence"/>
+      <genClasses ecoreClass="language.ecore#//grammar/Verb"/>
+      <genClasses ecoreClass="language.ecore#//grammar/Word">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//grammar/Word/name"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

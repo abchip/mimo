@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Social Test
+Bundle-SymbolicName: org.abchip.mimo.social.test
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.abchip.mimo.social,
+ org.abchip.mimo.tester,
+ org.abchip.mimo.tester.base,
+ org.abchip.mimo.language,
+ org.abchip.mimo.audio
+Import-Package: javax.inject
+Export-Package: org.abchip.mimo.social.test,
+ org.abchip.mimo.social.test.runner

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2017, 2018 ABChip and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/org.abchip.mimo.social/src" modelPluginID="org.abchip.mimo.social"
+    modelName="MIMO Social" rootExtendsInterface="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" language="EN" usedGenPackages="../../org.abchip.mimo.core/model/mimo.genmodel#//mimo"
+    importOrganizing="true">
+  <foreignModel>social.ecore</foreignModel>
+  <genPackages prefix="Social" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+      adapterFactory="false" ecorePackage="social.ecore#/">
+    <nestedGenPackages prefix="Twitter" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="social.ecore#//twitter">
+      <genClasses ecoreClass="social.ecore#//twitter/Tweet">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/date"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/entities"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/geolocation"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/hashtags"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/language"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/medias"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/place"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/symbols"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/text"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/user"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute social.ecore#//twitter/Tweet/userMentions"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

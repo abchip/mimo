@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2017, 2018 ABChip and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/org.abchip.mimo.database/src" modelPluginID="org.abchip.mimo.database"
+    modelName="MIMO Database" rootExtendsInterface="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" language="EN" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.abchip.mimo.core/model/mimo.genmodel#//mimo ../../org.eclipse.datatools.modelbase.sql/model/sqlmodel.genmodel#//sqlmodel ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.genmodel#//query"
+    importOrganizing="true">
+  <foreignModel>database.ecore</foreignModel>
+  <genPackages prefix="Database" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+      adapterFactory="false" ecorePackage="database.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//SearchStrategy">
+      <genEnumLiterals ecoreEnumLiteral="database.ecore#//SearchStrategy/Current"/>
+      <genEnumLiterals ecoreEnumLiteral="database.ecore#//SearchStrategy/All"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="database.ecore#//DatabaseException"/>
+    <genClasses ecoreClass="database.ecore#//CatalogContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//CatalogContainer/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//CatalogContainer/active"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//CatalogContainer/connectionConfig"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//CatalogContainer/supportsGuestAccess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//CatalogContainer/generationStrategy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//CatalogContainer/searchStrategy"/>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/createConnection">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/createConnection/factory"/>
+        <genTypeParameters ecoreTypeParameter="database.ecore#//CatalogContainer/createConnection/C"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/createConnection.1">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/createConnection.1/factory"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/createConnection.1/user"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/createConnection.1/password"/>
+        <genTypeParameters ecoreTypeParameter="database.ecore#//CatalogContainer/createConnection.1/C"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/getMetaData"/>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/getCatalogContext"/>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/loadIndex">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/loadIndex/table"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/loadIndex/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/loadSchema">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/loadSchema/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/loadTable">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/loadTable/schema"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/loadTable/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/loadView">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/loadView/schema"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/loadView/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/removeIndex">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/removeIndex/index"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/removeSchema">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/removeSchema/schema"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/removeTable">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/removeTable/table"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogContainer/removeView">
+        <genParameters ecoreParameter="database.ecore#//CatalogContainer/removeView/view"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="database.ecore#//CatalogGenerationStrategy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//CatalogGenerationStrategy/createIndexOnView"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//CatalogGenerationStrategy/createRelativeRecordNumber"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="database.ecore#//CatalogMetaData">
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getIndex">
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getIndex/schema"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getIndex/table"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getIndex/index"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getAllSchemas"/>
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getCurrentSchemas"/>
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getSchema">
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getSchema/schema"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getSearchStrategy"/>
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getTable">
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getTable/table"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getTable.1">
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getTable.1/schema"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getTable.1/table"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getView">
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getView/table"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//CatalogMetaData/getView.1">
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getView.1/schema"/>
+        <genParameters ecoreParameter="database.ecore#//CatalogMetaData/getView.1/table"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="database.ecore#//DatabaseContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//DatabaseContainer/catalogContainers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference database.ecore#//DatabaseContainer/defaultCatalogContainer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//DatabaseContainer/vendor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//DatabaseContainer/version"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="database.ecore#//DatabaseManager">
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/createIndex">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createIndex/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createIndex/table"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createIndex/name"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createIndex/index"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/createSchema">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createSchema/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createSchema/name"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createSchema/schema"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/createTable">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createTable/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createTable/schema"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createTable/name"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createTable/table"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/createView">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createView/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createView/schema"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createView/name"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/createView/view"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/dropIndex">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropIndex/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropIndex/index"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/dropSchema">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropSchema/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropSchema/schema"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropSchema/ignoreFailOnNonEmpty"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/dropTable">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropTable/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropTable/table"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/dropView">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropView/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/dropView/view"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/hasLogicals">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/hasLogicals/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/hasLogicals/table"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/isStarted"/>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/renameIndex">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/renameIndex/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/renameIndex/index"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/renameIndex/newName"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/renameTable">
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/renameTable/connection"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/renameTable/table"/>
+        <genParameters ecoreParameter="database.ecore#//DatabaseManager/renameTable/newName"/>
+      </genOperations>
+      <genOperations ecoreOperation="database.ecore#//DatabaseManager/start"/>
+    </genClasses>
+    <genClasses ecoreClass="database.ecore#//QualifiedName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//QualifiedName/qualifiers"/>
+      <genOperations ecoreOperation="database.ecore#//QualifiedName/getFirstQualifier"/>
+      <genOperations ecoreOperation="database.ecore#//QualifiedName/getLastQualifier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="database.ecore#//TableProvider">
+      <genOperations ecoreOperation="database.ecore#//TableProvider/getTable">
+        <genParameters ecoreParameter="database.ecore#//TableProvider/getTable/schema"/>
+        <genParameters ecoreParameter="database.ecore#//TableProvider/getTable/table"/>
+      </genOperations>
+    </genClasses>
+    <nestedGenPackages prefix="DatabaseConnection" basePackage="org.abchip.mimo.database"
+        disposableProviderFactory="true" adapterFactory="false" ecorePackage="database.ecore#//connection">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//connection/StatementType">
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DML"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DDL"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DBL"/>
+      </genEnums>
+      <genDataTypes ecoreDataType="database.ecore#//connection/DatabaseResultSet"/>
+      <genDataTypes ecoreDataType="database.ecore#//connection/DatabaseResultSetMetaData"/>
+      <genDataTypes ecoreDataType="database.ecore#//connection/StatementBatchResult"/>
+      <genClasses image="false" ecoreClass="database.ecore#//connection/Connection">
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/close"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/close.1">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/close.1/stmt"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/close.2">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/close.2/rs"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/createStatement"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/createStatement.1">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/createStatement.1/native"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/createStatement.2">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/createStatement.2/native"/>
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/createStatement.2/updatable"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/createStatementCursorInsensitive">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/createStatementCursorInsensitive/native"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/getCatalog"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/getCatalogGenerationStrategy"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/getCatalogMetaData"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/prepareStatement">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/prepareStatement/sql"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/prepareStatement.1">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/prepareStatement.1/sql"/>
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/prepareStatement.1/native"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/prepareStatement.2">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/prepareStatement.2/sql"/>
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/prepareStatement.2/native"/>
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/prepareStatement.2/updatable"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/setCatalog">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/setCatalog/catalog"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/translate">
+          <genParameters ecoreParameter="database.ecore#//connection/Connection/translate/sql"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//connection/ConnectionConfig">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//connection/ConnectionConfig/credentials"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//connection/ConnectionConfig/vendor"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//connection/ConnectionConfig/version"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//connection/ConnectionConfig/url"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//connection/ConnectionConfig/catalog"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//connection/ConnectionConfig/persistent"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//connection/ConnectionCredentials"/>
+      <genClasses image="false" ecoreClass="database.ecore#//connection/ConnectionManager">
+        <genOperations ecoreOperation="database.ecore#//connection/ConnectionManager/createConnection">
+          <genParameters ecoreParameter="database.ecore#//connection/ConnectionManager/createConnection/context"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/ConnectionManager/createConnection.1">
+          <genParameters ecoreParameter="database.ecore#//connection/ConnectionManager/createConnection.1/catalog"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/ConnectionManager/createConnection.2">
+          <genParameters ecoreParameter="database.ecore#//connection/ConnectionManager/createConnection.2/user"/>
+          <genParameters ecoreParameter="database.ecore#//connection/ConnectionManager/createConnection.2/password"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/ConnectionManager/createConnection.3">
+          <genParameters ecoreParameter="database.ecore#//connection/ConnectionManager/createConnection.3/catalog"/>
+          <genParameters ecoreParameter="database.ecore#//connection/ConnectionManager/createConnection.3/user"/>
+          <genParameters ecoreParameter="database.ecore#//connection/ConnectionManager/createConnection.3/password"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//connection/PreparedStatement">
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/addBatch"/>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/clearParameters"/>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/execute"/>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/executeQuery"/>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/executeUpdate"/>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/getMetaData"/>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/setDate">
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setDate/position"/>
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setDate/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/setInt">
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setInt/position"/>
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setInt/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/setNumber">
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setNumber/position"/>
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setNumber/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/setString">
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setString/position"/>
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setString/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/PreparedStatement/setObject">
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setObject/position"/>
+          <genParameters ecoreParameter="database.ecore#//connection/PreparedStatement/setObject/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//connection/Statement">
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/close"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/execute">
+          <genParameters ecoreParameter="database.ecore#//connection/Statement/execute/sql"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/executeQuery">
+          <genParameters ecoreParameter="database.ecore#//connection/Statement/executeQuery/sql"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/executeUpdate">
+          <genParameters ecoreParameter="database.ecore#//connection/Statement/executeUpdate/sql"/>
+          <genParameters ecoreParameter="database.ecore#//connection/Statement/executeUpdate/generatedKeys"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/addBatch">
+          <genParameters ecoreParameter="database.ecore#//connection/Statement/addBatch/sql"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/clearBatch"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/executeBatch"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/getGeneratedKeys"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Statement/setQueryTimeout">
+          <genParameters ecoreParameter="database.ecore#//connection/Statement/setQueryTimeout/seconds"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="DatabaseDefinition" basePackage="org.abchip.mimo.database"
+        disposableProviderFactory="true" adapterFactory="false" contentTypeIdentifier=""
+        ecorePackage="database.ecore#//definition">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/DropRange">
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/DropRange/RESTRICT"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/DropRange/CASCADE"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/OrderingType">
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/OrderingType/Ascend"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/OrderingType/Descend"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/ShareMode">
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/ShareMode/SHARE"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/ShareMode/EXCLUSIVE"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/TargetElement">
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/ALIAS"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/INDEX"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/VIEW"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/TABLE"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/TargetItem">
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/ALL"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/CURRENT"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/ALLSQL"/>
+      </genEnums>
+      <genClasses ecoreClass="database.ecore#//definition/CallStatement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CallStatement/procedureName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/CallStatement/parms"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/CommitStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/CommitStatement/hold"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/ConnectStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/ConnectStatement/pwd"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/ConnectStatement/reset"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/ConnectStatement/to"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/ConnectStatement/user"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/CreateAliasStatement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CreateAliasStatement/aliasName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CreateAliasStatement/tableName"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/CreateIndexStatement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CreateIndexStatement/indexName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CreateIndexStatement/onTable"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CreateIndexStatement/sortBy"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/CreateIndexStatement/unique"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/CreateTableStatement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CreateTableStatement/tableName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CreateTableStatement/fields"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/CreateViewStatement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CreateViewStatement/viewName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/CreateViewStatement/fields"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/CreateViewStatement/query"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//definition/DatabaseObjectDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/DatabaseObjectDef/label"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//definition/DefinitionParser">
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionParser/parseDefinition">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionParser/parseDefinition/stream"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionParser/parseDefinition.1">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionParser/parseDefinition.1/sql"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//definition/DefinitionParserRegistry">
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionParserRegistry/lookup">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionParserRegistry/lookup/connectionConfig"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/DefinitionParseError"/>
+      <genClasses ecoreClass="database.ecore#//definition/DefinitionParseResult">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference database.ecore#//definition/DefinitionParseResult/definitionStatement"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference database.ecore#//definition/DefinitionParseResult/errorList"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//definition/DefinitionStatement">
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionStatement/getStatementType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//definition/DefinitionWriter">
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/copyTableData">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/copyTableData/tableFrom"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/copyTableData/tableTo"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/copyTableData/isCreateRelativeRecordNumber"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/countRecords">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/countRecords/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/createLabel">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createLabel/name"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createLabel/schema"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/createLabel.1">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createLabel.1/schema"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createLabel.1/name"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createLabel.1/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/createLabelForFields">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createLabelForFields/schema"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createLabelForFields/name"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createLabelForFields/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/createSchema">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createSchema/name"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createSchema/schema"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/createTable">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createTable/schema"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createTable/name"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createTable/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/createView">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createView/schema"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createView/name"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createView/view"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/createIndex">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createIndex/table"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createIndex/name"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/createIndex/index"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/dropSchema">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/dropSchema/schema"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/dropSchema/ignoreFailOnNonEmpty"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/dropTable">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/dropTable/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/dropView">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/dropView/view"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/dropIndex">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/dropIndex/index"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/deleteData">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/deleteData/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/hasLogicals">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/hasLogicals/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/insertData">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/insertData/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/insertData.1">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/insertData.1/table"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/insertData.1/fieldNames"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/renameIndex">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/renameIndex/index"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/renameIndex/newName"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/renameTable">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/renameTable/table"/>
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/renameTable/newName"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/resetIdentity">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/resetIdentity/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/selectData">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/selectData/table"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriter/truncateTable">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriter/truncateTable/table"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//definition/DefinitionWriterRegistry">
+        <genOperations ecoreOperation="database.ecore#//definition/DefinitionWriterRegistry/lookup">
+          <genParameters ecoreParameter="database.ecore#//definition/DefinitionWriterRegistry/lookup/connectionConfig"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/DisconnectStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/DisconnectStatement/target"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/DropStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/DropStatement/range"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/DropStatement/targetName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/DropStatement/target"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/IndexDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/IndexDef/clustered"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/IndexDef/columns"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/IndexDef/unique"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/IndexColumnDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/IndexColumnDef/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/IndexColumnDef/ordering"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/IndexColumnDef/sequence"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/LockTableStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/LockTableStatement/allowRead"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/LockTableStatement/shareMode"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/LockTableStatement/tableName"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/ReleaseStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/ReleaseStatement/serverName"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/RenameStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/RenameStatement/newName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/RenameStatement/system"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/RenameStatement/originalName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/RenameStatement/target"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/RollbackStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/RollbackStatement/hold"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/SetConnectionStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/SetConnectionStatement/databaseName"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/SchemaDef"/>
+      <genClasses ecoreClass="database.ecore#//definition/TableDef">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/TableDef/columns"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/TableColumnDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/TableColumnDef/default"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/TableColumnDef/definition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/TableColumnDef/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/TableColumnDef/nullable"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/TableTerm">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/TableTerm/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/TableTerm/tableDef"/>
+      </genClasses>
+      <genClasses ecoreClass="database.ecore#//definition/ViewDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute database.ecore#//definition/ViewDef/querySelect"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="DatabaseQuery" basePackage="org.abchip.mimo.database"
+        disposableProviderFactory="true" adapterFactory="false" ecorePackage="database.ecore#//query">
+      <genDataTypes ecoreDataType="database.ecore#//query/SQLQueryParseResult"/>
+      <genClasses image="false" ecoreClass="database.ecore#//query/AliasResolver">
+        <genOperations ecoreOperation="database.ecore#//query/AliasResolver/resolveQuery">
+          <genParameters ecoreParameter="database.ecore#//query/AliasResolver/resolveQuery/connection"/>
+          <genParameters ecoreParameter="database.ecore#//query/AliasResolver/resolveQuery/query"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//query/NameHelper">
+        <genOperations ecoreOperation="database.ecore#//query/NameHelper/resolveContainers">
+          <genParameters ecoreParameter="database.ecore#//query/NameHelper/resolveContainers/query"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//query/NameHelperRegistry">
+        <genOperations ecoreOperation="database.ecore#//query/NameHelperRegistry/lookup">
+          <genParameters ecoreParameter="database.ecore#//query/NameHelperRegistry/lookup/connectionConfig"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//query/QueryWriter">
+        <genOperations ecoreOperation="database.ecore#//query/QueryWriter/writeQuery">
+          <genParameters ecoreParameter="database.ecore#//query/QueryWriter/writeQuery/statement"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//query/QueryWriterRegistry">
+        <genOperations ecoreOperation="database.ecore#//query/QueryWriterRegistry/lookup">
+          <genParameters ecoreParameter="database.ecore#//query/QueryWriterRegistry/lookup/connectionConfig"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//query/QueryParser">
+        <genOperations ecoreOperation="database.ecore#//query/QueryParser/parseQuery">
+          <genParameters ecoreParameter="database.ecore#//query/QueryParser/parseQuery/stream"/>
+        </genOperations>
+        <genOperations ecoreOperation="database.ecore#//query/QueryParser/parseQuery.1">
+          <genParameters ecoreParameter="database.ecore#//query/QueryParser/parseQuery.1/sql"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//query/QueryParserRegistry">
+        <genOperations ecoreOperation="database.ecore#//query/QueryParserRegistry/lookup">
+          <genParameters ecoreParameter="database.ecore#//query/QueryParserRegistry/lookup/connectionConfig"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//query/SQLObjectNameHelper"/>
+      <genClasses image="false" ecoreClass="database.ecore#//query/StatementWriter">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference database.ecore#//query/StatementWriter/nameHelper"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="database.ecore#//query/StatementParser"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
