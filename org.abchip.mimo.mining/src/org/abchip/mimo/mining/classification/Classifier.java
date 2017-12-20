@@ -30,4 +30,12 @@ public interface Classifier {
 	 */
 	<E extends Entity> Classification<E> classify(ContextProvider contextProvider, Class<E> klass, Object object);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" klassRequired="true" objectRequired="true"
+	 * @generated
+	 */
+	boolean isClassifierFor(Class<?> klass, Object object);
+
 } // Classifier

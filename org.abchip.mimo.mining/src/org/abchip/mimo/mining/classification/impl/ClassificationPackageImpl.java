@@ -275,7 +275,21 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(classifierEClass, ecorePackage.getEBoolean(), "isClassifierFor", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(classifierRegistryEClass, ClassifierRegistry.class, "ClassifierRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(classifierRegistryEClass, this.getClassifier(), "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 	}
 
 } //ClassificationPackageImpl

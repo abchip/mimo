@@ -23,9 +23,9 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
-import org.abchip.mimo.language.Classification;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
+import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -50,7 +50,7 @@ public class TestAudio {
 	@TestStarted
 	public void start() throws InterruptedException {
 		
-		audioManager.play(testRunner, AudioStyle.A, "Hi Diana, how are you?", true, true);
+		audioManager.play(testRunner, AudioStyle.A, "Hi Diana, there is a kitchen to clean!!", true, true);
 		
 		audioManager.play(testRunner, AudioStyle.A, "Hi Mattia, how are you?", true, true);
 

@@ -22,7 +22,6 @@ import org.abchip.mimo.language.LanguageLinearizerRegistry;
 
 public class BaseLanguageLinearizerRegistryImpl implements LanguageLinearizerRegistry {
 	
-	
 	private EntityRegistry<LanguageLinearizer> entityRegistry;
 	
 	@Inject
@@ -49,5 +48,4 @@ public class BaseLanguageLinearizerRegistryImpl implements LanguageLinearizerReg
 	public LanguageLinearizer lookupByPort(int port) {
 		return entityRegistry.lookupByPort(port);
 	}
-
 }

@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="language" nsURI="http://www.abchip.org/mimo/language" nsPrefix="mimo-lang">
-  <eClassifiers xsi:type="ecore:EClass" name="Classification">
-    <eTypeParameters name="E"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="score" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Language" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Textable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iso_639_1" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -20,7 +15,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageManager" abstract="true" interface="true">
     <eOperations name="classifyLanguage" lowerBound="1">
-      <eGenericType eClassifier="#//Classification">
+      <eGenericType eClassifier="ecore:EClass ../../org.abchip.mimo.mining/model/mining.ecore#//classification/Classification">
         <eTypeArguments eClassifier="#//Language"/>
       </eGenericType>
       <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>

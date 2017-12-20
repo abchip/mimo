@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,75 +62,6 @@ public interface LanguagePackage extends EPackage {
 	LanguagePackage eINSTANCE = org.abchip.mimo.language.impl.LanguagePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.language.impl.ClassificationImpl <em>Classification</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.language.impl.ClassificationImpl
-	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getClassification()
-	 * @generated
-	 */
-	int CLASSIFICATION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Score</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFICATION__SCORE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFICATION__ENTITY = 1;
-
-	/**
-	 * The number of structural features of the '<em>Classification</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFICATION_FEATURE_COUNT = 2;
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.language.Classification <em>Classification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Classification</em>'.
-	 * @see org.abchip.mimo.language.Classification
-	 * @generated
-	 */
-	EClass getClassification();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.language.Classification#getScore <em>Score</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Score</em>'.
-	 * @see org.abchip.mimo.language.Classification#getScore()
-	 * @see #getClassification()
-	 * @generated
-	 */
-	EAttribute getClassification_Score();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.language.Classification#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entity</em>'.
-	 * @see org.abchip.mimo.language.Classification#getEntity()
-	 * @see #getClassification()
-	 * @generated
-	 */
-	EReference getClassification_Entity();
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.impl.LanguageImpl <em>Language</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,7 +69,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguage()
 	 * @generated
 	 */
-	int LANGUAGE = 1;
+	int LANGUAGE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Iso 639 1</b></em>' attribute.
@@ -203,7 +133,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageExpression()
 	 * @generated
 	 */
-	int LANGUAGE_EXPRESSION = 2;
+	int LANGUAGE_EXPRESSION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Expression Row</b></em>' attribute.
@@ -231,7 +161,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageManager()
 	 * @generated
 	 */
-	int LANGUAGE_MANAGER = 3;
+	int LANGUAGE_MANAGER = 2;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -250,7 +180,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageParser()
 	 * @generated
 	 */
-	int LANGUAGE_PARSER = 4;
+	int LANGUAGE_PARSER = 3;
 
 	/**
 	 * The number of structural features of the '<em>Parser</em>' class.
@@ -269,7 +199,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageParserRegistry()
 	 * @generated
 	 */
-	int LANGUAGE_PARSER_REGISTRY = 5;
+	int LANGUAGE_PARSER_REGISTRY = 4;
 
 	/**
 	 * The number of structural features of the '<em>Parser Registry</em>' class.
@@ -288,7 +218,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageLinearizer()
 	 * @generated
 	 */
-	int LANGUAGE_LINEARIZER = 6;
+	int LANGUAGE_LINEARIZER = 5;
 
 	/**
 	 * The number of structural features of the '<em>Linearizer</em>' class.
@@ -307,7 +237,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageLinearizerRegistry()
 	 * @generated
 	 */
-	int LANGUAGE_LINEARIZER_REGISTRY = 7;
+	int LANGUAGE_LINEARIZER_REGISTRY = 6;
 
 	/**
 	 * The number of structural features of the '<em>Linearizer Registry</em>' class.
@@ -326,7 +256,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageScope()
 	 * @generated
 	 */
-	int LANGUAGE_SCOPE = 8;
+	int LANGUAGE_SCOPE = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageType <em>Type</em>}' enum.
@@ -336,7 +266,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageType()
 	 * @generated
 	 */
-	int LANGUAGE_TYPE = 9;
+	int LANGUAGE_TYPE = 8;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.language.Language <em>Language</em>}'.
@@ -516,29 +446,6 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.language.impl.ClassificationImpl <em>Classification</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.language.impl.ClassificationImpl
-		 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getClassification()
-		 * @generated
-		 */
-		EClass CLASSIFICATION = eINSTANCE.getClassification();
-		/**
-		 * The meta object literal for the '<em><b>Score</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLASSIFICATION__SCORE = eINSTANCE.getClassification_Score();
-		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLASSIFICATION__ENTITY = eINSTANCE.getClassification_Entity();
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.language.impl.LanguageImpl <em>Language</em>}' class.
 		 * <!-- begin-user-doc -->

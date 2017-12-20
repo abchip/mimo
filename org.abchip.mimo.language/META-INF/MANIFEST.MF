@@ -13,5 +13,6 @@ Export-Package: org.abchip.mimo.language,
  org.abchip.mimo.language.impl
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.abchip.mimo.core;visibility:=reexport
+ org.abchip.mimo.core;visibility:=reexport,
+ org.abchip.mimo.mining;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -9,9 +9,9 @@ package org.abchip.mimo.language.test.runner;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.language.Classification;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
+import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;

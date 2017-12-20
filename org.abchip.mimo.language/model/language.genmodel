@@ -4,7 +4,7 @@
     modelDirectory="/org.abchip.mimo.language/src" modelPluginID="org.abchip.mimo.language"
     modelName="MIMO Language" rootExtendsInterface="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
-    copyrightFields="false" language="EN" usedGenPackages="../../org.abchip.mimo.core/model/mimo.genmodel#//mimo"
+    copyrightFields="false" language="EN" usedGenPackages="../../org.abchip.mimo.core/model/mimo.genmodel#//mimo ../../org.abchip.mimo.mining/model/mining.genmodel#//mining"
     importOrganizing="true">
   <foreignModel>language.ecore</foreignModel>
   <genPackages prefix="Language" basePackage="org.abchip.mimo" disposableProviderFactory="true"
@@ -24,11 +24,6 @@
       <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Historical"/>
       <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Constructed"/>
     </genEnums>
-    <genClasses ecoreClass="language.ecore#//Classification">
-      <genTypeParameters ecoreTypeParameter="language.ecore#//Classification/E"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Classification/score"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference language.ecore#//Classification/entity"/>
-    </genClasses>
     <genClasses ecoreClass="language.ecore#//Language">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/iso_639_1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/name"/>
@@ -59,16 +54,24 @@
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="language.ecore#//LanguageParserRegistry"/>
-    <genClasses image="false" ecoreClass="language.ecore#//LanguageWriter">
-      <genOperations ecoreOperation="language.ecore#//LanguageWriter/write">
-        <genParameters ecoreParameter="language.ecore#//LanguageWriter/write/contextProvider"/>
-        <genParameters ecoreParameter="language.ecore#//LanguageWriter/write/language"/>
-        <genParameters ecoreParameter="language.ecore#//LanguageWriter/write/expression"/>
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageLinearizer">
+      <genOperations ecoreOperation="language.ecore#//LanguageLinearizer/linearize">
+        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/language"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/expression"/>
       </genOperations>
     </genClasses>
-    <genClasses image="false" ecoreClass="language.ecore#//LanguageWriterRegistry"/>
-    <nestedGenPackages prefix="Grammar" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="language.ecore#//grammar">
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageLinearizerRegistry"/>
+    <nestedGenPackages prefix="Grammar" basePackage="org.abchip.mimo.language" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="language.ecore#//grammar">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//grammar/Gender">
+        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Gender/Masculine"/>
+        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Gender/Feminine"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//grammar/Number">
+        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Number/Singular"/>
+        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Number/Plural"/>
+      </genEnums>
       <genClasses ecoreClass="language.ecore#//grammar/Adjective"/>
       <genClasses ecoreClass="language.ecore#//grammar/Dialog"/>
       <genClasses ecoreClass="language.ecore#//grammar/Grammar">

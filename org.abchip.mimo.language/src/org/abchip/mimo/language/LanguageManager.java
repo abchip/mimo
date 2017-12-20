@@ -8,6 +8,7 @@
 package org.abchip.mimo.language;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.mining.classification.Classification;
 
 
 /**

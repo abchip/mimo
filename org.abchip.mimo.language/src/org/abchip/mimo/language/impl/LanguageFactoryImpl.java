@@ -62,7 +62,6 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case LanguagePackage.CLASSIFICATION: return (EObject)createClassification();
 			case LanguagePackage.LANGUAGE: return (EObject)createLanguage();
 			case LanguagePackage.LANGUAGE_EXPRESSION: return (EObject)createLanguageExpression();
 			default:
@@ -102,16 +101,6 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public <E> Classification<E> createClassification() {
-		ClassificationImpl<E> classification = new ClassificationImpl<E>();
-		return classification;
 	}
 
 	/**

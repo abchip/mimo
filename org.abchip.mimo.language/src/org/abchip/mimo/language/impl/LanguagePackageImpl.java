@@ -10,7 +10,6 @@ package org.abchip.mimo.language.impl;
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.language.Classification;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageExpression;
 import org.abchip.mimo.language.LanguageFactory;
@@ -25,14 +24,14 @@ import org.abchip.mimo.language.LanguageLinearizer;
 import org.abchip.mimo.language.LanguageLinearizerRegistry;
 import org.abchip.mimo.language.grammar.GrammarPackage;
 import org.abchip.mimo.language.grammar.impl.GrammarPackageImpl;
+import org.abchip.mimo.mining.MiningPackage;
+import org.abchip.mimo.mining.classification.ClassificationPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -42,13 +41,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass classificationEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,6 +152,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
 		// Initialize simple dependencies
 		MimoPackage.eINSTANCE.eClass();
+		MiningPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		GrammarPackageImpl theGrammarPackage = (GrammarPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI) instanceof GrammarPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI) : GrammarPackage.eINSTANCE);
@@ -179,33 +172,6 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(LanguagePackage.eNS_URI, theLanguagePackage);
 		return theLanguagePackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getClassification() {
-		return classificationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getClassification_Score() {
-		return (EAttribute)classificationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getClassification_Entity() {
-		return (EReference)classificationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -371,10 +337,6 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		isCreated = true;
 
 		// Create classes and their features
-		classificationEClass = createEClass(CLASSIFICATION);
-		createEAttribute(classificationEClass, CLASSIFICATION__SCORE);
-		createEReference(classificationEClass, CLASSIFICATION__ENTITY);
-
 		languageEClass = createEClass(LANGUAGE);
 		createEAttribute(languageEClass, LANGUAGE__ISO_639_1);
 		createEAttribute(languageEClass, LANGUAGE__NAME);
@@ -426,13 +388,13 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Obtain other dependent packages
 		GrammarPackage theGrammarPackage = (GrammarPackage)EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		ClassificationPackage theClassificationPackage = (ClassificationPackage)EPackage.Registry.INSTANCE.getEPackage(ClassificationPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theGrammarPackage);
 
 		// Create type parameters
-		addETypeParameter(classificationEClass, "E");
 
 		// Set bounds for type parameters
 
@@ -449,10 +411,6 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		languageLinearizerRegistryEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(classificationEClass, Classification.class, "Classification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClassification_Score(), ecorePackage.getEDouble(), "score", null, 1, 1, Classification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClassification_Entity(), theEntityPackage.getEntityNameable(), null, "entity", null, 0, 1, Classification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(languageEClass, Language.class, "Language", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLanguage_Iso_639_1(), ecorePackage.getEString(), "iso_639_1", null, 1, 1, Language.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLanguage_Name(), ecorePackage.getEString(), "name", null, 1, 1, Language.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -468,7 +426,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		EOperation op = addEOperation(languageManagerEClass, null, "classifyLanguage", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getClassification());
+		g1 = createEGenericType(theClassificationPackage.getClassification());
 		g2 = createEGenericType(this.getLanguage());
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);

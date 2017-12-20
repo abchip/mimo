@@ -29,6 +29,7 @@ import org.abchip.mimo.language.grammar.Word;
 
 import org.abchip.mimo.language.impl.LanguagePackageImpl;
 
+import org.abchip.mimo.mining.MiningPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -175,6 +176,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 
 		// Initialize simple dependencies
 		MimoPackage.eINSTANCE.eClass();
+		MiningPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		LanguagePackageImpl theLanguagePackage = (LanguagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LanguagePackage.eNS_URI) instanceof LanguagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LanguagePackage.eNS_URI) : LanguagePackage.eINSTANCE);

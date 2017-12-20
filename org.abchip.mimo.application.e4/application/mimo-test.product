@@ -54,6 +54,8 @@
       <plugin id="org.abchip.mimo.language.gf"/>
       <plugin id="org.abchip.mimo.language.lp"/>
       <plugin id="org.abchip.mimo.language.test"/>
+      <plugin id="org.abchip.mimo.mining"/>
+      <plugin id="org.abchip.mimo.mining.base"/>
       <plugin id="org.abchip.mimo.server"/>
       <plugin id="org.abchip.mimo.server.base"/>
       <plugin id="org.abchip.mimo.server.test"/>

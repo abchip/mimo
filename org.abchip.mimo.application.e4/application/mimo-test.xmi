@@ -123,6 +123,20 @@
     </modules>
   </components>
   <components
+      name="Mining">
+    <modules
+        name="Base">
+      <services
+          xsi:type="mimo-app:ServiceRegistry"
+          className="org.abchip.mimo.mining.base.BaseClassifierRegistryImpl"
+          interfaceName="org.abchip.mimo.mining.classification.ClassifierRegistry"/>
+      <services
+          xsi:type="mimo-app:ServiceExecutor"
+          className="org.abchip.mimo.mining.base.BaseMiningManagerImpl"
+          interfaceName="org.abchip.mimo.mining.MiningManager"/>
+    </modules>
+  </components>
+  <components
       name="Database">
     <config>
       <entities
@@ -193,13 +207,13 @@
           xsi:type="mimo-app:ServiceRegistry"
           className="org.abchip.mimo.language.base.BaseLanguageLinearizerRegistryImpl"
           interfaceName="org.abchip.mimo.language.LanguageLinearizerRegistry"/>
-    </modules>
-    <modules
-        name="LP">
       <services
           xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.language.lp.LPLanguageManagerImpl"
+          className="org.abchip.mimo.language.base.BaseLanguageManagerImpl"
           interfaceName="org.abchip.mimo.language.LanguageManager"/>
+    </modules>
+    <modules
+        name="GF">
       <services
           xsi:type="mimo-app:ServiceRegistryEntry"
           className="org.abchip.mimo.language.gf.GFLanguageParserImpl"
@@ -220,6 +234,16 @@
       <services
           xsi:type="mimo-app:ServiceTester"
           className="org.abchip.mimo.language.test.TestLanguageSuiteLauncherImpl"/>
+    </modules>
+    <modules
+        name="LP">
+      <services
+          xsi:type="mimo-app:ServiceRegistryEntry"
+          className="org.abchip.mimo.language.lp.LPClassifierImpl"
+          interfaceName="org.abchip.mimo.mining.classification.Classifier"
+          name="GF"
+          vendor="LingPipe"
+          version="3.9"/>
     </modules>
   </components>
   <components
