@@ -89,7 +89,6 @@
       <eLiterals name="Singular" value="10" literal="S"/>
       <eLiterals name="Plural" value="20" literal="P"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Phrase" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="Predicate" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="Pronoun" eSuperTypes="#//grammar/Word"/>
     <eClassifiers xsi:type="ecore:EClass" name="Sentence" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>

@@ -20,12 +20,4 @@ import org.abchip.mimo.entity.EntityRegistry;
  * @generated
  */
 public interface ClassifierRegistry extends EntityRegistry<Classifier> {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" klassRequired="true" objectRequired="true"
-	 * @generated
-	 */
-	Classifier lookup(Class<?> klass, Object object);
 } // ClassifierRegistry

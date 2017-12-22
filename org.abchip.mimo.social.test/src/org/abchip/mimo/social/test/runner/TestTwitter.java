@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.social.test.runner;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.inject.Inject;
@@ -25,7 +27,10 @@ import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
+import org.abchip.mimo.mining.MiningManager;
 import org.abchip.mimo.mining.classification.Classification;
+import org.abchip.mimo.mining.classification.Classifier;
+import org.abchip.mimo.mining.classification.Evaluator;
 import org.abchip.mimo.social.twitter.Tweet;
 import org.abchip.mimo.social.twitter.TwitterManager;
 import org.abchip.mimo.tester.Test;
@@ -43,7 +48,9 @@ public class TestTwitter {
 	@Inject
 	private ResourceManager resourceManager;
 	@Inject
-	private LanguageManager languageManager;	
+	private LanguageManager languageManager;
+	@Inject
+	private MiningManager miningManager;
 	@Inject
 	private TestAsserter asserter;
 	@Inject
@@ -55,7 +62,13 @@ public class TestTwitter {
 	@TestStarted
 	public void start() throws InterruptedException {
 		
-//		loadTweets();
+		loadTweets();
+		
+		testConfusionMatrix();
+
+		
+		if(true)
+			return;
 		
 		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);
 		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
@@ -125,10 +138,38 @@ public class TestTwitter {
 		}
 	}
 	
-	@SuppressWarnings("unused")
+	private void testConfusionMatrix() {
+				
+		List<Language> languages = new ArrayList<Language>();
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
+		for(Language language: languageReader.find(null))
+			languages.add(language);
+		
+		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);
+		Evaluator evaluator = classifier.buildEvaluator(Language.class, String.class);
+
+		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);		
+		for (Tweet tweet : tweetReader.find(null)) {
+			
+			Language language = lookupLanguageByIso(languages, tweet.getLanguage());
+			if(language != null)
+				evaluator.evaluate(tweet.getText(), language.getText().toLowerCase());
+		}
+		
+		evaluator.printConfusionMatrix();
+	}
+
+	private Language lookupLanguageByIso(List<Language> languages, String iso) {
+		for(Language language: languages) {
+			if(language.getIso_639_1().equalsIgnoreCase(iso))
+				return language;
+		}
+		return null;
+	}
+	
 	private void loadTweets() {
 		
-		EntityIterator<Tweet> tweetIterator = twitterManager.search(testRunner, null, "#ai", 100);
+		EntityIterator<Tweet> tweetIterator = twitterManager.search(testRunner, null, "#ai", 1000);
 		asserter.assertTrue("Count tweets", tweetIterator.hasNext());
 
 		EntityWriter<Tweet> tweetWriter = resourceManager.getEntityWriter(testRunner, Tweet.class, testRunner.getContext().getContextDescription().getResourceTemporary());

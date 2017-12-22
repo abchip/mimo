@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Logic Test
+Bundle-SymbolicName: org.abchip.mimo.logic.test
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.abchip.mimo.tester,
+ org.abchip.mimo.logic,
+ org.abchip.mimo.tester.base
+Import-Package: javax.inject
+Export-Package: org.abchipm.imo.logic.test,
+ org.abchipm.imo.logic.test.runner

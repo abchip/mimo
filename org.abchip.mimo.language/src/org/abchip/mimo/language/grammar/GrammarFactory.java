@@ -63,15 +63,6 @@ public interface GrammarFactory extends EFactory {
 	Noun createNoun();
 
 	/**
-	 * Returns a new object of class '<em>Phrase</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Phrase</em>'.
-	 * @generated
-	 */
-	Phrase createPhrase();
-
-	/**
 	 * Returns a new object of class '<em>Predicate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -139,6 +139,26 @@ public interface ClassificationPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.mining.classification.Evaluator <em>Evaluator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.mining.classification.Evaluator
+	 * @see org.abchip.mimo.mining.classification.impl.ClassificationPackageImpl#getEvaluator()
+	 * @generated
+	 */
+	int EVALUATOR = 3;
+
+	/**
+	 * The number of structural features of the '<em>Evaluator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVALUATOR_FEATURE_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.mining.classification.Classification <em>Classification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,6 +209,16 @@ public interface ClassificationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getClassifierRegistry();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.mining.classification.Evaluator <em>Evaluator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Evaluator</em>'.
+	 * @see org.abchip.mimo.mining.classification.Evaluator
+	 * @generated
+	 */
+	EClass getEvaluator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -257,6 +287,16 @@ public interface ClassificationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLASSIFIER_REGISTRY = eINSTANCE.getClassifierRegistry();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.mining.classification.Evaluator <em>Evaluator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.mining.classification.Evaluator
+		 * @see org.abchip.mimo.mining.classification.impl.ClassificationPackageImpl#getEvaluator()
+		 * @generated
+		 */
+		EClass EVALUATOR = eINSTANCE.getEvaluator();
 
 	}
 

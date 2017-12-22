@@ -21,6 +21,7 @@ import org.abchip.mimo.mining.classification.ClassificationPackage;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.ClassifierRegistry;
 
+import org.abchip.mimo.mining.classification.Evaluator;
 import org.abchip.mimo.mining.impl.MiningPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -60,6 +61,13 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * @generated
 	 */
 	private EClass classifierRegistryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass evaluatorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -180,6 +188,15 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEvaluator() {
+		return evaluatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ClassificationFactory getClassificationFactory() {
 		return (ClassificationFactory)getEFactoryInstance();
 	}
@@ -210,6 +227,8 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		classifierEClass = createEClass(CLASSIFIER);
 
 		classifierRegistryEClass = createEClass(CLASSIFIER_REGISTRY);
+
+		evaluatorEClass = createEClass(EVALUATOR);
 	}
 
 	/**
@@ -260,7 +279,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 
 		initEClass(classifierEClass, Classifier.class, "Classifier", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(classifierEClass, null, "classify", 1, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(classifierEClass, null, "classify", 1, -1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
@@ -280,16 +299,31 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(classifierRegistryEClass, ClassifierRegistry.class, "ClassifierRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(classifierRegistryEClass, this.getClassifier(), "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(classifierEClass, this.getEvaluator(), "buildEvaluator", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(classifierRegistryEClass, ClassifierRegistry.class, "ClassifierRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(evaluatorEClass, Evaluator.class, "Evaluator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(evaluatorEClass, null, "evaluate", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "classification", 1, 1, IS_UNIQUE, IS_ORDERED);
 	}
 
 } //ClassificationPackageImpl

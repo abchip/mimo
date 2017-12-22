@@ -70,7 +70,7 @@ public interface GrammarPackage extends EPackage {
 	 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getWord()
 	 * @generated
 	 */
-	int WORD = 9;
+	int WORD = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -203,25 +203,6 @@ public interface GrammarPackage extends EPackage {
 	int NOUN_FEATURE_COUNT = WORD_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.language.grammar.impl.PhraseImpl <em>Phrase</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.language.grammar.impl.PhraseImpl
-	 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getPhrase()
-	 * @generated
-	 */
-	int PHRASE = 4;
-
-	/**
-	 * The number of structural features of the '<em>Phrase</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHRASE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.grammar.impl.PredicateImpl <em>Predicate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,7 +210,7 @@ public interface GrammarPackage extends EPackage {
 	 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getPredicate()
 	 * @generated
 	 */
-	int PREDICATE = 5;
+	int PREDICATE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Predicate</em>' class.
@@ -248,7 +229,7 @@ public interface GrammarPackage extends EPackage {
 	 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getPronoun()
 	 * @generated
 	 */
-	int PRONOUN = 6;
+	int PRONOUN = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -276,7 +257,7 @@ public interface GrammarPackage extends EPackage {
 	 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getSentence()
 	 * @generated
 	 */
-	int SENTENCE = 7;
+	int SENTENCE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Sentence</em>' class.
@@ -295,7 +276,7 @@ public interface GrammarPackage extends EPackage {
 	 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getVerb()
 	 * @generated
 	 */
-	int VERB = 8;
+	int VERB = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,7 +305,7 @@ public interface GrammarPackage extends EPackage {
 	 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getNumber()
 	 * @generated
 	 */
-	int NUMBER = 11;
+	int NUMBER = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.grammar.Gender <em>Gender</em>}' enum.
@@ -334,7 +315,7 @@ public interface GrammarPackage extends EPackage {
 	 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getGender()
 	 * @generated
 	 */
-	int GENDER = 10;
+	int GENDER = 9;
 
 
 	/**
@@ -398,16 +379,6 @@ public interface GrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNoun();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.language.grammar.Phrase <em>Phrase</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Phrase</em>'.
-	 * @see org.abchip.mimo.language.grammar.Phrase
-	 * @generated
-	 */
-	EClass getPhrase();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.language.grammar.Predicate <em>Predicate</em>}'.
@@ -567,16 +538,6 @@ public interface GrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NOUN = eINSTANCE.getNoun();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.language.grammar.impl.PhraseImpl <em>Phrase</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.language.grammar.impl.PhraseImpl
-		 * @see org.abchip.mimo.language.grammar.impl.GrammarPackageImpl#getPhrase()
-		 * @generated
-		 */
-		EClass PHRASE = eINSTANCE.getPhrase();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.language.grammar.impl.PredicateImpl <em>Predicate</em>}' class.

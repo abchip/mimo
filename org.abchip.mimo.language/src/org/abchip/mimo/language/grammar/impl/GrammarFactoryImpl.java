@@ -14,7 +14,6 @@ import org.abchip.mimo.language.grammar.Grammar;
 import org.abchip.mimo.language.grammar.GrammarFactory;
 import org.abchip.mimo.language.grammar.GrammarPackage;
 import org.abchip.mimo.language.grammar.Noun;
-import org.abchip.mimo.language.grammar.Phrase;
 import org.abchip.mimo.language.grammar.Predicate;
 import org.abchip.mimo.language.grammar.Pronoun;
 import org.abchip.mimo.language.grammar.Sentence;
@@ -75,7 +74,6 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 			case GrammarPackage.DIALOG: return (EObject)createDialog();
 			case GrammarPackage.GRAMMAR: return (EObject)createGrammar();
 			case GrammarPackage.NOUN: return (EObject)createNoun();
-			case GrammarPackage.PHRASE: return (EObject)createPhrase();
 			case GrammarPackage.PREDICATE: return (EObject)createPredicate();
 			case GrammarPackage.PRONOUN: return (EObject)createPronoun();
 			case GrammarPackage.SENTENCE: return (EObject)createSentence();
@@ -158,16 +156,6 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	public Noun createNoun() {
 		NounImpl noun = new NounImpl();
 		return noun;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Phrase createPhrase() {
-		PhraseImpl phrase = new PhraseImpl();
-		return phrase;
 	}
 
 	/**

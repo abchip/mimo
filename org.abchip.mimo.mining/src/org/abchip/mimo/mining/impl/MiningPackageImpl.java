@@ -192,7 +192,7 @@ public class MiningPackageImpl extends EPackageImpl implements MiningPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(miningManagerEClass, MiningManager.class, "MiningManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(miningManagerEClass, null, "classify", 1, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(miningManagerEClass, null, "classify", 1, -1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		EGenericType g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
@@ -206,6 +206,16 @@ public class MiningPackageImpl extends EPackageImpl implements MiningPackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
+
+		op = addEOperation(miningManagerEClass, theClassificationPackage.getClassifier(), "lookupClassifier", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

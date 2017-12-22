@@ -20,7 +20,6 @@ import org.abchip.mimo.language.grammar.Grammar;
 import org.abchip.mimo.language.grammar.GrammarFactory;
 import org.abchip.mimo.language.grammar.GrammarPackage;
 import org.abchip.mimo.language.grammar.Noun;
-import org.abchip.mimo.language.grammar.Phrase;
 import org.abchip.mimo.language.grammar.Predicate;
 import org.abchip.mimo.language.grammar.Pronoun;
 import org.abchip.mimo.language.grammar.Sentence;
@@ -71,13 +70,6 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * @generated
 	 */
 	private EClass nounEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass phraseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,15 +249,6 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPhrase() {
-		return phraseEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPredicate() {
 		return predicateEClass;
 	}
@@ -371,8 +354,6 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 
 		nounEClass = createEClass(NOUN);
 
-		phraseEClass = createEClass(PHRASE);
-
 		predicateEClass = createEClass(PREDICATE);
 
 		pronounEClass = createEClass(PRONOUN);
@@ -425,7 +406,6 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		grammarEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		grammarEClass.getESuperTypes().add(theEntityPackage.getTextable());
 		nounEClass.getESuperTypes().add(this.getWord());
-		phraseEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		predicateEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		pronounEClass.getESuperTypes().add(this.getWord());
 		sentenceEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -442,8 +422,6 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		initEAttribute(getGrammar_Text(), ecorePackage.getEString(), "text", null, 1, 1, Grammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nounEClass, Noun.class, "Noun", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(phraseEClass, Phrase.class, "Phrase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(predicateEClass, Predicate.class, "Predicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

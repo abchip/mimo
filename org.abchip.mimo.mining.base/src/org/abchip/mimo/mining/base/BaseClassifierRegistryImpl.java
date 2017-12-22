@@ -45,16 +45,4 @@ public class BaseClassifierRegistryImpl implements ClassifierRegistry {
 		return entityRegistry.lookupByPort(port);
 	}
 
-	@Override
-	public Classifier lookup(Class<?> klass, Object object) {
-		
-		Classifier classifier = null;
-		for(Classifier tempClassifier: list()) {
-			if(tempClassifier.isClassifierFor(klass, object)) {
-				classifier = tempClassifier;
-				break;
-			}
-		}
-		return classifier;
-	}
 }

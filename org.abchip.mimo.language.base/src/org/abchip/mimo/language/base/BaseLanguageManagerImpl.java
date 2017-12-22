@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.language.base;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextProvider;
@@ -30,8 +32,11 @@ public class BaseLanguageManagerImpl implements LanguageManager {
 	private MiningManager miningManager;
 	
 	@Override
-	public Classification<Language> classifyLanguage(ContextProvider contextProvider, String text) {	
-		return miningManager.classify(contextProvider, Language.class, text);
+	public Classification<Language> classifyLanguage(ContextProvider contextProvider, String text) {
+		
+		List<Classification<Language>> classifications = miningManager.classify(contextProvider, Language.class, text); 
+		
+		return classifications.get(0);
 	}
 
 	@Override

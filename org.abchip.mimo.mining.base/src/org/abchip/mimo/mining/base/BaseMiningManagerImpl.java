@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.mining.base;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextProvider;
@@ -22,13 +24,25 @@ public class BaseMiningManagerImpl implements MiningManager {
 	private ClassifierRegistry classifierRegistry;
 	
 	@Override
-	public <E extends Entity> Classification<E> classify(ContextProvider contextProvider, Class<E> klass, Object object) {
+	public <E extends Entity> List<Classification<E>> classify(ContextProvider contextProvider, Class<E> klass, Object object) {
 
-		Classifier classifier = classifierRegistry.lookup(klass, object);
+		Classifier classifier = lookupClassifier(klass, object.getClass());
 		if(classifier == null)
 			return null;
 		
 		return classifier.classify(contextProvider, klass, object);
 	}
 
+	@Override
+	public Classifier lookupClassifier(Class<?> klass, Class<?> object) {
+		
+		Classifier classifier = null;
+		for(Classifier tempClassifier: classifierRegistry.list()) {
+			if(tempClassifier.isClassifierFor(klass, object)) {
+				classifier = tempClassifier;
+				break;
+			}
+		}
+		return classifier;
+	}
 }

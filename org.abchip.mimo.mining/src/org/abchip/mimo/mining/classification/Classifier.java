@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.mining.classification;
 
+import java.util.List;
 import org.abchip.mimo.context.ContextProvider;
 
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityNameable;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +30,7 @@ public interface Classifier {
 	 * @model required="true" contextProviderRequired="true" klassRequired="true" objectRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> Classification<E> classify(ContextProvider contextProvider, Class<E> klass, Object object);
+	<E extends Entity> List<Classification<E>> classify(ContextProvider contextProvider, Class<E> klass, Object object);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -36,6 +38,14 @@ public interface Classifier {
 	 * @model required="true" klassRequired="true" objectRequired="true"
 	 * @generated
 	 */
-	boolean isClassifierFor(Class<?> klass, Object object);
+	boolean isClassifierFor(Class<?> klass, Class<?> object);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" klassRequired="true" objectRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> Evaluator buildEvaluator(Class<E> klass, Class<?> object);
 
 } // Classifier
