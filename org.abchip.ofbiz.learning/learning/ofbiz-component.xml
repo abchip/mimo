@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ofbiz-component name="learning"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-component.xsd">
+
+	<classpath type="dir" location="config" />
+	
+	<webapp name="learning" title="Learning" server="default-server"
+		location="webapp/learning" base-permission="NONE" mount-point="/learning"/>
+</ofbiz-component>

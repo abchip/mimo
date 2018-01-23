@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://ofbiz.apache.org/Widget-Menu"
+	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Menu http://ofbiz.apache.org/dtds/widget-menu.xsd">
+
+	<menu name="TopMenu" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+		<menu-item name="SimplestScreen" title="Simplest Screen">
+			<link target="SimplestScreen" />
+		</menu-item>
+		<menu-item name="ConditionalScreen" title="Conditional Screen">
+			<link target="ConditionalScreen" />
+		</menu-item>
+		<menu-item name="NestedSections" title="Nested Sections">
+			<link target="NestedSections" />
+		</menu-item>
+		<menu-item name="GlobalContext" title="Global Context">
+			<link target="GlobalContext" />
+		</menu-item>
+		<menu-item name="CompoundedScreen" title="Compounded Screen">
+			<link target="CompoundedScreen" />
+		</menu-item>
+		<menu-item name="OneFormScreen" title="One Form Screen">
+			<link target="OneForm" />
+		</menu-item>
+		<menu-item name="ListFormScreen" title="List Form Screen">
+			<link target="ListForm" />
+		</menu-item>
+		<menu-item name="MultiFormScreen" title="Multi Form Screen">
+			<link target="MultiForm" />
+		</menu-item>
+		<menu-item name="TwoTargetFormScreen" title="Two Target Form Screen">
+			<link target="TwoTargetForm" />
+		</menu-item>
+		<menu-item name="RowMutatingFormScreen" title="Row Mutating Form Screen">
+			<link target="RowMutatingForm" />
+		</menu-item>		
+	</menu>
+
+	<menu name="ConditionalScreenSubMenu">
+		<menu-item name="showWidgets" title="Show widgets">
+			<condition>
+				<if-compare field="parameters.show" operator="not-equals"
+					value="widgets" />
+			</condition>
+			<link target="ConditionalScreen">
+				<parameter param-name="show" value="widgets" />
+			</link>
+		</menu-item>
+		<menu-item name="showFailWidgets" title="Show fail-widgets">
+			<condition>
+				<if-compare field="parameters.show" operator="equals"
+					value="widgets" />
+			</condition>
+			<link target="ConditionalScreen" />
+		</menu-item>
+	</menu>
+
+</menus>

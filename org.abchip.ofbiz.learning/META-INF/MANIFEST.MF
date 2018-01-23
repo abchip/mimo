@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ABChip OFBiz Learning
+Bundle-SymbolicName: org.abchip.ofbiz.learning
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: lib/ofbiz.jar,
+ lib/javax.servlet-api-3.1.0.jar
