@@ -8,15 +8,9 @@
 	<include location="component://commonext/webapp/WEB-INF/controller.xml" />
 
 	<description>ABChip OFBiz Configuration File</description>
-	<errorpage>/error/error.jsp</errorpage>
-
-	<preprocessor>
-		<event name="checkExternalLoginKey" type="java"
-			path="org.apache.ofbiz.webapp.control.LoginWorker" invoke="checkExternalLoginKey" />
-	</preprocessor>
 
 	<request-map uri="main">
-		<response name="success" type="view" value="Main" />
+		<response name="success" type="view" value="MainScreen" />
 	</request-map>
 	<request-map uri="SimplestScreen">
 		<response name="success" type="view" value="SimplestScreen" />
@@ -24,14 +18,11 @@
 	<request-map uri="ConditionalScreen">
 		<response name="success" type="view" value="ConditionalScreen" />
 	</request-map>
-	<request-map uri="ConditionalScreenWithGroovy">
-		<response name="success" type="view" value="ConditionalScreenWithGroovy" />
+	<request-map uri="NestedScreen">
+		<response name="success" type="view" value="NestedScreen" />
 	</request-map>
-	<request-map uri="NestedSections">
-		<response name="success" type="view" value="NestedSections" />
-	</request-map>
-	<request-map uri="GlobalContext">
-		<response name="success" type="view" value="GlobalContext" />
+	<request-map uri="GlobalContextScreen">
+		<response name="success" type="view" value="GlobalContextScreen" />
 	</request-map>
 	<request-map uri="CompoundedScreen">
 		<response name="success" type="view" value="CompoundedScreen" />
@@ -39,25 +30,10 @@
 	<request-map uri="OneForm">
 		<response name="success" type="view" value="OneFormScreen" />
 	</request-map>
-	<request-map uri="processFirstForm">
-		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
-			invoke="processFirstForm" />
-		<response name="success" type="view" value="OneFormScreen" />
-	</request-map>
 	<request-map uri="ListForm">
 		<response name="success" type="view" value="ListFormScreen" />
 	</request-map>
-	<request-map uri="processListForm">
-		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
-			invoke="processFirstForm" />
-		<response name="success" type="view" value="ListFormScreen" />
-	</request-map>
 	<request-map uri="MultiForm">
-		<response name="success" type="view" value="MultiFormScreen" />
-	</request-map>
-	<request-map uri="processMultiForm">
-		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
-			invoke="processMultiForm" />
 		<response name="success" type="view" value="MultiFormScreen" />
 	</request-map>
 	<request-map uri="TwoTargetForm">
@@ -67,28 +43,42 @@
 		<response name="success" type="view" value="RowMutatingFormScreen" />
 	</request-map>
 
-	<view-map name="Main" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#SimplestScreenWithMenu" />
+	<request-map uri="processFirstForm">
+		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
+			invoke="processFirstForm" />
+		<response name="success" type="view-last" />
+	</request-map>	
+	<request-map uri="processListForm">
+		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
+			invoke="processFirstForm" />
+		<response name="success" type="view-last" />
+	</request-map>	
+	<request-map uri="processMultiForm">
+		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
+			invoke="processMultiForm" />
+		<response name="success" type="view-last" />
+	</request-map>
+
+	<view-map name="MainScreen" type="screen"
+		page="component://learning/widget/learning/LearningScreens.xml#MainScreen" />
 	<view-map name="SimplestScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#SimplestScreenWithMenu" />
+		page="component://learning/widget/learning/LearningScreens.xml#SimplestScreen" />
 	<view-map name="ConditionalScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#ConditionalScreenWithMenu" />
-	<view-map name="ConditionalScreenWithGroovy" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#ConditionalScreenWithGroovy" />
-	<view-map name="NestedSections" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#NestedSectionsWithMenu" />
-	<view-map name="GlobalContext" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#GlobalContextWithMenu" />
+		page="component://learning/widget/learning/LearningScreens.xml#ConditionalScreen" />
+	<view-map name="NestedScreen" type="screen"
+		page="component://learning/widget/learning/LearningScreens.xml#NestedScreen" />
+	<view-map name="GlobalContextScreen" type="screen"
+		page="component://learning/widget/learning/LearningScreens.xml#GlobalContextScreen" />
 	<view-map name="CompoundedScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#CompoundedScreenWithMenu" />
+		page="component://learning/widget/learning/LearningScreens.xml#CompoundedScreen" />
 	<view-map name="OneFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#OneFormScreenWithMenu" />
+		page="component://learning/widget/learning/LearningScreens.xml#OneFormScreen" />
 	<view-map name="ListFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#ListFormScreenWithMenu" />
+		page="component://learning/widget/learning/LearningScreens.xml#ListFormScreen" />
 	<view-map name="MultiFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#MultiFormScreenWithMenu" />
+		page="component://learning/widget/learning/LearningScreens.xml#MultiFormScreen" />
 	<view-map name="TwoTargetFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#TwoTargetFormScreenWithMenu" />
+		page="component://learning/widget/learning/LearningScreens.xml#TwoTargetFormScreen" />
 	<view-map name="RowMutatingFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#RowMutatingFormScreenWithMenu" />
+		page="component://learning/widget/learning/LearningScreens.xml#RowMutatingFormScreen" />
 </site-conf>

@@ -10,11 +10,11 @@
 		<menu-item name="ConditionalScreen" title="Conditional Screen">
 			<link target="ConditionalScreen" />
 		</menu-item>
-		<menu-item name="NestedSections" title="Nested Sections">
-			<link target="NestedSections" />
+		<menu-item name="NestedScreen" title="Nested Screen">
+			<link target="NestedScreen" />
 		</menu-item>
-		<menu-item name="GlobalContext" title="Global Context">
-			<link target="GlobalContext" />
+		<menu-item name="GlobalContextScreen" title="Global Context Screen">
+			<link target="GlobalContextScreen" />
 		</menu-item>
 		<menu-item name="CompoundedScreen" title="Compounded Screen">
 			<link target="CompoundedScreen" />

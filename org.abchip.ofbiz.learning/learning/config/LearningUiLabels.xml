@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+	<property key="LearningApplication_description">
+		<value xml:lang="en">Learning Application</value>
+		<value xml:lang="it">Applicazione di apprendimento</value>
+	</property>
+	<property key="LearningCompanyName_description">
+		<value xml:lang="en">Company Name</value>
+		<value xml:lang="it">Nome Società</value>
+	</property>
+	<property key="LearningCompanySubtitle_description">
+		<value xml:lang="en">Company Subtitle</value>
+		<value xml:lang="it">Sottotitolo Società</value>
+	</property>
+</resource>

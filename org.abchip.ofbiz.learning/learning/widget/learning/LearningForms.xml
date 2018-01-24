@@ -30,14 +30,14 @@
 
 	<form name="MultiForm" type="multi" list-name="listOfRecords"
 		target="processMultiForm" separate-columns="true">
+		<field name="_rowSubmit" title="Select">
+			<check />
+		</field>
 		<field name="firstName">
 			<text />
 		</field>
 		<field name="lastName">
 			<text />
-		</field>
-		<field name="_rowSubmit" title="Select">
-			<check />
 		</field>
 		<field name="submit">
 			<submit />
