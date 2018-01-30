@@ -12,15 +12,21 @@
 						<label text="Context Information" />
 					</decorator-section>
 					<decorator-section name="body">
-					<container>
-						<label style="h1">${uiLabelMap.LearningApplication_description}: ${uiLabelMap.LearningApplication}</label>
-					</container>
-					<container>
-						<label style="h1">${uiLabelMap.LearningCompanyName_description}: ${uiLabelMap.LearningCompanyName}</label>
-					</container>
-					<container>
-						<label style="h1">${uiLabelMap.LearningCompanySubtitle_description}: ${uiLabelMap.LearningCompanySubtitle}</label>
-					</container>
+						<container>
+							<label style="h1">${uiLabelMap.LearningApplication_description}:
+								${uiLabelMap.LearningApplication}
+							</label>
+						</container>
+						<container>
+							<label style="h1">${uiLabelMap.LearningCompanyName_description}:
+								${uiLabelMap.LearningCompanyName}
+							</label>
+						</container>
+						<container>
+							<label style="h1">${uiLabelMap.LearningCompanySubtitle_description}:
+								${uiLabelMap.LearningCompanySubtitle}
+							</label>
+						</container>
 					</decorator-section>
 				</decorator-screen>
 			</widgets>
@@ -170,7 +176,7 @@
 							</actions>
 							<widgets>
 								<include-screen name="GlobalContext_1" />
-								<horizontal-separator/>
+								<horizontal-separator />
 								<container>
 									<label text="GlobalContext screen:" />
 								</container>
@@ -218,7 +224,7 @@
 					</decorator-section>
 					<decorator-section name="body">
 						<include-screen name="Compounded_1" />
-						<horizontal-separator/>
+						<horizontal-separator />
 						<include-screen name="Compounded_2" />
 					</decorator-section>
 				</decorator-screen>
@@ -352,6 +358,8 @@
 							<widgets>
 								<include-form name="TwoTargetForm"
 									location="component://learning/widget/learning/LearningForms.xml" />
+								<include-form name="PlanetDropDown"
+									location="component://learning/widget/learning/LearningForms.xml" />
 							</widgets>
 						</section>
 					</decorator-section>
@@ -422,7 +430,7 @@
 				</container>
 			</widgets>
 		</section>
-	</screen>	
+	</screen>
 	<screen name="Compounded_1">
 		<section>
 			<widgets>
@@ -478,4 +486,102 @@
 			</widgets>
 		</section>
 	</screen>
+
+	<screen name="ShowPlanetManyRelation">
+		<section>
+			<actions>
+				<!-- First, get all planets. -->
+				<entity-condition entity-name="Planet"
+					filter-by-date="true" list="planets">
+					<order-by field-name="planetName" />
+				</entity-condition>
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="title">
+						<label text="RowForm Title" />
+					</decorator-section>
+					<decorator-section name="body">
+						<!-- For each planet, show addresses -->
+						<iterate-section entry="planet" list="planets">
+							<section>
+								<actions>
+									<get-related value-field="planet" relation-name="PostalAddress"
+										list="planetAddresses" />
+								</actions>
+								<widgets>
+									<platform-specific>
+										<html>
+											<html-template
+												location="component://learning/webapp/learning/planetAddresses.ftl" />
+										</html>
+									</platform-specific>
+								</widgets>
+							</section>
+						</iterate-section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+
+	<screen name="TestFirstService">
+		<section>
+			<widgets>
+				<section>
+					<condition>
+						<if-empty field="formTarget" />
+					</condition>
+					<actions>
+						<set field="formTarget" value="TestFirstService" />
+						<set field="title" value="Testing Our First Service" />
+					</actions>
+					<widgets />
+				</section>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<include-form name="TestingServices"
+							location="component://learning/widget/learning/LearningForms.xml" />
+						<label text="Full Name: ${parameters.fullName}" />
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+
+	<screen name="TestFirstServiceOutput">
+		<section>
+			<actions>
+				<set field="formTarget" value="TestFirstServiceOutput" />
+			</actions>
+			<widgets>
+				<include-screen name="TestFirstService" />
+			</widgets>
+		</section>
+	</screen>
+
+	<screen name="TestCallingServices">
+		<section>
+			<actions>
+				<set field="formTarget" value="TestCallingServices" />
+			</actions>
+			<widgets>
+				<include-screen name="TestFirstService" />
+			</widgets>
+		</section>
+	</screen>
+
+	<screen name="TestCallingServicesWithPermission">
+		<section>
+			<actions>
+				<set field="formTarget" value="TestCallingServicesWithPermission" />
+			</actions>
+			<widgets>
+				<include-screen name="TestFirstService" />
+			</widgets>
+		</section>
+	</screen>
+
 </screens>

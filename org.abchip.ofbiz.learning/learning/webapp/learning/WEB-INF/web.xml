@@ -23,7 +23,7 @@
 		</filter-class>
 		<init-param>
 			<param-name>allowedPaths</param-name>
-			<param-value>/error:/includes:/control:/index.html:/index.jsp:/images</param-value>
+			<param-value>/www:/error:/includes:/control:/index.html:/index.jsp:/images</param-value>
 		</init-param>
 		<init-param>
 			<param-name>redirectPath</param-name>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+    <property key="Learning_ToBe_ToBeAboutTo">
+        <!--Essere impegnato in-->
+        <value xml:lang="it">Stare per</value>
+    </property>
+    <property key="Learning_ToBe_ToBeAfraidOf">
+        <value xml:lang="it">Avere paura di</value>
+    </property>
+    <property key="Learning_ToBe_ToBeAgainst">
+        <value xml:lang="it">Essere contro</value>
+    </property>
+    <property key="Learning_ToBe_ToBeAngry_About">
+        <value xml:lang="it">Essere arrabbiato per</value>
+    </property>
+    <!--My comment-->
+    <property key="Learning_ToBe_ToBeAngry_With">
+        <value xml:lang="it">Essere arrabbiato con</value>
+    </property>
+    <property key="Learning_ToBe_ToBeAshamedOf">
+        <value xml:lang="it">Vergognarsi di</value>
+    </property>
+    <property key="Learning_ToBe_ToBeAsleep">
+        <!--Addormentarsi-->
+        <value xml:lang="it">Essere addormentato</value>
+    </property>
+    <property key="Learning_ToBe_ToBeAway">
+        <value xml:lang="it">Essere via</value>
+    </property>
+    <property key="Learning_ToBe_ToBeBusy">
+        <value xml:lang="it">Essere indaffarato</value>
+    </property>
+    <property key="Learning_ToBe_ToBeCold">
+        <value xml:lang="it">Essere infreddolito</value>
+    </property>
+    <property key="Learning_ToBe_ToBeExpertAt">
+        <value xml:lang="it">Essere esperto nel</value>
+    </property>
+    <property key="Learning_ToBe_ToBeFor">
+        <value xml:lang="it">Essere favorevole a</value>
+    </property>
+    <property key="Learning_ToBe_ToBeGoodAt">
+        <value xml:lang="it">Essere capace di</value>
+    </property>
+    <property key="Learning_ToBe_ToBeHome">
+        <value xml:lang="it">Essere a casa</value>
+    </property>
+    <property key="Learning_ToBe_ToBeHot">
+        <value xml:lang="it">Essere accaldato</value>
+    </property>
+    <property key="Learning_ToBe_ToBeHungry">
+        <value xml:lang="it">Essere affamato</value>
+    </property>
+    <property key="Learning_ToBe_ToBeIn">
+        <!--Essere sul pezzo-->
+        <value xml:lang="it">Essere in casa</value>
+    </property>
+    <property key="Learning_ToBe_ToBeInAHurry">
+        <!--Essere in allerta-->
+        <value xml:lang="it">Avere fretta</value>
+    </property>
+    <property key="Learning_ToBe_ToBeLate">
+        <value xml:lang="it">Essere in ritardo</value>
+    </property>
+    <property key="Learning_ToBe_ToBeNew_At">
+        <value xml:lang="it">Essere nuovo a</value>
+    </property>
+    <property key="Learning_ToBe_ToBeNew_To">
+        <value xml:lang="it">Essere nuovo a</value>
+    </property>
+    <property key="Learning_ToBe_ToBeOnTime">
+        <value xml:lang="it">Essere in orario</value>
+    </property>
+    <property key="Learning_ToBe_ToBeOut">
+        <value xml:lang="it">Essere fuori</value>
+    </property>
+    <property key="Learning_ToBe_ToBeOver">
+        <!--Essere fuori uso-->
+        <value xml:lang="it">Essere finito</value>
+    </property>
+    <property key="Learning_ToBe_ToBeQuickAt">
+        <!--Essere pronto per-->
+        <value xml:lang="it">Essere veloce a</value>
+    </property>
+    <property key="Learning_ToBe_ToBeRight">
+        <value xml:lang="it">Essere nel giusto</value>
+    </property>
+    <property key="Learning_ToBe_ToBeSick">
+        <value xml:lang="it">Essere malato</value>
+    </property>
+    <property key="Learning_ToBe_ToBeThirsty">
+        <value xml:lang="it">Essere assetato</value>
+    </property>
+    <property key="Learning_ToBe_ToBeTired">
+        <value xml:lang="it">Essere stanco</value>
+    </property>
+    <property key="Learning_ToBe_ToBeUp">
+        <!--Essere di buon umore-->
+        <value xml:lang="it">Essere in piedi</value>
+    </property>
+    <property key="Learning_ToBe_ToBeWarm">
+        <value xml:lang="it">Essere accaldato</value>
+    </property>
+    <property key="Learning_ToBe_ToBeWell">
+        <value xml:lang="it">Essere in forma</value>
+    </property>
+    <property key="Learning_ToBe_ToBeWrong">
+        <value xml:lang="it">Essere in errore</value>
+    </property>
+    <property key="Learning_ToBe_ToBeYearsOld">
+        <value xml:lang="it">Essere vecchio di</value>
+    </property>
+</resource>

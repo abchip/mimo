@@ -75,4 +75,31 @@
 		</field>
 	</form>
 
+	<form name="PlanetDropDown" type="single" skip-start="true"
+		skip-end="true">
+		<field name="planetId" title="Planet" map-name="mechMap.postalAddress">
+			<drop-down allow-empty="true" current="selected">
+				<entity-options description="${planetName}"
+					entity-name="Planet" key-field-name="planetId" filter-by-date="true">
+					<entity-order-by field-name="planetName" />
+				</entity-options>
+			</drop-down>
+		</field>
+	</form>
+
+	<form name="TestingServices" type="single" target="${formTarget}">
+		<field name="firstName">
+			<text />
+		</field>
+		<field name="lastName">
+			<text />
+		</field>
+		<field name="planetId">
+			<text />
+		</field>
+		<field name="submit">
+			<submit />
+		</field>
+	</form>
+
 </forms>

@@ -44,4 +44,27 @@
 			</widgets>
 		</section>
 	</screen>
+
+	<screen name="editcontactmech.planet.dropdown">
+		<section>
+			<actions>
+				<!-- <entity-one entity-name="Planet" value-field="planet"> <field-map 
+					field-name="planetId" from-field="mechMap.postalAddress.planet" /> </entity-one> -->
+				<get-related-one value-field="mechMap.postalAddress"
+					relation-name="Planet" to-value-field="planet" />
+				<entity-condition entity-name="Planet"
+					filter-by-date="true" list="planets">
+					<order-by field-name="planetName" />
+				</entity-condition>
+			</actions>
+			<widgets>
+				<platform-specific>
+					<html>
+						<html-template
+							location="component://learning/webapp/partymgr/party/editcontactmech.planet.dropdown.ftl" />
+					</html>
+				</platform-specific>
+			</widgets>
+		</section>
+	</screen>
 </screens>

@@ -34,6 +34,18 @@
 		<menu-item name="RowMutatingFormScreen" title="Row Mutating Form Screen">
 			<link target="RowMutatingForm" />
 		</menu-item>		
+		<menu-item name="LearningToBe" title="Learning To Be">
+			<link target="LearningToBe" />
+		</menu-item>
+		<menu-item name="EditEntity" title="Edit Entity">
+			<link target="EditEntity" />
+		</menu-item>		
+		<menu-item name="EditContactMech" title="Edit Contact Mech">
+			<link target="EditContactMech" />
+		</menu-item>
+		<menu-item name="ShowPlanetManyRelation" title="Show Planet Relations">
+			<link target="ShowPlanetManyRelation" />
+		</menu-item>		
 	</menu>
 
 	<menu name="ConditionalScreenSubMenu">

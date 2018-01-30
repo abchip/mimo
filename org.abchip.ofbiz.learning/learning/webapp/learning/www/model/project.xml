@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<project name="omf">
+	<logo>
+	</logo>
+	<title>Object Modeling Framework</title>
+	<intro>
+<![CDATA[
+<div class="omf">
+		<h3 data-omf-link="package(omf).title" class="title"></h3>
+		
+		<acronym  title="Object Modeling Framework">OMF</acronym> <img src="./images/logo_omf_white_ico.png"/><br/>
+		
+		<p>
+			Finalizzato allo sviluppo di software, minimizza la dipendenza da tecnologie specifiche, orientando lo sviluppo ai problemi applicativi.<br/>			
+			Uniformita', estendibilita' e riutilizzo sono i principi fondanti del framework.<br/>
+		
+			<dl>
+				<dt>Uniformita'</dt>
+					<h3>Una specifica per parlare la stessa lingua</h3>
+					<dd>
+							Interfaccia comune di gestione degli oggetti, nessuna distinzione fra custom e core.<br/>
+							Ambiente di runtime unificato che facilita la portabilita', sviluppando logica e astraendosi dal dispositivo.<br/>
+							Apprendimento rapido grazie a un modello di sviluppo semplice e ricorsivo in tutte le sue componenti.<br/>		
+					</dd>
+				<dt>Estendibilita</dt>
+					<h3>Un ambiente per integrare conoscenze specifiche</h3>
+					<dd>
+							Nativamente basato su un meccanismo a plugin, consente di essere esteso e integrato in ogni sua funzionalita'.<br/>
+							Supporta componenti di terze parti, favorendo lo scambio e l'integrazione dei modelli dati e dei plugin sviluppati.<br/>	
+					</dd>
+				<dt>Riutilizzo</dt>
+					<h3>Preservare il passato e' garanzia di futuro</h3>
+					<dd>
+							Ambiente di runtime basato su oggetti proxy, interfaccia modelli esistenti estendendone le funzionalita'.<br/>
+							Un motore logico per minimizzare la codifica di informazioni, ma aumentare la conoscenza. 
+					</dd>
+			</dl>
+		</p>
+</div>
+]]>
+	</intro>
+	<part>project(omf).intro</part>
+	<part>package(model)</part>
+	<part>package(runtime)</part>
+</project>

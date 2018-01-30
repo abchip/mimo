@@ -6,7 +6,7 @@
     
     <request-map uri="PostalAddressAdvisory">
         <security https="true" auth="true"/>
-        <event type="java" path="org.abchip.ofbiz.learning.CommunicationEventCheck" invoke="checkMars"/>        
+        <event type="java" path="org.abchip.ofbiz.learning.LearningEvents" invoke="checkMars"/>        
         <response name="isMars" type="view" value="PostalAddressAdvisory"/>
         <response name="notMars" type="view" value="editcontactmech"/>
     </request-map>
