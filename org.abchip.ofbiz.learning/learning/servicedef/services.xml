@@ -4,60 +4,11 @@
 	xsi:noNamespaceSchemaLocation="http://www.ofbiz.org/dtds/services.xsd">
 	<description>Learning Component Services</description>
 
-	<service name="learningInterface" engine="interface">
-		<description>Interface to describe base parameters for Learning Services</description>
-		<attribute name="firstName" type="String" mode="IN"
-			optional="false" />
-		<attribute name="lastName" type="String" mode="IN" optional="false" />
-		<attribute name="planetId" type="String" mode="IN" optional="false" />
-		<attribute name="fullName" type="String" mode="OUT"
+	<service name="learningSelectQuestion" engine="java"
+		location="org.abchip.ofbiz.learning.LearningServices" invoke="selectQuestion">
+		<description>Select Learning Question</description>
+		<attribute name="question" type="String" mode="OUT"
 			optional="true" />
 	</service>
-
-	<service name="learningFirstService" engine="java"
-		location="org.abchip.ofbiz.learning.LearningServices" invoke="handleParameters">
-		<description>Our First Service</description>
-		<attribute name="firstName" type="String" mode="IN"
-			optional="true" />
-		<attribute name="lastName" type="String" mode="IN" optional="true" />
-		<attribute name="planetId" type="String" mode="IN" optional="true" />
-		<attribute name="fullName" type="String" mode="INOUT"
-			optional="true" />
-	</service>
-
-	<service name="learningServiceWithAuth" engine="java"
-		location="org.abchip.ofbiz.learning.LearningServices" invoke="serviceWithAuth">
-		<description>Service with some security-related codes</description>
-	</service>
-
-	<service name="learningCallingServiceOne" engine="java"
-		location="org.abchip.ofbiz.learning.LearningServices" invoke="callingServiceOne">
-		<description>First Service Called From The Controller</description>
-		<implements service="learningInterface" />
-		<attribute name="planetId" type="String" mode="IN" optional="false" />
-	</service>
-
-	<service name="learningCallingServiceOneWithPermission" engine="java"
-		location="org.abchip.ofbiz.learning.LearningServices" invoke="callingServiceOne">
-		<description>First Service Called From The Controller</description>
-		<required-permissions join-type="OR">
-			<check-permission permission="LEARN_VIEW"/>
-		</required-permissions>
-		<implements service="learningInterface" />
-		<attribute name="planetId" type="String" mode="IN" optional="false" />		
-	</service>
-
-	<service name="learningCallingServiceTwo" engine="java"
-		location="org.abchip.ofbiz.learning.LearningServices" invoke="callingServiceTwo">
-		<description>Second Service Called From Service One</description>
-		<attribute name="planetId" type="String" mode="IN" optional="false" />
-	</service>
-
-	<service name="learningCallingServiceECA" engine="java"
-		location="org.abchip.ofbiz.learning.LearningServices" invoke="callingServiceECA">
-		<description>ECA Service Called From Service One</description>
-		<attribute name="entityInstance" type="org.apache.ofbiz.entity.GenericValue"
-			mode="IN" optional="true" />
-	</service>
-
+	
 </services>

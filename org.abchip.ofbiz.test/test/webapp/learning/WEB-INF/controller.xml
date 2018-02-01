@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://ofbiz.apache.org/Site-Conf"
+	xsi:schemaLocation="http://ofbiz.apache.org/Site-Conf http://ofbiz.apache.org/dtds/site-conf.xsd">
+
+	<description>ABChip OFBiz Test Configuration</description>
+
+	<request-map uri="Test">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="TestScreen" />
+	</request-map>
+	<request-map uri="SimplestScreen">
+		<response name="success" type="view" value="SimplestScreen" />
+	</request-map>
+	<request-map uri="ConditionalScreen">
+		<response name="success" type="view" value="ConditionalScreen" />
+	</request-map>
+	<request-map uri="NestedScreen">
+		<response name="success" type="view" value="NestedScreen" />
+	</request-map>
+	<request-map uri="GlobalContextScreen">
+		<response name="success" type="view" value="GlobalContextScreen" />
+	</request-map>
+	<request-map uri="CompoundedScreen">
+		<response name="success" type="view" value="CompoundedScreen" />
+	</request-map>
+	<request-map uri="OneForm">
+		<response name="success" type="view" value="OneFormScreen" />
+	</request-map>
+	<request-map uri="ListForm">
+		<response name="success" type="view" value="ListFormScreen" />
+	</request-map>
+	<request-map uri="MultiForm">
+		<response name="success" type="view" value="MultiFormScreen" />
+	</request-map>
+	<request-map uri="TwoTargetForm">
+		<response name="success" type="view" value="TwoTargetFormScreen" />
+	</request-map>
+	<request-map uri="RowMutatingForm">
+		<response name="success" type="view" value="RowMutatingFormScreen" />
+	</request-map>
+	<request-map uri="processFirstForm">
+		<event type="java" path="org.abchip.ofbiz.test.TestEvents"
+			invoke="processFirstForm" />
+		<response name="success" type="view-last" />
+	</request-map>
+	<request-map uri="processListForm">
+		<event type="java" path="org.abchip.ofbiz.test.TestEvents"
+			invoke="processFirstForm" />
+		<response name="success" type="view-last" />
+	</request-map>
+	<request-map uri="processMultiForm">
+		<event type="java" path="org.abchip.ofbiz.test.TestEvents"
+			invoke="processMultiForm" />
+		<response name="success" type="view-last" />
+	</request-map>
+	<request-map uri="TestFirstService">
+		<event type="service" invoke="testFirstService" />
+		<response name="success" type="view" value="TestFirstService" />
+	</request-map>
+	<request-map uri="TestFirstServiceOutput">
+		<event type="service" invoke="testFirstService" />
+		<response name="success" type="view" value="TestFirstServiceOutput" />
+	</request-map>
+	<request-map uri="TestServiceWithAuth">
+		<security auth="true" https="true" />
+		<event type="service" invoke="testServiceWithAuth" />
+		<response name="success" type="view" value="SimplestScreen" />
+		<response name="error" type="view" value="login" />
+	</request-map>
+	<request-map uri="TestCallingServices">
+		<security auth="false" https="false" />
+		<event type="service" invoke="testCallingServiceOne" />
+		<response name="success" type="view" value="TestCallingServices" />
+		<response name="error" type="view" value="TestCallingServices" />
+	</request-map>
+	<request-map uri="TestPermissions">
+		<security auth="true" https="true" />
+		<response name="success" type="view"
+			value="TestCallingServicesWithPermission" />
+		<response name="error" type="view" value="login" />
+	</request-map>
+	<request-map uri="TestCallingServicesWithPermission">
+		<security auth="true" https="true" />
+		<event type="service" invoke="testCallingServiceOneWithPermission" />
+		<response name="success" type="view"
+			value="TestCallingServicesWithPermission" />
+		<response name="error" type="view"
+			value="TestCallingServicesWithPermission" />
+	</request-map>
+
+	<view-map name="TestScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#TestScreen" />
+	<view-map name="SimplestScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#SimplestScreen" />
+	<view-map name="ConditionalScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#ConditionalScreen" />
+	<view-map name="NestedScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#NestedScreen" />
+	<view-map name="GlobalContextScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#GlobalContextScreen" />
+	<view-map name="CompoundedScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#CompoundedScreen" />
+	<view-map name="OneFormScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#OneFormScreen" />
+	<view-map name="ListFormScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#ListFormScreen" />
+	<view-map name="MultiFormScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#MultiFormScreen" />
+	<view-map name="TwoTargetFormScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#TwoTargetFormScreen" />
+	<view-map name="RowMutatingFormScreen" type="screen"
+		page="component://test/widget/test/TestScreens.xml#RowMutatingFormScreen" />
+	<view-map name="TestFirstService" type="screen"
+		page="component://test/widget/test/TestScreens.xml#TestFirstService" />
+	<view-map name="TestFirstServiceOutput" type="screen"
+		page="component://test/widget/test/TestScreens.xml#TestFirstServiceOutput" />
+	<view-map name="TestCallingServices" type="screen"
+		page="component://test/widget/test/TestScreens.xml#TestCallingServices" />
+	<view-map name="TestCallingServicesWithPermission" type="screen"
+		page="component://test/widget/test/TestScreens.xml#TestCallingServicesWithPermission" />
+</site-conf>

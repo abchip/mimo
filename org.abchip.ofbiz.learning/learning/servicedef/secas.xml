@@ -2,9 +2,9 @@
 <service-eca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/service-eca.xsd">
 
-    <eca service="learningCallingServiceOne" event="global-rollback">
+    <eca service="testCallingServiceOne" event="global-rollback">
         <condition field-name="planetId" operator="equals" value="mars"/>
-        <action service="learningCallingServiceECA" mode="sync"/>
+        <action service="testCallingServiceECA" mode="sync"/>
     </eca>
 
 </service-eca>

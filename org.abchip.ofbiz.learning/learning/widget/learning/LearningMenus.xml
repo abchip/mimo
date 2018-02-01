@@ -3,68 +3,35 @@
 	xmlns="http://ofbiz.apache.org/Widget-Menu"
 	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Menu http://ofbiz.apache.org/dtds/widget-menu.xsd">
 
-	<menu name="TopMenu" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
-		<menu-item name="SimplestScreen" title="Simplest Screen">
-			<link target="SimplestScreen" />
+	<menu name="TopMenu" extends="CommonAppBarMenu"
+		extends-resource="component://common/widget/CommonMenus.xml">
+		<menu-item name="Test" title="Test">
+			<link target="Test" />
 		</menu-item>
-		<menu-item name="ConditionalScreen" title="Conditional Screen">
-			<link target="ConditionalScreen" />
+		<menu-item name="Learning" title="Learning">
+			<link target="Learning" />
 		</menu-item>
-		<menu-item name="NestedScreen" title="Nested Screen">
-			<link target="NestedScreen" />
+		<menu-item name="Entity" title="Entity">
+			<link target="Entity" />
 		</menu-item>
-		<menu-item name="GlobalContextScreen" title="Global Context Screen">
-			<link target="GlobalContextScreen" />
-		</menu-item>
-		<menu-item name="CompoundedScreen" title="Compounded Screen">
-			<link target="CompoundedScreen" />
-		</menu-item>
-		<menu-item name="OneFormScreen" title="One Form Screen">
-			<link target="OneForm" />
-		</menu-item>
-		<menu-item name="ListFormScreen" title="List Form Screen">
-			<link target="ListForm" />
-		</menu-item>
-		<menu-item name="MultiFormScreen" title="Multi Form Screen">
-			<link target="MultiForm" />
-		</menu-item>
-		<menu-item name="TwoTargetFormScreen" title="Two Target Form Screen">
-			<link target="TwoTargetForm" />
-		</menu-item>
-		<menu-item name="RowMutatingFormScreen" title="Row Mutating Form Screen">
-			<link target="RowMutatingForm" />
-		</menu-item>		
+	</menu>
+	<menu name="LearningMenu" title="Learning Menu">
+		<menu-item name="QuestionForm" title="Question">
+			<link target="QuestionForm" />
+		</menu-item>	
 		<menu-item name="LearningToBe" title="Learning To Be">
 			<link target="LearningToBe" />
 		</menu-item>
+	</menu>
+	<menu name="EntityMenu" title="Entity Menu">
 		<menu-item name="EditEntity" title="Edit Entity">
 			<link target="EditEntity" />
-		</menu-item>		
+		</menu-item>
 		<menu-item name="EditContactMech" title="Edit Contact Mech">
 			<link target="EditContactMech" />
 		</menu-item>
 		<menu-item name="ShowPlanetManyRelation" title="Show Planet Relations">
 			<link target="ShowPlanetManyRelation" />
-		</menu-item>		
-	</menu>
-
-	<menu name="ConditionalScreenSubMenu">
-		<menu-item name="showWidgets" title="Show widgets">
-			<condition>
-				<if-compare field="parameters.show" operator="not-equals"
-					value="widgets" />
-			</condition>
-			<link target="ConditionalScreen">
-				<parameter param-name="show" value="widgets" />
-			</link>
-		</menu-item>
-		<menu-item name="showFailWidgets" title="Show fail-widgets">
-			<condition>
-				<if-compare field="parameters.show" operator="equals"
-					value="widgets" />
-			</condition>
-			<link target="ConditionalScreen" />
 		</menu-item>
 	</menu>
-
 </menus>

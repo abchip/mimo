@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.ofbiz.org/dtds/entitymodel.xsd">
+
+	<extend-entity entity-name="PostalAddress">
+		<field name="planetId" type="id"></field>
+		<relation type="one" fk-name="POST_ADDR_PLANET"
+			rel-entity-name="Planet">
+			<key-map field-name="planetId" />
+		</relation>
+	</extend-entity>
+
+	<entity entity-name="Planet" package-name="org.abchip.ofbiz.test">
+		<field name="planetId" type="id-ne" />
+		<field name="planetName" type="name" />
+		<field name="fromDate" type="date-time" />
+		<field name="thruDate" type="date-time" />
+		<prim-key field="planetId" />
+		<index name="PLANET_NAME_IDX" unique="true">
+			<index-field name="planetName" />
+		</index>
+	</entity>
+	<entity entity-name="PersonL" package-name="org.abchip.ofbiz.test">
+		<field name="personId" type="id-ne"></field>
+		<field name="firstName" type="name"></field>
+		<field name="lastName" type="name"></field>
+		<field name="housedAt" type="id"></field>
+		<field name="someExtraDetails" type="description"></field>
+		<prim-key field="personId" />
+		<relation type="one-nofk" fk-name="PERSON_HOTEL"
+			rel-entity-name="HotelL">
+			<key-map field-name="housedAt" rel-field-name="hotelId" />
+		</relation>
+	</entity>
+	<entity entity-name="HotelL" package-name="org.abchip.ofbiz.test">
+		<field name="hotelId" type="id-ne"></field>
+		<field name="hotelName" type="name"></field>
+		<field name="ownedBy" type="id"></field>
+		<field name="postalAddressId" type="id"></field>
+		<prim-key field="hotelId" />
+		<relation type="one-nofk" fk-name="HOTEL_OWNER"
+			rel-entity-name="PersonL">
+			<key-map field-name="ownedBy" rel-field-name="personId" />
+		</relation>
+	</entity>
+
+	<view-entity entity-name="GuestHotelOwnerViewL"
+		package-name="org.abchip.ofbiz.test">
+		<member-entity entity-alias="HotelGuest" entity-name="PersonL" />
+		<member-entity entity-alias="Hotel" entity-name="HotelL" />
+		<member-entity entity-alias="HotelOwner" entity-name="PersonL" />
+		<alias entity-alias="HotelGuest" name="guestFirstName" field="firstName" />
+		<alias entity-alias="HotelGuest" name="guestLastName" field="lastName" />
+		<alias entity-alias="Hotel" name="hotelName" field="hotelName" />
+		<alias entity-alias="HotelOwner" name="ownerFirstName" field="firstName" />
+		<alias entity-alias="HotelOwner" name="ownerLastName" field="lastName" />
+		<view-link entity-alias="HotelGuest" rel-entity-alias="Hotel">
+			<key-map field-name="housedAt" rel-field-name="hotelId" />
+		</view-link>
+		<view-link entity-alias="Hotel" rel-entity-alias="HotelOwner">
+			<key-map field-name="ownedBy" rel-field-name="personId" />
+		</view-link>
+	</view-entity>
+	<view-entity entity-name="GuestHotelOwnerViewAllL"
+		package-name="org.abchip.ofbiz.test">
+		<member-entity entity-alias="HotelGuest" entity-name="PersonL" />
+		<member-entity entity-alias="Hotel" entity-name="HotelL" />
+		<member-entity entity-alias="HotelOwner" entity-name="PersonL" />
+		<alias-all entity-alias="HotelGuest" prefix="guest">
+			<exclude field="id" />
+			<exclude field="housedAt" />
+			<exclude field="someExtraDetails" />
+		</alias-all>
+		<alias-all entity-alias="Hotel" prefix="hotel">
+			<exclude field="hotelId" />
+			<exclude field="ownedBy" />
+		</alias-all>
+		<alias-all entity-alias="HotelOwner" prefix="owner">
+			<exclude field="personId" />
+			<exclude field="housedAt" />
+			<exclude field="someExtraDetails" />
+		</alias-all>
+		<view-link entity-alias="HotelGuest" rel-entity-alias="Hotel">
+			<key-map field-name="housedAt" rel-field-name="hotelId" />
+		</view-link>
+		<view-link entity-alias="Hotel" rel-entity-alias="HotelOwner">
+			<key-map field-name="ownedBy" rel-field-name="personId" />
+		</view-link>
+	</view-entity>
+	<view-entity entity-name="TestAggregate" package-name="org.abchip.ofbiz.test">
+		<member-entity entity-alias="PA" entity-name="PostalAddress" />
+		<alias entity-alias="PA" name="contactMechId" function="count" />
+	</view-entity>
+	<view-entity entity-name="TestCountDistinct" package-name="org.abchip.ofbiz.test">
+		<member-entity entity-alias="PA" entity-name="PostalAddress" />
+		<alias entity-alias="PA" name="city" function="count-distinct" />
+	</view-entity>
+	<view-entity entity-name="TestUpperLower" package-name="org.abchip.ofbiz.test">
+		<member-entity entity-alias="PA" entity-name="PostalAddress" />
+		<alias-all entity-alias="PA" />
+		<alias entity-alias="PA" name="upperToName" field="toName"
+			function="upper" />
+		<alias entity-alias="PA" name="lowerAddress1" field="address1"
+			function="lower" />
+	</view-entity>
+	<view-entity entity-name="TestGrouping" package-name="org.abchip.ofbiz.test">
+		<member-entity entity-alias="PA" entity-name="PostalAddress" />
+		<alias entity-alias="PA" name="count" field="contactMechId"
+			function="count" />
+		<alias entity-alias="PA" name="city" group-by="true" />
+	</view-entity>
+</entitymodel>

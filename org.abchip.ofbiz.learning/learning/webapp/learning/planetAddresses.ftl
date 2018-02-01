@@ -1,9 +1,9 @@
 <b>Planet: <i>${planet.planetName}</i></b>
 <br/>
-<table class="basic-table">
+<table cellspacing="0" class="basic-table hover-bar">
 <thead>
 <tr class="header-row-2">
-<td>contactMechId</td>
+<td>ContactMechId</td>
 <td>Address</td>
 <td>City</td>
 <td>Postal Code</td>

@@ -7,42 +7,24 @@
 	<include location="component://common/webcommon/WEB-INF/common-controller.xml" />
 	<include location="component://commonext/webapp/WEB-INF/controller.xml" />
 
-	<description>ABChip OFBiz Configuration File</description>
+	<description>ABChip OFBiz Learning Configuration</description>
 
 	<request-map uri="main">
 		<security https="true" auth="true" />
 		<response name="success" type="view" value="MainScreen" />
 	</request-map>
-	<request-map uri="SimplestScreen">
-		<response name="success" type="view" value="SimplestScreen" />
+	<request-map uri="Learning">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="LearningScreen" />
 	</request-map>
-	<request-map uri="ConditionalScreen">
-		<response name="success" type="view" value="ConditionalScreen" />
+	<request-map uri="Entity">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="EntityScreen" />
 	</request-map>
-	<request-map uri="NestedScreen">
-		<response name="success" type="view" value="NestedScreen" />
-	</request-map>
-	<request-map uri="GlobalContextScreen">
-		<response name="success" type="view" value="GlobalContextScreen" />
-	</request-map>
-	<request-map uri="CompoundedScreen">
-		<response name="success" type="view" value="CompoundedScreen" />
-	</request-map>
-	<request-map uri="OneForm">
-		<response name="success" type="view" value="OneFormScreen" />
-	</request-map>
-	<request-map uri="ListForm">
-		<response name="success" type="view" value="ListFormScreen" />
-	</request-map>
-	<request-map uri="MultiForm">
-		<response name="success" type="view" value="MultiFormScreen" />
-	</request-map>
-	<request-map uri="TwoTargetForm">
-		<response name="success" type="view" value="TwoTargetFormScreen" />
-	</request-map>
-	<request-map uri="RowMutatingForm">
-		<response name="success" type="view" value="RowMutatingFormScreen" />
-	</request-map>
+	<request-map uri="QuestionForm">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="QuestionFormScreen" />
+	</request-map>	
 	<request-map uri="LearningToBe">
 		<response name="success" type="request-redirect"
 			value="../../webtools/control/SearchLabels">
@@ -65,90 +47,25 @@
 				value="org.abchip.ofbiz.learning" />
 		</response>
 	</request-map>
-	<request-map uri="processFirstForm">
-		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
-			invoke="processFirstForm" />
-		<response name="success" type="view-last" />
-	</request-map>
-	<request-map uri="processListForm">
-		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
-			invoke="processFirstForm" />
-		<response name="success" type="view-last" />
-	</request-map>
-	<request-map uri="processMultiForm">
-		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
-			invoke="processMultiForm" />
-		<response name="success" type="view-last" />
-	</request-map>
 	<request-map uri="ShowPlanetManyRelation">
 		<security https="true" auth="true" />
 		<response name="success" type="view" value="ShowPlanetManyRelation" />
 	</request-map>
-	<request-map uri="TestFirstService">
-		<event type="service" invoke="learningFirstService" />
-		<response name="success" type="view" value="TestFirstService" />
-	</request-map>
-	<request-map uri="TestFirstServiceOutput">
-		<event type="service" invoke="learningFirstService" />
-		<response name="success" type="view" value="TestFirstServiceOutput" />
-	</request-map>
-	<request-map uri="TestServiceWithAuth">
-		<security auth="true" https="true" />
-		<event type="service" invoke="learningServiceWithAuth" />
-		<response name="success" type="view" value="SimplestScreen" />
-		<response name="error" type="view" value="login" />
-	</request-map>
-	<request-map uri="TestCallingServices">
-		<security auth="false" https="false" />
-		<event type="service" invoke="learningCallingServiceOne" />
-		<response name="success" type="view" value="TestCallingServices" />
-		<response name="error" type="view" value="TestCallingServices" />
-	</request-map>
-	<request-map uri="TestPermissions">
-		<security auth="true" https="true" />
-		<response name="success" type="view"
-			value="TestCallingServicesWithPermission" />
-		<response name="error" type="view" value="login" />
-	</request-map>
-	<request-map uri="TestCallingServicesWithPermission">
-		<security auth="true" https="true" />
-		<event type="service" invoke="learningCallingServiceOneWithPermission" />
-		<response name="success" type="view"
-			value="TestCallingServicesWithPermission" />
-		<response name="error" type="view"
-			value="TestCallingServicesWithPermission" />
-	</request-map>
+	<request-map uri="processQuestionForm">
+		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
+			invoke="processQuestion" />
+		<response name="success" type="view-last" />
+	</request-map>	
+	
 
 	<view-map name="MainScreen" type="screen"
 		page="component://learning/widget/learning/LearningScreens.xml#MainScreen" />
-	<view-map name="SimplestScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#SimplestScreen" />
-	<view-map name="ConditionalScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#ConditionalScreen" />
-	<view-map name="NestedScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#NestedScreen" />
-	<view-map name="GlobalContextScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#GlobalContextScreen" />
-	<view-map name="CompoundedScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#CompoundedScreen" />
-	<view-map name="OneFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#OneFormScreen" />
-	<view-map name="ListFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#ListFormScreen" />
-	<view-map name="MultiFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#MultiFormScreen" />
-	<view-map name="TwoTargetFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#TwoTargetFormScreen" />
-	<view-map name="RowMutatingFormScreen" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#RowMutatingFormScreen" />
+	<view-map name="LearningScreen" type="screen"
+		page="component://learning/widget/learning/LearningScreens.xml#LearningScreen" />
+	<view-map name="QuestionFormScreen" type="screen"
+		page="component://learning/widget/learning/LearningScreens.xml#QuestionFormScreen" />		
+	<view-map name="EntityScreen" type="screen"
+		page="component://learning/widget/learning/LearningScreens.xml#EntityScreen" />
 	<view-map name="ShowPlanetManyRelation" type="screen"
 		page="component://learning/widget/learning/LearningScreens.xml#ShowPlanetManyRelation" />
-	<view-map name="TestFirstService" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#TestFirstService" />
-	<view-map name="TestFirstServiceOutput" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#TestFirstServiceOutput" />
-	<view-map name="TestCallingServices" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#TestCallingServices" />
-	<view-map name="TestCallingServicesWithPermission" type="screen"
-		page="component://learning/widget/learning/LearningScreens.xml#TestCallingServicesWithPermission" />
 </site-conf>
