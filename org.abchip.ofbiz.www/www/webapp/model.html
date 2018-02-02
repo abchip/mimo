@@ -1,0 +1,252 @@
+<html>
+<body>
+
+	<div id="cell_red"></div>
+	<div id="cell_blu"></div>
+	<div id="cell_yellow"></div>
+	<div id="cell_grey"></div>
+
+	<div id="home_intro">
+		Intelligence Augmentation<br /> <br />
+		Uno spazio dove sperimentare <br /> innovazioni software 
+
+	</div>
+
+	<div id="home_logo">
+		<a href="./index.html"> <img src="./images/logo_abchip_small.png"
+			alt="" border="0">
+		</a>
+	</div>
+
+	<div id="home_channels">
+		<ul type="SQUARE">
+			<li><a href="mailto:info@abchip.org"
+				style="text-decoration: none;">mail</a></li>
+			<li>phone</li>
+		</ul>
+	</div>
+
+	<div id="home_members">
+		<ul type="SQUARE">
+			<li>Andrea</li>
+			<li>Martin</li>
+			<li>Mattia</li>
+		</ul>
+	</div>
+
+	<div id="home_projects">
+		<ul type="SQUARE">
+			<li><a href="./project.html?project_name=omf">OMF - Modeling
+					Framework</a></li>
+			<li><a href="./project.html?project_name=say">TALK &nbsp; -
+					Machine Conversation</a></li>
+		</ul>
+	</div>
+
+	<div id="home_devs">
+		<ul type="SQUARE">
+			<li><a href="../learning">Learning</a></li>
+			<li><a href="../test">Test</a></li>			
+		</ul>
+	</div>
+
+	<div id="home_services">
+		<ul type="SQUARE">
+			<li><a href="../test/control/SimplestScreen">Test</a></li>			
+		</ul>
+	</div>
+	
+	<div id="say_logo">
+		<img src="./images/logo_say_small.png">
+	</div>
+
+	<div id="say_title">SAY</div>
+	<div id="say_summary">
+		<ul type="SQUARE">
+			<li onclick="javascript:loadText('project_text', 'say_home');"><a
+				href="#">Presentazione</a></li>
+		</ul>
+	</div>
+	<div style="display: none" id="say_home">Home</div>
+
+	<div id="omf_logo">
+		<div align="center">
+			<img src="./images/logo_omf_white_small.png">
+		</div>
+	</div>
+
+	<div id="omf_summary">
+		<ul type="SQUARE">
+			<li
+				onclick="javascript:setContent(2, 1, 'omf_intro', 'Intro', 'text');"><a
+				href="#">Intro</a></li>
+			<li
+				onclick="javascript:setContent(2, 1, 'omf_parts', 'Componenti', 'text');"><a
+				href="#">Componenti</a></li>
+			<li><a href="#">Utilizzi</a></li>
+			<li><a href="#">Esempi</a></li>
+			<li><a href="#">Plugin</a></li>
+			<li><a href="#">Source</a></li>
+		</ul>
+	</div>
+
+
+	<div id="omf_parts">
+		<ul type="SQUARE">
+			<li
+				onclick="javascript:setContent(2, 1, 'omf_part_model', 'Componenti / Model', 'text');">
+				<div>
+					<a href="#"><span style="vertical-align: bottom;"><b>Model</b></span>
+						<img src="./images/slide.png" /></a>
+				</div> Strumento per rappresentare modelli di dati all'interno di uno
+				specifico dominio.<br>
+			</li>
+			<br/>
+			<li
+				onclick="javascript:setContent(2, 1, 'omf_part_runtime', 'Componenti / Runtime', 'text');">
+				<div>
+					<a href="#"><span style="vertical-align: center;"><b>Runtime</b></span><img
+						src="./images/slide.png" /></a>
+					<div>Ambiente di esecuzione del modello dati.
+			</li>
+			<br/>
+			<li>Persistence</li>
+			<li>Reasoner</li>
+		</ul>
+	</div>
+
+	<div id="omf_part_model">
+		Trae le sue fondamenta teoriche nel modello di rappresentazione della
+		conoscenza proposto da M. Minsky, caratterizzato dai concetti di
+		Frame/Slot/Facet.<br>
+		<ul type="SQUARE">
+			<li><b>Frame</b> L'elemento oggetto della definizione.
+				<div style="padding-top: 0.5em">
+					E' una struttura composta, assimilabile a un <i>Record</i> in
+					Pascal, una <i>Structure</i> in linguaggio C o a una <i>Class</i>
+					in Java<br> Implementa ereditarieta' ibrida tramite il legame
+					<i>ako</i> (a-kind-of) e <i>usa</i> (used-as).<br> Una sola
+					natura, ma tanti ruoli che possono essere interpretati, e' un
+					approccio, gia' collaudato in linguaggi come Java e garantisce
+					flessibilita' e semplicita' allo stesso tempo.<br> Contiene
+					caratteristiche statiche (proprieta') e dinamiche (comportamenti)
+					denominate slot.<br>
+				</div> <br> All'interno dei componenti <i>modeling</i>, <i>runtime</i>
+				e <i>persistence</i> sono definiti i frame necessari al framework
+				stesso:
+				<ul type="DISC">
+					<li><b>modeling</b> frame, slot, facet</li>
+					<li><b>runtime</b> system, session, engine, service, agent,
+						driver</li>
+					<li><b>persistence</b> sql-table, sql-field</li>
+				</ul></li>
+			<br>
+			<li><b>Slot</b> E' una proprieta' o un comportamento del frame.
+				<div style="padding-top: 0.5em">
+					Puo' rappresentare informazioni statiche come colore, lunghezza o
+					materiale, ma anche procedurali come distanza, eta' o condizioni di
+					alert.<br> Ogni proprieta' del frame puo' essere a sua volta
+					collegata ad un altro frame, eventualmente specificando vincoli sul
+					valore, costruendo quindi una rete di frame a sua volta collegabile
+					ad altre reti.<br> Uno slot possiede differenti valori o
+					angolazioni con cui puo' essere rappresentato, chiamati facet.<br>
+				</div> <br> All'interno dei componenti <i>modeling</i> e <i>runtime</i>
+				sono definiti gli slot necessari al framework stesso:
+				<ul type="DISC">
+					<li><b>modeling</b> ako, usa, name</li>
+					<li><b>runtime</b> isa</li>
+				</ul></li>
+			<br>
+			<li><b>Facet</b> Un punto di vista sullo slot.
+				<div style="padding-top: 0.5em">
+					Una determinata proprieta' del frame puo' essere analizzata
+					attraverso molteplici facet.<br> Un facet puo' essere
+					considerato un punto di vista sullo slot, o in altri termini un <i>metaslot</i>.
+				</div>
+				<div style="padding-top: 0.5em">
+					All'interno del componente <i>modeling</i> sono definiti i facet:
+				</div>
+				<ul type="DISC">
+					<li><b>value</b> Il valore della proprieta'</li>
+					<li><b>container</b> Il contenitore del valore: single,
+						collection, set, map</li>
+					<li><b>domain</b> Dominio di validita' dei valori</li>
+					<li><b>constraint</b> I vincoli di validita' dei valori</li>
+					<li><b>cardinality</b> Il numero di valori</li>
+					<li><b>default-value</b> Il valore di default assunto</li>
+					<li><b>main-value</b> Il valore minimo</li>
+					<li><b>max-value</b> Il valore massimo</li>
+				</ul>
+				<div style="padding-top: 0.5em">
+					il componente <i>runtime</i> definisce i facet:
+					<ul type="DISC">
+						<li><b>procedure</b> La procedura da eseguire per ottenere il
+							valore</li>
+					</ul>
+				</div>
+				<div style="padding-top: 0.5em">
+					il componente <i>proxy</i> definisce i facet:
+					<ul type="DISC">
+						<li><b>sql-field</b> Il campo della tabella sql contenente il
+							valore</li>
+					</ul>
+				</div>
+				<div style="padding-top: 0.5em">
+					un componente <i>custom</i> potrebbe definire:
+					<ul type="DISC">
+						<li><b>expire-value</b> Scadenza del valore</li>
+					</ul>
+				</div></li>
+		</ul>
+	</div>
+
+	<div id="omf_part_runtime">
+		E' costituito da un ambiente unificato che consente allo sviluppatore
+		di astrarsi dal dispositivo di esecuzione.<br> Solo in fase di
+		deploy vengono decise le componenti di:<br>
+		<ul type="SQUARE">
+			<li><b>Persistenza:</b> Il contenitore fisico dei dati.</li>
+			<li><b>Interfaccia:</b> Interazione con l'agente, sia esso un
+				dispositivo mobile, un sistema desk e un server remoto.</li>
+			<li><b>Distribuzione:</b> Localizzazione delle componenti.</li>
+		</ul>
+		<br> <br>
+		<div>
+			<b>Proxy</b>
+		</div>
+		Ogni oggetto del sistema è acceduto tramite un driver specifico,
+		nascondendo la complessità dell'oggetto trattato e facilitando la sua
+		manutenzione/sostituazione.<br> <br>
+		<div>
+			<b>Agent</b>
+		</div>
+		<div>
+			<b>Shell</b>
+		</div>
+		<div>
+			<b>Reasoner</b>
+		</div>
+		<div>
+			<b>Interpreter</b>
+		</div>
+		<div>
+			<b>Compiler</b>
+		</div>
+		<div>
+			<b>Agent</b>
+		</div>
+		<div>
+			<b>Shell</b>
+		</div>
+		<div>
+			<b>Reasoner</b>
+		</div>
+		<div>
+			<b>Interpreter</b>
+		</div>
+		<div>
+			<b>Compiler</b>
+		</div>
+	</div>
+</body>
+</html>

@@ -55,8 +55,7 @@
 		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
 			invoke="processQuestion" />
 		<response name="success" type="view-last" />
-	</request-map>	
-	
+	</request-map>		
 
 	<view-map name="MainScreen" type="screen"
 		page="component://learning/widget/learning/LearningScreens.xml#MainScreen" />

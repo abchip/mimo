@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entitygroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.ofbiz.org/dtds/entitygroup.xsd">
-	<entity-group group="org.abchip.ofbiz.learning" entity="Planet" />	
-	<entity-group group="org.abchip.ofbiz.learning" entity="PersonL" />
-	<entity-group group="org.abchip.ofbiz.learning" entity="HotelL" />
-	<entity-group group="org.abchip.ofbiz.learning" entity="GuestHotelOwnerViewL" />
-	<entity-group group="org.abchip.ofbiz.learning" entity="GuestHotelOwnerViewAllL" />
-	<entity-group group="org.abchip.ofbiz.learning" entity="TestAggregate" />
-	<entity-group group="org.abchip.ofbiz.learning" entity="TestCountDistinct" />
-	<entity-group group="org.abchip.ofbiz.learning" entity="TestUpperLower" />
-	<entity-group group="org.abchip.ofbiz.learning" entity="TestGrouping" />
 </entitygroup>

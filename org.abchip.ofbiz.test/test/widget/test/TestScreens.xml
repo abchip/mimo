@@ -3,6 +3,36 @@
 	xmlns="http://ofbiz.apache.org/Widget-Screen"
 	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
 
+
+	<screen name="MainScreen">
+		<section>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="title">
+						<label text="Context Information" />
+					</decorator-section>
+					<decorator-section name="body">
+						<container>
+							<label style="h1">${uiLabelMap.LearningApplication_description}:
+								${uiLabelMap.LearningApplication}
+							</label>
+						</container>
+						<container>
+							<label style="h1">${uiLabelMap.LearningCompanyName_description}:
+								${uiLabelMap.LearningCompanyName}
+							</label>
+						</container>
+						<container>
+							<label style="h1">${uiLabelMap.LearningCompanySubtitle_description}:
+								${uiLabelMap.LearningCompanySubtitle}
+							</label>
+						</container>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
 	<screen name="TestScreen">
 		<section>
 			<widgets>

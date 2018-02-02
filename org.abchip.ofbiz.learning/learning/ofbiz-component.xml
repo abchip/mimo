@@ -18,9 +18,6 @@
 	<service-resource type="model" loader="main"
 		location="servicedef/services.xml" />
 				
-	<service-resource type="eca" loader="main"
-		location="servicedef/secas.xml" />
-
 	<webapp name="learning" title="Learning" server="default-server"
 		location="webapp/learning" base-permission="NONE" mount-point="/learning" />
 </ofbiz-component>

@@ -21,7 +21,7 @@
 								<platform-specific>
 									<html>
 										<html-template
-											location="component://learning/webapp/partymgr/party/PostalAddressAdvisory.ftl" />
+											location="component://test/webapp/partymgr/party/PostalAddressAdvisory.ftl" />
 									</html>
 								</platform-specific>
 							</widgets>
@@ -38,7 +38,7 @@
 				<platform-specific>
 					<html>
 						<html-template
-							location="component://learning/webapp/partymgr/party/editcontactmech.extend.ftl" />
+							location="component://test/webapp/partymgr/party/editcontactmech.extend.ftl" />
 					</html>
 				</platform-specific>
 			</widgets>
@@ -61,7 +61,7 @@
 				<platform-specific>
 					<html>
 						<html-template
-							location="component://learning/webapp/partymgr/party/editcontactmech.planet.dropdown.ftl" />
+							location="component://test/webapp/partymgr/party/editcontactmech.planet.dropdown.ftl" />
 					</html>
 				</platform-specific>
 			</widgets>

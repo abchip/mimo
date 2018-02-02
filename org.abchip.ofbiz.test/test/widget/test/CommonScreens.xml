@@ -21,7 +21,7 @@
 				<set field="activeApp" value="test" global="true" />
 				<set field="applicationTitle" value="${uiLabelMap.TestApplication}"
 					global="true" />
-				<set field="applicationMenuName" value="TopMenu" global="true" />
+				<set field="applicationMenuName" value="TestMenu" global="true" />
 				<set field="applicationMenuLocation"
 					value="component://test/widget/test/TestMenus.xml"
 					global="true" />
