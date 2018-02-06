@@ -11,7 +11,7 @@
  */
 package org.abchip.mimo.database.query.impl;
 
-import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.database.DatabasePackage;
 
 import org.abchip.mimo.database.connection.DatabaseConnectionPackage;
@@ -37,7 +37,6 @@ import org.abchip.mimo.database.query.StatementParser;
 import org.abchip.mimo.database.query.StatementWriter;
 
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.expression.ExpressionPackage;
 import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.datatools.modelbase.sql.accesscontrol.SQLAccessControlPackage;
 
@@ -203,10 +202,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
-		ContextPackage.eINSTANCE.eClass();
-		EntityPackage.eINSTANCE.eClass();
-		ExpressionPackage.eINSTANCE.eClass();
-		UtilPackage.eINSTANCE.eClass();
+		MimoPackage.eINSTANCE.eClass();
 		SQLSchemaPackage.eINSTANCE.eClass();
 		SQLConstraintsPackage.eINSTANCE.eClass();
 		SQLDataTypesPackage.eINSTANCE.eClass();

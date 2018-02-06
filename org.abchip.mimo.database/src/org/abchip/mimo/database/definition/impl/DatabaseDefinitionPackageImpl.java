@@ -11,7 +11,7 @@
  */
 package org.abchip.mimo.database.definition.impl;
 
-import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.database.DatabasePackage;
 
 import org.abchip.mimo.database.connection.DatabaseConnectionPackage;
@@ -62,7 +62,6 @@ import org.abchip.mimo.database.query.DatabaseQueryPackage;
 import org.abchip.mimo.database.query.impl.DatabaseQueryPackageImpl;
 
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.expression.ExpressionPackage;
 import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.datatools.modelbase.sql.accesscontrol.SQLAccessControlPackage;
 
@@ -386,10 +385,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
-		ContextPackage.eINSTANCE.eClass();
-		EntityPackage.eINSTANCE.eClass();
-		ExpressionPackage.eINSTANCE.eClass();
-		UtilPackage.eINSTANCE.eClass();
+		MimoPackage.eINSTANCE.eClass();
 		SQLSchemaPackage.eINSTANCE.eClass();
 		SQLConstraintsPackage.eINSTANCE.eClass();
 		SQLDataTypesPackage.eINSTANCE.eClass();

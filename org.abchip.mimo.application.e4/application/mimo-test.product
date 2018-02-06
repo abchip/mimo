@@ -65,6 +65,7 @@
       <plugin id="org.abchip.mimo.tester"/>
       <plugin id="org.abchip.mimo.tester.base"/>
       <plugin id="org.abchip.mimo.tester.test"/>
+      <plugin id="org.abchip.ofbiz.mimo"/>
       <plugin id="org.apache.commons.io"/>
       <plugin id="org.apache.commons.lang"/>
       <plugin id="org.apache.felix.gogo.command"/>

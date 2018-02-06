@@ -285,6 +285,10 @@
           className="org.abchip.mimo.audio.test.TestAudioSuiteLauncherImpl"/>
     </modules>
   </components>
+  <components
+      name="OFBiz">
+    <hooks className="org.abchip.ofbiz.mimo.OFBizStarter"/>
+  </components>
   <contextDescription
       name="mimo-test"
       resourceRoot="mimo-data"

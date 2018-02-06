@@ -16,3 +16,4 @@ Export-Package: javax.servlet,
  org.apache.ofbiz.security,
  org.apache.ofbiz.service,
  org.apache.ofbiz.webtools.labelmanager
+Require-Bundle: org.abchip.mimo.application

@@ -13,6 +13,7 @@ package org.abchip.mimo.database.impl;
 
 import java.sql.SQLException;
 
+import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.database.CatalogContainer;
 import org.abchip.mimo.database.CatalogGenerationStrategy;
@@ -38,8 +39,6 @@ import org.abchip.mimo.database.query.DatabaseQueryPackage;
 import org.abchip.mimo.database.query.impl.DatabaseQueryPackageImpl;
 
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.expression.ExpressionPackage;
-import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.datatools.modelbase.sql.accesscontrol.SQLAccessControlPackage;
 
 import org.eclipse.datatools.modelbase.sql.constraints.SQLConstraintsPackage;
@@ -189,10 +188,7 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
-		ContextPackage.eINSTANCE.eClass();
-		EntityPackage.eINSTANCE.eClass();
-		ExpressionPackage.eINSTANCE.eClass();
-		UtilPackage.eINSTANCE.eClass();
+		MimoPackage.eINSTANCE.eClass();
 		SQLSchemaPackage.eINSTANCE.eClass();
 		SQLConstraintsPackage.eINSTANCE.eClass();
 		SQLDataTypesPackage.eINSTANCE.eClass();

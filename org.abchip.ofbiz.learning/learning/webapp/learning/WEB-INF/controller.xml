@@ -44,7 +44,7 @@
 		<response name="success" type="request-redirect"
 			value="../../webtools/control/entitymaint">
 			<redirect-parameter name="filterByGroupName"
-				value="org.abchip.ofbiz.learning" />
+				value="org.abchip.ofbiz.test" />
 		</response>
 	</request-map>
 	<request-map uri="ShowPlanetManyRelation">
