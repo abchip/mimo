@@ -12,6 +12,12 @@ public class LearningServices {
 
 	public static Map<String, Object> selectQuestion(DispatchContext dctx, Map<String, Object> context) {
 
+		for(java.util.Map.Entry<String, Object> entry: context.entrySet()) {
+			System.out.println(entry.getKey() + ": " + entry.getValue());
+		}
+		
+		context.put("abchip.firstValue", "pippo");
+		
 		Map<String, Object> resultMap = ServiceUtil.returnSuccess("ecchime");
 		System.out.println(context.get("question"));
 		try {
@@ -28,6 +34,19 @@ public class LearningServices {
 		} catch (Exception e) {
 			resultMap = ServiceUtil.returnError(e.getMessage());			
 		}
+		return resultMap;
+	}
+	
+	public static Map<String, Object> processQuestion(DispatchContext dctx, Map<String, Object> context) {
+
+		String question = (String) context.get("question");
+		System.out.println(question);
+		String answer = (String) context.get("answer");
+		System.out.println(answer);
+
+		Map<String, Object> resultMap = ServiceUtil.returnSuccess("Bravo!!");
+		resultMap.put("score", 100);
+		
 		return resultMap;
 	}
 }

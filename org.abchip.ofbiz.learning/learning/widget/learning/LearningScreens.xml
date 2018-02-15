@@ -47,12 +47,12 @@
 				</decorator-screen>
 			</widgets>
 		</section>
-	</screen>		
+	</screen>
 	<screen name="QuestionFormScreen">
 		<section>
 			<actions>
-				<service service-name="learningSelectQuestion" result-map="result"/>
-				<set field="question" from-field="result.question"/>			
+				<service service-name="learningSelectQuestion" result-map="result" />
+				<set field="question" from-field="result.question" />
 			</actions>
 			<widgets>
 				<decorator-screen name="main-decorator"
@@ -62,13 +62,13 @@
 					</decorator-section>
 					<decorator-section name="body">
 						<include-menu name="LearningMenu"
-							location="component://learning/widget/learning/LearningMenus.xml" />					
+							location="component://learning/widget/learning/LearningMenus.xml" />
 						<include-form name="QuestionForm"
 							location="component://learning/widget/learning/LearningForms.xml" />
 						<section>
 							<condition>
 								<not>
-									<if-empty field="parameters.submit" />
+									<if-empty field="result.score" />
 								</not>
 							</condition>
 							<widgets>
@@ -79,7 +79,7 @@
 									<label text="answer ${parameters.answer}" />
 								</container>
 								<container>
-									<label text="submit: ${parameters.submit}" />
+									<label text="score ${result.score}" />
 								</container>
 							</widgets>
 						</section>
@@ -87,7 +87,7 @@
 				</decorator-screen>
 			</widgets>
 		</section>
-	</screen>	
+	</screen>
 	<screen name="EntityScreen">
 		<section>
 			<widgets>
@@ -103,7 +103,7 @@
 				</decorator-screen>
 			</widgets>
 		</section>
-	</screen>		
+	</screen>
 
 	<screen name="ShowPlanetManyRelation">
 		<section>

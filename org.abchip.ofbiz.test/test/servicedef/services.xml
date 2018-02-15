@@ -60,4 +60,12 @@
 			mode="IN" optional="true" />
 	</service>
 
+	<service name="testExportEntity" engine="java"
+		location="org.abchip.ofbiz.core.services.EntityServices" invoke="exportEntities">
+		<description>Export OFBiz Entities</description>
+		<attribute name="packagePrefix" type="String" mode="IN"
+			optional="true" />
+		<attribute name="entityModelPath" type="String" mode="OUT"
+			optional="true" />			
+	</service>
 </services>

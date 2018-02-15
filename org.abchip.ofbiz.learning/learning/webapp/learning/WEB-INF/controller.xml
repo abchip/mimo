@@ -52,9 +52,8 @@
 		<response name="success" type="view" value="ShowPlanetManyRelation" />
 	</request-map>
 	<request-map uri="processQuestionForm">
-		<event type="java" path="org.abchip.ofbiz.learning.LearningEvents"
-			invoke="processQuestion" />
-		<response name="success" type="view-last" />
+        <event type="service" invoke="learningProcessQuestion"/>
+		<response name="success" type="view-last" />	
 	</request-map>		
 
 	<view-map name="MainScreen" type="screen"
