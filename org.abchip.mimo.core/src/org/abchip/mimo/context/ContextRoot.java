@@ -7,24 +7,25 @@
  */
 package org.abchip.mimo.context;
 
+import java.util.Dictionary;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Adapter Factory</b></em>'.
+ * A representation of the model object '<em><b>Root</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.context.ContextPackage#getAdapterFactory()
- * @model interface="true" abstract="true"
+ * @see org.abchip.mimo.context.ContextPackage#getContextRoot()
+ * @model abstract="true"
  * @generated
  */
-public interface AdapterFactory {
+public interface ContextRoot extends Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" adaptableRequired="true" adapterTypeRequired="true" TBounds="org.eclipse.emf.ecore.EJavaObject"
+	 * @model nameRequired="true" objectRequired="true" dictionaryDataType="org.abchip.mimo.util.JavaDictionary&lt;org.eclipse.emf.ecore.EString, ?&gt;"
 	 * @generated
 	 */
-	<T extends Object> T getAdapter(Context context, Object adaptable, Class<T> adapterType);
+	void set(String name, Object object, Dictionary<String, ?> dictionary);
 
-} // AdapterFactory
+} // ContextRoot

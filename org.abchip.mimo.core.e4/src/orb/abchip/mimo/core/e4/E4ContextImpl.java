@@ -23,23 +23,17 @@ import javax.annotation.PostConstruct;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.context.impl.ContextImpl;
-import org.abchip.mimo.entity.Entity;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Constants;
-import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
-import org.osgi.framework.wiring.BundleWiring;
 
-public abstract class E4ContextImpl extends ContextImpl {
+public abstract class E4ContextImpl implements Context {
 
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
 	private static final String QTEMP = "MIMO-TEMP";
@@ -60,6 +54,10 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	abstract void removeEclipseContext();
 
+	protected BundleContext getBundleContext() {
+		return this.bundleContext;
+	}
+	
 	protected void initializeContext(IEclipseContext eclipseContext) {
 		eclipseContext.set(ADAPTER_FACTORIES_NAME, new HashMap<Class<?>, List<AdapterFactory>>());
 	}
@@ -70,7 +68,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public <T> void set(String name, T object) {
+	public void set(String name, Object object) {
 		getEclipseContext().set(name, object);
 	}
 
@@ -107,44 +105,19 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public Class<?> loadClass(String address) {
-
-		URI uriAddress = URI.createURI(address);
-
-		Bundle bundleAuthority = Platform.getBundle(uriAddress.segment(1));
-		if (bundleAuthority == null)
-			return null;
-
-		try {
-			return bundleAuthority.loadClass(uriAddress.segment(2));
-		} catch (ClassNotFoundException e) {
-			return null;
-		}
-	}
-
-	@Override
-	public Class<?> loadClassByName(String className) {
-
-		BundleContext bundleContext = FrameworkUtil.getBundle(Entity.class).getBundleContext();
+	public Class<?> loadClass(String className) {
 
 		Class<?> class_ = null;
-		BundleWiring bundleWiring = null;
-
 		for (Bundle bundle : bundleContext.getBundles()) {
 			try {
-				bundleWiring = bundle.adapt(BundleWiring.class);
-				if (bundleWiring != null && bundleWiring.getClassLoader() != null) {
-					class_ = bundleWiring.getClassLoader().loadClass(className);
-					break;
-				}
-				
+				class_ = bundle.loadClass(className);
+				break;				
 			} catch (ClassNotFoundException e) {
 				continue;
 			}
 		}
 
 		return class_;
-
 	}
 
 	@SuppressWarnings("unchecked")

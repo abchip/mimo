@@ -49,11 +49,6 @@ public class BaseTestContextImpl implements Context {
 	}
 
 	@Override
-	public <T> T getAdapter(Object adaptable, Class<T> adapter) {
-		return delegate.getAdapter(adaptable, adapter);
-	}
-
-	@Override
 	public ContextDescription getContextDescription() {
 		return delegate.getContextDescription();
 	}
@@ -79,11 +74,6 @@ public class BaseTestContextImpl implements Context {
 	}
 
 	@Override
-	public Class<?> loadClassByName(String className) {
-		return delegate.loadClassByName(className);
-	}
-
-	@Override
 	public <A extends Annotation> void invoke(Object object, Class<A> qualifier) {
 		delegate.invoke(object, qualifier);
 	}
@@ -91,11 +81,6 @@ public class BaseTestContextImpl implements Context {
 	@Override
 	public <T> T make(Class<T> klass) {
 		return delegate.make(klass);
-	}
-
-	@Override
-	public <T> void registerAdapterFactory(AdapterFactory factory, Class<T> adapterType) {
-		delegate.registerAdapterFactory(factory, adapterType);
 	}
 
 	@Override
@@ -113,13 +98,20 @@ public class BaseTestContextImpl implements Context {
 		delegate.set(klass, object);
 	}
 
-	@Override
-	public <T> void set(String name, T object) {
+	public void set(String name, Object object) {
 		delegate.set(name, object);
 	}
-
+	
 	@Override
 	public Context getContext() {
 		return this;
+	}
+
+	public <T> T getAdapter(Object adaptable, Class<T> adapter) {
+		return delegate.getAdapter(adaptable, adapter);
+	}
+
+	public <T> void registerAdapterFactory(AdapterFactory factory, Class<T> adapterType) {
+		delegate.registerAdapterFactory(factory, adapterType);
 	}
 }

@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Textable;
 
 /**
@@ -42,15 +41,6 @@ import org.abchip.mimo.entity.Textable;
  * @generated
  */
 public interface Tweet extends EntityNameable, Textable {
-	
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated NOT
-	 */
-	Frame<Tweet> getFrame();
 	
 	/**
 	 * Returns the value of the '<em><b>Date</b></em>' attribute.

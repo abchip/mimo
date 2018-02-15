@@ -21,13 +21,14 @@ import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceHook;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getConfig <em>Config</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getModules <em>Modules</em>}</li>
@@ -51,7 +53,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ApplicationComponentImpl extends EntityImpl implements ApplicationComponent {
+public class ApplicationComponentImpl extends EntityNameableImpl implements ApplicationComponent {
 	/**
 	 * The cached value of the '{@link #getConfig() <em>Config</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -61,6 +63,16 @@ public class ApplicationComponentImpl extends EntityImpl implements ApplicationC
 	 * @ordered
 	 */
 	protected ServiceConfig config;
+
+	/**
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected Context context;
 
 	/**
 	 * 
@@ -247,9 +259,36 @@ public class ApplicationComponentImpl extends EntityImpl implements ApplicationC
 	 */
 	@Override
 	public Context getContext() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (context != null && ((EObject)context).eIsProxy()) {
+			InternalEObject oldContext = (InternalEObject)context;
+			context = (Context)eResolveProxy(oldContext);
+			if (context != oldContext) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, oldContext, context));
+			}
+		}
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Context basicGetContext() {
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContext(Context newContext) {
+		Context oldContext = context;
+		context = newContext;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, oldContext, context));
 	}
 
 	/**
@@ -282,6 +321,9 @@ public class ApplicationComponentImpl extends EntityImpl implements ApplicationC
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_COMPONENT__CONFIG:
 				return getConfig();
+			case ApplicationPackage.APPLICATION_COMPONENT__CONTEXT:
+				if (resolve) return getContext();
+				return basicGetContext();
 			case ApplicationPackage.APPLICATION_COMPONENT__HOOKS:
 				return getHooks();
 			case ApplicationPackage.APPLICATION_COMPONENT__COMMANDS:
@@ -305,6 +347,9 @@ public class ApplicationComponentImpl extends EntityImpl implements ApplicationC
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_COMPONENT__CONFIG:
 				setConfig((ServiceConfig)newValue);
+				return;
+			case ApplicationPackage.APPLICATION_COMPONENT__CONTEXT:
+				setContext((Context)newValue);
 				return;
 			case ApplicationPackage.APPLICATION_COMPONENT__HOOKS:
 				getHooks().clear();
@@ -336,6 +381,9 @@ public class ApplicationComponentImpl extends EntityImpl implements ApplicationC
 			case ApplicationPackage.APPLICATION_COMPONENT__CONFIG:
 				setConfig((ServiceConfig)null);
 				return;
+			case ApplicationPackage.APPLICATION_COMPONENT__CONTEXT:
+				setContext((Context)null);
+				return;
 			case ApplicationPackage.APPLICATION_COMPONENT__HOOKS:
 				getHooks().clear();
 				return;
@@ -362,6 +410,8 @@ public class ApplicationComponentImpl extends EntityImpl implements ApplicationC
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_COMPONENT__CONFIG:
 				return config != null;
+			case ApplicationPackage.APPLICATION_COMPONENT__CONTEXT:
+				return context != null;
 			case ApplicationPackage.APPLICATION_COMPONENT__HOOKS:
 				return hooks != null && !hooks.isEmpty();
 			case ApplicationPackage.APPLICATION_COMPONENT__COMMANDS:

@@ -184,7 +184,16 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int APPLICATION_COMPONENT__CONFIG = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT__CONTEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Hooks</b></em>' containment reference list.
@@ -193,7 +202,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__HOOKS = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int APPLICATION_COMPONENT__HOOKS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Commands</b></em>' containment reference list.
@@ -202,7 +211,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__COMMANDS = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int APPLICATION_COMPONENT__COMMANDS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Modules</b></em>' containment reference list.
@@ -211,7 +220,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__MODULES = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int APPLICATION_COMPONENT__MODULES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -220,7 +229,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int APPLICATION_COMPONENT__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -229,7 +238,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ApplicationManager <em>Manager</em>}' class.
@@ -852,6 +861,17 @@ public interface ApplicationPackage extends EPackage {
 	EReference getApplicationComponent_Config();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.application.ApplicationComponent#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context</em>'.
+	 * @see org.abchip.mimo.application.ApplicationComponent#getContext()
+	 * @see #getApplicationComponent()
+	 * @generated
+	 */
+	EReference getApplicationComponent_Context();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.application.ApplicationComponent#getHooks <em>Hooks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1312,6 +1332,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION_COMPONENT__CONFIG = eINSTANCE.getApplicationComponent_Config();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION_COMPONENT__CONTEXT = eINSTANCE.getApplicationComponent_Context();
 
 		/**
 		 * The meta object literal for the '<em><b>Hooks</b></em>' containment reference list feature.

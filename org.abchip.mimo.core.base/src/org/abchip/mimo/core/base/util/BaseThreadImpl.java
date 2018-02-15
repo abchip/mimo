@@ -100,7 +100,7 @@ public class BaseThreadImpl extends Thread implements org.abchip.mimo.util.Threa
 	}
 
 	@Override
-	public Frame<?> getFrame() {
+	public Frame<?> isa() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -94,7 +94,7 @@ public class BaseThreadAdapter implements org.abchip.mimo.util.Thread {
 	}
 
 	@Override
-	public Frame<?> getFrame() {
+	public Frame<?> isa() {
 		// TODO Auto-generated method stub
 		return null;
 	}

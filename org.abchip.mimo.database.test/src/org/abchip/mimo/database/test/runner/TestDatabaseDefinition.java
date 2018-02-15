@@ -46,7 +46,7 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
 @Test(entity = "Definition")
-public class TestDatabaseDefinition  {
+public class TestDatabaseDefinition {
 
 	@Inject
 	private ConnectionManager connectionManager;
@@ -59,7 +59,7 @@ public class TestDatabaseDefinition  {
 	public void main() throws SQLException {
 
 		String catalog = null;
-		String schemaName = "MIMO_TEST";		
+		String schemaName = "MIMO_TEST";
 
 		// connect to default catalog
 		Connection connection = connectionManager.createConnection(catalog);
@@ -206,22 +206,22 @@ public class TestDatabaseDefinition  {
 		Connection connectionFrom = connectionManager.createConnection(catalogFrom);
 		Schema schemaFrom = connectionFrom.getCatalogMetaData().getSchema(schemaName);
 
-		SchemaDef schemaDef = connectionTo.getContext().getAdapter(schemaFrom, SchemaDef.class);
+		SchemaDef schemaDef = null; // connectionTo.getContext().getAdapter(schemaFrom, SchemaDef.class);
 		databaseManager.createSchema(connectionTo, schemaFrom.getName(), schemaDef);
 		// TODO
 		schemaTo = connectionTo.getCatalogMetaData().getSchema(schemaFrom.getName());
 
 		for (Table table : (List<Table>) schemaFrom.getTables())
 			if (table instanceof ViewTable) {
-				ViewDef viewDef = connectionTo.getContext().getAdapter(schemaFrom, ViewDef.class);
+				ViewDef viewDef = null; // connectionTo.getContext().getAdapter(table, ViewDef.class);
 				databaseManager.createView(connectionTo, schemaTo, table.getName(), viewDef);
 			} else {
-				TableDef tableDef = connectionTo.getContext().getAdapter(table, TableDef.class);
+				TableDef tableDef = null; // connectionTo.getContext().getAdapter(table, TableDef.class);
 				databaseManager.createTable(connectionTo, schemaTo, table.getName(), tableDef);
 			}
 
 		for (Index index : (List<Index>) schemaFrom.getIndices()) {
-			IndexDef indexDef = connectionTo.getContext().getAdapter(index, IndexDef.class);
+			IndexDef indexDef = null; // connectionTo.getContext().getAdapter(index, IndexDef.class);
 			Table tableTo = connectionTo.getCatalogMetaData().getTable(schemaTo.getName(), index.getName());
 			databaseManager.createIndex(connectionTo, tableTo, index.getName(), indexDef);
 		}

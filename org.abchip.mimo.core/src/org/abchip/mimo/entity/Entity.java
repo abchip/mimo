@@ -30,5 +30,5 @@ public interface Entity extends Serializable {
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	Frame<?> getFrame();
+	Frame<?> isa();
 } // Entity

@@ -48,7 +48,8 @@
       <eLiterals name="Write" value="20" literal="WRITE"/>
       <eLiterals name="Execute" value="30" literal="EXEC"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//util/JavaCloseable #//context/ContextProvider">
+    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" interface="true"
+        eSuperTypes="#//util/JavaCloseable #//context/ContextProvider">
       <eOperations name="close" lowerBound="1"/>
       <eOperations name="createChildContext" lowerBound="1" eType="#//context/Context">
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -87,13 +88,7 @@
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
           <eTypeArguments/>
         </eGenericType>
-        <eParameters name="address" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="loadClassByName" lowerBound="1">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-          <eTypeArguments/>
-        </eGenericType>
-        <eParameters name="className" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="invoke">
         <eTypeParameters name="A">
@@ -144,10 +139,19 @@
         </eParameters>
       </eOperations>
       <eOperations name="set" lowerBound="1">
-        <eTypeParameters name="T"/>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="object" lowerBound="1">
-          <eGenericType eTypeParameter="#//context/Context/set.1/T"/>
+        <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextRoot" abstract="true" eSuperTypes="#//context/Context">
+      <eOperations name="set" lowerBound="1">
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        <eParameters name="dictionary">
+          <eGenericType eClassifier="#//util/JavaDictionary">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eTypeArguments/>
+          </eGenericType>
         </eParameters>
       </eOperations>
     </eClassifiers>
@@ -384,7 +388,7 @@
           upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
-      <eOperations name="getFrame" lowerBound="1">
+      <eOperations name="isa" lowerBound="1">
         <eGenericType eClassifier="#//entity/Frame">
           <eTypeArguments/>
         </eGenericType>

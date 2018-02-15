@@ -11,6 +11,7 @@
  */
 package orb.abchip.mimo.core.e4;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.osgi.framework.BundleContext;
@@ -33,5 +34,10 @@ public class E4ContextChildImpl extends E4ContextImpl {
 	@Override
 	void removeEclipseContext() {
 		this.eclipseContext = null;
+	}
+
+	@Override
+	public Context getContext() {
+		return this;
 	}
 }

@@ -20,8 +20,8 @@ import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceHook;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -90,7 +90,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * @generated
 	 * @ordered
 	 */
-	protected Context context;
+	protected ContextRoot context;
 	/**
 	 * The cached value of the '{@link #getContextDescription() <em>Context Description</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -342,10 +342,10 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * @generated
 	 */
 	@Override
-	public Context getContext() {
+	public ContextRoot getContext() {
 		if (context != null && ((EObject)context).eIsProxy()) {
 			InternalEObject oldContext = (InternalEObject)context;
-			context = (Context)eResolveProxy(oldContext);
+			context = (ContextRoot)eResolveProxy(oldContext);
 			if (context != oldContext) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__CONTEXT, oldContext, context));
@@ -359,7 +359,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context basicGetContext() {
+	public ContextRoot basicGetContext() {
 		return context;
 	}
 
@@ -368,8 +368,8 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContext(Context newContext) {
-		Context oldContext = context;
+	public void setContext(ContextRoot newContext) {
+		ContextRoot oldContext = context;
 		context = newContext;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT, oldContext, context));
@@ -492,7 +492,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 				setConfig((ServiceConfig)newValue);
 				return;
 			case ApplicationPackage.APPLICATION__CONTEXT:
-				setContext((Context)newValue);
+				setContext((ContextRoot)newValue);
 				return;
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				setContextDescription((ContextDescription)newValue);
@@ -532,7 +532,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 				setConfig((ServiceConfig)null);
 				return;
 			case ApplicationPackage.APPLICATION__CONTEXT:
-				setContext((Context)null);
+				setContext((ContextRoot)null);
 				return;
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				setContextDescription((ContextDescription)null);

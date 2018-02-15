@@ -43,7 +43,7 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		
 		for(E entity: resourceManager.getEntityReader(application, frame, ResourceScope.CONTEXT).find(null)) {
 			StringBuffer sb = new StringBuffer();
-			sb.append(entity.getFrame().getName());
+			sb.append(entity.isa().getName());
 			sb.append(" (");
 			sb.append(entity.getName());
 			if(entity instanceof Textable) {

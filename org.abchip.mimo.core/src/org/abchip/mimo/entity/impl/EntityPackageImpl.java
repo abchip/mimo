@@ -814,7 +814,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(entityEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(entityEClass, null, "isa", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);

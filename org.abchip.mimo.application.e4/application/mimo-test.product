@@ -35,6 +35,7 @@
       <plugin id="net.sourceforge.lpg.lpgjavaruntime"/>
       <plugin id="org.abchip.mimo.application"/>
       <plugin id="org.abchip.mimo.application.e4"/>
+      <plugin id="org.abchip.mimo.application.osgi"/>
       <plugin id="org.abchip.mimo.audio"/>
       <plugin id="org.abchip.mimo.audio.sph4"/>
       <plugin id="org.abchip.mimo.audio.test"/>

@@ -21,6 +21,7 @@ import org.abchip.mimo.context.CapabilityRight;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.ExceptionManager;
 import org.abchip.mimo.context.Identity;
@@ -106,6 +107,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EClass contextEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contextRootEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -382,6 +390,15 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	public EClass getContext() {
 		return contextEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getContextRoot() {
+		return contextRootEClass;
 	}
 
 	/**
@@ -734,6 +751,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		contextEClass = createEClass(CONTEXT);
 
+		contextRootEClass = createEClass(CONTEXT_ROOT);
+
 		contextDescriptionEClass = createEClass(CONTEXT_DESCRIPTION);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__NAME);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__RESOURCES);
@@ -832,6 +851,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		capabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
 		contextEClass.getESuperTypes().add(this.getContextProvider());
+		contextRootEClass.getESuperTypes().add(this.getContext());
 		identityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getTextable());
@@ -878,7 +898,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(capabilityEClass, ecorePackage.getEString(), "getEntityName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(contextEClass, null, "close", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -919,14 +939,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEOperation(contextEClass, ecorePackage.getEBoolean(), "isClosed", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "loadClass", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "address", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType();
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
-		op = addEOperation(contextEClass, null, "loadClassByName", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "className", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -977,10 +990,20 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "T");
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(t1);
-		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(contextRootEClass, ContextRoot.class, "ContextRoot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(contextRootEClass, null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theUtilPackage.getJavaDictionary());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "dictionary", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contextDescriptionEClass, ContextDescription.class, "ContextDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

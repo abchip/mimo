@@ -12,10 +12,9 @@
 package org.abchip.mimo.application;
 
 import java.util.List;
-
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Textable;
 
@@ -113,12 +112,12 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context</em>' reference.
-	 * @see #setContext(Context)
+	 * @see #setContext(ContextRoot)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Context()
 	 * @model transient="true"
 	 * @generated
 	 */
-	Context getContext();
+	ContextRoot getContext();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getContext <em>Context</em>}' reference.
@@ -128,7 +127,7 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	 * @see #getContext()
 	 * @generated
 	 */
-	void setContext(Context value);
+	void setContext(ContextRoot value);
 
 	/**
 	 * Returns the value of the '<em><b>Context Description</b></em>' containment reference.

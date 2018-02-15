@@ -11,12 +11,16 @@
  */
 package orb.abchip.mimo.core.e4;
 
+import java.util.Dictionary;
+
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.e4.core.contexts.EclipseContextFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.osgi.framework.BundleContext;
 
-public class E4ContextRootImpl extends E4ContextImpl {
+public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
 	private IEclipseContext eclipseContext;
 
@@ -36,5 +40,15 @@ public class E4ContextRootImpl extends E4ContextImpl {
 	@Override
 	void removeEclipseContext() {
 		this.eclipseContext = null;
+	}
+
+	@Override
+	public Context getContext() {
+		return this;
+	}
+
+	@Override
+	public void set(String name, Object object, Dictionary<String, ?> dictionary) {
+		getBundleContext().registerService(name, object, dictionary);
 	}
 }

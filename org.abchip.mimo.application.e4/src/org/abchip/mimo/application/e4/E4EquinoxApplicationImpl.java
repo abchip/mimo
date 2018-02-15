@@ -13,6 +13,7 @@ package org.abchip.mimo.application.e4;
 
 import java.util.Collections;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import org.abchip.mimo.application.Application;
@@ -28,6 +29,8 @@ import org.eclipse.equinox.app.IApplicationContext;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
+
+import orb.abchip.mimo.core.e4.E4ContextRootImpl;
 
 public class E4EquinoxApplicationImpl implements IApplication {
 
@@ -82,6 +85,7 @@ public class E4EquinoxApplicationImpl implements IApplication {
 			uri = URI.createURI(applicationConfig);
 		else
 			uri = URI.createFileURI(applicationConfig);
+		
 		Resource resource = resourceSet.getResource(uri, true);
 		resource.load(Collections.EMPTY_MAP);
 		application = (Application) resource.getContents().get(0);
@@ -91,13 +95,18 @@ public class E4EquinoxApplicationImpl implements IApplication {
 		
 		if(applicationPort != null)
 			application.setPort(Integer.parseInt(applicationPort));
+
+		// context
+		BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();		
+		E4ContextRootImpl contextApplication = new E4ContextRootImpl(bundleContext, UUID.randomUUID().toString(), application.getContextDescription());
+		contextApplication.set(Application.class, application);
+		application.setContext(contextApplication);
+
+		// application manager
+		ServiceReference<ApplicationManager> applicationManagerReference = bundleContext.getServiceReference(ApplicationManager.class);
+		applicationManager = bundleContext.getService(applicationManagerReference);
 		
 		System.out.println("Starting " + application);
-
-		BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
-		ServiceReference<ApplicationManager> applicationManagerReference = bundleContext.getServiceReference(ApplicationManager.class);
-
-		applicationManager = bundleContext.getService(applicationManagerReference);
 		applicationManager.start(this.getClass(), application, System.out);
 		
 		return waitForStopOrRestart();

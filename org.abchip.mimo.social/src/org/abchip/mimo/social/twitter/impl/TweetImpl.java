@@ -282,8 +282,8 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
-	public Frame<Tweet> getFrame() {
-		return (Frame<Tweet>) super.getFrame();
+	public Frame<Tweet> isa() {
+		return (Frame<Tweet>) super.isa();
 	}
 	
 	/**

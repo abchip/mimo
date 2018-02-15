@@ -24,7 +24,7 @@ import java.util.List;
  *
  *
  * @see org.abchip.mimo.context.ContextPackage#getContext()
- * @model abstract="true" superTypes="org.abchip.mimo.util.JavaCloseable org.abchip.mimo.context.ContextProvider"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.util.JavaCloseable org.abchip.mimo.context.ContextProvider"
  * @generated
  */
 public interface Context extends Closeable, ContextProvider {
@@ -103,18 +103,10 @@ public interface Context extends Closeable, ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" addressRequired="true"
+	 * @model required="true" nameRequired="true"
 	 * @generated
 	 */
-	Class<?> loadClass(String address);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" classNameRequired="true"
-	 * @generated
-	 */
-	Class<?> loadClassByName(String className);
+	Class<?> loadClass(String name);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,6 +162,6 @@ public interface Context extends Closeable, ContextProvider {
 	 * @model nameRequired="true" objectRequired="true"
 	 * @generated
 	 */
-	<T> void set(String name, T object);
+	void set(String name, Object object);
 
 } // Context

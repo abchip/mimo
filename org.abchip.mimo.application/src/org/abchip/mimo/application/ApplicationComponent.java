@@ -13,8 +13,9 @@ package org.abchip.mimo.application;
 
 import java.util.List;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityNameable;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +27,7 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getConfig <em>Config</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getCommands <em>Commands</em>}</li>
  *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getModules <em>Modules</em>}</li>
@@ -36,7 +38,7 @@ import org.abchip.mimo.entity.Entity;
  * @model
  * @generated
  */
-public interface ApplicationComponent extends Entity, ContextProvider {
+public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	/**
 	 * Returns the value of the '<em><b>Config</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -62,6 +64,32 @@ public interface ApplicationComponent extends Entity, ContextProvider {
 	 * @generated
 	 */
 	void setConfig(ServiceConfig value);
+
+	/**
+	 * Returns the value of the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context</em>' reference.
+	 * @see #setContext(Context)
+	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent_Context()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Context getContext();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.application.ApplicationComponent#getContext <em>Context</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Context</em>' reference.
+	 * @see #getContext()
+	 * @generated
+	 */
+	void setContext(Context value);
 
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.

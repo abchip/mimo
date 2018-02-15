@@ -9,7 +9,7 @@
         eType="#//ApplicationComponent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//ServiceConfig"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextRoot"
         transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextDescription" lowerBound="1"
         eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextDescription"
@@ -21,9 +21,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider">
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider">
     <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//ServiceConfig"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"
+        transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hooks" upperBound="-1"
         eType="#//ServiceHook" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
