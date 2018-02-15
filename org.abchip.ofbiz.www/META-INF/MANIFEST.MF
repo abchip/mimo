@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: ABChip www
-Bundle-SymbolicName: org.abchip.ofbiz.www
-Bundle-Version: 0.1.0.qualifier
-Bundle-Vendor: ABChip
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
