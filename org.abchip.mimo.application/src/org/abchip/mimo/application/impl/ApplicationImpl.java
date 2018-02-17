@@ -27,7 +27,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -83,7 +82,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 */
 	protected ServiceConfig config;
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContext()
@@ -343,14 +342,6 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 */
 	@Override
 	public ContextRoot getContext() {
-		if (context != null && ((EObject)context).eIsProxy()) {
-			InternalEObject oldContext = (InternalEObject)context;
-			context = (ContextRoot)eResolveProxy(oldContext);
-			if (context != oldContext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__CONTEXT, oldContext, context));
-			}
-		}
 		return context;
 	}
 
@@ -359,8 +350,14 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextRoot basicGetContext() {
-		return context;
+	public NotificationChain basicSetContext(ContextRoot newContext, NotificationChain msgs) {
+		ContextRoot oldContext = context;
+		context = newContext;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT, oldContext, newContext);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -369,10 +366,17 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * @generated
 	 */
 	public void setContext(ContextRoot newContext) {
-		ContextRoot oldContext = context;
-		context = newContext;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT, oldContext, context));
+		if (newContext != context) {
+			NotificationChain msgs = null;
+			if (context != null)
+				msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONTEXT, null, msgs);
+			if (newContext != null)
+				msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONTEXT, null, msgs);
+			msgs = basicSetContext(newContext, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT, newContext, newContext));
 	}
 
 	/**
@@ -432,6 +436,8 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 				return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
 			case ApplicationPackage.APPLICATION__CONFIG:
 				return basicSetConfig(null, msgs);
+			case ApplicationPackage.APPLICATION__CONTEXT:
+				return basicSetContext(null, msgs);
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				return basicSetContextDescription(null, msgs);
 			case ApplicationPackage.APPLICATION__HOOKS:
@@ -455,8 +461,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 			case ApplicationPackage.APPLICATION__CONFIG:
 				return getConfig();
 			case ApplicationPackage.APPLICATION__CONTEXT:
-				if (resolve) return getContext();
-				return basicGetContext();
+				return getContext();
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				return getContextDescription();
 			case ApplicationPackage.APPLICATION__HOOKS:

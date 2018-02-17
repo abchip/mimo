@@ -48,8 +48,7 @@
       <eLiterals name="Write" value="20" literal="WRITE"/>
       <eLiterals name="Execute" value="30" literal="EXEC"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" interface="true"
-        eSuperTypes="#//util/JavaCloseable #//context/ContextProvider">
+    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//util/JavaCloseable #//context/ContextProvider">
       <eOperations name="close" lowerBound="1"/>
       <eOperations name="createChildContext" lowerBound="1" eType="#//context/Context">
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

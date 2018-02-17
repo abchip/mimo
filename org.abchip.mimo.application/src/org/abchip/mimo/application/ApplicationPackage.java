@@ -105,7 +105,7 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION__CONFIG = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * The feature id for the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,7 +187,7 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_COMPONENT__CONFIG = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * The feature id for the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -774,10 +774,10 @@ public interface ApplicationPackage extends EPackage {
 	EReference getApplication_Config();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.application.Application#getContext <em>Context</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.application.Application#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context</em>'.
+	 * @return the meta object for the containment reference '<em>Context</em>'.
 	 * @see org.abchip.mimo.application.Application#getContext()
 	 * @see #getApplication()
 	 * @generated
@@ -861,10 +861,10 @@ public interface ApplicationPackage extends EPackage {
 	EReference getApplicationComponent_Config();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.application.ApplicationComponent#getContext <em>Context</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.application.ApplicationComponent#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context</em>'.
+	 * @return the meta object for the containment reference '<em>Context</em>'.
 	 * @see org.abchip.mimo.application.ApplicationComponent#getContext()
 	 * @see #getApplicationComponent()
 	 * @generated
@@ -1268,7 +1268,7 @@ public interface ApplicationPackage extends EPackage {
 		EReference APPLICATION__CONFIG = eINSTANCE.getApplication_Config();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Context</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1334,7 +1334,7 @@ public interface ApplicationPackage extends EPackage {
 		EReference APPLICATION_COMPONENT__CONFIG = eINSTANCE.getApplicationComponent_Config();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Context</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

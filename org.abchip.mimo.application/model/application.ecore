@@ -10,7 +10,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//ServiceConfig"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextRoot"
-        transient="true"/>
+        transient="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextDescription" lowerBound="1"
         eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextDescription"
         containment="true"/>
@@ -25,7 +25,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//ServiceConfig"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"
-        transient="true"/>
+        transient="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hooks" upperBound="-1"
         eType="#//ServiceHook" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"

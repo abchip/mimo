@@ -898,7 +898,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(capabilityEClass, ecorePackage.getEString(), "getEntityName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(contextEClass, null, "close", 1, 1, IS_UNIQUE, IS_ORDERED);
 

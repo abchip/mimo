@@ -200,10 +200,10 @@ public interface ContextPackage extends EPackage {
 	int CAPABILITY_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.context.Context <em>Context</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ContextImpl <em>Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.context.Context
+	 * @see org.abchip.mimo.context.impl.ContextImpl
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContext()
 	 * @generated
 	 */
@@ -1236,10 +1236,10 @@ public interface ContextPackage extends EPackage {
 		EAttribute CAPABILITY__ENTITY_URI = eINSTANCE.getCapability_EntityURI();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.context.Context <em>Context</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.ContextImpl <em>Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.context.Context
+		 * @see org.abchip.mimo.context.impl.ContextImpl
 		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContext()
 		 * @generated
 		 */

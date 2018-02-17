@@ -19,6 +19,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +50,7 @@ public class OSGIApplicationStarter {
 
 	private Application application = null;
 	private List<Object> applicationHooks = null;
-	private Map<String, List<Object>> componentMapHooks = null;
+	private Map<String, List<Object>> componentMapHooks = new HashMap<String, List<Object>>();
 
 	private int messageLevel;
 	private Writer writer = null;
@@ -294,6 +295,8 @@ public class OSGIApplicationStarter {
 
 	private Object loadObject(Context context, String className) {
 		Class<?> tempClass = context.loadClass(className);
+		if(tempClass == null)
+			context.loadClass(className);
 		return context.make(tempClass);
 	}
 

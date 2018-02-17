@@ -17,8 +17,9 @@ import java.util.List;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.impl.ContextImpl;
 
-public class BaseTestContextImpl implements Context {
+public class BaseTestContextImpl extends ContextImpl {
 
 	private Context delegate;
 

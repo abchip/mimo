@@ -24,7 +24,7 @@ import java.util.List;
  *
  *
  * @see org.abchip.mimo.context.ContextPackage#getContext()
- * @model interface="true" abstract="true" superTypes="org.abchip.mimo.util.JavaCloseable org.abchip.mimo.context.ContextProvider"
+ * @model abstract="true" superTypes="org.abchip.mimo.util.JavaCloseable org.abchip.mimo.context.ContextProvider"
  * @generated
  */
 public interface Context extends Closeable, ContextProvider {

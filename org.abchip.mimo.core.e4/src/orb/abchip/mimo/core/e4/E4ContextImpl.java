@@ -23,6 +23,7 @@ import javax.annotation.PostConstruct;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.impl.ContextImpl;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.emf.ecore.EObject;
@@ -33,7 +34,7 @@ import org.osgi.framework.Constants;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
 
-public abstract class E4ContextImpl implements Context {
+public abstract class E4ContextImpl extends ContextImpl {
 
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
 	private static final String QTEMP = "MIMO-TEMP";
@@ -109,6 +110,8 @@ public abstract class E4ContextImpl implements Context {
 
 		Class<?> class_ = null;
 		for (Bundle bundle : bundleContext.getBundles()) {
+			if(bundle.getSymbolicName().contains("mimo.core.base"))
+				"".toCharArray();
 			try {
 				class_ = bundle.loadClass(className);
 				break;				

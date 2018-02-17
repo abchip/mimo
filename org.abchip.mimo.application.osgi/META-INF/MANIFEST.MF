@@ -5,8 +5,6 @@ Bundle-SymbolicName: org.abchip.mimo.application.osgi
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.abchip.mimo.application,
- com.google.inject
-Bundle-ClassPath: .,
- lib/cdi-api-2.0.jar
+Require-Bundle: org.abchip.mimo.application
+Bundle-ClassPath: .
 Export-Package: org.abchip.mimo.application.osgi

@@ -104,26 +104,26 @@ public interface Application extends EntityNameable, Textable, ContextProvider {
 	void setConfig(ServiceConfig value);
 
 	/**
-	 * Returns the value of the '<em><b>Context</b></em>' reference.
+	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Context</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' reference.
+	 * @return the value of the '<em>Context</em>' containment reference.
 	 * @see #setContext(ContextRoot)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Context()
-	 * @model transient="true"
+	 * @model containment="true" transient="true"
 	 * @generated
 	 */
 	ContextRoot getContext();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getContext <em>Context</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getContext <em>Context</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context</em>' reference.
+	 * @param value the new value of the '<em>Context</em>' containment reference.
 	 * @see #getContext()
 	 * @generated
 	 */

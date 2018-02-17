@@ -28,7 +28,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -65,7 +64,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	protected ServiceConfig config;
 
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContext()
@@ -259,14 +258,6 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 */
 	@Override
 	public Context getContext() {
-		if (context != null && ((EObject)context).eIsProxy()) {
-			InternalEObject oldContext = (InternalEObject)context;
-			context = (Context)eResolveProxy(oldContext);
-			if (context != oldContext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, oldContext, context));
-			}
-		}
 		return context;
 	}
 
@@ -275,8 +266,14 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context basicGetContext() {
-		return context;
+	public NotificationChain basicSetContext(Context newContext, NotificationChain msgs) {
+		Context oldContext = context;
+		context = newContext;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, oldContext, newContext);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -285,10 +282,17 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 * @generated
 	 */
 	public void setContext(Context newContext) {
-		Context oldContext = context;
-		context = newContext;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, oldContext, context));
+		if (newContext != context) {
+			NotificationChain msgs = null;
+			if (context != null)
+				msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, null, msgs);
+			if (newContext != null)
+				msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, null, msgs);
+			msgs = basicSetContext(newContext, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_COMPONENT__CONTEXT, newContext, newContext));
 	}
 
 	/**
@@ -301,6 +305,8 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_COMPONENT__CONFIG:
 				return basicSetConfig(null, msgs);
+			case ApplicationPackage.APPLICATION_COMPONENT__CONTEXT:
+				return basicSetContext(null, msgs);
 			case ApplicationPackage.APPLICATION_COMPONENT__HOOKS:
 				return ((InternalEList<?>)getHooks()).basicRemove(otherEnd, msgs);
 			case ApplicationPackage.APPLICATION_COMPONENT__COMMANDS:
@@ -322,8 +328,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 			case ApplicationPackage.APPLICATION_COMPONENT__CONFIG:
 				return getConfig();
 			case ApplicationPackage.APPLICATION_COMPONENT__CONTEXT:
-				if (resolve) return getContext();
-				return basicGetContext();
+				return getContext();
 			case ApplicationPackage.APPLICATION_COMPONENT__HOOKS:
 				return getHooks();
 			case ApplicationPackage.APPLICATION_COMPONENT__COMMANDS:
