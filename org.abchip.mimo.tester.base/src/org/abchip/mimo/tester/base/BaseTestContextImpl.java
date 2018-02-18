@@ -17,6 +17,7 @@ import java.util.List;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.impl.ContextImpl;
 
 public class BaseTestContextImpl extends ContextImpl {
@@ -70,11 +71,6 @@ public class BaseTestContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public Class<?> loadClass(String address) {
-		return delegate.loadClass(address);
-	}
-
-	@Override
 	public <A extends Annotation> void invoke(Object object, Class<A> qualifier) {
 		delegate.invoke(object, qualifier);
 	}
@@ -114,5 +110,9 @@ public class BaseTestContextImpl extends ContextImpl {
 
 	public <T> void registerAdapterFactory(AdapterFactory factory, Class<T> adapterType) {
 		delegate.registerAdapterFactory(factory, adapterType);
+	}
+
+	public ContextRoot getContextRoot() {
+		return delegate.getContextRoot();
 	}
 }

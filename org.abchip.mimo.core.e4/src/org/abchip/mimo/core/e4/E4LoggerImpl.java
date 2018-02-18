@@ -9,7 +9,7 @@
  * Contributors: 
  *   Mattia Rocchi - Initial API and implementation 
  */
-package org.abchip.mimo.core.osgi;
+package org.abchip.mimo.core.e4;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,7 +18,7 @@ import org.abchip.mimo.context.Logger;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.LogService;
 
-public class OSGILoggerImpl implements Logger {
+public class E4LoggerImpl implements Logger {
 
 	private LogService logService = new OSGILogService("E4Logger");
 	

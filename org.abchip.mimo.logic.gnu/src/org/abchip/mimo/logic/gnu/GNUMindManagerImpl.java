@@ -11,6 +11,8 @@
  */
 package org.abchip.mimo.logic.gnu;
 
+import java.io.IOException;
+
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
@@ -29,7 +31,12 @@ public class GNUMindManagerImpl implements MindManager {
 	public Reasoner createReasoner(ContextProvider contextProvider) {
 		
 		Reasoner reasoner = new GNUReasonerImpl(contextProvider);
-		reasoner.reload();
+		try {
+			reasoner.reload();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return reasoner;
 	}

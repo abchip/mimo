@@ -17,8 +17,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
@@ -32,7 +32,7 @@ import org.abchip.mimo.entity.impl.EntityProviderImpl;
 public class NIOEntityProviderImpl extends EntityProviderImpl {
 
 	@Inject
-	private Application application;
+	private ContextRoot contextRoot;
 	@Inject
 	private LockManager lockManager;
 	@Inject
@@ -47,8 +47,8 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 	@PostConstruct
 	private void init() {
 		
-		this.pathManager = new NIOPathManager(application.getContext().getContextDescription().getResourceRoot());
-		this.resourceReader = new NIOResourceReaderImpl(pathManager, this, application);
+		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getResourceRoot());
+		this.resourceReader = new NIOResourceReaderImpl(pathManager, this, contextRoot);
 		
 		resourceManager.registerProvider(Resource.class, this);
 		resourceManager.registerProvider(EntityNameable.class, this);
@@ -60,7 +60,7 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		
 		EntityReader<T> entityReader = null;
 		if (Resource.class.isAssignableFrom(klass)) {
-			entityReader = (EntityReader<T>) new NIOResourceReaderImpl(pathManager, this, application);
+			entityReader = (EntityReader<T>) new NIOResourceReaderImpl(pathManager, this, contextRoot);
 		} else {
 			Resource resource = resourceReader.lookup(resourceName);
 			if (resource == null)
@@ -78,7 +78,7 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		List<EntityReader<T>> readers = new ArrayList<EntityReader<T>>();
 		for (String resourceName : resources) {
 			if (Resource.class.isAssignableFrom(klass)) {
-				readers.add((EntityReader<T>) new NIOResourceReaderImpl(pathManager, this, application));
+				readers.add((EntityReader<T>) new NIOResourceReaderImpl(pathManager, this, contextRoot));
 			} else {
 
 				Resource resource = resourceReader.lookup(resourceName);

@@ -13,7 +13,7 @@ package org.abchip.mimo.core.base;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.application.Application;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -27,7 +27,7 @@ import org.eclipse.osgi.framework.console.CommandProvider;
 public class BaseEntityCommandProviderImpl implements CommandProvider {
 
 	@Inject
-	private Application application;
+	private ContextRoot contextRoot;
 	@Inject
 	private FrameManager frameManger;
 	@Inject
@@ -37,11 +37,11 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(application).lookup(frameName);
+		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 		
-		for(E entity: resourceManager.getEntityReader(application, frame, ResourceScope.CONTEXT).find(null)) {
+		for(E entity: resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).find(null)) {
 			StringBuffer sb = new StringBuffer();
 			sb.append(entity.isa().getName());
 			sb.append(" (");

@@ -22,12 +22,12 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.logic.Goal;
 import org.abchip.mimo.logic.LogicFactory;
 import org.abchip.mimo.logic.Question;
 import org.abchip.mimo.logic.Reasoner;
 import org.abchip.mimo.logic.Theory;
-import org.osgi.framework.FrameworkUtil;
 
 import gnu.prolog.database.PrologTextLoader;
 import gnu.prolog.database.PrologTextLoaderError;
@@ -36,7 +36,6 @@ import gnu.prolog.vm.Environment;
 
 public class GNUReasonerImpl implements Reasoner {
 
-	@SuppressWarnings("unused")
 	private ContextProvider contextProvider;
 
 	private Environment environment = null;
@@ -69,11 +68,12 @@ public class GNUReasonerImpl implements Reasoner {
 	}
 
 	@Override
-	public void reload() {
+	public void reload() throws IOException {
 
 		environment = new GNUEnvironment();
 
-		URL resource = FrameworkUtil.getBundle(this.getClass()).getEntry("/theories/asup_base.pl");
+		ContextRoot contextRoot = contextProvider.getContext().getContextRoot();
+		URL resource = contextRoot.getResource(this.getClass(), "/theories/asup_base.pl");
 		// environment.ensureLoaded(AtomTerm.get(resource.getFile()));
 
 		PrologTextLoaderState ptls = environment.getPrologTextLoaderState();

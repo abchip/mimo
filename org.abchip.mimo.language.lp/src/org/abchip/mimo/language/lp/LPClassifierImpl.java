@@ -11,8 +11,8 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
@@ -23,9 +23,6 @@ import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.ClassificationFactory;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.Evaluator;
-import org.eclipse.core.runtime.FileLocator;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.FrameworkUtil;
 
 import com.aliasi.classify.BaseClassifierEvaluator;
 import com.aliasi.classify.ScoredClassification;
@@ -35,7 +32,7 @@ import com.aliasi.util.AbstractExternalizable;
 public class LPClassifierImpl implements Classifier {
 
 	@Inject
-	private Application application;
+	private ContextRoot contextRoot;
 	@Inject
 	private ResourceManager resourceManager;
 
@@ -112,7 +109,7 @@ public class LPClassifierImpl implements Classifier {
 	}
 
 	private void loadLanguages() {
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(application, Language.class, ResourceScope.ALL);
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(contextRoot, Language.class, ResourceScope.ALL);
 		for (Language language : languageReader.find(null))
 			languages.put(language.getName(), language);
 	}
@@ -121,10 +118,9 @@ public class LPClassifierImpl implements Classifier {
 	private void loadModels() {
 		try {
 			String classifierPath = "model/3LangId.LMClassifier";
-			Bundle bundle = FrameworkUtil.getBundle(this.getClass());
-			URL url = bundle.getResource(classifierPath);
+			URL url = contextRoot.getResource(this.getClass(), classifierPath);
 
-			File serializedClassifier = new File(FileLocator.toFileURL(url).getPath());
+			File serializedClassifier = new File(url.getFile());
 			classifier = (ScoredClassifier<CharSequence>) AbstractExternalizable.readObject(serializedClassifier);
 		} catch (ClassNotFoundException | IOException e) {
 			e.printStackTrace();

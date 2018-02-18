@@ -9,7 +9,7 @@
  * Contributors:
  *   Mattia Rocchi - Initial API and implementation
  */
-package org.abchip.mimo.application.osgi;
+package org.abchip.mimo.application.base;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -232,7 +232,7 @@ public class OSGIApplicationStarter {
 		}
 
 		// service registration
-		Object service = loadObject(component.getContext(), serviceRef.getClassName());
+		Object service = loadObject(application.getContext(), serviceRef.getClassName());
 		String interfaceName = serviceRef.getInterfaceName() != null ? serviceRef.getInterfaceName() : serviceRef.getClassName();
 		boolean remoteExport = false;
 		if (serviceRef instanceof ServiceExecutor) {
@@ -293,7 +293,7 @@ public class OSGIApplicationStarter {
 		contextService.close();
 	}
 
-	private Object loadObject(Context context, String className) {
+	private Object loadObject(ContextRoot context, String className) {
 		Class<?> tempClass = context.loadClass(className);
 		if(tempClass == null)
 			context.loadClass(className);

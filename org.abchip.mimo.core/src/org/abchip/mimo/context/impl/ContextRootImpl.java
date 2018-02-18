@@ -7,7 +7,10 @@
  */
 package org.abchip.mimo.context.impl;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.Dictionary;
+import java.util.List;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextRoot;
 
@@ -38,6 +41,61 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	@Override
 	protected EClass eStaticClass() {
 		return ContextPackage.Literals.CONTEXT_ROOT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public <T> T get(Class<T> klass, String filter) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public <T> List<T> getAll(Class<T> klass) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public URL getResource(Class<?> context, String path) throws IOException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<URL> getResources(Class<?> context, String path) throws IOException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Class<?> loadClass(String name) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

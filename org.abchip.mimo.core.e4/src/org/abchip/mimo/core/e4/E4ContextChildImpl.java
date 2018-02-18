@@ -9,35 +9,40 @@
  * Contributors:
  *   Mattia Rocchi - Initial API and implementation
  */
-package orb.abchip.mimo.core.e4;
+package org.abchip.mimo.core.e4;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.osgi.framework.BundleContext;
 
 public class E4ContextChildImpl extends E4ContextImpl {
 
 	private IEclipseContext eclipseContext;
-
-	public E4ContextChildImpl(BundleContext bundleContext, IEclipseContext eclipseContext, String contextID, ContextDescription contextDescription) {
-		super(bundleContext, contextID, contextDescription);
-
+	private Context contextParent;
+	
+	public E4ContextChildImpl(Context contextParent, IEclipseContext eclipseContext, String contextID, ContextDescription contextDescription) {
+		super(contextID, contextDescription);
+		
+		this.contextParent = contextParent;
 		this.eclipseContext = eclipseContext;
 	}
 
 	@Override
-	IEclipseContext getEclipseContext() {
+	protected IEclipseContext getEclipseContext() {
 		return eclipseContext;
 	}
 
 	@Override
-	void removeEclipseContext() {
+	protected void removeEclipseContext() {
 		this.eclipseContext = null;
 	}
-
+	
 	@Override
-	public Context getContext() {
-		return this;
+	public ContextRoot getContextRoot() {
+		if(contextParent instanceof ContextRoot)
+			return (ContextRoot) contextParent;
+		else
+			return contextParent.getContextRoot();
 	}
 }

@@ -13,7 +13,6 @@ Import-Package: org.eclipse.net4j.db,
  org.eclipse.net4j.util;version="3.3.0",
  org.eclipse.net4j.util.om;version="3.3.0",
  org.eclipse.net4j.util.om.log;version="3.3.0",
- org.eclipse.net4j.util.om.trace;version="3.3.0",
- org.osgi.framework;version="1.8.0"
+ org.eclipse.net4j.util.om.trace;version="3.3.0"
 Bundle-Activator: org.abchip.mimo.database.jtds.JTDSActivator
 Require-Bundle: org.abchip.mimo.database.base

@@ -11,8 +11,8 @@
  */
 package org.abchip.mimo.core.base;
 
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ComponentStarted;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Resource;
@@ -22,16 +22,16 @@ import org.abchip.mimo.entity.ResourceScope;
 public class BaseEntityActivator {
 
 	@ComponentStarted
-	private void start(Application application, ResourceManager resourceManager) {
+	private void start(ContextRoot contextRoot, ResourceManager resourceManager) {
 
-		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(application, Resource.class, ResourceScope.ROOT);
-		Resource tempResource = resourceWriter.lookup(application.getContextDescription().getResourceTemporary());
+		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(contextRoot, Resource.class, ResourceScope.ROOT);
+		Resource tempResource = resourceWriter.lookup(contextRoot.getContextDescription().getResourceTemporary());
 		if (tempResource != null)
 			return;
 
 		tempResource = EntityFactory.eINSTANCE.createResource();
-		tempResource.setName(application.getContextDescription().getResourceTemporary());
-		tempResource.setText(application.getContextDescription().getResourceTemporary() + " Text");
+		tempResource.setName(contextRoot.getContextDescription().getResourceTemporary());
+		tempResource.setText(contextRoot.getContextDescription().getResourceTemporary() + " Text");
 		
 		resourceWriter.save(tempResource);
 	}

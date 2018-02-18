@@ -15,8 +15,8 @@ import java.sql.SQLException;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.database.CatalogContainer;
 import org.abchip.mimo.database.DatabaseManager;
 import org.abchip.mimo.database.connection.Connection;
@@ -27,7 +27,7 @@ public class BaseConnectionManagerImpl implements ConnectionManager {
 	private static int connectionID = 0;
 
 	@Inject
-	private Application application;
+	private ContextRoot contextRoot;
 	@Inject
 	private DatabaseManager databaseManager;
 
@@ -79,7 +79,7 @@ public class BaseConnectionManagerImpl implements ConnectionManager {
 	protected synchronized String nextConnectionID(BaseDatabaseManagerImpl baseDatabaseManagerImpl) {
 
 		connectionID++;
-		String stringID = application.getContext().getContextDescription().getName() + "/" + connectionID;
+		String stringID = contextRoot.getContextDescription().getName() + "/" + connectionID;
 
 		return stringID;
 	}

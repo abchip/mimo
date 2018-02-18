@@ -11,17 +11,11 @@
  */
 package org.abchip.mimo.database.base;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.Properties;
 
 import org.abchip.mimo.database.CatalogContainer;
-import org.abchip.mimo.database.DatabaseCoreRuntimeException;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 import org.abchip.mimo.database.connection.ConnectionCredentials;
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.datatools.connectivity.ConnectionProfileConstants;
 import org.eclipse.datatools.connectivity.drivers.DriverInstance;
 import org.eclipse.datatools.connectivity.drivers.DriverManager;
@@ -29,7 +23,6 @@ import org.eclipse.datatools.connectivity.drivers.IDriverMgmtConstants;
 import org.eclipse.datatools.connectivity.drivers.jdbc.IJDBCConnectionProfileConstants;
 import org.eclipse.datatools.connectivity.drivers.jdbc.IJDBCDriverDefinitionConstants;
 import org.eclipse.datatools.connectivity.drivers.models.TemplateDescriptor;
-import org.osgi.framework.Bundle;
 
 public class BaseCatalogHelper {
 
@@ -60,18 +53,16 @@ public class BaseCatalogHelper {
 
 				// platform dependent jar list
 				StringBuffer jarList = new StringBuffer();
-				try {
-					Bundle bundle = Platform.getBundle(templateDescriptor.getElement().getDeclaringExtension().getNamespaceIdentifier());
-					String paths[] = templateDescriptor.getJarList().split(";");
-					for (int i = 0; i < paths.length; i++) {
-						if (i > 0)
-							jarList.append(System.getProperty("path.separator"));
-						URL pathURL = bundle.getEntry(paths[i].trim());
-						jarList.append(new Path(FileLocator.toFileURL(pathURL).getFile()).toOSString());
-					}
-				} catch (IOException e) {
-					throw new DatabaseCoreRuntimeException(e);
-				}
+				
+				System.err.println("Unsupported function: cn9w5t7y98ngw45n9gt");
+//				Bundle bundlex= Platform.getBundle(templateDescriptor.getElement().getDeclaringExtension().getNamespaceIdentifier());
+/*				String paths[] = templateDescriptor.getJarList().split(";");
+				for (int i = 0; i < paths.length; i++) {
+					if (i > 0)
+						jarList.append(System.getProperty("path.separator"));
+					URL pathURL = bundle.getEntry(paths[i].trim());
+					jarList.append(new Path(FileLocator.toFileURL(pathURL).getFile()).toOSString());
+				}*/
 
 				properties.setProperty(IDriverMgmtConstants.PROP_DEFN_JARLIST, jarList.toString());
 

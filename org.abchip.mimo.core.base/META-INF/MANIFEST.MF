@@ -8,10 +8,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
  org.apache.commons.io,
  org.apache.commons.lang,
+ org.eclipse.osgi,
  org.abchip.mimo.application
-Import-Package: javax.inject,
- org.eclipse.emf.ecore.xmi,
- org.eclipse.emf.ecore.xmi.impl
 Bundle-ClassPath: lib/antlr-3.4.jar,
  .
 Export-Package: org.abchip.mimo.core.base,

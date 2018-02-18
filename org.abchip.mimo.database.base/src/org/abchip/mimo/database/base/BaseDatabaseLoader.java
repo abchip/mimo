@@ -16,8 +16,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.database.CatalogContainer;
 import org.abchip.mimo.database.DatabaseContainer;
 import org.abchip.mimo.database.connection.ConnectionConfig;
@@ -31,7 +31,7 @@ import org.eclipse.datatools.modelbase.sql.tables.Table;
 public class BaseDatabaseLoader {
 
 	@Inject
-	private Application application;
+	private ContextRoot contextRoot;
 	@Inject
 	private QueryWriterRegistry queryWriterRegistry;
 	@Inject
@@ -49,7 +49,7 @@ public class BaseDatabaseLoader {
 				continue;
 
 			// build catalog context
-			Context catalogContext = application.getContext().createChildContext(catalogContainer.getName());
+			Context catalogContext = contextRoot.createChildContext(catalogContainer.getName());
 
 			ConnectionConfig connectionConfig = catalogContainer.getConnectionConfig();
 			QueryWriter queryWriter = queryWriterRegistry.lookup(connectionConfig);

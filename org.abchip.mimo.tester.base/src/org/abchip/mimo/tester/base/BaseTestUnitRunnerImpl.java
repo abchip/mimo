@@ -40,7 +40,7 @@ public class BaseTestUnitRunnerImpl extends BaseTestRunnerImpl implements TestUn
 		TestRunnerEvent event = TesterFactory.eINSTANCE.createTestRunnerEvent();
 		event.setSource(this);
 
-		Class<?> testClass = getContext().loadClass(classURI);
+		Class<?> testClass = getContext().getContextRoot().loadClass(classURI);
 		if (testClass == null)
 			throw new RuntimeException("Invalid runner: " + classURI);
 

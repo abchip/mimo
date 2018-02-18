@@ -218,7 +218,7 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (user: ");
 		result.append(user);
 		result.append(", password: ");

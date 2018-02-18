@@ -9,7 +9,7 @@
  * Contributors:
  *   Mattia Rocchi - Initial API and implementation
  */
-package orb.abchip.mimo.core.e4;
+package org.abchip.mimo.core.e4;
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
@@ -28,11 +28,6 @@ import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.Constants;
-import org.osgi.framework.InvalidSyntaxException;
-import org.osgi.framework.ServiceReference;
 
 public abstract class E4ContextImpl extends ContextImpl {
 
@@ -41,28 +36,27 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	private static Boolean postConstruct = null;
 
-	private BundleContext bundleContext;
 	private ContextDescription contextDescription;
 	private String contextID;
 
-	public E4ContextImpl(BundleContext bundleContext, String contextID, ContextDescription contextDescription) {
-		this.bundleContext = bundleContext;
+	public E4ContextImpl(String contextID, ContextDescription contextDescription) {
 		this.contextID = contextID;
 		this.contextDescription = contextDescription;
 	}
 
-	abstract IEclipseContext getEclipseContext();
+	protected abstract IEclipseContext getEclipseContext();
 
-	abstract void removeEclipseContext();
-
-	protected BundleContext getBundleContext() {
-		return this.bundleContext;
-	}
+	protected abstract void removeEclipseContext();
 	
 	protected void initializeContext(IEclipseContext eclipseContext) {
 		eclipseContext.set(ADAPTER_FACTORIES_NAME, new HashMap<Class<?>, List<AdapterFactory>>());
 	}
 
+	@Override
+	public Context getContext() {
+		return this;
+	}
+	
 	@Override
 	public <T> void set(Class<T> clazz, T object) {
 		getEclipseContext().set(clazz, object);
@@ -103,24 +97,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 			if(e.getCause() != null)
 				throw new RuntimeException(e.getCause());
 		}
-	}
-
-	@Override
-	public Class<?> loadClass(String className) {
-
-		Class<?> class_ = null;
-		for (Bundle bundle : bundleContext.getBundles()) {
-			if(bundle.getSymbolicName().contains("mimo.core.base"))
-				"".toCharArray();
-			try {
-				class_ = bundle.loadClass(className);
-				break;				
-			} catch (ClassNotFoundException e) {
-				continue;
-			}
-		}
-
-		return class_;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -244,44 +220,9 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 		initializeContext(eclipseChildContext);
 
-		Context contextChild = new E4ContextChildImpl(bundleContext, eclipseChildContext, UUID.randomUUID().toString(), contextDescription);
+		Context contextChild = new E4ContextChildImpl(this, eclipseChildContext, UUID.randomUUID().toString(), contextDescription);
 
 		return contextChild;
-	}
-
-	@SuppressWarnings("unused")
-	private Context createRemoteContext(ContextDescription contextDescription) {
-
-		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
-
-		// bind remote service
-		try {
-			for (ServiceReference<?> serviceReference : bundleContext.getAllServiceReferences(null, null)) {
-				if (serviceReference.getProperty(Constants.SERVICE_IMPORTED) == null)
-					continue;
-
-				Object object = null;
-				String className = ((String[]) serviceReference.getProperty("objectClass"))[0];
-				if (eclipseChildContext.containsKey(className))
-					continue;
-				for (Bundle bundle : bundleContext.getBundles())
-					if (className.startsWith(bundle.getSymbolicName())) {
-
-						object = bundle.getBundleContext().getService(serviceReference);
-						if (object == null)
-							continue;
-
-						eclipseChildContext.set(className, object);
-						break;
-					}
-			}
-		} catch (InvalidSyntaxException e) {
-			throw new RuntimeException(e);
-		}
-
-		initializeContext(eclipseChildContext);
-
-		return new E4ContextChildImpl(bundleContext, eclipseChildContext, UUID.randomUUID().toString(), contextDescription);
 	}
 
 	private boolean isActivePostConstruct() {

@@ -103,14 +103,6 @@ public interface Context extends Closeable, ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" nameRequired="true"
-	 * @generated
-	 */
-	Class<?> loadClass(String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model objectRequired="true" qualifierRequired="true" ABounds="org.abchip.mimo.util.JavaAnnotation"
 	 * @generated
 	 */
@@ -163,5 +155,13 @@ public interface Context extends Closeable, ContextProvider {
 	 * @generated
 	 */
 	void set(String name, Object object);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	ContextRoot getContextRoot();
 
 } // Context

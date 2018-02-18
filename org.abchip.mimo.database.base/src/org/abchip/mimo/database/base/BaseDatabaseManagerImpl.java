@@ -17,7 +17,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.application.Application;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.database.CatalogContainer;
 import org.abchip.mimo.database.DatabaseContainer;
 import org.abchip.mimo.database.DatabaseCoreRuntimeException;
@@ -58,7 +58,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 public class BaseDatabaseManagerImpl implements DatabaseManager {
 
 	@Inject
-	private Application application;
+	private ContextRoot contextRoot;
 	@Inject
 	private DefinitionParserRegistry definitionParserRegistry;
 	@Inject
@@ -80,12 +80,12 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 
 		// database context
 		DefinitionParser definitionParser = this.definitionParserRegistry.lookupByVendorVersion(databaseContainer.getVendor(), databaseContainer.getVersion());
-		application.getContext().set(DefinitionParser.class, definitionParser);
+		contextRoot.set(DefinitionParser.class, definitionParser);
 		QueryParser queryParser = this.queryParserRegistry.lookupByVendorVersion(databaseContainer.getVendor(), databaseContainer.getVersion());
-		application.getContext().set(QueryParser.class, queryParser);
+		contextRoot.set(QueryParser.class, queryParser);
 
 		// database loader
-		BaseDatabaseLoader databaseStarter = application.getContext().make(BaseDatabaseLoader.class);
+		BaseDatabaseLoader databaseStarter = contextRoot.make(BaseDatabaseLoader.class);
 		databaseStarter.loadDatabase(databaseContainer);
 		
 		this.started = false;

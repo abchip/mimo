@@ -75,9 +75,6 @@
           <genParameters ecoreParameter="mimo.ecore#//context/Context/inject/object"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/isClosed"/>
-        <genOperations ecoreOperation="mimo.ecore#//context/Context/loadClass">
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/loadClass/name"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/invoke">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/invoke/object"/>
           <genParameters ecoreParameter="mimo.ecore#//context/Context/invoke/qualifier"/>
@@ -107,8 +104,29 @@
           <genParameters ecoreParameter="mimo.ecore#//context/Context/set.1/name"/>
           <genParameters ecoreParameter="mimo.ecore#//context/Context/set.1/object"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/getContextRoot"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/ContextRoot">
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/get">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/get/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/get/filter"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ContextRoot/get/T"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getAll">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getAll/klass"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ContextRoot/getAll/T"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getResource">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResource/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResource/path"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getResources">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResources/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResources/path"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/loadClass">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/loadClass/name"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/set">
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/set/name"/>
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/set/object"/>
@@ -724,8 +742,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//expression/TermExpression/value"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Util" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//util">
+    <nestedGenPackages prefix="Util" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//util">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/BinaryType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/BinaryType/Byte"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/BinaryType/Short"/>

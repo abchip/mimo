@@ -217,7 +217,7 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (length: ");
 		result.append(length);
 		result.append(", varying: ");

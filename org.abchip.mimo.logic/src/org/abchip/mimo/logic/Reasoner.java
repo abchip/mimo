@@ -9,6 +9,7 @@ package org.abchip.mimo.logic;
 
 import java.io.Closeable;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -41,10 +42,10 @@ public interface Reasoner extends Closeable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model theoryRequired="true"
+	 * @model exceptions="org.abchip.mimo.util.JavaIOException" theoryRequired="true"
 	 * @generated
 	 */
-	void loadTheory(Theory theory);
+	void loadTheory(Theory theory) throws IOException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,9 +66,9 @@ public interface Reasoner extends Closeable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.util.JavaIOException"
 	 * @generated
 	 */
-	void reload();
+	void reload() throws IOException;
 
 } // Reasoner

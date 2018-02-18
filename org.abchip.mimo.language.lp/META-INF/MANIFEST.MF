@@ -5,11 +5,7 @@ Bundle-SymbolicName: org.abchip.mimo.language.lp
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.abchip.mimo.language,
- org.eclipse.equinox.registry,
- org.abchip.mimo.application
+Require-Bundle: org.abchip.mimo.language
 Export-Package: org.abchip.mimo.language.lp
-Import-Package: javax.inject,
- org.osgi.framework;version="1.8.0"
 Bundle-ClassPath: lib/lingpipe-4.1.2.jar,
  .

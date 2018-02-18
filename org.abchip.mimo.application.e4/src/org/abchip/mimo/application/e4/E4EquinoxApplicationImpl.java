@@ -19,6 +19,8 @@ import java.util.concurrent.TimeUnit;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationManager;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.core.e4.E4ContextRootImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -29,8 +31,6 @@ import org.eclipse.equinox.app.IApplicationContext;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
-
-import orb.abchip.mimo.core.e4.E4ContextRootImpl;
 
 public class E4EquinoxApplicationImpl implements IApplication {
 
@@ -100,6 +100,7 @@ public class E4EquinoxApplicationImpl implements IApplication {
 		BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();		
 		E4ContextRootImpl contextApplication = new E4ContextRootImpl(bundleContext, UUID.randomUUID().toString(), application.getContextDescription());
 		contextApplication.set(Application.class, application);
+		contextApplication.set(ContextRoot.class, contextApplication);
 		application.setContext(contextApplication);
 
 		// application manager

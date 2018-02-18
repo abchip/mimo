@@ -9,13 +9,13 @@
  * Contributors:
  *   Mattia Rocchi - Initial API and implementation
  */
-package org.abchip.mimo.application.osgi;
+package org.abchip.mimo.application.base;
 
 import java.io.OutputStream;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationManager;
-import org.abchip.mimo.application.osgi.OSGIApplicationStarter;
+import org.abchip.mimo.application.base.OSGIApplicationStarter;
 
 public class OSGIApplicationManagerImpl implements ApplicationManager {
 

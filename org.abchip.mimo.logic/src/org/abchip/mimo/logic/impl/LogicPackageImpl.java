@@ -111,7 +111,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link LogicPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -125,7 +125,8 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		if (isInited) return (LogicPackage)EPackage.Registry.INSTANCE.getEPackage(LogicPackage.eNS_URI);
 
 		// Obtain or create and register package
-		LogicPackageImpl theLogicPackage = (LogicPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LogicPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LogicPackageImpl());
+		Object registeredLogicPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		LogicPackageImpl theLogicPackage = registeredLogicPackage instanceof LogicPackageImpl ? (LogicPackageImpl)registeredLogicPackage : new LogicPackageImpl();
 
 		isInited = true;
 
@@ -141,7 +142,6 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		// Mark meta-data to indicate it can't be changed
 		theLogicPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(LogicPackage.eNS_URI, theLogicPackage);
 		return theLogicPackage;
@@ -399,6 +399,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 
 		op = addEOperation(reasonerEClass, null, "loadTheory", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTheory(), "theory", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theUtilPackage.getJavaIOException());
 
 		op = addEOperation(reasonerEClass, this.getGoal(), "query", 1, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "question", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -406,7 +407,8 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		op = addEOperation(reasonerEClass, this.getGoal(), "query", 1, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getQuestion(), "question", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(reasonerEClass, null, "reload", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(reasonerEClass, null, "reload", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theUtilPackage.getJavaIOException());
 
 		// Create resource
 		createResource(eNS_URI);

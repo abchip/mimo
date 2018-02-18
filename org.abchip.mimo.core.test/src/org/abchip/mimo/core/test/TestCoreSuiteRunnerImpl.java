@@ -1,7 +1,7 @@
 package org.abchip.mimo.core.test;
 
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Resource;
@@ -23,10 +23,10 @@ public class TestCoreSuiteRunnerImpl extends BaseTestSuiteDirectoryRunnerImpl {
 	@TestStarted
 	public void start() {
 
-		Application application = getContext().get(Application.class);
+		ContextRoot contextRoot = getContext().get(ContextRoot.class);
 		ResourceManager resourceManager = getContext().get(ResourceManager.class);
 
-		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(application, Resource.class, ResourceScope.ROOT);
+		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(contextRoot, Resource.class, ResourceScope.ROOT);
 		String resourceName = "mimo-test";
 
 		Resource resource = resourceWriter.lookup(resourceName);
@@ -43,10 +43,10 @@ public class TestCoreSuiteRunnerImpl extends BaseTestSuiteDirectoryRunnerImpl {
 	@TestStopped
 	public void stop() {
 
-		Application application = getContext().get(Application.class);
+		ContextRoot contextRoot = getContext().get(ContextRoot.class);
 		ResourceManager resourceManager = getContext().get(ResourceManager.class);
 
-		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(application, Resource.class, ResourceScope.ROOT);
+		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(contextRoot, Resource.class, ResourceScope.ROOT);
 		String resourceName = "mimo-test";
 
 		Resource resource = resourceWriter.lookup(resourceName);

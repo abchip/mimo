@@ -13,7 +13,6 @@ package org.abchip.mimo.database.jtds;
 
 import org.eclipse.net4j.util.om.OMBundle;
 import org.eclipse.net4j.util.om.OMPlatform;
-import org.eclipse.net4j.util.om.OSGiActivator;
 import org.eclipse.net4j.util.om.log.OMLogger;
 import org.eclipse.net4j.util.om.trace.OMTracer;
 
@@ -27,10 +26,4 @@ public abstract class JTDSActivator {
 	public static final OMTracer DEBUG_SQL = DEBUG.tracer("sql"); //$NON-NLS-1$
 
 	public static final OMLogger LOG = BUNDLE.logger();
-
-	public static final class Activator extends OSGiActivator {
-		public Activator() {
-			super(BUNDLE);
-		}
-	}
 }

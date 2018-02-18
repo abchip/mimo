@@ -12,7 +12,7 @@
 package org.abchip.mimo.application.e4;
 
 import org.abchip.mimo.application.ApplicationManager;
-import org.abchip.mimo.application.osgi.OSGIApplicationManagerImpl;
+import org.abchip.mimo.application.base.OSGIApplicationManagerImpl;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;

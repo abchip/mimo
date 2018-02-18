@@ -7,12 +7,9 @@ Bundle-Vendor: ABChip
 Export-Package: org.abchip.mimo.core.test,
   org.abchip.mimo.core.test.impl,
   org.abchip.mimo.core.test.runner
-Require-Bundle: org.eclipse.core.runtime,
-  org.eclipse.emf.ecore;visibility:=reexport,
-  org.abchip.mimo.core;visibility:=reexport,
-  org.abchip.mimo.tester,
-  org.abchip.mimo.tester.base,
-  org.abchip.mimo.application
+Require-Bundle: org.abchip.mimo.core,
+ org.abchip.mimo.tester,
+ org.abchip.mimo.tester.base
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.inject
 Bundle-ActivationPolicy: lazy
