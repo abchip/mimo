@@ -23,6 +23,7 @@ import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.ClassificationFactory;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.Evaluator;
+import org.abchip.mimo.util.Files;
 
 import com.aliasi.classify.BaseClassifierEvaluator;
 import com.aliasi.classify.ScoredClassification;
@@ -33,6 +34,8 @@ public class LPClassifierImpl implements Classifier {
 
 	@Inject
 	private ContextRoot contextRoot;
+	@Inject
+	private Files files;
 	@Inject
 	private ResourceManager resourceManager;
 
@@ -119,8 +122,7 @@ public class LPClassifierImpl implements Classifier {
 		try {
 			String classifierPath = "model/3LangId.LMClassifier";
 			URL url = contextRoot.getResource(this.getClass(), classifierPath);
-
-			File serializedClassifier = new File(url.getFile());
+			File serializedClassifier = files.copyToFile(url.openStream());
 			classifier = (ScoredClassifier<CharSequence>) AbstractExternalizable.readObject(serializedClassifier);
 		} catch (ClassNotFoundException | IOException e) {
 			e.printStackTrace();

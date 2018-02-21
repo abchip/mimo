@@ -12,9 +12,12 @@
 package org.abchip.mimo.core.base.util;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.abchip.mimo.util.Files;
+import org.apache.commons.io.IOUtils;
 
 public class BaseFilesImpl implements Files {
 
@@ -36,5 +39,14 @@ public class BaseFilesImpl implements Files {
 	@Override
 	public String getSeparator() {		
 		return java.nio.file.FileSystems.getDefault().getSeparator();
+	}
+
+	@Override
+	public File copyToFile(InputStream stream) throws IOException {
+		File tempFile = File.createTempFile("mimo-file", "tmp");
+	    tempFile.deleteOnExit();
+	    FileOutputStream out = new FileOutputStream(tempFile);
+	    IOUtils.copy(stream, out);
+	    return tempFile;
 	}
 }

@@ -63,12 +63,13 @@ public class E4EquinoxApplicationImpl implements IApplication {
 			}
 		}
 
+		context.applicationRunning();
+
 		if (applicationConfig == null) {
 			System.out.println("Configuration required: see -mimo.config parameter");
-			return null;
-		}
 
-		context.applicationRunning();
+			return waitForStopOrRestart();
+		}
 		// BundleContext bundleContext =
 		// InternalPlatform.getDefault().getBundleContext();
 		// Load application
@@ -116,6 +117,8 @@ public class E4EquinoxApplicationImpl implements IApplication {
 	private Object waitForStopOrRestart() {
 		while(true) {
 			try {
+				if(applicationManager == null)
+					continue;
 			    TimeUnit.MILLISECONDS.sleep(1000);
 			    if (applicationManager.restartCalled()) 
 			    	return EXIT_RESTART;

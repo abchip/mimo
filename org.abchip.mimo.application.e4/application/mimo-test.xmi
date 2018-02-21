@@ -38,7 +38,8 @@
       <services
           xsi:type="mimo-app:ServiceExecutor"
           className="org.abchip.mimo.core.base.util.BaseStringsImpl"
-          interfaceName="org.abchip.mimo.util.Strings"/>
+          interfaceName="org.abchip.mimo.util.Strings"
+          remoteExport="true"/>
       <services
           xsi:type="mimo-app:ServiceExecutor"
           className="org.abchip.mimo.core.base.util.BaseListsImpl"
@@ -289,4 +290,5 @@
       name="mimo-test"
       resourceRoot="mimo-data"
       resourceTemporary="mimo-temp"/>
+  <hooks className="org.abchip.mimo.communication.ecf.ECFServerActivatorHook"/>
 </mimo-app:Application>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="org.abchip.mimo.application.e4" uid="mimo-test" id="org.abchip.mimo.application.e4.test" application="org.abchip.mimo.application.e4.mimo-ap" version="0.1.0" useFeatures="false" includeLaunchers="true">
+<product name="org.abchip.mimo.application.e4" uid="mimo-test" id="org.abchip.mimo.application.e4.test" application="org.abchip.mimo.application.e4.mimo-ap" version="0.1.0" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -30,19 +30,17 @@
       <plugin id="com.ibm.icu"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
-      <plugin id="javax.servlet"/>
       <plugin id="javax.xml"/>
       <plugin id="net.sourceforge.lpg.lpgjavaruntime"/>
       <plugin id="org.abchip.mimo.application"/>
+      <plugin id="org.abchip.mimo.application.base"/>
       <plugin id="org.abchip.mimo.application.e4"/>
-      <plugin id="org.abchip.mimo.application.osgi"/>
       <plugin id="org.abchip.mimo.audio"/>
       <plugin id="org.abchip.mimo.audio.sph4"/>
       <plugin id="org.abchip.mimo.audio.test"/>
       <plugin id="org.abchip.mimo.core"/>
       <plugin id="org.abchip.mimo.core.base"/>
       <plugin id="org.abchip.mimo.core.e4"/>
-      <plugin id="org.abchip.mimo.core.osgi"/>
       <plugin id="org.abchip.mimo.core.test"/>
       <plugin id="org.abchip.mimo.database"/>
       <plugin id="org.abchip.mimo.database.base"/>
@@ -71,10 +69,11 @@
       <plugin id="org.apache.felix.gogo.command"/>
       <plugin id="org.apache.felix.gogo.runtime"/>
       <plugin id="org.apache.felix.gogo.shell"/>
+      <plugin id="org.apache.log4j"/>
       <plugin id="org.apache.lucene.analyzers-common"/>
       <plugin id="org.apache.lucene.core"/>
       <plugin id="org.apache.lucene.queryparser"/>
-      <plugin id="org.eclipse.ant.core"/>
+      <plugin id="org.eclipse.core.commands"/>
       <plugin id="org.eclipse.core.contenttype"/>
       <plugin id="org.eclipse.core.expressions"/>
       <plugin id="org.eclipse.core.filesystem"/>
@@ -108,19 +107,10 @@
       <plugin id="org.eclipse.emf.ecore.xmi"/>
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.concurrent"/>
       <plugin id="org.eclipse.equinox.console"/>
-      <plugin id="org.eclipse.equinox.p2.console"/>
-      <plugin id="org.eclipse.equinox.p2.core"/>
-      <plugin id="org.eclipse.equinox.p2.director"/>
-      <plugin id="org.eclipse.equinox.p2.engine"/>
-      <plugin id="org.eclipse.equinox.p2.metadata"/>
-      <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
-      <plugin id="org.eclipse.equinox.p2.repository"/>
       <plugin id="org.eclipse.equinox.preferences"/>
       <plugin id="org.eclipse.equinox.registry"/>
-      <plugin id="org.eclipse.equinox.security"/>
-      <plugin id="org.eclipse.equinox.security.linux.x86_64" fragment="true"/>
-      <plugin id="org.eclipse.equinox.simpleconfigurator"/>
       <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.net4j.db"/>
@@ -131,10 +121,20 @@
       <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.osgi.util"/>
-      <plugin id="org.sat4j.core"/>
-      <plugin id="org.sat4j.pb"/>
-      <plugin id="org.tukaani.xz"/>
+      <plugin id="org.eclipse.xtext.logging" fragment="true"/>
    </plugins>
+
+   <features>
+      <feature id="org.abchip.eclipse.osgi.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.application.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.audio.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.database.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.communication.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.language.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.mining.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.social.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.eclipse.ecf.feature" version="0.1.0.qualifier"/>
+   </features>
 
 
    <preferencesInfo>

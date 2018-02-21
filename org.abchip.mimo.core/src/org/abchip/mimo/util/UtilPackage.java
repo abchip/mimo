@@ -544,6 +544,25 @@ public interface UtilPackage extends EPackage {
 	int JAVA_EXECUTOR_SERVICE_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link java.io.File <em>Java File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.io.File
+	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaFile()
+	 * @generated
+	 */
+	int JAVA_FILE = 17;
+
+	/**
+	 * The number of structural features of the '<em>Java File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_FILE_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.lang.Iterable <em>Java Iterable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -551,7 +570,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaIterable()
 	 * @generated
 	 */
-	int JAVA_ITERABLE = 17;
+	int JAVA_ITERABLE = 18;
 
 	/**
 	 * The number of structural features of the '<em>Java Iterable</em>' class.
@@ -570,7 +589,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaIterator()
 	 * @generated
 	 */
-	int JAVA_ITERATOR = 18;
+	int JAVA_ITERATOR = 19;
 
 	/**
 	 * The number of structural features of the '<em>Java Iterator</em>' class.
@@ -589,7 +608,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaList()
 	 * @generated
 	 */
-	int JAVA_LIST = 19;
+	int JAVA_LIST = 20;
 
 	/**
 	 * The number of structural features of the '<em>Java List</em>' class.
@@ -608,7 +627,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaNumber()
 	 * @generated
 	 */
-	int JAVA_NUMBER = 20;
+	int JAVA_NUMBER = 21;
 
 	/**
 	 * The number of structural features of the '<em>Java Number</em>' class.
@@ -627,7 +646,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaPrincipal()
 	 * @generated
 	 */
-	int JAVA_PRINCIPAL = 21;
+	int JAVA_PRINCIPAL = 22;
 
 	/**
 	 * The number of structural features of the '<em>Java Principal</em>' class.
@@ -646,7 +665,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaRunnable()
 	 * @generated
 	 */
-	int JAVA_RUNNABLE = 22;
+	int JAVA_RUNNABLE = 23;
 
 	/**
 	 * The number of structural features of the '<em>Java Runnable</em>' class.
@@ -665,7 +684,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaThread()
 	 * @generated
 	 */
-	int JAVA_THREAD = 24;
+	int JAVA_THREAD = 25;
 
 	/**
 	 * The meta object id for the '{@link java.lang.ThreadGroup <em>Java Thread Group</em>}' class.
@@ -675,7 +694,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaThreadGroup()
 	 * @generated
 	 */
-	int JAVA_THREAD_GROUP = 25;
+	int JAVA_THREAD_GROUP = 26;
 
 	/**
 	 * The meta object id for the '{@link java.lang.management.ThreadInfo <em>Java Thread Info</em>}' class.
@@ -685,7 +704,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaThreadInfo()
 	 * @generated
 	 */
-	int JAVA_THREAD_INFO = 26;
+	int JAVA_THREAD_INFO = 27;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Singleton <em>Singleton</em>}' class.
@@ -695,7 +714,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getSingleton()
 	 * @generated
 	 */
-	int SINGLETON = 29;
+	int SINGLETON = 30;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Lists <em>Lists</em>}' class.
@@ -705,7 +724,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getLists()
 	 * @generated
 	 */
-	int LISTS = 27;
+	int LISTS = 28;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.NumericDefImpl <em>Numeric Def</em>}' class.
@@ -715,7 +734,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getNumericDef()
 	 * @generated
 	 */
-	int NUMERIC_DEF = 28;
+	int NUMERIC_DEF = 29;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Streams <em>Streams</em>}' class.
@@ -725,7 +744,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getStreams()
 	 * @generated
 	 */
-	int STREAMS = 30;
+	int STREAMS = 31;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.StringDefImpl <em>String Def</em>}' class.
@@ -735,7 +754,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getStringDef()
 	 * @generated
 	 */
-	int STRING_DEF = 31;
+	int STRING_DEF = 32;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Strings <em>Strings</em>}' class.
@@ -745,7 +764,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getStrings()
 	 * @generated
 	 */
-	int STRINGS = 32;
+	int STRINGS = 33;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Thread <em>Thread</em>}' class.
@@ -755,7 +774,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThread()
 	 * @generated
 	 */
-	int THREAD = 33;
+	int THREAD = 34;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Threads <em>Threads</em>}' class.
@@ -765,7 +784,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreads()
 	 * @generated
 	 */
-	int THREADS = 34;
+	int THREADS = 35;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.ThreadInfoImpl <em>Thread Info</em>}' class.
@@ -775,7 +794,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadInfo()
 	 * @generated
 	 */
-	int THREAD_INFO = 35;
+	int THREAD_INFO = 36;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.ThreadManager <em>Thread Manager</em>}' class.
@@ -785,7 +804,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadManager()
 	 * @generated
 	 */
-	int THREAD_MANAGER = 36;
+	int THREAD_MANAGER = 37;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.URIs <em>UR Is</em>}' class.
@@ -795,7 +814,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getURIs()
 	 * @generated
 	 */
-	int UR_IS = 37;
+	int UR_IS = 38;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.BinaryType <em>Binary Type</em>}' enum.
@@ -805,7 +824,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getBinaryType()
 	 * @generated
 	 */
-	int BINARY_TYPE = 38;
+	int BINARY_TYPE = 39;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.DataDefType <em>Data Def Type</em>}' enum.
@@ -815,7 +834,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getDataDefType()
 	 * @generated
 	 */
-	int DATA_DEF_TYPE = 39;
+	int DATA_DEF_TYPE = 40;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.DatetimeType <em>Datetime Type</em>}' enum.
@@ -825,7 +844,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getDatetimeType()
 	 * @generated
 	 */
-	int DATETIME_TYPE = 40;
+	int DATETIME_TYPE = 41;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.DateFormat <em>Date Format</em>}' enum.
@@ -835,7 +854,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getDateFormat()
 	 * @generated
 	 */
-	int DATE_FORMAT = 41;
+	int DATE_FORMAT = 42;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.DecimalType <em>Decimal Type</em>}' enum.
@@ -845,7 +864,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getDecimalType()
 	 * @generated
 	 */
-	int DECIMAL_TYPE = 42;
+	int DECIMAL_TYPE = 43;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.FloatingType <em>Floating Type</em>}' enum.
@@ -855,7 +874,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getFloatingType()
 	 * @generated
 	 */
-	int FLOATING_TYPE = 43;
+	int FLOATING_TYPE = 44;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.ThreadStatus <em>Thread Status</em>}' enum.
@@ -865,7 +884,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadStatus()
 	 * @generated
 	 */
-	int THREAD_STATUS = 44;
+	int THREAD_STATUS = 45;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.TimeFormat <em>Time Format</em>}' enum.
@@ -875,7 +894,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getTimeFormat()
 	 * @generated
 	 */
-	int TIME_FORMAT = 45;
+	int TIME_FORMAT = 46;
 
 	/**
 	 * The meta object id for the '<em>Java Annotation</em>' data type.
@@ -885,7 +904,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaAnnotation()
 	 * @generated
 	 */
-	int JAVA_ANNOTATION = 46;
+	int JAVA_ANNOTATION = 47;
 
 	/**
 	 * The meta object id for the '<em>Java Dictionary</em>' data type.
@@ -895,7 +914,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaDictionary()
 	 * @generated
 	 */
-	int JAVA_DICTIONARY = 47;
+	int JAVA_DICTIONARY = 48;
 
 	/**
 	 * The meta object id for the '<em>Java Exception</em>' data type.
@@ -905,7 +924,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaException()
 	 * @generated
 	 */
-	int JAVA_EXCEPTION = 48;
+	int JAVA_EXCEPTION = 49;
 
 	/**
 	 * The meta object id for the '<em>Java Input Stream</em>' data type.
@@ -915,7 +934,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaInputStream()
 	 * @generated
 	 */
-	int JAVA_INPUT_STREAM = 49;
+	int JAVA_INPUT_STREAM = 50;
 
 	/**
 	 * The meta object id for the '<em>Java IO Exception</em>' data type.
@@ -925,7 +944,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaIOException()
 	 * @generated
 	 */
-	int JAVA_IO_EXCEPTION = 50;
+	int JAVA_IO_EXCEPTION = 51;
 
 	/**
 	 * The meta object id for the '<em>Java Map</em>' data type.
@@ -935,7 +954,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaMap()
 	 * @generated
 	 */
-	int JAVA_MAP = 51;
+	int JAVA_MAP = 52;
 
 	/**
 	 * The meta object id for the '<em>Java Output Stream</em>' data type.
@@ -945,7 +964,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaOutputStream()
 	 * @generated
 	 */
-	int JAVA_OUTPUT_STREAM = 52;
+	int JAVA_OUTPUT_STREAM = 53;
 
 	/**
 	 * The meta object id for the '<em>Java Properties</em>' data type.
@@ -955,7 +974,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaProperties()
 	 * @generated
 	 */
-	int JAVA_PROPERTIES = 53;
+	int JAVA_PROPERTIES = 54;
 
 	/**
 	 * The meta object id for the '<em>Java Throwable</em>' data type.
@@ -965,7 +984,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaThrowable()
 	 * @generated
 	 */
-	int JAVA_THROWABLE = 54;
+	int JAVA_THROWABLE = 55;
 
 	/**
 	 * The meta object id for the '<em>Java Type</em>' data type.
@@ -975,7 +994,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaType()
 	 * @generated
 	 */
-	int JAVA_TYPE = 55;
+	int JAVA_TYPE = 56;
 
 	/**
 	 * The meta object id for the '<em>Java URI</em>' data type.
@@ -985,7 +1004,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaURI()
 	 * @generated
 	 */
-	int JAVA_URI = 56;
+	int JAVA_URI = 57;
 
 	/**
 	 * The meta object id for the '<em>Java URL</em>' data type.
@@ -995,7 +1014,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaURL()
 	 * @generated
 	 */
-	int JAVA_URL = 57;
+	int JAVA_URL = 58;
 
 	/**
 	 * The meta object id for the '<em>Java Writer</em>' data type.
@@ -1005,7 +1024,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaWriter()
 	 * @generated
 	 */
-	int JAVA_WRITER = 58;
+	int JAVA_WRITER = 59;
 
 	/**
 	 * The meta object id for the '{@link java.io.Serializable <em>Java Serializable</em>}' class.
@@ -1015,7 +1034,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaSerializable()
 	 * @generated
 	 */
-	int JAVA_SERIALIZABLE = 23;
+	int JAVA_SERIALIZABLE = 24;
 
 
 	/**
@@ -1571,6 +1590,17 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getJavaExecutorService();
+
+	/**
+	 * Returns the meta object for class '{@link java.io.File <em>Java File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Java File</em>'.
+	 * @see java.io.File
+	 * @model instanceClass="java.io.File"
+	 * @generated
+	 */
+	EClass getJavaFile();
 
 	/**
 	 * Returns the meta object for class '{@link java.lang.Iterable <em>Java Iterable</em>}'.
@@ -2412,6 +2442,16 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EClass JAVA_EXECUTOR_SERVICE = eINSTANCE.getJavaExecutorService();
+
+		/**
+		 * The meta object literal for the '{@link java.io.File <em>Java File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.io.File
+		 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaFile()
+		 * @generated
+		 */
+		EClass JAVA_FILE = eINSTANCE.getJavaFile();
 
 		/**
 		 * The meta object literal for the '{@link java.lang.Iterable <em>Java Iterable</em>}' class.

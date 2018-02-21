@@ -15,9 +15,9 @@ import java.io.OutputStream;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationManager;
-import org.abchip.mimo.application.base.OSGIApplicationStarter;
+import org.abchip.mimo.application.base.BaseApplicationStarter;
 
-public class OSGIApplicationManagerImpl implements ApplicationManager {
+public class BaseApplicationManagerImpl implements ApplicationManager {
 
 	private boolean restart = false;
 	private boolean stop = false;
@@ -27,7 +27,7 @@ public class OSGIApplicationManagerImpl implements ApplicationManager {
 
 		try {
 			// Start application
-			return new OSGIApplicationStarter(application, output).start();
+			return new BaseApplicationStarter(application, output).start();
 
 		} catch (Exception e) {
 			e.printStackTrace();

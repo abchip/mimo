@@ -11,7 +11,9 @@
  */
 package org.abchip.mimo.util;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 
 /**
@@ -56,5 +58,13 @@ public interface Files {
 	 * @generated
 	 */
 	String getSeparator();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model type="org.abchip.mimo.util.JavaFile" required="true" exceptions="org.abchip.mimo.util.JavaIOException" streamDataType="org.abchip.mimo.util.JavaInputStream" streamRequired="true"
+	 * @generated
+	 */
+	File copyToFile(InputStream stream) throws IOException;
 
 } // Files

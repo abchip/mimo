@@ -44,7 +44,7 @@ import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.util.Singleton;
 
-public class OSGIApplicationStarter {
+public class BaseApplicationStarter {
 
 	private static final String SINGLETON_INSTANCE = "qINSTANCE";
 
@@ -55,7 +55,7 @@ public class OSGIApplicationStarter {
 	private int messageLevel;
 	private Writer writer = null;
 
-	public OSGIApplicationStarter(Application application, OutputStream outputStream) {
+	public BaseApplicationStarter(Application application, OutputStream outputStream) {
 		this.application = application;
 		this.writer = new OutputStreamWriter(outputStream);
 	}
@@ -157,7 +157,6 @@ public class OSGIApplicationStarter {
 		messageLevel++;
 		registerCommands(application.getContext(), component.getCommands());
 		messageLevel--;
-		messageLevel--;
 	}
 
 	private List<Object> registerHooks(ContextRoot context, List<ServiceHook> hooks, Dictionary<String, Object> properties) {
@@ -232,7 +231,7 @@ public class OSGIApplicationStarter {
 		}
 
 		// service registration
-		Object service = loadObject(application.getContext(), serviceRef.getClassName());
+		Object service = loadObject(component.getContext(), serviceRef.getClassName());
 		String interfaceName = serviceRef.getInterfaceName() != null ? serviceRef.getInterfaceName() : serviceRef.getClassName();
 		boolean remoteExport = false;
 		if (serviceRef instanceof ServiceExecutor) {
@@ -293,10 +292,8 @@ public class OSGIApplicationStarter {
 		contextService.close();
 	}
 
-	private Object loadObject(ContextRoot context, String className) {
-		Class<?> tempClass = context.loadClass(className);
-		if(tempClass == null)
-			context.loadClass(className);
+	private Object loadObject(Context context, String className) {
+		Class<?> tempClass = context.getContextRoot().loadClass(className);
 		return context.make(tempClass);
 	}
 

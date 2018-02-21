@@ -871,6 +871,9 @@
           <genParameters ecoreParameter="mimo.ecore#//util/Files/deleteDirectory/path"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//util/Files/getSeparator"/>
+        <genOperations ecoreOperation="mimo.ecore#//util/Files/copyToFile">
+          <genParameters ecoreParameter="mimo.ecore#//util/Files/copyToFile/stream"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//util/FloatingDef">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/FloatingDef/type"/>
@@ -886,6 +889,7 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaConcurrentMap"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaEnum"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaExecutorService"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaFile"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaIterable">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaIterable/T"/>
       </genClasses>

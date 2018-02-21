@@ -12,7 +12,7 @@
 package org.abchip.mimo.application.e4;
 
 import org.abchip.mimo.application.ApplicationManager;
-import org.abchip.mimo.application.base.OSGIApplicationManagerImpl;
+import org.abchip.mimo.application.base.BaseApplicationManagerImpl;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
@@ -23,7 +23,7 @@ public class E4Activator implements BundleActivator {
 
 	@Override
 	public void start(BundleContext context) throws Exception {
-		this.applicationManagerRegistration = context.registerService(ApplicationManager.class, new OSGIApplicationManagerImpl(), null);
+		this.applicationManagerRegistration = context.registerService(ApplicationManager.class, new BaseApplicationManagerImpl(), null);
 	}
 
 	@Override

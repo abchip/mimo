@@ -12,6 +12,7 @@
 package org.abchip.mimo.util.impl;
 
 import java.io.Closeable;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -224,6 +225,13 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	private EClass javaExecutorServiceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass javaFileEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -864,6 +872,15 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getJavaFile() {
+		return javaFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getJavaIterable() {
 		return javaIterableEClass;
 	}
@@ -1401,6 +1418,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		javaExecutorServiceEClass = createEClass(JAVA_EXECUTOR_SERVICE);
 
+		javaFileEClass = createEClass(JAVA_FILE);
+
 		javaIterableEClass = createEClass(JAVA_ITERABLE);
 
 		javaIteratorEClass = createEClass(JAVA_ITERATOR);
@@ -1627,6 +1646,10 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		addEOperation(filesEClass, ecorePackage.getEString(), "getSeparator", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(filesEClass, this.getJavaFile(), "copyToFile", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getJavaInputStream(), "stream", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getJavaIOException());
+
 		initEClass(floatingDefEClass, FloatingDef.class, "FloatingDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFloatingDef_Type(), this.getFloatingType(), "type", null, 1, 1, FloatingDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1647,6 +1670,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		initEClass(javaEnumEClass, Enum.class, "JavaEnum", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS, "java.lang.Enum<E>");
 
 		initEClass(javaExecutorServiceEClass, ExecutorService.class, "JavaExecutorService", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(javaFileEClass, File.class, "JavaFile", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(javaIterableEClass, Iterable.class, "JavaIterable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 

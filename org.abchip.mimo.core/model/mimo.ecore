@@ -1235,6 +1235,9 @@
         <eParameters name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getSeparator" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="copyToFile" lowerBound="1" eType="#//util/JavaFile" eExceptions="#//util/JavaIOException">
+        <eParameters name="stream" lowerBound="1" eType="#//util/JavaInputStream"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FloatingDef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
@@ -1276,6 +1279,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="JavaExecutorService" instanceClassName="java.util.concurrent.ExecutorService"
         abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaException" instanceClassName="java.lang.Exception"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JavaFile" instanceClassName="java.io.File"
+        abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaInputStream" instanceClassName="java.io.InputStream"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaIOException" instanceClassName="java.io.IOException"/>
     <eClassifiers xsi:type="ecore:EClass" name="JavaIterable" instanceClassName="java.lang.Iterable"

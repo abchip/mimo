@@ -5,7 +5,8 @@ Bundle-SymbolicName: org.abchip.mimo.database.base;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.abchip.mimo.database;visibility:=reexport,
+Require-Bundle: org.eclipse.core.runtime,
+ org.abchip.mimo.database;visibility:=reexport,
  org.eclipse.datatools.connectivity,
  org.eclipse.datatools.connectivity.sqm.core,
  org.eclipse.datatools.sqltools.parsers.sql.query,
