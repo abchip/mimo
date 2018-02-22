@@ -826,6 +826,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -840,11 +841,11 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		blockExpressionEClass.getESuperTypes().add(this.getExpression());
 		compoundTermExpressionEClass.getESuperTypes().add(this.getTermExpression());
 		expressionEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		EGenericType g1 = createEGenericType(theEntityPackage.getEntityRegistry());
+		EGenericType g1 = createEGenericType(theContextPackage.getServiceRegistry());
 		EGenericType g2 = createEGenericType(this.getExpressionParser());
 		g1.getETypeArguments().add(g2);
 		expressionParserRegistryEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theEntityPackage.getEntityRegistry());
+		g1 = createEGenericType(theContextPackage.getServiceRegistry());
 		g2 = createEGenericType(this.getExpressionWriter());
 		g1.getETypeArguments().add(g2);
 		expressionWriterRegistryEClass.getEGenericSuperTypes().add(g1);

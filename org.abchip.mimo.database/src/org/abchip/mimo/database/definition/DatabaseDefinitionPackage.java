@@ -11,6 +11,7 @@
  */
 package org.abchip.mimo.database.definition;
 
+import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.database.query.DatabaseQueryPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
@@ -446,7 +447,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION_PARSER_REGISTRY_FEATURE_COUNT = EntityPackage.ENTITY_REGISTRY_FEATURE_COUNT + 0;
+	int DEFINITION_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.definition.impl.DefinitionParseErrorImpl <em>Definition Parse Error</em>}' class.
@@ -549,7 +550,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION_WRITER_REGISTRY_FEATURE_COUNT = EntityPackage.ENTITY_REGISTRY_FEATURE_COUNT + 0;
+	int DEFINITION_WRITER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.definition.impl.DisconnectStatementImpl <em>Disconnect Statement</em>}' class.

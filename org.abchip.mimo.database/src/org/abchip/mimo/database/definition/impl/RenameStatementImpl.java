@@ -340,7 +340,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (newName: ");
 		result.append(newName);
 		result.append(", system: ");

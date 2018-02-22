@@ -224,7 +224,7 @@ public class ClassificationImpl<E extends Entity> extends MinimalEObjectImpl.Con
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (score: ");
 		result.append(score);
 		result.append(')');

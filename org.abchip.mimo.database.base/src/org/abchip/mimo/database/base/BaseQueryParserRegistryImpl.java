@@ -15,20 +15,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.ServiceRegistryFactory;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 import org.abchip.mimo.database.query.QueryParser;
 import org.abchip.mimo.database.query.QueryParserRegistry;
-import org.abchip.mimo.entity.EntityRegistry;
-import org.abchip.mimo.entity.EntityRegistryFactory;
 
 public class BaseQueryParserRegistryImpl implements QueryParserRegistry {
 
 	
-	private EntityRegistry<QueryParser> entityRegistry;
+	private ServiceRegistry<QueryParser> serviceRegistry;
 	
 	@Inject
-	public BaseQueryParserRegistryImpl(EntityRegistryFactory objectRegistryFactory) {
-		 this.entityRegistry = objectRegistryFactory.createEntityRegistry(QueryParser.class);
+	public BaseQueryParserRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
+		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(QueryParser.class);
 	}
 
 	@Override
@@ -38,21 +38,21 @@ public class BaseQueryParserRegistryImpl implements QueryParserRegistry {
 
 	@Override
 	public QueryParser lookup(String name) {
-		return this.entityRegistry.lookup(name);
+		return this.serviceRegistry.lookup(name);
 	}
 
 	@Override
 	public List<QueryParser> list() {
-		return this.entityRegistry.list();
+		return this.serviceRegistry.list();
 	}
 
 	@Override
 	public QueryParser lookupByVendorVersion(String vendor, String version) {
-		return this.entityRegistry.lookupByVendorVersion(vendor, version);
+		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public QueryParser lookupByPort(int port) {
-		return entityRegistry.lookupByPort(port);
+		return serviceRegistry.lookupByPort(port);
 	}
 }

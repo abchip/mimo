@@ -4,7 +4,7 @@
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.entity;
+package org.abchip.mimo.context;
 
 import java.util.List;
 
@@ -13,24 +13,24 @@ import java.util.List;
  * <em><b>Object Registry</b></em>'. <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.entity.EntityPackage#getEntityRegistry()
+ * @see org.abchip.mimo.context.ContextPackage#getServiceRegistry()
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface EntityRegistry<T> {
+public interface ServiceRegistry<S> {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true" nameRequired="true"
 	 * @generated
 	 */
-	T lookup(String name);
+	S lookup(String name);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true"
 	 * @generated
 	 */
-	List<T> list();
+	List<S> list();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,13 +38,13 @@ public interface EntityRegistry<T> {
 	 * @model required="true" portRequired="true"
 	 * @generated
 	 */
-	T lookupByPort(int port);
+	S lookupByPort(int port);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true" vendorRequired="true" versionRequired="true"
 	 * @generated
 	 */
-	T lookupByVendorVersion(String vendor, String version);
+	S lookupByVendorVersion(String vendor, String version);
 
-} // ObjectRegistry
+}

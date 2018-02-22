@@ -16,8 +16,8 @@
  */
 package org.abchip.mimo.database.query;
 
+import org.abchip.mimo.context.ServiceRegistry;
 import org.abchip.mimo.database.connection.ConnectionConfig;
-import org.abchip.mimo.entity.EntityRegistry;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.abchip.mimo.entity.EntityRegistry;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface QueryWriterRegistry extends EntityRegistry<QueryWriter> {
+public interface QueryWriterRegistry extends ServiceRegistry<QueryWriter> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

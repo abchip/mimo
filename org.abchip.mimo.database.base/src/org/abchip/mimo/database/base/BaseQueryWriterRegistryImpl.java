@@ -15,20 +15,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.ServiceRegistryFactory;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 import org.abchip.mimo.database.query.QueryWriter;
 import org.abchip.mimo.database.query.QueryWriterRegistry;
-import org.abchip.mimo.entity.EntityRegistry;
-import org.abchip.mimo.entity.EntityRegistryFactory;
 
 public class BaseQueryWriterRegistryImpl implements QueryWriterRegistry {
 	
 	
-	private EntityRegistry<QueryWriter> entityRegistry;
+	private ServiceRegistry<QueryWriter> serviceRegistry;
 	
 	@Inject
-	public BaseQueryWriterRegistryImpl(EntityRegistryFactory objectRegistryFactory) {
-		 this.entityRegistry = objectRegistryFactory.createEntityRegistry(QueryWriter.class);
+	public BaseQueryWriterRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
+		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(QueryWriter.class);
 	}
 
 	@Override
@@ -38,22 +38,22 @@ public class BaseQueryWriterRegistryImpl implements QueryWriterRegistry {
 
 	@Override
 	public QueryWriter lookup(String name) {
-		return this.entityRegistry.lookup(name);
+		return this.serviceRegistry.lookup(name);
 	}
 
 	@Override
 	public List<QueryWriter> list() {
-		return this.entityRegistry.list();
+		return this.serviceRegistry.list();
 	}
 
 	@Override
 	public QueryWriter lookupByVendorVersion(String vendor, String version) {
-		return this.entityRegistry.lookupByVendorVersion(vendor, version);
+		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public QueryWriter lookupByPort(int port) {
-		return entityRegistry.lookupByPort(port);
+		return serviceRegistry.lookupByPort(port);
 	}
 
 }

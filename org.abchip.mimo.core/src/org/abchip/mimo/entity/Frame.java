@@ -62,10 +62,10 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" objectRequired="true" slotRequired="true"
+	 * @model required="true" entityRequired="true" slotRequired="true"
 	 * @generated
 	 */
-	Object getValue(Entity object, Slot slot);
+	Object getValue(E entity, Slot slot);
 
 	/**
 	 * <!-- begin-user-doc -->

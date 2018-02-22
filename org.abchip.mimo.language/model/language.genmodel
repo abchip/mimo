@@ -79,7 +79,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//grammar/Grammar/text"/>
       </genClasses>
       <genClasses ecoreClass="language.ecore#//grammar/Noun"/>
-      <genClasses ecoreClass="language.ecore#//grammar/Phrase"/>
       <genClasses ecoreClass="language.ecore#//grammar/Predicate"/>
       <genClasses ecoreClass="language.ecore#//grammar/Pronoun"/>
       <genClasses ecoreClass="language.ecore#//grammar/Sentence"/>

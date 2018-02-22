@@ -37,7 +37,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageParserRegistry" abstract="true"
       interface="true">
-    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityRegistry">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ServiceRegistry">
       <eTypeArguments eClassifier="#//LanguageParser"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -66,7 +66,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageLinearizerRegistry" abstract="true"
       interface="true">
-    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityRegistry">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ServiceRegistry">
       <eTypeArguments eClassifier="#//LanguageLinearizer"/>
     </eGenericSuperTypes>
   </eClassifiers>

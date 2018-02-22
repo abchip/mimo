@@ -97,7 +97,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ClassificationPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -111,7 +111,8 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		if (isInited) return (ClassificationPackage)EPackage.Registry.INSTANCE.getEPackage(ClassificationPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ClassificationPackageImpl theClassificationPackage = (ClassificationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ClassificationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ClassificationPackageImpl());
+		Object registeredClassificationPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ClassificationPackageImpl theClassificationPackage = registeredClassificationPackage instanceof ClassificationPackageImpl ? (ClassificationPackageImpl)registeredClassificationPackage : new ClassificationPackageImpl();
 
 		isInited = true;
 
@@ -119,7 +120,8 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		MimoPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		MiningPackageImpl theMiningPackage = (MiningPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MiningPackage.eNS_URI) instanceof MiningPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MiningPackage.eNS_URI) : MiningPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MiningPackage.eNS_URI);
+		MiningPackageImpl theMiningPackage = (MiningPackageImpl)(registeredPackage instanceof MiningPackageImpl ? registeredPackage : MiningPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theClassificationPackage.createPackageContents();
@@ -132,7 +134,6 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		// Mark meta-data to indicate it can't be changed
 		theClassificationPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ClassificationPackage.eNS_URI, theClassificationPackage);
 		return theClassificationPackage;
@@ -266,7 +267,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		classificationEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		g1 = createEGenericType(theEntityPackage.getEntityRegistry());
+		g1 = createEGenericType(theContextPackage.getServiceRegistry());
 		EGenericType g2 = createEGenericType(this.getClassifier());
 		g1.getETypeArguments().add(g2);
 		classifierRegistryEClass.getEGenericSuperTypes().add(g1);

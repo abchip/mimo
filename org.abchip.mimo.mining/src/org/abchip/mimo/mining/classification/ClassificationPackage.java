@@ -7,8 +7,7 @@
  */
 package org.abchip.mimo.mining.classification;
 
-import org.abchip.mimo.entity.EntityPackage;
-
+import org.abchip.mimo.context.ContextPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -135,7 +134,7 @@ public interface ClassificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_REGISTRY_FEATURE_COUNT = EntityPackage.ENTITY_REGISTRY_FEATURE_COUNT + 0;
+	int CLASSIFIER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
 
 
 	/**

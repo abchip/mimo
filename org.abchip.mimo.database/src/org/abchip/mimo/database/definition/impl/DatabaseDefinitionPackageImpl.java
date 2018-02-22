@@ -12,6 +12,7 @@
 package org.abchip.mimo.database.definition.impl;
 
 import org.abchip.mimo.MimoPackage;
+import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.database.DatabasePackage;
 
 import org.abchip.mimo.database.connection.DatabaseConnectionPackage;
@@ -365,7 +366,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DatabaseDefinitionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -379,7 +380,8 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		if (isInited) return (DatabaseDefinitionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = (DatabaseDefinitionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DatabaseDefinitionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DatabaseDefinitionPackageImpl());
+		Object registeredDatabaseDefinitionPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = registeredDatabaseDefinitionPackage instanceof DatabaseDefinitionPackageImpl ? (DatabaseDefinitionPackageImpl)registeredDatabaseDefinitionPackage : new DatabaseDefinitionPackageImpl();
 
 		isInited = true;
 
@@ -397,9 +399,12 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		SQLQueryModelPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI) instanceof DatabasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI) : DatabasePackage.eINSTANCE);
-		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI) instanceof DatabaseConnectionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI) : DatabaseConnectionPackage.eINSTANCE);
-		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI) instanceof DatabaseQueryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI) : DatabaseQueryPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
+		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(registeredPackage instanceof DatabasePackageImpl ? registeredPackage : DatabasePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
+		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(registeredPackage instanceof DatabaseConnectionPackageImpl ? registeredPackage : DatabaseConnectionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
+		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(registeredPackage instanceof DatabaseQueryPackageImpl ? registeredPackage : DatabaseQueryPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theDatabaseDefinitionPackage.createPackageContents();
@@ -416,7 +421,6 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		// Mark meta-data to indicate it can't be changed
 		theDatabaseDefinitionPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DatabaseDefinitionPackage.eNS_URI, theDatabaseDefinitionPackage);
 		return theDatabaseDefinitionPackage;
@@ -1340,11 +1344,12 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		DatabaseQueryPackage theDatabaseQueryPackage = (DatabaseQueryPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
-		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		DatabaseConnectionPackage theDatabaseConnectionPackage = (DatabaseConnectionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
 		SQLTablesPackage theSQLTablesPackage = (SQLTablesPackage)EPackage.Registry.INSTANCE.getEPackage(SQLTablesPackage.eNS_URI);
 		SQLSchemaPackage theSQLSchemaPackage = (SQLSchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SQLSchemaPackage.eNS_URI);
 		SQLConstraintsPackage theSQLConstraintsPackage = (SQLConstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(SQLConstraintsPackage.eNS_URI);
+		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1359,12 +1364,12 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		createTableStatementEClass.getESuperTypes().add(this.getDefinitionStatement());
 		createViewStatementEClass.getESuperTypes().add(this.getDefinitionStatement());
 		definitionParserEClass.getESuperTypes().add(theDatabaseQueryPackage.getStatementParser());
-		EGenericType g1 = createEGenericType(theEntityPackage.getEntityRegistry());
+		EGenericType g1 = createEGenericType(theContextPackage.getServiceRegistry());
 		EGenericType g2 = createEGenericType(this.getDefinitionParser());
 		g1.getETypeArguments().add(g2);
 		definitionParserRegistryEClass.getEGenericSuperTypes().add(g1);
 		definitionWriterEClass.getESuperTypes().add(theDatabaseQueryPackage.getStatementWriter());
-		g1 = createEGenericType(theEntityPackage.getEntityRegistry());
+		g1 = createEGenericType(theContextPackage.getServiceRegistry());
 		g2 = createEGenericType(this.getDefinitionWriter());
 		g1.getETypeArguments().add(g2);
 		definitionWriterRegistryEClass.getEGenericSuperTypes().add(g1);

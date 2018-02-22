@@ -130,6 +130,7 @@
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/set">
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/set/name"/>
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/set/object"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/set/remoteExport"/>
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/set/dictionary"/>
         </genOperations>
       </genClasses>
@@ -279,6 +280,26 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/MessageFile/lookup.1/E"/>
         </genOperations>
       </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//context/ServiceRegistry">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ServiceRegistry/S"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/ServiceRegistry/lookup">
+          <genParameters ecoreParameter="mimo.ecore#//context/ServiceRegistry/lookup/name"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ServiceRegistry/list"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/ServiceRegistry/lookupByPort">
+          <genParameters ecoreParameter="mimo.ecore#//context/ServiceRegistry/lookupByPort/port"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ServiceRegistry/lookupByVendorVersion">
+          <genParameters ecoreParameter="mimo.ecore#//context/ServiceRegistry/lookupByVendorVersion/vendor"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/ServiceRegistry/lookupByVendorVersion/version"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//context/ServiceRegistryFactory">
+        <genOperations ecoreOperation="mimo.ecore#//context/ServiceRegistryFactory/createServiceRegistry">
+          <genParameters ecoreParameter="mimo.ecore#//context/ServiceRegistryFactory/createServiceRegistry/klass"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ServiceRegistryFactory/createServiceRegistry/S"/>
+        </genOperations>
+      </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/UserProfile">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/jobDescription"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/name"/>
@@ -393,26 +414,6 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/lookup/name"/>
         </genOperations>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityRegistry">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityRegistry/T"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityRegistry/lookup">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityRegistry/lookup/name"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityRegistry/list"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityRegistry/lookupByPort">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityRegistry/lookupByPort/port"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityRegistry/lookupByVendorVersion">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityRegistry/lookupByVendorVersion/vendor"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityRegistry/lookupByVendorVersion/version"/>
-        </genOperations>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityRegistryFactory">
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityRegistryFactory/createEntityRegistry">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityRegistryFactory/createEntityRegistry/klass"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityRegistryFactory/createEntityRegistry/T"/>
-        </genOperations>
-      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityWriter">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityWriter/E"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/copy">
@@ -445,7 +446,7 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlots"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getValue">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/object"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/slot"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/isAbstract"/>

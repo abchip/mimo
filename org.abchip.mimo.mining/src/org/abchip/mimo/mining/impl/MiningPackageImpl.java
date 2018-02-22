@@ -71,7 +71,7 @@ public class MiningPackageImpl extends EPackageImpl implements MiningPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link MiningPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -85,7 +85,8 @@ public class MiningPackageImpl extends EPackageImpl implements MiningPackage {
 		if (isInited) return (MiningPackage)EPackage.Registry.INSTANCE.getEPackage(MiningPackage.eNS_URI);
 
 		// Obtain or create and register package
-		MiningPackageImpl theMiningPackage = (MiningPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MiningPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MiningPackageImpl());
+		Object registeredMiningPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		MiningPackageImpl theMiningPackage = registeredMiningPackage instanceof MiningPackageImpl ? (MiningPackageImpl)registeredMiningPackage : new MiningPackageImpl();
 
 		isInited = true;
 
@@ -93,7 +94,8 @@ public class MiningPackageImpl extends EPackageImpl implements MiningPackage {
 		MimoPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		ClassificationPackageImpl theClassificationPackage = (ClassificationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClassificationPackage.eNS_URI) instanceof ClassificationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClassificationPackage.eNS_URI) : ClassificationPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ClassificationPackage.eNS_URI);
+		ClassificationPackageImpl theClassificationPackage = (ClassificationPackageImpl)(registeredPackage instanceof ClassificationPackageImpl ? registeredPackage : ClassificationPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMiningPackage.createPackageContents();
@@ -106,7 +108,6 @@ public class MiningPackageImpl extends EPackageImpl implements MiningPackage {
 		// Mark meta-data to indicate it can't be changed
 		theMiningPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(MiningPackage.eNS_URI, theMiningPackage);
 		return theMiningPackage;

@@ -168,7 +168,7 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DatabasePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -182,7 +182,8 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		if (isInited) return (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 
 		// Obtain or create and register package
-		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DatabasePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DatabasePackageImpl());
+		Object registeredDatabasePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DatabasePackageImpl theDatabasePackage = registeredDatabasePackage instanceof DatabasePackageImpl ? (DatabasePackageImpl)registeredDatabasePackage : new DatabasePackageImpl();
 
 		isInited = true;
 
@@ -200,9 +201,12 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		SQLQueryModelPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI) instanceof DatabaseConnectionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI) : DatabaseConnectionPackage.eINSTANCE);
-		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = (DatabaseDefinitionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI) instanceof DatabaseDefinitionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI) : DatabaseDefinitionPackage.eINSTANCE);
-		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI) instanceof DatabaseQueryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI) : DatabaseQueryPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
+		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(registeredPackage instanceof DatabaseConnectionPackageImpl ? registeredPackage : DatabaseConnectionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI);
+		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = (DatabaseDefinitionPackageImpl)(registeredPackage instanceof DatabaseDefinitionPackageImpl ? registeredPackage : DatabaseDefinitionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
+		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(registeredPackage instanceof DatabaseQueryPackageImpl ? registeredPackage : DatabaseQueryPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theDatabasePackage.createPackageContents();
@@ -219,7 +223,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		// Mark meta-data to indicate it can't be changed
 		theDatabasePackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DatabasePackage.eNS_URI, theDatabasePackage);
 		return theDatabasePackage;

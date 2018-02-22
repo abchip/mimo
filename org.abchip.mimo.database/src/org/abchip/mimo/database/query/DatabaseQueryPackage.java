@@ -11,7 +11,7 @@
  */
 package org.abchip.mimo.database.query;
 
-import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.context.ContextPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
@@ -139,7 +139,7 @@ public interface DatabaseQueryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAME_HELPER_REGISTRY_FEATURE_COUNT = EntityPackage.ENTITY_REGISTRY_FEATURE_COUNT + 0;
+	int NAME_HELPER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.query.impl.StatementWriterImpl <em>Statement Writer</em>}' class.
@@ -214,7 +214,7 @@ public interface DatabaseQueryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUERY_WRITER_REGISTRY_FEATURE_COUNT = EntityPackage.ENTITY_REGISTRY_FEATURE_COUNT + 0;
+	int QUERY_WRITER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.query.StatementParser <em>Statement Parser</em>}' class.
@@ -271,7 +271,7 @@ public interface DatabaseQueryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUERY_PARSER_REGISTRY_FEATURE_COUNT = EntityPackage.ENTITY_REGISTRY_FEATURE_COUNT + 0;
+	int QUERY_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '<em>SQL Query Parse Result</em>' data type.

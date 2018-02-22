@@ -15,37 +15,37 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.entity.EntityRegistry;
-import org.abchip.mimo.entity.EntityRegistryFactory;
+import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.ServiceRegistryFactory;
 import org.abchip.mimo.expression.ExpressionParser;
 import org.abchip.mimo.expression.ExpressionParserRegistry;
 
 public class BaseExpressionParserRegistryImpl implements ExpressionParserRegistry {
 
-	private EntityRegistry<ExpressionParser> objectRegistry;
+	private ServiceRegistry<ExpressionParser> serviceRegistry;
 
 	@Inject
-	public BaseExpressionParserRegistryImpl(EntityRegistryFactory objectRegistryFactory) {
-		this.objectRegistry = objectRegistryFactory.createEntityRegistry(ExpressionParser.class);
+	public BaseExpressionParserRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
+		this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(ExpressionParser.class);
 	}
 
 	@Override
 	public ExpressionParser lookup(String name) {
-		return this.objectRegistry.lookup(name);
+		return this.serviceRegistry.lookup(name);
 	}
 
 	@Override
 	public List<ExpressionParser> list() {
-		return this.objectRegistry.list();
+		return this.serviceRegistry.list();
 	}
 
 	@Override
 	public ExpressionParser lookupByVendorVersion(String vendor, String version) {
-		return this.objectRegistry.lookupByVendorVersion(vendor, version);
+		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public ExpressionParser lookupByPort(int port) {
-		return objectRegistry.lookupByPort(port);
+		return serviceRegistry.lookupByPort(port);
 	}
 }

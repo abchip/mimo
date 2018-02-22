@@ -148,7 +148,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link GrammarPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -162,7 +162,8 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		if (isInited) return (GrammarPackage)EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI);
 
 		// Obtain or create and register package
-		GrammarPackageImpl theGrammarPackage = (GrammarPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof GrammarPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new GrammarPackageImpl());
+		Object registeredGrammarPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		GrammarPackageImpl theGrammarPackage = registeredGrammarPackage instanceof GrammarPackageImpl ? (GrammarPackageImpl)registeredGrammarPackage : new GrammarPackageImpl();
 
 		isInited = true;
 
@@ -171,7 +172,8 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		MiningPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		LanguagePackageImpl theLanguagePackage = (LanguagePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LanguagePackage.eNS_URI) instanceof LanguagePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LanguagePackage.eNS_URI) : LanguagePackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(LanguagePackage.eNS_URI);
+		LanguagePackageImpl theLanguagePackage = (LanguagePackageImpl)(registeredPackage instanceof LanguagePackageImpl ? registeredPackage : LanguagePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theGrammarPackage.createPackageContents();
@@ -184,7 +186,6 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		// Mark meta-data to indicate it can't be changed
 		theGrammarPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(GrammarPackage.eNS_URI, theGrammarPackage);
 		return theGrammarPackage;

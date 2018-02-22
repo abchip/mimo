@@ -15,20 +15,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.ServiceRegistryFactory;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 import org.abchip.mimo.database.definition.DefinitionWriter;
 import org.abchip.mimo.database.definition.DefinitionWriterRegistry;
-import org.abchip.mimo.entity.EntityRegistry;
-import org.abchip.mimo.entity.EntityRegistryFactory;
 
 public class BaseDefinitionWriterRegistryImpl implements DefinitionWriterRegistry {
 
 	
-	private EntityRegistry<DefinitionWriter> entityRegistry;
+	private ServiceRegistry<DefinitionWriter> serviceRegistry;
 	
 	@Inject
-	public BaseDefinitionWriterRegistryImpl(EntityRegistryFactory objectRegistryFactory) {
-		 this.entityRegistry = objectRegistryFactory.createEntityRegistry(DefinitionWriter.class);
+	public BaseDefinitionWriterRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
+		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(DefinitionWriter.class);
 	}
 
 	@Override
@@ -38,21 +38,21 @@ public class BaseDefinitionWriterRegistryImpl implements DefinitionWriterRegistr
 
 	@Override
 	public DefinitionWriter lookup(String name) {
-		return this.entityRegistry.lookup(name);
+		return this.serviceRegistry.lookup(name);
 	}
 
 	@Override
 	public List<DefinitionWriter> list() {
-		return this.entityRegistry.list();
+		return this.serviceRegistry.list();
 	}
 
 	@Override
 	public DefinitionWriter lookupByVendorVersion(String vendor, String version) {
-		return this.entityRegistry.lookupByVendorVersion(vendor, version);
+		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public DefinitionWriter lookupByPort(int port) {
-		return entityRegistry.lookupByPort(port);
+		return serviceRegistry.lookupByPort(port);
 	}
 }

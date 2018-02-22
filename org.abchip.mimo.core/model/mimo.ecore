@@ -182,10 +182,11 @@
       <eOperations name="set" lowerBound="1">
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        <eParameters name="remoteExport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eParameters name="dictionary">
           <eGenericType eClassifier="#//util/JavaDictionary">
             <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eTypeArguments/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eGenericType>
         </eParameters>
       </eOperations>
@@ -390,6 +391,39 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRegistry" abstract="true" interface="true">
+      <eTypeParameters name="S"/>
+      <eOperations name="lookup" lowerBound="1">
+        <eGenericType eTypeParameter="#//context/ServiceRegistry/S"/>
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="list" lowerBound="1" upperBound="-1">
+        <eGenericType eTypeParameter="#//context/ServiceRegistry/S"/>
+      </eOperations>
+      <eOperations name="lookupByPort" lowerBound="1">
+        <eGenericType eTypeParameter="#//context/ServiceRegistry/S"/>
+        <eParameters name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="lookupByVendorVersion" lowerBound="1">
+        <eGenericType eTypeParameter="#//context/ServiceRegistry/S"/>
+        <eParameters name="vendor" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="version" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRegistryFactory" abstract="true"
+        interface="true">
+      <eOperations name="createServiceRegistry" lowerBound="1">
+        <eGenericType eClassifier="#//context/ServiceRegistry">
+          <eTypeArguments eTypeParameter="#//context/ServiceRegistryFactory/createServiceRegistry/S"/>
+        </eGenericType>
+        <eTypeParameters name="S"/>
+        <eParameters name="klass" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//context/ServiceRegistryFactory/createServiceRegistry/S"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="UserClass">
       <eLiterals name="User" value="100" literal="*USER"/>
       <eLiterals name="Sysopr" value="200" literal="*SYSOPR"/>
@@ -545,7 +579,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityProviderRegistry" abstract="true"
         interface="true">
-      <eGenericSuperTypes eClassifier="#//entity/EntityRegistry">
+      <eGenericSuperTypes eClassifier="#//context/ServiceRegistry">
         <eTypeArguments eClassifier="#//entity/EntityProvider"/>
       </eGenericSuperTypes>
     </eClassifiers>
@@ -581,39 +615,6 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="entityProvider" lowerBound="1"
           eType="#//entity/EntityProvider" transient="true" resolveProxies="false"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityRegistry" abstract="true" interface="true">
-      <eTypeParameters name="T"/>
-      <eOperations name="lookup" lowerBound="1">
-        <eGenericType eTypeParameter="#//entity/EntityRegistry/T"/>
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="list" lowerBound="1" upperBound="-1">
-        <eGenericType eTypeParameter="#//entity/EntityRegistry/T"/>
-      </eOperations>
-      <eOperations name="lookupByPort" lowerBound="1">
-        <eGenericType eTypeParameter="#//entity/EntityRegistry/T"/>
-        <eParameters name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eOperations>
-      <eOperations name="lookupByVendorVersion" lowerBound="1">
-        <eGenericType eTypeParameter="#//entity/EntityRegistry/T"/>
-        <eParameters name="vendor" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="version" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityRegistryFactory" abstract="true"
-        interface="true">
-      <eOperations name="createEntityRegistry" lowerBound="1">
-        <eGenericType eClassifier="#//entity/EntityRegistry">
-          <eTypeArguments eTypeParameter="#//entity/EntityRegistryFactory/createEntityRegistry/T"/>
-        </eGenericType>
-        <eTypeParameters name="T"/>
-        <eParameters name="klass" lowerBound="1">
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//entity/EntityRegistryFactory/createEntityRegistry/T"/>
-          </eGenericType>
-        </eParameters>
-      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityWriter" abstract="true" interface="true">
       <eTypeParameters name="E">
@@ -674,7 +675,9 @@
       </eOperations>
       <eOperations name="getSlots" upperBound="-1" eType="#//entity/Slot"/>
       <eOperations name="getValue" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
-        <eParameters name="object" lowerBound="1" eType="#//entity/Entity"/>
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/Frame/E"/>
+        </eParameters>
         <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
       </eOperations>
       <eOperations name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -1030,7 +1033,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExpressionParserRegistry" abstract="true"
         interface="true">
-      <eGenericSuperTypes eClassifier="#//entity/EntityRegistry">
+      <eGenericSuperTypes eClassifier="#//context/ServiceRegistry">
         <eTypeArguments eClassifier="#//expression/ExpressionParser"/>
       </eGenericSuperTypes>
     </eClassifiers>
@@ -1054,7 +1057,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExpressionWriterRegistry" abstract="true"
         interface="true">
-      <eGenericSuperTypes eClassifier="#//entity/EntityRegistry">
+      <eGenericSuperTypes eClassifier="#//context/ServiceRegistry">
         <eTypeArguments eClassifier="#//expression/ExpressionWriter"/>
       </eGenericSuperTypes>
     </eClassifiers>

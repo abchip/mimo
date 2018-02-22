@@ -11,7 +11,7 @@
  */
 package org.abchip.mimo.expression;
 
-import org.abchip.mimo.entity.EntityRegistry;
+import org.abchip.mimo.context.ServiceRegistry;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -22,7 +22,7 @@ import org.abchip.mimo.entity.EntityRegistry;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ExpressionParserRegistry extends EntityRegistry<ExpressionParser> {
+public interface ExpressionParserRegistry extends ServiceRegistry<ExpressionParser> {
 
 	public static String DEFAULT_PARSER = "MIMO";
 } // ExpressionParserRegistry

@@ -156,7 +156,7 @@ public class LanguageExpressionImpl extends MinimalEObjectImpl.Container impleme
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (expressionRow: ");
 		result.append(expressionRow);
 		result.append(')');

@@ -10,7 +10,6 @@ package org.abchip.mimo.entity.impl;
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.context.ContextPackage;
-
 import org.abchip.mimo.context.impl.ContextPackageImpl;
 
 import org.abchip.mimo.entity.Cardinality;
@@ -20,8 +19,6 @@ import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.entity.EntityRegistry;
-import org.abchip.mimo.entity.EntityRegistryFactory;
 import org.abchip.mimo.entity.Facet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -109,20 +106,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass entityReaderEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entityRegistryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entityRegistryFactoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -444,24 +427,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEntityRegistry() {
-		return entityRegistryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEntityRegistryFactory() {
-		return entityRegistryFactoryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEntityWriter() {
 		return entityWriterEClass;
 	}
@@ -679,10 +644,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEReference(entityReaderEClass, ENTITY_READER__NOTIFIER);
 		createEReference(entityReaderEClass, ENTITY_READER__ENTITY_PROVIDER);
 
-		entityRegistryEClass = createEClass(ENTITY_REGISTRY);
-
-		entityRegistryFactoryEClass = createEClass(ENTITY_REGISTRY_FACTORY);
-
 		entityWriterEClass = createEClass(ENTITY_WRITER);
 
 		facetEClass = createEClass(FACET);
@@ -746,7 +707,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Create type parameters
 		ETypeParameter entityIteratorEClass_E = addETypeParameter(entityIteratorEClass, "E");
 		ETypeParameter entityReaderEClass_E = addETypeParameter(entityReaderEClass, "E");
-		ETypeParameter entityRegistryEClass_T = addETypeParameter(entityRegistryEClass, "T");
 		ETypeParameter entityWriterEClass_E = addETypeParameter(entityWriterEClass, "E");
 		ETypeParameter frameEClass_E = addETypeParameter(frameEClass, "E");
 		ETypeParameter resourceEventEClass_E = addETypeParameter(resourceEventEClass, "E");
@@ -784,7 +744,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
 		entityNameableEClass.getESuperTypes().add(this.getEntity());
 		entityNameableEClass.getESuperTypes().add(this.getNameable());
-		g1 = createEGenericType(this.getEntityRegistry());
+		g1 = createEGenericType(theContextPackage.getServiceRegistry());
 		g2 = createEGenericType(this.getEntityProvider());
 		g1.getETypeArguments().add(g2);
 		entityProviderRegistryEClass.getEGenericSuperTypes().add(g1);
@@ -966,41 +926,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(entityReaderEClass_E);
 		initEOperation(op, g1);
 
-		initEClass(entityRegistryEClass, EntityRegistry.class, "EntityRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(entityRegistryEClass, null, "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(entityRegistryEClass_T);
-		initEOperation(op, g1);
-
-		op = addEOperation(entityRegistryEClass, null, "list", 1, -1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(entityRegistryEClass_T);
-		initEOperation(op, g1);
-
-		op = addEOperation(entityRegistryEClass, null, "lookupByPort", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "port", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(entityRegistryEClass_T);
-		initEOperation(op, g1);
-
-		op = addEOperation(entityRegistryEClass, null, "lookupByVendorVersion", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "vendor", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "version", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(entityRegistryEClass_T);
-		initEOperation(op, g1);
-
-		initEClass(entityRegistryFactoryEClass, EntityRegistryFactory.class, "EntityRegistryFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(entityRegistryFactoryEClass, null, "createEntityRegistry", 1, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "T");
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getEntityRegistry());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
 		initEClass(entityWriterEClass, EntityWriter.class, "EntityWriter", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(entityWriterEClass, null, "copy", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1052,7 +977,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(frameEClass, this.getSlot(), "getSlots", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(frameEClass, ecorePackage.getEJavaObject(), "getValue", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getEntity(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(frameEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(frameEClass, ecorePackage.getEBoolean(), "isAbstract", 0, 1, IS_UNIQUE, IS_ORDERED);

@@ -115,12 +115,12 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 	}
 
 	@Override
-	public Object getValue(Entity object, Slot slot) {
+	public Object getValue(E entity, Slot slot) {
 
-		if (object instanceof EObject)
-			return getValue((EObject) object, slot);
+		if (entity instanceof EObject)
+			return getValue((EObject) entity, slot);
 		else
-			return getValue((Object) object, slot);
+			return getValue((Object) entity, slot);
 	}
 
 	private Object getValue(EObject eObject, Slot slot) {

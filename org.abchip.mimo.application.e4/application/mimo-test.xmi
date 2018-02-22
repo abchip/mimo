@@ -34,7 +34,7 @@
     <commands
         className="org.abchip.mimo.core.base.BaseEntityCommandProviderImpl"/>
     <modules
-        name="Util">
+        name="Base">
       <services
           xsi:type="mimo-app:ServiceExecutor"
           className="org.abchip.mimo.core.base.util.BaseStringsImpl"
@@ -68,13 +68,13 @@
           xsi:type="mimo-app:ServiceExecutor"
           className="org.abchip.mimo.core.e4.E4LoggerImpl"
           interfaceName="org.abchip.mimo.context.Logger"/>
+      <services
+          xsi:type="mimo-app:ServiceExecutor"
+          className="org.abchip.mimo.core.base.BaseServiceRegistryFactoryImpl"
+          interfaceName="org.abchip.mimo.context.ServiceRegistryFactory"/>
     </modules>
     <modules
         name="Entity">
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.BaseEntityRegistryFactoryImpl"
-          interfaceName="org.abchip.mimo.entity.EntityRegistryFactory"/>
       <services
           xsi:type="mimo-app:ServiceExecutor"
           className="org.abchip.mimo.core.base.BaseFrameManagerImpl"
@@ -290,5 +290,4 @@
       name="mimo-test"
       resourceRoot="mimo-data"
       resourceTemporary="mimo-temp"/>
-  <hooks className="org.abchip.mimo.communication.ecf.ECFServerActivatorHook"/>
 </mimo-app:Application>

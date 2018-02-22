@@ -32,6 +32,8 @@ import org.abchip.mimo.context.MessageDataField;
 import org.abchip.mimo.context.MessageDescription;
 import org.abchip.mimo.context.MessageException;
 import org.abchip.mimo.context.MessageFile;
+import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.ServiceRegistryFactory;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.UserClass;
@@ -184,6 +186,20 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EClass messageFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceRegistryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceRegistryFactoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -626,6 +642,24 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getServiceRegistry() {
+		return serviceRegistryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceRegistryFactory() {
+		return serviceRegistryFactoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUserProfile() {
 		return userProfileEClass;
 	}
@@ -791,6 +825,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(messageFileEClass, MESSAGE_FILE__NAME);
 		createEAttribute(messageFileEClass, MESSAGE_FILE__TEXT);
 
+		serviceRegistryEClass = createEClass(SERVICE_REGISTRY);
+
+		serviceRegistryFactoryEClass = createEClass(SERVICE_REGISTRY_FACTORY);
+
 		userProfileEClass = createEClass(USER_PROFILE);
 		createEAttribute(userProfileEClass, USER_PROFILE__JOB_DESCRIPTION);
 		createEAttribute(userProfileEClass, USER_PROFILE__NAME);
@@ -838,6 +876,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		ETypeParameter entityLockerEClass_N = addETypeParameter(entityLockerEClass, "N");
 		ETypeParameter identityEClass_T = addETypeParameter(identityEClass, "T");
 		ETypeParameter messageDataFieldEClass_DD = addETypeParameter(messageDataFieldEClass, "DD");
+		ETypeParameter serviceRegistryEClass_S = addETypeParameter(serviceRegistryEClass, "S");
 
 		// Set bounds for type parameters
 		EGenericType g1 = createEGenericType(theEntityPackage.getEntityNameable());
@@ -1039,10 +1078,11 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		op = addEOperation(contextRootEClass, null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "remoteExport", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theUtilPackage.getJavaDictionary());
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType();
+		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "dictionary", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1220,6 +1260,41 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(theUtilPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(serviceRegistryEClass, ServiceRegistry.class, "ServiceRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(serviceRegistryEClass, null, "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(serviceRegistryEClass_S);
+		initEOperation(op, g1);
+
+		op = addEOperation(serviceRegistryEClass, null, "list", 1, -1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(serviceRegistryEClass_S);
+		initEOperation(op, g1);
+
+		op = addEOperation(serviceRegistryEClass, null, "lookupByPort", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "port", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(serviceRegistryEClass_S);
+		initEOperation(op, g1);
+
+		op = addEOperation(serviceRegistryEClass, null, "lookupByVendorVersion", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "vendor", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "version", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(serviceRegistryEClass_S);
+		initEOperation(op, g1);
+
+		initEClass(serviceRegistryFactoryEClass, ServiceRegistryFactory.class, "ServiceRegistryFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(serviceRegistryFactoryEClass, null, "createServiceRegistry", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "S");
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getServiceRegistry());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		initEClass(userProfileEClass, UserProfile.class, "UserProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserProfile_JobDescription(), ecorePackage.getEString(), "jobDescription", null, 0, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

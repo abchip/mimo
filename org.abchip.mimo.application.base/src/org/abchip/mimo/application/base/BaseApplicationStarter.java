@@ -70,7 +70,7 @@ public class BaseApplicationStarter {
 
 		// hooks starting
 		messageLevel++;
-		Dictionary<String, Object> properties = new Hashtable<String, Object>();
+		Dictionary<String, String> properties = new Hashtable<String, String>();
 		properties.put("org.abchip.mimo.application.hook.application", application.getName());
 		applicationHooks = registerHooks(application.getContext(), application.getHooks(), properties);
 		for (Object hook : applicationHooks) {
@@ -116,7 +116,7 @@ public class BaseApplicationStarter {
 
 		// hooks starting
 		messageLevel++;
-		Dictionary<String, Object> properties = new Hashtable<String, Object>();
+		Dictionary<String, String> properties = new Hashtable<String, String>();
 		properties.put("org.abchip.mimo.application.hook.component", component.getName());
 		List<Object> componentHooks = registerHooks(application.getContext(), component.getHooks(), properties);
 		componentMapHooks.put(component.getName(), componentHooks);
@@ -159,7 +159,7 @@ public class BaseApplicationStarter {
 		messageLevel--;
 	}
 
-	private List<Object> registerHooks(ContextRoot context, List<ServiceHook> hooks, Dictionary<String, Object> properties) {
+	private List<Object> registerHooks(ContextRoot context, List<ServiceHook> hooks, Dictionary<String, String> properties) {
 
 		List<Object> services = new ArrayList<Object>();
 		for (ServiceHook hook : hooks) {
@@ -171,7 +171,7 @@ public class BaseApplicationStarter {
 
 			println("+hook " + hook);
 			Object service = loadObject(context, hook.getClassName());
-			context.set(hook.getInterfaceName(), service, properties);
+			context.set(hook.getInterfaceName(), service, false, properties);
 			services.add(service);
 		}
 
@@ -194,7 +194,7 @@ public class BaseApplicationStarter {
 
 			println("+command " + command);
 			Object service = loadObject(context, command.getClassName());
-			context.set(command.getInterfaceName(), service, null);
+			context.set(command.getInterfaceName(), service, false, null);
 			commands.add(service);
 		}
 
@@ -222,12 +222,12 @@ public class BaseApplicationStarter {
 		}
 
 		// registry entry
-		Dictionary<String, Object> dictionary = new Hashtable<String, Object>();
+		Dictionary<String, String> dictionary = new Hashtable<String, String>();
 		if (serviceRef instanceof ServiceRegistryEntry) {
 			ServiceRegistryEntry serviceRegistry = (ServiceRegistryEntry) serviceRef;
-			dictionary.put("org.abchip.mimo.entity.registry.name", serviceRegistry.getName());
-			dictionary.put("org.abchip.mimo.entity.registry.vendor", serviceRegistry.getVendor());
-			dictionary.put("org.abchip.mimo.entity.registry.version", serviceRegistry.getVersion());
+			dictionary.put("org.abchip.mimo.service.registry.name", serviceRegistry.getName());
+			dictionary.put("org.abchip.mimo.service.registry.vendor", serviceRegistry.getVendor());
+			dictionary.put("org.abchip.mimo.service.registry.version", serviceRegistry.getVersion());
 		}
 
 		// service registration
@@ -238,22 +238,15 @@ public class BaseApplicationStarter {
 			ServiceExecutor serviceExecutor = (ServiceExecutor) serviceRef;
 			remoteExport = serviceExecutor.isRemoteExport();
 		}
-		registerService(component, interfaceName, service, dictionary, remoteExport);
+		registerService(component, interfaceName, service, remoteExport, dictionary);
 	}
 
-	private void registerService(ApplicationComponent component, String name, Object service, Dictionary<String, Object> properties, boolean remoteExport) {
+	private void registerService(ApplicationComponent component, String name, Object service, boolean remoteExport, Dictionary<String, String> properties) {
 
 		// service properties
 		properties.put("org.abchip.mimo.application.name", application.getName());
-		properties.put("org.abchip.mimo.application.port", application.getPort());
+		properties.put("org.abchip.mimo.application.port", Integer.toString(application.getPort()));
 		properties.put("org.abchip.mimo.application.component.name", component.getName());
-
-		// context properties
-		Context contextService = component.getContext().createChildContext(name);
-		contextService.set("org.abchip.mimo.application.service.name", name);
-		contextService.set("org.abchip.mimo.application.service.object", service);
-		contextService.set("org.abchip.mimo.application.service.properties", properties);
-		contextService.set("org.abchip.mimo.application.service.remoteExport", remoteExport);
 
 		// singleton
 		if (service instanceof Singleton<?>) {
@@ -269,27 +262,24 @@ public class BaseApplicationStarter {
 					field.setAccessible(false);
 				}
 			} catch (Exception e) {
-				contextService.close();
 				throw new RuntimeException(e);
 			}
 		}
 
 		// application hooks
 		for (Object hook : applicationHooks)
-			contextService.invoke(hook, ServiceRegistering.class);
+			component.getContext().invoke(hook, ServiceRegistering.class);
 
 		// component hooks
 		List<Object> componentHooks = componentMapHooks.get(component.getName());
 		if (componentHooks != null) {
 			for (Object hook : componentHooks)
-				contextService.invoke(hook, ServiceRegistering.class);
+				component.getContext().invoke(hook, ServiceRegistering.class);
 		}
 
-		contextService.invoke(service, ServiceRegistering.class);
+		component.getContext().invoke(service, ServiceRegistering.class);
 
-		application.getContext().set(name, service, properties);
-
-		contextService.close();
+		application.getContext().set(name, service, remoteExport, properties);
 	}
 
 	private Object loadObject(Context context, String className) {

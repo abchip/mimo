@@ -16,6 +16,10 @@
         <genParameters ecoreParameter="mining.ecore#//MiningManager/classify/object"/>
         <genTypeParameters ecoreTypeParameter="mining.ecore#//MiningManager/classify/E"/>
       </genOperations>
+      <genOperations ecoreOperation="mining.ecore#//MiningManager/lookupClassifier">
+        <genParameters ecoreParameter="mining.ecore#//MiningManager/lookupClassifier/klass"/>
+        <genParameters ecoreParameter="mining.ecore#//MiningManager/lookupClassifier/object"/>
+      </genOperations>
     </genClasses>
     <nestedGenPackages prefix="Classification" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="mining.ecore#//classification">
@@ -32,8 +36,23 @@
           <genParameters ecoreParameter="mining.ecore#//classification/Classifier/classify/object"/>
           <genTypeParameters ecoreTypeParameter="mining.ecore#//classification/Classifier/classify/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mining.ecore#//classification/Classifier/isClassifierFor">
+          <genParameters ecoreParameter="mining.ecore#//classification/Classifier/isClassifierFor/klass"/>
+          <genParameters ecoreParameter="mining.ecore#//classification/Classifier/isClassifierFor/object"/>
+        </genOperations>
+        <genOperations ecoreOperation="mining.ecore#//classification/Classifier/buildEvaluator">
+          <genParameters ecoreParameter="mining.ecore#//classification/Classifier/buildEvaluator/klass"/>
+          <genParameters ecoreParameter="mining.ecore#//classification/Classifier/buildEvaluator/object"/>
+          <genTypeParameters ecoreTypeParameter="mining.ecore#//classification/Classifier/buildEvaluator/E"/>
+        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mining.ecore#//classification/ClassifierRegistry"/>
+      <genClasses image="false" ecoreClass="mining.ecore#//classification/Evaluator">
+        <genOperations ecoreOperation="mining.ecore#//classification/Evaluator/evaluate">
+          <genParameters ecoreParameter="mining.ecore#//classification/Evaluator/evaluate/object"/>
+          <genParameters ecoreParameter="mining.ecore#//classification/Evaluator/evaluate/classification"/>
+        </genOperations>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

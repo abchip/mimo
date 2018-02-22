@@ -11,7 +11,7 @@
  */
 package org.abchip.mimo.expression;
 
-import org.abchip.mimo.entity.EntityRegistry;
+import org.abchip.mimo.context.ServiceRegistry;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +23,6 @@ import org.abchip.mimo.entity.EntityRegistry;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ExpressionWriterRegistry extends EntityRegistry<ExpressionWriter> {
+public interface ExpressionWriterRegistry extends ServiceRegistry<ExpressionWriter> {
 	public static String DEFAULT_WRITER = "RPJ";
 } 

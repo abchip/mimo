@@ -326,7 +326,7 @@ public class TableColumnDefImpl extends DatabaseObjectDefImpl implements TableCo
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (default: ");
 		result.append(default_);
 		result.append(", name: ");

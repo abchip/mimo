@@ -14,44 +14,44 @@ package org.abchip.mimo.core.base;
 import java.util.List;
 
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.EntityRegistry;
+import org.abchip.mimo.context.ServiceRegistry;
 
 
-public class BaseEntityRegistryImpl<T> implements EntityRegistry<T> {
+public class BaseServiceRegistryImpl<S> implements ServiceRegistry<S> {
 
 	private ContextRoot contextRoot;
-	private Class<T> klass;
+	private Class<S> klass;
 
-	public BaseEntityRegistryImpl(ContextRoot contextRoot, Class<T> klass) {
+	public BaseServiceRegistryImpl(ContextRoot contextRoot, Class<S> klass) {
 		this.contextRoot = contextRoot;
 		this.klass = klass;
 	}
 
 	@Override
-	public T lookup(String name) {
+	public S lookup(String name) {
 
-		String filter = "(org.abchip.mimo.entity.registry.name=" + name + ")";
+		String filter = "(org.abchip.mimo.service.registry.name=" + name + ")";
 		return contextRoot.get(klass, filter);		
 	}
 
 	@Override
-	public T lookupByPort(int port) {
+	public S lookupByPort(int port) {
 
 		String filter = "(org.abchip.mimo.application.port=" + port + ")";
 		return contextRoot.get(klass, filter);		
 	}
 
 	@Override
-	public List<T> list() {
+	public List<S> list() {
 
-		List<T> plugins = contextRoot.getAll(klass);
+		List<S> plugins = contextRoot.getAll(klass);
 		return plugins;
 	}
 
 	@Override
-	public T lookupByVendorVersion(String vendor, String version) {
+	public S lookupByVendorVersion(String vendor, String version) {
 
-		String filter = "(&(org.abchip.mimo.entity.registry.vendor=" + vendor + ")" + "(org.abchip.mimo.entity.registry.version=" + version + "))";
+		String filter = "(&(org.abchip.mimo.service.registry.vendor=" + vendor + ")" + "(org.abchip.mimo.service.registry.version=" + version + "))";
 		return contextRoot.get(klass, filter);
 	}
 }

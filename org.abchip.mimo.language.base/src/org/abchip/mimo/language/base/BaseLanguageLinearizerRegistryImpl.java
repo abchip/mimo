@@ -15,37 +15,37 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.entity.EntityRegistry;
-import org.abchip.mimo.entity.EntityRegistryFactory;
+import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.ServiceRegistryFactory;
 import org.abchip.mimo.language.LanguageLinearizer;
 import org.abchip.mimo.language.LanguageLinearizerRegistry;
 
 public class BaseLanguageLinearizerRegistryImpl implements LanguageLinearizerRegistry {
 	
-	private EntityRegistry<LanguageLinearizer> entityRegistry;
+	private ServiceRegistry<LanguageLinearizer> serviceRegistry;
 	
 	@Inject
-	public BaseLanguageLinearizerRegistryImpl(EntityRegistryFactory objectRegistryFactory) {
-		 this.entityRegistry = objectRegistryFactory.createEntityRegistry(LanguageLinearizer.class);
+	public BaseLanguageLinearizerRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
+		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(LanguageLinearizer.class);
 	}
 
 	@Override
 	public LanguageLinearizer lookup(String name) {
-		return this.entityRegistry.lookup(name);
+		return this.serviceRegistry.lookup(name);
 	}
 
 	@Override
 	public List<LanguageLinearizer> list() {
-		return this.entityRegistry.list();
+		return this.serviceRegistry.list();
 	}
 
 	@Override
 	public LanguageLinearizer lookupByVendorVersion(String vendor, String version) {
-		return this.entityRegistry.lookupByVendorVersion(vendor, version);
+		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public LanguageLinearizer lookupByPort(int port) {
-		return entityRegistry.lookupByPort(port);
+		return serviceRegistry.lookupByPort(port);
 	}
 }

@@ -14,17 +14,17 @@ package org.abchip.mimo.core.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.EntityRegistry;
-import org.abchip.mimo.entity.EntityRegistryFactory;
+import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.ServiceRegistryFactory;
 
-public class BaseEntityRegistryFactoryImpl implements EntityRegistryFactory {
+public class BaseServiceRegistryFactoryImpl implements ServiceRegistryFactory {
 
 	@Inject
 	private ContextRoot contextRoot;
 	
 	@Override
-	public <T> EntityRegistry<T> createEntityRegistry(Class<T> klass) {
-		return new BaseEntityRegistryImpl<T>(contextRoot, klass);
+	public <T> ServiceRegistry<T> createServiceRegistry(Class<T> klass) {
+		return new BaseServiceRegistryImpl<T>(contextRoot, klass);
 	}
 
 }

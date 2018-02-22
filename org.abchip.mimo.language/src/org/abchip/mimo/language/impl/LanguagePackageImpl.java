@@ -132,7 +132,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link LanguagePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -146,7 +146,8 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		if (isInited) return (LanguagePackage)EPackage.Registry.INSTANCE.getEPackage(LanguagePackage.eNS_URI);
 
 		// Obtain or create and register package
-		LanguagePackageImpl theLanguagePackage = (LanguagePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof LanguagePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new LanguagePackageImpl());
+		Object registeredLanguagePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		LanguagePackageImpl theLanguagePackage = registeredLanguagePackage instanceof LanguagePackageImpl ? (LanguagePackageImpl)registeredLanguagePackage : new LanguagePackageImpl();
 
 		isInited = true;
 
@@ -155,7 +156,8 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		MiningPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		GrammarPackageImpl theGrammarPackage = (GrammarPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI) instanceof GrammarPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI) : GrammarPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI);
+		GrammarPackageImpl theGrammarPackage = (GrammarPackageImpl)(registeredPackage instanceof GrammarPackageImpl ? registeredPackage : GrammarPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theLanguagePackage.createPackageContents();
@@ -168,7 +170,6 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Mark meta-data to indicate it can't be changed
 		theLanguagePackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(LanguagePackage.eNS_URI, theLanguagePackage);
 		return theLanguagePackage;
@@ -401,11 +402,11 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Add supertypes to classes
 		languageEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		languageEClass.getESuperTypes().add(theEntityPackage.getTextable());
-		EGenericType g1 = createEGenericType(theEntityPackage.getEntityRegistry());
+		EGenericType g1 = createEGenericType(theContextPackage.getServiceRegistry());
 		EGenericType g2 = createEGenericType(this.getLanguageParser());
 		g1.getETypeArguments().add(g2);
 		languageParserRegistryEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theEntityPackage.getEntityRegistry());
+		g1 = createEGenericType(theContextPackage.getServiceRegistry());
 		g2 = createEGenericType(this.getLanguageLinearizer());
 		g1.getETypeArguments().add(g2);
 		languageLinearizerRegistryEClass.getEGenericSuperTypes().add(g1);

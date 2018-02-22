@@ -103,7 +103,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void set(String name, Object object, Dictionary<String, ?> dictionary) {
+	public void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

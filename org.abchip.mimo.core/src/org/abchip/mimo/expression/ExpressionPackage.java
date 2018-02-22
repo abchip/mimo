@@ -11,6 +11,7 @@
  */
 package org.abchip.mimo.expression;
 
+import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -419,7 +420,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPRESSION_PARSER_REGISTRY_FEATURE_COUNT = EntityPackage.ENTITY_REGISTRY_FEATURE_COUNT + 0;
+	int EXPRESSION_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.expression.ExpressionWriter <em>Writer</em>}' class.
@@ -457,7 +458,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPRESSION_WRITER_REGISTRY_FEATURE_COUNT = EntityPackage.ENTITY_REGISTRY_FEATURE_COUNT + 0;
+	int EXPRESSION_WRITER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.expression.impl.ExpressionVisitorImpl <em>Visitor</em>}' class.

@@ -374,7 +374,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (iso_639_1: ");
 		result.append(iso_639_1);
 		result.append(", name: ");

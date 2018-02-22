@@ -83,7 +83,13 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	}
 	
 	@Override
-	public void set(String name, Object object, Dictionary<String, ?> dictionary) {
+	public void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary) {
+		
+		if (remoteExport) {
+			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_INTERFACES, E4DistributionConstants.SERVICE_EXPORTED_INTERFACES_WILDCARD);
+			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_CONFIGS, "ecf.generic.server");			
+			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_CONTAINER_FACTORY_ARGUMENTS, "ecftcp://localhost:30001/server");				
+		}
 		getBundleContext().registerService(name, object, dictionary);
 	}
 
