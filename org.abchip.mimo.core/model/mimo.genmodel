@@ -489,10 +489,20 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerListener/listener"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/registerListener/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/registerListener.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerListener.1/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerListener.1/listener"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/registerListener.1/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/registerProvider">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerProvider/klass"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerProvider/provider"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/registerProvider/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/registerProvider.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerProvider.1/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerProvider.1/provider"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/registerProvider.1/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityReader">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityReader/contextProvider"/>
@@ -521,6 +531,10 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityProvider">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityProvider/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityProvider/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityProvider.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityProvider.1/frame"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityProvider.1/E"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/ResourceNotifier">

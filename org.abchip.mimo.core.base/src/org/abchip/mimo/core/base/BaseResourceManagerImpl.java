@@ -63,8 +63,18 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	}
 
 	@Override
+	public <E extends EntityNameable> void registerListener(Frame<E> frame, ResourceListener<E> listener) {
+		registerListener(frame.getEntityClass(), listener);		
+	}
+
+	@Override
 	public <T extends EntityNameable> void registerProvider(Class<T> klass, EntityProvider provider) {
 		providers.put(klass, provider);
+	}
+
+	@Override
+	public <E extends EntityNameable> void registerProvider(Frame<E> frame, EntityProvider provider) {
+		registerProvider(frame.getEntityClass(), provider);
 	}
 
 	@Override
@@ -162,6 +172,11 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		return resourceProvider;
 	}
 
+	@Override
+	public <E extends EntityNameable> EntityProvider getEntityProvider(Frame<E> frame) {
+		return getEntityProvider(frame.getEntityClass());
+	}
+	
 	@SuppressWarnings("unchecked")
 	private <T extends EntityNameable> void prepareListener(EntityReader<T> resource, Class<T> klass) {
 

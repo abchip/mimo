@@ -35,10 +35,26 @@ public interface ResourceManager extends EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model frameRequired="true" listenerRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> void registerListener(Frame<E> frame, ResourceListener<E> listener);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model klassRequired="true" providerRequired="true"
 	 * @generated
 	 */
 	<E extends EntityNameable> void registerProvider(Class<E> klass, EntityProvider provider);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model frameRequired="true" providerRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> void registerProvider(Frame<E> frame, EntityProvider provider);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,5 +95,13 @@ public interface ResourceManager extends EntityProvider {
 	 * @generated
 	 */
 	<E extends EntityNameable> EntityProvider getEntityProvider(Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityProvider getEntityProvider(Frame<E> frame);
 
 } // ResourceManager
