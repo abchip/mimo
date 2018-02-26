@@ -116,6 +116,11 @@
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getAll/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ContextRoot/getAll/T"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getAll.1">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getAll.1/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getAll.1/filter"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ContextRoot/getAll.1/T"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getResource">
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResource/context"/>
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResource/path"/>
@@ -369,15 +374,27 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/getEntityReader.2">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.2/contextProvider"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.2/klass"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.2/resources"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.2/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.2/resource"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.2/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/getEntityReader.3">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.3/contextProvider"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.3/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.3/klass"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.3/resources"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.3/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/getEntityReader.4">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.4/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.4/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.4/resources"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.4/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/getEntityReader.5">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.5/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.5/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.5/resources"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityProvider/getEntityReader.5/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/getEntityWriter">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter/contextProvider"/>
@@ -390,6 +407,12 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.1/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.1/resource"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.1/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/getEntityWriter.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.2/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.2/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.2/resource"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.2/E"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityProviderRegistry"/>
@@ -445,6 +468,7 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getSlot/name"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlots"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSuperFrames"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getValue">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/slot"/>
@@ -495,15 +519,10 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerListener.1/listener"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/registerListener.1/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/registerProvider">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerProvider/klass"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerProvider/provider"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/registerProvider/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/registerProvider.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerProvider.1/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerProvider.1/provider"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/registerProvider.1/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/registerListener.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerListener.2/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/registerListener.2/listener"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/registerListener.2/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityReader">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityReader/contextProvider"/>
@@ -517,6 +536,12 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityReader.1/scope"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityReader.1/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityReader.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityReader.2/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityReader.2/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityReader.2/scope"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityReader.2/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityWriter">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter/klass"/>
@@ -529,13 +554,11 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.1/scope"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.1/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityProvider">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityProvider/klass"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityProvider/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityProvider.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityProvider.1/frame"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityProvider.1/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getEntityWriter.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.2/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.2/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.2/scope"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.2/E"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/ResourceNotifier">

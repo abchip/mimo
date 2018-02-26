@@ -45,6 +45,14 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" resourceRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frame, String resource);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true" klassRequired="true" resourcesRequired="true" resourcesMany="true"
 	 * @generated
 	 */
@@ -61,6 +69,14 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" resourcesRequired="true" resourcesMany="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frame, List<String> resources);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true" klassRequired="true" resourceRequired="true"
 	 * @generated
 	 */
@@ -73,5 +89,13 @@ public interface EntityProvider {
 	 * @generated
 	 */
 	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" resourceRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frame, String resource);
 
 } // EntityProvider

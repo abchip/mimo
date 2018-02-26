@@ -11,7 +11,9 @@
  */
 package org.abchip.mimo.core.base;
 
+import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -21,11 +23,14 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.EMFFrameAdapter;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceHelper;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
@@ -41,10 +46,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 public class BaseEntityProviderImpl extends EntityProviderImpl {
 
 	@Inject
+	private ContextRoot contextRoot;
+	@Inject
 	private ResourceManager resourceManager;
 
 	private Map<String, Frame<?>> frames = null;
-
+	
 	@PostConstruct
 	private void init() {
 		this.frames = new HashMap<String, Frame<?>>();
@@ -52,15 +59,20 @@ public class BaseEntityProviderImpl extends EntityProviderImpl {
 		// frame
 		loadFrames();
 
-		resourceManager.registerProvider(Frame.class, this);
-	}
+		Dictionary<String, String> dictionary = new Hashtable<String, String>();
+		dictionary.put(BaseConstants.ENTITY_DOMAIN_NAME, "mimo");
+		dictionary.put(BaseConstants.ENTITY_PROVIDER_FRAME, Frame.class.getSimpleName());
 
+//		contextRoot.set(EntityProvider.class.getName(), provider, false, dictionary);
+
+//		resourceManager.registerProvider(Frame.class, this);
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
-	public <T extends EntityNameable> EntityReader<T> getEntityReader(ContextProvider contextProvider, Class<T> klass, String resource) {
-
-		if (Frame.class.isAssignableFrom(klass)) {
-			return (EntityReader<T>) ResourceHelper.wrapReader(contextProvider, frames);
+	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
+		if (isFrame(frame)) {
+			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, frames);
 		} else {
 			throw new UnsupportedOperationException();
 		}
@@ -68,19 +80,17 @@ public class BaseEntityProviderImpl extends EntityProviderImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <T extends EntityNameable> EntityReader<T> getEntityReader(ContextProvider contextProvider, Class<T> klass, List<String> resources) {
-
-		if (Frame.class.isAssignableFrom(klass)) {
-			return (EntityReader<T>) ResourceHelper.wrapReader(contextProvider, frames);
+	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, List<String> resources) {
+		if (isFrame(frame)) {
+			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, frames);
 		} else {
 			throw new UnsupportedOperationException();
 		}
 	}
 
 	@Override
-	public <T extends EntityNameable> EntityWriter<T> getEntityWriter(ContextProvider contextProvider, Class<T> klass, String resource) {
-
-		if (Frame.class.isAssignableFrom(klass)) {
+	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
+		if (isFrame(frame)) {
 			throw new UnsupportedOperationException();
 		} else {
 			throw new UnsupportedOperationException();
@@ -112,11 +122,9 @@ public class BaseEntityProviderImpl extends EntityProviderImpl {
 					else
 						eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
 				}
-
 			}
 
 			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
-
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
 					if (EntityPackage.eINSTANCE.getEntityNameable().isSuperTypeOf(eClass)) {
@@ -125,5 +133,9 @@ public class BaseEntityProviderImpl extends EntityProviderImpl {
 				}
 			}
 		}
+	}
+	
+	private boolean isFrame(Frame<?> frame) {
+		return frame.getName().equals(Resource.class.getSimpleName());
 	}
 }

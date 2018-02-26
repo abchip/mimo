@@ -255,13 +255,6 @@
           xsi:type="mimo-app:ServiceExecutor"
           className="org.abchip.mimo.social.twitter.tw4j.TW4JTwitterManagerImpl"
           interfaceName="org.abchip.mimo.social.twitter.TwitterManager"/>
-      <services
-          xsi:type="mimo-app:ServiceRegistryEntry"
-          className="org.abchip.mimo.social.twitter.tw4j.TW4JEntitiProviderImpl"
-          interfaceName="org.abchip.mimo.entity.EntityProvider"
-          name="*TW4J"
-          vendor="ABChip"
-          version="0.1.0"/>
     </modules>
     <modules
         name="Test">

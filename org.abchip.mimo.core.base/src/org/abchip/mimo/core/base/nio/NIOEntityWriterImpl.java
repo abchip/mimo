@@ -27,18 +27,19 @@ import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityWriter;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceHelper;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class NIOEntityWriterImpl<T extends EntityNameable> extends NIOEntityReaderImpl<T> implements EntityWriter<T> {
+public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityReaderImpl<E> implements EntityWriter<E> {
 
 	private Resource resource;
 	private LockManager lockManager;
 
-	public NIOEntityWriterImpl(NIOPathManager fileManager, EntityProvider resourceProvider, ContextProvider contextProvider, Resource resource, Class<T> klass, Logger logger, LockManager lockManager) {
-		super(fileManager, resourceProvider, contextProvider, resource, klass, logger);
+	public NIOEntityWriterImpl(NIOPathManager fileManager, EntityProvider resourceProvider, ContextProvider contextProvider, Resource resource, Frame<E> frame, Logger logger, LockManager lockManager) {
+		super(fileManager, resourceProvider, contextProvider, resource, frame, logger);
 		this.resource = resource;
 		this.lockManager = lockManager;
 	}
@@ -49,7 +50,7 @@ public class NIOEntityWriterImpl<T extends EntityNameable> extends NIOEntityRead
 	}
 
 	@Override
-	public void delete(T entity) {
+	public void delete(E entity) {
 		try {
 			ResourceHelper.firePreDeleteEvent(this, entity);
 
@@ -61,10 +62,10 @@ public class NIOEntityWriterImpl<T extends EntityNameable> extends NIOEntityRead
 		}
 	}
 
-	private void doDelete(T entity) throws IOException {
+	private void doDelete(E entity) throws IOException {
 		Context context = contextProvider.getContext();
 
-		Path file = getClassFolder(klass, false).resolve(entity.getName());
+		Path file = getClassFolder(getFrame(), false).resolve(entity.getName());
 		if (!Files.exists(file))
 			return;
 
@@ -72,19 +73,19 @@ public class NIOEntityWriterImpl<T extends EntityNameable> extends NIOEntityRead
 		fileLocker.lock(LockType.WRITE);
 
 		try {
-			pathManager.deletePath(file);
+			getPathManager().deletePath(file);
 		} finally {
 			fileLocker.unlock(LockType.WRITE);
 		}
 	}
 
 	@Override
-	public void save(T entity) {
+	public void save(E entity) {
 		save(entity, false);
 	}
 
 	@Override
-	public void save(T entity, boolean replace) {
+	public void save(E entity, boolean replace) {
 		try {
 			ResourceHelper.firePreSaveEvent(this, entity);
 
@@ -96,18 +97,18 @@ public class NIOEntityWriterImpl<T extends EntityNameable> extends NIOEntityRead
 		}
 	}
 
-	private void doSave(T entity, boolean replace) throws IOException {
+	private void doSave(E entity, boolean replace) throws IOException {
 
 		Context context = contextProvider.getContext();
 
-		Path file = getClassFolder(klass, true).resolve(entity.getName());
+		Path file = getClassFolder(getFrame(), true).resolve(entity.getName());
 
 		EntityLocker<?> entityLocker = lockManager.getLocker(context, file.toUri());
 		entityLocker.lock(LockType.WRITE);
 
 		try {
 
-			ByteArrayOutputStream output = getEntitySerializer(context).serialize(resource, klass, entity.getName(), entity);
+			ByteArrayOutputStream output = getEntitySerializer(context).serialize(resource, getFrame(), entity.getName(), entity);
 			ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
 			if (replace)
 				Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
@@ -126,14 +127,14 @@ public class NIOEntityWriterImpl<T extends EntityNameable> extends NIOEntityRead
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void rename(T entity, String newName) {
+	public void rename(E entity, String newName) {
 		try {
 
 			ResourceHelper.firePreRenameEvent(this, entity, newName);
 
 			String oldName = entity.getName();
 
-			T newEntity = (T) EcoreUtil.copy((EObject) entity);
+			E newEntity = (E) EcoreUtil.copy((EObject) entity);
 			EObject eObject = (EObject) newEntity;
 
 			// new name
@@ -150,15 +151,15 @@ public class NIOEntityWriterImpl<T extends EntityNameable> extends NIOEntityRead
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T copy(T entity, String name) {
+	public E copy(E entity, String name) {
 
 		EObject eObject = EcoreUtil.copy((EObject) entity);
 
 		// new name
 		eObject.eSet(eObject.eClass().getEStructuralFeature("name"), name);
 
-		save((T) eObject);
+		save((E) eObject);
 
-		return (T) eObject;
+		return (E) eObject;
 	}
 }

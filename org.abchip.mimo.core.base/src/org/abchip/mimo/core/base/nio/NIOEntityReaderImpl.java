@@ -31,26 +31,35 @@ import org.abchip.mimo.core.base.BaseResourceEntitySerializer;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.impl.EntityReaderImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
-public class NIOEntityReaderImpl<T extends EntityNameable> extends EntityReaderImpl<T> {
+public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderImpl<E> {
 
 	private Logger logger;
-	protected NIOPathManager pathManager;
-	protected Class<T> klass;
+	private NIOPathManager pathManager;
+	private Frame<E> frame;
 	private Resource resource;
 
-	public NIOEntityReaderImpl(NIOPathManager pathManager, EntityProvider resourceProvider, ContextProvider contextProvider, Resource resource, Class<T> klass, Logger logger) {
+	public NIOEntityReaderImpl(NIOPathManager pathManager, EntityProvider resourceProvider, ContextProvider contextProvider, Resource resource, Frame<E> frame, Logger logger) {
 		setEntityProvider(resourceProvider);
 		setContextProvider(contextProvider);
 		this.pathManager = pathManager;
-		this.klass = klass;
+		this.frame = frame;
 		this.resource = resource;
 	}
+	
+	protected Frame<E> getFrame() {
+		return this.frame;
+	}
 
+	protected NIOPathManager getPathManager() {
+		return this.getPathManager();
+	}
+	
 	public Resource getResource() {
 		return resource;
 	}
@@ -61,16 +70,16 @@ public class NIOEntityReaderImpl<T extends EntityNameable> extends EntityReaderI
 	}
 
 	@Override
-	public T lookup(String name) {
+	public E lookup(String name) {
 
-		Path file = getClassFolder(klass, false).resolve(name);
+		Path file = getClassFolder(frame, false).resolve(name);
 		if (!Files.exists(file))
 			return null;
 
-		T entity = null;
+		E entity = null;
 		try {
 			InputStream inputStream = Files.newInputStream(file);
-			entity = getEntitySerializer(contextProvider).deserialize(resource, klass, name, inputStream);
+			entity = getEntitySerializer(contextProvider).deserialize(resource, frame, name, inputStream);
 		} catch (IOException e) {
 			logger.error(e);
 		}
@@ -79,12 +88,12 @@ public class NIOEntityReaderImpl<T extends EntityNameable> extends EntityReaderI
 	}
 	
 	@Override
-	public EntityIterator<T> find(String nameFilter) {
+	public EntityIterator<E> find(String nameFilter) {
 
-		List<T> entries = new ArrayList<T>();
-		Path folder = getClassFolder(klass, false);
+		List<E> entries = new ArrayList<E>();
+		Path folder = getClassFolder(frame, false);
 		if (folder == null)
-			return new BaseEntityIteratorImpl<T>(klass, entries.iterator());
+			return new BaseEntityIteratorImpl<E>(frame, entries.iterator());
 
 		try {
 			DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder);
@@ -113,7 +122,7 @@ public class NIOEntityReaderImpl<T extends EntityNameable> extends EntityReaderI
 
 				try {
 					InputStream inputStream = Files.newInputStream(path);
-					entries.add(getEntitySerializer(contextProvider).deserialize(resource, klass, entityName, inputStream));
+					entries.add(getEntitySerializer(contextProvider).deserialize(resource, frame, entityName, inputStream));
 				}
 				catch(Exception e) {
 					System.err.println(e.getMessage());
@@ -126,20 +135,20 @@ public class NIOEntityReaderImpl<T extends EntityNameable> extends EntityReaderI
 			logger.error(e);
 		}
 
-		Collections.sort(entries, new Comparator<T>() {
+		Collections.sort(entries, new Comparator<E>() {
 
 			@Override
-			public int compare(T o1, T o2) {
+			public int compare(E o1, E o2) {
 				return o1.getName().compareTo(o2.getName());
 			}
 		});
 
-		return new BaseEntityIteratorImpl<T>(klass, entries.iterator());
+		return new BaseEntityIteratorImpl<E>(frame, entries.iterator());
 	}
 
-	protected Path getClassFolder(Class<?> klass, boolean create) {
+	protected Path getClassFolder(Frame<E> frame, boolean create) {
 
-		Path folder = pathManager.getPath().resolve(resource.getName()).resolve(klass.getSimpleName());
+		Path folder = pathManager.getPath().resolve(resource.getName()).resolve(frame.getName());
 		if (Files.exists(folder))
 			return folder;
 

@@ -19,6 +19,7 @@ import java.util.Collections;
 import org.abchip.mimo.EMFResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -35,9 +36,9 @@ public class BaseResourceEntitySerializer {
 		this.resourceSet = resourceSet;
 	}
 
-	public <T extends EntityNameable> ByteArrayOutputStream serialize(Resource resource, Class<T> klass, String name, T entity) throws IOException {
+	public <E extends EntityNameable> ByteArrayOutputStream serialize(Resource resource, Frame<E> frame, String name, E entity) throws IOException {
 
-		URI uri = buildURI(resource, klass, name);
+		URI uri = buildURI(resource, frame, name);
 
 		// resource object
 		synchronized (uri.toString().intern()) {
@@ -59,9 +60,9 @@ public class BaseResourceEntitySerializer {
 	}
 
 	@SuppressWarnings("unchecked")
-	public <T extends EntityNameable> T deserialize(Resource resource, Class<T> klass, String name, InputStream inputStream) throws IOException {
+	public <E extends EntityNameable> E deserialize(Resource resource, Frame<E> frame, String name, InputStream inputStream) throws IOException {
 
-		URI uri = buildURI(resource, klass, name);
+		URI uri = buildURI(resource, frame, name);
 
 		synchronized (uri.toString().intern()) {
 
@@ -80,7 +81,7 @@ public class BaseResourceEntitySerializer {
 
 				eObject = emfResource.getContents().get(0);
 			}
-			return (T) eObject;
+			return (E) eObject;
 		}
 	}
 
@@ -95,9 +96,9 @@ public class BaseResourceEntitySerializer {
 		}
 	}
 
-	private <T extends EntityNameable> URI buildURI(Resource resource, Class<T> klass, String name) {
+	private <E extends EntityNameable> URI buildURI(Resource resource, Frame<E> frame, String name) {
 
-		String uri = "mimo://" + context.getContextDescription().getName() + "/" + resource.getName() + "/" + klass.getSimpleName();
+		String uri = "mimo://" + context.getContextDescription().getName() + "/" + resource.getName() + "/" + frame.getName();
 		URI eURI = URI.createURI(uri);
 
 		// TODO remove me

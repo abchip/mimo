@@ -24,6 +24,7 @@ import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceHelper;
 import org.abchip.mimo.entity.ResourceManager;
@@ -39,33 +40,32 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 	private Logger logger;
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	private NIOPathManager pathManager;
-	
+
 	private EntityReader<Resource> resourceReader;
-	
+
 	@PostConstruct
 	private void init() {
-		
+
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getResourceRoot());
 		this.resourceReader = new NIOResourceReaderImpl(pathManager, this, contextRoot);
-		
-		resourceManager.registerProvider(Resource.class, this);
-		resourceManager.registerProvider(EntityNameable.class, this);
+
+//		resourceManager.registerProvider(Resource.class, this);
+//		resourceManager.registerProvider(EntityNameable.class, this);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <T extends EntityNameable> EntityReader<T> getEntityReader(ContextProvider contextProvider, Class<T> klass, String resourceName) {
-		
-		EntityReader<T> entityReader = null;
-		if (Resource.class.isAssignableFrom(klass)) {
-			entityReader = (EntityReader<T>) new NIOResourceReaderImpl(pathManager, this, contextRoot);
+	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resourceName) {
+		EntityReader<E> entityReader = null;
+		if (isResource(frame)) {
+			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, this, contextRoot);
 		} else {
 			Resource resource = resourceReader.lookup(resourceName);
 			if (resource == null)
 				return null;
-			entityReader = new NIOEntityReaderImpl<T>(pathManager, this, contextProvider, resource, klass, logger);
+			entityReader = new NIOEntityReaderImpl<E>(pathManager, this, contextProvider, resource, frame, logger);
 		}
 
 		return entityReader;
@@ -73,18 +73,18 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <T extends EntityNameable> EntityReader<T> getEntityReader(ContextProvider contextProvider, Class<T> klass, List<String> resources) {
+	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, List<String> resources) {
 
-		List<EntityReader<T>> readers = new ArrayList<EntityReader<T>>();
+		List<EntityReader<E>> readers = new ArrayList<EntityReader<E>>();
 		for (String resourceName : resources) {
-			if (Resource.class.isAssignableFrom(klass)) {
-				readers.add((EntityReader<T>) new NIOResourceReaderImpl(pathManager, this, contextRoot));
+			if (isResource(frame)) {
+				readers.add((EntityReader<E>) new NIOResourceReaderImpl(pathManager, this, contextRoot));
 			} else {
 
 				Resource resource = resourceReader.lookup(resourceName);
 				if (resource == null)
 					return null;
-				NIOEntityReaderImpl<T> resourceReader = new NIOEntityReaderImpl<T>(pathManager, this, contextProvider, resource, klass, logger);
+				NIOEntityReaderImpl<E> resourceReader = new NIOEntityReaderImpl<E>(pathManager, this, contextProvider, resource, frame, logger);
 				readers.add(resourceReader);
 			}
 		}
@@ -94,18 +94,21 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <T extends EntityNameable> EntityWriter<T> getEntityWriter(ContextProvider contextProvider, Class<T> klass, final String resourceName) {
-
-		EntityWriter<T> resourceWriter = null;
-		if (Resource.class.isAssignableFrom(klass)) {
-			resourceWriter = (EntityWriter<T>) new NIOResourceWriterImpl(pathManager, this, contextProvider, lockManager);
+	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resourceName) {
+		EntityWriter<E> resourceWriter = null;
+		if (isResource(frame)) {
+			resourceWriter = (EntityWriter<E>) new NIOResourceWriterImpl(pathManager, this, contextProvider, lockManager);
 		} else {
 			Resource resource = resourceReader.lookup(resourceName);
 			if (resource == null)
 				return null;
-			resourceWriter = new NIOEntityWriterImpl<T>(pathManager, this, contextProvider, resource, klass, logger, lockManager);
+			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, this, contextProvider, resource, frame, logger, lockManager);
 		}
 
 		return resourceWriter;
+	}
+
+	private boolean isResource(Frame<?> frame) {
+		return frame.getName().equals(Resource.class.getSimpleName());
 	}
 }

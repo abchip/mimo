@@ -70,6 +70,17 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public <T> List<T> getAll(Class<T> klass, String filter) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public URL getResource(Class<?> context, String path) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

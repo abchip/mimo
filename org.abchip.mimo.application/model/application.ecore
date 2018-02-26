@@ -55,6 +55,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
         eType="#//ServiceRef" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityProviderRegistryEntry" eSuperTypes="#//ServiceRegistryEntry"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceCommandProvider" eSuperTypes="#//ServiceRef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"

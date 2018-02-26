@@ -14,15 +14,15 @@ package org.abchip.mimo.core.base;
 import org.abchip.mimo.EMFFrameAdapter;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceScope;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class BaseFrameManagerImpl implements FrameManager {
-
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends Entity> E createEntity(Frame<E> frame) {
@@ -44,5 +44,6 @@ public class BaseFrameManagerImpl implements FrameManager {
 		EntityReader<F> frameReader = (EntityReader<F>) resourceManager.getEntityReader(contextProvider, Frame.class, ResourceScope.ROOT);
 		return frameReader;
 
-	}
+	}	
+
 }

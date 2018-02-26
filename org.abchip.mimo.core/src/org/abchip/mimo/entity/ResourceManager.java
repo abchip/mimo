@@ -43,18 +43,10 @@ public interface ResourceManager extends EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model klassRequired="true" providerRequired="true"
+	 * @model frameRequired="true" listenerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerProvider(Class<E> klass, EntityProvider provider);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true" providerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> void registerProvider(Frame<E> frame, EntityProvider provider);
+	<E extends EntityNameable> void registerListener(String frame, ResourceListener<E> listener);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,6 +67,14 @@ public interface ResourceManager extends EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frame, ResourceScope scope);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true" klassRequired="true"
 	 * @generated
 	 */
@@ -91,17 +91,9 @@ public interface ResourceManager extends EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model klassRequired="true"
+	 * @model contextProviderRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> EntityProvider getEntityProvider(Class<E> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> EntityProvider getEntityProvider(Frame<E> frame);
+	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frame, ResourceScope scope);
 
 } // ResourceManager

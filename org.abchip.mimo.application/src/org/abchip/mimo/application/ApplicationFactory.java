@@ -58,6 +58,15 @@ public interface ApplicationFactory extends EFactory {
 	ApplicationModule createApplicationModule();
 
 	/**
+	 * Returns a new object of class '<em>Entity Provider Registry Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entity Provider Registry Entry</em>'.
+	 * @generated
+	 */
+	EntityProviderRegistryEntry createEntityProviderRegistryEntry();
+
+	/**
 	 * Returns a new object of class '<em>Service Command Provider</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

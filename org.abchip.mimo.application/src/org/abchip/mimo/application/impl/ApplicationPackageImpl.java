@@ -18,6 +18,7 @@ import org.abchip.mimo.application.ApplicationFactory;
 import org.abchip.mimo.application.ApplicationManager;
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.EntityProviderRegistryEntry;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceExecutor;
@@ -77,6 +78,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass applicationModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityProviderRegistryEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,7 +184,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ApplicationPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -190,7 +198,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		if (isInited) return (ApplicationPackage)EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ApplicationPackageImpl());
+		Object registeredApplicationPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ApplicationPackageImpl theApplicationPackage = registeredApplicationPackage instanceof ApplicationPackageImpl ? (ApplicationPackageImpl)registeredApplicationPackage : new ApplicationPackageImpl();
 
 		isInited = true;
 
@@ -206,7 +215,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		// Mark meta-data to indicate it can't be changed
 		theApplicationPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ApplicationPackage.eNS_URI, theApplicationPackage);
 		return theApplicationPackage;
@@ -399,6 +407,15 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 */
 	public EReference getApplicationModule_Services() {
 		return (EReference)applicationModuleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEntityProviderRegistryEntry() {
+		return entityProviderRegistryEntryEClass;
 	}
 
 	/**
@@ -670,6 +687,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEAttribute(applicationModuleEClass, APPLICATION_MODULE__NAME);
 		createEReference(applicationModuleEClass, APPLICATION_MODULE__SERVICES);
 
+		entityProviderRegistryEntryEClass = createEClass(ENTITY_PROVIDER_REGISTRY_ENTRY);
+
 		serviceCommandProviderEClass = createEClass(SERVICE_COMMAND_PROVIDER);
 		createEAttribute(serviceCommandProviderEClass, SERVICE_COMMAND_PROVIDER__INTERFACE_NAME);
 
@@ -745,6 +764,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		applicationComponentEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 		applicationModuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		entityProviderRegistryEntryEClass.getESuperTypes().add(this.getServiceRegistryEntry());
 		serviceCommandProviderEClass.getESuperTypes().add(this.getServiceRef());
 		serviceHookEClass.getESuperTypes().add(this.getServiceRef());
 		serviceExecutorEClass.getESuperTypes().add(this.getServiceRef());
@@ -795,6 +815,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEClass(applicationModuleEClass, ApplicationModule.class, "ApplicationModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplicationModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationModule_Services(), this.getServiceRef(), null, "services", null, 0, -1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityProviderRegistryEntryEClass, EntityProviderRegistryEntry.class, "EntityProviderRegistryEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(serviceCommandProviderEClass, ServiceCommandProvider.class, "ServiceCommandProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceCommandProvider_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.eclipse.osgi.framework.console.CommandProvider", 1, 1, ServiceCommandProvider.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

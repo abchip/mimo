@@ -120,11 +120,15 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
 	@Override
 	public <T> List<T> getAll(Class<T> klass) {
-		
+		return getAll(klass, null);
+	}
+
+	@Override
+	public <T> List<T> getAll(Class<T> klass, String filter) {
 		List<T> plugins = new ArrayList<T>();
 		Collection<ServiceReference<T>> pluginReferences;
 		try {
-			pluginReferences = getBundleContext().getServiceReferences(klass, null);
+			pluginReferences = getBundleContext().getServiceReferences(klass, filter);
 		} catch (InvalidSyntaxException e) {
 			throw new RuntimeException(e);
 		}

@@ -15,16 +15,17 @@ import java.util.Iterator;
 
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
 
 public class BaseEntityIteratorImpl<E extends EntityNameable> implements EntityIterator<E> {
 
-	private Class<E> klass;
+	private Frame<E> frame;
 	private Iterator<E> iterator;
 
 	private E nextObject = null;
 
-	public BaseEntityIteratorImpl(Class<E> klass, Iterator<E> iterator) {
-		this.klass = klass;
+	public BaseEntityIteratorImpl(Frame<E> frame, Iterator<E> iterator) {
+		this.frame = frame;
 		this.iterator = iterator;
 		doNext();
 	}
@@ -58,10 +59,10 @@ public class BaseEntityIteratorImpl<E extends EntityNameable> implements EntityI
 		while (iterator.hasNext()) {
 			E eObject = iterator.next();
 
-			if (!klass.isInstance(eObject))
+			if (!frame.getEntityClass().isInstance(eObject))
 				continue;
 
-			E tempObject = klass.cast(eObject);
+			E tempObject = frame.getEntityClass().cast(eObject);
 			nextObject = tempObject;
 			break;
 		}

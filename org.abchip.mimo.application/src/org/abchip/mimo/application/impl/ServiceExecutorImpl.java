@@ -215,7 +215,7 @@ public class ServiceExecutorImpl extends ServiceRefImpl implements ServiceExecut
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (interfaceName: ");
 		result.append(interfaceName);
 		result.append(", remoteExport: ");

@@ -69,6 +69,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.APPLICATION: return (EObject)createApplication();
 			case ApplicationPackage.APPLICATION_COMPONENT: return (EObject)createApplicationComponent();
 			case ApplicationPackage.APPLICATION_MODULE: return (EObject)createApplicationModule();
+			case ApplicationPackage.ENTITY_PROVIDER_REGISTRY_ENTRY: return (EObject)createEntityProviderRegistryEntry();
 			case ApplicationPackage.SERVICE_COMMAND_PROVIDER: return (EObject)createServiceCommandProvider();
 			case ApplicationPackage.SERVICE_CONFIG: return (EObject)createServiceConfig();
 			case ApplicationPackage.SERVICE_HOOK: return (EObject)createServiceHook();
@@ -140,6 +141,16 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public ApplicationModule createApplicationModule() {
 		ApplicationModuleImpl applicationModule = new ApplicationModuleImpl();
 		return applicationModule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityProviderRegistryEntry createEntityProviderRegistryEntry() {
+		EntityProviderRegistryEntryImpl entityProviderRegistryEntry = new EntityProviderRegistryEntryImpl();
+		return entityProviderRegistryEntry;
 	}
 
 	/**

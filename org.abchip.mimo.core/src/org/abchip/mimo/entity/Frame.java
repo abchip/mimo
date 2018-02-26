@@ -62,6 +62,14 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	List<Frame<?>> getSuperFrames();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model required="true" entityRequired="true" slotRequired="true"
 	 * @generated
 	 */

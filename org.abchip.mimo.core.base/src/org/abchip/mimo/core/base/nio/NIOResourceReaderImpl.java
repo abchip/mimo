@@ -15,12 +15,14 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.base.BaseEntityIteratorImpl;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityProvider;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.impl.EntityReaderImpl;
 
 public class NIOResourceReaderImpl extends EntityReaderImpl<Resource> {
 
 	protected NIOPathManager pathManager;
+	protected Frame<Resource> resourceFrame;
 	
 	public NIOResourceReaderImpl(NIOPathManager pathManager, EntityProvider entityProvider, ContextProvider contextProvider) {
 		super();
@@ -37,7 +39,7 @@ public class NIOResourceReaderImpl extends EntityReaderImpl<Resource> {
 
 	@Override
 	public EntityIterator<Resource> find(String filter) {
-		return new BaseEntityIteratorImpl<Resource>(Resource.class, pathManager.getResources().values().iterator());
+		return new BaseEntityIteratorImpl<Resource>(resourceFrame, pathManager.getResources().values().iterator());
 	}
 
 	@Override

@@ -42,6 +42,14 @@ public interface ContextRoot extends Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model klassRequired="true" filterRequired="true"
+	 * @generated
+	 */
+	<T> List<T> getAll(Class<T> klass, String filter);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model dataType="org.abchip.mimo.util.JavaURL" exceptions="org.abchip.mimo.util.JavaIOException" contextRequired="true" pathRequired="true"
 	 * @generated
 	 */

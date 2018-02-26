@@ -9,5 +9,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.abchip.mimo.application,
  org.abchip.mimo.application.impl
-Require-Bundle: org.abchip.mimo.core;visibility:=reexport
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.abchip.mimo.core;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -171,4 +171,18 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 	public Class<E> getEntityClass() {
 		return (Class<E>) eClass.getInstanceClass();
 	}
+
+	@Override
+	public List<Frame<?>> getSuperFrames() {
+		
+		List<Frame<?>> frames = new ArrayList<Frame<?>>();
+		addFrames(this, frames);
+		
+		return frames;
+	}
+	
+	private void addFrames(Frame<?> frame, List<Frame<?>>frames) {
+		if(frame.ako() != null)
+			frames.add(frame.ako());
+	}	
 }

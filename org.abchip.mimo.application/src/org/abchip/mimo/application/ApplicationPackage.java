@@ -304,7 +304,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRef()
 	 * @generated
 	 */
-	int SERVICE_REF = 8;
+	int SERVICE_REF = 9;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -341,43 +341,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceCommandProvider()
 	 * @generated
 	 */
-	int SERVICE_COMMAND_PROVIDER = 4;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_COMMAND_PROVIDER__CLASS_NAME = SERVICE_REF__CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_COMMAND_PROVIDER__STATUS = SERVICE_REF__STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_COMMAND_PROVIDER__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Service Command Provider</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_COMMAND_PROVIDER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
+	int SERVICE_COMMAND_PROVIDER = 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceConfigImpl <em>Service Config</em>}' class.
@@ -387,25 +351,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceConfig()
 	 * @generated
 	 */
-	int SERVICE_CONFIG = 5;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIG__ENTITIES = 0;
-
-	/**
-	 * The number of structural features of the '<em>Service Config</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CONFIG_FEATURE_COUNT = 1;
+	int SERVICE_CONFIG = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceHookImpl <em>Service Hook</em>}' class.
@@ -415,34 +361,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceHook()
 	 * @generated
 	 */
-	int SERVICE_HOOK = 6;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_HOOK__CLASS_NAME = SERVICE_REF__CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_HOOK__STATUS = SERVICE_REF__STATUS;
-
-	/**
-	 * The number of structural features of the '<em>Service Hook</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_HOOK_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 0;
+	int SERVICE_HOOK = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceExecutorImpl <em>Service Executor</em>}' class.
@@ -452,52 +371,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceExecutor()
 	 * @generated
 	 */
-	int SERVICE_EXECUTOR = 7;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_EXECUTOR__CLASS_NAME = SERVICE_REF__CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_EXECUTOR__STATUS = SERVICE_REF__STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_EXECUTOR__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Remote Export</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_EXECUTOR__REMOTE_EXPORT = SERVICE_REF_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Service Executor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_EXECUTOR_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
+	int SERVICE_EXECUTOR = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceResourceListenerImpl <em>Service Resource Listener</em>}' class.
@@ -507,43 +381,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceResourceListener()
 	 * @generated
 	 */
-	int SERVICE_RESOURCE_LISTENER = 9;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_RESOURCE_LISTENER__CLASS_NAME = SERVICE_REF__CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_RESOURCE_LISTENER__STATUS = SERVICE_REF__STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_RESOURCE_LISTENER__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Service Resource Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_RESOURCE_LISTENER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
+	int SERVICE_RESOURCE_LISTENER = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryImpl <em>Service Registry</em>}' class.
@@ -553,52 +391,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRegistry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY = 10;
-
-	/**
-	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REGISTRY__CLASS_NAME = SERVICE_REF__CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REGISTRY__STATUS = SERVICE_REF__STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REGISTRY__ENTRIES = SERVICE_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REGISTRY__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Service Registry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REGISTRY_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
+	int SERVICE_REGISTRY = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryEntryImpl <em>Service Registry Entry</em>}' class.
@@ -608,7 +401,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRegistryEntry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY_ENTRY = 11;
+	int SERVICE_REGISTRY_ENTRY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -674,6 +467,286 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_REGISTRY_ENTRY_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.impl.EntityProviderRegistryEntryImpl <em>Entity Provider Registry Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.impl.EntityProviderRegistryEntryImpl
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getEntityProviderRegistryEntry()
+	 * @generated
+	 */
+	int ENTITY_PROVIDER_REGISTRY_ENTRY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_PROVIDER_REGISTRY_ENTRY__CLASS_NAME = SERVICE_REGISTRY_ENTRY__CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_PROVIDER_REGISTRY_ENTRY__STATUS = SERVICE_REGISTRY_ENTRY__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_PROVIDER_REGISTRY_ENTRY__INTERFACE_NAME = SERVICE_REGISTRY_ENTRY__INTERFACE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_PROVIDER_REGISTRY_ENTRY__NAME = SERVICE_REGISTRY_ENTRY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Vendor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_PROVIDER_REGISTRY_ENTRY__VENDOR = SERVICE_REGISTRY_ENTRY__VENDOR;
+
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_PROVIDER_REGISTRY_ENTRY__VERSION = SERVICE_REGISTRY_ENTRY__VERSION;
+
+	/**
+	 * The number of structural features of the '<em>Entity Provider Registry Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_PROVIDER_REGISTRY_ENTRY_FEATURE_COUNT = SERVICE_REGISTRY_ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_COMMAND_PROVIDER__CLASS_NAME = SERVICE_REF__CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_COMMAND_PROVIDER__STATUS = SERVICE_REF__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_COMMAND_PROVIDER__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Service Command Provider</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_COMMAND_PROVIDER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_CONFIG__ENTITIES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Service Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_CONFIG_FEATURE_COUNT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_HOOK__CLASS_NAME = SERVICE_REF__CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_HOOK__STATUS = SERVICE_REF__STATUS;
+
+	/**
+	 * The number of structural features of the '<em>Service Hook</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_HOOK_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_EXECUTOR__CLASS_NAME = SERVICE_REF__CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_EXECUTOR__STATUS = SERVICE_REF__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_EXECUTOR__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Remote Export</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_EXECUTOR__REMOTE_EXPORT = SERVICE_REF_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Service Executor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_EXECUTOR_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESOURCE_LISTENER__CLASS_NAME = SERVICE_REF__CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESOURCE_LISTENER__STATUS = SERVICE_REF__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESOURCE_LISTENER__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Service Resource Listener</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESOURCE_LISTENER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY__CLASS_NAME = SERVICE_REF__CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY__STATUS = SERVICE_REF__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY__ENTRIES = SERVICE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Service Registry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REGISTRY_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceTesterImpl <em>Service Tester</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -681,7 +754,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceTester()
 	 * @generated
 	 */
-	int SERVICE_TESTER = 12;
+	int SERVICE_TESTER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -727,7 +800,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 13;
+	int SERVICE_STATUS = 14;
 
 
 	/**
@@ -956,6 +1029,16 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getApplicationModule_Services();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.application.EntityProviderRegistryEntry <em>Entity Provider Registry Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Entity Provider Registry Entry</em>'.
+	 * @see org.abchip.mimo.application.EntityProviderRegistryEntry
+	 * @generated
+	 */
+	EClass getEntityProviderRegistryEntry();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ServiceCommandProvider <em>Service Command Provider</em>}'.
@@ -1408,6 +1491,16 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION_MODULE__SERVICES = eINSTANCE.getApplicationModule_Services();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.EntityProviderRegistryEntryImpl <em>Entity Provider Registry Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.impl.EntityProviderRegistryEntryImpl
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getEntityProviderRegistryEntry()
+		 * @generated
+		 */
+		EClass ENTITY_PROVIDER_REGISTRY_ENTRY = eINSTANCE.getEntityProviderRegistryEntry();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ServiceCommandProviderImpl <em>Service Command Provider</em>}' class.

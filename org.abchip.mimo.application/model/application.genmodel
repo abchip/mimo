@@ -19,6 +19,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//Application/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//Application/config"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference application.ecore#//Application/context"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//Application/contextDescription"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//Application/hooks"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//Application/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//Application/port"/>
@@ -26,6 +27,7 @@
     </genClasses>
     <genClasses ecoreClass="application.ecore#//ApplicationComponent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//ApplicationComponent/config"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//ApplicationComponent/context"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//ApplicationComponent/hooks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//ApplicationComponent/commands"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//ApplicationComponent/modules"/>
@@ -46,6 +48,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//ApplicationModule/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//ApplicationModule/services"/>
     </genClasses>
+    <genClasses ecoreClass="application.ecore#//EntityProviderRegistryEntry"/>
     <genClasses ecoreClass="application.ecore#//ServiceCommandProvider">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//ServiceCommandProvider/interfaceName"/>
     </genClasses>
@@ -65,13 +68,9 @@
     <genClasses ecoreClass="application.ecore#//ServiceResourceListener">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//ServiceResourceListener/interfaceName"/>
     </genClasses>
-    <genClasses ecoreClass="application.ecore#//ServiceResourceProvider">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//ServiceResourceProvider/interfaceName"/>
-    </genClasses>
     <genClasses ecoreClass="application.ecore#//ServiceRegistry">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference application.ecore#//ServiceRegistry/entries"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//ServiceRegistry/interfaceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//ServiceRegistry/name"/>
     </genClasses>
     <genClasses ecoreClass="application.ecore#//ServiceRegistryEntry">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute application.ecore#//ServiceRegistryEntry/interfaceName"/>
