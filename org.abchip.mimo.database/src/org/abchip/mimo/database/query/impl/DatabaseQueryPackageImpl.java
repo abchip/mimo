@@ -438,17 +438,17 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 
 		// Add supertypes to classes
 		nameHelperEClass.getESuperTypes().add(this.getSQLObjectNameHelper());
-		EGenericType g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getNameHelper());
 		g1.getETypeArguments().add(g2);
 		nameHelperRegistryEClass.getEGenericSuperTypes().add(g1);
 		queryWriterEClass.getESuperTypes().add(this.getStatementWriter());
-		g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		g1 = createEGenericType(theContextPackage.getRegistry());
 		g2 = createEGenericType(this.getQueryWriter());
 		g1.getETypeArguments().add(g2);
 		queryWriterRegistryEClass.getEGenericSuperTypes().add(g1);
 		queryParserEClass.getESuperTypes().add(this.getStatementParser());
-		g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		g1 = createEGenericType(theContextPackage.getRegistry());
 		g2 = createEGenericType(this.getQueryParser());
 		g1.getETypeArguments().add(g2);
 		queryParserRegistryEClass.getEGenericSuperTypes().add(g1);

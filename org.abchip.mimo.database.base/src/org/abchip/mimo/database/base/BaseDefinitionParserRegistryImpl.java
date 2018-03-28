@@ -15,19 +15,19 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ServiceRegistry;
-import org.abchip.mimo.context.ServiceRegistryFactory;
+import org.abchip.mimo.context.Registry;
+import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 import org.abchip.mimo.database.definition.DefinitionParser;
 import org.abchip.mimo.database.definition.DefinitionParserRegistry;
 
 public class BaseDefinitionParserRegistryImpl implements DefinitionParserRegistry {
 	
-	private ServiceRegistry<DefinitionParser> serviceRegistry;
+	private Registry<DefinitionParser> registry;
 	
 	@Inject
-	public BaseDefinitionParserRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
-		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(DefinitionParser.class);
+	public BaseDefinitionParserRegistryImpl(RegistryFactory serviceRegistryFactory) {
+		 this.registry = serviceRegistryFactory.createRegistry(DefinitionParser.class);
 	}
 
 	@Override
@@ -37,21 +37,21 @@ public class BaseDefinitionParserRegistryImpl implements DefinitionParserRegistr
 
 	@Override
 	public DefinitionParser lookup(String name) {
-		return this.serviceRegistry.lookup(name);
+		return this.registry.lookup(name);
 	}
 
 	@Override
 	public List<DefinitionParser> list() {
-		return this.serviceRegistry.list();
+		return this.registry.list();
 	}
 
 	@Override
 	public DefinitionParser lookupByVendorVersion(String vendor, String version) {
-		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
+		return this.registry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public DefinitionParser lookupByPort(int port) {
-		return serviceRegistry.lookupByPort(port);
+		return registry.lookupByPort(port);
 	}
 }

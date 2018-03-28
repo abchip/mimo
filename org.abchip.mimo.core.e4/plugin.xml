@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+   <extension
+         id="mimo-ap"
+         name="Application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="org.abchip.mimo.core.e4.E4EquinoxApplicationImpl">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="test"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.abchip.mimo.e4.mimo-ap"
+            name="org.abchip.mimo.e4">
+         <property
+               name="appName"
+               value="org.abchip.mimo.e4">
+         </property>
+      </product>
+   </extension>
+</plugin>

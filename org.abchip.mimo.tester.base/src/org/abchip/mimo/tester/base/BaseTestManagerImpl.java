@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.tester.TestManager;
@@ -41,7 +42,6 @@ public class BaseTestManagerImpl implements TestManager {
 		return testRunner;
 	}
 
-
 	@Override
 	public TestUnitRunner prepareUnitRunner(ContextProvider contextProvider, String classURI) {
 
@@ -58,7 +58,7 @@ public class BaseTestManagerImpl implements TestManager {
 		String filter = null;
 
 		if (component != null && component.length() > 0)
-			filter = "(org.abchip.mimo.application.component.name=" + component + ")";
+			filter = "(" + MimoConstants.COMPONENT_NAME + "=" + component + ")";
 
 		Collection<ServiceReference<TestSuiteLauncher>> serviceReferences;
 		try {

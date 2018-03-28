@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language;
 
-import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.Registry;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,5 +19,5 @@ import org.abchip.mimo.context.ServiceRegistry;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface LanguageLinearizerRegistry extends ServiceRegistry<LanguageLinearizer> {
+public interface LanguageLinearizerRegistry extends Registry<LanguageLinearizer> {
 } // LanguageLinearizerRegistry

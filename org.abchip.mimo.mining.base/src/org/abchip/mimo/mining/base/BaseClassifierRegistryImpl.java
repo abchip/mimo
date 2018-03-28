@@ -11,38 +11,38 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ServiceRegistry;
-import org.abchip.mimo.context.ServiceRegistryFactory;
+import org.abchip.mimo.context.Registry;
+import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.ClassifierRegistry;
 
 public class BaseClassifierRegistryImpl implements ClassifierRegistry {
 
-	private ServiceRegistry<Classifier> serviceRegistry;
+	private Registry<Classifier> registry;
 	
 	@Inject
-	public BaseClassifierRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
-		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(Classifier.class);
+	public BaseClassifierRegistryImpl(RegistryFactory serviceRegistryFactory) {
+		 this.registry = serviceRegistryFactory.createRegistry(Classifier.class);
 	}
 
 	@Override
 	public Classifier lookup(String name) {
-		return this.serviceRegistry.lookup(name);
+		return this.registry.lookup(name);
 	}
 
 	@Override
 	public List<Classifier> list() {
-		return this.serviceRegistry.list();
+		return this.registry.list();
 	}
 
 	@Override
 	public Classifier lookupByVendorVersion(String vendor, String version) {
-		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
+		return this.registry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public Classifier lookupByPort(int port) {
-		return serviceRegistry.lookupByPort(port);
+		return registry.lookupByPort(port);
 	}
 
 }

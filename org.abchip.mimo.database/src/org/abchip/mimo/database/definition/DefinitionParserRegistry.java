@@ -11,7 +11,7 @@
  */
 package org.abchip.mimo.database.definition;
 
-import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 
 /**
@@ -24,7 +24,7 @@ import org.abchip.mimo.database.connection.ConnectionConfig;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface DefinitionParserRegistry extends ServiceRegistry<DefinitionParser> {
+public interface DefinitionParserRegistry extends Registry<DefinitionParser> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

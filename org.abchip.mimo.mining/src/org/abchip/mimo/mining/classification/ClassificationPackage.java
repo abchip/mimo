@@ -134,7 +134,7 @@ public interface ClassificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
+	int CLASSIFIER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 
 	/**

@@ -209,7 +209,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
+	int LANGUAGE_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageLinearizer <em>Linearizer</em>}' class.
@@ -247,7 +247,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_LINEARIZER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
+	int LANGUAGE_LINEARIZER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}' enum.

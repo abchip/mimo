@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.mining.classification;
 
-import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.Registry;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,5 +19,5 @@ import org.abchip.mimo.context.ServiceRegistry;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ClassifierRegistry extends ServiceRegistry<Classifier> {
+public interface ClassifierRegistry extends Registry<Classifier> {
 } // ClassifierRegistry

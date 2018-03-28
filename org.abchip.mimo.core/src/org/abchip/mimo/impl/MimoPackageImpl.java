@@ -11,6 +11,8 @@ import org.abchip.mimo.Mimo;
 import org.abchip.mimo.MimoFactory;
 import org.abchip.mimo.MimoPackage;
 
+import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.impl.ApplicationPackageImpl;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
@@ -94,7 +96,9 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
@@ -105,6 +109,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 
 		// Create package meta-data objects
 		theMimoPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
@@ -112,6 +117,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 
 		// Initialize created meta-data
 		theMimoPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
@@ -189,12 +195,14 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		ApplicationPackage theApplicationPackage = (ApplicationPackage)EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 
 		// Add subpackages
+		getESubpackages().add(theApplicationPackage);
 		getESubpackages().add(theContextPackage);
 		getESubpackages().add(theEntityPackage);
 		getESubpackages().add(theExpressionPackage);

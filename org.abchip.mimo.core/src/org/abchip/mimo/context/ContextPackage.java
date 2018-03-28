@@ -554,42 +554,42 @@ public interface ContextPackage extends EPackage {
 	int MESSAGE_FILE_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.context.ServiceRegistry <em>Service Registry</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.context.Registry <em>Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.context.ServiceRegistry
-	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getServiceRegistry()
+	 * @see org.abchip.mimo.context.Registry
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY = 17;
+	int REGISTRY = 17;
 
 	/**
-	 * The number of structural features of the '<em>Service Registry</em>' class.
+	 * The number of structural features of the '<em>Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_REGISTRY_FEATURE_COUNT = 0;
+	int REGISTRY_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.context.ServiceRegistryFactory <em>Service Registry Factory</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.context.RegistryFactory <em>Registry Factory</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.context.ServiceRegistryFactory
-	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getServiceRegistryFactory()
+	 * @see org.abchip.mimo.context.RegistryFactory
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistryFactory()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY_FACTORY = 18;
+	int REGISTRY_FACTORY = 18;
 
 	/**
-	 * The number of structural features of the '<em>Service Registry Factory</em>' class.
+	 * The number of structural features of the '<em>Registry Factory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_REGISTRY_FACTORY_FEATURE_COUNT = 0;
+	int REGISTRY_FACTORY_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.UserProfileImpl <em>User Profile</em>}' class.
@@ -1065,24 +1065,24 @@ public interface ContextPackage extends EPackage {
 	EAttribute getMessageFile_Text();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.context.ServiceRegistry <em>Service Registry</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.Registry <em>Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Registry</em>'.
-	 * @see org.abchip.mimo.context.ServiceRegistry
+	 * @return the meta object for class '<em>Registry</em>'.
+	 * @see org.abchip.mimo.context.Registry
 	 * @generated
 	 */
-	EClass getServiceRegistry();
+	EClass getRegistry();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.context.ServiceRegistryFactory <em>Service Registry Factory</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.RegistryFactory <em>Registry Factory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Registry Factory</em>'.
-	 * @see org.abchip.mimo.context.ServiceRegistryFactory
+	 * @return the meta object for class '<em>Registry Factory</em>'.
+	 * @see org.abchip.mimo.context.RegistryFactory
 	 * @generated
 	 */
-	EClass getServiceRegistryFactory();
+	EClass getRegistryFactory();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.UserProfile <em>User Profile</em>}'.
@@ -1526,24 +1526,24 @@ public interface ContextPackage extends EPackage {
 		EAttribute MESSAGE_FILE__TEXT = eINSTANCE.getMessageFile_Text();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.context.ServiceRegistry <em>Service Registry</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.context.Registry <em>Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.context.ServiceRegistry
-		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getServiceRegistry()
+		 * @see org.abchip.mimo.context.Registry
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistry()
 		 * @generated
 		 */
-		EClass SERVICE_REGISTRY = eINSTANCE.getServiceRegistry();
+		EClass REGISTRY = eINSTANCE.getRegistry();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.context.ServiceRegistryFactory <em>Service Registry Factory</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.context.RegistryFactory <em>Registry Factory</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.context.ServiceRegistryFactory
-		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getServiceRegistryFactory()
+		 * @see org.abchip.mimo.context.RegistryFactory
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistryFactory()
 		 * @generated
 		 */
-		EClass SERVICE_REGISTRY_FACTORY = eINSTANCE.getServiceRegistryFactory();
+		EClass REGISTRY_FACTORY = eINSTANCE.getRegistryFactory();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.UserProfileImpl <em>User Profile</em>}' class.

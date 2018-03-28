@@ -16,7 +16,7 @@
  */
 package org.abchip.mimo.database.query;
 
-import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 
 /**
@@ -29,7 +29,7 @@ import org.abchip.mimo.database.connection.ConnectionConfig;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface QueryParserRegistry extends ServiceRegistry<QueryParser> {
+public interface QueryParserRegistry extends Registry<QueryParser> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -267,7 +267,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		classificationEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getClassifier());
 		g1.getETypeArguments().add(g2);
 		classifierRegistryEClass.getEGenericSuperTypes().add(g1);

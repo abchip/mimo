@@ -6,7 +6,7 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: ABChip
 Export-Package: org.abchip.mimo.tester.base
-Require-Bundle: org.abchip.mimo.tester;visibility:=reexport,
- org.eclipse.osgi,
- org.abchip.mimo.application
+Require-Bundle: org.abchip.mimo.core.base,
+ org.abchip.mimo.tester;visibility:=reexport,
+ org.eclipse.osgi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -15,37 +15,37 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ServiceRegistry;
-import org.abchip.mimo.context.ServiceRegistryFactory;
+import org.abchip.mimo.context.Registry;
+import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.expression.ExpressionWriter;
 import org.abchip.mimo.expression.ExpressionWriterRegistry;
 
 public class BaseExpressionWriterRegistryImpl implements ExpressionWriterRegistry {
 
-	private ServiceRegistry<ExpressionWriter> serviceRegistry;
+	private Registry<ExpressionWriter> registry;
 
 	@Inject
-	public BaseExpressionWriterRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
-		this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(ExpressionWriter.class);
+	public BaseExpressionWriterRegistryImpl(RegistryFactory serviceRegistryFactory) {
+		this.registry = serviceRegistryFactory.createRegistry(ExpressionWriter.class);
 	}
 
 	@Override
 	public ExpressionWriter lookup(String name) {
-		return this.serviceRegistry.lookup(name);
+		return this.registry.lookup(name);
 	}
 
 	@Override
 	public List<ExpressionWriter> list() {
-		return this.serviceRegistry.list();
+		return this.registry.list();
 	}
 
 	@Override
 	public ExpressionWriter lookupByVendorVersion(String vendor, String version) {
-		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
+		return this.registry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public ExpressionWriter lookupByPort(int port) {
-		return serviceRegistry.lookupByPort(port);
+		return registry.lookupByPort(port);
 	}
 }

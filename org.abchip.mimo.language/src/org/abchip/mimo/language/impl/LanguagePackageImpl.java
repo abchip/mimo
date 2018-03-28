@@ -402,11 +402,11 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Add supertypes to classes
 		languageEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		languageEClass.getESuperTypes().add(theEntityPackage.getTextable());
-		EGenericType g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getLanguageParser());
 		g1.getETypeArguments().add(g2);
 		languageParserRegistryEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		g1 = createEGenericType(theContextPackage.getRegistry());
 		g2 = createEGenericType(this.getLanguageLinearizer());
 		g1.getETypeArguments().add(g2);
 		languageLinearizerRegistryEClass.getEGenericSuperTypes().add(g1);

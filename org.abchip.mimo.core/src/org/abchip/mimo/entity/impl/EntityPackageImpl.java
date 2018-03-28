@@ -9,6 +9,8 @@ package org.abchip.mimo.entity.impl;
 
 import org.abchip.mimo.MimoPackage;
 
+import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.impl.ApplicationPackageImpl;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.impl.ContextPackageImpl;
 
@@ -276,6 +278,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
 		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
@@ -286,6 +290,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Create package meta-data objects
 		theEntityPackage.createPackageContents();
 		theMimoPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
@@ -293,6 +298,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Initialize created meta-data
 		theEntityPackage.initializePackageContents();
 		theMimoPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
@@ -744,7 +750,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
 		entityNameableEClass.getESuperTypes().add(this.getEntity());
 		entityNameableEClass.getESuperTypes().add(this.getNameable());
-		g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		g1 = createEGenericType(theContextPackage.getRegistry());
 		g2 = createEGenericType(this.getEntityProvider());
 		g1.getETypeArguments().add(g2);
 		entityProviderRegistryEClass.getEGenericSuperTypes().add(g1);

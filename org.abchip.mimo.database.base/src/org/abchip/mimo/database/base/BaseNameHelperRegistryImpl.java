@@ -15,19 +15,19 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ServiceRegistry;
-import org.abchip.mimo.context.ServiceRegistryFactory;
+import org.abchip.mimo.context.Registry;
+import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 import org.abchip.mimo.database.query.NameHelper;
 import org.abchip.mimo.database.query.NameHelperRegistry;
 
 public class BaseNameHelperRegistryImpl implements NameHelperRegistry {
 	
-	private ServiceRegistry<NameHelper> serviceRegistry;
+	private Registry<NameHelper> registry;
 	
 	@Inject
-	public BaseNameHelperRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
-		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(NameHelper.class);
+	public BaseNameHelperRegistryImpl(RegistryFactory serviceRegistryFactory) {
+		 this.registry = serviceRegistryFactory.createRegistry(NameHelper.class);
 	}
 
 	@Override
@@ -37,21 +37,21 @@ public class BaseNameHelperRegistryImpl implements NameHelperRegistry {
 
 	@Override
 	public NameHelper lookup(String name) {
-		return this.serviceRegistry.lookup(name);
+		return this.registry.lookup(name);
 	}
 
 	@Override
 	public List<NameHelper> list() {
-		return this.serviceRegistry.list();
+		return this.registry.list();
 	}
 
 	@Override
 	public NameHelper lookupByVendorVersion(String vendor, String version) {
-		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
+		return this.registry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public NameHelper lookupByPort(int port) {
-		return serviceRegistry.lookupByPort(port);
+		return registry.lookupByPort(port);
 	}
 }

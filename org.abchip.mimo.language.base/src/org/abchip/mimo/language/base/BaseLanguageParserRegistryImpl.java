@@ -15,39 +15,39 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ServiceRegistry;
-import org.abchip.mimo.context.ServiceRegistryFactory;
+import org.abchip.mimo.context.Registry;
+import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.language.LanguageParser;
 import org.abchip.mimo.language.LanguageParserRegistry;
 
 public class BaseLanguageParserRegistryImpl implements LanguageParserRegistry {
 	
 	
-	private ServiceRegistry<LanguageParser> serviceRegistry;
+	private Registry<LanguageParser> registry;
 	
 	@Inject
-	public BaseLanguageParserRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
-		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(LanguageParser.class);
+	public BaseLanguageParserRegistryImpl(RegistryFactory serviceRegistryFactory) {
+		 this.registry = serviceRegistryFactory.createRegistry(LanguageParser.class);
 	}
 
 	@Override
 	public LanguageParser lookup(String name) {
-		return this.serviceRegistry.lookup(name);
+		return this.registry.lookup(name);
 	}
 
 	@Override
 	public List<LanguageParser> list() {
-		return this.serviceRegistry.list();
+		return this.registry.list();
 	}
 
 	@Override
 	public LanguageParser lookupByVendorVersion(String vendor, String version) {
-		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
+		return this.registry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public LanguageParser lookupByPort(int port) {
-		return serviceRegistry.lookupByPort(port);
+		return registry.lookupByPort(port);
 	}
 
 }

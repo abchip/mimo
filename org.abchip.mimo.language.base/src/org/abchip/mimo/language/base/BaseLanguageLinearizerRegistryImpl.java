@@ -15,37 +15,37 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ServiceRegistry;
-import org.abchip.mimo.context.ServiceRegistryFactory;
+import org.abchip.mimo.context.Registry;
+import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.language.LanguageLinearizer;
 import org.abchip.mimo.language.LanguageLinearizerRegistry;
 
 public class BaseLanguageLinearizerRegistryImpl implements LanguageLinearizerRegistry {
 	
-	private ServiceRegistry<LanguageLinearizer> serviceRegistry;
+	private Registry<LanguageLinearizer> registry;
 	
 	@Inject
-	public BaseLanguageLinearizerRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
-		 this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(LanguageLinearizer.class);
+	public BaseLanguageLinearizerRegistryImpl(RegistryFactory serviceRegistryFactory) {
+		 this.registry = serviceRegistryFactory.createRegistry(LanguageLinearizer.class);
 	}
 
 	@Override
 	public LanguageLinearizer lookup(String name) {
-		return this.serviceRegistry.lookup(name);
+		return this.registry.lookup(name);
 	}
 
 	@Override
 	public List<LanguageLinearizer> list() {
-		return this.serviceRegistry.list();
+		return this.registry.list();
 	}
 
 	@Override
 	public LanguageLinearizer lookupByVendorVersion(String vendor, String version) {
-		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
+		return this.registry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public LanguageLinearizer lookupByPort(int port) {
-		return serviceRegistry.lookupByPort(port);
+		return registry.lookupByPort(port);
 	}
 }

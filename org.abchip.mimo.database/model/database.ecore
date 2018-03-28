@@ -409,7 +409,7 @@
       <eOperations name="lookup" lowerBound="1" eType="#//definition/DefinitionParser">
         <eParameters name="connectionConfig" lowerBound="1" eType="#//connection/ConnectionConfig"/>
       </eOperations>
-      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ServiceRegistry">
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Registry">
         <eTypeArguments eClassifier="#//definition/DefinitionParser"/>
       </eGenericSuperTypes>
     </eClassifiers>
@@ -515,7 +515,7 @@
       <eOperations name="lookup" lowerBound="1" eType="#//definition/DefinitionWriter">
         <eParameters name="connectionConfig" lowerBound="1" eType="#//connection/ConnectionConfig"/>
       </eOperations>
-      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ServiceRegistry">
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Registry">
         <eTypeArguments eClassifier="#//definition/DefinitionWriter"/>
       </eGenericSuperTypes>
     </eClassifiers>
@@ -632,7 +632,7 @@
       <eOperations name="lookup" lowerBound="1" eType="#//query/NameHelper">
         <eParameters name="connectionConfig" lowerBound="1" eType="#//connection/ConnectionConfig"/>
       </eOperations>
-      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ServiceRegistry">
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Registry">
         <eTypeArguments eClassifier="#//query/NameHelper"/>
       </eGenericSuperTypes>
     </eClassifiers>
@@ -647,7 +647,7 @@
       <eOperations name="lookup" lowerBound="1" eType="#//query/QueryWriter">
         <eParameters name="connectionConfig" lowerBound="1" eType="#//connection/ConnectionConfig"/>
       </eOperations>
-      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ServiceRegistry">
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Registry">
         <eTypeArguments eClassifier="#//query/QueryWriter"/>
       </eGenericSuperTypes>
     </eClassifiers>
@@ -665,7 +665,7 @@
       <eOperations name="lookup" lowerBound="1" eType="#//query/QueryParser">
         <eParameters name="connectionConfig" lowerBound="1" eType="#//connection/ConnectionConfig"/>
       </eOperations>
-      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ServiceRegistry">
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Registry">
         <eTypeArguments eClassifier="#//query/QueryParser"/>
       </eGenericSuperTypes>
     </eClassifiers>

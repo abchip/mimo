@@ -21,6 +21,7 @@ import java.util.Map.Entry;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.EMFFrameAdapter;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
@@ -60,8 +61,8 @@ public class BaseEntityProviderImpl extends EntityProviderImpl {
 		loadFrames();
 
 		Dictionary<String, String> dictionary = new Hashtable<String, String>();
-		dictionary.put(BaseConstants.ENTITY_DOMAIN_NAME, "mimo");
-		dictionary.put(BaseConstants.ENTITY_PROVIDER_FRAME, Frame.class.getSimpleName());
+		dictionary.put(MimoConstants.DOMAIN_NAME, "mimo");
+		dictionary.put(MimoConstants.PROVIDER_FRAME, Frame.class.getSimpleName());
 
 //		contextRoot.set(EntityProvider.class.getName(), provider, false, dictionary);
 

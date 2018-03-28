@@ -15,37 +15,37 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ServiceRegistry;
-import org.abchip.mimo.context.ServiceRegistryFactory;
+import org.abchip.mimo.context.Registry;
+import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityProviderRegistry;
 
 public class BaseEntityProviderRegistryImpl implements EntityProviderRegistry {
 
-	private ServiceRegistry<EntityProvider> serviceRegistry;
+	private Registry<EntityProvider> registry;
 
 	@Inject
-	public BaseEntityProviderRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
-		this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(EntityProvider.class);
+	public BaseEntityProviderRegistryImpl(RegistryFactory serviceRegistryFactory) {
+		this.registry = serviceRegistryFactory.createRegistry(EntityProvider.class);
 	}
 
 	@Override
 	public EntityProvider lookup(String name) {
-		return this.serviceRegistry.lookup(name);
+		return this.registry.lookup(name);
 	}
 
 	@Override
 	public List<EntityProvider> list() {
-		return this.serviceRegistry.list();
+		return this.registry.list();
 	}
 
 	@Override
 	public EntityProvider lookupByVendorVersion(String vendor, String version) {
-		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
+		return this.registry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public EntityProvider lookupByPort(int port) {
-		return serviceRegistry.lookupByPort(port);
+		return registry.lookupByPort(port);
 	}
 }

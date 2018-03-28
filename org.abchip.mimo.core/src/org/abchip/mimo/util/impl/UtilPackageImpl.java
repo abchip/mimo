@@ -49,6 +49,8 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutorService;
 
 import org.abchip.mimo.MimoPackage;
+import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.impl.ApplicationPackageImpl;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
@@ -577,6 +579,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
 		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
@@ -587,6 +591,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		// Create package meta-data objects
 		theUtilPackage.createPackageContents();
 		theMimoPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
@@ -594,6 +599,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		// Initialize created meta-data
 		theUtilPackage.initializePackageContents();
 		theMimoPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();

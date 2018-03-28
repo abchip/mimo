@@ -15,37 +15,37 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ServiceRegistry;
-import org.abchip.mimo.context.ServiceRegistryFactory;
+import org.abchip.mimo.context.Registry;
+import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.expression.ExpressionParser;
 import org.abchip.mimo.expression.ExpressionParserRegistry;
 
 public class BaseExpressionParserRegistryImpl implements ExpressionParserRegistry {
 
-	private ServiceRegistry<ExpressionParser> serviceRegistry;
+	private Registry<ExpressionParser> registry;
 
 	@Inject
-	public BaseExpressionParserRegistryImpl(ServiceRegistryFactory serviceRegistryFactory) {
-		this.serviceRegistry = serviceRegistryFactory.createServiceRegistry(ExpressionParser.class);
+	public BaseExpressionParserRegistryImpl(RegistryFactory serviceRegistryFactory) {
+		this.registry = serviceRegistryFactory.createRegistry(ExpressionParser.class);
 	}
 
 	@Override
 	public ExpressionParser lookup(String name) {
-		return this.serviceRegistry.lookup(name);
+		return this.registry.lookup(name);
 	}
 
 	@Override
 	public List<ExpressionParser> list() {
-		return this.serviceRegistry.list();
+		return this.registry.list();
 	}
 
 	@Override
 	public ExpressionParser lookupByVendorVersion(String vendor, String version) {
-		return this.serviceRegistry.lookupByVendorVersion(vendor, version);
+		return this.registry.lookupByVendorVersion(vendor, version);
 	}
 
 	@Override
 	public ExpressionParser lookupByPort(int port) {
-		return serviceRegistry.lookupByPort(port);
+		return registry.lookupByPort(port);
 	}
 }

@@ -344,7 +344,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_PROVIDER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
+	int ENTITY_PROVIDER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Context Provider</b></em>' reference.

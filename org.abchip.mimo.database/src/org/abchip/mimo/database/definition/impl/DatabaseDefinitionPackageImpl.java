@@ -1364,12 +1364,12 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		createTableStatementEClass.getESuperTypes().add(this.getDefinitionStatement());
 		createViewStatementEClass.getESuperTypes().add(this.getDefinitionStatement());
 		definitionParserEClass.getESuperTypes().add(theDatabaseQueryPackage.getStatementParser());
-		EGenericType g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getDefinitionParser());
 		g1.getETypeArguments().add(g2);
 		definitionParserRegistryEClass.getEGenericSuperTypes().add(g1);
 		definitionWriterEClass.getESuperTypes().add(theDatabaseQueryPackage.getStatementWriter());
-		g1 = createEGenericType(theContextPackage.getServiceRegistry());
+		g1 = createEGenericType(theContextPackage.getRegistry());
 		g2 = createEGenericType(this.getDefinitionWriter());
 		g1.getETypeArguments().add(g2);
 		definitionWriterRegistryEClass.getEGenericSuperTypes().add(g1);

@@ -21,6 +21,7 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
@@ -82,8 +83,8 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	private <E extends EntityNameable> void registerProvider(Frame<E> frame, EntityProvider provider) {
 
 		Dictionary<String, String> dictionary = new Hashtable<String, String>();
-		dictionary.put(BaseConstants.ENTITY_DOMAIN_NAME, "mimo");
-		dictionary.put(BaseConstants.ENTITY_PROVIDER_FRAME, frame.getName());
+		dictionary.put(MimoConstants.DOMAIN_NAME, "mimo");
+		dictionary.put(MimoConstants.PROVIDER_FRAME, frame.getName());
 
 		contextRoot.set(EntityProvider.class.getName(), provider, false, dictionary);
 	}
@@ -180,7 +181,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	}
 
 	private EntityProvider getEntityProvider(Frame<?> frame) {
-		String filter = "(" + BaseConstants.ENTITY_PROVIDER_FRAME + "=" + frame.getName() + ")";
+		String filter = "(" + MimoConstants.PROVIDER_FRAME + "=" + frame.getName() + ")";
 
 		EntityProvider entityProvider = null;
 

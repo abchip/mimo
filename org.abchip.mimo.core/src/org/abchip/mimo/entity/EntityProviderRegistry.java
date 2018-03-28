@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.entity;
 
-import org.abchip.mimo.context.ServiceRegistry;
+import org.abchip.mimo.context.Registry;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,5 +19,5 @@ import org.abchip.mimo.context.ServiceRegistry;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface EntityProviderRegistry extends ServiceRegistry<EntityProvider> {
+public interface EntityProviderRegistry extends Registry<EntityProvider> {
 } // EntityProviderRegistry

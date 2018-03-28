@@ -447,7 +447,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
+	int DEFINITION_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.definition.impl.DefinitionParseErrorImpl <em>Definition Parse Error</em>}' class.
@@ -550,7 +550,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION_WRITER_REGISTRY_FEATURE_COUNT = ContextPackage.SERVICE_REGISTRY_FEATURE_COUNT + 0;
+	int DEFINITION_WRITER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.definition.impl.DisconnectStatementImpl <em>Disconnect Statement</em>}' class.
