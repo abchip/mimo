@@ -10,7 +10,6 @@ Bundle-ClassPath: lib/mariadb-java-client-1.1.8.jar
 Require-Bundle: org.abchip.mimo.database.base,
  org.eclipse.datatools.modelbase.sql,
  org.eclipse.net4j.db,
- org.eclipse.net4j.db.mysql,
  org.eclipse.datatools.enablement.mysql,
  org.eclipse.datatools.enablement.mysql.dbdefinition
 Bundle-ActivationPolicy: lazy
