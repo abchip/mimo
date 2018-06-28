@@ -22,11 +22,11 @@
          id="test"
          point="org.eclipse.core.runtime.products">
       <product
-            application="org.abchip.mimo.e4.mimo-ap"
-            name="org.abchip.mimo.e4">
+            application="org.abchip.mimo.core.e4.mimo-ap"
+            name="org.abchip.mimo.application.e4">
          <property
                name="appName"
-               value="org.abchip.mimo.e4">
+               value="org.abchip.mimo.application.e4">
          </property>
       </product>
    </extension>

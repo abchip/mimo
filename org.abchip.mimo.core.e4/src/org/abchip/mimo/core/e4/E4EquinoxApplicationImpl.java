@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
@@ -97,7 +98,9 @@ public class E4EquinoxApplicationImpl implements IApplication {
 			application.setPort(Integer.parseInt(applicationPort));
 
 		// context
-		BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();		
+		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+		
+		BundleContext bundleContext = bundle.getBundleContext();		
 		E4ContextRootImpl contextApplication = new E4ContextRootImpl(bundleContext, UUID.randomUUID().toString(), application.getContextDescription());
 		contextApplication.set(Application.class, application);
 		contextApplication.set(ContextRoot.class, contextApplication);

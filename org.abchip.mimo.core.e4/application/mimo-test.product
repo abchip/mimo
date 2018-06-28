@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="org.abchip.mimo.application.e4" uid="mimo-test" id="org.abchip.mimo.application.e4.test" application="org.abchip.mimo.application.e4.mimo-ap" version="0.1.0" useFeatures="true" includeLaunchers="true">
+<product name="org.abchip.mimo.application.e4" uid="mimo-test" id="org.abchip.mimo.core.e4.test" application="org.abchip.mimo.core.e4.mimo-ap" version="0.1.0" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -17,7 +17,9 @@
 
    <windowImages/>
 
+
    <launcher>
+      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
@@ -126,13 +128,13 @@
 
    <features>
       <feature id="org.abchip.eclipse.osgi.feature" version="0.1.0.qualifier"/>
-      <feature id="org.abchip.mimo.application.feature" version="0.1.0.qualifier"/>
-      <feature id="org.abchip.mimo.audio.feature" version="0.1.0.qualifier"/>
-      <feature id="org.abchip.mimo.database.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.eclipse.ecf.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.core.feature" version="0.1.0.qualifier"/>
       <feature id="org.abchip.mimo.language.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.database.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.audio.feature" version="0.1.0.qualifier"/>
       <feature id="org.abchip.mimo.mining.feature" version="0.1.0.qualifier"/>
       <feature id="org.abchip.mimo.social.feature" version="0.1.0.qualifier"/>
-      <feature id="org.abchip.eclipse.ecf.feature" version="0.1.0.qualifier"/>
    </features>
 
    <configurations>
