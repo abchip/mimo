@@ -256,7 +256,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link EntityPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -270,22 +270,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		if (isInited) return (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredEntityPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		EntityPackageImpl theEntityPackage = registeredEntityPackage instanceof EntityPackageImpl ? (EntityPackageImpl)registeredEntityPackage : new EntityPackageImpl();
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EntityPackageImpl());
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
-		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
-		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
-		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
+		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) instanceof MimoPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) : MimoPackage.eINSTANCE);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
+		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) : ContextPackage.eINSTANCE);
+		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
+		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEntityPackage.createPackageContents();
@@ -306,6 +300,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Mark meta-data to indicate it can't be changed
 		theEntityPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(EntityPackage.eNS_URI, theEntityPackage);
 		return theEntityPackage;
@@ -424,7 +419,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityReader_EntityProvider() {
+	public EReference getEntityReader_Frame() {
 		return (EReference)entityReaderEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -648,7 +643,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityReaderEClass = createEClass(ENTITY_READER);
 		createEReference(entityReaderEClass, ENTITY_READER__CONTEXT_PROVIDER);
 		createEReference(entityReaderEClass, ENTITY_READER__NOTIFIER);
-		createEReference(entityReaderEClass, ENTITY_READER__ENTITY_PROVIDER);
+		createEReference(entityReaderEClass, ENTITY_READER__FRAME);
 
 		entityWriterEClass = createEClass(ENTITY_WRITER);
 
@@ -944,7 +939,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(entityReaderEClass_E);
 		g1.getETypeArguments().add(g2);
 		initEReference(getEntityReader_Notifier(), g1, null, "notifier", null, 0, 1, EntityReader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityReader_EntityProvider(), this.getEntityProvider(), null, "entityProvider", null, 1, 1, EntityReader.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(this.getFrame());
+		g2 = createEGenericType(entityReaderEClass_E);
+		g1.getETypeArguments().add(g2);
+		initEReference(getEntityReader_Frame(), g1, null, "frame", null, 1, 1, EntityReader.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(entityReaderEClass, ecorePackage.getEBoolean(), "exists", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -981,7 +979,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(entityWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(entityWriterEClass, this.getResource(), "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(entityWriterEClass, ecorePackage.getEString(), "getResourceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(entityWriterEClass, null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityWriterEClass_E);
@@ -1076,7 +1074,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(resourceEventEClass, ecorePackage.getEString(), "getOldName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(resourceEventEClass, this.getResource(), "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(resourceEventEClass, ecorePackage.getEString(), "getResourceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resourceEventEClass, null, "getSource", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceEventEClass_E);
@@ -1127,6 +1125,33 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "listener", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resourceManagerEClass, null, "registerProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(this.getEntityNameable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEntityProvider(), "provider", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resourceManagerEClass, null, "registerProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(this.getEntityNameable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(this.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEntityProvider(), "provider", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resourceManagerEClass, null, "registerProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(this.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEntityProvider(), "provider", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resourceManagerEClass, null, "getEntityReader", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");

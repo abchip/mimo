@@ -43,7 +43,7 @@ public interface EntityWriter<E extends EntityNameable> extends EntityReader<E> 
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	Resource getResource();
+	String getResourceName();
 
 	/**
 	 * <!-- begin-user-doc -->

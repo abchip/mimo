@@ -55,7 +55,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	@PostConstruct
 	private void init() {
 		this.notifiers = new HashMap<String, ResourceNotifier<?>>();
-//		this.frameReader = frameManager.getFrameReader(contextRoot);
+		this.frameReader = frameManager.getFrameReader(contextRoot);
 	}
 
 	@Override
@@ -80,13 +80,25 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		notifier.registerListener(listener);
 	}
 
-	private <E extends EntityNameable> void registerProvider(Frame<E> frame, EntityProvider provider) {
+	@Override
+	public <E extends EntityNameable> void registerProvider(Class<E> klass, EntityProvider provider) {
+		registerProvider(klass.getSimpleName(), provider);
+	}
 
+	@Override
+	public <E extends EntityNameable> void registerProvider(String frameName, EntityProvider provider) {
+		@SuppressWarnings("unchecked")
+		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		registerProvider(frame, provider);		
+	}	
+
+	@Override
+	public <E extends EntityNameable> void registerProvider(Frame<E> frame, EntityProvider provider) {
 		Dictionary<String, String> dictionary = new Hashtable<String, String>();
 		dictionary.put(MimoConstants.DOMAIN_NAME, "mimo");
 		dictionary.put(MimoConstants.PROVIDER_FRAME, frame.getName());
 
-		contextRoot.set(EntityProvider.class.getName(), provider, false, dictionary);
+		contextRoot.set(EntityProvider.class.getName(), provider, false, dictionary);		
 	}
 
 	@Override

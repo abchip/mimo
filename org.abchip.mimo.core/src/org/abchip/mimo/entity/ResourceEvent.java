@@ -42,14 +42,6 @@ public interface ResourceEvent<E extends EntityNameable> {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	Resource getResource();
-
-	/**
-	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' reference isn't clear,
 	 * there really should be more of a description here...
@@ -75,5 +67,13 @@ public interface ResourceEvent<E extends EntityNameable> {
 	 * @generated
 	 */
 	String getOldName();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	String getResourceName();
 
 } // ResourceEvent

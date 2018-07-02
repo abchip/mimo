@@ -43,16 +43,13 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 
 	private NIOPathManager pathManager;
 
-	private EntityReader<Resource> resourceReader;
-
 	@PostConstruct
 	private void init() {
 
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getResourceRoot());
-		this.resourceReader = new NIOResourceReaderImpl(pathManager, this, contextRoot);
-
-//		resourceManager.registerProvider(Resource.class, this);
-//		resourceManager.registerProvider(EntityNameable.class, this);
+		
+		resourceManager.registerProvider(Resource.class, this);
+		resourceManager.registerProvider(EntityNameable.class, this);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -60,12 +57,9 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resourceName) {
 		EntityReader<E> entityReader = null;
 		if (isResource(frame)) {
-			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, this, contextRoot);
+			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextRoot);
 		} else {
-			Resource resource = resourceReader.lookup(resourceName);
-			if (resource == null)
-				return null;
-			entityReader = new NIOEntityReaderImpl<E>(pathManager, this, contextProvider, resource, frame, logger);
+			entityReader = new NIOEntityReaderImpl<E>(pathManager, this, contextProvider, resourceName, frame, logger);
 		}
 
 		return entityReader;
@@ -78,13 +72,9 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		List<EntityReader<E>> readers = new ArrayList<EntityReader<E>>();
 		for (String resourceName : resources) {
 			if (isResource(frame)) {
-				readers.add((EntityReader<E>) new NIOResourceReaderImpl(pathManager, this, contextRoot));
+				readers.add((EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextRoot));
 			} else {
-
-				Resource resource = resourceReader.lookup(resourceName);
-				if (resource == null)
-					return null;
-				NIOEntityReaderImpl<E> resourceReader = new NIOEntityReaderImpl<E>(pathManager, this, contextProvider, resource, frame, logger);
+				NIOEntityReaderImpl<E> resourceReader = new NIOEntityReaderImpl<E>(pathManager, this, contextProvider, resourceName, frame, logger);
 				readers.add(resourceReader);
 			}
 		}
@@ -97,12 +87,9 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resourceName) {
 		EntityWriter<E> resourceWriter = null;
 		if (isResource(frame)) {
-			resourceWriter = (EntityWriter<E>) new NIOResourceWriterImpl(pathManager, this, contextProvider, lockManager);
+			resourceWriter = (EntityWriter<E>) new NIOResourceWriterImpl(pathManager, (Frame<Resource>) frame, contextProvider, lockManager);
 		} else {
-			Resource resource = resourceReader.lookup(resourceName);
-			if (resource == null)
-				return null;
-			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, this, contextProvider, resource, frame, logger, lockManager);
+			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, this, contextProvider, resourceName, frame, logger, lockManager);
 		}
 
 		return resourceWriter;

@@ -63,8 +63,8 @@ public class ResourceHelper {
 			}
 
 			@Override
-			public Resource getResource() {
-				return resourceWriter.getResource();
+			public String getResourceName() {
+				return resourceWriter.getResourceName();
 			}
 
 			@Override
@@ -102,8 +102,8 @@ public class ResourceHelper {
 			}
 
 			@Override
-			public Resource getResource() {
-				return resourceWriter.getResource();
+			public String getResourceName() {
+				return resourceWriter.getResourceName();
 			}
 
 			@Override
@@ -141,8 +141,8 @@ public class ResourceHelper {
 			}
 
 			@Override
-			public Resource getResource() {
-				return resourceWriter.getResource();
+			public String getResourceName() {
+				return resourceWriter.getResourceName();
 			}
 
 			@Override
@@ -180,8 +180,8 @@ public class ResourceHelper {
 			}
 
 			@Override
-			public Resource getResource() {
-				return resourceWriter.getResource();
+			public String getResourceName() {
+				return resourceWriter.getResourceName();
 			}
 
 			@Override
@@ -220,8 +220,8 @@ public class ResourceHelper {
 			}
 
 			@Override
-			public Resource getResource() {
-				return resourceWriter.getResource();
+			public String getResourceName() {
+				return resourceWriter.getResourceName();
 			}
 
 			@Override
@@ -260,8 +260,8 @@ public class ResourceHelper {
 			}
 
 			@Override
-			public Resource getResource() {
-				return resourceWriter.getResource();
+			public String getResourceName() {
+				return resourceWriter.getResourceName();
 			}
 
 			@Override

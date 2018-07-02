@@ -3,9 +3,9 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mimo-app="http://www.abchip.org/mimo/application"    
     xmlns:db="http://www.abchip.org/mimo/database"
-    xsi:schemaLocation="http://www.abchip.org/mimo/application ../../org.abchip.mimo.core/model/mimo.ecore#//application http://www.abchip.org/mimo/database ../../org.abchip.mimo.database/model/database.ecore"   
+    xmlns:mimo-app="http://www.abchip.org/mimo/application"
+    xsi:schemaLocation="http://www.abchip.org/mimo/database ../../org.abchip.mimo.database/model/database.ecore http://www.abchip.org/mimo/application ../../org.abchip.mimo.core/model/mimo.ecore#//application"
     name="mimo-test"
     text="MIMO Application Test">
   <commands
@@ -70,14 +70,14 @@
           interfaceName="org.abchip.mimo.context.Logger"/>
       <services
           xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.BaseServiceRegistryFactoryImpl"
+          className="org.abchip.mimo.core.base.BaseRegistryFactoryImpl"
           interfaceName="org.abchip.mimo.context.RegistryFactory"/>
     </modules>
     <modules
         name="Entity">
       <services
           xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.BaseFrameManagerImpl"
+          className="org.abchip.mimo.EMFFrameManagerImpl"
           interfaceName="org.abchip.mimo.entity.FrameManager"/>
       <services
           xsi:type="mimo-app:ServiceExecutor"
@@ -92,7 +92,7 @@
           className="org.abchip.mimo.core.base.BaseEntityProviderRegistryImpl"
           interfaceName="org.abchip.mimo.entity.EntityProviderRegistry">
         <entries
-            className="org.abchip.mimo.core.base.BaseEntityProviderImpl"
+            className="org.abchip.mimo.EMFEntityProviderImpl"
             interfaceName="org.abchip.mimo.entity.EntityProvider"
             name="*EMF"
             vendor="ABChip"

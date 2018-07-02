@@ -32,7 +32,6 @@ import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.impl.EntityReaderImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
@@ -41,29 +40,23 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 	private Logger logger;
 	private NIOPathManager pathManager;
-	private Frame<E> frame;
-	private Resource resource;
+	private String resource;
 
-	public NIOEntityReaderImpl(NIOPathManager pathManager, EntityProvider resourceProvider, ContextProvider contextProvider, Resource resource, Frame<E> frame, Logger logger) {
-		setEntityProvider(resourceProvider);
+	public NIOEntityReaderImpl(NIOPathManager pathManager, EntityProvider resourceProvider, ContextProvider contextProvider, String resource, Frame<E> frame, Logger logger) {
 		setContextProvider(contextProvider);
 		this.pathManager = pathManager;
-		this.frame = frame;
-		this.resource = resource;
-	}
-	
-	protected Frame<E> getFrame() {
-		return this.frame;
+		this.resource = resource;		
+		setFrame(frame);
 	}
 
 	protected NIOPathManager getPathManager() {
 		return this.getPathManager();
 	}
-	
-	public Resource getResource() {
-		return resource;
-	}
 
+	public String getResourceName() {
+		return this.resource;
+	}
+	
 	@Override
 	public boolean exists(String name) {
 		return lookup(name) != null;
@@ -148,7 +141,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 	protected Path getClassFolder(Frame<E> frame, boolean create) {
 
-		Path folder = pathManager.getPath().resolve(resource.getName()).resolve(frame.getName());
+		Path folder = pathManager.getPath().resolve(resource).resolve(frame.getName());
 		if (Files.exists(folder))
 			return folder;
 

@@ -22,16 +22,16 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
-import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityWriter;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
 
 public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements EntityWriter<Resource> {
 
 	private LockManager lockManager;
 	
-	public NIOResourceWriterImpl(NIOPathManager fileManager, EntityProvider resourceProvider, ContextProvider contextProvider, LockManager lockManager) {
-		super(fileManager, resourceProvider, contextProvider);
+	public NIOResourceWriterImpl(NIOPathManager fileManager, Frame<Resource> frame, ContextProvider contextProvider, LockManager lockManager) {
+		super(fileManager, frame, contextProvider);
 		this.lockManager = lockManager;
 	}
 
@@ -103,5 +103,10 @@ public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements Enti
 	public void rename(Resource entity, String newName) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String getResourceName() {
+		return getResourceName();
 	}
 }

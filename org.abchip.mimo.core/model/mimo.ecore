@@ -763,8 +763,12 @@
           <eTypeArguments eTypeParameter="#//entity/EntityReader/E"/>
         </eGenericType>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="entityProvider" lowerBound="1"
-          eType="#//entity/EntityProvider" transient="true" resolveProxies="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1"
+          transient="true" resolveProxies="false">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments eTypeParameter="#//entity/EntityReader/E"/>
+        </eGenericType>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityWriter" abstract="true" interface="true">
       <eTypeParameters name="E">
@@ -782,7 +786,7 @@
           <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
         </eParameters>
       </eOperations>
-      <eOperations name="getResource" lowerBound="1" eType="#//entity/Resource"/>
+      <eOperations name="getResourceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="save">
         <eParameters name="object" lowerBound="1">
           <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
@@ -879,7 +883,7 @@
       <eOperations name="getEventType" lowerBound="1" eType="#//entity/ResourceEventType"/>
       <eOperations name="getNewName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getOldName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="getResource" lowerBound="1" eType="#//entity/Resource"/>
+      <eOperations name="getResourceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getSource" lowerBound="1">
         <eGenericType eTypeParameter="#//entity/ResourceEvent/E"/>
       </eOperations>
@@ -947,6 +951,35 @@
             <eTypeArguments eTypeParameter="#//entity/ResourceManager/registerListener.2/E"/>
           </eGenericType>
         </eParameters>
+      </eOperations>
+      <eOperations name="registerProvider">
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="klass" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/registerProvider/E"/>
+          </eGenericType>
+        </eParameters>
+        <eParameters name="provider" lowerBound="1" eType="#//entity/EntityProvider"/>
+      </eOperations>
+      <eOperations name="registerProvider">
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="frame" lowerBound="1">
+          <eGenericType eClassifier="#//entity/Frame">
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/registerProvider.1/E"/>
+          </eGenericType>
+        </eParameters>
+        <eParameters name="provider" lowerBound="1" eType="#//entity/EntityProvider"/>
+      </eOperations>
+      <eOperations name="registerProvider">
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="provider" lowerBound="1" eType="#//entity/EntityProvider"/>
       </eOperations>
       <eOperations name="getEntityReader">
         <eGenericType eClassifier="#//entity/EntityReader">

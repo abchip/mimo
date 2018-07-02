@@ -9,19 +9,17 @@
  * Contributors:
  *   Mattia Rocchi - Initial API and implementation
  */
-package org.abchip.mimo.core.base;
+package org.abchip.mimo;
 
-import org.abchip.mimo.EMFFrameAdapter;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
+import org.abchip.mimo.entity.ResourceHelper;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class BaseFrameManagerImpl implements FrameManager {
+public class EMFFrameManagerImpl implements FrameManager {
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -40,10 +38,7 @@ public class BaseFrameManagerImpl implements FrameManager {
 
 	@SuppressWarnings("unchecked")
 	private <E extends Entity, F extends Frame<E>> EntityReader<F> _getFrameReader(ContextProvider contextProvider) {
-		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
-		EntityReader<F> frameReader = (EntityReader<F>) resourceManager.getEntityReader(contextProvider, Frame.class, ResourceScope.ROOT);
+		EntityReader<F> frameReader = (EntityReader<F>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames());
 		return frameReader;
-
 	}	
-
 }

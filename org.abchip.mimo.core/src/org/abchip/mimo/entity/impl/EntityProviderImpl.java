@@ -59,7 +59,11 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	@PostConstruct
 	private void init() {
-		this.frameReader = frameManager.getFrameReader(contextRoot);
+		this.frameReader = frameManager.getFrameReader(getContextRoot());
+	}
+	
+	protected ContextRoot getContextRoot() {
+		return contextRoot;
 	}
 
 	/**

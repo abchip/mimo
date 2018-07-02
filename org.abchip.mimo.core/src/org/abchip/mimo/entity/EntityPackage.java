@@ -365,13 +365,13 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_READER__NOTIFIER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Entity Provider</b></em>' reference.
+	 * The feature id for the '<em><b>Frame</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_READER__ENTITY_PROVIDER = 2;
+	int ENTITY_READER__FRAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Reader</em>' class.
@@ -401,13 +401,13 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_WRITER__NOTIFIER = ENTITY_READER__NOTIFIER;
 
 	/**
-	 * The feature id for the '<em><b>Entity Provider</b></em>' reference.
+	 * The feature id for the '<em><b>Frame</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_WRITER__ENTITY_PROVIDER = ENTITY_READER__ENTITY_PROVIDER;
+	int ENTITY_WRITER__FRAME = ENTITY_READER__FRAME;
 
 	/**
 	 * The number of structural features of the '<em>Writer</em>' class.
@@ -713,15 +713,15 @@ public interface EntityPackage extends EPackage {
 	EReference getEntityReader_Notifier();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.entity.EntityReader#getEntityProvider <em>Entity Provider</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.entity.EntityReader#getFrame <em>Frame</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entity Provider</em>'.
-	 * @see org.abchip.mimo.entity.EntityReader#getEntityProvider()
+	 * @return the meta object for the reference '<em>Frame</em>'.
+	 * @see org.abchip.mimo.entity.EntityReader#getFrame()
 	 * @see #getEntityReader()
 	 * @generated
 	 */
-	EReference getEntityReader_EntityProvider();
+	EReference getEntityReader_Frame();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityWriter <em>Writer</em>}'.
@@ -1046,12 +1046,12 @@ public interface EntityPackage extends EPackage {
 		EReference ENTITY_READER__NOTIFIER = eINSTANCE.getEntityReader_Notifier();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Provider</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Frame</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTITY_READER__ENTITY_PROVIDER = eINSTANCE.getEntityReader_EntityProvider();
+		EReference ENTITY_READER__FRAME = eINSTANCE.getEntityReader_Frame();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.EntityWriter <em>Writer</em>}' class.

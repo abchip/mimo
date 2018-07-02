@@ -20,7 +20,6 @@ import org.abchip.mimo.EMFResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.Resource;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.BasicEObjectImpl;
@@ -36,7 +35,7 @@ public class BaseResourceEntitySerializer {
 		this.resourceSet = resourceSet;
 	}
 
-	public <E extends EntityNameable> ByteArrayOutputStream serialize(Resource resource, Frame<E> frame, String name, E entity) throws IOException {
+	public <E extends EntityNameable> ByteArrayOutputStream serialize(String resource, Frame<E> frame, String name, E entity) throws IOException {
 
 		URI uri = buildURI(resource, frame, name);
 
@@ -60,7 +59,7 @@ public class BaseResourceEntitySerializer {
 	}
 
 	@SuppressWarnings("unchecked")
-	public <E extends EntityNameable> E deserialize(Resource resource, Frame<E> frame, String name, InputStream inputStream) throws IOException {
+	public <E extends EntityNameable> E deserialize(String resource, Frame<E> frame, String name, InputStream inputStream) throws IOException {
 
 		URI uri = buildURI(resource, frame, name);
 
@@ -96,9 +95,9 @@ public class BaseResourceEntitySerializer {
 		}
 	}
 
-	private <E extends EntityNameable> URI buildURI(Resource resource, Frame<E> frame, String name) {
+	private <E extends EntityNameable> URI buildURI(String resource, Frame<E> frame, String name) {
 
-		String uri = "mimo://" + context.getContextDescription().getName() + "/" + resource.getName() + "/" + frame.getName();
+		String uri = "mimo://" + context.getContextDescription().getName() + "/" + resource + "/" + frame.getName();
 		URI eURI = URI.createURI(uri);
 
 		// TODO remove me

@@ -24,7 +24,7 @@ import org.abchip.mimo.expression.PredicateExpression;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.EntityReader#getContextProvider <em>Context Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.EntityReader#getNotifier <em>Notifier</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.EntityReader#getEntityProvider <em>Entity Provider</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.EntityReader#getFrame <em>Frame</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getEntityReader()
@@ -85,30 +85,30 @@ public interface EntityReader<E extends EntityNameable> {
 	void setNotifier(ResourceNotifier<E> value);
 
 	/**
-	 * Returns the value of the '<em><b>Entity Provider</b></em>' reference.
+	 * Returns the value of the '<em><b>Frame</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resource Provider</em>' reference isn't clear,
+	 * If the meaning of the '<em>Frame</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Provider</em>' reference.
-	 * @see #setEntityProvider(EntityProvider)
-	 * @see org.abchip.mimo.entity.EntityPackage#getEntityReader_EntityProvider()
+	 * @return the value of the '<em>Frame</em>' reference.
+	 * @see #setFrame(Frame)
+	 * @see org.abchip.mimo.entity.EntityPackage#getEntityReader_Frame()
 	 * @model resolveProxies="false" required="true" transient="true"
 	 * @generated
 	 */
-	EntityProvider getEntityProvider();
+	Frame<E> getFrame();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.EntityReader#getEntityProvider <em>Entity Provider</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.entity.EntityReader#getFrame <em>Frame</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entity Provider</em>' reference.
-	 * @see #getEntityProvider()
+	 * @param value the new value of the '<em>Frame</em>' reference.
+	 * @see #getFrame()
 	 * @generated
 	 */
-	void setEntityProvider(EntityProvider value);
+	void setFrame(Frame<E> value);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

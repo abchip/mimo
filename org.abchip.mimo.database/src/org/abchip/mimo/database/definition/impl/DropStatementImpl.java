@@ -289,7 +289,7 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (range: ");
 		result.append(range);
 		result.append(", target: ");

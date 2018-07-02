@@ -17,8 +17,8 @@ import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.ResourceNotifier;
-import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.expression.LogicalExpression;
 import org.abchip.mimo.expression.LogicalOperator;
 import org.abchip.mimo.expression.PredicateExpression;
@@ -42,7 +42,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.EntityReaderImpl#getContextProvider <em>Context Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.EntityReaderImpl#getNotifier <em>Notifier</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.EntityReaderImpl#getEntityProvider <em>Entity Provider</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.EntityReaderImpl#getFrame <em>Frame</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,14 +69,14 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	protected ResourceNotifier<E> notifier;
 
 	/**
-	 * The cached value of the '{@link #getEntityProvider() <em>Entity Provider</em>}' reference.
+	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntityProvider()
+	 * @see #getFrame()
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityProvider entityProvider;
+	protected Frame<E> frame;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -160,8 +160,8 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityProvider getEntityProvider() {
-		return entityProvider;
+	public Frame<E> getFrame() {
+		return frame;
 	}
 
 	/**
@@ -169,11 +169,11 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntityProvider(EntityProvider newEntityProvider) {
-		EntityProvider oldEntityProvider = entityProvider;
-		entityProvider = newEntityProvider;
+	public void setFrame(Frame<E> newFrame) {
+		Frame<E> oldFrame = frame;
+		frame = newFrame;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_READER__ENTITY_PROVIDER, oldEntityProvider, entityProvider));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_READER__FRAME, oldFrame, frame));
 	}
 
 	/**
@@ -232,8 +232,8 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 			case EntityPackage.ENTITY_READER__NOTIFIER:
 				if (resolve) return getNotifier();
 				return basicGetNotifier();
-			case EntityPackage.ENTITY_READER__ENTITY_PROVIDER:
-				return getEntityProvider();
+			case EntityPackage.ENTITY_READER__FRAME:
+				return getFrame();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,8 +253,8 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 			case EntityPackage.ENTITY_READER__NOTIFIER:
 				setNotifier((ResourceNotifier<E>)newValue);
 				return;
-			case EntityPackage.ENTITY_READER__ENTITY_PROVIDER:
-				setEntityProvider((EntityProvider)newValue);
+			case EntityPackage.ENTITY_READER__FRAME:
+				setFrame((Frame<E>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -274,8 +274,8 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 			case EntityPackage.ENTITY_READER__NOTIFIER:
 				setNotifier((ResourceNotifier<E>)null);
 				return;
-			case EntityPackage.ENTITY_READER__ENTITY_PROVIDER:
-				setEntityProvider((EntityProvider)null);
+			case EntityPackage.ENTITY_READER__FRAME:
+				setFrame((Frame<E>)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -293,8 +293,8 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 				return contextProvider != null;
 			case EntityPackage.ENTITY_READER__NOTIFIER:
 				return notifier != null;
-			case EntityPackage.ENTITY_READER__ENTITY_PROVIDER:
-				return entityProvider != null;
+			case EntityPackage.ENTITY_READER__FRAME:
+				return frame != null;
 		}
 		return super.eIsSet(featureID);
 	}
