@@ -12,6 +12,7 @@
 package org.abchip.mimo.core.e4;
 
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,6 +22,7 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.UUID;
 
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
@@ -50,12 +52,12 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	private BundleContext getBundleContext() {
 		return this.bundleContext;
 	}
-	
+
 	@Override
 	protected IEclipseContext getEclipseContext() {
 		return eclipseContext;
 	}
-	
+
 	@Override
 	protected void removeEclipseContext() {
 		this.eclipseContext = null;
@@ -69,33 +71,52 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	@Override
 	public Class<?> loadClass(String className) {
 
-		Class<?> class_ = null;
-		for (Bundle bundle : getBundleContext().getBundles()) {
-			try {
-				class_ = bundle.loadClass(className);
-				break;				
-			} catch (ClassNotFoundException e) {
-				continue;
+		Class<?> klass = null;
+		
+		if(className.startsWith(MimoConstants.SCHEME_NAME + ":")) {
+			URI uri = URI.create(className);
+			String tokens[] = uri.getPath().split("/");
+			if(tokens[1].equals("bundle")) {
+				for(Bundle bundle: bundleContext.getBundles()) {
+					if(bundle.getSymbolicName().equals(tokens[2])) {
+						try {
+							klass = bundle.loadClass(tokens[3]);
+							break;
+						} catch (ClassNotFoundException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+		}
+		else {
+			for (Bundle bundle : getBundleContext().getBundles()) {
+				try {
+					klass = bundle.loadClass(className);
+					break;				
+				} catch (ClassNotFoundException e) {
+					continue;
+				}
 			}
 		}
 
-		return class_;
+		return klass;
 	}
-	
+
 	@Override
 	public void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary) {
-		
+
 		if (remoteExport) {
 			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_INTERFACES, E4DistributionConstants.SERVICE_EXPORTED_INTERFACES_WILDCARD);
-			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_CONFIGS, "ecf.generic.server");			
-			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_CONTAINER_FACTORY_ARGUMENTS, "ecftcp://localhost:30001/server");				
+			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_CONFIGS, "ecf.generic.server");
+			dictionary.put(E4DistributionConstants.SERVICE_EXPORTED_CONTAINER_FACTORY_ARGUMENTS, "ecftcp://localhost:30001/server");
 		}
 		getBundleContext().registerService(name, object, dictionary);
 	}
 
 	@Override
 	public <T> T get(Class<T> klass, String filter) {
-		
+
 		Collection<ServiceReference<T>> pluginReferences;
 		try {
 			pluginReferences = getBundleContext().getServiceReferences(klass, filter);
@@ -140,34 +161,34 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 				plugins.add(plugin);
 			}
 		}
-		
+
 		return plugins;
 	}
 
 	@Override
 	public URL getResource(Class<?> context, String path) {
-		
+
 		Bundle bundle = FrameworkUtil.getBundle(context);
-		if(bundle == null)
+		if (bundle == null)
 			return null;
 
 		URL resource = bundle.getResource(path);
-		
+
 		return resource;
 	}
 
 	@Override
 	public List<URL> getResources(Class<?> context, String path) throws IOException {
-		
+
 		Bundle bundle = FrameworkUtil.getBundle(context);
-		if(bundle == null)
+		if (bundle == null)
 			return null;
 
 		Enumeration<URL> resources = bundle.getResources(path);
-		
+
 		return Collections.list(resources);
 	}
-	
+
 	@SuppressWarnings("unused")
 	private Context createRemoteContext(ContextDescription contextDescription) {
 

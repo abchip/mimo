@@ -21,6 +21,7 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import org.abchip.mimo.util.UtilFactory;
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.util.ThreadManager;
 import org.abchip.mimo.util.Threads;
 
@@ -56,7 +57,7 @@ public class BaseThreadManagerImpl implements ThreadManager {
 	@Override
 	public org.abchip.mimo.util.Thread createThread(String name, Runnable runnable, boolean daemon) {
 
-		BaseThreadImpl thread = new BaseThreadImpl(this, runnable, "mimo://thread/" + name, daemon);
+		BaseThreadImpl thread = new BaseThreadImpl(this, runnable, MimoConstants.SCHEME_NAME + "://thread/" + name, daemon);
 		return thread;
 	}
 
@@ -124,7 +125,7 @@ public class BaseThreadManagerImpl implements ThreadManager {
 
 		if (thread instanceof BaseThreadImpl) {
 			BaseThreadImpl baseThreadImpl = (BaseThreadImpl) thread;
-			if(!baseThreadImpl.isSuspended())
+			if (!baseThreadImpl.isSuspended())
 				baseThreadImpl.lock();
 		} else
 			thread.getJavaThread().suspend();
@@ -158,10 +159,10 @@ public class BaseThreadManagerImpl implements ThreadManager {
 			if (previousCpuTime != null)
 				cpuUsage = Math.min((cpuTime - previousCpuTime) / 10000000d, 100);
 			previousCpuTimes.put(thread.getId(), cpuTime);
-			
-			if (currentThreadTime == null) 
+
+			if (currentThreadTime == null)
 				newTimes.put(thread.getId(), new BaseThreadTime(cpuUsage));
-			else  {
+			else {
 				currentThreadTime.setCPUUsage(cpuUsage);
 				newTimes.put(thread.getId(), new BaseThreadTime(cpuUsage));
 			}
@@ -176,7 +177,7 @@ public class BaseThreadManagerImpl implements ThreadManager {
 		org.abchip.mimo.util.ThreadInfo threadInfo = UtilFactory.eINSTANCE.createThreadInfo();
 
 		threadInfo.setThreadName(thread.getThreadName());
-	
+
 		threadInfo.setThreadId(thread.getThreadID());
 		threadInfo.setThreadPriority(thread.getThreadPriority());
 		threadInfo.setThreadCPUUsage(thread.getThreadCPUUsage());
@@ -188,6 +189,6 @@ public class BaseThreadManagerImpl implements ThreadManager {
 		threadInfo.setThreadDaemon(thread.isThreadDaemon());
 
 		return threadInfo;
-		
+
 	}
 }
