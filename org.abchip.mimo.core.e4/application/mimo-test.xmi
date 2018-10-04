@@ -161,7 +161,8 @@
         </catalogContainers>
       </entities>
     </config>
-    <hooks className="org.abchip.mimo.database.base.BaseDatabaseActivator"/>
+    <hooks className="org.abchip.mimo.database.base.BaseDatabaseActivator"
+        status="STP"/>
     <modules
         name="Base">
       <services

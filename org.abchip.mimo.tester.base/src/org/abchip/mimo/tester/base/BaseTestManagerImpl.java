@@ -35,7 +35,7 @@ public class BaseTestManagerImpl implements TestManager {
 	public TestUnitRunner prepareUnitRunner(ContextProvider contextProvider, Class<?> klass) {
 
 		Bundle bundle = FrameworkUtil.getBundle(klass);
-		String classURI = "mimo:/bundle/" + bundle.getSymbolicName() + "/" + klass.getName();
+		String classURI = MimoConstants.SCHEME_NAME + ":/bundle/" + bundle.getSymbolicName() + "/" + klass.getName();
 
 		Context testContext = new BaseTestContextImpl(contextProvider.getContext().createChildContext(klass.getSimpleName()));
 		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, classURI);

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.language.gf;
 
-import java.io.FileNotFoundException;
-
 import org.grammaticalframework.pgf.Concr;
 import org.grammaticalframework.pgf.PGF;
 
@@ -32,8 +30,8 @@ public class GFGrammarLoader {
 	private GFGrammarLoader() {
 		
 		try {
-			pgf = PGF.readPGF("/home/mattia/Dati/git/mimo/org.abchip.mimo.language.gf/gf/app/App.pgf");
-		} catch (FileNotFoundException e) {
+			pgf = PGF.readPGF("/home/mattia/Dati/git/abchip/mimo/org.abchip.mimo.language.gf/gf/app/App.pgf");
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}

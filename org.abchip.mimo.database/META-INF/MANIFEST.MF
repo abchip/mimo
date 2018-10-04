@@ -20,6 +20,5 @@ Require-Bundle: org.abchip.mimo.core;visibility:=reexport,
  org.eclipse.datatools.modelbase.sql;visibility:=reexport,
  org.eclipse.datatools.modelbase.sql.query;visibility:=reexport,
  org.eclipse.datatools.sqltools.parsers.sql,
- org.eclipse.datatools.sqltools.parsers.sql.query,
- org.eclipse.core.runtime;resolution:=optional;x-installation:=greedy
+ org.eclipse.datatools.sqltools.parsers.sql.query
 Bundle-ActivationPolicy: lazy
