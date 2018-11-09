@@ -31,11 +31,7 @@ public class GFGrammarLoader {
 		
 		try {
 			pgf = PGF.readPGF("/home/mattia/Dati/git/abchip/mimo/org.abchip.mimo.language.gf/gf/app/App.pgf");
-<<<<<<< HEAD
 		} catch (Exception e) {
-=======
-		} catch (FileNotFoundException e) {
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 			throw new RuntimeException(e);
 		}
 	}
