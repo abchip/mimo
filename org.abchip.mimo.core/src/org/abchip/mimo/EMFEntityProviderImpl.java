@@ -66,6 +66,6 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 	}
 	
 	private boolean isFrame(Frame<?> frame) {
-		return frame.getName().equals(Resource.class.getSimpleName());
+		return frame.getName().equals(Frame.class.getSimpleName());
 	}
 }

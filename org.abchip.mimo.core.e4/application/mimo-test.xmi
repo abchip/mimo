@@ -282,6 +282,6 @@
   </components>
   <contextDescription
       name="mimo-test"
-      resourceRoot="mimo-data"
+      resourceRoot="/mimo/mimo-data"
       resourceTemporary="mimo-temp"/>
 </mimo-app:Application>

@@ -36,7 +36,7 @@ public class NIOPathManager {
 	protected Map<String, Resource> resources;
 	
 	public NIOPathManager(String path) {
-		this.path = Paths.get("/", "home", "mattia", path);
+		this.path = Paths.get(path);
 		
 		this.resources = new HashMap<String, Resource>();
 		try {
