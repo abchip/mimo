@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2017, 2018 ABChip and others.
+ *  Copyright (c) 2017, 2019 ABChip and others.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -21,7 +21,6 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceHelper;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
@@ -55,7 +54,7 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 			throw new UnsupportedOperationException();
 		}
 	}
-
+	
 	@Override
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		if (isFrame(frame)) {

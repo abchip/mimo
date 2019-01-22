@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2017, 2018 ABChip and others.
+ *  Copyright (c) 2017, 2019 ABChip and others.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -233,6 +233,12 @@ public class BaseApplicationStarter {
 
 		// service registration
 		Object service = loadObject(component.getContext(), serviceRef.getClassName());
+		if(service == null) {
+			System.err.println("Service reference not found: " + serviceRef);
+			println("");
+			return;
+		}
+		
 		String interfaceName = serviceRef.getInterfaceName() != null ? serviceRef.getInterfaceName() : serviceRef.getClassName();
 		boolean remoteExport = false;
 		if (serviceRef instanceof ServiceExecutor) {
@@ -285,6 +291,9 @@ public class BaseApplicationStarter {
 
 	private Object loadObject(Context context, String className) {
 		Class<?> tempClass = context.getContextRoot().loadClass(className);
+		if(tempClass == null) 
+			return null;
+			
 		return context.make(tempClass);
 	}
 

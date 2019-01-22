@@ -1,287 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mimo-app:Application
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:db="http://www.abchip.org/mimo/database"
-    xmlns:mimo-app="http://www.abchip.org/mimo/application"
-    xsi:schemaLocation="http://www.abchip.org/mimo/database ../../org.abchip.mimo.database/model/database.ecore http://www.abchip.org/mimo/application ../../org.abchip.mimo.core/model/mimo.ecore#//application"
-    name="mimo-test"
-    text="MIMO Application Test">
-  <commands
-      className="org.abchip.mimo.core.e4.E4ApplicationCommandProviderImpl"/>
-  <components
-      name="Tester">
-    <commands
-        className="org.abchip.mimo.tester.base.BaseTesterCommandProviderImpl"/>
-    <modules
-        name="Base">
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.tester.base.BaseTestManagerImpl"
-          interfaceName="org.abchip.mimo.tester.TestManager"/>
+<mimo-app:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:db="http://www.abchip.org/mimo/database" xmlns:mimo-app="http://www.abchip.org/mimo/application" xsi:schemaLocation="http://www.abchip.org/mimo/database ../../org.abchip.mimo.database/model/database.ecore http://www.abchip.org/mimo/application ../../org.abchip.mimo.core/model/mimo.ecore#//application" name="mimo-test" text="MIMO Application Test">
+  <commands className="org.abchip.mimo.core.e4.E4ApplicationCommandProviderImpl"/>
+  <components name="Tester">
+    <commands className="org.abchip.mimo.tester.base.BaseTesterCommandProviderImpl"/>
+    <modules name="Base">
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.tester.base.BaseTestManagerImpl" interfaceName="org.abchip.mimo.tester.TestManager"/>
     </modules>
-    <modules
-        name="Test">
-      <services
-          xsi:type="mimo-app:ServiceTester"
-          className="org.abchip.mimo.tester.test.TestTesterSuiteLauncherImpl"/>
+    <modules name="Test">
+      <services xsi:type="mimo-app:ServiceTester" className="org.abchip.mimo.tester.test.TestTesterSuiteLauncherImpl"/>
     </modules>
   </components>
-  <components
-      name="Core">
+  <components name="Core">
     <hooks className="org.abchip.mimo.core.base.BaseEntityActivator"/>
-    <commands
-        className="org.abchip.mimo.core.base.BaseEntityCommandProviderImpl"/>
-    <modules
-        name="Base">
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.util.BaseStringsImpl"
-          interfaceName="org.abchip.mimo.util.Strings"
-          remoteExport="true"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.util.BaseListsImpl"
-          interfaceName="org.abchip.mimo.util.Lists"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.util.BaseFilesImpl"
-          interfaceName="org.abchip.mimo.util.Files"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.util.BaseStreamsImpl"
-          interfaceName="org.abchip.mimo.util.Streams"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.util.BaseClassesImpl"
-          interfaceName="org.abchip.mimo.util.Classes"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.util.BaseThreadsImpl"
-          interfaceName="org.abchip.mimo.util.Threads"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.util.BaseThreadManagerImpl"
-          interfaceName="org.abchip.mimo.util.ThreadManager"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.e4.E4LoggerImpl"
-          interfaceName="org.abchip.mimo.context.Logger"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.BaseRegistryFactoryImpl"
-          interfaceName="org.abchip.mimo.context.RegistryFactory"/>
+    <commands className="org.abchip.mimo.core.base.BaseEntityCommandProviderImpl"/>
+    <modules name="Base">
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.util.BaseStringsImpl" interfaceName="org.abchip.mimo.util.Strings" remoteExport="true"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.util.BaseListsImpl" interfaceName="org.abchip.mimo.util.Lists"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.util.BaseFilesImpl" interfaceName="org.abchip.mimo.util.Files"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.util.BaseStreamsImpl" interfaceName="org.abchip.mimo.util.Streams"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.util.BaseClassesImpl" interfaceName="org.abchip.mimo.util.Classes"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.util.BaseThreadsImpl" interfaceName="org.abchip.mimo.util.Threads"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.util.BaseThreadManagerImpl" interfaceName="org.abchip.mimo.util.ThreadManager"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.e4.E4LoggerImpl" interfaceName="org.abchip.mimo.context.Logger"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.BaseRegistryFactoryImpl" interfaceName="org.abchip.mimo.context.RegistryFactory"/>
     </modules>
-    <modules
-        name="Entity">
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.EMFFrameManagerImpl"
-          interfaceName="org.abchip.mimo.entity.FrameManager"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.BaseLockManagerImpl"
-          interfaceName="org.abchip.mimo.context.LockManager"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.core.base.BaseResourceManagerImpl"
-          interfaceName="org.abchip.mimo.entity.ResourceManager"/>
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.core.base.BaseEntityProviderRegistryImpl"
-          interfaceName="org.abchip.mimo.entity.EntityProviderRegistry">
-        <entries
-            className="org.abchip.mimo.EMFEntityProviderImpl"
-            interfaceName="org.abchip.mimo.entity.EntityProvider"
-            name="*EMF"
-            vendor="ABChip"
-            version="0.1.0"/>
-        <entries
-            className="org.abchip.mimo.core.base.nio.NIOEntityProviderImpl"
-            interfaceName="org.abchip.mimo.entity.EntityProvider"
-            name="*NIO"
-            vendor="ABChip"
-            version="0.1.0"/>
+    <modules name="Entity">
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.EMFFrameManagerImpl" interfaceName="org.abchip.mimo.entity.FrameManager"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.BaseLockManagerImpl" interfaceName="org.abchip.mimo.context.LockManager"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.core.base.BaseResourceManagerImpl" interfaceName="org.abchip.mimo.entity.ResourceManager"/>
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.core.base.BaseEntityProviderRegistryImpl" interfaceName="org.abchip.mimo.entity.EntityProviderRegistry">
+        <entries className="org.abchip.mimo.EMFEntityProviderImpl" interfaceName="org.abchip.mimo.entity.EntityProvider" name="*EMF" vendor="ABChip" version="0.1.0"/>
+        <entries className="org.abchip.mimo.core.base.nio.NIOEntityProviderImpl" interfaceName="org.abchip.mimo.entity.EntityProvider" name="*NIO" vendor="ABChip" version="0.1.0"/>
       </services>
     </modules>
-    <modules
-        name="Expression">
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.core.base.expr.BaseExpressionParserRegistryImpl"
-          interfaceName="org.abchip.mimo.expression.ExpressionParserRegistry"/>
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.core.base.expr.BaseExpressionWriterRegistryImpl"
-          interfaceName="org.abchip.mimo.expression.ExpressionWriterRegistry"/>
+    <modules name="Expression">
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.core.base.expr.BaseExpressionParserRegistryImpl" interfaceName="org.abchip.mimo.expression.ExpressionParserRegistry"/>
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.core.base.expr.BaseExpressionWriterRegistryImpl" interfaceName="org.abchip.mimo.expression.ExpressionWriterRegistry"/>
     </modules>
-    <modules
-        name="Test">
-      <services
-          xsi:type="mimo-app:ServiceTester"
-          className="org.abchip.mimo.core.test.TestCoreSuiteLauncherImpl"/>
+    <modules name="Test">
+      <services xsi:type="mimo-app:ServiceTester" className="org.abchip.mimo.core.test.TestCoreSuiteLauncherImpl"/>
     </modules>
   </components>
-  <components
-      name="Mining">
-    <modules
-        name="Base">
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.mining.base.BaseClassifierRegistryImpl"
-          interfaceName="org.abchip.mimo.mining.classification.ClassifierRegistry"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.mining.base.BaseMiningManagerImpl"
-          interfaceName="org.abchip.mimo.mining.MiningManager"/>
+  <components name="Mining">
+    <modules name="Base">
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.mining.base.BaseClassifierRegistryImpl" interfaceName="org.abchip.mimo.mining.classification.ClassifierRegistry"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.mining.base.BaseMiningManagerImpl" interfaceName="org.abchip.mimo.mining.MiningManager"/>
     </modules>
   </components>
-  <components
-      name="Database">
+  <components name="Database">
     <config>
-      <entities
-          xsi:type="db:DatabaseContainer"
-          defaultCatalogContainer="MIMO_TEST"
-          vendor="ABChip"
-          version="0.1.0">
-        <catalogContainers
-            name="MIMO_TEST"
-            supportsGuestAccess="true">
-          <connectionConfig
-              vendor="MySql"
-              version="5.1"
-              url="jdbc:mysql://localhost:3306/mimo_test"
-              catalog="">
-            <credentials
-                user="root"
-                password="mysql2017"/>
+      <entities xsi:type="db:DatabaseContainer" defaultCatalogContainer="MIMO_TEST" vendor="ABChip" version="0.1.0">
+        <catalogContainers name="MIMO_TEST" supportsGuestAccess="true">
+          <connectionConfig vendor="MySql" version="5.1" url="jdbc:mysql://localhost:3306/mimo_test" catalog="">
+            <credentials user="root" password="mysql2017"/>
           </connectionConfig>
           <generationStrategy/>
         </catalogContainers>
       </entities>
     </config>
-    <hooks className="org.abchip.mimo.database.base.BaseDatabaseActivator"
-        status="STP"/>
-    <modules
-        name="Base">
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.database.base.BaseDefinitionParserRegistryImpl"
-          interfaceName="org.abchip.mimo.database.definition.DefinitionParserRegistry"/>
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.database.base.BaseDefinitionWriterRegistryImpl"
-          interfaceName="org.abchip.mimo.database.definition.DefinitionWriterRegistry"/>
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.database.base.BaseQueryParserRegistryImpl"
-          interfaceName="org.abchip.mimo.database.query.QueryParserRegistry"/>
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.database.base.BaseQueryWriterRegistryImpl"
-          interfaceName="org.abchip.mimo.database.query.QueryWriterRegistry"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.database.base.BaseDatabaseManagerImpl"
-          interfaceName="org.abchip.mimo.database.DatabaseManager"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.database.base.BaseConnectionManagerImpl"
-          interfaceName="org.abchip.mimo.database.connection.ConnectionManager"/>
+    <hooks className="org.abchip.mimo.database.base.BaseDatabaseActivator" status="STP"/>
+    <modules name="Base">
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.database.base.BaseDefinitionParserRegistryImpl" interfaceName="org.abchip.mimo.database.definition.DefinitionParserRegistry"/>
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.database.base.BaseDefinitionWriterRegistryImpl" interfaceName="org.abchip.mimo.database.definition.DefinitionWriterRegistry"/>
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.database.base.BaseQueryParserRegistryImpl" interfaceName="org.abchip.mimo.database.query.QueryParserRegistry"/>
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.database.base.BaseQueryWriterRegistryImpl" interfaceName="org.abchip.mimo.database.query.QueryWriterRegistry"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.database.base.BaseDatabaseManagerImpl" interfaceName="org.abchip.mimo.database.DatabaseManager"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.database.base.BaseConnectionManagerImpl" interfaceName="org.abchip.mimo.database.connection.ConnectionManager"/>
     </modules>
-    <modules
-        name="Test">
-      <services
-          xsi:type="mimo-app:ServiceTester"
-          className="org.abchip.mimo.database.test.TestDatabaseSuiteLauncherImpl"/>
+    <modules name="Test">
+      <services xsi:type="mimo-app:ServiceTester" className="org.abchip.mimo.database.test.TestDatabaseSuiteLauncherImpl"/>
     </modules>
   </components>
-  <components
-      name="Language">
-    <modules
-        name="Base">
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.language.base.BaseLanguageParserRegistryImpl"
-          interfaceName="org.abchip.mimo.language.LanguageParserRegistry"/>
-      <services
-          xsi:type="mimo-app:ServiceRegistry"
-          className="org.abchip.mimo.language.base.BaseLanguageLinearizerRegistryImpl"
-          interfaceName="org.abchip.mimo.language.LanguageLinearizerRegistry"/>
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.language.base.BaseLanguageManagerImpl"
-          interfaceName="org.abchip.mimo.language.LanguageManager"/>
+  <components name="Language">
+    <modules name="Base">
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.language.base.BaseLanguageParserRegistryImpl" interfaceName="org.abchip.mimo.language.LanguageParserRegistry"/>
+      <services xsi:type="mimo-app:ServiceRegistry" className="org.abchip.mimo.language.base.BaseLanguageLinearizerRegistryImpl" interfaceName="org.abchip.mimo.language.LanguageLinearizerRegistry"/>
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.language.base.BaseLanguageManagerImpl" interfaceName="org.abchip.mimo.language.LanguageManager"/>
     </modules>
-    <modules
-        name="GF">
-      <services
-          xsi:type="mimo-app:ServiceRegistryEntry"
-          className="org.abchip.mimo.language.gf.GFLanguageParserImpl"
-          interfaceName="org.abchip.mimo.language.LanguageParser"
-          name="GF"
-          vendor="GrammaticalFrameWork"
-          version="3.9"/>
-      <services
-          xsi:type="mimo-app:ServiceRegistryEntry"
-          className="org.abchip.mimo.language.gf.GFLanguageLinearizerImpl"
-          interfaceName="org.abchip.mimo.language.LanguageLinearizer"
-          name="GF"
-          vendor="GrammaticalFrameWork"
-          version="3.9"/>
+    <modules name="GF">
+      <services xsi:type="mimo-app:ServiceRegistryEntry" className="org.abchip.mimo.language.gf.GFLanguageParserImpl" interfaceName="org.abchip.mimo.language.LanguageParser" name="GF" vendor="GrammaticalFrameWork" version="3.9"/>
+      <services xsi:type="mimo-app:ServiceRegistryEntry" className="org.abchip.mimo.language.gf.GFLanguageLinearizerImpl" interfaceName="org.abchip.mimo.language.LanguageLinearizer" name="GF" vendor="GrammaticalFrameWork" version="3.9"/>
     </modules>
-    <modules
-        name="Test">
-      <services
-          xsi:type="mimo-app:ServiceTester"
-          className="org.abchip.mimo.language.test.TestLanguageSuiteLauncherImpl"/>
+    <modules name="Test">
+      <services xsi:type="mimo-app:ServiceTester" className="org.abchip.mimo.language.test.TestLanguageSuiteLauncherImpl"/>
     </modules>
-    <modules
-        name="LP">
-      <services
-          xsi:type="mimo-app:ServiceRegistryEntry"
-          className="org.abchip.mimo.language.lp.LPClassifierImpl"
-          interfaceName="org.abchip.mimo.mining.classification.Classifier"
-          name="GF"
-          vendor="LingPipe"
-          version="3.9"/>
+    <modules name="LP">
+      <services xsi:type="mimo-app:ServiceRegistryEntry" className="org.abchip.mimo.language.lp.LPClassifierImpl" interfaceName="org.abchip.mimo.mining.classification.Classifier" name="GF" vendor="LingPipe" version="3.9"/>
     </modules>
   </components>
-  <components
-      name="Social">
-    <modules
-        name="Twitter">
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.social.twitter.tw4j.TW4JTwitterManagerImpl"
-          interfaceName="org.abchip.mimo.social.twitter.TwitterManager"/>
+  <components name="Social">
+    <modules name="Twitter">
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.social.twitter.tw4j.TW4JTwitterManagerImpl" interfaceName="org.abchip.mimo.social.twitter.TwitterManager"/>
     </modules>
-    <modules
-        name="Test">
-      <services
-          xsi:type="mimo-app:ServiceTester"
-          className="org.abchip.mimo.social.test.TestSocialSuiteLauncherImpl"/>
+    <modules name="Test">
+      <services xsi:type="mimo-app:ServiceTester" className="org.abchip.mimo.social.test.TestSocialSuiteLauncherImpl"/>
     </modules>
   </components>
-  <components
-      name="Audio">
-    <modules
-        name="Sphinx">
-      <services
-          xsi:type="mimo-app:ServiceExecutor"
-          className="org.abchip.mimo.audio.sph4.SPH4AudioManagerImpl"
-          interfaceName="org.abchip.mimo.audio.AudioManager"/>
+  <components name="Audio">
+    <modules name="Sphinx">
+      <services xsi:type="mimo-app:ServiceExecutor" className="org.abchip.mimo.audio.sph4.SPH4AudioManagerImpl" interfaceName="org.abchip.mimo.audio.AudioManager"/>
     </modules>
-    <modules
-        name="Test">
-      <services
-          xsi:type="mimo-app:ServiceTester"
-          className="org.abchip.mimo.audio.test.TestAudioSuiteLauncherImpl"/>
+    <modules name="Test">
+      <services xsi:type="mimo-app:ServiceTester" className="org.abchip.mimo.audio.test.TestAudioSuiteLauncherImpl"/>
     </modules>
   </components>
-  <contextDescription
-      name="mimo-test"
-      resourceRoot="/mimo/mimo-data"
-      resourceTemporary="mimo-temp"/>
+  <contextDescription name="mimo-test" resourceRoot="/mimo/mimo-data" resourceTemporary="mimo-temp"/>
 </mimo-app:Application>
