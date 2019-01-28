@@ -54,7 +54,7 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		
 		String entityName = interpreter.nextArgument();
 		
-		E entity = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).lookup(entityName);
+		E entity = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).lookup(entityName);				
 		System.out.println(entity);
 	}
 
