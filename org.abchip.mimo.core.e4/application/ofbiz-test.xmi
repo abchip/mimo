@@ -254,7 +254,7 @@
     <config>
       <entities
           xsi:type="ofbiz:OFBizProviderConfig"
-          url="http://localhost:8080/mimo/control"/>
+          url="https://localhost:8443/mimo/service"/>
     </config>
     <modules
         name="Base">
