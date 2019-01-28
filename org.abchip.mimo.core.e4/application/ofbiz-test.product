@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="org.abchip.mimo.application.e4" uid="mimo-test" id="org.abchip.mimo.core.e4.test" application="org.abchip.mimo.core.e4.mimo-ap" version="0.1.0" useFeatures="true" includeLaunchers="true">
+<product name="org.abchip.mimo.application.e4" uid="ofbiz-test" id="org.abchip.mimo.core.e4.test" application="org.abchip.mimo.core.e4.mimo-ap" version="0.1.0" useFeatures="true" includeLaunchers="true">
 
 
    <configIni use="default">

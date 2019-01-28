@@ -5,7 +5,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:db="http://www.abchip.org/mimo/database"
     xmlns:mimo-app="http://www.abchip.org/mimo/application"
-    xsi:schemaLocation="http://www.abchip.org/mimo/database ../../org.abchip.mimo.database/model/database.ecore http://www.abchip.org/mimo/application ../../org.abchip.mimo.core/model/mimo.ecore#//application"
+    xmlns:ofbiz="http://www.abchip.org/ofbiz"
+    xsi:schemaLocation="http://www.abchip.org/mimo/database ../../org.abchip.mimo.database/model/database.ecore http://www.abchip.org/mimo/application ../../org.abchip.mimo.core/model/mimo.ecore#//application http://www.abchip.org/ofbiz ../../org.abchip.ofbiz.core/model/ofbiz.ecore"
     name="mimo-test"
     text="MIMO Application Test">
   <commands
@@ -250,6 +251,11 @@
   </components>
   <components
       name="OFBiz">
+    <config>
+      <entities
+          xsi:type="ofbiz:OFBizProviderConfig"
+          url="http://localhost:8080/mimo/control"/>
+    </config>
     <modules
         name="Base">
       <services
