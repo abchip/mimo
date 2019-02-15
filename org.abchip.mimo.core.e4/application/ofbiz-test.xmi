@@ -256,7 +256,8 @@
           xsi:type="ofbiz:OFBizProviderConfig"
           url="https://localhost:8443/mimo/service"
           user="admin"
-          password="ofbiz"/>
+          password="ofbiz"
+          loginType="JWT"/>
     </config>
     <modules
         name="Base">
