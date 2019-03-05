@@ -48,6 +48,8 @@ import org.abchip.mimo.expression.ExpressionPackage;
 
 import org.abchip.mimo.expression.impl.ExpressionPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
+import org.abchip.mimo.net.NetPackage;
+import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.util.UtilPackage;
 import org.abchip.mimo.util.impl.UtilPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
@@ -295,6 +297,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) : EntityPackage.eINSTANCE);
 		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) : NetPackage.eINSTANCE);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -303,6 +306,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theApplicationPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
+		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -311,6 +315,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theApplicationPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
+		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

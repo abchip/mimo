@@ -17,6 +17,8 @@ Export-Package: org.abchip.mimo,
  org.abchip.mimo.expression,
  org.abchip.mimo.expression.impl,
  org.abchip.mimo.impl,
+ org.abchip.mimo.net,
+ org.abchip.mimo.net.impl,
  org.abchip.mimo.util,
  org.abchip.mimo.util.impl
 Require-Bundle: javax.inject;visibility:=reexport,

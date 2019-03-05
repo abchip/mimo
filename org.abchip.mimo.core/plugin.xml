@@ -49,6 +49,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
+            uri="http://www.abchip.org/mimo/net"
+            class="org.abchip.mimo.net.NetPackage"
+            genModel="model/mimo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mimo -->
+      <package
             uri="http://www.abchip.org/mimo/util"
             class="org.abchip.mimo.util.UtilPackage"
             genModel="model/mimo.genmodel"/>

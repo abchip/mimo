@@ -95,28 +95,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.datatools.sqltools.data.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.datatools.sqltools.result"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.help"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.lucene.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -134,12 +113,6 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="org.abchip.mimo.database.db2"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
 
    <plugin
          id="org.abchip.mimo.database"
@@ -160,55 +133,6 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.datatools.enablement.ibm.db2.luw"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.datatools.enablement.ibm.db2.luw.dbdefinition"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.datatools.enablement.ibm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.datatools.enablement.ibm.db2"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.datatools.sqltools.result"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.lucene.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.help"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.eclipse.net4j.db"
@@ -239,6 +163,13 @@
          unpack="false"/>
 
    <plugin
+         id="org.eclipse.net4j.db.jdbc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.apache.lucene.analyzers-common"
          download-size="0"
          install-size="0"
@@ -246,14 +177,14 @@
          unpack="false"/>
 
    <plugin
-         id="org.apache.lucene.queryparser"
+         id="org.apache.lucene.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.net4j.db.jdbc"
+         id="org.apache.lucene.queryparser"
          download-size="0"
          install-size="0"
          version="0.0.0"

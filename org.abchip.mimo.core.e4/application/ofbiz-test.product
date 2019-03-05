@@ -3,7 +3,6 @@
 
 <product name="org.abchip.mimo.application.e4" uid="ofbiz-test" id="org.abchip.mimo.core.e4.test" application="org.abchip.mimo.core.e4.mimo-ap" version="0.1.0" useFeatures="true" includeLaunchers="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -18,17 +17,14 @@
 
    <windowImages/>
 
-
    <launcher>
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
 
-
    <vm>
    </vm>
-
 
    <plugins>
       <plugin id="com.ibm.icu"/>
@@ -134,7 +130,8 @@
       <feature id="org.abchip.mimo.language.feature" version="0.1.0.qualifier"/>
       <feature id="org.abchip.mimo.database.feature" version="0.1.0.qualifier"/>
       <feature id="org.abchip.mimo.mining.feature" version="0.1.0.qualifier"/>
-      <feature id="org.abchip.ofbiz.core.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.biz.feature" version="0.1.0.qualifier"/>
+      <feature id="org.abchip.mimo.jetty.feature" version="0.1.0.qualifier"/>
    </features>
 
    <configurations>

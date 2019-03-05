@@ -50,6 +50,8 @@ import org.abchip.mimo.expression.RelationalExpression;
 import org.abchip.mimo.expression.RelationalOperator;
 import org.abchip.mimo.expression.TermExpression;
 import org.abchip.mimo.impl.MimoPackageImpl;
+import org.abchip.mimo.net.NetPackage;
+import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.util.UtilPackage;
 import org.abchip.mimo.util.impl.UtilPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
@@ -295,6 +297,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) : ContextPackage.eINSTANCE);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) : EntityPackage.eINSTANCE);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) : NetPackage.eINSTANCE);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -303,6 +306,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
+		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -311,6 +315,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
+		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

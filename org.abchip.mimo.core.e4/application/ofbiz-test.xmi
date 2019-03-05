@@ -3,10 +3,11 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:biz="http://www.abchip.org/biz"
     xmlns:db="http://www.abchip.org/mimo/database"
     xmlns:mimo-app="http://www.abchip.org/mimo/application"
-    xmlns:ofbiz="http://www.abchip.org/ofbiz"
-    xsi:schemaLocation="http://www.abchip.org/mimo/database ../../org.abchip.mimo.database/model/database.ecore http://www.abchip.org/mimo/application ../../org.abchip.mimo.core/model/mimo.ecore#//application http://www.abchip.org/ofbiz ../../org.abchip.ofbiz.core/model/ofbiz.ecore"
+    xmlns:mimo-net="http://www.abchip.org/mimo/net"
+    xsi:schemaLocation="http://www.abchip.org/biz ../../org.abchip.biz.core/model/biz.ecore http://www.abchip.org/mimo/database ../../org.abchip.mimo.database/model/database.ecore http://www.abchip.org/mimo/application ../../org.abchip.mimo.core/model/mimo.ecore#//application http://www.abchip.org/mimo/net ../../org.abchip.mimo.core/model/mimo.ecore#//net"
     name="mimo-test"
     text="MIMO Application Test">
   <commands
@@ -253,7 +254,7 @@
       name="OFBiz">
     <config>
       <entities
-          xsi:type="ofbiz:OFBizProviderConfig"
+          xsi:type="biz:BizProviderConfig"
           url="https://localhost:8443/mimo/service"
           user="admin"
           password="ofbiz"
@@ -263,12 +264,22 @@
         name="Base">
       <services
           xsi:type="mimo-app:ServiceRegistryEntry"
-          className="org.abchip.ofbiz.core.impl.OFBizEntityProviderImpl"
+          className="org.abchip.biz.core.impl.OFBizEntityProviderImpl"
           interfaceName="org.abchip.mimo.entity.EntityProvider"
           name="*OFBIZ"
           vendor="ABChip"
           version="0.1.0"/>
     </modules>
+  </components>
+  <components
+      name="Http">
+    <config>
+      <entities
+          xsi:type="mimo-net:SocketConfig"
+          address="127.0.0.1"
+          port="8080"/>
+    </config>
+    <hooks className="org.abchip.mimo.core.http.HttpActivatorHook"/>
   </components>
   <contextDescription
       name="ofbiz-test"

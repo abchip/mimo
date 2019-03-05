@@ -63,6 +63,8 @@ import org.abchip.mimo.expression.ExpressionPackage;
 
 import org.abchip.mimo.expression.impl.ExpressionPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
+import org.abchip.mimo.net.NetPackage;
+import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.util.BinaryDef;
 import org.abchip.mimo.util.BinaryType;
 import org.abchip.mimo.util.CharacterDef;
@@ -581,6 +583,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) : ContextPackage.eINSTANCE);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) : EntityPackage.eINSTANCE);
 		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) : NetPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theUtilPackage.createPackageContents();
@@ -589,6 +592,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
+		theNetPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theUtilPackage.initializePackageContents();
@@ -597,6 +601,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
+		theNetPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theUtilPackage.freeze();

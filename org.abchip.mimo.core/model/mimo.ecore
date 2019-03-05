@@ -1339,6 +1339,14 @@
           defaultValueLiteral=""/>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="net" nsURI="http://www.abchip.org/mimo/net" nsPrefix="mimo-net">
+    <eClassifiers xsi:type="ecore:EClass" name="SocketConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
   <eSubpackages name="util" nsURI="http://www.abchip.org/mimo/util" nsPrefix="mimo-util">
     <eClassifiers xsi:type="ecore:EClass" name="BinaryDef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"

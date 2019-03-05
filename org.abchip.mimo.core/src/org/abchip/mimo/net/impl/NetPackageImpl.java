@@ -5,14 +5,14 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.impl;
+package org.abchip.mimo.net.impl;
 
-import org.abchip.mimo.Mimo;
-import org.abchip.mimo.MimoFactory;
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.application.ApplicationPackage;
+
 import org.abchip.mimo.application.impl.ApplicationPackageImpl;
+
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
@@ -25,12 +25,17 @@ import org.abchip.mimo.expression.ExpressionPackage;
 
 import org.abchip.mimo.expression.impl.ExpressionPackageImpl;
 
+import org.abchip.mimo.impl.MimoPackageImpl;
+
+import org.abchip.mimo.net.NetFactory;
 import org.abchip.mimo.net.NetPackage;
-import org.abchip.mimo.net.impl.NetPackageImpl;
+import org.abchip.mimo.net.SocketConfig;
+
 import org.abchip.mimo.util.UtilPackage;
 
 import org.abchip.mimo.util.impl.UtilPackageImpl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -42,14 +47,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
+public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass mimoEClass = null;
-
+	private EClass socketConfigEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -61,12 +65,12 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.MimoPackage#eNS_URI
+	 * @see org.abchip.mimo.net.NetPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private MimoPackageImpl() {
-		super(eNS_URI, MimoFactory.eINSTANCE);
+	private NetPackageImpl() {
+		super(eNS_URI, NetFactory.eINSTANCE);
 	}
 
 	/**
@@ -79,7 +83,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link MimoPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link NetPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,47 +92,47 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static MimoPackage init() {
-		if (isInited) return (MimoPackage)EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
+	public static NetPackage init() {
+		if (isInited) return (NetPackage)EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 
 		// Obtain or create and register package
-		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MimoPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MimoPackageImpl());
+		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new NetPackageImpl());
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
+		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) instanceof MimoPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) : MimoPackage.eINSTANCE);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) : ContextPackage.eINSTANCE);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) : EntityPackage.eINSTANCE);
 		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
-		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) : NetPackage.eINSTANCE);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
+		theNetPackage.createPackageContents();
 		theMimoPackage.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
-		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
+		theNetPackage.initializePackageContents();
 		theMimoPackage.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
-		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theMimoPackage.freeze();
+		theNetPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MimoPackage.eNS_URI, theMimoPackage);
-		return theMimoPackage;
+		EPackage.Registry.INSTANCE.put(NetPackage.eNS_URI, theNetPackage);
+		return theNetPackage;
 	}
 
 	/**
@@ -136,8 +140,8 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMimo() {
-		return mimoEClass;
+	public EClass getSocketConfig() {
+		return socketConfigEClass;
 	}
 
 	/**
@@ -145,8 +149,26 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MimoFactory getMimoFactory() {
-		return (MimoFactory)getEFactoryInstance();
+	public EAttribute getSocketConfig_Address() {
+		return (EAttribute)socketConfigEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSocketConfig_Port() {
+		return (EAttribute)socketConfigEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NetFactory getNetFactory() {
+		return (NetFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -168,7 +190,9 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		mimoEClass = createEClass(MIMO);
+		socketConfigEClass = createEClass(SOCKET_CONFIG);
+		createEAttribute(socketConfigEClass, SOCKET_CONFIG__ADDRESS);
+		createEAttribute(socketConfigEClass, SOCKET_CONFIG__PORT);
 	}
 
 	/**
@@ -195,32 +219,19 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ApplicationPackage theApplicationPackage = (ApplicationPackage)EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
-		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
-		NetPackage theNetPackage = (NetPackage)EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theApplicationPackage);
-		getESubpackages().add(theContextPackage);
-		getESubpackages().add(theEntityPackage);
-		getESubpackages().add(theExpressionPackage);
-		getESubpackages().add(theNetPackage);
-		getESubpackages().add(theUtilPackage);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		socketConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(mimoEClass, Mimo.class, "Mimo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		// Create resource
-		createResource(eNS_URI);
+		initEClass(socketConfigEClass, SocketConfig.class, "SocketConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSocketConfig_Address(), ecorePackage.getEString(), "address", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSocketConfig_Port(), ecorePackage.getEInt(), "port", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
-} //MimoPackageImpl
+} //NetPackageImpl

@@ -46,6 +46,8 @@ import org.abchip.mimo.expression.impl.ExpressionPackageImpl;
 
 import org.abchip.mimo.impl.MimoPackageImpl;
 
+import org.abchip.mimo.net.NetPackage;
+import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.util.UtilPackage;
 
 import org.abchip.mimo.util.impl.UtilPackageImpl;
@@ -279,6 +281,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) : ContextPackage.eINSTANCE);
 		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) : NetPackage.eINSTANCE);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -287,6 +290,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
+		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -295,6 +299,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
+		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
