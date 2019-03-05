@@ -49,7 +49,7 @@ public class BaseTesterCommandProviderImpl implements CommandProvider {
 					if(!serviceRef.getInterfaceName().equals(TestSuiteLauncher.class.getName()))
 						continue;
 					
-					if(serviceRef.getStatus() != ServiceStatus.ACTIVE)
+					if(serviceRef.getStatus() != ServiceStatus.ACT)
 						continue;
 
 					List<TestSuiteRunner> runners = testManager.prepareSuiteRunner(application, component.getName());

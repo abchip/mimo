@@ -89,6 +89,8 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 				return createResourceScopeFromString(eDataType, initialValue);
 			case EntityPackage.RESOURCE_TYPE:
 				return createResourceTypeFromString(eDataType, initialValue);
+			case EntityPackage.SERIALIZATION_TYPE:
+				return createSerializationTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +110,8 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 				return convertResourceScopeToString(eDataType, instanceValue);
 			case EntityPackage.RESOURCE_TYPE:
 				return convertResourceTypeToString(eDataType, instanceValue);
+			case EntityPackage.SERIALIZATION_TYPE:
+				return convertSerializationTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -210,6 +214,26 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * @generated
 	 */
 	public String convertResourceTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SerializationType createSerializationTypeFromString(EDataType eDataType, String initialValue) {
+		SerializationType result = SerializationType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSerializationTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -28,37 +28,37 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum CapabilityRight implements Enumerator {
 	/**
-	 * The '<em><b>Read</b></em>' literal object.
+	 * The '<em><b>READ</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #READ_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	READ(10, "Read", "READ"),
+	READ(10, "READ", "Read"),
 
 	/**
-	 * The '<em><b>Write</b></em>' literal object.
+	 * The '<em><b>WRITE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #WRITE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	WRITE(20, "Write", "WRITE"),
+	WRITE(20, "WRITE", "Write"),
 
 	/**
-	 * The '<em><b>Execute</b></em>' literal object.
+	 * The '<em><b>EXEC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EXECUTE_VALUE
+	 * @see #EXEC_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EXECUTE(30, "Execute", "EXEC");
+	EXEC(30, "EXEC", "Execute");
 
 	/**
-	 * The '<em><b>Read</b></em>' literal value.
+	 * The '<em><b>READ</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Read</b></em>' literal object isn't clear,
@@ -66,14 +66,14 @@ public enum CapabilityRight implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #READ
-	 * @model name="Read" literal="READ"
+	 * @model literal="Read"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int READ_VALUE = 10;
 
 	/**
-	 * The '<em><b>Write</b></em>' literal value.
+	 * The '<em><b>WRITE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Write</b></em>' literal object isn't clear,
@@ -81,26 +81,26 @@ public enum CapabilityRight implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WRITE
-	 * @model name="Write" literal="WRITE"
+	 * @model literal="Write"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int WRITE_VALUE = 20;
 
 	/**
-	 * The '<em><b>Execute</b></em>' literal value.
+	 * The '<em><b>EXEC</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Execute</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>EXEC</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #EXECUTE
-	 * @model name="Execute" literal="EXEC"
+	 * @see #EXEC
+	 * @model literal="Execute"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EXECUTE_VALUE = 30;
+	public static final int EXEC_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>Capability Right</b></em>' enumerators.
@@ -112,7 +112,7 @@ public enum CapabilityRight implements Enumerator {
 		new CapabilityRight[] {
 			READ,
 			WRITE,
-			EXECUTE,
+			EXEC,
 		};
 
 	/**
@@ -171,7 +171,7 @@ public enum CapabilityRight implements Enumerator {
 		switch (value) {
 			case READ_VALUE: return READ;
 			case WRITE_VALUE: return WRITE;
-			case EXECUTE_VALUE: return EXECUTE;
+			case EXEC_VALUE: return EXEC;
 		}
 		return null;
 	}

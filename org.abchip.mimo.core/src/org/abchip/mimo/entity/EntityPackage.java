@@ -518,6 +518,52 @@ public interface EntityPackage extends EPackage {
 	int RESOURCE_NOTIFIER_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.ResourceSerializerImpl <em>Resource Serializer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.ResourceSerializerImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceSerializer()
+	 * @generated
+	 */
+	int RESOURCE_SERIALIZER = 18;
+
+	/**
+	 * The feature id for the '<em><b>Context Provider</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERIALIZER__CONTEXT_PROVIDER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERIALIZER__FRAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERIALIZER__NAME = 2;
+
+	/**
+	 * The number of structural features of the '<em>Resource Serializer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERIALIZER_FEATURE_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Slot <em>Slot</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -525,7 +571,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 	 * @generated
 	 */
-	int SLOT = 18;
+	int SLOT = 19;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -544,7 +590,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getTextable()
 	 * @generated
 	 */
-	int TEXTABLE = 19;
+	int TEXTABLE = 20;
 
 	/**
 	 * The number of structural features of the '<em>Textable</em>' class.
@@ -563,7 +609,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceEventType()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_TYPE = 20;
+	int RESOURCE_EVENT_TYPE = 21;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceScope <em>Resource Scope</em>}' enum.
@@ -573,7 +619,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceScope()
 	 * @generated
 	 */
-	int RESOURCE_SCOPE = 21;
+	int RESOURCE_SCOPE = 22;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceType <em>Resource Type</em>}' enum.
@@ -583,7 +629,18 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceType()
 	 * @generated
 	 */
-	int RESOURCE_TYPE = 22;
+	int RESOURCE_TYPE = 23;
+
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.SerializationType
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
+	 * @generated
+	 */
+	int SERIALIZATION_TYPE = 24;
 
 
 	/**
@@ -846,6 +903,49 @@ public interface EntityPackage extends EPackage {
 	EClass getResourceNotifier();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.ResourceSerializer <em>Resource Serializer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Resource Serializer</em>'.
+	 * @see org.abchip.mimo.entity.ResourceSerializer
+	 * @generated
+	 */
+	EClass getResourceSerializer();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.entity.ResourceSerializer#getContextProvider <em>Context Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context Provider</em>'.
+	 * @see org.abchip.mimo.entity.ResourceSerializer#getContextProvider()
+	 * @see #getResourceSerializer()
+	 * @generated
+	 */
+	EReference getResourceSerializer_ContextProvider();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.entity.ResourceSerializer#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Frame</em>'.
+	 * @see org.abchip.mimo.entity.ResourceSerializer#getFrame()
+	 * @see #getResourceSerializer()
+	 * @generated
+	 */
+	EReference getResourceSerializer_Frame();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.ResourceSerializer#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.entity.ResourceSerializer#getName()
+	 * @see #getResourceSerializer()
+	 * @generated
+	 */
+	EAttribute getResourceSerializer_Name();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityProvider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -914,6 +1014,16 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getResourceType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Serialization Type</em>'.
+	 * @see org.abchip.mimo.entity.SerializationType
+	 * @generated
+	 */
+	EEnum getSerializationType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1170,6 +1280,40 @@ public interface EntityPackage extends EPackage {
 		EClass RESOURCE_NOTIFIER = eINSTANCE.getResourceNotifier();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.ResourceSerializerImpl <em>Resource Serializer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.ResourceSerializerImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceSerializer()
+		 * @generated
+		 */
+		EClass RESOURCE_SERIALIZER = eINSTANCE.getResourceSerializer();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Provider</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE_SERIALIZER__CONTEXT_PROVIDER = eINSTANCE.getResourceSerializer_ContextProvider();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE_SERIALIZER__FRAME = eINSTANCE.getResourceSerializer_Frame();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_SERIALIZER__NAME = eINSTANCE.getResourceSerializer_Name();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityProviderImpl <em>Provider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1238,6 +1382,16 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum RESOURCE_TYPE = eINSTANCE.getResourceType();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.SerializationType
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
+		 * @generated
+		 */
+		EEnum SERIALIZATION_TYPE = eINSTANCE.getSerializationType();
 
 	}
 

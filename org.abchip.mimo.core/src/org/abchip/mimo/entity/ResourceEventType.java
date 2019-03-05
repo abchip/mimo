@@ -26,149 +26,144 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ResourceEventType implements Enumerator {
 	/**
-	 * The '<em><b>Pre Save</b></em>' literal object.
+	 * The '<em><b>PRESAVE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PRE_SAVE_VALUE
+	 * @see #PRESAVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PRE_SAVE(10, "PreSave", "PRESAVE"),
+	PRESAVE(10, "PRESAVE", "PreSave"), /**
+	 * The '<em><b>POSTSAVE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #POSTSAVE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	POSTSAVE(20, "POSTSAVE", "PostSave"), /**
+	 * The '<em><b>PREDLT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PREDLT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	PREDLT(60, "PREDLT", "PreDelete"), /**
+	 * The '<em><b>POSTDLT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #POSTDLT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	POSTDLT(70, "POSTDLT", "PostDelete"), /**
+	 * The '<em><b>PRERNM</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PRERNM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	PRERNM(80, "PRERNM", "PreRename"), /**
+	 * The '<em><b>POSTRNM</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #POSTRNM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	POSTRNM(90, "POSTRNM", "PostRename");
 
 	/**
-	 * The '<em><b>Post Save</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #POST_SAVE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	POST_SAVE(20, "PostSave", "POSTSAVE"),
-
-	/**
-	 * The '<em><b>Pre Delete</b></em>' literal object.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #PRE_DELETE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PRE_DELETE(60, "PreDelete", "PREDLT"),
-
-	/**
-	 * The '<em><b>Post Delete</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #POST_DELETE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	POST_DELETE(70, "PostDelete", "POSTDLT"), /**
-	 * The '<em><b>Pre Rename</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PRE_RENAME_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PRE_RENAME(80, "PreRename", "PRERNM"), /**
-	 * The '<em><b>Post Rename</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #POST_RENAME_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	POST_RENAME(90, "PostRename", "POSTRNM");
-
-	/**
-	 * The '<em><b>Pre Save</b></em>' literal value.
+	 * The '<em><b>PRESAVE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Pre Save</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>PRESAVE</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PRE_SAVE
-	 * @model name="PreSave" literal="PRESAVE"
+	 * @see #PRESAVE
+	 * @model literal="PreSave"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRE_SAVE_VALUE = 10;
+	public static final int PRESAVE_VALUE = 10;
 
 	/**
-	 * The '<em><b>Post Save</b></em>' literal value.
+	 * The '<em><b>POSTSAVE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Post Save</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>POSTSAVE</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #POST_SAVE
-	 * @model name="PostSave" literal="POSTSAVE"
+	 * @see #POSTSAVE
+	 * @model literal="PostSave"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POST_SAVE_VALUE = 20;
+	public static final int POSTSAVE_VALUE = 20;
 
 	/**
-	 * The '<em><b>Pre Delete</b></em>' literal value.
+	 * The '<em><b>PREDLT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Pre Delete</b></em>' literal object isn't
-	 * clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PRE_DELETE
-	 * @model name="PreDelete" literal="PREDLT"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_DELETE_VALUE = 60;
-
-	/**
-	 * The '<em><b>Post Delete</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Post Delete</b></em>' literal object isn't
-	 * clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #POST_DELETE
-	 * @model name="PostDelete" literal="POSTDLT"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int POST_DELETE_VALUE = 70;
-
-	/**
-	 * The '<em><b>Pre Rename</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Pre Rename</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>PREDLT</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PRE_RENAME
-	 * @model name="PreRename" literal="PRERNM"
+	 * @see #PREDLT
+	 * @model literal="PreDelete"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRE_RENAME_VALUE = 80;
+	public static final int PREDLT_VALUE = 60;
 
 	/**
-	 * The '<em><b>Post Rename</b></em>' literal value.
+	 * The '<em><b>POSTDLT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Post Rename</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>POSTDLT</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #POST_RENAME
-	 * @model name="PostRename" literal="POSTRNM"
+	 * @see #POSTDLT
+	 * @model literal="PostDelete"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POST_RENAME_VALUE = 90;
+	public static final int POSTDLT_VALUE = 70;
+
+	/**
+	 * The '<em><b>PRERNM</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>PRERNM</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #PRERNM
+	 * @model literal="PreRename"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRERNM_VALUE = 80;
+
+	/**
+	 * The '<em><b>POSTRNM</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>POSTRNM</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #POSTRNM
+	 * @model literal="PostRename"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int POSTRNM_VALUE = 90;
 
 	/**
 	 * An array of all the '<em><b>Resource Event Type</b></em>' enumerators.
@@ -176,12 +171,12 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 */
 	private static final ResourceEventType[] VALUES_ARRAY = new ResourceEventType[] {
-			PRE_SAVE,
-			POST_SAVE,
-			PRE_DELETE,
-			POST_DELETE,
-			PRE_RENAME,
-			POST_RENAME,
+			PRESAVE,
+			POSTSAVE,
+			PREDLT,
+			POSTDLT,
+			PRERNM,
+			POSTRNM,
 		};
 
 	/**
@@ -234,12 +229,12 @@ public enum ResourceEventType implements Enumerator {
 	 */
 	public static ResourceEventType get(int value) {
 		switch (value) {
-			case PRE_SAVE_VALUE: return PRE_SAVE;
-			case POST_SAVE_VALUE: return POST_SAVE;
-			case PRE_DELETE_VALUE: return PRE_DELETE;
-			case POST_DELETE_VALUE: return POST_DELETE;
-			case PRE_RENAME_VALUE: return PRE_RENAME;
-			case POST_RENAME_VALUE: return POST_RENAME;
+			case PRESAVE_VALUE: return PRESAVE;
+			case POSTSAVE_VALUE: return POSTSAVE;
+			case PREDLT_VALUE: return PREDLT;
+			case POSTDLT_VALUE: return POSTDLT;
+			case PRERNM_VALUE: return PRERNM;
+			case POSTRNM_VALUE: return POSTRNM;
 		}
 		return null;
 	}

@@ -28,52 +28,50 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ResourceType implements Enumerator {
 	/**
-	 * The '<em><b>Production</b></em>' literal object.
+	 * The '<em><b>PROD</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PRODUCTION_VALUE
+	 * @see #PROD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PRODUCTION(10, "Production", "PROD"),
-
-	/**
-	 * The '<em><b>Test</b></em>' literal object.
+	PROD(10, "PROD", "Production"), /**
+	 * The '<em><b>TEST</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #TEST_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TEST(20, "Test", "TEST"),
+	TEST(20, "TEST", "Test"),
 
 	/**
-	 * The '<em><b>Temporary</b></em>' literal object.
+	 * The '<em><b>TEMP</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TEMPORARY_VALUE
+	 * @see #TEMP_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TEMPORARY(30, "Temporary", "TEMP");
+	TEMP(30, "TEMP", "Temporary");
 
 	/**
-	 * The '<em><b>Production</b></em>' literal value.
+	 * The '<em><b>PROD</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Production</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>PROD</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PRODUCTION
-	 * @model name="Production" literal="PROD"
+	 * @see #PROD
+	 * @model literal="Production"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRODUCTION_VALUE = 10;
+	public static final int PROD_VALUE = 10;
 
 	/**
-	 * The '<em><b>Test</b></em>' literal value.
+	 * The '<em><b>TEST</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Test</b></em>' literal object isn't clear,
@@ -81,26 +79,26 @@ public enum ResourceType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TEST
-	 * @model name="Test" literal="TEST"
+	 * @model literal="Test"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int TEST_VALUE = 20;
 
 	/**
-	 * The '<em><b>Temporary</b></em>' literal value.
+	 * The '<em><b>TEMP</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Temporary</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>TEMP</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TEMPORARY
-	 * @model name="Temporary" literal="TEMP"
+	 * @see #TEMP
+	 * @model literal="Temporary"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TEMPORARY_VALUE = 30;
+	public static final int TEMP_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>Resource Type</b></em>' enumerators.
@@ -110,9 +108,9 @@ public enum ResourceType implements Enumerator {
 	 */
 	private static final ResourceType[] VALUES_ARRAY =
 		new ResourceType[] {
-			PRODUCTION,
+			PROD,
 			TEST,
-			TEMPORARY,
+			TEMP,
 		};
 
 	/**
@@ -169,9 +167,9 @@ public enum ResourceType implements Enumerator {
 	 */
 	public static ResourceType get(int value) {
 		switch (value) {
-			case PRODUCTION_VALUE: return PRODUCTION;
+			case PROD_VALUE: return PROD;
 			case TEST_VALUE: return TEST;
-			case TEMPORARY_VALUE: return TEMPORARY;
+			case TEMP_VALUE: return TEMP;
 		}
 		return null;
 	}

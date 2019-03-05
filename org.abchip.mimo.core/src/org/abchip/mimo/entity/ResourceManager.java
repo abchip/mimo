@@ -120,4 +120,28 @@ public interface ResourceManager extends EntityProvider {
 	 */
 	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frame, ResourceScope scope);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frame);
+
 } // ResourceManager

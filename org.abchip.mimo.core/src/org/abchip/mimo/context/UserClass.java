@@ -24,57 +24,17 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum UserClass implements Enumerator {
 	/**
-	 * The '<em><b>User</b></em>' literal object.
+	 * The '<em><b>USER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #USER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	USER(100, "User", "*USER"),
+	USER(10, "USER", "User");
 
 	/**
-	 * The '<em><b>Sysopr</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SYSOPR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SYSOPR(200, "Sysopr", "*SYSOPR"),
-
-	/**
-	 * The '<em><b>Pgmr</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PGMR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PGMR(300, "Pgmr", "*PGMR"),
-
-	/**
-	 * The '<em><b>Secadm</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SECADM_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SECADM(400, "Secadm", "*SECADM"),
-
-	/**
-	 * The '<em><b>Secofr</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SECOFR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SECOFR(500, "Secofr", "*SECOFR");
-
-	/**
-	 * The '<em><b>User</b></em>' literal value.
+	 * The '<em><b>USER</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>User</b></em>' literal object isn't clear,
@@ -82,71 +42,11 @@ public enum UserClass implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #USER
-	 * @model name="User" literal="*USER"
+	 * @model literal="User"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USER_VALUE = 100;
-
-	/**
-	 * The '<em><b>Sysopr</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Sysopr</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SYSOPR
-	 * @model name="Sysopr" literal="*SYSOPR"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SYSOPR_VALUE = 200;
-
-	/**
-	 * The '<em><b>Pgmr</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Pgmr</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PGMR
-	 * @model name="Pgmr" literal="*PGMR"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PGMR_VALUE = 300;
-
-	/**
-	 * The '<em><b>Secadm</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Secadm</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SECADM
-	 * @model name="Secadm" literal="*SECADM"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SECADM_VALUE = 400;
-
-	/**
-	 * The '<em><b>Secofr</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Secofr</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SECOFR
-	 * @model name="Secofr" literal="*SECOFR"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SECOFR_VALUE = 500;
+	public static final int USER_VALUE = 10;
 
 	/**
 	 * An array of all the '<em><b>User Class</b></em>' enumerators.
@@ -157,10 +57,6 @@ public enum UserClass implements Enumerator {
 	private static final UserClass[] VALUES_ARRAY =
 		new UserClass[] {
 			USER,
-			SYSOPR,
-			PGMR,
-			SECADM,
-			SECOFR,
 		};
 
 	/**
@@ -218,10 +114,6 @@ public enum UserClass implements Enumerator {
 	public static UserClass get(int value) {
 		switch (value) {
 			case USER_VALUE: return USER;
-			case SYSOPR_VALUE: return SYSOPR;
-			case PGMR_VALUE: return PGMR;
-			case SECADM_VALUE: return SECADM;
-			case SECOFR_VALUE: return SECOFR;
 		}
 		return null;
 	}

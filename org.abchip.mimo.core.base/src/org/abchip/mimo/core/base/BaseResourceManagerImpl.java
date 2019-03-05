@@ -39,6 +39,7 @@ import org.abchip.mimo.entity.ResourceListener;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceNotifier;
 import org.abchip.mimo.entity.ResourceScope;
+import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.ResourceType;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 
@@ -150,6 +151,24 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	}
 
 	@Override
+	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass) {
+		return getResourceSerializer(contextProvider, klass.getSimpleName());
+	}
+
+	@Override
+	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frameName) {
+		@SuppressWarnings("unchecked")
+		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		return getResourceSerializer(contextProvider, frame);
+	}
+
+	@Override
+	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame) {
+		// TODO
+		return null;
+	}
+
+	@Override
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Class<E> klass, ResourceScope scope) {
 		return getEntityWriter(contextProvider, klass.getSimpleName(), scope);
 	}
@@ -169,7 +188,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 			resource = contextProvider.getContext().getContextDescription().getResourceRoot();
 			break;
 		case ALL:
-		case CONTEXT:
+		case CTX:
 		case USER:
 			throw new RuntimeException("Unsupported scope " + scope);
 		}
@@ -253,13 +272,13 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 			EntityIterator<Resource> resourceIterator = getEntityReader(contextProvider, Resource.class, contextDescription.getResourceRoot()).find(null);
 			while (resourceIterator.hasNext()) {
 				Resource resource = resourceIterator.next();
-				if (resource.getResourceType() == ResourceType.TEMPORARY)
+				if (resource.getResourceType() == ResourceType.TEMP)
 					continue;
 				resources.add(resource.getName());
 			}
 			break;
 		}
-		case CONTEXT:
+		case CTX:
 			resources.add(contextDescription.getResourceTemporary());
 			for (String resourceName : contextDescription.getResources())
 				resources.add(resourceName);

@@ -1,15 +1,11 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.application;
+package org.abchip.mimo.entity;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,117 +15,95 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Service Status</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Serialization Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceStatus()
+ * @see org.abchip.mimo.entity.EntityPackage#getSerializationType()
  * @model
  * @generated
  */
-public enum ServiceStatus implements Enumerator {
+public enum SerializationType implements Enumerator {
 	/**
-	 * The '<em><b>ACT</b></em>' literal object.
+	 * The '<em><b>XMI</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ACT_VALUE
+	 * @see #XMI_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ACT(0, "ACT", "Active"), /**
-	 * The '<em><b>STP</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STP_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	STP(20, "STP", "Stopped"), /**
-	 * The '<em><b>TST</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #TST_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	TST(30, "TST", "Testing");
+	XMI(10, "XMI", "XML Metadata Interchange"),
 
 	/**
-	 * The '<em><b>ACT</b></em>' literal value.
+	 * The '<em><b>JSON</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #JSON_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	JSON(20, "JSON", "JavaScript Object Notation");
+
+	/**
+	 * The '<em><b>XMI</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>ACT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>XMI</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #ACT
-	 * @model literal="Active"
+	 * @see #XMI
+	 * @model literal="XML Metadata Interchange"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ACT_VALUE = 0;
+	public static final int XMI_VALUE = 10;
 
 	/**
-	 * The '<em><b>STP</b></em>' literal value.
+	 * The '<em><b>JSON</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>STP</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>JSON</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #STP
-	 * @model literal="Stopped"
+	 * @see #JSON
+	 * @model literal="JavaScript Object Notation"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STP_VALUE = 20;
+	public static final int JSON_VALUE = 20;
 
 	/**
-	 * The '<em><b>TST</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>TST</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #TST
-	 * @model literal="Testing"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int TST_VALUE = 30;
-
-	/**
-	 * An array of all the '<em><b>Service Status</b></em>' enumerators.
+	 * An array of all the '<em><b>Serialization Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ServiceStatus[] VALUES_ARRAY =
-		new ServiceStatus[] {
-			ACT,
-			STP,
-			TST,
+	private static final SerializationType[] VALUES_ARRAY =
+		new SerializationType[] {
+			XMI,
+			JSON,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Service Status</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Serialization Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ServiceStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<SerializationType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Service Status</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Serialization Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ServiceStatus get(String literal) {
+	public static SerializationType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ServiceStatus result = VALUES_ARRAY[i];
+			SerializationType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -138,16 +112,16 @@ public enum ServiceStatus implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Service Status</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Serialization Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ServiceStatus getByName(String name) {
+	public static SerializationType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ServiceStatus result = VALUES_ARRAY[i];
+			SerializationType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -156,18 +130,17 @@ public enum ServiceStatus implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Service Status</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Serialization Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ServiceStatus get(int value) {
+	public static SerializationType get(int value) {
 		switch (value) {
-			case ACT_VALUE: return ACT;
-			case STP_VALUE: return STP;
-			case TST_VALUE: return TST;
+			case XMI_VALUE: return XMI;
+			case JSON_VALUE: return JSON;
 		}
 		return null;
 	}
@@ -199,7 +172,7 @@ public enum ServiceStatus implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private ServiceStatus(int value, String name, String literal) {
+	private SerializationType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -210,7 +183,6 @@ public enum ServiceStatus implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -220,7 +192,6 @@ public enum ServiceStatus implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 	  return name;
 	}
@@ -230,7 +201,6 @@ public enum ServiceStatus implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getLiteral() {
 	  return literal;
 	}
@@ -246,4 +216,4 @@ public enum ServiceStatus implements Enumerator {
 		return literal;
 	}
 	
-} //ServiceStatus
+} //SerializationType

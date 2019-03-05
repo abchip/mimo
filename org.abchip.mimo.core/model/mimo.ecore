@@ -100,9 +100,9 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">
-      <eLiterals name="Active" literal="ACT"/>
-      <eLiterals name="Stopped" value="20" literal="STP"/>
-      <eLiterals name="Testing" value="30" literal="TST"/>
+      <eLiterals name="ACT" literal="Active"/>
+      <eLiterals name="STP" value="20" literal="Stopped"/>
+      <eLiterals name="TST" value="30" literal="Testing"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceTester" eSuperTypes="#//application/ServiceRef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
@@ -152,9 +152,9 @@
           eType="#//util/JavaURI"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="CapabilityRight">
-      <eLiterals name="Read" value="10" literal="READ"/>
-      <eLiterals name="Write" value="20" literal="WRITE"/>
-      <eLiterals name="Execute" value="30" literal="EXEC"/>
+      <eLiterals name="READ" value="10" literal="Read"/>
+      <eLiterals name="WRITE" value="20" literal="Write"/>
+      <eLiterals name="EXEC" value="30" literal="Execute"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//util/JavaCloseable #//context/ContextProvider">
       <eOperations name="close" lowerBound="1"/>
@@ -416,8 +416,8 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="LockType">
-      <eLiterals name="Read" value="10" literal="READ"/>
-      <eLiterals name="Write" value="20" literal="WRITE"/>
+      <eLiterals name="READ" value="10" literal="Read"/>
+      <eLiterals name="WRITE" value="20" literal="Write"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Logger" abstract="true" interface="true">
       <eOperations name="debug">
@@ -542,11 +542,7 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="UserClass">
-      <eLiterals name="User" value="100" literal="*USER"/>
-      <eLiterals name="Sysopr" value="200" literal="*SYSOPR"/>
-      <eLiterals name="Pgmr" value="300" literal="*PGMR"/>
-      <eLiterals name="Secadm" value="400" literal="*SECADM"/>
-      <eLiterals name="Secofr" value="500" literal="*SECOFR"/>
+      <eLiterals name="USER" value="10" literal="User"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="UserProfile" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -555,7 +551,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="userClass" lowerBound="1"
-          eType="#//context/UserClass" defaultValueLiteral="*USER" derived="true"/>
+          eType="#//context/UserClass" defaultValueLiteral="User" derived="true"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/entity" nsPrefix="mimo-ent">
@@ -889,12 +885,12 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceEventType">
-      <eLiterals name="PreSave" value="10" literal="PRESAVE"/>
-      <eLiterals name="PostSave" value="20" literal="POSTSAVE"/>
-      <eLiterals name="PreDelete" value="60" literal="PREDLT"/>
-      <eLiterals name="PostDelete" value="70" literal="POSTDLT"/>
-      <eLiterals name="PreRename" value="80" literal="PRERNM"/>
-      <eLiterals name="PostRename" value="90" literal="POSTRNM"/>
+      <eLiterals name="PRESAVE" value="10" literal="PreSave"/>
+      <eLiterals name="POSTSAVE" value="20" literal="PostSave"/>
+      <eLiterals name="PREDLT" value="60" literal="PreDelete"/>
+      <eLiterals name="POSTDLT" value="70" literal="PostDelete"/>
+      <eLiterals name="PRERNM" value="80" literal="PreRename"/>
+      <eLiterals name="POSTRNM" value="90" literal="PostRename"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceListener" abstract="true"
         interface="true">
@@ -1063,6 +1059,44 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="scope" eType="#//entity/ResourceScope"/>
       </eOperations>
+      <eOperations name="getResourceSerializer">
+        <eGenericType eClassifier="#//entity/ResourceSerializer">
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer/E"/>
+        </eGenericType>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
+        <eParameters name="klass" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer/E"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getResourceSerializer">
+        <eGenericType eClassifier="#//entity/ResourceSerializer">
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer.1/E"/>
+        </eGenericType>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
+        <eParameters name="frame" lowerBound="1">
+          <eGenericType eClassifier="#//entity/Frame">
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer.1/E"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getResourceSerializer">
+        <eGenericType eClassifier="#//entity/ResourceSerializer">
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer.2/E"/>
+        </eGenericType>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceNotifier">
       <eTypeParameters name="E">
@@ -1089,15 +1123,30 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceScope">
-      <eLiterals name="All" value="10" literal="*ALL"/>
-      <eLiterals name="Context" value="20" literal="*CTX"/>
-      <eLiterals name="User" value="30" literal="*USER"/>
-      <eLiterals name="Root" value="40" literal="*ROOT"/>
+      <eLiterals name="ALL" value="10" literal="All"/>
+      <eLiterals name="CTX" value="20" literal="Context"/>
+      <eLiterals name="USER" value="30" literal="User"/>
+      <eLiterals name="ROOT" value="40" literal="Root"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceSerializer" abstract="true">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/EntityNameable"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contextProvider" lowerBound="1"
+          eType="#//context/ContextProvider" transient="true" resolveProxies="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1"
+          transient="true" resolveProxies="false">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments eTypeParameter="#//entity/ResourceSerializer/E"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceType">
-      <eLiterals name="Production" value="10" literal="PROD"/>
-      <eLiterals name="Test" value="20" literal="TEST"/>
-      <eLiterals name="Temporary" value="30" literal="TEMP"/>
+      <eLiterals name="PROD" value="10" literal="Production"/>
+      <eLiterals name="TEST" value="20" literal="Test"/>
+      <eLiterals name="TEMP" value="30" literal="Temporary"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" interface="true"
         eSuperTypes="#//entity/Nameable">
@@ -1111,6 +1160,10 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Textable" abstract="true" interface="true">
       <eOperations name="getText" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="SerializationType">
+      <eLiterals name="XMI" value="10" literal="XML Metadata Interchange"/>
+      <eLiterals name="JSON" value="20" literal="JavaScript Object Notation"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="expression" nsURI="http://www.abchip.org/mimo/expression" nsPrefix="mimo-exp">

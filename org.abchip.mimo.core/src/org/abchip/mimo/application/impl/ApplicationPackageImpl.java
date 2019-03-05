@@ -857,9 +857,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		// Initialize enums and add enum literals
 		initEEnum(serviceStatusEEnum, ServiceStatus.class, "ServiceStatus");
-		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.ACTIVE);
-		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.STOPPED);
-		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.TESTING);
+		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.ACT);
+		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.STP);
+		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.TST);
 	}
 
 } //ApplicationPackageImpl

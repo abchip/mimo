@@ -35,7 +35,9 @@ import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityProviderRegistry;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceScope;
+import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.ResourceType;
+import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.Textable;
@@ -186,6 +188,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass resourceSerializerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass entityProviderEClass = null;
 
 	/**
@@ -229,6 +238,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EEnum resourceTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum serializationTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -541,6 +557,42 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getResourceSerializer() {
+		return resourceSerializerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResourceSerializer_ContextProvider() {
+		return (EReference)resourceSerializerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResourceSerializer_Frame() {
+		return (EReference)resourceSerializerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResourceSerializer_Name() {
+		return (EAttribute)resourceSerializerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntityProvider() {
 		return entityProviderEClass;
 	}
@@ -597,6 +649,15 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	public EEnum getResourceType() {
 		return resourceTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getSerializationType() {
+		return serializationTypeEEnum;
 	}
 
 	/**
@@ -672,6 +733,11 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		resourceNotifierEClass = createEClass(RESOURCE_NOTIFIER);
 
+		resourceSerializerEClass = createEClass(RESOURCE_SERIALIZER);
+		createEReference(resourceSerializerEClass, RESOURCE_SERIALIZER__CONTEXT_PROVIDER);
+		createEReference(resourceSerializerEClass, RESOURCE_SERIALIZER__FRAME);
+		createEAttribute(resourceSerializerEClass, RESOURCE_SERIALIZER__NAME);
+
 		slotEClass = createEClass(SLOT);
 
 		textableEClass = createEClass(TEXTABLE);
@@ -680,6 +746,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		resourceEventTypeEEnum = createEEnum(RESOURCE_EVENT_TYPE);
 		resourceScopeEEnum = createEEnum(RESOURCE_SCOPE);
 		resourceTypeEEnum = createEEnum(RESOURCE_TYPE);
+		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
 	}
 
 	/**
@@ -718,6 +785,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		ETypeParameter resourceEventEClass_E = addETypeParameter(resourceEventEClass, "E");
 		ETypeParameter resourceListenerEClass_E = addETypeParameter(resourceListenerEClass, "E");
 		ETypeParameter resourceNotifierEClass_E = addETypeParameter(resourceNotifierEClass, "E");
+		ETypeParameter resourceSerializerEClass_E = addETypeParameter(resourceSerializerEClass, "E");
 
 		// Set bounds for type parameters
 		EGenericType g1 = createEGenericType(this.getEntity());
@@ -734,6 +802,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		resourceListenerEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(this.getEntityNameable());
 		resourceNotifierEClass_E.getEBounds().add(g1);
+		g1 = createEGenericType(this.getEntityNameable());
+		resourceSerializerEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
 		cardinalityEClass.getESuperTypes().add(this.getEntity());
@@ -1242,6 +1312,45 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(this.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResourceSerializer());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(this.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResourceSerializer());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(this.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResourceSerializer());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
 		initEClass(resourceNotifierEClass, ResourceNotifier.class, "ResourceNotifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(resourceNotifierEClass, null, "fireEvent", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1262,6 +1371,14 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "listener", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(resourceSerializerEClass, ResourceSerializer.class, "ResourceSerializer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResourceSerializer_ContextProvider(), theContextPackage.getContextProvider(), null, "contextProvider", null, 1, 1, ResourceSerializer.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(this.getFrame());
+		g2 = createEGenericType(resourceSerializerEClass_E);
+		g1.getETypeArguments().add(g2);
+		initEReference(getResourceSerializer_Frame(), g1, null, "frame", null, 1, 1, ResourceSerializer.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResourceSerializer_Name(), ecorePackage.getEString(), "name", null, 1, 1, ResourceSerializer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(slotEClass, Slot.class, "Slot", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(slotEClass, this.getCardinality(), "getCardinality", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1281,23 +1398,27 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(resourceEventTypeEEnum, ResourceEventType.class, "ResourceEventType");
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PRE_SAVE);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POST_SAVE);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PRE_DELETE);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POST_DELETE);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PRE_RENAME);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POST_RENAME);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PRESAVE);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POSTSAVE);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PREDLT);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POSTDLT);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PRERNM);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POSTRNM);
 
 		initEEnum(resourceScopeEEnum, ResourceScope.class, "ResourceScope");
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ALL);
-		addEEnumLiteral(resourceScopeEEnum, ResourceScope.CONTEXT);
+		addEEnumLiteral(resourceScopeEEnum, ResourceScope.CTX);
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.USER);
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ROOT);
 
 		initEEnum(resourceTypeEEnum, ResourceType.class, "ResourceType");
-		addEEnumLiteral(resourceTypeEEnum, ResourceType.PRODUCTION);
+		addEEnumLiteral(resourceTypeEEnum, ResourceType.PROD);
 		addEEnumLiteral(resourceTypeEEnum, ResourceType.TEST);
-		addEEnumLiteral(resourceTypeEEnum, ResourceType.TEMPORARY);
+		addEEnumLiteral(resourceTypeEEnum, ResourceType.TEMP);
+
+		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
+		addEEnumLiteral(serializationTypeEEnum, SerializationType.XMI);
+		addEEnumLiteral(serializationTypeEEnum, SerializationType.JSON);
 	}
 
 } //EntityPackageImpl

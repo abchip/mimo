@@ -164,7 +164,7 @@
       </entities>
     </config>
     <hooks className="org.abchip.mimo.database.base.BaseDatabaseActivator"
-        status="STP"/>
+        status="Stopped"/>
     <modules
         name="Base">
       <services

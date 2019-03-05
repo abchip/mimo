@@ -12,36 +12,49 @@
 package org.abchip.mimo.core.http;
 
 import java.io.IOException;
+import java.io.Writer;
 
 import javax.inject.Inject;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.entity.ResourceScope;
+import org.abchip.mimo.util.Strings;
 
-public class FindServlet extends HttpServlet {
+public class FindServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	@Inject
+	private ContextRoot contextRoot;
+	@Inject
+	private FrameManager frameManger;
+	@Inject
 	private ResourceManager resourceManager;
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		execute(req, resp);
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		execute(req, resp);
+	
+	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(request, response);
 	}
 	
-	private void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
+	private <E extends EntityNameable> void _execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
+		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		
-//		resourceManager.getEntityReader(contextProvider, klass, scope)		
+		@SuppressWarnings("unchecked")
+		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
+		if (frame == null) 
+			return;
+		
+		Writer writer = response.getWriter();
+		
+		for(E entity: resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX).find(null)) 
+			writer.write(entity.toString());
+		
+		writer.flush();
 	}
 }

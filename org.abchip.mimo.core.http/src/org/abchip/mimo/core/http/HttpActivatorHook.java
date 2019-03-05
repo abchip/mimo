@@ -51,15 +51,16 @@ public class HttpActivatorHook {
 			if (httpServiceRef.length > 0) {
 
 				HttpService httpService = (HttpService) bundleContext.getService(httpServiceRef[0]);
-
-				// WSService (session WS)
-				FindServlet wsServlet = application.getContext().make(FindServlet.class);
-				httpService.registerServlet("/service/find", wsServlet, null, null);
-							
+				
 				// FileService
+				httpService.registerResources("/", "/site/index.html", null);
+				httpService.registerResources("/*", "/site", null);				
+
+				// BizService
+				FindServlet findServlet = application.getContext().make(FindServlet.class);
+				httpService.registerServlet("/biz/service/find", findServlet, null, null);
+
 //				HttpContext httpContext = httpService.createDefaultHttpContext();
-				httpService.registerResources("/", "/site/org.abchip.mimo.core.http/index.html", null);
-				httpService.registerResources("/*", "/site/org.abchip.mimo.core.http", null);				
 			} else {
 				System.out.println("HttpService not found!");
 				return;

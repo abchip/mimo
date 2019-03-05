@@ -67,7 +67,7 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ServiceStatus STATUS_EDEFAULT = ServiceStatus.ACTIVE;
+	protected static final ServiceStatus STATUS_EDEFAULT = ServiceStatus.ACT;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
