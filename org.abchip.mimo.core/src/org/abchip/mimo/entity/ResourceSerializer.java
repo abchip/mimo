@@ -7,6 +7,11 @@
  */
 package org.abchip.mimo.entity;
 
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
 import org.abchip.mimo.context.ContextProvider;
 
 /**
@@ -20,14 +25,13 @@ import org.abchip.mimo.context.ContextProvider;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.ResourceSerializer#getContextProvider <em>Context Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.ResourceSerializer#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.ResourceSerializer#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getResourceSerializer()
- * @model abstract="true"
+ * @model abstract="true" superTypes="org.abchip.mimo.util.JavaCloseable"
  * @generated
  */
-public interface ResourceSerializer<E extends EntityNameable> {
+public interface ResourceSerializer<E extends EntityNameable> extends Closeable {
 	/**
 	 * Returns the value of the '<em><b>Context Provider</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -81,29 +85,59 @@ public interface ResourceSerializer<E extends EntityNameable> {
 	void setFrame(Frame<E> value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.abchip.mimo.entity.EntityPackage#getResourceSerializer_Name()
-	 * @model required="true"
+	 * @model entityRequired="true"
 	 * @generated
 	 */
-	String getName();
+	void add(E entity);
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.ResourceSerializer#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @model entitiesRequired="true" entitiesMany="true"
 	 * @generated
 	 */
-	void setName(String value);
+	void addAll(List<E> entities);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void clear();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model exceptions="org.abchip.mimo.util.JavaIOException" inputStreamDataType="org.abchip.mimo.util.JavaInputStream" inputStreamRequired="true"
+	 * @generated
+	 */
+	void load(InputStream inputStream) throws IOException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model exceptions="org.abchip.mimo.util.JavaIOException" outputStreamDataType="org.abchip.mimo.util.JavaOutputStream" outputStreamRequired="true"
+	 * @generated
+	 */
+	void save(OutputStream outputStream) throws IOException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	E get();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	List<E> getAll();
 
 } // ResourceSerializer

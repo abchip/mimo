@@ -41,6 +41,7 @@ import org.abchip.mimo.entity.ResourceNotifier;
 import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.ResourceType;
+import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 
 public class BaseResourceManagerImpl extends EntityProviderImpl implements ResourceManager {
@@ -151,21 +152,20 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	}
 
 	@Override
-	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass) {
-		return getResourceSerializer(contextProvider, klass.getSimpleName());
+	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType) {
+		return getResourceSerializer(contextProvider, klass.getSimpleName(), serializationType);
 	}
 
 	@Override
-	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frameName) {
+	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frameName, SerializationType serializationType) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		return getResourceSerializer(contextProvider, frame);
+		return getResourceSerializer(contextProvider, frame,serializationType);
 	}
 
 	@Override
-	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame) {
-		// TODO
-		return null;
+	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
+		return new BaseResourceSerializerImpl<E>(serializationType, frame);
 	}
 
 	@Override

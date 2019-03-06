@@ -534,7 +534,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERIALIZER__CONTEXT_PROVIDER = 0;
+	int RESOURCE_SERIALIZER__CONTEXT_PROVIDER = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' reference.
@@ -543,16 +543,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERIALIZER__FRAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_SERIALIZER__NAME = 2;
+	int RESOURCE_SERIALIZER__FRAME = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Resource Serializer</em>' class.
@@ -561,7 +552,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERIALIZER_FEATURE_COUNT = 3;
+	int RESOURCE_SERIALIZER_FEATURE_COUNT = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Slot <em>Slot</em>}' class.
@@ -935,17 +926,6 @@ public interface EntityPackage extends EPackage {
 	EReference getResourceSerializer_Frame();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.ResourceSerializer#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.entity.ResourceSerializer#getName()
-	 * @see #getResourceSerializer()
-	 * @generated
-	 */
-	EAttribute getResourceSerializer_Name();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityProvider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1304,14 +1284,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE_SERIALIZER__FRAME = eINSTANCE.getResourceSerializer_Frame();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESOURCE_SERIALIZER__NAME = eINSTANCE.getResourceSerializer_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityProviderImpl <em>Provider</em>}' class.

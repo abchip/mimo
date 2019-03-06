@@ -11,19 +11,25 @@
  */
 package org.abchip.mimo.core.http;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
+import org.abchip.mimo.entity.ResourceSerializer;
+import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.util.Strings;
 
 public class FindServlet extends BaseServlet {
@@ -50,11 +56,23 @@ public class FindServlet extends BaseServlet {
 		if (frame == null) 
 			return;
 		
-		Writer writer = response.getWriter();
+		ResourceSerializer<E> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, frame, SerializationType.JSON);
 		
-		for(E entity: resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX).find(null)) 
-			writer.write(entity.toString());
+		EntityReader<E> entityReader = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX);
+		EntityIterator<E> entityIterator = entityReader.find(null);
+		List<E> entityList = new ArrayList<E>();
+		for(E entity: entityIterator)
+			entityList.add(entity);
 		
-		writer.flush();
+		resourceSerializer.addAll(entityList);
+			
+//		response.flushBuffer();
+//		ByteArrayOutputStream output = new ByteArrayOutputStream();
+		resourceSerializer.save(response.getOutputStream());
+//		System.out.println(output.toString());
+		response.flushBuffer();
+		resourceSerializer.clear();
+		
+//		resourceSerializer.close();
 	}
 }

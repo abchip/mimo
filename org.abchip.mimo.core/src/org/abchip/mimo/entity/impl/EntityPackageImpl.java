@@ -584,15 +584,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResourceSerializer_Name() {
-		return (EAttribute)resourceSerializerEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEntityProvider() {
 		return entityProviderEClass;
 	}
@@ -736,7 +727,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		resourceSerializerEClass = createEClass(RESOURCE_SERIALIZER);
 		createEReference(resourceSerializerEClass, RESOURCE_SERIALIZER__CONTEXT_PROVIDER);
 		createEReference(resourceSerializerEClass, RESOURCE_SERIALIZER__FRAME);
-		createEAttribute(resourceSerializerEClass, RESOURCE_SERIALIZER__NAME);
 
 		slotEClass = createEClass(SLOT);
 
@@ -833,6 +823,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		resourceEClass.getESuperTypes().add(this.getEntityNameable());
 		resourceEClass.getESuperTypes().add(this.getTextable());
 		resourceManagerEClass.getESuperTypes().add(this.getEntityProvider());
+		resourceSerializerEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
 		slotEClass.getESuperTypes().add(this.getNameable());
 
 		// Initialize classes and features; add operations and parameters
@@ -1321,6 +1312,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getResourceSerializer());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1335,6 +1327,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getResourceSerializer());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1346,6 +1339,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getResourceSerializer());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1377,7 +1371,32 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(resourceSerializerEClass_E);
 		g1.getETypeArguments().add(g2);
 		initEReference(getResourceSerializer_Frame(), g1, null, "frame", null, 1, 1, ResourceSerializer.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResourceSerializer_Name(), ecorePackage.getEString(), "name", null, 1, 1, ResourceSerializer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = addEOperation(resourceSerializerEClass, null, "add", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceSerializerEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resourceSerializerEClass, null, "addAll", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceSerializerEClass_E);
+		addEParameter(op, g1, "entities", 1, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(resourceSerializerEClass, null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resourceSerializerEClass, null, "load", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theUtilPackage.getJavaInputStream(), "inputStream", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theUtilPackage.getJavaIOException());
+
+		op = addEOperation(resourceSerializerEClass, null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theUtilPackage.getJavaOutputStream(), "outputStream", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theUtilPackage.getJavaIOException());
+
+		op = addEOperation(resourceSerializerEClass, null, "get", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceSerializerEClass_E);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceSerializerEClass, null, "getAll", 0, -1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceSerializerEClass_E);
+		initEOperation(op, g1);
 
 		initEClass(slotEClass, Slot.class, "Slot", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -7,6 +7,10 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
 import org.abchip.mimo.context.ContextProvider;
 
 import org.abchip.mimo.entity.EntityNameable;
@@ -31,7 +35,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.ResourceSerializerImpl#getContextProvider <em>Context Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.ResourceSerializerImpl#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.ResourceSerializerImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,26 +59,6 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * @ordered
 	 */
 	protected Frame<E> frame;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,8 +126,10 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public void add(E entity) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -152,11 +137,65 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.RESOURCE_SERIALIZER__NAME, oldName, name));
+	public void addAll(List<E> entities) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void clear() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void load(InputStream inputStream) throws IOException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void save(OutputStream outputStream) throws IOException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public E get() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<E> getAll() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -171,8 +210,6 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 				return getContextProvider();
 			case EntityPackage.RESOURCE_SERIALIZER__FRAME:
 				return getFrame();
-			case EntityPackage.RESOURCE_SERIALIZER__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,9 +229,6 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 			case EntityPackage.RESOURCE_SERIALIZER__FRAME:
 				setFrame((Frame<E>)newValue);
 				return;
-			case EntityPackage.RESOURCE_SERIALIZER__NAME:
-				setName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,9 +247,6 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 			case EntityPackage.RESOURCE_SERIALIZER__FRAME:
 				setFrame((Frame<E>)null);
 				return;
-			case EntityPackage.RESOURCE_SERIALIZER__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -232,26 +263,8 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 				return contextProvider != null;
 			case EntityPackage.RESOURCE_SERIALIZER__FRAME:
 				return frame != null;
-			case EntityPackage.RESOURCE_SERIALIZER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ResourceSerializerImpl

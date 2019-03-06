@@ -123,25 +123,25 @@ public interface ResourceManager extends EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @model contextProviderRequired="true" klassRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass);
+	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextProviderRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame);
+	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextProviderRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frame);
+	<E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frame, SerializationType serializationType);
 
 } // ResourceManager

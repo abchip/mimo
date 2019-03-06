@@ -255,7 +255,7 @@
     <config>
       <entities
           xsi:type="biz:BizProviderConfig"
-          url="https://localhost:8443/mimo/service"
+          url="https://localhost:8443/service"
           user="admin"
           password="ofbiz"
           loginType="JWT"/>
