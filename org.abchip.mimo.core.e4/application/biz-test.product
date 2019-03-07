@@ -9,7 +9,7 @@
    <launcherArgs>
       <programArgs>-console
 -clean
--mimo.config ${container_loc}/ofbiz-test.xmi
+-mimo.config ${container_loc}/biz-test.xmi
       </programArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>

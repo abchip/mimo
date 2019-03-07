@@ -282,7 +282,7 @@
     <hooks className="org.abchip.mimo.core.http.HttpActivatorHook"/>
   </components>
   <contextDescription
-      name="ofbiz-test"
-      resourceRoot="/mimo/ofbiz-data"
+      name="biz-test"
+      resourceRoot="/mimo/biz-data"
       resourceTemporary="ofbiz-temp"/>
 </mimo-app:Application>

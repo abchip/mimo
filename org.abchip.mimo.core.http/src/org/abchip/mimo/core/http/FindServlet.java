@@ -11,7 +11,6 @@
  */
 package org.abchip.mimo.core.http;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
