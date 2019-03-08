@@ -51,29 +51,18 @@ public class HttpActivatorHook {
 			ServiceReference<?>[] httpServiceRef = bundleContext.getServiceReferences(HttpService.class.getName(), filterString);
 
 			if (httpServiceRef.length > 0) {
-
 				ExtendedHttpService httpService = (ExtendedHttpService) bundleContext.getService(httpServiceRef[0]);
-				HttpContext httpContext = httpService.createDefaultHttpContext();
-				
-				
-				httpService.registerFilter("/", new CORSFilter(), null, httpContext);
-				
-//				Dictionary<String, String> dictionary = new Hashtable<String, String>();
-//				dictionary.put("osgi.http.whiteboard.context.path", "/biz");
-//				dictionary.put("osgi.http.whiteboard.filter.pattern", "/*");		
-//				dictionary.put("osgi.http.whiteboard.filter.regex", "*");
-//				bundleContext.registerService("javax.servlet.Filter", new CORSFilter(), dictionary);
 
-				
-							
+				HttpContext httpContext = httpService.createDefaultHttpContext();
+				httpService.registerFilter("/", new CORSFilter(), null, httpContext);
 				
 				// BizService
 				FindServlet findServlet = application.getContext().make(FindServlet.class);
 				httpService.registerServlet("/biz/service/find", findServlet, null, httpContext);
 				
 				// FileService
-				httpService.registerResources("/", "/site/index.html", httpContext);
-				httpService.registerResources("/*", "/site", httpContext);				
+//				httpService.registerResources("/", "/site/index.html", httpContext);
+//				httpService.registerResources("/*", "/site", httpContext);				
 			} else {
 				System.out.println("HttpService not found!");
 				return;
