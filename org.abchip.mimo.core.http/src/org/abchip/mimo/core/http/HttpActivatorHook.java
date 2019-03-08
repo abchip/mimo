@@ -16,6 +16,8 @@ import java.util.Hashtable;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ComponentStarted;
+import org.abchip.mimo.core.http.servlet.FindServlet;
+import org.abchip.mimo.core.http.servlet.ImportProductCategoriesServlet;
 import org.abchip.mimo.net.SocketConfig;
 import org.eclipse.equinox.http.jetty.JettyConfigurator;
 import org.eclipse.equinox.http.servlet.ExtendedHttpService;
@@ -55,10 +57,19 @@ public class HttpActivatorHook {
 
 				HttpContext httpContext = httpService.createDefaultHttpContext();
 				httpService.registerFilter("/", new CORSFilter(), null, httpContext);
+//				httpService.registerFilter("/", new MultiPartFilter(), null, httpContext);
 				
 				// BizService
 				FindServlet findServlet = application.getContext().make(FindServlet.class);
 				httpService.registerServlet("/biz/service/find", findServlet, null, httpContext);
+
+				Dictionary<String, Object> categoriesSetup = new Hashtable<String, Object>();
+				categoriesSetup.put("equinox.http.multipartSupported", "true");
+//				categoriesSetup.put("osgi.http.whiteboard.servlet.multipart.enabled", "true");
+
+				ImportProductCategoriesServlet importProductCategoriesServlet = application.getContext().make(ImportProductCategoriesServlet.class);
+				httpService.registerServlet("/biz/service/importProductCategories", importProductCategoriesServlet, categoriesSetup, httpContext);
+								
 				
 				// FileService
 //				httpService.registerResources("/", "/site/index.html", httpContext);
