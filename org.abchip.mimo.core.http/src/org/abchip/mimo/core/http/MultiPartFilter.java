@@ -49,7 +49,7 @@ import org.eclipse.jetty.util.MultiPartInputStreamParser;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
 
-@SuppressWarnings("unchecked")
+@SuppressWarnings({ "unchecked", "deprecation" })
 public class MultiPartFilter implements Filter {
 
     private static final Logger LOG = Log.getLogger(MultiPartFilter.class);

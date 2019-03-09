@@ -15,9 +15,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.abchip.mimo.context.Logger;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.LogService;
 
+@SuppressWarnings("deprecation")
 public class E4LoggerImpl implements Logger {
 
 	private LogService logService = new OSGILogService("E4Logger");
@@ -141,6 +143,36 @@ public class E4LoggerImpl implements Logger {
 		@SuppressWarnings("rawtypes")
 		public void log(ServiceReference sr, int level, String message, Throwable exception) {
 			doLog(sr, level, message, exception);
+		}
+
+		@Override
+		public org.osgi.service.log.Logger getLogger(String name) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public org.osgi.service.log.Logger getLogger(Class<?> clazz) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public <L extends org.osgi.service.log.Logger> L getLogger(String name, Class<L> loggerType) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public <L extends org.osgi.service.log.Logger> L getLogger(Class<?> clazz, Class<L> loggerType) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public <L extends org.osgi.service.log.Logger> L getLogger(Bundle bundle, String name, Class<L> loggerType) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 	}	
 }

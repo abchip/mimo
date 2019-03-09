@@ -15,25 +15,19 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 import org.abchip.mimo.application.Application;
-import org.abchip.mimo.application.ComponentStarted;
-import org.abchip.mimo.core.http.servlet.FindServlet;
-import org.abchip.mimo.core.http.servlet.ImportProductCategoriesServlet;
+import org.abchip.mimo.application.ComponentStarting;
 import org.abchip.mimo.net.SocketConfig;
 import org.eclipse.equinox.http.jetty.JettyConfigurator;
 import org.eclipse.equinox.http.servlet.ExtendedHttpService;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.FrameworkUtil;
-import org.osgi.framework.ServiceReference;
-import org.osgi.service.http.HttpContext;
 import org.osgi.service.http.HttpService;
 
 public class HttpActivatorHook {
 
 	
-	@ComponentStarted
+	@ComponentStarting
 	public void start(Application application, SocketConfig socketConfig) {
 		
-		BundleContext bundleContext = FrameworkUtil.getBundle(application.getContext().getClass()).getBundleContext();
+//		BundleContext bundleContext = FrameworkUtil.getBundle(application.getContext().getClass()).getBundleContext();
 
 		Dictionary<String, Object> settings = new Hashtable<String, Object>();
 		settings.put("http.enabled", Boolean.TRUE);
@@ -50,26 +44,14 @@ public class HttpActivatorHook {
 
 		try {
 			String filterString = "(http.port=" + socketConfig.getPort() + ")";
-			ServiceReference<?>[] httpServiceRef = bundleContext.getServiceReferences(HttpService.class.getName(), filterString);
+			ExtendedHttpService httpService = (ExtendedHttpService) application.getContext().get(HttpService.class, filterString);
 
-			if (httpServiceRef.length > 0) {
-				ExtendedHttpService httpService = (ExtendedHttpService) bundleContext.getService(httpServiceRef[0]);
-
-				HttpContext httpContext = httpService.createDefaultHttpContext();
-				httpService.registerFilter("/", new CORSFilter(), null, httpContext);
-//				httpService.registerFilter("/", new MultiPartFilter(), null, httpContext);
+			if (httpService != null) {
+				application.getContext().set(HttpService.class, httpService);
 				
-				// BizService
-				FindServlet findServlet = application.getContext().make(FindServlet.class);
-				httpService.registerServlet("/biz/service/find", findServlet, null, httpContext);
-
-				Dictionary<String, Object> categoriesSetup = new Hashtable<String, Object>();
-				categoriesSetup.put("equinox.http.multipartSupported", "true");
-//				categoriesSetup.put("osgi.http.whiteboard.servlet.multipart.enabled", "true");
-
-				ImportProductCategoriesServlet importProductCategoriesServlet = application.getContext().make(ImportProductCategoriesServlet.class);
-				httpService.registerServlet("/biz/service/importProductCategories", importProductCategoriesServlet, categoriesSetup, httpContext);
-								
+//				HttpContext httpContext = httpService.createDefaultHttpContext();
+				httpService.registerFilter("/", new CORSFilter(), null, null);
+//				httpService.registerFilter("/", new MultiPartFilter(), null, httpContext);
 				
 				// FileService
 //				httpService.registerResources("/", "/site/index.html", httpContext);

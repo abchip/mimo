@@ -13,13 +13,14 @@ Require-Bundle: org.abchip.mimo.core,
  org.eclipse.jetty.http,
  org.eclipse.equinox.http.registry,
  org.eclipse.equinox.http.jetty,
- org.eclipse.equinox.http.servlet
+ org.eclipse.equinox.http.servlet,
+ org.apache.commons.io
 Import-Package: javax.servlet,
- javax.servlet.annotation,
  javax.servlet.http,
  org.osgi.framework,
- org.osgi.service.component.annotations,
- org.osgi.service.http,
- org.osgi.service.http.whiteboard
-Export-Package: org.abchip.mimo.core.http
+ org.osgi.service.http
+Export-Package: org.abchip.mimo.core.http,
+ org.abchip.mimo.core.http.servlet
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/commons-fileupload-1.4.jar,
+ .
