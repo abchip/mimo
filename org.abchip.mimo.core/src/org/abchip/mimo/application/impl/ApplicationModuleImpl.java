@@ -124,6 +124,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<ServiceRef> getServices() {
 		if (services == null) {
 			services = new EObjectContainmentEList<ServiceRef>(ServiceRef.class, this, ApplicationPackage.APPLICATION_MODULE__SERVICES);
@@ -224,7 +225,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

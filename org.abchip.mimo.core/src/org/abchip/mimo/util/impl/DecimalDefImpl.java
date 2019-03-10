@@ -125,6 +125,7 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPrecision() {
 		return precision;
 	}
@@ -134,6 +135,7 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPrecision(int newPrecision) {
 		int oldPrecision = precision;
 		precision = newPrecision;
@@ -146,6 +148,7 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getScale() {
 		return scale;
 	}
@@ -155,6 +158,7 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScale(int newScale) {
 		int oldScale = scale;
 		scale = newScale;
@@ -167,6 +171,7 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DecimalType getType() {
 		return type;
 	}
@@ -176,6 +181,7 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(DecimalType newType) {
 		DecimalType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -270,7 +276,7 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (precision: ");
 		result.append(precision);
 		result.append(", scale: ");

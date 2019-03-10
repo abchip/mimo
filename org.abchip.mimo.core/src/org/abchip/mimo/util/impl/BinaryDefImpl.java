@@ -100,6 +100,7 @@ public class BinaryDefImpl extends MinimalEObjectImpl.Container implements Binar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BinaryType getType() {
 		return type;
 	}
@@ -109,6 +110,7 @@ public class BinaryDefImpl extends MinimalEObjectImpl.Container implements Binar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(BinaryType newType) {
 		BinaryType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -121,6 +123,7 @@ public class BinaryDefImpl extends MinimalEObjectImpl.Container implements Binar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isUnsigned() {
 		return unsigned;
 	}
@@ -130,6 +133,7 @@ public class BinaryDefImpl extends MinimalEObjectImpl.Container implements Binar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnsigned(boolean newUnsigned) {
 		boolean oldUnsigned = unsigned;
 		unsigned = newUnsigned;
@@ -214,7 +218,7 @@ public class BinaryDefImpl extends MinimalEObjectImpl.Container implements Binar
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
 		result.append(", unsigned: ");

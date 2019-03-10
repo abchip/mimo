@@ -271,6 +271,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getThreadName() {
 		return threadName;
 	}
@@ -280,6 +281,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadName(String newThreadName) {
 		String oldThreadName = threadName;
 		threadName = newThreadName;
@@ -292,6 +294,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public long getThreadId() {
 		return threadId;
 	}
@@ -301,6 +304,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadId(long newThreadId) {
 		long oldThreadId = threadId;
 		threadId = newThreadId;
@@ -313,6 +317,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getThreadPriority() {
 		return threadPriority;
 	}
@@ -322,6 +327,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadPriority(int newThreadPriority) {
 		int oldThreadPriority = threadPriority;
 		threadPriority = newThreadPriority;
@@ -334,6 +340,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getThreadCPUUsage() {
 		return threadCPUUsage;
 	}
@@ -343,6 +350,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadCPUUsage(double newThreadCPUUsage) {
 		double oldThreadCPUUsage = threadCPUUsage;
 		threadCPUUsage = newThreadCPUUsage;
@@ -355,6 +363,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ThreadStatus getThreadStatus() {
 		return threadStatus;
 	}
@@ -364,6 +373,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadStatus(ThreadStatus newThreadStatus) {
 		ThreadStatus oldThreadStatus = threadStatus;
 		threadStatus = newThreadStatus == null ? THREAD_STATUS_EDEFAULT : newThreadStatus;
@@ -376,6 +386,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isThreadRunnable() {
 		return threadRunnable;
 	}
@@ -385,6 +396,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadRunnable(boolean newThreadRunnable) {
 		boolean oldThreadRunnable = threadRunnable;
 		threadRunnable = newThreadRunnable;
@@ -397,6 +409,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isThreadInterrupted() {
 		return threadInterrupted;
 	}
@@ -406,6 +419,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadInterrupted(boolean newThreadInterrupted) {
 		boolean oldThreadInterrupted = threadInterrupted;
 		threadInterrupted = newThreadInterrupted;
@@ -418,6 +432,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isThreadNative() {
 		return threadNative;
 	}
@@ -427,6 +442,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadNative(boolean newThreadNative) {
 		boolean oldThreadNative = threadNative;
 		threadNative = newThreadNative;
@@ -439,6 +455,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isThreadSuspended() {
 		return threadSuspended;
 	}
@@ -448,6 +465,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadSuspended(boolean newThreadSuspended) {
 		boolean oldThreadSuspended = threadSuspended;
 		threadSuspended = newThreadSuspended;
@@ -460,6 +478,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isThreadDaemon() {
 		return threadDaemon;
 	}
@@ -469,6 +488,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreadDaemon(boolean newThreadDaemon) {
 		boolean oldThreadDaemon = threadDaemon;
 		threadDaemon = newThreadDaemon;
@@ -633,7 +653,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (threadName: ");
 		result.append(threadName);
 		result.append(", threadId: ");

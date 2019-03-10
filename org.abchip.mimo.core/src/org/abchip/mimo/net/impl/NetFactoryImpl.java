@@ -72,6 +72,7 @@ public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SocketConfig createSocketConfig() {
 		SocketConfigImpl socketConfig = new SocketConfigImpl();
 		return socketConfig;
@@ -82,6 +83,7 @@ public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NetPackage getNetPackage() {
 		return (NetPackage)getEPackage();
 	}

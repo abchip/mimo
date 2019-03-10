@@ -163,6 +163,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -172,6 +173,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -184,6 +186,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UserClass getUserClass() {
 		return userClass;
 	}
@@ -193,6 +196,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUserClass(UserClass newUserClass) {
 		UserClass oldUserClass = userClass;
 		userClass = newUserClass == null ? USER_CLASS_EDEFAULT : newUserClass;
@@ -205,6 +209,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -214,6 +219,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
@@ -313,7 +319,7 @@ public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (jobDescription: ");
 		result.append(jobDescription);
 		result.append(", name: ");

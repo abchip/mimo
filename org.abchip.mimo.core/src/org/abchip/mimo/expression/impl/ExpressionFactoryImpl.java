@@ -136,6 +136,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArithmeticExpression createArithmeticExpression() {
 		ArithmeticExpressionImpl arithmeticExpression = new ArithmeticExpressionImpl();
 		return arithmeticExpression;
@@ -146,6 +147,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArrayExpression createArrayExpression() {
 		ArrayExpressionImpl arrayExpression = new ArrayExpressionImpl();
 		return arrayExpression;
@@ -156,6 +158,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AssignmentExpression createAssignmentExpression() {
 		AssignmentExpressionImpl assignmentExpression = new AssignmentExpressionImpl();
 		return assignmentExpression;
@@ -166,6 +169,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AtomicTermExpression createAtomicTermExpression() {
 		AtomicTermExpressionImpl atomicTermExpression = new AtomicTermExpressionImpl();
 		return atomicTermExpression;
@@ -176,6 +180,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanExpression createBooleanExpression() {
 		BooleanExpressionImpl booleanExpression = new BooleanExpressionImpl();
 		return booleanExpression;
@@ -186,6 +191,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BlockExpression createBlockExpression() {
 		BlockExpressionImpl blockExpression = new BlockExpressionImpl();
 		return blockExpression;
@@ -196,6 +202,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FunctionTermExpression createFunctionTermExpression() {
 		FunctionTermExpressionImpl functionTermExpression = new FunctionTermExpressionImpl();
 		return functionTermExpression;
@@ -206,6 +213,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LogicalExpression createLogicalExpression() {
 		LogicalExpressionImpl logicalExpression = new LogicalExpressionImpl();
 		return logicalExpression;
@@ -216,6 +224,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedTermExpression createQualifiedTermExpression() {
 		QualifiedTermExpressionImpl qualifiedTermExpression = new QualifiedTermExpressionImpl();
 		return qualifiedTermExpression;
@@ -226,6 +235,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RelationalExpression createRelationalExpression() {
 		RelationalExpressionImpl relationalExpression = new RelationalExpressionImpl();
 		return relationalExpression;
@@ -356,6 +366,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExpressionPackage getExpressionPackage() {
 		return (ExpressionPackage)getEPackage();
 	}

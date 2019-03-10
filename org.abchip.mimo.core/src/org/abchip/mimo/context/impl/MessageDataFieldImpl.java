@@ -120,6 +120,7 @@ public class MessageDataFieldImpl<DD extends DataDef<?>> extends EntityImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataDef<?> getDefinition() {
 		return definition;
 	}
@@ -144,6 +145,7 @@ public class MessageDataFieldImpl<DD extends DataDef<?>> extends EntityImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefinition(DataDef<?> newDefinition) {
 		if (newDefinition != definition) {
 			NotificationChain msgs = null;
@@ -249,7 +251,7 @@ public class MessageDataFieldImpl<DD extends DataDef<?>> extends EntityImpl impl
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (outputMask: ");
 		result.append(outputMask);
 		result.append(')');

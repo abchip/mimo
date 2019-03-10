@@ -81,6 +81,7 @@ public class ArrayExpressionImpl extends ExpressionImpl implements ArrayExpressi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<Expression> getExpression() {
 		if (expression == null) {
 			expression = new EObjectContainmentEList<Expression>(Expression.class, this, ExpressionPackage.ARRAY_EXPRESSION__EXPRESSION);

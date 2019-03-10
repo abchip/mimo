@@ -152,6 +152,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceConfig getConfig() {
 		return config;
 	}
@@ -176,6 +177,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConfig(ServiceConfig newConfig) {
 		if (newConfig != config) {
 			NotificationChain msgs = null;
@@ -195,6 +197,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<ServiceCommandProvider> getCommands() {
 		if (commands == null) {
 			commands = new EObjectContainmentEList<ServiceCommandProvider>(ServiceCommandProvider.class, this, ApplicationPackage.APPLICATION_COMPONENT__COMMANDS);
@@ -281,6 +284,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContext(Context newContext) {
 		if (newContext != context) {
 			NotificationChain msgs = null;
@@ -438,7 +442,7 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

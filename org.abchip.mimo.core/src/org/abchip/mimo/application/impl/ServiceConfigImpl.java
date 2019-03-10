@@ -74,6 +74,7 @@ public class ServiceConfigImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<Entity> getEntities() {
 		if (entities == null) {
 			entities = new EObjectContainmentEList<Entity>(Entity.class, this, ApplicationPackage.SERVICE_CONFIG__ENTITIES);

@@ -274,7 +274,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link EntityPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -288,17 +288,24 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		if (isInited) return (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Obtain or create and register package
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EntityPackageImpl());
+		Object registeredEntityPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		EntityPackageImpl theEntityPackage = registeredEntityPackage instanceof EntityPackageImpl ? (EntityPackageImpl)registeredEntityPackage : new EntityPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) instanceof MimoPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) : MimoPackage.eINSTANCE);
-		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) : ContextPackage.eINSTANCE);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
-		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) : NetPackage.eINSTANCE);
-		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
+		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
+		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEntityPackage.createPackageContents();
@@ -321,7 +328,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Mark meta-data to indicate it can't be changed
 		theEntityPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(EntityPackage.eNS_URI, theEntityPackage);
 		return theEntityPackage;
@@ -332,6 +338,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCardinality() {
 		return cardinalityEClass;
 	}
@@ -341,6 +348,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCardinality_Max() {
 		return (EAttribute)cardinalityEClass.getEStructuralFeatures().get(0);
 	}
@@ -350,6 +358,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCardinality_Min() {
 		return (EAttribute)cardinalityEClass.getEStructuralFeatures().get(1);
 	}
@@ -359,6 +368,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDefault() {
 		return defaultEClass;
 	}
@@ -368,6 +378,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDefault_Value() {
 		return (EAttribute)defaultEClass.getEStructuralFeatures().get(0);
 	}
@@ -377,6 +388,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDefault_Values() {
 		return (EAttribute)defaultEClass.getEStructuralFeatures().get(1);
 	}
@@ -386,6 +398,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -395,6 +408,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityIterator() {
 		return entityIteratorEClass;
 	}
@@ -404,6 +418,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityNameable() {
 		return entityNameableEClass;
 	}
@@ -413,6 +428,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityReader() {
 		return entityReaderEClass;
 	}
@@ -422,6 +438,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityReader_ContextProvider() {
 		return (EReference)entityReaderEClass.getEStructuralFeatures().get(0);
 	}
@@ -431,6 +448,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityReader_Notifier() {
 		return (EReference)entityReaderEClass.getEStructuralFeatures().get(1);
 	}
@@ -440,6 +458,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityReader_Frame() {
 		return (EReference)entityReaderEClass.getEStructuralFeatures().get(2);
 	}
@@ -449,6 +468,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityWriter() {
 		return entityWriterEClass;
 	}
@@ -458,6 +478,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFacet() {
 		return facetEClass;
 	}
@@ -467,6 +488,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFrame() {
 		return frameEClass;
 	}
@@ -476,6 +498,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFrameManager() {
 		return frameManagerEClass;
 	}
@@ -485,6 +508,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNameable() {
 		return nameableEClass;
 	}
@@ -494,6 +518,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResource() {
 		return resourceEClass;
 	}
@@ -503,6 +528,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getResource_Name() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(0);
 	}
@@ -512,6 +538,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getResource_Text() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(1);
 	}
@@ -521,6 +548,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResourceEvent() {
 		return resourceEventEClass;
 	}
@@ -530,6 +558,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResourceListener() {
 		return resourceListenerEClass;
 	}
@@ -539,6 +568,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResourceManager() {
 		return resourceManagerEClass;
 	}
@@ -548,6 +578,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResourceNotifier() {
 		return resourceNotifierEClass;
 	}
@@ -557,6 +588,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResourceSerializer() {
 		return resourceSerializerEClass;
 	}
@@ -566,6 +598,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getResourceSerializer_ContextProvider() {
 		return (EReference)resourceSerializerEClass.getEStructuralFeatures().get(0);
 	}
@@ -575,6 +608,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getResourceSerializer_Frame() {
 		return (EReference)resourceSerializerEClass.getEStructuralFeatures().get(1);
 	}
@@ -584,6 +618,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityProvider() {
 		return entityProviderEClass;
 	}
@@ -593,6 +628,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityProviderRegistry() {
 		return entityProviderRegistryEClass;
 	}
@@ -602,6 +638,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSlot() {
 		return slotEClass;
 	}
@@ -611,6 +648,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTextable() {
 		return textableEClass;
 	}
@@ -620,6 +658,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getResourceEventType() {
 		return resourceEventTypeEEnum;
 	}
@@ -629,6 +668,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getResourceScope() {
 		return resourceScopeEEnum;
 	}
@@ -638,6 +678,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getResourceType() {
 		return resourceTypeEEnum;
 	}
@@ -647,6 +688,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getSerializationType() {
 		return serializationTypeEEnum;
 	}
@@ -656,6 +698,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityFactory getEntityFactory() {
 		return (EntityFactory)getEFactoryInstance();
 	}
@@ -1080,6 +1123,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		op = addEOperation(frameEClass, this.getSlot(), "getSlot", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(frameEClass, this.getSlot(), "getSlotName", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(frameEClass, this.getSlot(), "getSlots", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(frameEClass, null, "getSuperFrames", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -1094,6 +1139,11 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(frameEClass, ecorePackage.getEBoolean(), "isAbstract", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(frameEClass, null, "unsetValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(frameEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(frameManagerEClass, FrameManager.class, "FrameManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

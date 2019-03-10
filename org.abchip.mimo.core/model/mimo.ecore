@@ -823,6 +823,7 @@
       <eOperations name="getSlot" lowerBound="1" eType="#//entity/Slot">
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="getSlotName" lowerBound="1" eType="#//entity/Slot"/>
       <eOperations name="getSlots" upperBound="-1" eType="#//entity/Slot"/>
       <eOperations name="getSuperFrames" upperBound="-1">
         <eGenericType eClassifier="#//entity/Frame">
@@ -836,6 +837,12 @@
         <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
       </eOperations>
       <eOperations name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="unsetValue">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/Frame/E"/>
+        </eParameters>
+        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FrameManager" abstract="true" interface="true">
       <eOperations name="createEntity" lowerBound="1">

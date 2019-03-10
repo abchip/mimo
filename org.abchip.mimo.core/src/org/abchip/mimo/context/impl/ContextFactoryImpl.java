@@ -130,6 +130,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContextDescription createContextDescription() {
 		ContextDescriptionImpl contextDescription = new ContextDescriptionImpl();
 		return contextDescription;
@@ -140,6 +141,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T extends Entity> Identity<T> createIdentity() {
 		IdentityImpl<T> identity = new IdentityImpl<T>();
 		return identity;
@@ -150,6 +152,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageDescription createMessageDescription() {
 		MessageDescriptionImpl messageDescription = new MessageDescriptionImpl();
 		return messageDescription;
@@ -160,6 +163,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <DD extends DataDef<?>> MessageDataField<DD> createMessageDataField() {
 		MessageDataFieldImpl<DD> messageDataField = new MessageDataFieldImpl<DD>();
 		return messageDataField;
@@ -170,6 +174,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageFile createMessageFile() {
 		MessageFileImpl messageFile = new MessageFileImpl();
 		return messageFile;
@@ -180,6 +185,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UserProfile createUserProfile() {
 		UserProfileImpl userProfile = new UserProfileImpl();
 		return userProfile;
@@ -286,6 +292,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContextPackage getContextPackage() {
 		return (ContextPackage)getEPackage();
 	}

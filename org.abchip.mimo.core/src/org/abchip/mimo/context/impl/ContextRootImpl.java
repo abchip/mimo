@@ -48,6 +48,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T> T get(Class<T> klass, String filter) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -59,6 +60,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T> List<T> getAll(Class<T> klass) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -70,6 +72,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T> List<T> getAll(Class<T> klass, String filter) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -81,6 +84,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public URL getResource(Class<?> context, String path) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -92,6 +96,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<URL> getResources(Class<?> context, String path) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -103,6 +108,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Class<?> loadClass(String name) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -114,6 +120,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

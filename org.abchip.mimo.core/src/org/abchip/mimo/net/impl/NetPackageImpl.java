@@ -82,7 +82,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link NetPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -96,17 +96,24 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		if (isInited) return (NetPackage)EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 
 		// Obtain or create and register package
-		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new NetPackageImpl());
+		Object registeredNetPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		NetPackageImpl theNetPackage = registeredNetPackage instanceof NetPackageImpl ? (NetPackageImpl)registeredNetPackage : new NetPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) instanceof MimoPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) : MimoPackage.eINSTANCE);
-		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) : ContextPackage.eINSTANCE);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) : EntityPackage.eINSTANCE);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
-		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
+		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
+		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theNetPackage.createPackageContents();
@@ -129,7 +136,6 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		// Mark meta-data to indicate it can't be changed
 		theNetPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(NetPackage.eNS_URI, theNetPackage);
 		return theNetPackage;
@@ -140,6 +146,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSocketConfig() {
 		return socketConfigEClass;
 	}
@@ -149,6 +156,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSocketConfig_Address() {
 		return (EAttribute)socketConfigEClass.getEStructuralFeatures().get(0);
 	}
@@ -158,6 +166,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSocketConfig_Port() {
 		return (EAttribute)socketConfigEClass.getEStructuralFeatures().get(1);
 	}
@@ -167,6 +176,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NetFactory getNetFactory() {
 		return (NetFactory)getEFactoryInstance();
 	}

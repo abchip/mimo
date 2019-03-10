@@ -12,9 +12,9 @@
     <nestedGenPackages prefix="Application" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="mimo.ecore#//application">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ServiceStatus">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Active"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Stopped"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Testing"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/ACT"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/STP"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/TST"/>
       </genEnums>
       <genClasses ecoreClass="mimo.ecore#//application/Application">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/commands"/>
@@ -86,20 +86,16 @@
     <nestedGenPackages prefix="Context" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//context">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/CapabilityRight">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/Read"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/Write"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/Execute"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/READ"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/WRITE"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/EXEC"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/LockType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Read"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Write"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/READ"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/WRITE"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/UserClass">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/User"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/Sysopr"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/Pgmr"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/Secadm"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/Secofr"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/USER"/>
       </genEnums>
       <genDataTypes ecoreDataType="mimo.ecore#//context/MessageVariableList"/>
       <genDataTypes ecoreDataType="mimo.ecore#//context/MessageException"/>
@@ -389,23 +385,27 @@
     <nestedGenPackages prefix="Entity" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" contentTypeIdentifier="" ecorePackage="mimo.ecore#//entity">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/ResourceEventType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PreSave"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PostSave"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PreDelete"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PostDelete"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PreRename"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PostRename"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PRESAVE"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/POSTSAVE"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PREDLT"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/POSTDLT"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PRERNM"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/POSTRNM"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/ResourceScope">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/All"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/Context"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/User"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/Root"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/ALL"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/CTX"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/USER"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/ROOT"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/ResourceType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/Production"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/Test"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/Temporary"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/PROD"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/TEST"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/TEMP"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/SerializationType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/XMI"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/JSON"/>
       </genEnums>
       <genClasses ecoreClass="mimo.ecore#//entity/Cardinality">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Cardinality/max"/>
@@ -541,6 +541,7 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlot">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getSlot/name"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlotName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlots"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSuperFrames"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getValue">
@@ -548,6 +549,10 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/slot"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/isAbstract"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/unsetValue">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/unsetValue/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/unsetValue/slot"/>
+        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/FrameManager">
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/createEntity">
@@ -649,6 +654,24 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.2/scope"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.2/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getResourceSerializer">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2/E"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/ResourceNotifier">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceNotifier/E"/>
@@ -659,6 +682,28 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceNotifier/registerListener">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceNotifier/registerListener/listener"/>
         </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//entity/ResourceSerializer">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceSerializer/E"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference mimo.ecore#//entity/ResourceSerializer/contextProvider"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference mimo.ecore#//entity/ResourceSerializer/frame"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/add">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/add/entity"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/addAll">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/addAll/entities"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/clear"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/load">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/load/inputStream"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/save">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/save/outputStream"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/get"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/getAll"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Slot">
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getCardinality"/>
@@ -871,9 +916,9 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Net" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="mimo.ecore#//net">
-      <genClasses ecoreClass="mimo.ecore#//net/Socket">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/Socket/address"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/Socket/port"/>
+      <genClasses ecoreClass="mimo.ecore#//net/SocketConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/SocketConfig/address"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/SocketConfig/port"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Util" basePackage="org.abchip.mimo" disposableProviderFactory="true"

@@ -191,6 +191,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<ServiceCommandProvider> getCommands() {
 		if (commands == null) {
 			commands = new EObjectContainmentEList<ServiceCommandProvider>(ServiceCommandProvider.class, this, ApplicationPackage.APPLICATION__COMMANDS);
@@ -216,6 +217,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceConfig getConfig() {
 		return config;
 	}
@@ -240,6 +242,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConfig(ServiceConfig newConfig) {
 		if (newConfig != config) {
 			NotificationChain msgs = null;
@@ -295,6 +298,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPort() {
 		return port;
 	}
@@ -304,6 +308,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPort(int newPort) {
 		int oldPort = port;
 		port = newPort;
@@ -365,6 +370,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContext(ContextRoot newContext) {
 		if (newContext != context) {
 			NotificationChain msgs = null;
@@ -384,6 +390,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContextDescription getContextDescription() {
 		return contextDescription;
 	}
@@ -408,6 +415,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContextDescription(ContextDescription newContextDescription) {
 		if (newContextDescription != contextDescription) {
 			NotificationChain msgs = null;
@@ -597,7 +605,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", port: ");

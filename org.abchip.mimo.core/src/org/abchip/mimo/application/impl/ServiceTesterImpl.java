@@ -76,6 +76,7 @@ public class ServiceTesterImpl extends ServiceRefImpl implements ServiceTester {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getInterfaceName() {
 		return interfaceName;
 	}
@@ -117,7 +118,7 @@ public class ServiceTesterImpl extends ServiceRefImpl implements ServiceTester {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (interfaceName: ");
 		result.append(interfaceName);
 		result.append(')');

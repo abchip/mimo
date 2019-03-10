@@ -15,6 +15,8 @@ import java.net.URI;
 
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -61,6 +63,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getResource() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -69,13 +72,20 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		@SuppressWarnings("unchecked")
+		Frame<EntityNameable> frame = (Frame<EntityNameable>) isa();
+		Slot slotName = frame.getSlotName();
+		if(slotName == null)
+			throw new UnsupportedOperationException();
+		
+		System.out.println(frame.getValue(this, slotName).toString());
+		
+		return frame.getValue(this, slotName).toString();
 	}
 
 } // EntityNameableImpl

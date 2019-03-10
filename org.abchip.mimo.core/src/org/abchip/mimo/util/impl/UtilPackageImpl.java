@@ -559,7 +559,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link UtilPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -573,17 +573,24 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		if (isInited) return (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 
 		// Obtain or create and register package
-		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new UtilPackageImpl());
+		Object registeredUtilPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		UtilPackageImpl theUtilPackage = registeredUtilPackage instanceof UtilPackageImpl ? (UtilPackageImpl)registeredUtilPackage : new UtilPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) instanceof MimoPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) : MimoPackage.eINSTANCE);
-		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI) : ContextPackage.eINSTANCE);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) : EntityPackage.eINSTANCE);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
-		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) : NetPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
+		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
+		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theUtilPackage.createPackageContents();
@@ -606,7 +613,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		// Mark meta-data to indicate it can't be changed
 		theUtilPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(UtilPackage.eNS_URI, theUtilPackage);
 		return theUtilPackage;
@@ -617,6 +623,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBinaryDef() {
 		return binaryDefEClass;
 	}
@@ -626,6 +633,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBinaryDef_Type() {
 		return (EAttribute)binaryDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -635,6 +643,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBinaryDef_Unsigned() {
 		return (EAttribute)binaryDefEClass.getEStructuralFeatures().get(1);
 	}
@@ -644,6 +653,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCharacterDef() {
 		return characterDefEClass;
 	}
@@ -653,6 +663,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCharacterDef_Length() {
 		return (EAttribute)characterDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -662,6 +673,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCharacterDef_Varying() {
 		return (EAttribute)characterDefEClass.getEStructuralFeatures().get(1);
 	}
@@ -671,6 +683,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getClasses() {
 		return classesEClass;
 	}
@@ -680,6 +693,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDataDef() {
 		return dataDefEClass;
 	}
@@ -689,6 +703,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataDef_Formulas() {
 		return (EAttribute)dataDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -698,6 +713,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDatetimeDef() {
 		return datetimeDefEClass;
 	}
@@ -707,6 +723,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDatetimeDef_Type() {
 		return (EAttribute)datetimeDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -716,6 +733,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDatetimeDef_DateFormat() {
 		return (EAttribute)datetimeDefEClass.getEStructuralFeatures().get(1);
 	}
@@ -725,6 +743,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDatetimeDef_TimeFormat() {
 		return (EAttribute)datetimeDefEClass.getEStructuralFeatures().get(2);
 	}
@@ -734,6 +753,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDecimalDef() {
 		return decimalDefEClass;
 	}
@@ -743,6 +763,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDecimalDef_Precision() {
 		return (EAttribute)decimalDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -752,6 +773,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDecimalDef_Scale() {
 		return (EAttribute)decimalDefEClass.getEStructuralFeatures().get(1);
 	}
@@ -761,6 +783,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDecimalDef_Type() {
 		return (EAttribute)decimalDefEClass.getEStructuralFeatures().get(2);
 	}
@@ -770,6 +793,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFiles() {
 		return filesEClass;
 	}
@@ -779,6 +803,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFloatingDef() {
 		return floatingDefEClass;
 	}
@@ -788,6 +813,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFloatingDef_Type() {
 		return (EAttribute)floatingDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -797,6 +823,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIdentityDef() {
 		return identityDefEClass;
 	}
@@ -806,6 +833,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaByteBuffer() {
 		return javaByteBufferEClass;
 	}
@@ -815,6 +843,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaBlockingQueue() {
 		return javaBlockingQueueEClass;
 	}
@@ -824,6 +853,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaCallable() {
 		return javaCallableEClass;
 	}
@@ -833,6 +863,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaCharset() {
 		return javaCharsetEClass;
 	}
@@ -842,6 +873,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaCloseable() {
 		return javaCloseableEClass;
 	}
@@ -851,6 +883,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaConcurrentMap() {
 		return javaConcurrentMapEClass;
 	}
@@ -860,6 +893,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaEnum() {
 		return javaEnumEClass;
 	}
@@ -869,6 +903,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaExecutorService() {
 		return javaExecutorServiceEClass;
 	}
@@ -878,6 +913,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaFile() {
 		return javaFileEClass;
 	}
@@ -887,6 +923,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaIterable() {
 		return javaIterableEClass;
 	}
@@ -896,6 +933,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaIterator() {
 		return javaIteratorEClass;
 	}
@@ -905,6 +943,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaList() {
 		return javaListEClass;
 	}
@@ -914,6 +953,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaNumber() {
 		return javaNumberEClass;
 	}
@@ -923,6 +963,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaPrincipal() {
 		return javaPrincipalEClass;
 	}
@@ -932,6 +973,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaRunnable() {
 		return javaRunnableEClass;
 	}
@@ -941,6 +983,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaThread() {
 		return javaThreadEClass;
 	}
@@ -950,6 +993,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaThreadGroup() {
 		return javaThreadGroupEClass;
 	}
@@ -959,6 +1003,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaThreadInfo() {
 		return javaThreadInfoEClass;
 	}
@@ -968,6 +1013,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLists() {
 		return listsEClass;
 	}
@@ -977,6 +1023,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNumericDef() {
 		return numericDefEClass;
 	}
@@ -986,6 +1033,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSingleton() {
 		return singletonEClass;
 	}
@@ -995,6 +1043,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStreams() {
 		return streamsEClass;
 	}
@@ -1004,6 +1053,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStringDef() {
 		return stringDefEClass;
 	}
@@ -1013,6 +1063,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStrings() {
 		return stringsEClass;
 	}
@@ -1022,6 +1073,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getThread() {
 		return threadEClass;
 	}
@@ -1031,6 +1083,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getThreads() {
 		return threadsEClass;
 	}
@@ -1040,6 +1093,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getThreadInfo() {
 		return threadInfoEClass;
 	}
@@ -1049,6 +1103,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadName() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(0);
 	}
@@ -1058,6 +1113,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadId() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(1);
 	}
@@ -1067,6 +1123,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadPriority() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(2);
 	}
@@ -1076,6 +1133,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadCPUUsage() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(3);
 	}
@@ -1085,6 +1143,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadStatus() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(4);
 	}
@@ -1094,6 +1153,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadRunnable() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(5);
 	}
@@ -1103,6 +1163,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadInterrupted() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(6);
 	}
@@ -1112,6 +1173,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadNative() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(7);
 	}
@@ -1121,6 +1183,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadSuspended() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(8);
 	}
@@ -1130,6 +1193,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getThreadInfo_ThreadDaemon() {
 		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(9);
 	}
@@ -1139,6 +1203,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getThreadManager() {
 		return threadManagerEClass;
 	}
@@ -1148,6 +1213,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getURIs() {
 		return urIsEClass;
 	}
@@ -1157,6 +1223,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getBinaryType() {
 		return binaryTypeEEnum;
 	}
@@ -1166,6 +1233,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getDataDefType() {
 		return dataDefTypeEEnum;
 	}
@@ -1175,6 +1243,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getDatetimeType() {
 		return datetimeTypeEEnum;
 	}
@@ -1184,6 +1253,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getDateFormat() {
 		return dateFormatEEnum;
 	}
@@ -1193,6 +1263,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getDecimalType() {
 		return decimalTypeEEnum;
 	}
@@ -1202,6 +1273,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getFloatingType() {
 		return floatingTypeEEnum;
 	}
@@ -1211,6 +1283,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getThreadStatus() {
 		return threadStatusEEnum;
 	}
@@ -1220,6 +1293,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTimeFormat() {
 		return timeFormatEEnum;
 	}
@@ -1229,6 +1303,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaAnnotation() {
 		return javaAnnotationEDataType;
 	}
@@ -1238,6 +1313,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaDictionary() {
 		return javaDictionaryEDataType;
 	}
@@ -1247,6 +1323,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaException() {
 		return javaExceptionEDataType;
 	}
@@ -1256,6 +1333,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaInputStream() {
 		return javaInputStreamEDataType;
 	}
@@ -1265,6 +1343,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaIOException() {
 		return javaIOExceptionEDataType;
 	}
@@ -1274,6 +1353,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaMap() {
 		return javaMapEDataType;
 	}
@@ -1283,6 +1363,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaOutputStream() {
 		return javaOutputStreamEDataType;
 	}
@@ -1292,6 +1373,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaProperties() {
 		return javaPropertiesEDataType;
 	}
@@ -1301,6 +1383,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaThrowable() {
 		return javaThrowableEDataType;
 	}
@@ -1310,6 +1393,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaType() {
 		return javaTypeEDataType;
 	}
@@ -1319,6 +1403,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaURI() {
 		return javaURIEDataType;
 	}
@@ -1328,6 +1413,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaURL() {
 		return javaURLEDataType;
 	}
@@ -1337,6 +1423,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaWriter() {
 		return javaWriterEDataType;
 	}
@@ -1346,6 +1433,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJavaSerializable() {
 		return javaSerializableEClass;
 	}
@@ -1355,6 +1443,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UtilFactory getUtilFactory() {
 		return (UtilFactory)getEFactoryInstance();
 	}

@@ -274,7 +274,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ContextPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -288,17 +288,24 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		if (isInited) return (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ContextPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ContextPackageImpl());
+		Object registeredContextPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ContextPackageImpl theContextPackage = registeredContextPackage instanceof ContextPackageImpl ? (ContextPackageImpl)registeredContextPackage : new ContextPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) instanceof MimoPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI) : MimoPackage.eINSTANCE);
-		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) instanceof EntityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI) : EntityPackage.eINSTANCE);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
-		NetPackageImpl theNetPackage = (NetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) instanceof NetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI) : NetPackage.eINSTANCE);
-		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
+		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
+		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theContextPackage.createPackageContents();
@@ -321,7 +328,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		// Mark meta-data to indicate it can't be changed
 		theContextPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ContextPackage.eNS_URI, theContextPackage);
 		return theContextPackage;
@@ -332,6 +338,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAdapterFactory() {
 		return adapterFactoryEClass;
 	}
@@ -341,6 +348,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAuthentication() {
 		return authenticationEClass;
 	}
@@ -350,6 +358,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAuthenticationManager() {
 		return authenticationManagerEClass;
 	}
@@ -359,6 +368,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAuthenticationUserPassword() {
 		return authenticationUserPasswordEClass;
 	}
@@ -368,6 +378,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationUserPassword_User() {
 		return (EAttribute)authenticationUserPasswordEClass.getEStructuralFeatures().get(0);
 	}
@@ -377,6 +388,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationUserPassword_Password() {
 		return (EAttribute)authenticationUserPasswordEClass.getEStructuralFeatures().get(1);
 	}
@@ -386,6 +398,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCapability() {
 		return capabilityEClass;
 	}
@@ -395,6 +408,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCapability_Rights() {
 		return (EAttribute)capabilityEClass.getEStructuralFeatures().get(0);
 	}
@@ -404,6 +418,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCapability_EntityURI() {
 		return (EAttribute)capabilityEClass.getEStructuralFeatures().get(1);
 	}
@@ -413,6 +428,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getContext() {
 		return contextEClass;
 	}
@@ -422,6 +438,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getContextRoot() {
 		return contextRootEClass;
 	}
@@ -431,6 +448,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getContextDescription() {
 		return contextDescriptionEClass;
 	}
@@ -440,6 +458,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getContextDescription_Name() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(0);
 	}
@@ -449,6 +468,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getContextDescription_Resources() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(1);
 	}
@@ -458,6 +478,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getContextDescription_ResourceRoot() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(2);
 	}
@@ -467,6 +488,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getContextDescription_ResourceTemporary() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(3);
 	}
@@ -476,6 +498,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getContextProvider() {
 		return contextProviderEClass;
 	}
@@ -485,6 +508,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityLocker() {
 		return entityLockerEClass;
 	}
@@ -494,6 +518,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExceptionManager() {
 		return exceptionManagerEClass;
 	}
@@ -503,6 +528,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIdentity() {
 		return identityEClass;
 	}
@@ -512,6 +538,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLockManager() {
 		return lockManagerEClass;
 	}
@@ -521,6 +548,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLogger() {
 		return loggerEClass;
 	}
@@ -530,6 +558,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageDescription() {
 		return messageDescriptionEClass;
 	}
@@ -539,6 +568,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageDescription_Name() {
 		return (EAttribute)messageDescriptionEClass.getEStructuralFeatures().get(0);
 	}
@@ -548,6 +578,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageDescription_Severity() {
 		return (EAttribute)messageDescriptionEClass.getEStructuralFeatures().get(1);
 	}
@@ -557,6 +588,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageDescription_MessageHelp() {
 		return (EAttribute)messageDescriptionEClass.getEStructuralFeatures().get(2);
 	}
@@ -566,6 +598,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageDescription_MessageText() {
 		return (EAttribute)messageDescriptionEClass.getEStructuralFeatures().get(3);
 	}
@@ -575,6 +608,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageDescription_MessageDataFields() {
 		return (EReference)messageDescriptionEClass.getEStructuralFeatures().get(4);
 	}
@@ -584,6 +618,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageDataField() {
 		return messageDataFieldEClass;
 	}
@@ -593,6 +628,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageDataField_OutputMask() {
 		return (EAttribute)messageDataFieldEClass.getEStructuralFeatures().get(0);
 	}
@@ -602,6 +638,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageDataField_Definition() {
 		return (EReference)messageDataFieldEClass.getEStructuralFeatures().get(1);
 	}
@@ -611,6 +648,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageFile() {
 		return messageFileEClass;
 	}
@@ -620,6 +658,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageFile_Messages() {
 		return (EReference)messageFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -629,6 +668,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageFile_Name() {
 		return (EAttribute)messageFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -638,6 +678,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageFile_Text() {
 		return (EAttribute)messageFileEClass.getEStructuralFeatures().get(2);
 	}
@@ -647,6 +688,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRegistry() {
 		return registryEClass;
 	}
@@ -656,6 +698,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRegistryFactory() {
 		return registryFactoryEClass;
 	}
@@ -665,6 +708,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getUserProfile() {
 		return userProfileEClass;
 	}
@@ -674,6 +718,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUserProfile_JobDescription() {
 		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(0);
 	}
@@ -683,6 +728,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUserProfile_Name() {
 		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(1);
 	}
@@ -692,6 +738,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUserProfile_Text() {
 		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(2);
 	}
@@ -701,6 +748,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUserProfile_UserClass() {
 		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(3);
 	}
@@ -710,6 +758,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getCapabilityRight() {
 		return capabilityRightEEnum;
 	}
@@ -719,6 +768,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getLockType() {
 		return lockTypeEEnum;
 	}
@@ -728,6 +778,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getUserClass() {
 		return userClassEEnum;
 	}
@@ -737,6 +788,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getMessageVariableList() {
 		return messageVariableListEDataType;
 	}
@@ -746,6 +798,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getMessageException() {
 		return messageExceptionEDataType;
 	}
@@ -755,6 +808,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContextFactory getContextFactory() {
 		return (ContextFactory)getEFactoryInstance();
 	}

@@ -129,6 +129,7 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatetimeType getType() {
 		return type;
 	}
@@ -138,6 +139,7 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(DatetimeType newType) {
 		DatetimeType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -150,6 +152,7 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DateFormat getDateFormat() {
 		return dateFormat;
 	}
@@ -159,6 +162,7 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDateFormat(DateFormat newDateFormat) {
 		DateFormat oldDateFormat = dateFormat;
 		dateFormat = newDateFormat == null ? DATE_FORMAT_EDEFAULT : newDateFormat;
@@ -171,6 +175,7 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TimeFormat getTimeFormat() {
 		return timeFormat;
 	}
@@ -180,6 +185,7 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTimeFormat(TimeFormat newTimeFormat) {
 		TimeFormat oldTimeFormat = timeFormat;
 		timeFormat = newTimeFormat == null ? TIME_FORMAT_EDEFAULT : newTimeFormat;
@@ -274,7 +280,7 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
 		result.append(", dateFormat: ");

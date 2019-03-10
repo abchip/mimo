@@ -250,6 +250,7 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -373,7 +374,7 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", severity: ");

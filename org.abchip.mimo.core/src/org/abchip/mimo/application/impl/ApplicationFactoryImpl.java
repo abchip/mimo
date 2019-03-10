@@ -117,6 +117,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Application createApplication() {
 		ApplicationImpl application = new ApplicationImpl();
 		return application;
@@ -127,6 +128,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ApplicationComponent createApplicationComponent() {
 		ApplicationComponentImpl applicationComponent = new ApplicationComponentImpl();
 		return applicationComponent;
@@ -137,6 +139,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ApplicationModule createApplicationModule() {
 		ApplicationModuleImpl applicationModule = new ApplicationModuleImpl();
 		return applicationModule;
@@ -147,6 +150,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceCommandProvider createServiceCommandProvider() {
 		ServiceCommandProviderImpl serviceCommandProvider = new ServiceCommandProviderImpl();
 		return serviceCommandProvider;
@@ -157,6 +161,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceConfig createServiceConfig() {
 		ServiceConfigImpl serviceConfig = new ServiceConfigImpl();
 		return serviceConfig;
@@ -167,6 +172,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceHook createServiceHook() {
 		ServiceHookImpl serviceHook = new ServiceHookImpl();
 		return serviceHook;
@@ -177,6 +183,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceExecutor createServiceExecutor() {
 		ServiceExecutorImpl serviceExecutor = new ServiceExecutorImpl();
 		return serviceExecutor;
@@ -187,6 +194,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceResourceListener createServiceResourceListener() {
 		ServiceResourceListenerImpl serviceResourceListener = new ServiceResourceListenerImpl();
 		return serviceResourceListener;
@@ -197,6 +205,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceRegistry createServiceRegistry() {
 		ServiceRegistryImpl serviceRegistry = new ServiceRegistryImpl();
 		return serviceRegistry;
@@ -207,6 +216,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceRegistryEntry createServiceRegistryEntry() {
 		ServiceRegistryEntryImpl serviceRegistryEntry = new ServiceRegistryEntryImpl();
 		return serviceRegistryEntry;
@@ -217,6 +227,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceTester createServiceTester() {
 		ServiceTesterImpl serviceTester = new ServiceTesterImpl();
 		return serviceTester;
@@ -247,6 +258,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ApplicationPackage getApplicationPackage() {
 		return (ApplicationPackage)getEPackage();
 	}

@@ -102,6 +102,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getAddress() {
 		return address;
 	}
@@ -111,6 +112,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAddress(String newAddress) {
 		String oldAddress = address;
 		address = newAddress;
@@ -123,6 +125,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPort() {
 		return port;
 	}
@@ -132,6 +135,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPort(int newPort) {
 		int oldPort = port;
 		port = newPort;
@@ -216,7 +220,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (address: ");
 		result.append(address);
 		result.append(", port: ");

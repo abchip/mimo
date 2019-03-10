@@ -411,10 +411,10 @@ public interface UtilPackage extends EPackage {
 	int JAVA_BYTE_BUFFER_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link java.util.concurrent.BlockingQueue<E> <em>Java Blocking Queue</em>}' class.
+	 * The meta object id for the '{@link java.util.concurrent.BlockingQueue <em>Java Blocking Queue</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.util.concurrent.BlockingQueue<E>
+	 * @see java.util.concurrent.BlockingQueue
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaBlockingQueue()
 	 * @generated
 	 */
@@ -487,10 +487,10 @@ public interface UtilPackage extends EPackage {
 	int JAVA_CLOSEABLE_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link java.util.concurrent.ConcurrentMap<K, V> <em>Java Concurrent Map</em>}' class.
+	 * The meta object id for the '{@link java.util.concurrent.ConcurrentMap <em>Java Concurrent Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.util.concurrent.ConcurrentMap<K, V>
+	 * @see java.util.concurrent.ConcurrentMap
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaConcurrentMap()
 	 * @generated
 	 */
@@ -506,10 +506,10 @@ public interface UtilPackage extends EPackage {
 	int JAVA_CONCURRENT_MAP_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link java.lang.Enum<E> <em>Java Enum</em>}' class.
+	 * The meta object id for the '{@link java.lang.Enum <em>Java Enum</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.lang.Enum<E>
+	 * @see java.lang.Enum
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaEnum()
 	 * @generated
 	 */
@@ -1515,11 +1515,11 @@ public interface UtilPackage extends EPackage {
 	EClass getJavaByteBuffer();
 
 	/**
-	 * Returns the meta object for class '{@link java.util.concurrent.BlockingQueue<E> <em>Java Blocking Queue</em>}'.
+	 * Returns the meta object for class '{@link java.util.concurrent.BlockingQueue <em>Java Blocking Queue</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Java Blocking Queue</em>'.
-	 * @see java.util.concurrent.BlockingQueue<E>
+	 * @see java.util.concurrent.BlockingQueue
 	 * @model instanceClass="java.util.concurrent.BlockingQueue&lt;E&gt;"
 	 * @generated
 	 */
@@ -1559,22 +1559,22 @@ public interface UtilPackage extends EPackage {
 	EClass getJavaCloseable();
 
 	/**
-	 * Returns the meta object for class '{@link java.util.concurrent.ConcurrentMap<K, V> <em>Java Concurrent Map</em>}'.
+	 * Returns the meta object for class '{@link java.util.concurrent.ConcurrentMap <em>Java Concurrent Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Java Concurrent Map</em>'.
-	 * @see java.util.concurrent.ConcurrentMap<K, V>
+	 * @see java.util.concurrent.ConcurrentMap
 	 * @model instanceClass="java.util.concurrent.ConcurrentMap&lt;K, V&gt;"
 	 * @generated
 	 */
 	EClass getJavaConcurrentMap();
 
 	/**
-	 * Returns the meta object for class '{@link java.lang.Enum<E> <em>Java Enum</em>}'.
+	 * Returns the meta object for class '{@link java.lang.Enum <em>Java Enum</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Java Enum</em>'.
-	 * @see java.lang.Enum<E>
+	 * @see java.lang.Enum
 	 * @model instanceClass="java.lang.Enum&lt;E&gt;"
 	 * @generated
 	 */
@@ -2374,10 +2374,10 @@ public interface UtilPackage extends EPackage {
 		EClass JAVA_BYTE_BUFFER = eINSTANCE.getJavaByteBuffer();
 
 		/**
-		 * The meta object literal for the '{@link java.util.concurrent.BlockingQueue<E> <em>Java Blocking Queue</em>}' class.
+		 * The meta object literal for the '{@link java.util.concurrent.BlockingQueue <em>Java Blocking Queue</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.util.concurrent.BlockingQueue<E>
+		 * @see java.util.concurrent.BlockingQueue
 		 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaBlockingQueue()
 		 * @generated
 		 */
@@ -2414,20 +2414,20 @@ public interface UtilPackage extends EPackage {
 		EClass JAVA_CLOSEABLE = eINSTANCE.getJavaCloseable();
 
 		/**
-		 * The meta object literal for the '{@link java.util.concurrent.ConcurrentMap<K, V> <em>Java Concurrent Map</em>}' class.
+		 * The meta object literal for the '{@link java.util.concurrent.ConcurrentMap <em>Java Concurrent Map</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.util.concurrent.ConcurrentMap<K, V>
+		 * @see java.util.concurrent.ConcurrentMap
 		 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaConcurrentMap()
 		 * @generated
 		 */
 		EClass JAVA_CONCURRENT_MAP = eINSTANCE.getJavaConcurrentMap();
 
 		/**
-		 * The meta object literal for the '{@link java.lang.Enum<E> <em>Java Enum</em>}' class.
+		 * The meta object literal for the '{@link java.lang.Enum <em>Java Enum</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.Enum<E>
+		 * @see java.lang.Enum
 		 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getJavaEnum()
 		 * @generated
 		 */

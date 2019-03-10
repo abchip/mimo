@@ -134,6 +134,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getInterfaceName() {
 		return interfaceName;
 	}
@@ -143,6 +144,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInterfaceName(String newInterfaceName) {
 		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
@@ -155,6 +157,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -164,6 +167,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -176,6 +180,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getVendor() {
 		return vendor;
 	}
@@ -185,6 +190,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVendor(String newVendor) {
 		String oldVendor = vendor;
 		vendor = newVendor;
@@ -197,6 +203,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getVersion() {
 		return version;
 	}
@@ -206,6 +213,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
@@ -310,7 +318,7 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (interfaceName: ");
 		result.append(interfaceName);
 		result.append(", name: ");

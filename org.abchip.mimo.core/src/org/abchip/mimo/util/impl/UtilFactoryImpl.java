@@ -228,6 +228,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BinaryDef createBinaryDef() {
 		BinaryDefImpl binaryDef = new BinaryDefImpl();
 		return binaryDef;
@@ -238,6 +239,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CharacterDef createCharacterDef() {
 		CharacterDefImpl characterDef = new CharacterDefImpl();
 		return characterDef;
@@ -248,6 +250,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatetimeDef createDatetimeDef() {
 		DatetimeDefImpl datetimeDef = new DatetimeDefImpl();
 		return datetimeDef;
@@ -258,6 +261,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DecimalDef createDecimalDef() {
 		DecimalDefImpl decimalDef = new DecimalDefImpl();
 		return decimalDef;
@@ -268,6 +272,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FloatingDef createFloatingDef() {
 		FloatingDefImpl floatingDef = new FloatingDefImpl();
 		return floatingDef;
@@ -278,6 +283,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IdentityDef createIdentityDef() {
 		IdentityDefImpl identityDef = new IdentityDefImpl();
 		return identityDef;
@@ -288,6 +294,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NumericDef createNumericDef() {
 		NumericDefImpl numericDef = new NumericDefImpl();
 		return numericDef;
@@ -298,6 +305,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StringDef createStringDef() {
 		StringDefImpl stringDef = new StringDefImpl();
 		return stringDef;
@@ -308,6 +316,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ThreadInfo createThreadInfo() {
 		ThreadInfoImpl threadInfo = new ThreadInfoImpl();
 		return threadInfo;
@@ -712,6 +721,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UtilPackage getUtilPackage() {
 		return (UtilPackage)getEPackage();
 	}

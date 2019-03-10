@@ -99,6 +99,7 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<CapabilityRight> getRights() {
 		if (rights == null) {
 			rights = new EDataTypeUniqueEList<CapabilityRight>(CapabilityRight.class, this, ContextPackage.CAPABILITY__RIGHTS);
@@ -111,6 +112,7 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public URI getEntityURI() {
 		return entityURI;
 	}
@@ -120,6 +122,7 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntityURI(URI newEntityURI) {
 		URI oldEntityURI = entityURI;
 		entityURI = newEntityURI;
@@ -215,7 +218,7 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (rights: ");
 		result.append(rights);
 		result.append(", entityURI: ");

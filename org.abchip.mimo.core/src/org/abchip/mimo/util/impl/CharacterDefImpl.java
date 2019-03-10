@@ -103,6 +103,7 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getLength() {
 		return length;
 	}
@@ -112,6 +113,7 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLength(int newLength) {
 		int oldLength = length;
 		length = newLength;
@@ -124,6 +126,7 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isVarying() {
 		return varying;
 	}
@@ -133,6 +136,7 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVarying(boolean newVarying) {
 		boolean oldVarying = varying;
 		varying = newVarying;
@@ -217,7 +221,7 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (length: ");
 		result.append(length);
 		result.append(", varying: ");

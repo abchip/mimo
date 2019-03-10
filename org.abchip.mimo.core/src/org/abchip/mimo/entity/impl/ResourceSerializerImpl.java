@@ -84,6 +84,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContextProvider getContextProvider() {
 		return contextProvider;
 	}
@@ -93,6 +94,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContextProvider(ContextProvider newContextProvider) {
 		ContextProvider oldContextProvider = contextProvider;
 		contextProvider = newContextProvider;
@@ -105,6 +107,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Frame<E> getFrame() {
 		return frame;
 	}
@@ -114,6 +117,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFrame(Frame<E> newFrame) {
 		Frame<E> oldFrame = frame;
 		frame = newFrame;
@@ -126,6 +130,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void add(E entity) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -137,6 +142,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addAll(List<E> entities) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -148,6 +154,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void clear() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -159,6 +166,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void load(InputStream inputStream) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -170,6 +178,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void save(OutputStream outputStream) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -181,6 +190,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public E get() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -192,6 +202,7 @@ public abstract class ResourceSerializerImpl<E extends EntityNameable> extends M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<E> getAll() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

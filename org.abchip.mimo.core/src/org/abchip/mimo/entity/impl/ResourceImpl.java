@@ -96,6 +96,7 @@ public class ResourceImpl extends EntityNameableImpl implements Resource {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -105,6 +106,7 @@ public class ResourceImpl extends EntityNameableImpl implements Resource {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -198,7 +200,7 @@ public class ResourceImpl extends EntityNameableImpl implements Resource {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", text: ");
@@ -212,6 +214,7 @@ public class ResourceImpl extends EntityNameableImpl implements Resource {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -221,6 +224,7 @@ public class ResourceImpl extends EntityNameableImpl implements Resource {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;

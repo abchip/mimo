@@ -83,6 +83,7 @@ public class FloatingDefImpl extends DataDefImpl<Float> implements FloatingDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FloatingType getType() {
 		return type;
 	}
@@ -92,6 +93,7 @@ public class FloatingDefImpl extends DataDefImpl<Float> implements FloatingDef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(FloatingType newType) {
 		FloatingType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -166,7 +168,7 @@ public class FloatingDefImpl extends DataDefImpl<Float> implements FloatingDef {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
 		result.append(')');

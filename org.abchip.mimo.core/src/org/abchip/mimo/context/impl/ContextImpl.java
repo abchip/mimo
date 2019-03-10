@@ -53,6 +53,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void close() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -64,6 +65,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Context createChildContext(String name) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -75,6 +77,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Context createChildContext(ContextDescription contextDescription) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -86,6 +89,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T> T get(Class<T> clazz) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -97,6 +101,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T extends Object> T getAdapter(Object adaptable, Class<T> adapter) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -108,6 +113,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContextDescription getContextDescription() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -119,6 +125,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getID() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -130,6 +137,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void inject(Object object) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -141,6 +149,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isClosed() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -152,6 +161,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <A extends Annotation> void invoke(Object object, Class<A> qualifier) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -163,6 +173,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T> T make(Class<T> klass) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -174,6 +185,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T extends Object> void registerAdapterFactory(AdapterFactory factory, Class<T> adapterType) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -185,6 +197,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String resolveAlias(String value) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -196,6 +209,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> resolveAliases(List<String> values) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -207,6 +221,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T> void set(Class<T> klass, T object) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -218,6 +233,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void set(String name, Object object) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -229,6 +245,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContextRoot getContextRoot() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -240,6 +257,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Context getContext() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

@@ -49,6 +49,14 @@ public interface Frame<E extends Entity> extends EntityNameable {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	Slot getSlotName();
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Slots</em>' reference list isn't clear, there
 	 * really should be more of a description here...
@@ -82,4 +90,12 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @generated
 	 */
 	boolean isAbstract();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model entityRequired="true" slotRequired="true"
+	 * @generated
+	 */
+	void unsetValue(E entity, Slot slot);
 } // Frame

@@ -21,7 +21,9 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.util.Strings;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
@@ -91,7 +93,11 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 	@Override
 	public Frame<?> ako() {
 
-		EClass eAko = this.eClass.getESuperTypes().get(0);
+		EList<EClass> classes = this.eClass.getESuperTypes();
+		if(classes == null || classes.isEmpty())
+			return null;
+		
+		EClass eAko = classes.get(0);
 		return new EMFFrameAdapter(eAko);
 	}
 
@@ -115,6 +121,16 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 	}
 
 	@Override
+	public Slot getSlotName() {
+		
+		EAttribute eAttribute = eClass.getEIDAttribute();
+		if(eAttribute == null)
+			return null;
+		
+		return getSlot(eAttribute.getName());
+	}	
+
+	@Override
 	public Object getValue(E entity, Slot slot) {
 
 		if (entity instanceof EObject)
@@ -123,6 +139,12 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 			return getValue((Object) entity, slot);
 	}
 
+	@Override
+	public void unsetValue(E entity, Slot slot) {
+		if (entity instanceof EObject)
+			unsetValue((EObject) entity, slot);
+	}
+	
 	private Object getValue(EObject eObject, Slot slot) {
 		Object value = null;
 
@@ -155,7 +177,14 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 
 		return value;
 	}
+	
+	private void unsetValue(EObject eObject, Slot slot) {
 
+		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(slot.getName());
+		if (eStructuralFeature != null)
+			eObject.eUnset(eStructuralFeature);
+	}
+	
 	@Override
 	public URI getURI() {
 		return URI.create(EcoreUtil.getURI(eClass).toString());
@@ -182,7 +211,8 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 	}
 	
 	private void addFrames(Frame<?> frame, List<Frame<?>>frames) {
-		if(frame.ako() != null)
-			frames.add(frame.ako());
-	}	
+		Frame<?> ako = frame.ako();
+		if(ako != null)
+			frames.add(ako);
+	}
 }

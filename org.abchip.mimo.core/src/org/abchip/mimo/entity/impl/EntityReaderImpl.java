@@ -100,6 +100,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContextProvider getContextProvider() {
 		return contextProvider;
 	}
@@ -109,6 +110,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContextProvider(ContextProvider newContextProvider) {
 		ContextProvider oldContextProvider = contextProvider;
 		contextProvider = newContextProvider;
@@ -122,6 +124,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public ResourceNotifier<E> getNotifier() {
 		if (notifier != null && ((EObject)notifier).eIsProxy()) {
 			InternalEObject oldNotifier = (InternalEObject)notifier;
@@ -148,6 +151,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNotifier(ResourceNotifier<E> newNotifier) {
 		ResourceNotifier<E> oldNotifier = notifier;
 		notifier = newNotifier;
@@ -160,6 +164,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Frame<E> getFrame() {
 		return frame;
 	}
@@ -169,6 +174,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFrame(Frame<E> newFrame) {
 		Frame<E> oldFrame = frame;
 		frame = newFrame;

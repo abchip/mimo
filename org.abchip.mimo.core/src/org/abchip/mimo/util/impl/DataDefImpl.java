@@ -76,6 +76,7 @@ public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getFormulas() {
 		if (formulas == null) {
 			formulas = new EDataTypeUniqueEList<String>(String.class, this, UtilPackage.DATA_DEF__FORMULAS);
@@ -88,6 +89,7 @@ public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Class<?> getJavaClass() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -99,6 +101,7 @@ public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataDefType getDataDefType() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -174,7 +177,7 @@ public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (formulas: ");
 		result.append(formulas);
 		result.append(')');

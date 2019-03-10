@@ -104,6 +104,7 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUser() {
 		return user;
 	}
@@ -113,6 +114,7 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUser(String newUser) {
 		String oldUser = user;
 		user = newUser;
@@ -125,6 +127,7 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPassword() {
 		return password;
 	}
@@ -134,6 +137,7 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPassword(String newPassword) {
 		String oldPassword = password;
 		password = newPassword;
@@ -218,7 +222,7 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (user: ");
 		result.append(user);
 		result.append(", password: ");

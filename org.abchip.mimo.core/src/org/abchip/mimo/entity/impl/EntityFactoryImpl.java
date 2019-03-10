@@ -122,6 +122,7 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Cardinality createCardinality() {
 		CardinalityImpl cardinality = new CardinalityImpl();
 		return cardinality;
@@ -132,6 +133,7 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Default createDefault() {
 		DefaultImpl default_ = new DefaultImpl();
 		return default_;
@@ -142,6 +144,7 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Resource createResource() {
 		ResourceImpl resource = new ResourceImpl();
 		return resource;
@@ -152,6 +155,7 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <E extends EntityNameable> ResourceNotifier<E> createResourceNotifier() {
 		ResourceNotifierImpl<E> resourceNotifier = new ResourceNotifierImpl<E>();
 		return resourceNotifier;
@@ -242,6 +246,7 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityPackage getEntityPackage() {
 		return (EntityPackage)getEPackage();
 	}

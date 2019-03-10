@@ -96,6 +96,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<ServiceRegistryEntry> getEntries() {
 		if (entries == null) {
 			entries = new EObjectContainmentEList<ServiceRegistryEntry>(ServiceRegistryEntry.class, this, ApplicationPackage.SERVICE_REGISTRY__ENTRIES);
@@ -108,6 +109,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getInterfaceName() {
 		return interfaceName;
 	}
@@ -117,6 +119,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInterfaceName(String newInterfaceName) {
 		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
@@ -217,7 +220,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (interfaceName: ");
 		result.append(interfaceName);
 		result.append(')');

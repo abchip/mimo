@@ -72,6 +72,7 @@ public class MimoFactoryImpl extends EFactoryImpl implements MimoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Mimo createMimo() {
 		MimoImpl mimo = new MimoImpl();
 		return mimo;
@@ -82,6 +83,7 @@ public class MimoFactoryImpl extends EFactoryImpl implements MimoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MimoPackage getMimoPackage() {
 		return (MimoPackage)getEPackage();
 	}

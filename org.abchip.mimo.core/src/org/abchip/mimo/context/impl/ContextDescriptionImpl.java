@@ -127,6 +127,7 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -136,6 +137,7 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -148,6 +150,7 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getResources() {
 		if (resources == null) {
 			resources = new EDataTypeUniqueEList<String>(String.class, this, ContextPackage.CONTEXT_DESCRIPTION__RESOURCES);
@@ -160,6 +163,7 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getResourceRoot() {
 		return resourceRoot;
 	}
@@ -169,6 +173,7 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResourceRoot(String newResourceRoot) {
 		String oldResourceRoot = resourceRoot;
 		resourceRoot = newResourceRoot;
@@ -181,6 +186,7 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getResourceTemporary() {
 		return resourceTemporary;
 	}
@@ -190,6 +196,7 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResourceTemporary(String newResourceTemporary) {
 		String oldResourceTemporary = resourceTemporary;
 		resourceTemporary = newResourceTemporary;
@@ -296,7 +303,7 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", resources: ");
