@@ -40,5 +40,10 @@ public class EMFFrameManagerImpl implements FrameManager {
 	private <E extends Entity, F extends Frame<E>> EntityReader<F> _getFrameReader(ContextProvider contextProvider) {
 		EntityReader<F> frameReader = (EntityReader<F>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames());
 		return frameReader;
+	}
+
+	@Override
+	public Frame<?> getFrame(String name) {
+		return EMFFrameHelper.getFrames().get(name);
 	}	
 }

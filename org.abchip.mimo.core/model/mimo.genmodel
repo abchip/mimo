@@ -563,6 +563,9 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrameReader/contextProvider"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/getFrameReader/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrame">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame/name"/>
+        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Nameable">
         <genOperations ecoreOperation="mimo.ecore#//entity/Nameable/getName"/>
@@ -708,6 +711,7 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Slot">
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getCardinality"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getDefaultValue"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isTransient"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isVolatile"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getValue">

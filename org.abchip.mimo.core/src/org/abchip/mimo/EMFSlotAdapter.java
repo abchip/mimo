@@ -15,6 +15,7 @@ import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -53,6 +54,13 @@ public class EMFSlotAdapter implements Slot {
 		if (element instanceof EStructuralFeature)
 			return ((EStructuralFeature) this.element).getDefaultValue();
 		return null;
+	}
+
+	@Override
+	public boolean isName() {
+		if (element instanceof EAttribute)
+			return ((EAttribute) this.element).isID();
+		return false;
 	}
 
 	@Override

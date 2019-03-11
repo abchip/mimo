@@ -40,4 +40,12 @@ public interface FrameManager {
 	 */
 	<E extends Entity> EntityReader<Frame<E>> getFrameReader(ContextProvider contextProvider);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model nameRequired="true"
+	 * @generated
+	 */
+	Frame<?> getFrame(String name);
+
 } // FrameManager
