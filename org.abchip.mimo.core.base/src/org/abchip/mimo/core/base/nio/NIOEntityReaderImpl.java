@@ -64,8 +64,11 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 	@Override
 	public E lookup(String name) {
-
-		Path file = getClassFolder(frame, false).resolve(name);
+		
+		Path folder = getClassFolder(frame, false);
+		if(folder == null)
+			return null;
+		Path file = folder.resolve(name);
 		if (!Files.exists(file))
 			return null;
 

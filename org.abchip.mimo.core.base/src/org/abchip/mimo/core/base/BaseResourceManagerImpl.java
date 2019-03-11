@@ -274,14 +274,17 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 				Resource resource = resourceIterator.next();
 				if (resource.getResourceType() == ResourceType.TEMP)
 					continue;
-				resources.add(resource.getName());
+				if(!resources.contains(resource.getName()))
+					resources.add(resource.getName());
 			}
 			break;
 		}
 		case CTX:
 			resources.add(contextDescription.getResourceTemporary());
-			for (String resourceName : contextDescription.getResources())
-				resources.add(resourceName);
+			for (String resourceName : contextDescription.getResources()) {
+				if(!resources.contains(resourceName))
+					resources.add(resourceName);
+			}
 			break;
 		case ROOT:
 			resources.add(contextDescription.getResourceRoot());
