@@ -8,7 +8,10 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
  org.apache.commons.io,
  org.apache.commons.lang,
- org.eclipse.osgi
+ org.eclipse.osgi,
+ org.emfjson.jackson,
+ com.fasterxml.jackson.core.jackson-databind,
+ com.fasterxml.jackson.core.jackson-core
 Bundle-ClassPath: lib/antlr-3.4.jar,
  .
 Export-Package: org.abchip.mimo.core.base,
@@ -16,4 +19,3 @@ Export-Package: org.abchip.mimo.core.base,
  org.abchip.mimo.core.base.expr,
  org.abchip.mimo.core.base.nio,
  org.abchip.mimo.core.base.util
-Import-Package: org.emfjson.jackson.resource

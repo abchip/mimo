@@ -26,13 +26,13 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.emfjson.jackson.module.EMFModule;
 import org.emfjson.jackson.resource.JsonResourceFactory;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class BaseResourceSerializerImpl<E extends EntityNameable> extends ResourceSerializerImpl<E> {
 
-
-	private static JsonResourceFactory jsonResourceFactory = new JsonResourceFactory();
-	private static XMIResourceFactoryImpl xmiResourceFactory = new XMIResourceFactoryImpl();
 
 	private Resource resource = null;
 	
@@ -42,10 +42,13 @@ public class BaseResourceSerializerImpl<E extends EntityNameable> extends Resour
 		
 		switch (serializationType) {
 		case JSON:
-			this.resource = jsonResourceFactory.createResource(URI.createURI("mimo:/"  + getFrame().getName() + "s"));
+			ObjectMapper objectMapper = new ObjectMapper();
+			EMFModule module = new EMFModule();
+			objectMapper.registerModule(module);
+			this.resource = new JsonResourceFactory(objectMapper).createResource(URI.createURI("mimo:/"  + getFrame().getName() + "s"));
 			break;
 		case XMI:
-			this.resource = xmiResourceFactory.createResource(URI.createURI("mimo:/"  + getFrame().getName() + "s"));
+			this.resource = new XMIResourceFactoryImpl().createResource(URI.createURI("mimo:/"  + getFrame().getName() + "s"));
 			break;
 		}
 	}
