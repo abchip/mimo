@@ -45,7 +45,7 @@ public class BaseResourceSerializerImpl<E extends EntityNameable> extends Resour
 			ObjectMapper objectMapper = new ObjectMapper();
 			EMFModule module = new EMFModule();
 			objectMapper.registerModule(module);
-			this.resource = new JsonResourceFactory(objectMapper).createResource(URI.createURI("mimo:/"  + getFrame().getName() + "s"));
+			this.resource = new JsonResourceFactory().createResource(URI.createURI("mimo:/"  + getFrame().getName() + "s"));
 			break;
 		case XMI:
 			this.resource = new XMIResourceFactoryImpl().createResource(URI.createURI("mimo:/"  + getFrame().getName() + "s"));
@@ -73,7 +73,10 @@ public class BaseResourceSerializerImpl<E extends EntityNameable> extends Resour
 	@SuppressWarnings("unchecked")
 	@Override
 	public E get() {
-		return (E) this.resource.getContents().get(0);
+		if(!this.resource.getContents().isEmpty())
+			return (E) this.resource.getContents().get(0);
+		else
+			return null;
 	}
 
 	@SuppressWarnings("unchecked")
