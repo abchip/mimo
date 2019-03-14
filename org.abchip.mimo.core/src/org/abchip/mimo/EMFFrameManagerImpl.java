@@ -32,6 +32,11 @@ public class EMFFrameManagerImpl implements FrameManager {
 	}
 
 	@Override
+	public <E extends Entity> E createEntity(Class<E> klass) {
+		return createEntity(getFrame(klass));
+	}	
+
+	@Override
 	public <E extends Entity> EntityReader<Frame<E>> getFrameReader(ContextProvider contextProvider) {
 		return _getFrameReader(contextProvider);
 	}
@@ -45,5 +50,11 @@ public class EMFFrameManagerImpl implements FrameManager {
 	@Override
 	public Frame<?> getFrame(String name) {
 		return EMFFrameHelper.getFrames().get(name);
-	}	
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
+		return (Frame<E>) EMFFrameHelper.getFrames().get(klass.getSimpleName());
+	}
 }

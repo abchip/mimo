@@ -9,8 +9,8 @@
   <genPackages prefix="Mimo" basePackage="org.abchip" disposableProviderFactory="true"
       adapterFactory="false" contentTypeIdentifier="" ecorePackage="mimo.ecore#/">
     <genClasses ecoreClass="mimo.ecore#//Mimo"/>
-    <nestedGenPackages prefix="Application" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//application">
+    <nestedGenPackages prefix="Application" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//application">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ServiceStatus">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/ACT"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/STP"/>
@@ -559,12 +559,20 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createEntity/frame"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/createEntity/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/createEntity.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createEntity.1/klass"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/createEntity.1/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrameReader">
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrameReader/contextProvider"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/getFrameReader/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrame">
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame/name"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrame.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.1/klass"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/getFrame.1/E"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Nameable">
@@ -918,8 +926,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//expression/TermExpression/value"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Net" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//net">
+    <nestedGenPackages prefix="Net" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//net">
       <genClasses ecoreClass="mimo.ecore#//net/SocketConfig">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/SocketConfig/address"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/SocketConfig/port"/>

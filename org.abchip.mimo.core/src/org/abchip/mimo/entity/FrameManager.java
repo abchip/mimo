@@ -35,6 +35,14 @@ public interface FrameManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" klassRequired="true"
+	 * @generated
+	 */
+	<E extends Entity> E createEntity(Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true"
 	 * @generated
 	 */
@@ -48,4 +56,11 @@ public interface FrameManager {
 	 */
 	Frame<?> getFrame(String name);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model klassRequired="true"
+	 * @generated
+	 */
+	<E extends Entity> Frame<E> getFrame(Class<E> klass);
 } // FrameManager

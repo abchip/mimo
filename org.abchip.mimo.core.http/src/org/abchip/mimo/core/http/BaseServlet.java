@@ -66,7 +66,6 @@ public abstract class BaseServlet extends HttpServlet {
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		factory.setRepository(baseStorage);
 		upload = new ServletFileUpload(factory);
-
 		
 		Map<String, Part> parts = new HashMap<String, Part>();
 

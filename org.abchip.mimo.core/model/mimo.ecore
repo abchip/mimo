@@ -856,6 +856,17 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+      <eOperations name="createEntity" lowerBound="1">
+        <eGenericType eTypeParameter="#//entity/FrameManager/createEntity.1/E"/>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/Entity"/>
+        </eTypeParameters>
+        <eParameters name="klass" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//entity/FrameManager/createEntity.1/E"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
       <eOperations name="getFrameReader">
         <eGenericType eClassifier="#//entity/EntityReader">
           <eTypeArguments eClassifier="#//entity/Frame">
@@ -872,6 +883,19 @@
           <eTypeArguments/>
         </eGenericType>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="getFrame">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments eTypeParameter="#//entity/FrameManager/getFrame.1/E"/>
+        </eGenericType>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/Entity"/>
+        </eTypeParameters>
+        <eParameters name="klass" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//entity/FrameManager/getFrame.1/E"/>
+          </eGenericType>
+        </eParameters>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Nameable" abstract="true" interface="true">
