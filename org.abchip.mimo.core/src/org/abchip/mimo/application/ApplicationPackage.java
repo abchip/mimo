@@ -674,6 +674,61 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_REGISTRY_ENTRY_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceServletImpl <em>Service Servlet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.impl.ServiceServletImpl
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceServlet()
+	 * @generated
+	 */
+	int SERVICE_SERVLET = 12;
+
+	/**
+	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVLET__CLASS_NAME = SERVICE_REF__CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVLET__STATUS = SERVICE_REF__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVLET__ALIAS = SERVICE_REF_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVLET__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Service Servlet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_SERVLET_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceTesterImpl <em>Service Tester</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -681,7 +736,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceTester()
 	 * @generated
 	 */
-	int SERVICE_TESTER = 12;
+	int SERVICE_TESTER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -727,7 +782,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 13;
+	int SERVICE_STATUS = 14;
 
 
 	/**
@@ -1181,6 +1236,38 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getServiceRegistryEntry_Version();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.application.ServiceServlet <em>Service Servlet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Servlet</em>'.
+	 * @see org.abchip.mimo.application.ServiceServlet
+	 * @generated
+	 */
+	EClass getServiceServlet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ServiceServlet#getAlias <em>Alias</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alias</em>'.
+	 * @see org.abchip.mimo.application.ServiceServlet#getAlias()
+	 * @see #getServiceServlet()
+	 * @generated
+	 */
+	EAttribute getServiceServlet_Alias();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ServiceServlet#getInterfaceName <em>Interface Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Interface Name</em>'.
+	 * @see org.abchip.mimo.application.ServiceServlet#getInterfaceName()
+	 * @see #getServiceServlet()
+	 * @generated
+	 */
+	EAttribute getServiceServlet_InterfaceName();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ServiceTester <em>Service Tester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1592,6 +1679,32 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_REGISTRY_ENTRY__VERSION = eINSTANCE.getServiceRegistryEntry_Version();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ServiceServletImpl <em>Service Servlet</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.impl.ServiceServletImpl
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceServlet()
+		 * @generated
+		 */
+		EClass SERVICE_SERVLET = eINSTANCE.getServiceServlet();
+
+		/**
+		 * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_SERVLET__ALIAS = eINSTANCE.getServiceServlet_Alias();
+
+		/**
+		 * The meta object literal for the '<em><b>Interface Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_SERVLET__INTERFACE_NAME = eINSTANCE.getServiceServlet_InterfaceName();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ServiceTesterImpl <em>Service Tester</em>}' class.

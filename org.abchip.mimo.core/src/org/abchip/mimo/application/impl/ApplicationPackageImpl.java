@@ -26,6 +26,7 @@ import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceRegistry;
 import org.abchip.mimo.application.ServiceRegistryEntry;
 import org.abchip.mimo.application.ServiceResourceListener;
+import org.abchip.mimo.application.ServiceServlet;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.application.ServiceTester;
 
@@ -141,6 +142,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass serviceRegistryEntryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceServletEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -669,6 +677,36 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EClass getServiceServlet() {
+		return serviceServletEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServiceServlet_Alias() {
+		return (EAttribute)serviceServletEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServiceServlet_InterfaceName() {
+		return (EAttribute)serviceServletEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getServiceTester() {
 		return serviceTesterEClass;
 	}
@@ -776,6 +814,10 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEAttribute(serviceRegistryEntryEClass, SERVICE_REGISTRY_ENTRY__VENDOR);
 		createEAttribute(serviceRegistryEntryEClass, SERVICE_REGISTRY_ENTRY__VERSION);
 
+		serviceServletEClass = createEClass(SERVICE_SERVLET);
+		createEAttribute(serviceServletEClass, SERVICE_SERVLET__ALIAS);
+		createEAttribute(serviceServletEClass, SERVICE_SERVLET__INTERFACE_NAME);
+
 		serviceTesterEClass = createEClass(SERVICE_TESTER);
 		createEAttribute(serviceTesterEClass, SERVICE_TESTER__INTERFACE_NAME);
 
@@ -829,6 +871,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		serviceResourceListenerEClass.getESuperTypes().add(this.getServiceRef());
 		serviceRegistryEClass.getESuperTypes().add(this.getServiceRef());
 		serviceRegistryEntryEClass.getESuperTypes().add(this.getServiceRef());
+		serviceServletEClass.getESuperTypes().add(this.getServiceRef());
 		serviceTesterEClass.getESuperTypes().add(this.getServiceRef());
 
 		// Initialize classes and features; add operations and parameters
@@ -903,6 +946,10 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEAttribute(getServiceRegistryEntry_Name(), ecorePackage.getEString(), "name", null, 1, 1, ServiceRegistryEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceRegistryEntry_Vendor(), ecorePackage.getEString(), "vendor", null, 0, 1, ServiceRegistryEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceRegistryEntry_Version(), ecorePackage.getEString(), "version", null, 0, 1, ServiceRegistryEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceServletEClass, ServiceServlet.class, "ServiceServlet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceServlet_Alias(), ecorePackage.getEString(), "alias", null, 1, 1, ServiceServlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceServlet_InterfaceName(), ecorePackage.getEString(), "interfaceName", "javax.servlet.Servlet", 1, 1, ServiceServlet.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceTesterEClass, ServiceTester.class, "ServiceTester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceTester_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.tester.TestSuiteLauncher", 1, 1, ServiceTester.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

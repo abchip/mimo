@@ -104,6 +104,13 @@
       <eLiterals name="STP" value="20" literal="Stopped"/>
       <eLiterals name="TST" value="30" literal="Testing"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceServlet" eSuperTypes="#//application/ServiceRef">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" defaultValueLiteral="javax.servlet.Servlet"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceTester" eSuperTypes="#//application/ServiceRef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

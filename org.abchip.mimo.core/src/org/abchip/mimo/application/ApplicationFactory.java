@@ -121,6 +121,15 @@ public interface ApplicationFactory extends EFactory {
 	ServiceRegistryEntry createServiceRegistryEntry();
 
 	/**
+	 * Returns a new object of class '<em>Service Servlet</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Servlet</em>'.
+	 * @generated
+	 */
+	ServiceServlet createServiceServlet();
+
+	/**
 	 * Returns a new object of class '<em>Service Tester</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -19,7 +19,6 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.application.ServiceRegistering;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityIterator;
@@ -32,7 +31,6 @@ import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.util.Strings;
-import org.osgi.service.http.HttpService;
 
 public class FindServlet extends BaseServlet {
 
@@ -44,11 +42,6 @@ public class FindServlet extends BaseServlet {
 	private FrameManager frameManger;
 	@Inject
 	private ResourceManager resourceManager;
-	
-	@ServiceRegistering
-	private void _init(HttpService httpService) throws Exception {
-		httpService.registerServlet("/biz/service/find", this, null, null);
-	}
 	
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(request, response);

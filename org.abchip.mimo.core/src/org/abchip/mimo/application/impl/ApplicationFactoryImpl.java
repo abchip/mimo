@@ -76,6 +76,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.SERVICE_RESOURCE_LISTENER: return (EObject)createServiceResourceListener();
 			case ApplicationPackage.SERVICE_REGISTRY: return (EObject)createServiceRegistry();
 			case ApplicationPackage.SERVICE_REGISTRY_ENTRY: return (EObject)createServiceRegistryEntry();
+			case ApplicationPackage.SERVICE_SERVLET: return (EObject)createServiceServlet();
 			case ApplicationPackage.SERVICE_TESTER: return (EObject)createServiceTester();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -220,6 +221,17 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public ServiceRegistryEntry createServiceRegistryEntry() {
 		ServiceRegistryEntryImpl serviceRegistryEntry = new ServiceRegistryEntryImpl();
 		return serviceRegistryEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ServiceServlet createServiceServlet() {
+		ServiceServletImpl serviceServlet = new ServiceServletImpl();
+		return serviceServlet;
 	}
 
 	/**

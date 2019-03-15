@@ -24,6 +24,9 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+
 import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
@@ -39,11 +42,14 @@ import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceRegistering;
 import org.abchip.mimo.application.ServiceRegistry;
 import org.abchip.mimo.application.ServiceRegistryEntry;
+import org.abchip.mimo.application.ServiceServlet;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.util.Singleton;
+import org.osgi.service.http.HttpService;
+import org.osgi.service.http.NamespaceException;
 
 public class BaseApplicationStarter {
 
@@ -233,19 +239,35 @@ public class BaseApplicationStarter {
 
 		// service registration
 		Object service = loadObject(component.getContext(), serviceRef.getClassName());
-		if(service == null) {
+		if (service == null) {
 			System.err.println("Service reference not found: " + serviceRef);
 			println("");
 			return;
 		}
-		
+
 		String interfaceName = serviceRef.getInterfaceName() != null ? serviceRef.getInterfaceName() : serviceRef.getClassName();
+
 		boolean remoteExport = false;
 		if (serviceRef instanceof ServiceExecutor) {
 			ServiceExecutor serviceExecutor = (ServiceExecutor) serviceRef;
 			remoteExport = serviceExecutor.isRemoteExport();
 		}
+
 		registerService(component, interfaceName, service, remoteExport, dictionary);
+
+		if (serviceRef instanceof ServiceServlet) {
+			ServiceServlet serviceServlet = (ServiceServlet) serviceRef;
+
+			HttpService httpService = application.getContext().get(HttpService.class);
+			if (httpService != null) {
+				try {
+					httpService.registerServlet(serviceServlet.getAlias(), (Servlet) service, null, null);
+				} catch (ServletException | NamespaceException e) {
+					System.err.println("Servlet registration failed: " + serviceRef);
+					println("");
+				}
+			}
+		}
 	}
 
 	private void registerService(ApplicationComponent component, String name, Object service, boolean remoteExport, Dictionary<String, String> properties) {
@@ -291,9 +313,9 @@ public class BaseApplicationStarter {
 
 	private Object loadObject(Context context, String className) {
 		Class<?> tempClass = context.getContextRoot().loadClass(className);
-		if(tempClass == null) 
+		if (tempClass == null)
 			return null;
-			
+
 		return context.make(tempClass);
 	}
 

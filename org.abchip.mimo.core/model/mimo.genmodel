@@ -79,6 +79,10 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceRegistryEntry/vendor"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceRegistryEntry/version"/>
       </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//application/ServiceServlet">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceServlet/alias"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceServlet/interfaceName"/>
+      </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ServiceTester">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceTester/interfaceName"/>
       </genClasses>
