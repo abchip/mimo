@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ui -->
+      <package
+            uri="http://www.abchip.org/mimo/ui/menu"
+            class="org.abchip.mimo.ui.menu.MenuPackage"
+            genModel="model/ui.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ui -->
+      <package
+            uri="http://www.abchip.org/mimo/ui/schema"
+            class="org.abchip.mimo.ui.schema.SchemaPackage"
+            genModel="model/ui.genmodel"/>
+   </extension>
+
+</plugin>
