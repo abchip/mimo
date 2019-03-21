@@ -33,5 +33,18 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/adjust"/>
       </genClasses>
     </nestedGenPackages>
+    <nestedGenPackages prefix="Toolbar" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="ui.ecore#//toolbar">
+      <genClasses ecoreClass="ui.ecore#//toolbar/Toolbar">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//toolbar/Toolbar/elements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/Toolbar/name"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//toolbar/ToolbarView">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/action"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/icon"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/label"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/view"/>
+      </genClasses>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

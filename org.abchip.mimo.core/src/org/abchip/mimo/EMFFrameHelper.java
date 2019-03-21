@@ -128,7 +128,7 @@ public class EMFFrameHelper {
 			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
-					if (EntityPackage.eINSTANCE.getEntityNameable().isSuperTypeOf(eClass)) {
+					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
 						frames.put(eClass.getName(), new EMFFrameAdapter<>(eClass));
 					}
 				}

@@ -17,6 +17,8 @@ import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaFactory;
 import org.abchip.mimo.ui.schema.SchemaPackage;
 
+import org.abchip.mimo.ui.toolbar.ToolbarPackage;
+import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -105,14 +107,18 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
+		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSchemaPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
+		theToolbarPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSchemaPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
+		theToolbarPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSchemaPackage.freeze();

@@ -11,7 +11,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.abchip.mimo.ui.menu,
  org.abchip.mimo.ui.menu.impl,
  org.abchip.mimo.ui.schema,
- org.abchip.mimo.ui.schema.impl
+ org.abchip.mimo.ui.schema.impl,
+ org.abchip.mimo.ui.toolbar,
+ org.abchip.mimo.ui.toolbar.impl
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.abchip.mimo.core;visibility:=reexport

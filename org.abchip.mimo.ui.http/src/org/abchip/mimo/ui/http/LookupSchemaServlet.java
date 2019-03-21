@@ -28,10 +28,8 @@ import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
-import org.abchip.mimo.ui.schema.SchemaPackage;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class LookupSchemaServlet extends BaseServlet {
 
@@ -55,7 +53,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		Schema schema = resourceManager.getEntityReader(contextRoot, Schema.class, ResourceScope.CTX).lookup(name);
 		
 		if(schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
-			schema = (Schema) EcoreUtil.create(SchemaPackage.eINSTANCE.getSchema());
+			schema = frameManager.createEntity(Schema.class);
 			schema.setName("prototype");
 			
 			Frame<?> frame = frameManager.getFrame(frameName);
@@ -91,7 +89,7 @@ public class LookupSchemaServlet extends BaseServlet {
 	}	
 	
 	private SchemaColumn buildColumn(Slot slot) {
-		SchemaColumn column = (SchemaColumn) EcoreUtil.create(SchemaPackage.eINSTANCE.getSchemaColumn());
+		SchemaColumn column = frameManager.createEntity(SchemaColumn.class);
 		column.setId(slot.getName());
 		
 		StringBuffer header = new StringBuffer();
