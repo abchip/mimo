@@ -10,6 +10,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ui -->
       <package
+            uri="http://www.abchip.org/mimo/ui"
+            class="org.abchip.mimo.ui.UIPackage"
+            genModel="model/ui.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ui -->
+      <package
             uri="http://www.abchip.org/mimo/ui/menu"
             class="org.abchip.mimo.ui.menu.MenuPackage"
             genModel="model/ui.genmodel"/>

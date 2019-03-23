@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ui" nsURI="http://www.abchip.org/mimo/ui" nsPrefix="ui">
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ActionType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActionType">
+    <eLiterals name="UI" value="10" literal="User Interface"/>
+    <eLiterals name="SRV" value="20" literal="Service"/>
+    <eLiterals name="EVT" value="30" literal="Event"/>
+  </eClassifiers>
   <eSubpackages name="menu" nsURI="http://www.abchip.org/mimo/ui/menu" nsPrefix="ui-menu">
     <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable #//schema/DataNode">
       <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1"
@@ -37,7 +46,8 @@
           iD="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ToolbarView" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
+          containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"

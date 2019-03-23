@@ -7,6 +7,8 @@ import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.ui.UIPackage;
+import org.abchip.mimo.ui.impl.UIPackageImpl;
 import org.abchip.mimo.ui.menu.MenuPackage;
 
 import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
@@ -105,18 +107,22 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		MimoPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
+		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSchemaPackage.createPackageContents();
+		theUIPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSchemaPackage.initializePackageContents();
+		theUIPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
 
@@ -331,9 +337,6 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		initEAttribute(getSchemaColumn_Id(), ecorePackage.getEString(), "id", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Header(), ecorePackage.getEString(), "header", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Adjust(), ecorePackage.getEBoolean(), "adjust", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //SchemaPackageImpl

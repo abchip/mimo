@@ -212,7 +212,9 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 	
 	private void addFrames(Frame<?> frame, List<Frame<?>>frames) {
 		Frame<?> ako = frame.ako();
-		if(ako != null)
+		if(ako != null) {
 			frames.add(ako);
+			addFrames(ako, frames);
+		}
 	}
 }

@@ -7,6 +7,8 @@ import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.ui.UIPackage;
+import org.abchip.mimo.ui.impl.UIPackageImpl;
 import org.abchip.mimo.ui.menu.MenuPackage;
 
 import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
@@ -99,18 +101,22 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		MimoPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
+		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theToolbarPackage.createPackageContents();
+		theUIPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theToolbarPackage.initializePackageContents();
+		theUIPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 
@@ -168,8 +174,8 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getToolbarView_Action() {
-		return (EAttribute)toolbarViewEClass.getEStructuralFeatures().get(0);
+	public EReference getToolbarView_Action() {
+		return (EReference)toolbarViewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -236,7 +242,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		createEAttribute(toolbarEClass, TOOLBAR__NAME);
 
 		toolbarViewEClass = createEClass(TOOLBAR_VIEW);
-		createEAttribute(toolbarViewEClass, TOOLBAR_VIEW__ACTION);
+		createEReference(toolbarViewEClass, TOOLBAR_VIEW__ACTION);
 		createEAttribute(toolbarViewEClass, TOOLBAR_VIEW__ICON);
 		createEAttribute(toolbarViewEClass, TOOLBAR_VIEW__LABEL);
 		createEAttribute(toolbarViewEClass, TOOLBAR_VIEW__VIEW);
@@ -267,6 +273,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		UIPackage theUIPackage = (UIPackage)EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -282,13 +289,10 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		initEAttribute(getToolbar_Name(), ecorePackage.getEString(), "name", null, 1, 1, Toolbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(toolbarViewEClass, ToolbarView.class, "ToolbarView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getToolbarView_Action(), ecorePackage.getEString(), "action", null, 0, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getToolbarView_Action(), theUIPackage.getAction(), null, "action", null, 0, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToolbarView_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToolbarView_Label(), ecorePackage.getEString(), "label", null, 0, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToolbarView_View(), ecorePackage.getEString(), "view", null, 1, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //ToolbarPackageImpl

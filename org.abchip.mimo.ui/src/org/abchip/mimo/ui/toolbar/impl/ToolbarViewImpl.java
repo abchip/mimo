@@ -5,13 +5,16 @@ package org.abchip.mimo.ui.toolbar.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 
+import org.abchip.mimo.ui.Action;
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 import org.abchip.mimo.ui.toolbar.ToolbarView;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -32,24 +35,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 	/**
-	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected String action = ACTION_EDEFAULT;
+	protected Action action;
 
 	/**
 	 * 
@@ -141,7 +134,7 @@ public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 	 * @generated
 	 */
 	@Override
-	public String getAction() {
+	public Action getAction() {
 		return action;
 	}
 
@@ -150,12 +143,34 @@ public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setAction(String newAction) {
-		String oldAction = action;
+	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
+		Action oldAction = action;
 		action = newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ToolbarPackage.TOOLBAR_VIEW__ACTION, oldAction, action));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ToolbarPackage.TOOLBAR_VIEW__ACTION, oldAction, newAction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAction(Action newAction) {
+		if (newAction != action) {
+			NotificationChain msgs = null;
+			if (action != null)
+				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ToolbarPackage.TOOLBAR_VIEW__ACTION, null, msgs);
+			if (newAction != null)
+				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ToolbarPackage.TOOLBAR_VIEW__ACTION, null, msgs);
+			msgs = basicSetAction(newAction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ToolbarPackage.TOOLBAR_VIEW__ACTION, newAction, newAction));
 	}
 
 	/**
@@ -233,6 +248,20 @@ public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ToolbarPackage.TOOLBAR_VIEW__ACTION:
+				return basicSetAction(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ToolbarPackage.TOOLBAR_VIEW__ACTION:
@@ -256,7 +285,7 @@ public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ToolbarPackage.TOOLBAR_VIEW__ACTION:
-				setAction((String)newValue);
+				setAction((Action)newValue);
 				return;
 			case ToolbarPackage.TOOLBAR_VIEW__ICON:
 				setIcon((String)newValue);
@@ -280,7 +309,7 @@ public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ToolbarPackage.TOOLBAR_VIEW__ACTION:
-				setAction(ACTION_EDEFAULT);
+				setAction((Action)null);
 				return;
 			case ToolbarPackage.TOOLBAR_VIEW__ICON:
 				setIcon(ICON_EDEFAULT);
@@ -304,7 +333,7 @@ public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ToolbarPackage.TOOLBAR_VIEW__ACTION:
-				return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
+				return action != null;
 			case ToolbarPackage.TOOLBAR_VIEW__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case ToolbarPackage.TOOLBAR_VIEW__LABEL:
@@ -325,9 +354,7 @@ public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (action: ");
-		result.append(action);
-		result.append(", icon: ");
+		result.append(" (icon: ");
 		result.append(icon);
 		result.append(", label: ");
 		result.append(label);

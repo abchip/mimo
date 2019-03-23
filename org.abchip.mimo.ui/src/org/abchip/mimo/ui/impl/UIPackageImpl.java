@@ -1,28 +1,33 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.menu.impl;
+package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.ui.Action;
+import org.abchip.mimo.ui.ActionType;
+import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.impl.UIPackageImpl;
-import org.abchip.mimo.ui.menu.Menu;
-import org.abchip.mimo.ui.menu.MenuAction;
-import org.abchip.mimo.ui.menu.MenuFactory;
+
 import org.abchip.mimo.ui.menu.MenuPackage;
+
+import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
 
 import org.abchip.mimo.ui.schema.SchemaPackage;
 
 import org.abchip.mimo.ui.schema.impl.SchemaPackageImpl;
 
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
+
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
+
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -32,20 +37,20 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
+public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass menuEClass = null;
+	private EClass actionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass menuActionEClass = null;
+	private EEnum actionTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -58,12 +63,12 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.ui.menu.MenuPackage#eNS_URI
+	 * @see org.abchip.mimo.ui.UIPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private MenuPackageImpl() {
-		super(eNS_URI, MenuFactory.eINSTANCE);
+	private UIPackageImpl() {
+		super(eNS_URI, UIFactory.eINSTANCE);
 	}
 
 	/**
@@ -76,7 +81,7 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link MenuPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link UIPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,12 +90,12 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static MenuPackage init() {
-		if (isInited) return (MenuPackage)EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+	public static UIPackage init() {
+		if (isInited) return (UIPackage)EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredMenuPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		MenuPackageImpl theMenuPackage = registeredMenuPackage instanceof MenuPackageImpl ? (MenuPackageImpl)registeredMenuPackage : new MenuPackageImpl();
+		Object registeredUIPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		UIPackageImpl theUIPackage = registeredUIPackage instanceof UIPackageImpl ? (UIPackageImpl)registeredUIPackage : new UIPackageImpl();
 
 		isInited = true;
 
@@ -98,31 +103,31 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		MimoPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
-		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theMenuPackage.createPackageContents();
 		theUIPackage.createPackageContents();
+		theMenuPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theMenuPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
+		theMenuPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theMenuPackage.freeze();
+		theUIPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MenuPackage.eNS_URI, theMenuPackage);
-		return theMenuPackage;
+		EPackage.Registry.INSTANCE.put(UIPackage.eNS_URI, theUIPackage);
+		return theUIPackage;
 	}
 
 	/**
@@ -131,8 +136,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMenu() {
-		return menuEClass;
+	public EClass getAction() {
+		return actionEClass;
 	}
 
 	/**
@@ -141,8 +146,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMenu_Data() {
-		return (EReference)menuEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAction_Command() {
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -151,8 +156,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMenuAction() {
-		return menuActionEClass;
+	public EAttribute getAction_Type() {
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -161,8 +166,18 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public MenuFactory getMenuFactory() {
-		return (MenuFactory)getEFactoryInstance();
+	public EEnum getActionType() {
+		return actionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UIFactory getUIFactory() {
+		return (UIFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -184,10 +199,12 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		menuEClass = createEClass(MENU);
-		createEReference(menuEClass, MENU__DATA);
+		actionEClass = createEClass(ACTION);
+		createEAttribute(actionEClass, ACTION__COMMAND);
+		createEAttribute(actionEClass, ACTION__TYPE);
 
-		menuActionEClass = createEClass(MENU_ACTION);
+		// Create enums
+		actionTypeEEnum = createEEnum(ACTION_TYPE);
 	}
 
 	/**
@@ -214,23 +231,36 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		MenuPackage theMenuPackage = (MenuPackage)EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		SchemaPackage theSchemaPackage = (SchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
+		ToolbarPackage theToolbarPackage = (ToolbarPackage)EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
+		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theMenuPackage);
+		getESubpackages().add(theSchemaPackage);
+		getESubpackages().add(theToolbarPackage);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		menuEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		menuEClass.getESuperTypes().add(theSchemaPackage.getDataNode());
-		menuActionEClass.getESuperTypes().add(theSchemaPackage.getDataNode());
+		actionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenu_Data(), theSchemaPackage.getDataNode(), null, "data", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAction_Command(), ecorePackage.getEString(), "command", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_Type(), this.getActionType(), "type", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(menuActionEClass, MenuAction.class, "MenuAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		// Initialize enums and add enum literals
+		initEEnum(actionTypeEEnum, ActionType.class, "ActionType");
+		addEEnumLiteral(actionTypeEEnum, ActionType.UI);
+		addEEnumLiteral(actionTypeEEnum, ActionType.SRV);
+		addEEnumLiteral(actionTypeEEnum, ActionType.EVT);
+
+		// Create resource
+		createResource(eNS_URI);
 	}
 
-} //MenuPackageImpl
+} //UIPackageImpl

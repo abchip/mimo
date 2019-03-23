@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
@@ -40,19 +41,33 @@ public class LookupToolbarServlet extends BaseServlet {
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		String frameName = request.getParameter("frame");
-		String name = request.getParameter("name");
-		String inheritance = request.getParameter("inheritance");
+		if(frameName == null)
+			return ;
 		
-		ResourceSerializer<Toolbar> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Toolbar.class, SerializationType.JSON);
+		Frame<?> frame = frameManager.getFrame(frameName);
+		if(frame == null)
+			return;
 		
-		Toolbar toolbar = resourceManager.getEntityReader(contextRoot, Toolbar.class, ResourceScope.CTX).lookup(name);
+		Toolbar toolbar = resourceManager.getEntityReader(contextRoot, Toolbar.class, ResourceScope.CTX).lookup(frameName);
 		
-		if(toolbar != null)	
-			resourceSerializer.add(toolbar);
+		for(Frame<?> ako: frame.getSuperFrames()) {
+			Toolbar toolbarAko = resourceManager.getEntityReader(contextRoot, Toolbar.class, ResourceScope.CTX).lookup(ako.getName());;
+			if(toolbarAko == null)
+				continue;
 			
-		resourceSerializer.save(response.getOutputStream());
+			if(toolbar == null)
+				toolbar = toolbarAko;
+			else 
+				toolbar.getElements().addAll(toolbarAko.getElements());
+		}
 
-		response.flushBuffer();
-		resourceSerializer.clear();
+		ResourceSerializer<Toolbar> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Toolbar.class, SerializationType.JSON);
+		if(toolbar != null) 
+			resourceSerializer.add(toolbar);
+
+		resourceSerializer.save(response.getOutputStream());
+		resourceSerializer.close();
+
+		response.flushBuffer();		
 	}	
 }

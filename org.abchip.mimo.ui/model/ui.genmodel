@@ -9,6 +9,15 @@
   <foreignModel>ui.ecore</foreignModel>
   <genPackages prefix="UI" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="ui.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ui.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/UI"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/SRV"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/EVT"/>
+    </genEnums>
+    <genClasses ecoreClass="ui.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/command"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/type"/>
+    </genClasses>
     <nestedGenPackages prefix="Menu" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="ui.ecore#//menu">
       <genClasses ecoreClass="ui.ecore#//menu/Menu">
@@ -40,7 +49,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/Toolbar/name"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//toolbar/ToolbarView">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/action"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference ui.ecore#//toolbar/ToolbarView/action"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/label"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/view"/>
