@@ -174,8 +174,8 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getToolbarView_Action() {
-		return (EReference)toolbarViewEClass.getEStructuralFeatures().get(0);
+	public EAttribute getToolbarView_Action() {
+		return (EAttribute)toolbarViewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -242,7 +242,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		createEAttribute(toolbarEClass, TOOLBAR__NAME);
 
 		toolbarViewEClass = createEClass(TOOLBAR_VIEW);
-		createEReference(toolbarViewEClass, TOOLBAR_VIEW__ACTION);
+		createEAttribute(toolbarViewEClass, TOOLBAR_VIEW__ACTION);
 		createEAttribute(toolbarViewEClass, TOOLBAR_VIEW__ICON);
 		createEAttribute(toolbarViewEClass, TOOLBAR_VIEW__LABEL);
 		createEAttribute(toolbarViewEClass, TOOLBAR_VIEW__VIEW);
@@ -273,7 +273,6 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		UIPackage theUIPackage = (UIPackage)EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -289,7 +288,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		initEAttribute(getToolbar_Name(), ecorePackage.getEString(), "name", null, 1, 1, Toolbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(toolbarViewEClass, ToolbarView.class, "ToolbarView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getToolbarView_Action(), theUIPackage.getAction(), null, "action", null, 0, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getToolbarView_Action(), ecorePackage.getEString(), "action", null, 0, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToolbarView_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToolbarView_Label(), ecorePackage.getEString(), "label", null, 0, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getToolbarView_View(), ecorePackage.getEString(), "view", null, 1, 1, ToolbarView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

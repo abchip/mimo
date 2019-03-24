@@ -4,7 +4,6 @@
 package org.abchip.mimo.ui.toolbar;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.ui.Action;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,30 +26,30 @@ import org.abchip.mimo.ui.Action;
  */
 public interface ToolbarView extends Entity {
 	/**
-	 * Returns the value of the '<em><b>Action</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Action</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action</em>' containment reference.
-	 * @see #setAction(Action)
+	 * @return the value of the '<em>Action</em>' attribute.
+	 * @see #setAction(String)
 	 * @see org.abchip.mimo.ui.toolbar.ToolbarPackage#getToolbarView_Action()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	Action getAction();
+	String getAction();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.toolbar.ToolbarView#getAction <em>Action</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.toolbar.ToolbarView#getAction <em>Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action</em>' containment reference.
+	 * @param value the new value of the '<em>Action</em>' attribute.
 	 * @see #getAction()
 	 * @generated
 	 */
-	void setAction(Action value);
+	void setAction(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Icon</b></em>' attribute.

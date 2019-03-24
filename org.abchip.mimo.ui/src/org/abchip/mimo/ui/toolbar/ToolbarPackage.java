@@ -106,7 +106,7 @@ public interface ToolbarPackage extends EPackage {
 	int TOOLBAR_VIEW = 1;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * The feature id for the '<em><b>Action</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -194,15 +194,15 @@ public interface ToolbarPackage extends EPackage {
 	EClass getToolbarView();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.toolbar.ToolbarView#getAction <em>Action</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.toolbar.ToolbarView#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Action</em>'.
+	 * @return the meta object for the attribute '<em>Action</em>'.
 	 * @see org.abchip.mimo.ui.toolbar.ToolbarView#getAction()
 	 * @see #getToolbarView()
 	 * @generated
 	 */
-	EReference getToolbarView_Action();
+	EAttribute getToolbarView_Action();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.toolbar.ToolbarView#getIcon <em>Icon</em>}'.
@@ -296,12 +296,12 @@ public interface ToolbarPackage extends EPackage {
 		EClass TOOLBAR_VIEW = eINSTANCE.getToolbarView();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TOOLBAR_VIEW__ACTION = eINSTANCE.getToolbarView_Action();
+		EAttribute TOOLBAR_VIEW__ACTION = eINSTANCE.getToolbarView_Action();
 
 		/**
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.

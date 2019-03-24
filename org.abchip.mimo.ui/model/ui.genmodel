@@ -18,15 +18,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/command"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/type"/>
     </genClasses>
-    <nestedGenPackages prefix="Menu" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="ui.ecore#//menu">
+    <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="ui.ecore#//menu">
       <genClasses ecoreClass="ui.ecore#//menu/Menu">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//menu/Menu/data"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//menu/MenuAction"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Schema" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="ui.ecore#//schema">
+    <nestedGenPackages prefix="Schema" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="ui.ecore#//schema">
       <genClasses image="false" ecoreClass="ui.ecore#//schema/DataNode">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/DataNode/id"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/DataNode/icon"/>
@@ -42,14 +42,14 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/adjust"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Toolbar" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="ui.ecore#//toolbar">
+    <nestedGenPackages prefix="Toolbar" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="ui.ecore#//toolbar">
       <genClasses ecoreClass="ui.ecore#//toolbar/Toolbar">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//toolbar/Toolbar/elements"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/Toolbar/name"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//toolbar/ToolbarView">
-        <genFeatures createChild="false" ecoreFeature="ecore:EReference ui.ecore#//toolbar/ToolbarView/action"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/action"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/label"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/view"/>
