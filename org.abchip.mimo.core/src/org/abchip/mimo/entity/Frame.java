@@ -17,13 +17,37 @@ import java.util.List;
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Frame</b></em>'. <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.entity.Frame#isAbstract <em>Abstract</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#getSlots <em>Slots</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#getSuperNames <em>Super Names</em>}</li>
+ * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getFrame()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface Frame<E extends Entity> extends EntityNameable {
 	
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Name()
+	 * @model id="true" required="true" changeable="false"
+	 * @generated
+	 */
+	String getName();
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model
@@ -56,16 +80,36 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	Slot getSlotName();
 
 	/**
+	 * Returns the value of the '<em><b>Slots</b></em>' containment reference list.
+	 * The list contents are of type {@link org.abchip.mimo.entity.Slot}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Slots</em>' reference list isn't clear, there
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Slots</em>' containment reference list.
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Slots()
+	 * @model containment="true" changeable="false"
 	 * @generated
 	 */
 	List<Slot> getSlots();
+
+	/**
+	 * Returns the value of the '<em><b>Super Names</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Super Names</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Super Names</em>' attribute list.
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_SuperNames()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	List<String> getSuperNames();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,9 +128,12 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	Object getValue(E entity, Slot slot);
 
 	/**
+	 * Returns the value of the '<em><b>Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Abstract</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Abstract()
+	 * @model changeable="false"
 	 * @generated
 	 */
 	boolean isAbstract();

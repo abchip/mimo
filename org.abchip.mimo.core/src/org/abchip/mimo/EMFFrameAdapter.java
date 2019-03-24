@@ -19,7 +19,7 @@ import java.util.List;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -30,25 +30,49 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Frame<E> {
+public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private EClass eClass;
-	private List<Slot> slots;
 
 	private static final String nsPrefix = "il-data";
 
 	public EMFFrameAdapter(EClass eClass) {
 		super();
+		
 		this.eClass = eClass;
-	}
+		
+		this.name = this.eClass.getName();
+		
+		this.abstract_ = eClass.isAbstract();
+		
+		for(Frame<?> superFrame: getSuperFrames()) 
+			getSuperNames().add(superFrame.getName());
+		
+		this.slots = (EList<Slot>) getSlots();
 
-	@Override
-	public String getName() {
-		return this.eClass.getName();
+		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures())
+			this.slots.add(new EMFSlotAdapter(structuralFeature));
+
+		for (EOperation operation : eClass.getEAllOperations()) {
+
+			EAnnotation eAnnotation = operation.getEAnnotation(nsPrefix);
+			if (eAnnotation == null)
+				continue;
+
+			if (operation.getName().length() > 3 && operation.getName().startsWith("get") && operation.getEParameters().isEmpty()) {
+				String name = operation.getName().substring(3);
+				name = Strings.qINSTANCE.firstToLower(name);
+				this.slots.add(new EMFSlotAdapter(operation, name));
+
+				continue;
+			}
+
+			this.slots.add(new EMFSlotAdapter(operation));
+		}
 	}
 
 	@Override
@@ -56,47 +80,14 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 		return null;
 	}
 
-	@Override
-	public List<Slot> getSlots() {
-
-		if (this.slots == null)
-			synchronized (this) {
-				if (slots == null) {
-					this.slots = new ArrayList<Slot>();
-
-					for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures())
-						this.slots.add(new EMFSlotAdapter(structuralFeature));
-
-					for (EOperation operation : eClass.getEAllOperations()) {
-
-						EAnnotation eAnnotation = operation.getEAnnotation(nsPrefix);
-						if (eAnnotation == null)
-							continue;
-
-						if (operation.getName().length() > 3 && operation.getName().startsWith("get") && operation.getEParameters().isEmpty()) {
-							String name = operation.getName().substring(3);
-							name = Strings.qINSTANCE.firstToLower(name);
-							this.slots.add(new EMFSlotAdapter(operation, name));
-
-							continue;
-						}
-
-						this.slots.add(new EMFSlotAdapter(operation));
-					}
-				}
-			}
-
-		return this.slots;
-	}
-
 	@SuppressWarnings("rawtypes")
 	@Override
 	public Frame<?> ako() {
 
 		EList<EClass> classes = this.eClass.getESuperTypes();
-		if(classes == null || classes.isEmpty())
+		if (classes == null || classes.isEmpty())
 			return null;
-		
+
 		EClass eAko = classes.get(0);
 		return new EMFFrameAdapter(eAko);
 	}
@@ -122,13 +113,13 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 
 	@Override
 	public Slot getSlotName() {
-		
+
 		EAttribute eAttribute = eClass.getEIDAttribute();
-		if(eAttribute == null)
+		if (eAttribute == null)
 			return null;
-		
+
 		return getSlot(eAttribute.getName());
-	}	
+	}
 
 	@Override
 	public Object getValue(E entity, Slot slot) {
@@ -144,7 +135,7 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 		if (entity instanceof EObject)
 			unsetValue((EObject) entity, slot);
 	}
-	
+
 	private Object getValue(EObject eObject, Slot slot) {
 		Object value = null;
 
@@ -177,22 +168,17 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 
 		return value;
 	}
-	
+
 	private void unsetValue(EObject eObject, Slot slot) {
 
 		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(slot.getName());
 		if (eStructuralFeature != null)
 			eObject.eUnset(eStructuralFeature);
 	}
-	
+
 	@Override
 	public URI getURI() {
 		return URI.create(EcoreUtil.getURI(eClass).toString());
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return eClass.isAbstract();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -203,16 +189,16 @@ public class EMFFrameAdapter<E extends Entity> extends EntityImpl implements Fra
 
 	@Override
 	public List<Frame<?>> getSuperFrames() {
-		
+
 		List<Frame<?>> frames = new ArrayList<Frame<?>>();
 		addFrames(this, frames);
-		
+
 		return frames;
 	}
-	
-	private void addFrames(Frame<?> frame, List<Frame<?>>frames) {
+
+	private void addFrames(Frame<?> frame, List<Frame<?>> frames) {
 		Frame<?> ako = frame.ako();
-		if(ako != null) {
+		if (ako != null) {
 			frames.add(ako);
 			addFrames(ako, frames);
 		}

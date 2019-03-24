@@ -15,12 +15,33 @@ package org.abchip.mimo.entity;
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Slot</b></em>'. <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
+ * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getSlot()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
-public interface Slot extends Nameable {
+public interface Slot extends EntityNameable {
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Name()
+	 * @model required="true" changeable="false"
+	 * @generated
+	 */
+	String getName();
 
 	/**
 	 * <!-- begin-user-doc -->

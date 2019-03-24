@@ -229,10 +229,10 @@ public interface EntityPackage extends EPackage {
 	int FACET = 9;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.Frame <em>Frame</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.Frame
+	 * @see org.abchip.mimo.entity.impl.FrameImpl
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
 	 * @generated
 	 */
@@ -428,13 +428,49 @@ public interface EntityPackage extends EPackage {
 	int FACET_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__ABSTRACT = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Super Names</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Frame Manager</em>' class.
@@ -555,14 +591,23 @@ public interface EntityPackage extends EPackage {
 	int RESOURCE_SERIALIZER_FEATURE_COUNT = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.Slot <em>Slot</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.Slot
+	 * @see org.abchip.mimo.entity.impl.SlotImpl
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 	 * @generated
 	 */
 	int SLOT = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -571,7 +616,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = NAMEABLE_FEATURE_COUNT + 0;
+	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
@@ -802,6 +847,50 @@ public interface EntityPackage extends EPackage {
 	EClass getFrame();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#isAbstract <em>Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Abstract</em>'.
+	 * @see org.abchip.mimo.entity.Frame#isAbstract()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_Abstract();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.entity.Frame#getName()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.entity.Frame#getSlots <em>Slots</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Slots</em>'.
+	 * @see org.abchip.mimo.entity.Frame#getSlots()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EReference getFrame_Slots();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.entity.Frame#getSuperNames <em>Super Names</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Super Names</em>'.
+	 * @see org.abchip.mimo.entity.Frame#getSuperNames()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_SuperNames();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -954,6 +1043,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSlot();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.entity.Slot#getName()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}'.
@@ -1164,14 +1264,46 @@ public interface EntityPackage extends EPackage {
 		EClass FACET = eINSTANCE.getFacet();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.Frame <em>Frame</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.Frame
+		 * @see org.abchip.mimo.entity.impl.FrameImpl
 		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
 		 * @generated
 		 */
 		EClass FRAME = eINSTANCE.getFrame();
+
+		/**
+		 * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__ABSTRACT = eINSTANCE.getFrame_Abstract();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__NAME = eINSTANCE.getFrame_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Slots</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FRAME__SLOTS = eINSTANCE.getFrame_Slots();
+
+		/**
+		 * The meta object literal for the '<em><b>Super Names</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__SUPER_NAMES = eINSTANCE.getFrame_SuperNames();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.
@@ -1306,14 +1438,22 @@ public interface EntityPackage extends EPackage {
 		EClass ENTITY_PROVIDER_REGISTRY = eINSTANCE.getEntityProviderRegistry();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.Slot <em>Slot</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.Slot
+		 * @see org.abchip.mimo.entity.impl.SlotImpl
 		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 		 * @generated
 		 */
 		EClass SLOT = eINSTANCE.getSlot();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.

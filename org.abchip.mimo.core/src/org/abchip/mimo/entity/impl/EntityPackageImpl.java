@@ -499,6 +499,46 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFrame_Abstract() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFrame_Name() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFrame_Slots() {
+		return (EReference)frameEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFrame_SuperNames() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFrameManager() {
 		return frameManagerEClass;
 	}
@@ -649,6 +689,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSlot_Name() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTextable() {
 		return textableEClass;
 	}
@@ -750,6 +800,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		facetEClass = createEClass(FACET);
 
 		frameEClass = createEClass(FRAME);
+		createEAttribute(frameEClass, FRAME__ABSTRACT);
+		createEAttribute(frameEClass, FRAME__NAME);
+		createEReference(frameEClass, FRAME__SLOTS);
+		createEAttribute(frameEClass, FRAME__SUPER_NAMES);
 
 		frameManagerEClass = createEClass(FRAME_MANAGER);
 
@@ -772,6 +826,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEReference(resourceSerializerEClass, RESOURCE_SERIALIZER__FRAME);
 
 		slotEClass = createEClass(SLOT);
+		createEAttribute(slotEClass, SLOT__NAME);
 
 		textableEClass = createEClass(TEXTABLE);
 
@@ -867,7 +922,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		resourceEClass.getESuperTypes().add(this.getTextable());
 		resourceManagerEClass.getESuperTypes().add(this.getEntityProvider());
 		resourceSerializerEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
-		slotEClass.getESuperTypes().add(this.getNameable());
+		slotEClass.getESuperTypes().add(this.getEntityNameable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1106,7 +1161,11 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(facetEClass, Facet.class, "Facet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(frameEClass, Frame.class, "Frame", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(frameEClass, Frame.class, "Frame", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFrame_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFrame_Name(), ecorePackage.getEString(), "name", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFrame_Slots(), this.getSlot(), null, "slots", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFrame_SuperNames(), ecorePackage.getEString(), "superNames", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(frameEClass, null, "ako", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
@@ -1125,8 +1184,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(frameEClass, this.getSlot(), "getSlotName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(frameEClass, this.getSlot(), "getSlots", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(frameEClass, null, "getSuperFrames", 0, -1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
@@ -1137,8 +1194,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(frameEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(frameEClass, ecorePackage.getEBoolean(), "isAbstract", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(frameEClass, null, "unsetValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(frameEClass_E);
@@ -1479,7 +1534,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(resourceSerializerEClass_E);
 		initEOperation(op, g1);
 
-		initEClass(slotEClass, Slot.class, "Slot", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(slotEClass, Slot.class, "Slot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSlot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(slotEClass, this.getCardinality(), "getCardinality", 0, 1, IS_UNIQUE, IS_ORDERED);
 

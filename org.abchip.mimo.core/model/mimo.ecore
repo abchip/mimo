@@ -812,8 +812,7 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Facet" abstract="true" eSuperTypes="#//entity/Entity"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Frame" abstract="true" interface="true"
-        eSuperTypes="#//entity/EntityNameable">
+    <eClassifiers xsi:type="ecore:EClass" name="Frame" abstract="true" eSuperTypes="#//entity/EntityNameable">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/Entity"/>
       </eTypeParameters>
@@ -831,7 +830,6 @@
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getSlotName" lowerBound="1" eType="#//entity/Slot"/>
-      <eOperations name="getSlots" upperBound="-1" eType="#//entity/Slot"/>
       <eOperations name="getSuperFrames" upperBound="-1">
         <eGenericType eClassifier="#//entity/Frame">
           <eTypeArguments/>
@@ -843,13 +841,22 @@
         </eParameters>
         <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
       </eOperations>
-      <eOperations name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="unsetValue">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//entity/Frame/E"/>
         </eParameters>
         <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="slots" upperBound="-1"
+          eType="#//entity/Slot" changeable="false" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="superNames" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FrameManager" abstract="true" interface="true">
       <eOperations name="createEntity" lowerBound="1">
@@ -1217,8 +1224,7 @@
       <eLiterals name="TEST" value="20" literal="Test"/>
       <eLiterals name="TEMP" value="30" literal="Temporary"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" interface="true"
-        eSuperTypes="#//entity/Nameable">
+    <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityNameable">
       <eOperations name="getCardinality" eType="#//entity/Cardinality"/>
       <eOperations name="getDefaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       <eOperations name="isName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -1227,6 +1233,9 @@
       <eOperations name="getValue" eType="#//entity/Entity">
         <eParameters name="nsPrefix" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Textable" abstract="true" interface="true">
       <eOperations name="getText" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

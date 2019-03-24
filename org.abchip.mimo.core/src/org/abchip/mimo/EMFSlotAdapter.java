@@ -13,7 +13,7 @@ package org.abchip.mimo;
 
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.entity.impl.SlotImpl;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -22,26 +22,22 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class EMFSlotAdapter implements Slot {
+public class EMFSlotAdapter extends SlotImpl {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private ETypedElement element;
-	private String name;
 
 	public EMFSlotAdapter(ETypedElement element) {
-		this(element, null);
+		this(element, element.getName());
 	}
 
 	public EMFSlotAdapter(ETypedElement element, String name) {
 		this.element = element;
 		this.name = name;
-	}
-
-	@Override
-	public String getName() {
-		if (this.name != null)
-			return this.name;
-		else
-			return element.getName();
 	}
 
 	@Override
