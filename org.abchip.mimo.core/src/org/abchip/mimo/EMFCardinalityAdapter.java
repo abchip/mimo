@@ -11,11 +11,10 @@
  */
 package org.abchip.mimo;
 
-import org.abchip.mimo.entity.Cardinality;
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.entity.impl.CardinalityImpl;
 import org.eclipse.emf.ecore.ETypedElement;
 
-public class EMFCardinalityAdapter extends EntityImpl implements Cardinality {
+public class EMFCardinalityAdapter extends CardinalityImpl {
 
 	private static final long serialVersionUID = 1L;
 
@@ -23,35 +22,28 @@ public class EMFCardinalityAdapter extends EntityImpl implements Cardinality {
 
 	public EMFCardinalityAdapter(ETypedElement element) {
 		this.element = element;
+		this.min = this.element.getLowerBound();
+		this.max = this.element.getUpperBound();
 	}
-
-	@Override
-	public int getMin() {
-		return this.element.getLowerBound();
-	}
-
-	@Override
-	public void setMin(int value) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public boolean isMandatory() {
-		return this.element.getLowerBound() > 0;
-	}
-
-	@Override
-	public boolean isMultiple() {
-		return this.element.isMany();
-	}
-
-	@Override
-	public int getMax() {
-		return this.element.getUpperBound();
-	}
-
+	
 	@Override
 	public void setMax(int value) {
 		throw new UnsupportedOperationException();
 	}
+	
+	@Override
+	public void setMin(int value) {
+		throw new UnsupportedOperationException();
+	}
+	
+	@Override
+	public boolean isMandatory() {
+		return getMin() > 0 ? true : false;
+	}
+
+	@Override
+	public boolean isMultiple() {
+		return (getMax() == -1 || getMax() > 1) ? true : false;
+	}
+
 }

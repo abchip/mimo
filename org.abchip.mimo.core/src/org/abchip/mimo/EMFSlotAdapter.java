@@ -11,11 +11,9 @@
  */
 package org.abchip.mimo;
 
-import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.impl.SlotImpl;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -28,7 +26,7 @@ public class EMFSlotAdapter extends SlotImpl {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private ETypedElement element;
 
 	public EMFSlotAdapter(ETypedElement element) {
@@ -37,40 +35,20 @@ public class EMFSlotAdapter extends SlotImpl {
 
 	public EMFSlotAdapter(ETypedElement element, String name) {
 		this.element = element;
-		this.name = name;
-	}
+		if (name != null)
+			this.name = name;
+		else
+			this.name = element.getName();
 
-	@Override
-	public Cardinality getCardinality() {
-		return new EMFCardinalityAdapter(this.element);
-	}
+		this.cardinality = new EMFCardinalityAdapter(element);
 
-	@Override
-	public Object getDefaultValue() {
-		if (element instanceof EStructuralFeature)
-			return ((EStructuralFeature) this.element).getDefaultValue();
-		return null;
-	}
-
-	@Override
-	public boolean isName() {
-		if (element instanceof EAttribute)
-			return ((EAttribute) this.element).isID();
-		return false;
-	}
-
-	@Override
-	public boolean isTransient() {
-		if (element instanceof EStructuralFeature)
-			return ((EStructuralFeature) this.element).isTransient();
-		return true;
-	}
-
-	@Override
-	public boolean isVolatile() {
-		if (element instanceof EStructuralFeature)
-			return ((EStructuralFeature) this.element).isVolatile();
-		return true;
+		
+		if (element instanceof EStructuralFeature) {
+			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);
+			this.defaultValue = eStructuralFeature.getDefaultValueLiteral();
+			this.transient_ = eStructuralFeature.isTransient();
+			this.volatile_ = eStructuralFeature.isVolatile();
+		}
 	}
 
 	@Override

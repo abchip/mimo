@@ -19,7 +19,11 @@ package org.abchip.mimo.entity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isTransient <em>Transient</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isVolatile <em>Volatile</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getSlot()
@@ -44,47 +48,51 @@ public interface Slot extends EntityNameable {
 	String getName();
 
 	/**
+	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cardinality</em>' reference isn't clear, there
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Cardinality</em>' containment reference.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Cardinality()
+	 * @model containment="true" changeable="false"
 	 * @generated
 	 */
 	Cardinality getCardinality();
 
 	/**
+	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Value</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Default Value</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_DefaultValue()
+	 * @model changeable="false"
 	 * @generated
 	 */
-	Object getDefaultValue();
+	String getDefaultValue();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	boolean isName();
-
-	/**
+	 * Returns the value of the '<em><b>Transient</b></em>' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Transient</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Transient()
+	 * @model changeable="false"
 	 * @generated
 	 */
 	boolean isTransient();
 
 	/**
+	 * Returns the value of the '<em><b>Volatile</b></em>' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Volatile</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Volatile()
+	 * @model changeable="false"
 	 * @generated
 	 */
 	boolean isVolatile();

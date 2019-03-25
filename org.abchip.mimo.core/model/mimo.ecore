@@ -558,11 +558,11 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="userClass" lowerBound="1"
-          eType="#//context/UserClass" defaultValueLiteral="User" derived="true"/>
+          eType="#//context/UserClass" derived="true"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/entity" nsPrefix="mimo-ent">
-    <eClassifiers xsi:type="ecore:EClass" name="Cardinality" eSuperTypes="#//entity/Entity">
+    <eClassifiers xsi:type="ecore:EClass" name="Cardinality" abstract="true" eSuperTypes="#//entity/Entity">
       <eOperations name="isMandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="isMultiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -1225,16 +1225,19 @@
       <eLiterals name="TEMP" value="30" literal="Temporary"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityNameable">
-      <eOperations name="getCardinality" eType="#//entity/Cardinality"/>
-      <eOperations name="getDefaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-      <eOperations name="isName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isTransient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isVolatile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="getValue" eType="#//entity/Entity">
         <eParameters name="nsPrefix" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="#//entity/Cardinality"
+          changeable="false" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="transient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="volatile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           changeable="false"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Textable" abstract="true" interface="true">
@@ -1467,8 +1470,7 @@
       <eLiterals name="GreaterThanEqual" value="205" literal="GE"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TermExpression" abstract="true" eSuperTypes="#//expression/Expression">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="net" nsURI="http://www.abchip.org/mimo/net" nsPrefix="mimo-net">

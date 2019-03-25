@@ -601,13 +601,49 @@ public interface EntityPackage extends EPackage {
 	int SLOT = 19;
 
 	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__CARDINALITY = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__DEFAULT_VALUE = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Transient</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__TRANSIENT = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__VOLATILE = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -616,7 +652,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
@@ -1045,6 +1081,17 @@ public interface EntityPackage extends EPackage {
 	EClass getSlot();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
+	 * @see org.abchip.mimo.entity.Slot#getCardinality()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EReference getSlot_Cardinality();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1054,6 +1101,39 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSlot_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isTransient <em>Transient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transient</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isTransient()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Transient();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isVolatile <em>Volatile</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Volatile</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isVolatile()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Volatile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Value</em>'.
+	 * @see org.abchip.mimo.entity.Slot#getDefaultValue()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_DefaultValue();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}'.
@@ -1448,12 +1528,44 @@ public interface EntityPackage extends EPackage {
 		EClass SLOT = eINSTANCE.getSlot();
 
 		/**
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SLOT__CARDINALITY = eINSTANCE.getSlot_Cardinality();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Transient</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__TRANSIENT = eINSTANCE.getSlot_Transient();
+
+		/**
+		 * The meta object literal for the '<em><b>Volatile</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__VOLATILE = eINSTANCE.getSlot_Volatile();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__DEFAULT_VALUE = eINSTANCE.getSlot_DefaultValue();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.

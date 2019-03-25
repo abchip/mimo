@@ -41,60 +41,60 @@ public class LookupSchemaServlet extends BaseServlet {
 	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+
 		String frameName = request.getParameter("frame");
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
-		
+
 		ResourceSerializer<Schema> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Schema.class, SerializationType.JSON);
-		
+
 		Schema schema = resourceManager.getEntityReader(contextRoot, Schema.class, ResourceScope.CTX).lookup(name);
-		
-		if(schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
+
+		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			schema = frameManager.createEntity(Schema.class);
 			schema.setName("prototype");
-			
+
 			Frame<?> frame = frameManager.getFrame(frameName);
-			SchemaColumn currentColumn =  null;
-			for(Slot slot: frame.getSlots()) {
+			SchemaColumn currentColumn = null;
+			for (Slot slot : frame.getSlots()) {
 				SchemaColumn column = buildColumn(slot);
-				if(slot.isName()) {
-					if(currentColumn == null)
+				if (slot.equals(frame.getSlotName())) {
+					if (currentColumn == null)
 						currentColumn = column;
 					Lists.qINSTANCE.addFirst(schema.getColumns(), column);
-				}
-				else if(slot.getName().startsWith("created"))
+				} else if (slot.getName().startsWith("created"))
 					Lists.qINSTANCE.addLast(schema.getColumns(), column);
-				else if(slot.getName().startsWith("lastUpdated"))
+				else if (slot.getName().startsWith("lastUpdated"))
 					Lists.qINSTANCE.addLast(schema.getColumns(), column);
 				else {
-					if(currentColumn == null)
-						Lists.qINSTANCE.addFirst(schema.getColumns(), column);						
+					if (currentColumn == null)
+						Lists.qINSTANCE.addFirst(schema.getColumns(), column);
 					else
 						Lists.qINSTANCE.addAfter(schema.getColumns(), currentColumn, column);
 					currentColumn = column;
 				}
 			}
 		}
-		
-		if(schema != null)	
+
+		if (schema != null)
 			resourceSerializer.add(schema);
-			
+
 		resourceSerializer.save(response.getOutputStream());
 
 		response.flushBuffer();
 		resourceSerializer.clear();
-	}	
-	
+
+	}
+
 	private SchemaColumn buildColumn(Slot slot) {
 		SchemaColumn column = frameManager.createEntity(SchemaColumn.class);
 		column.setId(slot.getName());
-		
+
 		StringBuffer header = new StringBuffer();
-		for(char c: slot.getName().toCharArray()) {			
-			if(Character.isUpperCase(c) && header.length() != 0)
+		for (char c : slot.getName().toCharArray()) {
+			if (Character.isUpperCase(c) && header.length() != 0)
 				header.append(" ");
 			header.append(c);
 		}

@@ -22,7 +22,7 @@ package org.abchip.mimo.entity;
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getCardinality()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Cardinality extends Entity {

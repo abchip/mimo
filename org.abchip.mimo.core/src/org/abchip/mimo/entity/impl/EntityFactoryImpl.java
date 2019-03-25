@@ -66,7 +66,6 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case EntityPackage.CARDINALITY: return (EObject)createCardinality();
 			case EntityPackage.DEFAULT: return (EObject)createDefault();
 			case EntityPackage.RESOURCE: return (EObject)createResource();
 			case EntityPackage.RESOURCE_NOTIFIER: return (EObject)createResourceNotifier();
@@ -115,17 +114,6 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Cardinality createCardinality() {
-		CardinalityImpl cardinality = new CardinalityImpl();
-		return cardinality;
 	}
 
 	/**

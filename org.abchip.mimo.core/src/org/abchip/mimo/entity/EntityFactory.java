@@ -31,15 +31,6 @@ public interface EntityFactory extends EFactory {
 	EntityFactory eINSTANCE = org.abchip.mimo.entity.impl.EntityFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Cardinality</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cardinality</em>'.
-	 * @generated
-	 */
-	Cardinality createCardinality();
-
-	/**
 	 * Returns a new object of class '<em>Default</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

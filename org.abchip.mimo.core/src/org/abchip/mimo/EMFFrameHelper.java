@@ -70,30 +70,6 @@ public class EMFFrameHelper {
 		EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(getPackageURI(klass));
 		return ePackage;
 	}
-
-	public static EClass getEClass(EPackage ePackage, Class<? extends Entity> klass) {
-		EClass eClass = (EClass) ePackage.getEClassifier(getModelName(klass));
-		return eClass;
-	}
-
-	public static String getModelName(Class<? extends Entity> klass) {
-
-		Class<?> _class = null;
-		for (Class<?> _interface : klass.getInterfaces()) {
-			if (Entity.class.isAssignableFrom(_interface)) {
-				_class = _interface;
-				break;
-			}
-		}
-
-		if (_class == null)
-			_class = klass;
-
-		if (_class.getSimpleName().startsWith("MU"))
-			return _class.getSimpleName().substring(2);
-		else
-			return _class.getSimpleName().substring(1);
-	}	
 	
 	private static synchronized void loadFrames() {
 		

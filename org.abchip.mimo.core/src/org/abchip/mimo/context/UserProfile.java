@@ -110,7 +110,6 @@ public interface UserProfile extends EntityNameable, Textable {
 
 	/**
 	 * Returns the value of the '<em><b>User Class</b></em>' attribute.
-	 * The default value is <code>"User"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.context.UserClass}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -122,7 +121,7 @@ public interface UserProfile extends EntityNameable, Textable {
 	 * @see org.abchip.mimo.context.UserClass
 	 * @see #setUserClass(UserClass)
 	 * @see org.abchip.mimo.context.ContextPackage#getUserProfile_UserClass()
-	 * @model default="User" required="true" derived="true"
+	 * @model required="true" derived="true"
 	 * @generated
 	 */
 	UserClass getUserClass();

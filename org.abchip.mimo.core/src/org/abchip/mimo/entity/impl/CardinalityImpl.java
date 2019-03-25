@@ -1,25 +1,24 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.entity.impl;
 
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.EntityPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Cardinality</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Cardinality</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -30,16 +29,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CardinalityImpl extends EntityImpl implements Cardinality {
+public abstract class CardinalityImpl extends EntityImpl implements Cardinality {
 	/**
-	 *
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -49,7 +48,7 @@ public class CardinalityImpl extends EntityImpl implements Cardinality {
 	/**
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -59,7 +58,7 @@ public class CardinalityImpl extends EntityImpl implements Cardinality {
 	/**
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -69,7 +68,7 @@ public class CardinalityImpl extends EntityImpl implements Cardinality {
 	/**
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -98,6 +97,27 @@ public class CardinalityImpl extends EntityImpl implements Cardinality {
 	 * @generated
 	 */
 	@Override
+	public int getMax() {
+		return max;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setMax(int newMax) {
+		int oldMax = max;
+		max = newMax;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.CARDINALITY__MAX, oldMax, max));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public int getMin() {
 		return min;
 	}
@@ -115,44 +135,27 @@ public class CardinalityImpl extends EntityImpl implements Cardinality {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public boolean isMandatory() {
-		return getMin() > 0 ? true : false;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public boolean isMultiple() {
-		return (getMax() == -1 || getMax() > 1) ? true : false;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int getMax() {
-		return max;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setMax(int newMax) {
-		int oldMax = max;
-		max = newMax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.CARDINALITY__MAX, oldMax, max));
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
