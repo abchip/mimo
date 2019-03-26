@@ -6,6 +6,7 @@ package org.abchip.mimo.ui.menu;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -69,40 +70,22 @@ public interface MenuPackage extends EPackage {
 	int MENU = 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU__ID = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int MENU__ELEMENTS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU__ICON = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU__VALUE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU__DATA = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int MENU__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Menu</em>' class.
@@ -111,7 +94,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int MENU_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.menu.impl.MenuActionImpl <em>Action</em>}' class.
@@ -122,15 +105,6 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 */
 	int MENU_ACTION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU_ACTION__ID = UIPackage.DATA_NODE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -151,13 +125,69 @@ public interface MenuPackage extends EPackage {
 	int MENU_ACTION__VALUE = UIPackage.DATA_NODE__VALUE;
 
 	/**
+	 * The feature id for the '<em><b>Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_ACTION__ACTION = UIPackage.DATA_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_ACTION_FEATURE_COUNT = UIPackage.DATA_NODE_FEATURE_COUNT + 0;
+	int MENU_ACTION_FEATURE_COUNT = UIPackage.DATA_NODE_FEATURE_COUNT + 1;
+
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.menu.impl.MenuGroupImpl <em>Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.menu.impl.MenuGroupImpl
+	 * @see org.abchip.mimo.ui.menu.impl.MenuPackageImpl#getMenuGroup()
+	 * @generated
+	 */
+	int MENU_GROUP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_GROUP__ICON = UIPackage.DATA_NODE__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_GROUP__VALUE = UIPackage.DATA_NODE__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_GROUP__DATA = UIPackage.DATA_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_GROUP_FEATURE_COUNT = UIPackage.DATA_NODE_FEATURE_COUNT + 1;
 
 
 	/**
@@ -171,15 +201,26 @@ public interface MenuPackage extends EPackage {
 	EClass getMenu();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.ui.menu.Menu#getData <em>Data</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.ui.menu.Menu#getElements <em>Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Data</em>'.
-	 * @see org.abchip.mimo.ui.menu.Menu#getData()
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see org.abchip.mimo.ui.menu.Menu#getElements()
 	 * @see #getMenu()
 	 * @generated
 	 */
-	EReference getMenu_Data();
+	EReference getMenu_Elements();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.menu.Menu#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.ui.menu.Menu#getName()
+	 * @see #getMenu()
+	 * @generated
+	 */
+	EAttribute getMenu_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.menu.MenuAction <em>Action</em>}'.
@@ -190,6 +231,38 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMenuAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.menu.MenuAction#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Action</em>'.
+	 * @see org.abchip.mimo.ui.menu.MenuAction#getAction()
+	 * @see #getMenuAction()
+	 * @generated
+	 */
+	EAttribute getMenuAction_Action();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.menu.MenuGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Group</em>'.
+	 * @see org.abchip.mimo.ui.menu.MenuGroup
+	 * @generated
+	 */
+	EClass getMenuGroup();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.ui.menu.MenuGroup#getData <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data</em>'.
+	 * @see org.abchip.mimo.ui.menu.MenuGroup#getData()
+	 * @see #getMenuGroup()
+	 * @generated
+	 */
+	EReference getMenuGroup_Data();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -224,12 +297,20 @@ public interface MenuPackage extends EPackage {
 		EClass MENU = eINSTANCE.getMenu();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MENU__DATA = eINSTANCE.getMenu_Data();
+		EReference MENU__ELEMENTS = eINSTANCE.getMenu_Elements();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MENU__NAME = eINSTANCE.getMenu_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.menu.impl.MenuActionImpl <em>Action</em>}' class.
@@ -240,6 +321,32 @@ public interface MenuPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MENU_ACTION = eINSTANCE.getMenuAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MENU_ACTION__ACTION = eINSTANCE.getMenuAction_Action();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.menu.impl.MenuGroupImpl <em>Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.menu.impl.MenuGroupImpl
+		 * @see org.abchip.mimo.ui.menu.impl.MenuPackageImpl#getMenuGroup()
+		 * @generated
+		 */
+		EClass MENU_GROUP = eINSTANCE.getMenuGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MENU_GROUP__DATA = eINSTANCE.getMenuGroup_Data();
 
 	}
 

@@ -19,16 +19,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/type"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ui.ecore#//DataNode">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/icon"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/value"/>
     </genClasses>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="ui.ecore#//menu">
       <genClasses ecoreClass="ui.ecore#//menu/Menu">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//menu/Menu/data"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//menu/Menu/elements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//menu/Menu/name"/>
       </genClasses>
-      <genClasses ecoreClass="ui.ecore#//menu/MenuAction"/>
+      <genClasses ecoreClass="ui.ecore#//menu/MenuAction">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//menu/MenuAction/action"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//menu/MenuGroup">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//menu/MenuGroup/data"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Schema" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="ui.ecore#//schema">

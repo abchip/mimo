@@ -1115,7 +1115,7 @@
           <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer/E"/>
         </eGenericType>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityNameable"/>
+          <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="klass" lowerBound="1">
@@ -1130,7 +1130,7 @@
           <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer.1/E"/>
         </eGenericType>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityNameable"/>
+          <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1">
@@ -1145,7 +1145,7 @@
           <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer.2/E"/>
         </eGenericType>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityNameable"/>
+          <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1185,7 +1185,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="ResourceSerializer" abstract="true"
         eSuperTypes="#//util/JavaCloseable">
       <eTypeParameters name="E">
-        <eBounds eClassifier="#//entity/EntityNameable"/>
+        <eBounds eClassifier="#//entity/Entity"/>
       </eTypeParameters>
       <eOperations name="add">
         <eParameters name="entity" lowerBound="1">

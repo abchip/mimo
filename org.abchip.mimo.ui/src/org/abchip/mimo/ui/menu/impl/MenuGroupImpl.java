@@ -3,56 +3,60 @@
  */
 package org.abchip.mimo.ui.menu.impl;
 
+import java.util.Collection;
+import java.util.List;
+
+import org.abchip.mimo.ui.DataNode;
+
 import org.abchip.mimo.ui.impl.DataNodeImpl;
-import org.abchip.mimo.ui.menu.MenuAction;
+
+import org.abchip.mimo.ui.menu.MenuGroup;
 import org.abchip.mimo.ui.menu.MenuPackage;
-import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Action</b></em>'.
+ * An implementation of the model object '<em><b>Group</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuActionImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuGroupImpl#getData <em>Data</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MenuActionImpl extends DataNodeImpl implements MenuAction {
-	/**
-	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected String action = ACTION_EDEFAULT;
+public class MenuGroupImpl extends DataNodeImpl implements MenuGroup {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getData()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DataNode> data;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MenuActionImpl() {
+	protected MenuGroupImpl() {
 		super();
 	}
 
@@ -63,7 +67,7 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MenuPackage.Literals.MENU_ACTION;
+		return MenuPackage.Literals.MENU_GROUP;
 	}
 
 	/**
@@ -72,8 +76,11 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	 * @generated
 	 */
 	@Override
-	public String getAction() {
-		return action;
+	public List<DataNode> getData() {
+		if (data == null) {
+			data = new EObjectContainmentEList<DataNode>(DataNode.class, this, MenuPackage.MENU_GROUP__DATA);
+		}
+		return data;
 	}
 
 	/**
@@ -82,11 +89,12 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	 * @generated
 	 */
 	@Override
-	public void setAction(String newAction) {
-		String oldAction = action;
-		action = newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MenuPackage.MENU_ACTION__ACTION, oldAction, action));
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MenuPackage.MENU_GROUP__DATA:
+				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -97,8 +105,8 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MenuPackage.MENU_ACTION__ACTION:
-				return getAction();
+			case MenuPackage.MENU_GROUP__DATA:
+				return getData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,11 +116,13 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MenuPackage.MENU_ACTION__ACTION:
-				setAction((String)newValue);
+			case MenuPackage.MENU_GROUP__DATA:
+				getData().clear();
+				getData().addAll((Collection<? extends DataNode>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +136,8 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MenuPackage.MENU_ACTION__ACTION:
-				setAction(ACTION_EDEFAULT);
+			case MenuPackage.MENU_GROUP__DATA:
+				getData().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,26 +151,10 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MenuPackage.MENU_ACTION__ACTION:
-				return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
+			case MenuPackage.MENU_GROUP__DATA:
+				return data != null && !data.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (action: ");
-		result.append(action);
-		result.append(')');
-		return result.toString();
-	}
-
-} //MenuActionImpl
+} //MenuGroupImpl

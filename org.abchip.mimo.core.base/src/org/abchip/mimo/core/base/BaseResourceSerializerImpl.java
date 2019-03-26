@@ -18,7 +18,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.ResourceSerializerImpl;
@@ -31,7 +31,7 @@ import org.emfjson.jackson.resource.JsonResourceFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class BaseResourceSerializerImpl<E extends EntityNameable> extends ResourceSerializerImpl<E> {
+public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerializerImpl<E> {
 
 
 	private Resource resource = null;

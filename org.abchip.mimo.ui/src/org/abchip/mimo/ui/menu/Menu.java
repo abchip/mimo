@@ -17,28 +17,55 @@ import org.abchip.mimo.ui.DataNode;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.menu.Menu#getData <em>Data</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.Menu#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.Menu#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.menu.MenuPackage#getMenu()
  * @model
  * @generated
  */
-public interface Menu extends EntityNameable, DataNode {
+public interface Menu extends EntityNameable {
 	/**
-	 * Returns the value of the '<em><b>Data</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.ui.DataNode}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data</em>' containment reference list.
-	 * @see org.abchip.mimo.ui.menu.MenuPackage#getMenu_Data()
+	 * @return the value of the '<em>Elements</em>' containment reference list.
+	 * @see org.abchip.mimo.ui.menu.MenuPackage#getMenu_Elements()
 	 * @model containment="true"
 	 * @generated
 	 */
-	List<DataNode> getData();
+	List<DataNode> getElements();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.abchip.mimo.ui.menu.MenuPackage#getMenu_Name()
+	 * @model id="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.menu.Menu#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Menu

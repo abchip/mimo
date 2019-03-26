@@ -934,7 +934,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		resourceListenerEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(this.getEntityNameable());
 		resourceNotifierEClass_E.getEBounds().add(g1);
-		g1 = createEGenericType(this.getEntityNameable());
+		g1 = createEGenericType(this.getEntity());
 		resourceSerializerEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
@@ -1485,7 +1485,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(this.getEntityNameable());
+		g1 = createEGenericType(this.getEntity());
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
@@ -1500,7 +1500,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(this.getEntityNameable());
+		g1 = createEGenericType(this.getEntity());
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
@@ -1515,7 +1515,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(this.getEntityNameable());
+		g1 = createEGenericType(this.getEntity());
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);

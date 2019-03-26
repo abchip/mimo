@@ -106,22 +106,13 @@ public interface UIPackage extends EPackage {
 	int DATA_NODE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_NODE__ID = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_NODE__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int DATA_NODE__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -130,7 +121,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_NODE__VALUE = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int DATA_NODE__VALUE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Data Node</em>' class.
@@ -139,7 +130,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_NODE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int DATA_NODE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}' enum.
@@ -193,17 +184,6 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDataNode();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.DataNode#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.abchip.mimo.ui.DataNode#getId()
-	 * @see #getDataNode()
-	 * @generated
-	 */
-	EAttribute getDataNode_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.DataNode#getIcon <em>Icon</em>}'.
@@ -294,14 +274,6 @@ public interface UIPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATA_NODE = eINSTANCE.getDataNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_NODE__ID = eINSTANCE.getDataNode_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.

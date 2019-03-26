@@ -12,6 +12,7 @@ import org.abchip.mimo.ui.impl.UIPackageImpl;
 import org.abchip.mimo.ui.menu.Menu;
 import org.abchip.mimo.ui.menu.MenuAction;
 import org.abchip.mimo.ui.menu.MenuFactory;
+import org.abchip.mimo.ui.menu.MenuGroup;
 import org.abchip.mimo.ui.menu.MenuPackage;
 
 import org.abchip.mimo.ui.schema.SchemaPackage;
@@ -20,6 +21,7 @@ import org.abchip.mimo.ui.schema.impl.SchemaPackageImpl;
 
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -46,6 +48,13 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	private EClass menuActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass menuGroupEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -141,8 +150,18 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMenu_Data() {
+	public EReference getMenu_Elements() {
 		return (EReference)menuEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMenu_Name() {
+		return (EAttribute)menuEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -153,6 +172,36 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	@Override
 	public EClass getMenuAction() {
 		return menuActionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMenuAction_Action() {
+		return (EAttribute)menuActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMenuGroup() {
+		return menuGroupEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMenuGroup_Data() {
+		return (EReference)menuGroupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -185,9 +234,14 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 
 		// Create classes and their features
 		menuEClass = createEClass(MENU);
-		createEReference(menuEClass, MENU__DATA);
+		createEReference(menuEClass, MENU__ELEMENTS);
+		createEAttribute(menuEClass, MENU__NAME);
 
 		menuActionEClass = createEClass(MENU_ACTION);
+		createEAttribute(menuActionEClass, MENU_ACTION__ACTION);
+
+		menuGroupEClass = createEClass(MENU_GROUP);
+		createEReference(menuGroupEClass, MENU_GROUP__DATA);
 	}
 
 	/**
@@ -223,14 +277,19 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 
 		// Add supertypes to classes
 		menuEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		menuEClass.getESuperTypes().add(theUIPackage.getDataNode());
 		menuActionEClass.getESuperTypes().add(theUIPackage.getDataNode());
+		menuGroupEClass.getESuperTypes().add(theUIPackage.getDataNode());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenu_Data(), theUIPackage.getDataNode(), null, "data", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMenu_Elements(), theUIPackage.getDataNode(), null, "elements", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMenu_Name(), ecorePackage.getEString(), "name", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(menuActionEClass, MenuAction.class, "MenuAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMenuAction_Action(), ecorePackage.getEString(), "action", null, 0, 1, MenuAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(menuGroupEClass, MenuGroup.class, "MenuGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMenuGroup_Data(), theUIPackage.getDataNode(), null, "data", null, 0, -1, MenuGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //MenuPackageImpl

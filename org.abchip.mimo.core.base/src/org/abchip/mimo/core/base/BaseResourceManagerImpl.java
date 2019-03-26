@@ -152,19 +152,19 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	}
 
 	@Override
-	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType) {
+	public <E extends Entity> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType) {
 		return getResourceSerializer(contextProvider, klass.getSimpleName(), serializationType);
 	}
 
 	@Override
-	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frameName, SerializationType serializationType) {
+	public <E extends Entity> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frameName, SerializationType serializationType) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
 		return getResourceSerializer(contextProvider, frame,serializationType);
 	}
 
 	@Override
-	public <E extends EntityNameable> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
+	public <E extends Entity> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
 		return new BaseResourceSerializerImpl<E>(serializationType, frame);
 	}
 

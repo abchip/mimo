@@ -184,7 +184,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataNode_Id() {
+	public EAttribute getDataNode_Icon() {
 		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -194,18 +194,8 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataNode_Icon() {
-		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getDataNode_Value() {
-		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -252,7 +242,6 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		createEAttribute(actionEClass, ACTION__TYPE);
 
 		dataNodeEClass = createEClass(DATA_NODE);
-		createEAttribute(dataNodeEClass, DATA_NODE__ID);
 		createEAttribute(dataNodeEClass, DATA_NODE__ICON);
 		createEAttribute(dataNodeEClass, DATA_NODE__VALUE);
 
@@ -308,7 +297,6 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		initEAttribute(getAction_Type(), this.getActionType(), "type", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataNodeEClass, DataNode.class, "DataNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataNode_Id(), ecorePackage.getEString(), "id", null, 1, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataNode_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataNode_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

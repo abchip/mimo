@@ -9,7 +9,6 @@ import java.util.List;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 
 import org.abchip.mimo.ui.DataNode;
-import org.abchip.mimo.ui.UIPackage;
 import org.abchip.mimo.ui.menu.Menu;
 import org.abchip.mimo.ui.menu.MenuPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -33,10 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getData <em>Data</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,74 +45,34 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getElements()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected EList<DataNode> elements;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String id = ID_EDEFAULT;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIcon()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ICON_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIcon()
-	 * @generated
-	 * @ordered
-	 */
-	protected String icon = ICON_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getData()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataNode> data;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,80 +99,34 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	 * @generated
 	 */
 	@Override
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MenuPackage.MENU__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getIcon() {
-		return icon;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIcon(String newIcon) {
-		String oldIcon = icon;
-		icon = newIcon;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MenuPackage.MENU__ICON, oldIcon, icon));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MenuPackage.MENU__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DataNode> getData() {
-		if (data == null) {
-			data = new EObjectContainmentEList<DataNode>(DataNode.class, this, MenuPackage.MENU__DATA);
+	public List<DataNode> getElements() {
+		if (elements == null) {
+			elements = new EObjectContainmentEList<DataNode>(DataNode.class, this, MenuPackage.MENU__ELEMENTS);
 		}
-		return data;
+		return elements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MenuPackage.MENU__NAME, oldName, name));
 	}
 
 	/**
@@ -226,8 +137,8 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MenuPackage.MENU__DATA:
-				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+			case MenuPackage.MENU__ELEMENTS:
+				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,14 +151,10 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MenuPackage.MENU__ID:
-				return getId();
-			case MenuPackage.MENU__ICON:
-				return getIcon();
-			case MenuPackage.MENU__VALUE:
-				return getValue();
-			case MenuPackage.MENU__DATA:
-				return getData();
+			case MenuPackage.MENU__ELEMENTS:
+				return getElements();
+			case MenuPackage.MENU__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,18 +168,12 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MenuPackage.MENU__ID:
-				setId((String)newValue);
+			case MenuPackage.MENU__ELEMENTS:
+				getElements().clear();
+				getElements().addAll((Collection<? extends DataNode>)newValue);
 				return;
-			case MenuPackage.MENU__ICON:
-				setIcon((String)newValue);
-				return;
-			case MenuPackage.MENU__VALUE:
-				setValue((String)newValue);
-				return;
-			case MenuPackage.MENU__DATA:
-				getData().clear();
-				getData().addAll((Collection<? extends DataNode>)newValue);
+			case MenuPackage.MENU__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,17 +187,11 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MenuPackage.MENU__ID:
-				setId(ID_EDEFAULT);
+			case MenuPackage.MENU__ELEMENTS:
+				getElements().clear();
 				return;
-			case MenuPackage.MENU__ICON:
-				setIcon(ICON_EDEFAULT);
-				return;
-			case MenuPackage.MENU__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
-			case MenuPackage.MENU__DATA:
-				getData().clear();
+			case MenuPackage.MENU__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,52 +205,12 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MenuPackage.MENU__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case MenuPackage.MENU__ICON:
-				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
-			case MenuPackage.MENU__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case MenuPackage.MENU__DATA:
-				return data != null && !data.isEmpty();
+			case MenuPackage.MENU__ELEMENTS:
+				return elements != null && !elements.isEmpty();
+			case MenuPackage.MENU__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == DataNode.class) {
-			switch (derivedFeatureID) {
-				case MenuPackage.MENU__ID: return UIPackage.DATA_NODE__ID;
-				case MenuPackage.MENU__ICON: return UIPackage.DATA_NODE__ICON;
-				case MenuPackage.MENU__VALUE: return UIPackage.DATA_NODE__VALUE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == DataNode.class) {
-			switch (baseFeatureID) {
-				case UIPackage.DATA_NODE__ID: return MenuPackage.MENU__ID;
-				case UIPackage.DATA_NODE__ICON: return MenuPackage.MENU__ICON;
-				case UIPackage.DATA_NODE__VALUE: return MenuPackage.MENU__VALUE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -368,12 +223,8 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", icon: ");
-		result.append(icon);
-		result.append(", value: ");
-		result.append(value);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

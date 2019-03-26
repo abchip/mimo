@@ -13,7 +13,7 @@ import java.io.OutputStream;
 import java.util.List;
 import org.abchip.mimo.context.ContextProvider;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.ResourceSerializer;
@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class ResourceSerializerImpl<E extends EntityNameable> extends MinimalEObjectImpl.Container implements ResourceSerializer<E> {
+public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEObjectImpl.Container implements ResourceSerializer<E> {
 	/**
 	 * The cached value of the '{@link #getContextProvider() <em>Context Provider</em>}' reference.
 	 * <!-- begin-user-doc -->

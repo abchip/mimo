@@ -10,10 +10,42 @@ import org.abchip.mimo.ui.DataNode;
  * A representation of the model object '<em><b>Action</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.ui.menu.MenuAction#getAction <em>Action</em>}</li>
+ * </ul>
  *
  * @see org.abchip.mimo.ui.menu.MenuPackage#getMenuAction()
  * @model
  * @generated
  */
 public interface MenuAction extends DataNode {
+
+	/**
+	 * Returns the value of the '<em><b>Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Action</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action</em>' attribute.
+	 * @see #setAction(String)
+	 * @see org.abchip.mimo.ui.menu.MenuPackage#getMenuAction_Action()
+	 * @model
+	 * @generated
+	 */
+	String getAction();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.menu.MenuAction#getAction <em>Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action</em>' attribute.
+	 * @see #getAction()
+	 * @generated
+	 */
+	void setAction(String value);
 } // MenuAction

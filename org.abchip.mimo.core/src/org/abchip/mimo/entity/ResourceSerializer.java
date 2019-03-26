@@ -31,7 +31,7 @@ import org.abchip.mimo.context.ContextProvider;
  * @model abstract="true" superTypes="org.abchip.mimo.util.JavaCloseable"
  * @generated
  */
-public interface ResourceSerializer<E extends EntityNameable> extends Closeable {
+public interface ResourceSerializer<E extends Entity> extends Closeable {
 	/**
 	 * Returns the value of the '<em><b>Context Provider</b></em>' reference.
 	 * <!-- begin-user-doc -->

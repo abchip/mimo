@@ -41,6 +41,15 @@ public interface MenuFactory extends EFactory {
 	MenuAction createMenuAction();
 
 	/**
+	 * Returns a new object of class '<em>Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Group</em>'.
+	 * @generated
+	 */
+	MenuGroup createMenuGroup();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

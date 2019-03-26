@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.DataNodeImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.impl.DataNodeImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.impl.DataNodeImpl#getValue <em>Value</em>}</li>
  * </ul>
@@ -34,26 +33,6 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
@@ -120,29 +99,6 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	 * @generated
 	 */
 	@Override
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.DATA_NODE__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getIcon() {
 		return icon;
 	}
@@ -191,8 +147,6 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.DATA_NODE__ID:
-				return getId();
 			case UIPackage.DATA_NODE__ICON:
 				return getIcon();
 			case UIPackage.DATA_NODE__VALUE:
@@ -209,9 +163,6 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.DATA_NODE__ID:
-				setId((String)newValue);
-				return;
 			case UIPackage.DATA_NODE__ICON:
 				setIcon((String)newValue);
 				return;
@@ -230,9 +181,6 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.DATA_NODE__ID:
-				setId(ID_EDEFAULT);
-				return;
 			case UIPackage.DATA_NODE__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
@@ -251,8 +199,6 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.DATA_NODE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case UIPackage.DATA_NODE__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case UIPackage.DATA_NODE__VALUE:
@@ -271,9 +217,7 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", icon: ");
+		result.append(" (icon: ");
 		result.append(icon);
 		result.append(", value: ");
 		result.append(value);
