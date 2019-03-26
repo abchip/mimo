@@ -10,20 +10,20 @@
     <eLiterals name="SRV" value="20" literal="Service"/>
     <eLiterals name="EVT" value="30" literal="Event"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataNode" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eSubpackages name="menu" nsURI="http://www.abchip.org/mimo/ui/menu" nsPrefix="ui-menu">
-    <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable #//schema/DataNode">
+    <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable #//DataNode">
       <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1"
-          eType="#//schema/DataNode" containment="true"/>
+          eType="#//DataNode" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MenuAction" eSuperTypes="#//schema/DataNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MenuAction" eSuperTypes="#//DataNode"/>
   </eSubpackages>
   <eSubpackages name="schema" nsURI="http://www.abchip.org/mimo/ui/schema" nsPrefix="ui-schema">
-    <eClassifiers xsi:type="ecore:EClass" name="DataNode" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Schema" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
           eType="#//schema/SchemaColumn" containment="true"/>

@@ -3,11 +3,9 @@
  */
 package org.abchip.mimo.ui.menu.impl;
 
+import org.abchip.mimo.ui.impl.DataNodeImpl;
 import org.abchip.mimo.ui.menu.MenuAction;
 import org.abchip.mimo.ui.menu.MenuPackage;
-
-import org.abchip.mimo.ui.schema.impl.DataNodeImpl;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**

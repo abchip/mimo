@@ -12,8 +12,6 @@ import org.abchip.mimo.ui.impl.UIPackageImpl;
 import org.abchip.mimo.ui.menu.MenuPackage;
 
 import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
-
-import org.abchip.mimo.ui.schema.DataNode;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaFactory;
@@ -35,13 +33,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataNodeEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,46 +123,6 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(SchemaPackage.eNS_URI, theSchemaPackage);
 		return theSchemaPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDataNode() {
-		return dataNodeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDataNode_Id() {
-		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDataNode_Icon() {
-		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDataNode_Value() {
-		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -273,11 +224,6 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		dataNodeEClass = createEClass(DATA_NODE);
-		createEAttribute(dataNodeEClass, DATA_NODE__ID);
-		createEAttribute(dataNodeEClass, DATA_NODE__ICON);
-		createEAttribute(dataNodeEClass, DATA_NODE__VALUE);
-
 		schemaEClass = createEClass(SCHEMA);
 		createEReference(schemaEClass, SCHEMA__COLUMNS);
 		createEAttribute(schemaEClass, SCHEMA__NAME);
@@ -319,16 +265,10 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		dataNodeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		schemaEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		schemaColumnEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(dataNodeEClass, DataNode.class, "DataNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataNode_Id(), ecorePackage.getEString(), "id", null, 1, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataNode_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataNode_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSchema_Columns(), this.getSchemaColumn(), null, "columns", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchema_Name(), ecorePackage.getEString(), "name", null, 1, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

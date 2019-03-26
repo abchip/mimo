@@ -8,12 +8,10 @@ import java.util.List;
 
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 
+import org.abchip.mimo.ui.DataNode;
+import org.abchip.mimo.ui.UIPackage;
 import org.abchip.mimo.ui.menu.Menu;
 import org.abchip.mimo.ui.menu.MenuPackage;
-
-import org.abchip.mimo.ui.schema.DataNode;
-import org.abchip.mimo.ui.schema.SchemaPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -333,9 +331,9 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == DataNode.class) {
 			switch (derivedFeatureID) {
-				case MenuPackage.MENU__ID: return SchemaPackage.DATA_NODE__ID;
-				case MenuPackage.MENU__ICON: return SchemaPackage.DATA_NODE__ICON;
-				case MenuPackage.MENU__VALUE: return SchemaPackage.DATA_NODE__VALUE;
+				case MenuPackage.MENU__ID: return UIPackage.DATA_NODE__ID;
+				case MenuPackage.MENU__ICON: return UIPackage.DATA_NODE__ICON;
+				case MenuPackage.MENU__VALUE: return UIPackage.DATA_NODE__VALUE;
 				default: return -1;
 			}
 		}
@@ -351,9 +349,9 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == DataNode.class) {
 			switch (baseFeatureID) {
-				case SchemaPackage.DATA_NODE__ID: return MenuPackage.MENU__ID;
-				case SchemaPackage.DATA_NODE__ICON: return MenuPackage.MENU__ICON;
-				case SchemaPackage.DATA_NODE__VALUE: return MenuPackage.MENU__VALUE;
+				case UIPackage.DATA_NODE__ID: return MenuPackage.MENU__ID;
+				case UIPackage.DATA_NODE__ICON: return MenuPackage.MENU__ICON;
+				case UIPackage.DATA_NODE__VALUE: return MenuPackage.MENU__VALUE;
 				default: return -1;
 			}
 		}

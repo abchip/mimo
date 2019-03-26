@@ -215,7 +215,7 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		SchemaPackage theSchemaPackage = (SchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
+		UIPackage theUIPackage = (UIPackage)EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -223,12 +223,12 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 
 		// Add supertypes to classes
 		menuEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		menuEClass.getESuperTypes().add(theSchemaPackage.getDataNode());
-		menuActionEClass.getESuperTypes().add(theSchemaPackage.getDataNode());
+		menuEClass.getESuperTypes().add(theUIPackage.getDataNode());
+		menuActionEClass.getESuperTypes().add(theUIPackage.getDataNode());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenu_Data(), theSchemaPackage.getDataNode(), null, "data", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMenu_Data(), theUIPackage.getDataNode(), null, "data", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(menuActionEClass, MenuAction.class, "MenuAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}

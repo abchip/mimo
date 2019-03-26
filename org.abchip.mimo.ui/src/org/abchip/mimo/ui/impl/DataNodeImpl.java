@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.schema.impl;
+package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 
-import org.abchip.mimo.ui.schema.DataNode;
-import org.abchip.mimo.ui.schema.SchemaPackage;
+import org.abchip.mimo.ui.DataNode;
+import org.abchip.mimo.ui.UIPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -22,9 +22,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.schema.impl.DataNodeImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.impl.DataNodeImpl#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.impl.DataNodeImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.DataNodeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.DataNodeImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.DataNodeImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,7 +111,7 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SchemaPackage.Literals.DATA_NODE;
+		return UIPackage.Literals.DATA_NODE;
 	}
 
 	/**
@@ -134,7 +134,7 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.DATA_NODE__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.DATA_NODE__ID, oldId, id));
 	}
 
 	/**
@@ -157,7 +157,7 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 		String oldIcon = icon;
 		icon = newIcon;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.DATA_NODE__ICON, oldIcon, icon));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.DATA_NODE__ICON, oldIcon, icon));
 	}
 
 	/**
@@ -180,7 +180,7 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.DATA_NODE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.DATA_NODE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -191,11 +191,11 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SchemaPackage.DATA_NODE__ID:
+			case UIPackage.DATA_NODE__ID:
 				return getId();
-			case SchemaPackage.DATA_NODE__ICON:
+			case UIPackage.DATA_NODE__ICON:
 				return getIcon();
-			case SchemaPackage.DATA_NODE__VALUE:
+			case UIPackage.DATA_NODE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -209,13 +209,13 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SchemaPackage.DATA_NODE__ID:
+			case UIPackage.DATA_NODE__ID:
 				setId((String)newValue);
 				return;
-			case SchemaPackage.DATA_NODE__ICON:
+			case UIPackage.DATA_NODE__ICON:
 				setIcon((String)newValue);
 				return;
-			case SchemaPackage.DATA_NODE__VALUE:
+			case UIPackage.DATA_NODE__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -230,13 +230,13 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SchemaPackage.DATA_NODE__ID:
+			case UIPackage.DATA_NODE__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case SchemaPackage.DATA_NODE__ICON:
+			case UIPackage.DATA_NODE__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
-			case SchemaPackage.DATA_NODE__VALUE:
+			case UIPackage.DATA_NODE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -251,11 +251,11 @@ public abstract class DataNodeImpl extends EntityImpl implements DataNode {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SchemaPackage.DATA_NODE__ID:
+			case UIPackage.DATA_NODE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case SchemaPackage.DATA_NODE__ICON:
+			case UIPackage.DATA_NODE__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
-			case SchemaPackage.DATA_NODE__VALUE:
+			case UIPackage.DATA_NODE__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

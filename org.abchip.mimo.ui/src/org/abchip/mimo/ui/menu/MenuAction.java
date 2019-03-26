@@ -3,7 +3,7 @@
  */
 package org.abchip.mimo.ui.menu;
 
-import org.abchip.mimo.ui.schema.DataNode;
+import org.abchip.mimo.ui.DataNode;
 
 /**
  * <!-- begin-user-doc -->

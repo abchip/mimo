@@ -18,6 +18,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/command"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/type"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="ui.ecore#//DataNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/value"/>
+    </genClasses>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="ui.ecore#//menu">
       <genClasses ecoreClass="ui.ecore#//menu/Menu">
@@ -27,11 +32,6 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Schema" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="ui.ecore#//schema">
-      <genClasses image="false" ecoreClass="ui.ecore#//schema/DataNode">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/DataNode/id"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/DataNode/icon"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/DataNode/value"/>
-      </genClasses>
       <genClasses ecoreClass="ui.ecore#//schema/Schema">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//schema/Schema/columns"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/Schema/name"/>

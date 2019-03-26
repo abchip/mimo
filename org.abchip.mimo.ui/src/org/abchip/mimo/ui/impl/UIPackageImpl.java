@@ -9,6 +9,7 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.Action;
 import org.abchip.mimo.ui.ActionType;
+import org.abchip.mimo.ui.DataNode;
 import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UIPackage;
 
@@ -44,6 +45,13 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	private EClass actionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,6 +174,46 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getDataNode() {
+		return dataNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDataNode_Id() {
+		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDataNode_Icon() {
+		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDataNode_Value() {
+		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getActionType() {
 		return actionTypeEEnum;
 	}
@@ -202,6 +250,11 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__COMMAND);
 		createEAttribute(actionEClass, ACTION__TYPE);
+
+		dataNodeEClass = createEClass(DATA_NODE);
+		createEAttribute(dataNodeEClass, DATA_NODE__ID);
+		createEAttribute(dataNodeEClass, DATA_NODE__ICON);
+		createEAttribute(dataNodeEClass, DATA_NODE__VALUE);
 
 		// Create enums
 		actionTypeEEnum = createEEnum(ACTION_TYPE);
@@ -247,11 +300,17 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 
 		// Add supertypes to classes
 		actionEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		dataNodeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_Command(), ecorePackage.getEString(), "command", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_Type(), this.getActionType(), "type", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataNodeEClass, DataNode.class, "DataNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataNode_Id(), ecorePackage.getEString(), "id", null, 1, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataNode_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataNode_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(actionTypeEEnum, ActionType.class, "ActionType");

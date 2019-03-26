@@ -6,8 +6,7 @@ package org.abchip.mimo.ui.menu;
 import java.util.List;
 
 import org.abchip.mimo.entity.EntityNameable;
-
-import org.abchip.mimo.ui.schema.DataNode;
+import org.abchip.mimo.ui.DataNode;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +27,7 @@ import org.abchip.mimo.ui.schema.DataNode;
 public interface Menu extends EntityNameable, DataNode {
 	/**
 	 * Returns the value of the '<em><b>Data</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.ui.schema.DataNode}.
+	 * The list contents are of type {@link org.abchip.mimo.ui.DataNode}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data</em>' containment reference list isn't clear,

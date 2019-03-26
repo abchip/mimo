@@ -5,8 +5,7 @@ package org.abchip.mimo.ui.menu;
 
 import org.abchip.mimo.entity.EntityPackage;
 
-import org.abchip.mimo.ui.schema.SchemaPackage;
-
+import org.abchip.mimo.ui.UIPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -131,7 +130,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_ACTION__ID = SchemaPackage.DATA_NODE__ID;
+	int MENU_ACTION__ID = UIPackage.DATA_NODE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -140,7 +139,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_ACTION__ICON = SchemaPackage.DATA_NODE__ICON;
+	int MENU_ACTION__ICON = UIPackage.DATA_NODE__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -149,7 +148,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_ACTION__VALUE = SchemaPackage.DATA_NODE__VALUE;
+	int MENU_ACTION__VALUE = UIPackage.DATA_NODE__VALUE;
 
 	/**
 	 * The number of structural features of the '<em>Action</em>' class.
@@ -158,7 +157,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_ACTION_FEATURE_COUNT = SchemaPackage.DATA_NODE_FEATURE_COUNT + 0;
+	int MENU_ACTION_FEATURE_COUNT = UIPackage.DATA_NODE_FEATURE_COUNT + 0;
 
 
 	/**
