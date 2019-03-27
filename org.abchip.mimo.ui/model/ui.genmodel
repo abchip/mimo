@@ -20,6 +20,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="ui.ecore#//DataNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/value"/>
     </genClasses>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"

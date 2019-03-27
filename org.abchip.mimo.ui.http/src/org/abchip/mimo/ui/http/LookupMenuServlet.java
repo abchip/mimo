@@ -12,6 +12,8 @@
 package org.abchip.mimo.ui.http;
 
 import java.io.IOException;
+import java.util.UUID;
+import java.util.function.Consumer;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +26,10 @@ import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.ui.menu.Menu;
+import org.abchip.mimo.ui.menu.MenuAction;
+import org.abchip.mimo.ui.menu.MenuGroup;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 
 public class LookupMenuServlet extends BaseServlet {
 
@@ -33,19 +39,40 @@ public class LookupMenuServlet extends BaseServlet {
 	private ContextRoot contextRoot;
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String name = request.getParameter("name");
 		Menu menu = resourceManager.getEntityReader(contextRoot, Menu.class, ResourceScope.CTX).lookup(name);
-		
+
 		ResourceSerializer<Menu> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Menu.class, SerializationType.JSON);
-		if(menu != null) 
+		if (menu != null) {
+			TreeIterator<EObject> features = ((EObject) menu).eAllContents();
+
+			features.forEachRemaining(new Consumer<EObject>() {
+
+				@Override
+				public void accept(EObject element) {
+					if (element instanceof MenuGroup) {
+						MenuGroup menuGroup = (MenuGroup) element;
+						if (menuGroup.getId() == null || menuGroup.getId().trim().isEmpty()) {
+							menuGroup.setId(UUID.randomUUID().toString());
+						}
+					} else if (element instanceof MenuAction) {
+						MenuAction menuAction = (MenuAction) element;
+						if (menuAction.getId() == null || menuAction.getId().trim().isEmpty()) {
+							menuAction.setId(menuAction.getAction() + "&r=" + UUID.randomUUID().toString());
+						}
+					}
+				}
+			});
+
 			resourceSerializer.add(menu);
+		}
 
 		resourceSerializer.save(response.getOutputStream());
 		resourceSerializer.close();
 
-		response.flushBuffer();		
-	}	
+		response.flushBuffer();
+	}
 }

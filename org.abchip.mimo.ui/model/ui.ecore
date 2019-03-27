@@ -12,6 +12,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataNode" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eSubpackages name="menu" nsURI="http://www.abchip.org/mimo/ui/menu" nsPrefix="ui-menu">

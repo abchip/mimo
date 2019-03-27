@@ -116,6 +116,15 @@ public interface MenuPackage extends EPackage {
 	int MENU_ACTION__ICON = UIPackage.DATA_NODE__ICON;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_ACTION__ID = UIPackage.DATA_NODE__ID;
+
+	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +170,15 @@ public interface MenuPackage extends EPackage {
 	 * @ordered
 	 */
 	int MENU_GROUP__ICON = UIPackage.DATA_NODE__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_GROUP__ID = UIPackage.DATA_NODE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.

@@ -194,8 +194,18 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataNode_Value() {
+	public EAttribute getDataNode_Id() {
 		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDataNode_Value() {
+		return (EAttribute)dataNodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -243,6 +253,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 
 		dataNodeEClass = createEClass(DATA_NODE);
 		createEAttribute(dataNodeEClass, DATA_NODE__ICON);
+		createEAttribute(dataNodeEClass, DATA_NODE__ID);
 		createEAttribute(dataNodeEClass, DATA_NODE__VALUE);
 
 		// Create enums
@@ -298,6 +309,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 
 		initEClass(dataNodeEClass, DataNode.class, "DataNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataNode_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataNode_Id(), ecorePackage.getEString(), "id", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataNode_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
