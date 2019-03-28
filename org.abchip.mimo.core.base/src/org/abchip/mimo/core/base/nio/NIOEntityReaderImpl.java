@@ -45,7 +45,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 	public NIOEntityReaderImpl(NIOPathManager pathManager, EntityProvider resourceProvider, ContextProvider contextProvider, String resource, Frame<E> frame, Logger logger) {
 		setContextProvider(contextProvider);
 		this.pathManager = pathManager;
-		this.resource = resource;		
+		this.resource = resource;
 		setFrame(frame);
 	}
 
@@ -56,7 +56,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 	public String getResourceName() {
 		return this.resource;
 	}
-	
+
 	@Override
 	public boolean exists(String name) {
 		return lookup(name) != null;
@@ -64,9 +64,9 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 	@Override
 	public E lookup(String name) {
-		
+
 		Path folder = getClassFolder(frame, false);
-		if(folder == null)
+		if (folder == null)
 			return null;
 		Path file = folder.resolve(name);
 		if (!Files.exists(file))
@@ -79,21 +79,28 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 		} catch (IOException e) {
 			logger.error(e);
 		}
-		
+
 		return entity;
 	}
-	
-	@Override
-	public EntityIterator<E> find(String nameFilter) {
 
+	@Override
+	public EntityIterator<E> find(String filter) {
+		return find(filter, -1);
+	}
+
+	@Override
+	public EntityIterator<E> find(String filter, int nrElem) {
+		
 		List<E> entries = new ArrayList<E>();
+		
 		Path folder = getClassFolder(frame, false);
 		if (folder == null)
-			return new BaseEntityIteratorImpl<E>(frame, entries.iterator());
+			return new BaseEntityIteratorImpl<E>(frame, entries.iterator(), nrElem);
 
 		try {
 			DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder);
 
+			int i = 0;
 			for (Path path : dirStream) {
 				if (Files.isDirectory(path))
 					continue;
@@ -101,17 +108,17 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 				String entityName = path.getFileName().toString();
 
 				// filter by name
-				if (nameFilter != null) {
+				if (filter != null) {
 
 					// starts
-					if (nameFilter.endsWith("*")) {
+					if (filter.endsWith("*")) {
 
-						if (!entityName.startsWith(nameFilter.substring(0, nameFilter.length() - 1)))
+						if (!entityName.startsWith(filter.substring(0, filter.length() - 1)))
 							continue;
 
 					}
 					// equals
-					else if (!entityName.equals(nameFilter))
+					else if (!entityName.equals(filter))
 						continue;
 
 				}
@@ -119,11 +126,13 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 				try {
 					InputStream inputStream = Files.newInputStream(path);
 					entries.add(getEntitySerializer(contextProvider).deserialize(resource, frame, entityName, inputStream));
-				}
-				catch(Exception e) {
+					i++;
+				} catch (Exception e) {
 					System.err.println(e.getMessage());
 				}
 
+				if(nrElem != -1 && i >= nrElem)
+					break;
 			}
 			dirStream.close();
 
@@ -139,7 +148,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 			}
 		});
 
-		return new BaseEntityIteratorImpl<E>(frame, entries.iterator());
+		return new BaseEntityIteratorImpl<E>(frame, entries.iterator(), nrElem);
 	}
 
 	protected Path getClassFolder(Frame<E> frame, boolean create) {
@@ -162,7 +171,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 		return folder;
 	}
-	
+
 	protected BaseResourceEntitySerializer getEntitySerializer(ContextProvider contextProvider) {
 		Context context = contextProvider.getContext();
 

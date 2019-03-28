@@ -145,6 +145,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CallStatement createCallStatement() {
 		CallStatementImpl callStatement = new CallStatementImpl();
 		return callStatement;
@@ -155,6 +156,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommitStatement createCommitStatement() {
 		CommitStatementImpl commitStatement = new CommitStatementImpl();
 		return commitStatement;
@@ -165,6 +167,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConnectStatement createConnectStatement() {
 		ConnectStatementImpl connectStatement = new ConnectStatementImpl();
 		return connectStatement;
@@ -175,6 +178,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CreateAliasStatement createCreateAliasStatement() {
 		CreateAliasStatementImpl createAliasStatement = new CreateAliasStatementImpl();
 		return createAliasStatement;
@@ -185,6 +189,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CreateIndexStatement createCreateIndexStatement() {
 		CreateIndexStatementImpl createIndexStatement = new CreateIndexStatementImpl();
 		return createIndexStatement;
@@ -195,6 +200,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CreateTableStatement createCreateTableStatement() {
 		CreateTableStatementImpl createTableStatement = new CreateTableStatementImpl();
 		return createTableStatement;
@@ -205,6 +211,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CreateViewStatement createCreateViewStatement() {
 		CreateViewStatementImpl createViewStatement = new CreateViewStatementImpl();
 		return createViewStatement;
@@ -215,6 +222,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DefinitionParseError createDefinitionParseError() {
 		DefinitionParseErrorImpl definitionParseError = new DefinitionParseErrorImpl();
 		return definitionParseError;
@@ -225,6 +233,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DefinitionParseResult createDefinitionParseResult() {
 		DefinitionParseResultImpl definitionParseResult = new DefinitionParseResultImpl();
 		return definitionParseResult;
@@ -235,6 +244,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DisconnectStatement createDisconnectStatement() {
 		DisconnectStatementImpl disconnectStatement = new DisconnectStatementImpl();
 		return disconnectStatement;
@@ -245,6 +255,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DropStatement createDropStatement() {
 		DropStatementImpl dropStatement = new DropStatementImpl();
 		return dropStatement;
@@ -255,6 +266,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IndexDef createIndexDef() {
 		IndexDefImpl indexDef = new IndexDefImpl();
 		return indexDef;
@@ -265,6 +277,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IndexColumnDef createIndexColumnDef() {
 		IndexColumnDefImpl indexColumnDef = new IndexColumnDefImpl();
 		return indexColumnDef;
@@ -275,6 +288,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LockTableStatement createLockTableStatement() {
 		LockTableStatementImpl lockTableStatement = new LockTableStatementImpl();
 		return lockTableStatement;
@@ -285,6 +299,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ReleaseStatement createReleaseStatement() {
 		ReleaseStatementImpl releaseStatement = new ReleaseStatementImpl();
 		return releaseStatement;
@@ -295,6 +310,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RenameStatement createRenameStatement() {
 		RenameStatementImpl renameStatement = new RenameStatementImpl();
 		return renameStatement;
@@ -305,6 +321,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RollbackStatement createRollbackStatement() {
 		RollbackStatementImpl rollbackStatement = new RollbackStatementImpl();
 		return rollbackStatement;
@@ -315,6 +332,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SetConnectionStatement createSetConnectionStatement() {
 		SetConnectionStatementImpl setConnectionStatement = new SetConnectionStatementImpl();
 		return setConnectionStatement;
@@ -325,6 +343,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SchemaDef createSchemaDef() {
 		SchemaDefImpl schemaDef = new SchemaDefImpl();
 		return schemaDef;
@@ -335,6 +354,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TableDef createTableDef() {
 		TableDefImpl tableDef = new TableDefImpl();
 		return tableDef;
@@ -345,6 +365,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TableColumnDef createTableColumnDef() {
 		TableColumnDefImpl tableColumnDef = new TableColumnDefImpl();
 		return tableColumnDef;
@@ -355,6 +376,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TableTerm createTableTerm() {
 		TableTermImpl tableTerm = new TableTermImpl();
 		return tableTerm;
@@ -365,6 +387,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ViewDef createViewDef() {
 		ViewDefImpl viewDef = new ViewDefImpl();
 		return viewDef;
@@ -475,6 +498,7 @@ public class DatabaseDefinitionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatabaseDefinitionPackage getDatabaseDefinitionPackage() {
 		return (DatabaseDefinitionPackage)getEPackage();
 	}

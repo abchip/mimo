@@ -16,6 +16,7 @@
  */
 package org.abchip.mimo.database.impl;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import org.abchip.mimo.context.Context;
@@ -260,6 +261,7 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGenerationStrategy(CatalogGenerationStrategy newGenerationStrategy) {
 		if (newGenerationStrategy != generationStrategy) {
 			NotificationChain msgs = null;
@@ -279,6 +281,7 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SearchStrategy getSearchStrategy() {
 		return searchStrategy;
 	}
@@ -288,6 +291,7 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSearchStrategy(SearchStrategy newSearchStrategy) {
 		SearchStrategy oldSearchStrategy = searchStrategy;
 		searchStrategy = newSearchStrategy == null ? SEARCH_STRATEGY_EDEFAULT : newSearchStrategy;
@@ -324,6 +328,7 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConnectionConfig(ConnectionConfig newConnectionConfig) {
 		if (newConnectionConfig != connectionConfig) {
 			NotificationChain msgs = null;
@@ -597,7 +602,7 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", active: ");
@@ -608,6 +613,10 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 		result.append(searchStrategy);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public void close() throws IOException {
 	}
 
 } // CatalogContainerImpl

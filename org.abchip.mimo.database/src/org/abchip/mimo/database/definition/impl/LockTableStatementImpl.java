@@ -107,6 +107,7 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isAllowRead() {
 		return allowRead;
 	}
@@ -116,6 +117,7 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAllowRead(boolean newAllowRead) {
 		boolean oldAllowRead = allowRead;
 		allowRead = newAllowRead;
@@ -128,6 +130,7 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ShareMode getShareMode() {
 		return shareMode;
 	}
@@ -137,6 +140,7 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setShareMode(ShareMode newShareMode) {
 		ShareMode oldShareMode = shareMode;
 		shareMode = newShareMode == null ? SHARE_MODE_EDEFAULT : newShareMode;
@@ -149,6 +153,7 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getTableName() {
 		return tableName;
 	}
@@ -173,6 +178,7 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTableName(QualifiedName newTableName) {
 		if (newTableName != tableName) {
 			NotificationChain msgs = null;
@@ -288,7 +294,7 @@ public class LockTableStatementImpl extends DefinitionStatementImpl implements L
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (allowRead: ");
 		result.append(allowRead);
 		result.append(", shareMode: ");

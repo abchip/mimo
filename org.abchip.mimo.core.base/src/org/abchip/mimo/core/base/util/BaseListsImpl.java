@@ -11,6 +11,7 @@
  */
 package org.abchip.mimo.core.base.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.abchip.mimo.util.Lists;
@@ -36,7 +37,18 @@ public class BaseListsImpl implements Lists {
 	@Override
 	public <E> void addAfter(List<E> list, E oldElement, E newElement) {
 		int oldElementPosition = list.indexOf(oldElement);
-		list.add(oldElementPosition + 1, newElement);		
+		list.add(oldElementPosition + 1, newElement);
 	}
-	
+
+	@Override
+	public <E> List<E> slice(List<E> list, int index, int nrElem) {
+		List<E> result = new ArrayList<E>();
+		if (index >= 0 && index < list.size()) {
+			int end = index + nrElem < list.size() ? index + nrElem : list.size();
+			for (int i = index; i < end; i++) {
+				result.add(list.get(i));
+			}
+		}
+		return result;
+	}
 }

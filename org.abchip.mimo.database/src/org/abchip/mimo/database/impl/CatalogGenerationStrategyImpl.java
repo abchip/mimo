@@ -208,7 +208,7 @@ public class CatalogGenerationStrategyImpl extends MinimalEObjectImpl.Container 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (createIndexOnView: ");
 		result.append(createIndexOnView);
 		result.append(", createRelativeRecordNumber: ");

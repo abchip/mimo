@@ -101,6 +101,7 @@ public class TableTermImpl extends EntityNameableImpl implements TableTerm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -110,6 +111,7 @@ public class TableTermImpl extends EntityNameableImpl implements TableTerm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -122,6 +124,7 @@ public class TableTermImpl extends EntityNameableImpl implements TableTerm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TableDef getTableDef() {
 		return tableDef;
 	}
@@ -146,6 +149,7 @@ public class TableTermImpl extends EntityNameableImpl implements TableTerm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTableDef(TableDef newTableDef) {
 		if (newTableDef != tableDef) {
 			NotificationChain msgs = null;
@@ -251,7 +255,7 @@ public class TableTermImpl extends EntityNameableImpl implements TableTerm {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

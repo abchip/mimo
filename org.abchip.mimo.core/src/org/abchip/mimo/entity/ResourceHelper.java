@@ -11,6 +11,7 @@
  */
 package org.abchip.mimo.entity;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -20,6 +21,7 @@ import java.util.Queue;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.impl.EntityReaderImpl;
+import org.abchip.mimo.util.Lists;
 
 public class ResourceHelper {
 
@@ -332,8 +334,13 @@ public class ResourceHelper {
 		}
 
 		@Override
-		public EntityIterator<E> find(String nameFilter) {
-			return new QueueReaderIteratorImpl<E>(readers, nameFilter);
+		public EntityIterator<E> find(String filter) {
+			return find(filter, -1);
+		}
+
+		@Override
+		public EntityIterator<E> find(String filter, int nrElem) {
+			return new QueueReaderIteratorImpl<E>(readers, filter, nrElem);
 		}
 
 		@Override
@@ -347,8 +354,7 @@ public class ResourceHelper {
 			}
 
 			return object;
-		}
-		
+		}	
 	}
 	
 	private static class QueueReaderIteratorImpl<E extends EntityNameable> implements EntityIterator<E> {
@@ -356,17 +362,21 @@ public class ResourceHelper {
 		private Queue<EntityReader<E>> readers;
 		private EntityIterator<E> currentIterator;
 		private String namePrefix;
+		private int nrElem;
 		private E nextObject = null;
+		private int count = 0;
+		
+		public QueueReaderIteratorImpl(List<EntityReader<E>> resources, String namePrefix, int nrElem) {
 
-		public QueueReaderIteratorImpl(List<EntityReader<E>> resources, String namePrefix) {
-
+			this.nrElem = nrElem;
+			
 			readers = new LinkedList<EntityReader<E>>();
 			for (EntityReader<E> resourceReader : resources)
 				readers.add(resourceReader);
 
 			this.namePrefix = namePrefix;
 			if(!readers.isEmpty())
-				this.currentIterator = readers.poll().find(namePrefix);
+				this.currentIterator = readers.poll().find(namePrefix, nrElem);
 			doNext();
 		}
 
@@ -383,8 +393,13 @@ public class ResourceHelper {
 
 		@Override
 		public E next() {
-			E object = nextObject;
-			doNext();
+			E object = nextObject;			
+			count++;
+			
+			if(count < nrElem)				
+				doNext();
+			else 
+				nextObject = null;
 
 			return object;
 		}
@@ -405,7 +420,7 @@ public class ResourceHelper {
 			}
 
 			while (readers.peek() != null) {
-				currentIterator = readers.poll().find(namePrefix);
+				currentIterator = readers.poll().find(namePrefix, nrElem - count);
 				while (currentIterator.hasNext()) {
 					nextObject = currentIterator.next();
 					return;
@@ -434,10 +449,18 @@ public class ResourceHelper {
 		}
 
 		@Override
-		public EntityIterator<E> find(String nameFilter) {
+		public EntityIterator<E> find(String filter) {
+			return find(filter, -1);
+		}
 
-			// TODO filter frames
-			return ResourceHelper.wrapIterator(entities.values());
+		@Override
+		public EntityIterator<E> find(String filter, int nrElem) {
+
+			Collection<E> values = entities.values();
+			if(nrElem != -1)
+				values = Lists.qINSTANCE.slice(new ArrayList<E>(values), 0, nrElem);				
+
+			return ResourceHelper.wrapIterator(values);
 		}
 
 		@Override

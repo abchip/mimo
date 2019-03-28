@@ -144,6 +144,7 @@ public class IndexColumnDefImpl extends DatabaseObjectDefImpl implements IndexCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOrdering(OrderingType newOrdering) {
 		OrderingType oldOrdering = ordering;
 		ordering = newOrdering == null ? ORDERING_EDEFAULT : newOrdering;
@@ -254,7 +255,7 @@ public class IndexColumnDefImpl extends DatabaseObjectDefImpl implements IndexCo
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", ordering: ");

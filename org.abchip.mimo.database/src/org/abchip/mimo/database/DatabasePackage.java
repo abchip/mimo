@@ -12,6 +12,7 @@
 package org.abchip.mimo.database;
 
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -84,7 +85,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__NAME = 0;
+	int CATALOG_CONTAINER__NAME = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -93,7 +94,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__ACTIVE = 1;
+	int CATALOG_CONTAINER__ACTIVE = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Connection Config</b></em>' containment reference.
@@ -102,7 +103,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__CONNECTION_CONFIG = 2;
+	int CATALOG_CONTAINER__CONNECTION_CONFIG = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Supports Guest Access</b></em>' attribute.
@@ -111,7 +112,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__SUPPORTS_GUEST_ACCESS = 3;
+	int CATALOG_CONTAINER__SUPPORTS_GUEST_ACCESS = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Generation Strategy</b></em>' containment reference.
@@ -120,7 +121,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__GENERATION_STRATEGY = 4;
+	int CATALOG_CONTAINER__GENERATION_STRATEGY = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Search Strategy</b></em>' attribute.
@@ -129,7 +130,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__SEARCH_STRATEGY = 5;
+	int CATALOG_CONTAINER__SEARCH_STRATEGY = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Catalog Container</em>' class.
@@ -138,7 +139,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER_FEATURE_COUNT = 6;
+	int CATALOG_CONTAINER_FEATURE_COUNT = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.impl.CatalogGenerationStrategyImpl <em>Catalog Generation Strategy</em>}' class.

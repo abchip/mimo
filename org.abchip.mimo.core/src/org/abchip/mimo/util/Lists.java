@@ -59,4 +59,12 @@ public interface Lists extends Singleton<Lists> {
 	 */
 	<E> void addAfter(List<E> list, E oldElement, E newElement);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model type="org.abchip.mimo.util.JavaList&lt;E&gt;" many="false" listType="org.abchip.mimo.util.JavaList&lt;E&gt;" listRequired="true" listMany="false" indexRequired="true" nrElemRequired="true"
+	 * @generated
+	 */
+	<E> List<E> slice(List<E> list, int index, int nrElem);
+
 } // Lists

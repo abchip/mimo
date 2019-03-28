@@ -97,6 +97,7 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 	}
 
 
+	@SuppressWarnings("resource")
 	@Override
 	public Schema createSchema(Connection connection, String name, SchemaDef schemaDef) throws SQLException {
 

@@ -101,6 +101,7 @@ public class CreateViewStatementImpl extends DefinitionStatementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getFields() {
 		if (fields == null) {
 			fields = new EDataTypeUniqueEList<String>(String.class, this, DatabaseDefinitionPackage.CREATE_VIEW_STATEMENT__FIELDS);
@@ -113,6 +114,7 @@ public class CreateViewStatementImpl extends DefinitionStatementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getQuery() {
 		return query;
 	}
@@ -122,6 +124,7 @@ public class CreateViewStatementImpl extends DefinitionStatementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setQuery(String newQuery) {
 		String oldQuery = query;
 		query = newQuery;
@@ -134,6 +137,7 @@ public class CreateViewStatementImpl extends DefinitionStatementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getViewName() {
 		return viewName;
 	}
@@ -158,6 +162,7 @@ public class CreateViewStatementImpl extends DefinitionStatementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setViewName(QualifiedName newViewName) {
 		if (newViewName != viewName) {
 			NotificationChain msgs = null;
@@ -275,7 +280,7 @@ public class CreateViewStatementImpl extends DefinitionStatementImpl implements 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (fields: ");
 		result.append(fields);
 		result.append(", query: ");

@@ -366,7 +366,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DatabaseDefinitionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -380,7 +380,8 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		if (isInited) return (DatabaseDefinitionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = (DatabaseDefinitionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DatabaseDefinitionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DatabaseDefinitionPackageImpl());
+		Object registeredDatabaseDefinitionPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = registeredDatabaseDefinitionPackage instanceof DatabaseDefinitionPackageImpl ? (DatabaseDefinitionPackageImpl)registeredDatabaseDefinitionPackage : new DatabaseDefinitionPackageImpl();
 
 		isInited = true;
 
@@ -398,9 +399,12 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		SQLQueryModelPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI) instanceof DatabasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI) : DatabasePackage.eINSTANCE);
-		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI) instanceof DatabaseConnectionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI) : DatabaseConnectionPackage.eINSTANCE);
-		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI) instanceof DatabaseQueryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI) : DatabaseQueryPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
+		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(registeredPackage instanceof DatabasePackageImpl ? registeredPackage : DatabasePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
+		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(registeredPackage instanceof DatabaseConnectionPackageImpl ? registeredPackage : DatabaseConnectionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
+		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(registeredPackage instanceof DatabaseQueryPackageImpl ? registeredPackage : DatabaseQueryPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theDatabaseDefinitionPackage.createPackageContents();
@@ -417,7 +421,6 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		// Mark meta-data to indicate it can't be changed
 		theDatabaseDefinitionPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DatabaseDefinitionPackage.eNS_URI, theDatabaseDefinitionPackage);
 		return theDatabaseDefinitionPackage;
@@ -428,6 +431,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCallStatement() {
 		return callStatementEClass;
 	}
@@ -437,6 +441,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCallStatement_ProcedureName() {
 		return (EReference)callStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -446,6 +451,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCallStatement_Parms() {
 		return (EAttribute)callStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -455,6 +461,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommitStatement() {
 		return commitStatementEClass;
 	}
@@ -464,6 +471,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCommitStatement_Hold() {
 		return (EAttribute)commitStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -473,6 +481,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnectStatement() {
 		return connectStatementEClass;
 	}
@@ -482,6 +491,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectStatement_Pwd() {
 		return (EAttribute)connectStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -491,6 +501,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectStatement_Reset() {
 		return (EAttribute)connectStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -500,6 +511,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectStatement_To() {
 		return (EAttribute)connectStatementEClass.getEStructuralFeatures().get(2);
 	}
@@ -509,6 +521,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectStatement_User() {
 		return (EAttribute)connectStatementEClass.getEStructuralFeatures().get(3);
 	}
@@ -518,6 +531,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCreateAliasStatement() {
 		return createAliasStatementEClass;
 	}
@@ -527,6 +541,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCreateAliasStatement_AliasName() {
 		return (EReference)createAliasStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -536,6 +551,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCreateAliasStatement_TableName() {
 		return (EReference)createAliasStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -545,6 +561,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCreateIndexStatement() {
 		return createIndexStatementEClass;
 	}
@@ -554,6 +571,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCreateIndexStatement_IndexName() {
 		return (EReference)createIndexStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -563,6 +581,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCreateIndexStatement_OnTable() {
 		return (EReference)createIndexStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -572,6 +591,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCreateIndexStatement_SortBy() {
 		return (EReference)createIndexStatementEClass.getEStructuralFeatures().get(2);
 	}
@@ -581,6 +601,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCreateIndexStatement_Unique() {
 		return (EAttribute)createIndexStatementEClass.getEStructuralFeatures().get(3);
 	}
@@ -590,6 +611,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCreateTableStatement() {
 		return createTableStatementEClass;
 	}
@@ -599,6 +621,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCreateTableStatement_TableName() {
 		return (EReference)createTableStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -608,6 +631,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCreateTableStatement_Fields() {
 		return (EReference)createTableStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -617,6 +641,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCreateViewStatement() {
 		return createViewStatementEClass;
 	}
@@ -626,6 +651,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCreateViewStatement_ViewName() {
 		return (EReference)createViewStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -635,6 +661,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCreateViewStatement_Fields() {
 		return (EAttribute)createViewStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -644,6 +671,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCreateViewStatement_Query() {
 		return (EAttribute)createViewStatementEClass.getEStructuralFeatures().get(2);
 	}
@@ -653,6 +681,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDatabaseObjectDef() {
 		return databaseObjectDefEClass;
 	}
@@ -662,6 +691,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDatabaseObjectDef_Label() {
 		return (EAttribute)databaseObjectDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -671,6 +701,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDefinitionParser() {
 		return definitionParserEClass;
 	}
@@ -680,6 +711,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDefinitionParserRegistry() {
 		return definitionParserRegistryEClass;
 	}
@@ -689,6 +721,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDefinitionParseError() {
 		return definitionParseErrorEClass;
 	}
@@ -698,6 +731,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDefinitionParseResult() {
 		return definitionParseResultEClass;
 	}
@@ -707,6 +741,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDefinitionParseResult_DefinitionStatement() {
 		return (EReference)definitionParseResultEClass.getEStructuralFeatures().get(0);
 	}
@@ -716,6 +751,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDefinitionParseResult_ErrorList() {
 		return (EReference)definitionParseResultEClass.getEStructuralFeatures().get(1);
 	}
@@ -725,6 +761,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDefinitionStatement() {
 		return definitionStatementEClass;
 	}
@@ -734,6 +771,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDefinitionWriter() {
 		return definitionWriterEClass;
 	}
@@ -743,6 +781,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDefinitionWriterRegistry() {
 		return definitionWriterRegistryEClass;
 	}
@@ -752,6 +791,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDisconnectStatement() {
 		return disconnectStatementEClass;
 	}
@@ -761,6 +801,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDisconnectStatement_Target() {
 		return (EAttribute)disconnectStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -770,6 +811,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDropStatement() {
 		return dropStatementEClass;
 	}
@@ -779,6 +821,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDropStatement_Range() {
 		return (EAttribute)dropStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -788,6 +831,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDropStatement_TargetName() {
 		return (EReference)dropStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -797,6 +841,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDropStatement_Target() {
 		return (EAttribute)dropStatementEClass.getEStructuralFeatures().get(2);
 	}
@@ -806,6 +851,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIndexDef() {
 		return indexDefEClass;
 	}
@@ -815,6 +861,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIndexDef_Clustered() {
 		return (EAttribute)indexDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -824,6 +871,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIndexDef_Columns() {
 		return (EReference)indexDefEClass.getEStructuralFeatures().get(1);
 	}
@@ -833,6 +881,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIndexDef_Unique() {
 		return (EAttribute)indexDefEClass.getEStructuralFeatures().get(2);
 	}
@@ -842,6 +891,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIndexColumnDef() {
 		return indexColumnDefEClass;
 	}
@@ -851,6 +901,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIndexColumnDef_Name() {
 		return (EAttribute)indexColumnDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -860,6 +911,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIndexColumnDef_Ordering() {
 		return (EAttribute)indexColumnDefEClass.getEStructuralFeatures().get(1);
 	}
@@ -869,6 +921,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIndexColumnDef_Sequence() {
 		return (EAttribute)indexColumnDefEClass.getEStructuralFeatures().get(2);
 	}
@@ -878,6 +931,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLockTableStatement() {
 		return lockTableStatementEClass;
 	}
@@ -887,6 +941,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLockTableStatement_AllowRead() {
 		return (EAttribute)lockTableStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -896,6 +951,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLockTableStatement_ShareMode() {
 		return (EAttribute)lockTableStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -905,6 +961,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLockTableStatement_TableName() {
 		return (EReference)lockTableStatementEClass.getEStructuralFeatures().get(2);
 	}
@@ -914,6 +971,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getReleaseStatement() {
 		return releaseStatementEClass;
 	}
@@ -923,6 +981,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getReleaseStatement_ServerName() {
 		return (EAttribute)releaseStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -932,6 +991,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRenameStatement() {
 		return renameStatementEClass;
 	}
@@ -941,6 +1001,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRenameStatement_NewName() {
 		return (EAttribute)renameStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -950,6 +1011,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRenameStatement_System() {
 		return (EAttribute)renameStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -959,6 +1021,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRenameStatement_OriginalName() {
 		return (EReference)renameStatementEClass.getEStructuralFeatures().get(2);
 	}
@@ -968,6 +1031,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRenameStatement_Target() {
 		return (EAttribute)renameStatementEClass.getEStructuralFeatures().get(3);
 	}
@@ -977,6 +1041,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRollbackStatement() {
 		return rollbackStatementEClass;
 	}
@@ -986,6 +1051,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRollbackStatement_Hold() {
 		return (EAttribute)rollbackStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -995,6 +1061,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSetConnectionStatement() {
 		return setConnectionStatementEClass;
 	}
@@ -1004,6 +1071,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSetConnectionStatement_DatabaseName() {
 		return (EAttribute)setConnectionStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -1013,6 +1081,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSchemaDef() {
 		return schemaDefEClass;
 	}
@@ -1022,6 +1091,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTableDef() {
 		return tableDefEClass;
 	}
@@ -1031,6 +1101,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTableDef_Columns() {
 		return (EReference)tableDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -1040,6 +1111,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTableColumnDef() {
 		return tableColumnDefEClass;
 	}
@@ -1049,6 +1121,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTableColumnDef_Default() {
 		return (EAttribute)tableColumnDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -1058,6 +1131,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTableColumnDef_Definition() {
 		return (EReference)tableColumnDefEClass.getEStructuralFeatures().get(1);
 	}
@@ -1067,6 +1141,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTableColumnDef_Name() {
 		return (EAttribute)tableColumnDefEClass.getEStructuralFeatures().get(2);
 	}
@@ -1076,6 +1151,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTableColumnDef_Nullable() {
 		return (EAttribute)tableColumnDefEClass.getEStructuralFeatures().get(3);
 	}
@@ -1085,6 +1161,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTableTerm() {
 		return tableTermEClass;
 	}
@@ -1094,6 +1171,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTableTerm_Name() {
 		return (EAttribute)tableTermEClass.getEStructuralFeatures().get(0);
 	}
@@ -1103,6 +1181,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTableTerm_TableDef() {
 		return (EReference)tableTermEClass.getEStructuralFeatures().get(1);
 	}
@@ -1112,6 +1191,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getViewDef() {
 		return viewDefEClass;
 	}
@@ -1121,6 +1201,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getViewDef_QuerySelect() {
 		return (EAttribute)viewDefEClass.getEStructuralFeatures().get(0);
 	}
@@ -1130,6 +1211,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getDropRange() {
 		return dropRangeEEnum;
 	}
@@ -1139,6 +1221,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getOrderingType() {
 		return orderingTypeEEnum;
 	}
@@ -1148,6 +1231,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getShareMode() {
 		return shareModeEEnum;
 	}
@@ -1157,6 +1241,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTargetElement() {
 		return targetElementEEnum;
 	}
@@ -1166,6 +1251,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTargetItem() {
 		return targetItemEEnum;
 	}
@@ -1175,6 +1261,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatabaseDefinitionFactory getDatabaseDefinitionFactory() {
 		return (DatabaseDefinitionFactory)getEFactoryInstance();
 	}

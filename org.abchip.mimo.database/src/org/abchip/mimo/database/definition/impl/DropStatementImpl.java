@@ -108,6 +108,7 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DropRange getRange() {
 		return range;
 	}
@@ -117,6 +118,7 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRange(DropRange newRange) {
 		DropRange oldRange = range;
 		range = newRange == null ? RANGE_EDEFAULT : newRange;
@@ -129,6 +131,7 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getTargetName() {
 		return targetName;
 	}
@@ -153,6 +156,7 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetName(QualifiedName newTargetName) {
 		if (newTargetName != targetName) {
 			NotificationChain msgs = null;
@@ -172,6 +176,7 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TargetElement getTarget() {
 		return target;
 	}
@@ -181,6 +186,7 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(TargetElement newTarget) {
 		TargetElement oldTarget = target;
 		target = newTarget == null ? TARGET_EDEFAULT : newTarget;
@@ -289,7 +295,7 @@ public class DropStatementImpl extends DefinitionStatementImpl implements DropSt
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (range: ");
 		result.append(range);
 		result.append(", target: ");

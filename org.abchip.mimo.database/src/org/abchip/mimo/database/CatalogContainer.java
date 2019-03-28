@@ -11,6 +11,7 @@
  */
 package org.abchip.mimo.database;
 
+import java.io.Closeable;
 import java.sql.SQLException;
 
 import org.abchip.mimo.context.Context;
@@ -40,10 +41,10 @@ import org.eclipse.datatools.modelbase.sql.tables.ViewTable;
  * </ul>
  *
  * @see org.abchip.mimo.database.DatabasePackage#getCatalogContainer()
- * @model
+ * @model superTypes="org.abchip.mimo.util.JavaCloseable"
  * @generated
  */
-public interface CatalogContainer {
+public interface CatalogContainer extends Closeable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

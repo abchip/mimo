@@ -37,6 +37,7 @@ public class BaseDatabaseLoader {
 	@Inject
 	private DefinitionWriterRegistry definitionWriterRegistry;
 
+	@SuppressWarnings("resource")
 	public void loadDatabase(DatabaseContainer databaseContainer) {
 
 		// prepare catalog containers

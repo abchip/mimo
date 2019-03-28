@@ -21,12 +21,14 @@ public class BaseEntityIteratorImpl<E extends EntityNameable> implements EntityI
 
 	private Frame<E> frame;
 	private Iterator<E> iterator;
-
+	private int nrElem;
 	private E nextObject = null;
-
-	public BaseEntityIteratorImpl(Frame<E> frame, Iterator<E> iterator) {
+	private int count = 0;
+	
+	public BaseEntityIteratorImpl(Frame<E> frame, Iterator<E> iterator, int nrElem) {
 		this.frame = frame;
 		this.iterator = iterator;
+		this.nrElem = nrElem;
 		doNext();
 	}
 
@@ -43,7 +45,12 @@ public class BaseEntityIteratorImpl<E extends EntityNameable> implements EntityI
 	@Override
 	public E next() {
 		E object = nextObject;
-		doNext();
+		
+		count++;
+		if(count < nrElem)
+			doNext();
+		else 
+			nextObject = null;
 
 		return object;
 	}

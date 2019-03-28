@@ -58,6 +58,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Index getIndex(String schema, String table, String index) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -69,6 +70,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<Schema> getAllSchemas() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -80,6 +82,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<Schema> getCurrentSchemas() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -91,6 +94,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Schema getSchema(String schema) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -102,6 +106,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SearchStrategy getSearchStrategy() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -113,6 +118,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Table getTable(String table) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -124,6 +130,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Table getTable(String schema, String table) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -135,6 +142,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ViewTable getView(String table) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -146,6 +154,7 @@ public abstract class CatalogMetaDataImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ViewTable getView(String schema, String table) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

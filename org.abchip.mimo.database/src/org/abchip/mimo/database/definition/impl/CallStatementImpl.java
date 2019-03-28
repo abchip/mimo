@@ -80,6 +80,7 @@ public class CallStatementImpl extends DefinitionStatementImpl implements CallSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getProcedureName() {
 		return procedureName;
 	}
@@ -104,6 +105,7 @@ public class CallStatementImpl extends DefinitionStatementImpl implements CallSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProcedureName(QualifiedName newProcedureName) {
 		if (newProcedureName != procedureName) {
 			NotificationChain msgs = null;
@@ -123,6 +125,7 @@ public class CallStatementImpl extends DefinitionStatementImpl implements CallSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getParms() {
 		if (parms == null) {
 			parms = new EDataTypeUniqueEList<String>(String.class, this, DatabaseDefinitionPackage.CALL_STATEMENT__PARMS);
@@ -223,7 +226,7 @@ public class CallStatementImpl extends DefinitionStatementImpl implements CallSt
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (parms: ");
 		result.append(parms);
 		result.append(')');

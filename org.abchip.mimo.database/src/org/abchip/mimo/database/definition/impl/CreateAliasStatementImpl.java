@@ -75,6 +75,7 @@ public class CreateAliasStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getAliasName() {
 		return aliasName;
 	}
@@ -99,6 +100,7 @@ public class CreateAliasStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAliasName(QualifiedName newAliasName) {
 		if (newAliasName != aliasName) {
 			NotificationChain msgs = null;
@@ -118,6 +120,7 @@ public class CreateAliasStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getTableName() {
 		return tableName;
 	}
@@ -142,6 +145,7 @@ public class CreateAliasStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTableName(QualifiedName newTableName) {
 		if (newTableName != tableName) {
 			NotificationChain msgs = null;

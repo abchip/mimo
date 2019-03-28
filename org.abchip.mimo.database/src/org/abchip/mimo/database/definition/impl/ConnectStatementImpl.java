@@ -134,6 +134,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPwd() {
 		return pwd;
 	}
@@ -143,6 +144,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPwd(String newPwd) {
 		String oldPwd = pwd;
 		pwd = newPwd;
@@ -155,6 +157,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isReset() {
 		return reset;
 	}
@@ -164,6 +167,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReset(boolean newReset) {
 		boolean oldReset = reset;
 		reset = newReset;
@@ -176,6 +180,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTo() {
 		return to;
 	}
@@ -185,6 +190,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTo(String newTo) {
 		String oldTo = to;
 		to = newTo;
@@ -197,6 +203,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUser() {
 		return user;
 	}
@@ -206,6 +213,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUser(String newUser) {
 		String oldUser = user;
 		user = newUser;
@@ -310,7 +318,7 @@ public class ConnectStatementImpl extends DefinitionStatementImpl implements Con
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (pwd: ");
 		result.append(pwd);
 		result.append(", reset: ");

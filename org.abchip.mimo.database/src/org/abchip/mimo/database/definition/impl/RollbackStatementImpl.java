@@ -71,6 +71,7 @@ public class RollbackStatementImpl extends DefinitionStatementImpl implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isHold() {
 		return hold;
 	}
@@ -80,6 +81,7 @@ public class RollbackStatementImpl extends DefinitionStatementImpl implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHold(boolean newHold) {
 		boolean oldHold = hold;
 		hold = newHold;
@@ -154,7 +156,7 @@ public class RollbackStatementImpl extends DefinitionStatementImpl implements Ro
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (hold: ");
 		result.append(hold);
 		result.append(')');

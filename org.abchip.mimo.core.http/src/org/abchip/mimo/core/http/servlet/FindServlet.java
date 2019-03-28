@@ -50,6 +50,7 @@ public class FindServlet extends BaseServlet {
 	private <E extends EntityNameable> void _execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String nrElem = request.getParameter("nrElem");
 		
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
@@ -59,17 +60,23 @@ public class FindServlet extends BaseServlet {
 		ResourceSerializer<E> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, frame, SerializationType.JSON);
 		
 		EntityReader<E> entityReader = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX);
-		EntityIterator<E> entityIterator = entityReader.find(null);
+		
+		EntityIterator<E> entityIterator = null;		
+		if(nrElem == null)
+			entityIterator = entityReader.find(null, -1);
+		else
+			entityIterator = entityReader.find(null, Integer.parseInt(nrElem));
+
+		
 		List<E> entityList = new ArrayList<E>();
 		
-		for(E entity: entityIterator) {		
+		for(E entity: entityIterator) 		
 			entityList.add(entity);
-		}
 		
 		resourceSerializer.addAll(entityList);
 			
 		resourceSerializer.save(response.getOutputStream());
 		response.flushBuffer();
-		resourceSerializer.clear();		
+		resourceSerializer.clear();	
 	}
 }

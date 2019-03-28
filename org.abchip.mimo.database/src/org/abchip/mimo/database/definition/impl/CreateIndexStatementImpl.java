@@ -108,6 +108,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getIndexName() {
 		return indexName;
 	}
@@ -132,6 +133,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIndexName(QualifiedName newIndexName) {
 		if (newIndexName != indexName) {
 			NotificationChain msgs = null;
@@ -151,6 +153,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getOnTable() {
 		return onTable;
 	}
@@ -175,6 +178,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOnTable(QualifiedName newOnTable) {
 		if (newOnTable != onTable) {
 			NotificationChain msgs = null;
@@ -194,6 +198,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IndexDef getSortBy() {
 		return sortBy;
 	}
@@ -218,6 +223,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSortBy(IndexDef newSortBy) {
 		if (newSortBy != sortBy) {
 			NotificationChain msgs = null;
@@ -237,6 +243,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isUnique() {
 		return unique;
 	}
@@ -246,6 +253,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnique(boolean newUnique) {
 		boolean oldUnique = unique;
 		unique = newUnique;
@@ -368,7 +376,7 @@ public class CreateIndexStatementImpl extends DefinitionStatementImpl implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (unique: ");
 		result.append(unique);
 		result.append(')');

@@ -73,6 +73,7 @@ public class BaseConnectionImpl implements Connection {
 		return createStatement(native_, false);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public BaseStatementImpl createStatement(boolean native_, boolean updatable) throws SQLException {
 
@@ -88,6 +89,7 @@ public class BaseConnectionImpl implements Connection {
 
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public Statement createStatementCursorInsensitive(boolean native_) throws SQLException {
 
@@ -188,6 +190,7 @@ public class BaseConnectionImpl implements Connection {
 		return prepareStatement(sql, native_, false);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public BasePreparedStatementImpl prepareStatement(String sql, boolean native_, boolean updatable) throws SQLException {
 

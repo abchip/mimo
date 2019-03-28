@@ -52,6 +52,7 @@ public class BaseConnectionManagerImpl implements ConnectionManager {
 		return createConnection(null, catalog, user, password);
 	}
 
+	@SuppressWarnings("resource")
 	private Connection createConnection(Context context, String catalog, String user, String password) throws SQLException {
 
 		if (!(databaseManager instanceof BaseDatabaseManagerImpl))

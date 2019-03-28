@@ -82,6 +82,7 @@ public class CreateTableStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getTableName() {
 		return tableName;
 	}
@@ -106,6 +107,7 @@ public class CreateTableStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTableName(QualifiedName newTableName) {
 		if (newTableName != tableName) {
 			NotificationChain msgs = null;
@@ -125,6 +127,7 @@ public class CreateTableStatementImpl extends DefinitionStatementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<TableColumnDef> getFields() {
 		if (fields == null) {
 			fields = new EObjectContainmentEList<TableColumnDef>(TableColumnDef.class, this, DatabaseDefinitionPackage.CREATE_TABLE_STATEMENT__FIELDS);

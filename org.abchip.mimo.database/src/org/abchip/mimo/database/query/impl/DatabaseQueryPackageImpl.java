@@ -181,7 +181,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DatabaseQueryPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -195,7 +195,8 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 		if (isInited) return (DatabaseQueryPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
 
 		// Obtain or create and register package
-		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DatabaseQueryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DatabaseQueryPackageImpl());
+		Object registeredDatabaseQueryPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DatabaseQueryPackageImpl theDatabaseQueryPackage = registeredDatabaseQueryPackage instanceof DatabaseQueryPackageImpl ? (DatabaseQueryPackageImpl)registeredDatabaseQueryPackage : new DatabaseQueryPackageImpl();
 
 		isInited = true;
 
@@ -213,9 +214,12 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 		SQLQueryModelPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI) instanceof DatabasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI) : DatabasePackage.eINSTANCE);
-		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI) instanceof DatabaseConnectionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI) : DatabaseConnectionPackage.eINSTANCE);
-		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = (DatabaseDefinitionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI) instanceof DatabaseDefinitionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI) : DatabaseDefinitionPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
+		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(registeredPackage instanceof DatabasePackageImpl ? registeredPackage : DatabasePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
+		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(registeredPackage instanceof DatabaseConnectionPackageImpl ? registeredPackage : DatabaseConnectionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI);
+		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = (DatabaseDefinitionPackageImpl)(registeredPackage instanceof DatabaseDefinitionPackageImpl ? registeredPackage : DatabaseDefinitionPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theDatabaseQueryPackage.createPackageContents();
@@ -232,7 +236,6 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 		// Mark meta-data to indicate it can't be changed
 		theDatabaseQueryPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DatabaseQueryPackage.eNS_URI, theDatabaseQueryPackage);
 		return theDatabaseQueryPackage;
@@ -243,6 +246,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAliasResolver() {
 		return aliasResolverEClass;
 	}
@@ -252,6 +256,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNameHelper() {
 		return nameHelperEClass;
 	}
@@ -261,6 +266,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNameHelperRegistry() {
 		return nameHelperRegistryEClass;
 	}
@@ -270,6 +276,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getQueryWriter() {
 		return queryWriterEClass;
 	}
@@ -279,6 +286,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getQueryWriterRegistry() {
 		return queryWriterRegistryEClass;
 	}
@@ -288,6 +296,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getQueryParser() {
 		return queryParserEClass;
 	}
@@ -297,6 +306,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getQueryParserRegistry() {
 		return queryParserRegistryEClass;
 	}
@@ -306,6 +316,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSQLObjectNameHelper() {
 		return sqlObjectNameHelperEClass;
 	}
@@ -315,6 +326,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStatementWriter() {
 		return statementWriterEClass;
 	}
@@ -324,6 +336,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStatementWriter_NameHelper() {
 		return (EReference)statementWriterEClass.getEStructuralFeatures().get(0);
 	}
@@ -333,6 +346,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStatementParser() {
 		return statementParserEClass;
 	}
@@ -342,6 +356,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getSQLQueryParseResult() {
 		return sqlQueryParseResultEDataType;
 	}
@@ -351,6 +366,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatabaseQueryFactory getDatabaseQueryFactory() {
 		return (DatabaseQueryFactory)getEFactoryInstance();
 	}

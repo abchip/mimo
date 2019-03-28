@@ -110,6 +110,7 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CatalogContainer createCatalogContainer() {
 		CatalogContainerImpl catalogContainer = new CatalogContainerImpl();
 		return catalogContainer;
@@ -120,6 +121,7 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CatalogGenerationStrategy createCatalogGenerationStrategy() {
 		CatalogGenerationStrategyImpl catalogGenerationStrategy = new CatalogGenerationStrategyImpl();
 		return catalogGenerationStrategy;
@@ -130,6 +132,7 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatabaseContainer createDatabaseContainer() {
 		DatabaseContainerImpl databaseContainer = new DatabaseContainerImpl();
 		return databaseContainer;
@@ -140,6 +143,7 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName createQualifiedName() {
 		QualifiedNameImpl qualifiedName = new QualifiedNameImpl();
 		return qualifiedName;
@@ -170,6 +174,7 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatabasePackage getDatabasePackage() {
 		return (DatabasePackage)getEPackage();
 	}

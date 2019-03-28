@@ -128,6 +128,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNewName() {
 		return newName;
 	}
@@ -137,6 +138,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewName(String newNewName) {
 		String oldNewName = newName;
 		newName = newNewName;
@@ -149,6 +151,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSystem() {
 		return system;
 	}
@@ -158,6 +161,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSystem(String newSystem) {
 		String oldSystem = system;
 		system = newSystem;
@@ -170,6 +174,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QualifiedName getOriginalName() {
 		return originalName;
 	}
@@ -194,6 +199,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOriginalName(QualifiedName newOriginalName) {
 		if (newOriginalName != originalName) {
 			NotificationChain msgs = null;
@@ -213,6 +219,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TargetElement getTarget() {
 		return target;
 	}
@@ -222,6 +229,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(TargetElement newTarget) {
 		TargetElement oldTarget = target;
 		target = newTarget == null ? TARGET_EDEFAULT : newTarget;
@@ -340,7 +348,7 @@ public class RenameStatementImpl extends DefinitionStatementImpl implements Rena
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (newName: ");
 		result.append(newName);
 		result.append(", system: ");

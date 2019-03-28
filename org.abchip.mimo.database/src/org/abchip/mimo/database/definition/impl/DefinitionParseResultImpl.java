@@ -90,6 +90,7 @@ public class DefinitionParseResultImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DefinitionStatement getDefinitionStatement() {
 		if (definitionStatement != null && ((EObject)definitionStatement).eIsProxy()) {
 			InternalEObject oldDefinitionStatement = (InternalEObject)definitionStatement;
@@ -116,6 +117,7 @@ public class DefinitionParseResultImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefinitionStatement(DefinitionStatement newDefinitionStatement) {
 		DefinitionStatement oldDefinitionStatement = definitionStatement;
 		definitionStatement = newDefinitionStatement;
@@ -128,6 +130,7 @@ public class DefinitionParseResultImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<DefinitionParseError> getErrorList() {
 		if (errorList == null) {
 			errorList = new EObjectResolvingEList<DefinitionParseError>(DefinitionParseError.class, this, DatabaseDefinitionPackage.DEFINITION_PARSE_RESULT__ERROR_LIST);

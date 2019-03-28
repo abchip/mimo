@@ -71,6 +71,7 @@ public class ReleaseStatementImpl extends DefinitionStatementImpl implements Rel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getServerName() {
 		return serverName;
 	}
@@ -80,6 +81,7 @@ public class ReleaseStatementImpl extends DefinitionStatementImpl implements Rel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setServerName(String newServerName) {
 		String oldServerName = serverName;
 		serverName = newServerName;
@@ -154,7 +156,7 @@ public class ReleaseStatementImpl extends DefinitionStatementImpl implements Rel
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (serverName: ");
 		result.append(serverName);
 		result.append(')');

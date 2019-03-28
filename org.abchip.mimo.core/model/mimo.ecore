@@ -755,6 +755,13 @@
         </eGenericType>
         <eParameters name="filter" eType="#//expression/PredicateExpression"/>
       </eOperations>
+      <eOperations name="find">
+        <eGenericType eClassifier="#//entity/EntityIterator">
+          <eTypeArguments eTypeParameter="#//entity/EntityReader/E"/>
+        </eGenericType>
+        <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="nrElem" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
       <eOperations name="lookup">
         <eGenericType eTypeParameter="#//entity/EntityReader/E"/>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1730,6 +1737,19 @@
         <eParameters name="newElement" lowerBound="1">
           <eGenericType eTypeParameter="#//util/Lists/addAfter/E"/>
         </eParameters>
+      </eOperations>
+      <eOperations name="slice">
+        <eGenericType eClassifier="#//util/JavaList">
+          <eTypeArguments eTypeParameter="#//util/Lists/slice/E"/>
+        </eGenericType>
+        <eTypeParameters name="E"/>
+        <eParameters name="list" lowerBound="1">
+          <eGenericType eClassifier="#//util/JavaList">
+            <eTypeArguments eTypeParameter="#//util/Lists/slice/E"/>
+          </eGenericType>
+        </eParameters>
+        <eParameters name="index" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="nrElem" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eGenericSuperTypes eClassifier="#//util/Singleton">
         <eTypeArguments eClassifier="#//util/Lists"/>

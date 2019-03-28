@@ -108,6 +108,7 @@ public class DatabaseConnectionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConnectionConfig createConnectionConfig() {
 		ConnectionConfigImpl connectionConfig = new ConnectionConfigImpl();
 		return connectionConfig;
@@ -118,6 +119,7 @@ public class DatabaseConnectionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConnectionCredentials createConnectionCredentials() {
 		ConnectionCredentialsImpl connectionCredentials = new ConnectionCredentialsImpl();
 		return connectionCredentials;
@@ -148,6 +150,7 @@ public class DatabaseConnectionFactoryImpl extends EFactoryImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatabaseConnectionPackage getDatabaseConnectionPackage() {
 		return (DatabaseConnectionPackage)getEPackage();
 	}

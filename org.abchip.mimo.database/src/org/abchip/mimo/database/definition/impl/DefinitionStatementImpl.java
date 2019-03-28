@@ -50,6 +50,7 @@ public abstract class DefinitionStatementImpl extends MinimalEObjectImpl.Contain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StatementType getStatementType() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

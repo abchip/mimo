@@ -71,6 +71,7 @@ public class SetConnectionStatementImpl extends DefinitionStatementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDatabaseName() {
 		return databaseName;
 	}
@@ -80,6 +81,7 @@ public class SetConnectionStatementImpl extends DefinitionStatementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDatabaseName(String newDatabaseName) {
 		String oldDatabaseName = databaseName;
 		databaseName = newDatabaseName;
@@ -154,7 +156,7 @@ public class SetConnectionStatementImpl extends DefinitionStatementImpl implemen
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (databaseName: ");
 		result.append(databaseName);
 		result.append(')');

@@ -172,7 +172,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DatabaseConnectionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -186,7 +186,8 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		if (isInited) return (DatabaseConnectionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = (DatabaseConnectionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DatabaseConnectionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DatabaseConnectionPackageImpl());
+		Object registeredDatabaseConnectionPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DatabaseConnectionPackageImpl theDatabaseConnectionPackage = registeredDatabaseConnectionPackage instanceof DatabaseConnectionPackageImpl ? (DatabaseConnectionPackageImpl)registeredDatabaseConnectionPackage : new DatabaseConnectionPackageImpl();
 
 		isInited = true;
 
@@ -204,9 +205,12 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		SQLQueryModelPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI) instanceof DatabasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI) : DatabasePackage.eINSTANCE);
-		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = (DatabaseDefinitionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI) instanceof DatabaseDefinitionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI) : DatabaseDefinitionPackage.eINSTANCE);
-		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI) instanceof DatabaseQueryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI) : DatabaseQueryPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
+		DatabasePackageImpl theDatabasePackage = (DatabasePackageImpl)(registeredPackage instanceof DatabasePackageImpl ? registeredPackage : DatabasePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI);
+		DatabaseDefinitionPackageImpl theDatabaseDefinitionPackage = (DatabaseDefinitionPackageImpl)(registeredPackage instanceof DatabaseDefinitionPackageImpl ? registeredPackage : DatabaseDefinitionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
+		DatabaseQueryPackageImpl theDatabaseQueryPackage = (DatabaseQueryPackageImpl)(registeredPackage instanceof DatabaseQueryPackageImpl ? registeredPackage : DatabaseQueryPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theDatabaseConnectionPackage.createPackageContents();
@@ -223,7 +227,6 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		// Mark meta-data to indicate it can't be changed
 		theDatabaseConnectionPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DatabaseConnectionPackage.eNS_URI, theDatabaseConnectionPackage);
 		return theDatabaseConnectionPackage;
@@ -234,6 +237,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnection() {
 		return connectionEClass;
 	}
@@ -243,6 +247,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnectionConfig() {
 		return connectionConfigEClass;
 	}
@@ -252,6 +257,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnectionConfig_Credentials() {
 		return (EReference)connectionConfigEClass.getEStructuralFeatures().get(0);
 	}
@@ -261,6 +267,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectionConfig_Vendor() {
 		return (EAttribute)connectionConfigEClass.getEStructuralFeatures().get(1);
 	}
@@ -270,6 +277,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectionConfig_Version() {
 		return (EAttribute)connectionConfigEClass.getEStructuralFeatures().get(2);
 	}
@@ -279,6 +287,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectionConfig_Url() {
 		return (EAttribute)connectionConfigEClass.getEStructuralFeatures().get(3);
 	}
@@ -288,6 +297,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectionConfig_Catalog() {
 		return (EAttribute)connectionConfigEClass.getEStructuralFeatures().get(4);
 	}
@@ -297,6 +307,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectionConfig_Persistent() {
 		return (EAttribute)connectionConfigEClass.getEStructuralFeatures().get(5);
 	}
@@ -306,6 +317,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnectionCredentials() {
 		return connectionCredentialsEClass;
 	}
@@ -315,6 +327,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnectionManager() {
 		return connectionManagerEClass;
 	}
@@ -324,6 +337,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPreparedStatement() {
 		return preparedStatementEClass;
 	}
@@ -333,6 +347,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStatement() {
 		return statementEClass;
 	}
@@ -342,6 +357,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getStatementType() {
 		return statementTypeEEnum;
 	}
@@ -351,6 +367,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getDatabaseResultSet() {
 		return databaseResultSetEDataType;
 	}
@@ -360,6 +377,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getDatabaseResultSetMetaData() {
 		return databaseResultSetMetaDataEDataType;
 	}
@@ -369,6 +387,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getStatementBatchResult() {
 		return statementBatchResultEDataType;
 	}
@@ -378,6 +397,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatabaseConnectionFactory getDatabaseConnectionFactory() {
 		return (DatabaseConnectionFactory)getEFactoryInstance();
 	}

@@ -133,6 +133,14 @@ public interface EntityReader<E extends EntityNameable> {
 	EntityIterator<E> findByExpression(PredicateExpression filter);
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	EntityIterator<E> find(String filter, int nrElem);
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model nameRequired="true"
 	 * @generated

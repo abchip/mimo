@@ -511,6 +511,10 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/findByExpression">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/findByExpression/filter"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/find.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find.1/filter"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find.1/nrElem"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/lookup">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/lookup/name"/>
         </genOperations>
@@ -1126,6 +1130,12 @@
           <genParameters ecoreParameter="mimo.ecore#//util/Lists/addAfter/oldElement"/>
           <genParameters ecoreParameter="mimo.ecore#//util/Lists/addAfter/newElement"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/Lists/addAfter/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//util/Lists/slice">
+          <genParameters ecoreParameter="mimo.ecore#//util/Lists/slice/list"/>
+          <genParameters ecoreParameter="mimo.ecore#//util/Lists/slice/index"/>
+          <genParameters ecoreParameter="mimo.ecore#//util/Lists/slice/nrElem"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/Lists/slice/E"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//util/NumericDef"/>

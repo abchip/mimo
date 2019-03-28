@@ -74,6 +74,7 @@ public abstract class StatementWriterImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NameHelper getNameHelper() {
 		if (nameHelper != null && ((EObject)nameHelper).eIsProxy()) {
 			InternalEObject oldNameHelper = (InternalEObject)nameHelper;
@@ -100,6 +101,7 @@ public abstract class StatementWriterImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNameHelper(NameHelper newNameHelper) {
 		NameHelper oldNameHelper = nameHelper;
 		nameHelper = newNameHelper;

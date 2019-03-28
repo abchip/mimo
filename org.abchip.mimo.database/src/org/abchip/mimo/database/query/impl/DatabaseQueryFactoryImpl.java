@@ -126,6 +126,7 @@ public class DatabaseQueryFactoryImpl extends EFactoryImpl implements DatabaseQu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatabaseQueryPackage getDatabaseQueryPackage() {
 		return (DatabaseQueryPackage)getEPackage();
 	}

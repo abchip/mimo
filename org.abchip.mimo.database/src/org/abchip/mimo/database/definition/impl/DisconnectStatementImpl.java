@@ -72,6 +72,7 @@ public class DisconnectStatementImpl extends DefinitionStatementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TargetItem getTarget() {
 		return target;
 	}
@@ -81,6 +82,7 @@ public class DisconnectStatementImpl extends DefinitionStatementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(TargetItem newTarget) {
 		TargetItem oldTarget = target;
 		target = newTarget == null ? TARGET_EDEFAULT : newTarget;
@@ -155,7 +157,7 @@ public class DisconnectStatementImpl extends DefinitionStatementImpl implements 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (target: ");
 		result.append(target);
 		result.append(')');
