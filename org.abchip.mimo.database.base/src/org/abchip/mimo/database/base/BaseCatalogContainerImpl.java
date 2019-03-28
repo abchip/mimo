@@ -11,7 +11,6 @@
  */
 package org.abchip.mimo.database.base;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -59,11 +58,6 @@ public class BaseCatalogContainerImpl extends CatalogContainerImpl {
 
 	public BaseCatalogContainerImpl(Context catalogContext) {
 		this.catalogContext = catalogContext;
-	}
-
-	@Override
-	public void close() throws IOException {
-		// TODO Auto-generated method stub		
 	}
 
 	@Override

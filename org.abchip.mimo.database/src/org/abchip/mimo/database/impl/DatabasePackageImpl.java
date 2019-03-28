@@ -39,7 +39,6 @@ import org.abchip.mimo.database.query.DatabaseQueryPackage;
 import org.abchip.mimo.database.query.impl.DatabaseQueryPackageImpl;
 
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.datatools.modelbase.sql.accesscontrol.SQLAccessControlPackage;
 
 import org.eclipse.datatools.modelbase.sql.constraints.SQLConstraintsPackage;
@@ -539,7 +538,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		DatabaseConnectionPackage theDatabaseConnectionPackage = (DatabaseConnectionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
 		DatabaseDefinitionPackage theDatabaseDefinitionPackage = (DatabaseDefinitionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI);
 		DatabaseQueryPackage theDatabaseQueryPackage = (DatabaseQueryPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		SQLConstraintsPackage theSQLConstraintsPackage = (SQLConstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(SQLConstraintsPackage.eNS_URI);
 		SQLTablesPackage theSQLTablesPackage = (SQLTablesPackage)EPackage.Registry.INSTANCE.getEPackage(SQLTablesPackage.eNS_URI);
@@ -557,7 +555,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		catalogContainerEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
 		databaseContainerEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters

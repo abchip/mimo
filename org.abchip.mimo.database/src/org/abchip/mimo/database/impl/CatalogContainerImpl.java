@@ -16,7 +16,6 @@
  */
 package org.abchip.mimo.database.impl;
 
-import java.io.IOException;
 import java.sql.SQLException;
 
 import org.abchip.mimo.context.Context;
@@ -614,9 +613,4 @@ public class CatalogContainerImpl extends MinimalEObjectImpl.Container implement
 		result.append(')');
 		return result.toString();
 	}
-
-	@Override
-	public void close() throws IOException {
-	}
-
 } // CatalogContainerImpl
