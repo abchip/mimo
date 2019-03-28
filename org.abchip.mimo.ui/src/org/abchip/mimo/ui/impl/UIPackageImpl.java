@@ -13,6 +13,8 @@ import org.abchip.mimo.ui.DataNode;
 import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UIPackage;
 
+import org.abchip.mimo.ui.form.FormPackage;
+import org.abchip.mimo.ui.form.impl.FormPackageImpl;
 import org.abchip.mimo.ui.menu.MenuPackage;
 
 import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
@@ -117,18 +119,22 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
+		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theUIPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
+		theFormPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theUIPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
+		theFormPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theUIPackage.freeze();
@@ -287,12 +293,14 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		MenuPackage theMenuPackage = (MenuPackage)EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		SchemaPackage theSchemaPackage = (SchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		ToolbarPackage theToolbarPackage = (ToolbarPackage)EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
+		FormPackage theFormPackage = (FormPackage)EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theMenuPackage);
 		getESubpackages().add(theSchemaPackage);
 		getESubpackages().add(theToolbarPackage);
+		getESubpackages().add(theFormPackage);
 
 		// Create type parameters
 

@@ -1,28 +1,33 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.menu.impl;
+package org.abchip.mimo.ui.form.impl;
 
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
+
+import org.abchip.mimo.ui.form.Form;
+import org.abchip.mimo.ui.form.FormFactory;
+import org.abchip.mimo.ui.form.FormField;
 import org.abchip.mimo.ui.form.FormPackage;
-import org.abchip.mimo.ui.form.impl.FormPackageImpl;
+
 import org.abchip.mimo.ui.impl.UIPackageImpl;
-import org.abchip.mimo.ui.menu.Menu;
-import org.abchip.mimo.ui.menu.MenuAction;
-import org.abchip.mimo.ui.menu.MenuFactory;
-import org.abchip.mimo.ui.menu.MenuGroup;
+
 import org.abchip.mimo.ui.menu.MenuPackage;
+
+import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
 
 import org.abchip.mimo.ui.schema.SchemaPackage;
 
 import org.abchip.mimo.ui.schema.impl.SchemaPackageImpl;
 
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
+
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -36,27 +41,20 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
+public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass menuEClass = null;
+	private EClass formEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass menuActionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass menuGroupEClass = null;
+	private EClass formFieldEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -69,12 +67,12 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.ui.menu.MenuPackage#eNS_URI
+	 * @see org.abchip.mimo.ui.form.FormPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private MenuPackageImpl() {
-		super(eNS_URI, MenuFactory.eINSTANCE);
+	private FormPackageImpl() {
+		super(eNS_URI, FormFactory.eINSTANCE);
 	}
 
 	/**
@@ -87,7 +85,7 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link MenuPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link FormPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,12 +94,12 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static MenuPackage init() {
-		if (isInited) return (MenuPackage)EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+	public static FormPackage init() {
+		if (isInited) return (FormPackage)EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredMenuPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		MenuPackageImpl theMenuPackage = registeredMenuPackage instanceof MenuPackageImpl ? (MenuPackageImpl)registeredMenuPackage : new MenuPackageImpl();
+		Object registeredFormPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		FormPackageImpl theFormPackage = registeredFormPackage instanceof FormPackageImpl ? (FormPackageImpl)registeredFormPackage : new FormPackageImpl();
 
 		isInited = true;
 
@@ -111,33 +109,33 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
-		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theMenuPackage.createPackageContents();
+		theFormPackage.createPackageContents();
 		theUIPackage.createPackageContents();
+		theMenuPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
-		theFormPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theMenuPackage.initializePackageContents();
+		theFormPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
+		theMenuPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
-		theFormPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theMenuPackage.freeze();
+		theFormPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MenuPackage.eNS_URI, theMenuPackage);
-		return theMenuPackage;
+		EPackage.Registry.INSTANCE.put(FormPackage.eNS_URI, theFormPackage);
+		return theFormPackage;
 	}
 
 	/**
@@ -146,8 +144,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMenu() {
-		return menuEClass;
+	public EClass getForm() {
+		return formEClass;
 	}
 
 	/**
@@ -156,8 +154,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMenu_Elements() {
-		return (EReference)menuEClass.getEStructuralFeatures().get(0);
+	public EReference getForm_Fields() {
+		return (EReference)formEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -166,8 +164,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMenu_Name() {
-		return (EAttribute)menuEClass.getEStructuralFeatures().get(1);
+	public EAttribute getForm_Name() {
+		return (EAttribute)formEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -176,8 +174,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMenuAction() {
-		return menuActionEClass;
+	public EClass getFormField() {
+		return formFieldEClass;
 	}
 
 	/**
@@ -186,8 +184,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMenuAction_Action() {
-		return (EAttribute)menuActionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getFormField_View() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -196,8 +194,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMenuGroup() {
-		return menuGroupEClass;
+	public EAttribute getFormField_Label() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -206,8 +204,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMenuGroup_Data() {
-		return (EReference)menuGroupEClass.getEStructuralFeatures().get(0);
+	public EAttribute getFormField_Name() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -216,8 +214,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public MenuFactory getMenuFactory() {
-		return (MenuFactory)getEFactoryInstance();
+	public FormFactory getFormFactory() {
+		return (FormFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -239,15 +237,14 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		menuEClass = createEClass(MENU);
-		createEReference(menuEClass, MENU__ELEMENTS);
-		createEAttribute(menuEClass, MENU__NAME);
+		formEClass = createEClass(FORM);
+		createEReference(formEClass, FORM__FIELDS);
+		createEAttribute(formEClass, FORM__NAME);
 
-		menuActionEClass = createEClass(MENU_ACTION);
-		createEAttribute(menuActionEClass, MENU_ACTION__ACTION);
-
-		menuGroupEClass = createEClass(MENU_GROUP);
-		createEReference(menuGroupEClass, MENU_GROUP__DATA);
+		formFieldEClass = createEClass(FORM_FIELD);
+		createEAttribute(formFieldEClass, FORM_FIELD__VIEW);
+		createEAttribute(formFieldEClass, FORM_FIELD__LABEL);
+		createEAttribute(formFieldEClass, FORM_FIELD__NAME);
 	}
 
 	/**
@@ -275,27 +272,24 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		UIPackage theUIPackage = (UIPackage)EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		menuEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		menuActionEClass.getESuperTypes().add(theUIPackage.getDataNode());
-		menuGroupEClass.getESuperTypes().add(theUIPackage.getDataNode());
+		formEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		formFieldEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenu_Elements(), theUIPackage.getDataNode(), null, "elements", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMenu_Name(), ecorePackage.getEString(), "name", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getForm_Fields(), this.getFormField(), null, "fields", null, 0, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForm_Name(), ecorePackage.getEString(), "name", null, 1, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(menuActionEClass, MenuAction.class, "MenuAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMenuAction_Action(), ecorePackage.getEString(), "action", null, 0, 1, MenuAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(menuGroupEClass, MenuGroup.class, "MenuGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenuGroup_Data(), theUIPackage.getDataNode(), null, "data", null, 0, -1, MenuGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(formFieldEClass, FormField.class, "FormField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFormField_View(), ecorePackage.getEString(), "view", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_Label(), ecorePackage.getEString(), "label", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_Name(), ecorePackage.getEString(), "name", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
-} //MenuPackageImpl
+} //FormPackageImpl

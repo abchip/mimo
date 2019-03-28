@@ -61,5 +61,16 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/view"/>
       </genClasses>
     </nestedGenPackages>
+    <nestedGenPackages prefix="Form" disposableProviderFactory="true" ecorePackage="ui.ecore#//form">
+      <genClasses ecoreClass="ui.ecore#//form/Form">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/Form/fields"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/Form/name"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//form/FormField">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/view"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/label"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/name"/>
+      </genClasses>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

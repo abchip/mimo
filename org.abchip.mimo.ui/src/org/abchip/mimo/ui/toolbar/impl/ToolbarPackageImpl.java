@@ -8,6 +8,8 @@ import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
+import org.abchip.mimo.ui.form.FormPackage;
+import org.abchip.mimo.ui.form.impl.FormPackageImpl;
 import org.abchip.mimo.ui.impl.UIPackageImpl;
 import org.abchip.mimo.ui.menu.MenuPackage;
 
@@ -107,18 +109,22 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
+		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theToolbarPackage.createPackageContents();
 		theUIPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
+		theFormPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theToolbarPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
+		theFormPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theToolbarPackage.freeze();
