@@ -142,6 +142,43 @@ public interface UIPackage extends EPackage {
 	int DATA_NODE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.impl.ViewImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getView()
+	 * @generated
+	 */
+	int VIEW = 2;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__FRAME = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__TYPE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,7 +186,18 @@ public interface UIPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getActionType()
 	 * @generated
 	 */
-	int ACTION_TYPE = 2;
+	int ACTION_TYPE = 3;
+
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.ViewType <em>View Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.ViewType
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewType()
+	 * @generated
+	 */
+	int VIEW_TYPE = 4;
 
 
 	/**
@@ -228,6 +276,38 @@ public interface UIPackage extends EPackage {
 	EAttribute getDataNode_Value();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.View <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.View
+	 * @generated
+	 */
+	EClass getView();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.View#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frame</em>'.
+	 * @see org.abchip.mimo.ui.View#getFrame()
+	 * @see #getView()
+	 * @generated
+	 */
+	EAttribute getView_Frame();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.View#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see org.abchip.mimo.ui.View#getType()
+	 * @see #getView()
+	 * @generated
+	 */
+	EAttribute getView_Type();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +316,16 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getActionType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.ui.ViewType <em>View Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>View Type</em>'.
+	 * @see org.abchip.mimo.ui.ViewType
+	 * @generated
+	 */
+	EEnum getViewType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -320,6 +410,32 @@ public interface UIPackage extends EPackage {
 		EAttribute DATA_NODE__VALUE = eINSTANCE.getDataNode_Value();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.ViewImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getView()
+		 * @generated
+		 */
+		EClass VIEW = eINSTANCE.getView();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIEW__FRAME = eINSTANCE.getView_Frame();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIEW__TYPE = eINSTANCE.getView_Type();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -328,6 +444,16 @@ public interface UIPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ACTION_TYPE = eINSTANCE.getActionType();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.ViewType <em>View Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.ViewType
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewType()
+		 * @generated
+		 */
+		EEnum VIEW_TYPE = eINSTANCE.getViewType();
 
 	}
 

@@ -14,6 +14,11 @@
       <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/SRV"/>
       <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/EVT"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ui.ecore#//ViewType">
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/TBL"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/BRW"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/DSH"/>
+    </genEnums>
     <genClasses ecoreClass="ui.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/command"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/type"/>
@@ -22,6 +27,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/icon"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//View">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/frame"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/type"/>
     </genClasses>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="ui.ecore#//menu">

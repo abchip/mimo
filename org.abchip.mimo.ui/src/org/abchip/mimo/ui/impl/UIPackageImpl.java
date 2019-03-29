@@ -13,6 +13,8 @@ import org.abchip.mimo.ui.DataNode;
 import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UIPackage;
 
+import org.abchip.mimo.ui.View;
+import org.abchip.mimo.ui.ViewType;
 import org.abchip.mimo.ui.form.FormPackage;
 import org.abchip.mimo.ui.form.impl.FormPackageImpl;
 import org.abchip.mimo.ui.menu.MenuPackage;
@@ -60,7 +62,21 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass viewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum actionTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum viewTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -220,8 +236,48 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getView() {
+		return viewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getView_Frame() {
+		return (EAttribute)viewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getView_Type() {
+		return (EAttribute)viewEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getActionType() {
 		return actionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getViewType() {
+		return viewTypeEEnum;
 	}
 
 	/**
@@ -262,8 +318,13 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		createEAttribute(dataNodeEClass, DATA_NODE__ID);
 		createEAttribute(dataNodeEClass, DATA_NODE__VALUE);
 
+		viewEClass = createEClass(VIEW);
+		createEAttribute(viewEClass, VIEW__FRAME);
+		createEAttribute(viewEClass, VIEW__TYPE);
+
 		// Create enums
 		actionTypeEEnum = createEEnum(ACTION_TYPE);
+		viewTypeEEnum = createEEnum(VIEW_TYPE);
 	}
 
 	/**
@@ -309,6 +370,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		// Add supertypes to classes
 		actionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		dataNodeEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		viewEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -320,11 +382,20 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		initEAttribute(getDataNode_Id(), ecorePackage.getEString(), "id", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataNode_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getView_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getView_Type(), this.getViewType(), "type", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(actionTypeEEnum, ActionType.class, "ActionType");
 		addEEnumLiteral(actionTypeEEnum, ActionType.UI);
 		addEEnumLiteral(actionTypeEEnum, ActionType.SRV);
 		addEEnumLiteral(actionTypeEEnum, ActionType.EVT);
+
+		initEEnum(viewTypeEEnum, ViewType.class, "ViewType");
+		addEEnumLiteral(viewTypeEEnum, ViewType.TBL);
+		addEEnumLiteral(viewTypeEEnum, ViewType.BRW);
+		addEEnumLiteral(viewTypeEEnum, ViewType.DSH);
 
 		// Create resource
 		createResource(eNS_URI);

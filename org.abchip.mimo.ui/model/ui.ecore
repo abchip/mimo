@@ -15,6 +15,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ViewType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ViewType">
+    <eLiterals name="TBL" value="10" literal="Table"/>
+    <eLiterals name="BRW" value="20" literal="Browser"/>
+    <eLiterals name="DSH" value="30" literal="Dashboard"/>
+  </eClassifiers>
   <eSubpackages name="menu" nsURI="http://www.abchip.org/mimo/ui/menu" nsPrefix="ui-menu">
     <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"

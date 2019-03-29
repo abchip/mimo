@@ -59,6 +59,7 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case UIPackage.ACTION: return (EObject)createAction();
+			case UIPackage.VIEW: return (EObject)createView();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,6 +75,8 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 		switch (eDataType.getClassifierID()) {
 			case UIPackage.ACTION_TYPE:
 				return createActionTypeFromString(eDataType, initialValue);
+			case UIPackage.VIEW_TYPE:
+				return createViewTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -89,6 +92,8 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 		switch (eDataType.getClassifierID()) {
 			case UIPackage.ACTION_TYPE:
 				return convertActionTypeToString(eDataType, instanceValue);
+			case UIPackage.VIEW_TYPE:
+				return convertViewTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -110,6 +115,17 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public View createView() {
+		ViewImpl view = new ViewImpl();
+		return view;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ActionType createActionTypeFromString(EDataType eDataType, String initialValue) {
 		ActionType result = ActionType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -122,6 +138,26 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	public String convertActionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ViewType createViewTypeFromString(EDataType eDataType, String initialValue) {
+		ViewType result = ViewType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertViewTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
