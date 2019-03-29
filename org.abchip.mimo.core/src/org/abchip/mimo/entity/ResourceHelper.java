@@ -361,12 +361,12 @@ public class ResourceHelper {
 
 		private Queue<EntityReader<E>> readers;
 		private EntityIterator<E> currentIterator;
-		private String namePrefix;
+		private String filter;
 		private int nrElem;
 		private E nextObject = null;
 		private int count = 0;
 		
-		public QueueReaderIteratorImpl(List<EntityReader<E>> resources, String namePrefix, int nrElem) {
+		public QueueReaderIteratorImpl(List<EntityReader<E>> resources, String filter, int nrElem) {
 
 			this.nrElem = nrElem;
 			
@@ -374,9 +374,9 @@ public class ResourceHelper {
 			for (EntityReader<E> resourceReader : resources)
 				readers.add(resourceReader);
 
-			this.namePrefix = namePrefix;
+			this.filter = filter;
 			if(!readers.isEmpty())
-				this.currentIterator = readers.poll().find(namePrefix, nrElem);
+				this.currentIterator = readers.poll().find(filter, nrElem);
 			doNext();
 		}
 
@@ -420,7 +420,7 @@ public class ResourceHelper {
 			}
 
 			while (readers.peek() != null) {
-				currentIterator = readers.poll().find(namePrefix, nrElem - count);
+				currentIterator = readers.poll().find(filter, nrElem - count);
 				while (currentIterator.hasNext()) {
 					nextObject = currentIterator.next();
 					return;
