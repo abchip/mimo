@@ -47,10 +47,10 @@ public class BaseEntityIteratorImpl<E extends EntityNameable> implements EntityI
 		E object = nextObject;
 		
 		count++;
-		if(count < nrElem)
-			doNext();
-		else 
+		if(nrElem != -1 && count >= nrElem)
 			nextObject = null;
+		else 
+			doNext();
 
 		return object;
 	}

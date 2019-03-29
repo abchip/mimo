@@ -50,6 +50,7 @@ public class FindServlet extends BaseServlet {
 	private <E extends EntityNameable> void _execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String filter = request.getParameter("filter");
 		String nrElem = request.getParameter("nrElem");
 		
 		@SuppressWarnings("unchecked")
@@ -63,9 +64,9 @@ public class FindServlet extends BaseServlet {
 		
 		EntityIterator<E> entityIterator = null;		
 		if(nrElem == null)
-			entityIterator = entityReader.find(null, -1);
+			entityIterator = entityReader.find(filter, -1);
 		else
-			entityIterator = entityReader.find(null, Integer.parseInt(nrElem));
+			entityIterator = entityReader.find(filter, Integer.parseInt(nrElem));
 
 		
 		List<E> entityList = new ArrayList<E>();

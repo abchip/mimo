@@ -396,10 +396,10 @@ public class ResourceHelper {
 			E object = nextObject;			
 			count++;
 			
-			if(count < nrElem)				
-				doNext();
-			else 
+			if(nrElem != -1 && count >= nrElem)		
 				nextObject = null;
+			else 
+				doNext();
 
 			return object;
 		}
@@ -421,7 +421,7 @@ public class ResourceHelper {
 
 			while (readers.peek() != null) {
 				currentIterator = readers.poll().find(filter, nrElem - count);
-				while (currentIterator.hasNext()) {
+				while (currentIterator != null && currentIterator.hasNext()) {
 					nextObject = currentIterator.next();
 					return;
 				}

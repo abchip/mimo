@@ -21,6 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
@@ -39,18 +41,41 @@ public class LookupMenuServlet extends BaseServlet {
 	private ContextRoot contextRoot;
 	@Inject
 	private ResourceManager resourceManager;
+	@Inject
+	private FrameManager frameManager;
 
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String name = request.getParameter("name");
-		Menu menu = resourceManager.getEntityReader(contextRoot, Menu.class, ResourceScope.CTX).lookup(name);
+		
+		Menu menu = null;
+		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextRoot, Menu.class, ResourceScope.CTX);
+		
+		if(name == null || name.isEmpty()) {
+			menu = frameManager.createEntity(Menu.class);
+			menu.setName("List Menu");
+			
+			for(Menu elem: menuReader.find(null)) {
+				// build upper level group from menu
+				MenuGroup group = frameManager.createEntity(MenuGroup.class);
+				group.setId(UUID.randomUUID().toString());
+				group.setValue(elem.getName());
+				group.getData().addAll(elem.getElements());
+				
+				// append to root
+				menu.getElements().add(group);
+			}
+		}
+		else {
+			menu = menuReader.lookup(name);	
+		}
 
 		ResourceSerializer<Menu> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Menu.class, SerializationType.JSON);
 		if (menu != null) {
 			TreeIterator<EObject> features = ((EObject) menu).eAllContents();
 
 			features.forEachRemaining(new Consumer<EObject>() {
-
+				
 				@Override
 				public void accept(EObject element) {
 					if (element instanceof MenuGroup) {
