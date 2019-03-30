@@ -36,6 +36,7 @@
         adapterFactory="false" ecorePackage="ui.ecore#//menu">
       <genClasses ecoreClass="ui.ecore#//menu/Menu">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//menu/Menu/elements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//menu/Menu/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//menu/Menu/name"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//menu/MenuAction">

@@ -18,6 +18,7 @@ import org.abchip.mimo.ui.DataNode;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.menu.Menu#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.Menu#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.menu.Menu#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -41,6 +42,32 @@ public interface Menu extends EntityNameable {
 	 * @generated
 	 */
 	List<DataNode> getElements();
+
+	/**
+	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Icon</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Icon</em>' attribute.
+	 * @see #setIcon(String)
+	 * @see org.abchip.mimo.ui.menu.MenuPackage#getMenu_Icon()
+	 * @model
+	 * @generated
+	 */
+	String getIcon();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.menu.Menu#getIcon <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Icon</em>' attribute.
+	 * @see #getIcon()
+	 * @generated
+	 */
+	void setIcon(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

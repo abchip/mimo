@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -53,6 +54,26 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	 * @ordered
 	 */
 	protected EList<DataNode> elements;
+
+	/**
+	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIcon()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ICON_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIcon()
+	 * @generated
+	 * @ordered
+	 */
+	protected String icon = ICON_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -112,6 +133,29 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 	 * @generated
 	 */
 	@Override
+	public String getIcon() {
+		return icon;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIcon(String newIcon) {
+		String oldIcon = icon;
+		icon = newIcon;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MenuPackage.MENU__ICON, oldIcon, icon));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -153,6 +197,8 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 		switch (featureID) {
 			case MenuPackage.MENU__ELEMENTS:
 				return getElements();
+			case MenuPackage.MENU__ICON:
+				return getIcon();
 			case MenuPackage.MENU__NAME:
 				return getName();
 		}
@@ -172,6 +218,9 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 				getElements().clear();
 				getElements().addAll((Collection<? extends DataNode>)newValue);
 				return;
+			case MenuPackage.MENU__ICON:
+				setIcon((String)newValue);
+				return;
 			case MenuPackage.MENU__NAME:
 				setName((String)newValue);
 				return;
@@ -190,6 +239,9 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 			case MenuPackage.MENU__ELEMENTS:
 				getElements().clear();
 				return;
+			case MenuPackage.MENU__ICON:
+				setIcon(ICON_EDEFAULT);
+				return;
 			case MenuPackage.MENU__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -207,6 +259,8 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 		switch (featureID) {
 			case MenuPackage.MENU__ELEMENTS:
 				return elements != null && !elements.isEmpty();
+			case MenuPackage.MENU__ICON:
+				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case MenuPackage.MENU__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
@@ -223,7 +277,9 @@ public class MenuImpl extends EntityNameableImpl implements Menu {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
+		result.append(" (icon: ");
+		result.append(icon);
+		result.append(", name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();

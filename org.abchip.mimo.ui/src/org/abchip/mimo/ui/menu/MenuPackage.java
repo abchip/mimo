@@ -79,13 +79,22 @@ public interface MenuPackage extends EPackage {
 	int MENU__ELEMENTS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU__ICON = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int MENU__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Menu</em>' class.
@@ -94,7 +103,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int MENU_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.menu.impl.MenuActionImpl <em>Action</em>}' class.
@@ -230,6 +239,17 @@ public interface MenuPackage extends EPackage {
 	EReference getMenu_Elements();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.menu.Menu#getIcon <em>Icon</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Icon</em>'.
+	 * @see org.abchip.mimo.ui.menu.Menu#getIcon()
+	 * @see #getMenu()
+	 * @generated
+	 */
+	EAttribute getMenu_Icon();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.menu.Menu#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -321,6 +341,14 @@ public interface MenuPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MENU__ELEMENTS = eINSTANCE.getMenu_Elements();
+
+		/**
+		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MENU__ICON = eINSTANCE.getMenu_Icon();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

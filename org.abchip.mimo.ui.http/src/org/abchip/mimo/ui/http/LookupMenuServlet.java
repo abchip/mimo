@@ -60,6 +60,7 @@ public class LookupMenuServlet extends BaseServlet {
 				MenuGroup group = frameManager.createEntity(MenuGroup.class);
 				group.setId(UUID.randomUUID().toString());
 				group.setValue(elem.getName());
+				group.setIcon(elem.getIcon());
 				group.getData().addAll(elem.getElements());
 				
 				// append to root
