@@ -21,6 +21,8 @@ import org.abchip.mimo.ui.menu.MenuPackage;
 
 import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
 
+import org.abchip.mimo.ui.query.QueryPackage;
+import org.abchip.mimo.ui.query.impl.QueryPackageImpl;
 import org.abchip.mimo.ui.schema.SchemaPackage;
 
 import org.abchip.mimo.ui.schema.impl.SchemaPackageImpl;
@@ -137,6 +139,8 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
+		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theUIPackage.createPackageContents();
@@ -144,6 +148,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
 		theFormPackage.createPackageContents();
+		theQueryPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theUIPackage.initializePackageContents();
@@ -151,6 +156,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
 		theFormPackage.initializePackageContents();
+		theQueryPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theUIPackage.freeze();
@@ -355,6 +361,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		SchemaPackage theSchemaPackage = (SchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		ToolbarPackage theToolbarPackage = (ToolbarPackage)EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		FormPackage theFormPackage = (FormPackage)EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
+		QueryPackage theQueryPackage = (QueryPackage)EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Add subpackages
@@ -362,6 +369,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		getESubpackages().add(theSchemaPackage);
 		getESubpackages().add(theToolbarPackage);
 		getESubpackages().add(theFormPackage);
+		getESubpackages().add(theQueryPackage);
 
 		// Create type parameters
 

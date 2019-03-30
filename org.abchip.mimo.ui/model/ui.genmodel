@@ -82,5 +82,17 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/name"/>
       </genClasses>
     </nestedGenPackages>
+    <nestedGenPackages prefix="Query" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="ui.ecore#//query">
+      <genClasses ecoreClass="ui.ecore#//query/Query">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//query/Query/fields"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/Query/name"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//query/QueryField">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/type"/>
+      </genClasses>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

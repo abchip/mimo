@@ -20,6 +20,8 @@ import org.abchip.mimo.ui.menu.MenuPackage;
 
 import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
 
+import org.abchip.mimo.ui.query.QueryPackage;
+import org.abchip.mimo.ui.query.impl.QueryPackageImpl;
 import org.abchip.mimo.ui.schema.SchemaPackage;
 
 import org.abchip.mimo.ui.schema.impl.SchemaPackageImpl;
@@ -115,6 +117,8 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
+		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theFormPackage.createPackageContents();
@@ -122,6 +126,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		theMenuPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
+		theQueryPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theFormPackage.initializePackageContents();
@@ -129,6 +134,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		theMenuPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
+		theQueryPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theFormPackage.freeze();
