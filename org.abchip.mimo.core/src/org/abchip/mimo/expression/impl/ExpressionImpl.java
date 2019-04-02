@@ -25,7 +25,6 @@ import org.abchip.mimo.expression.ExpressionType;
 import org.abchip.mimo.expression.ExpressionVisitor;
 import org.abchip.mimo.expression.FunctionTermExpression;
 import org.abchip.mimo.expression.LogicalExpression;
-import org.abchip.mimo.expression.PredicateExpression;
 import org.abchip.mimo.expression.QualifiedTermExpression;
 import org.abchip.mimo.expression.RelationalExpression;
 import org.eclipse.emf.ecore.EClass;
@@ -93,7 +92,7 @@ public abstract class ExpressionImpl extends EntityImpl implements Expression {
 		return expressionStringBuilderImpl.getResult();
 	}
 		
-	public class ToStringExpression extends ExpressionVisitorImpl {
+	private class ToStringExpression extends ExpressionVisitorImpl {
 
 		protected StringBuffer result = new StringBuffer();
 
@@ -252,19 +251,14 @@ public abstract class ExpressionImpl extends EntityImpl implements Expression {
 
 			switch (expression.getType()) {
 			case STRING:
-				String value = expression.getValue().replaceAll("\'", "\''");
-				result.append("'" + value + "'");
-				break;
-			case HEXADECIMAL:
-				result.append("x'" + expression.getValue() + "'");
+				String value = expression.getValue().replaceAll("\"", "\"\"");
+				result.append("\"" + value + "\"");
 				break;
 			case BOOLEAN:
 			case DATE:
 			case FLOATING:
-			case INDICATOR:
 			case INTEGER:
 			case NAME:
-			case SPECIAL:
 			case TIME:
 			case TIMESTAMP:
 				result.append(expression.getValue());			
@@ -287,30 +281,18 @@ public abstract class ExpressionImpl extends EntityImpl implements Expression {
 		@Override
 		public boolean visit(FunctionTermExpression expression) {
 
-			String functionName = expression.getValue();
+			result.append(expression.getValue());
 
-			if (functionName.startsWith("*ALL")) {
-
-				result.append("*ALL");
-				for (Expression child : expression.getElements()) {
-					child.accept(this);
-				}
-
-			} else {
-
-				result.append(expression.getValue());
-
-				result.append("(");
-				boolean first = true;
-				for (Expression child : expression.getElements()) {
-					if (!first)
-						result.append(": ");
-					child.accept(this);
-					first = false;
-				}
-				result.append(")");
+			result.append("(");
+			boolean first = true;
+			for (Expression child : expression.getElements()) {
+				if (!first)
+					result.append(": ");
+				child.accept(this);
+				first = false;
 			}
-
+			result.append(")");
+			
 			return false;
 		}
 
@@ -326,16 +308,6 @@ public abstract class ExpressionImpl extends EntityImpl implements Expression {
 				}
 
 			return false;
-		}
-
-		public void visit(PredicateExpression predicateExpression) {
-
-			if (predicateExpression instanceof RelationalExpression)
-				visit((RelationalExpression) predicateExpression);
-			else if (predicateExpression instanceof LogicalExpression)
-				visit((LogicalExpression) predicateExpression);
-			else if (predicateExpression instanceof BooleanExpression)
-				visit((BooleanExpression) predicateExpression);
 		}
 	}
 } // ExpressionImpl

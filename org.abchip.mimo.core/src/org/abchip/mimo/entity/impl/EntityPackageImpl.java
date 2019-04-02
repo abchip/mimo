@@ -1596,6 +1596,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		op = addEOperation(slotEClass, this.getEntity(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "nsPrefix", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(slotEClass, ecorePackage.getEString(), "getDataClassName", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(textableEClass, Textable.class, "Textable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(textableEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);

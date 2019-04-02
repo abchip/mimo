@@ -9,7 +9,7 @@
  * Contributors:
  *   Mattia Rocchi - Initial API and implementation
  */
-package org.abchip.mimo.core.base.expr;
+package org.abchip.mimo.core.base.expr.antlr;
 
 import org.abchip.mimo.expression.ArithmeticExpression;
 import org.abchip.mimo.expression.ArrayExpression;
@@ -27,17 +27,17 @@ import org.abchip.mimo.expression.PredicateExpression;
 import org.abchip.mimo.expression.QualifiedTermExpression;
 import org.abchip.mimo.expression.RelationalExpression;
 import org.abchip.mimo.expression.TermExpression;
-import org.antlr.runtime.tree.Tree;
+import org.antlr.v4.runtime.tree.Tree;
 
-public class BaseExpressionBuilder {
+public class AntLRExpressionBuilder {
 
-	private BaseExpressionHelper expressionHelper;
+	private AntLRExpressionHelper expressionHelper;
 
 	private static final String[] ASS_STR_OP = { "**=", "*=", "+=", "-=", "/=", "=" };
 	private static final AssignmentOperator[] ASS_OP = { AssignmentOperator.POWER_ASSIGN, AssignmentOperator.TIMES_ASSIGN, AssignmentOperator.PLUS_ASSIGN, AssignmentOperator.MINUS_ASSIGN,
 			AssignmentOperator.DIVIDE_ASSIGN, AssignmentOperator.ASSIGN };
 
-	public BaseExpressionBuilder(BaseExpressionHelper expressionHelper) {
+	public AntLRExpressionBuilder(AntLRExpressionHelper expressionHelper) {
 		this.expressionHelper = expressionHelper;
 	}
 
@@ -294,7 +294,7 @@ public class BaseExpressionBuilder {
 		case BOOLEAN:
 
 			TermExpression booleanExpression = ExpressionFactory.eINSTANCE.createAtomicTermExpression();
-			booleanExpression.setValue(node.getText());
+			booleanExpression.setValue(node.toString());
 			
 			return booleanExpression;
 
@@ -325,7 +325,7 @@ public class BaseExpressionBuilder {
 			AtomicTermExpression atomicTermExpression = ExpressionFactory.eINSTANCE.createAtomicTermExpression();
 
 			atomicTermExpression.setType(expressionHelper.getTermType(node));
-			String text = expressionHelper.normalizeText(node.getText());
+			String text = expressionHelper.normalizeText(node.toString());
 			atomicTermExpression.setValue(text);
 
 			expression = atomicTermExpression;

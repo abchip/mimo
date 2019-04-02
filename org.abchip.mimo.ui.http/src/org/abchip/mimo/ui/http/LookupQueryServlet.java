@@ -95,7 +95,24 @@ public class LookupQueryServlet extends BaseServlet {
 			label.append(c);
 		}
 		field.setValue(Strings.qINSTANCE.firstToUpper(label.toString()));
-		field.setType("string");
+
+		switch (slot.getDataClassName()) {
+		case "java.lang.String":
+		case "char":
+			field.setType("string");
+			break;
+		case "java.util.Date":
+			field.setType("date");
+			break;
+		case "java.math.BigDecimal":
+		case "long":
+			field.setType("number");
+			break;
+		default:
+			System.out.println("Unexpected condition: 873we65r87ewtr" + slot.getDataClassName());
+			field.setType("string");
+			break;
+		}
 
 		return field;
 	}

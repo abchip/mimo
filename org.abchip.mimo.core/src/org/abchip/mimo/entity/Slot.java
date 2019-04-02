@@ -103,4 +103,12 @@ public interface Slot extends EntityNameable {
 	 * @generated
 	 */
 	Entity getValue(String nsPrefix);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	String getDataClassName();
 } // Slot

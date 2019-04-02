@@ -1235,6 +1235,7 @@
       <eOperations name="getValue" eType="#//entity/Entity">
         <eParameters name="nsPrefix" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="getDataClassName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="#//entity/Cardinality"
           changeable="false" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1299,17 +1300,14 @@
           eType="#//expression/AtomicType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="AtomicType">
-      <eLiterals name="Boolean" value="3" literal="BOOLEAN"/>
-      <eLiterals name="Date" value="2" literal="DATE"/>
-      <eLiterals name="Floating" value="1" literal="FLOATING"/>
-      <eLiterals name="Hexadecimal" value="8" literal="HEXADECIMAL"/>
-      <eLiterals name="Indicator" value="6" literal="INDICATOR"/>
-      <eLiterals name="Integer" literal="INTEGER"/>
-      <eLiterals name="Name" value="5" literal="NAME"/>
-      <eLiterals name="Special" value="7" literal="SPECIAL"/>
-      <eLiterals name="String" value="4" literal="STRING"/>
-      <eLiterals name="Time" value="9" literal="TIME"/>
-      <eLiterals name="Timestamp" value="10" literal="TIMESTAMP"/>
+      <eLiterals name="Boolean" value="10" literal="BOOLEAN"/>
+      <eLiterals name="Date" value="20" literal="DATE"/>
+      <eLiterals name="Floating" value="30" literal="FLOATING"/>
+      <eLiterals name="Integer" value="40" literal="INTEGER"/>
+      <eLiterals name="Name" value="50" literal="NAME"/>
+      <eLiterals name="String" value="60" literal="STRING"/>
+      <eLiterals name="Time" value="70" literal="TIME"/>
+      <eLiterals name="Timestamp" value="80" literal="TIMESTAMP"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression" eSuperTypes="#//expression/PredicateExpression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
@@ -1346,10 +1344,6 @@
       </eOperations>
       <eOperations name="parseTerm" eType="#//expression/TermExpression">
         <eParameters name="expression" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="match" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eParameters name="expression" lowerBound="1" eType="#//expression/Expression"/>
-        <eParameters name="pattern" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExpressionParserRegistry" abstract="true"

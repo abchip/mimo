@@ -80,4 +80,9 @@ public class EMFSlotAdapter extends SlotImpl {
 	public String toString() {
 		return this.element.toString();
 	}
+
+	@Override
+	public String getDataClassName() {
+		return element.getEType().getInstanceClassName();
+	}
 }

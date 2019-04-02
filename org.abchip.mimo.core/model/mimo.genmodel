@@ -736,6 +736,7 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getValue">
           <genParameters ecoreParameter="mimo.ecore#//entity/Slot/getValue/nsPrefix"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getDataClassName"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Textable">
         <genOperations ecoreOperation="mimo.ecore#//entity/Textable/getText"/>
@@ -765,11 +766,8 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Boolean"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Date"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Floating"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Hexadecimal"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Indicator"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Integer"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Name"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Special"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/String"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Time"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//expression/AtomicType/Timestamp"/>
@@ -845,10 +843,6 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//expression/ExpressionParser/parseTerm">
           <genParameters ecoreParameter="mimo.ecore#//expression/ExpressionParser/parseTerm/expression"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//expression/ExpressionParser/match">
-          <genParameters ecoreParameter="mimo.ecore#//expression/ExpressionParser/match/expression"/>
-          <genParameters ecoreParameter="mimo.ecore#//expression/ExpressionParser/match/pattern"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//expression/ExpressionParserRegistry"/>

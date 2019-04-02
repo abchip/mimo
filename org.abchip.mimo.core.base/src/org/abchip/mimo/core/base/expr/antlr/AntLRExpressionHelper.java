@@ -9,16 +9,16 @@
  * Contributors:
  *   Mattia Rocchi - Initial API and implementation
  */
-package org.abchip.mimo.core.base.expr;
+package org.abchip.mimo.core.base.expr.antlr;
 
 import org.abchip.mimo.expression.ArithmeticOperator;
 import org.abchip.mimo.expression.AtomicType;
 import org.abchip.mimo.expression.ExpressionType;
 import org.abchip.mimo.expression.LogicalOperator;
 import org.abchip.mimo.expression.RelationalOperator;
-import org.antlr.runtime.tree.Tree;
+import org.antlr.v4.runtime.tree.Tree;
 
-public interface BaseExpressionHelper {
+public interface AntLRExpressionHelper {
 
 	public ExpressionType getExpressionType(Tree tree);
 

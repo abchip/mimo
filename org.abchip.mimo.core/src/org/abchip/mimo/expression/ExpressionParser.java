@@ -56,12 +56,4 @@ public interface ExpressionParser {
 	 */
 	TermExpression parseTerm(String expression);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model expressionRequired="true" patternRequired="true"
-	 * @generated
-	 */
-	boolean match(Expression expression, String pattern);
-
 } // ExpressionParser

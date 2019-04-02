@@ -962,10 +962,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		op = addEOperation(expressionParserEClass, this.getTermExpression(), "parseTerm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "expression", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(expressionParserEClass, ecorePackage.getEBoolean(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getExpression(), "expression", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "pattern", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(expressionParserRegistryEClass, ExpressionParserRegistry.class, "ExpressionParserRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(expressionWriterEClass, ExpressionWriter.class, "ExpressionWriter", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1079,11 +1075,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		addEEnumLiteral(atomicTypeEEnum, AtomicType.BOOLEAN);
 		addEEnumLiteral(atomicTypeEEnum, AtomicType.DATE);
 		addEEnumLiteral(atomicTypeEEnum, AtomicType.FLOATING);
-		addEEnumLiteral(atomicTypeEEnum, AtomicType.HEXADECIMAL);
-		addEEnumLiteral(atomicTypeEEnum, AtomicType.INDICATOR);
 		addEEnumLiteral(atomicTypeEEnum, AtomicType.INTEGER);
 		addEEnumLiteral(atomicTypeEEnum, AtomicType.NAME);
-		addEEnumLiteral(atomicTypeEEnum, AtomicType.SPECIAL);
 		addEEnumLiteral(atomicTypeEEnum, AtomicType.STRING);
 		addEEnumLiteral(atomicTypeEEnum, AtomicType.TIME);
 		addEEnumLiteral(atomicTypeEEnum, AtomicType.TIMESTAMP);
