@@ -7,11 +7,10 @@
  */
 package org.abchip.mimo.tester.impl;
 
+import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
-
-import org.abchip.mimo.expression.ExpressionPackage;
 import org.abchip.mimo.tester.Asserter;
 import org.abchip.mimo.tester.AssertionFailed;
 import org.abchip.mimo.tester.AssertionResult;
@@ -187,7 +186,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link TesterPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -201,15 +200,13 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		if (isInited) return (TesterPackage)EPackage.Registry.INSTANCE.getEPackage(TesterPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TesterPackageImpl theTesterPackage = (TesterPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TesterPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TesterPackageImpl());
+		Object registeredTesterPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		TesterPackageImpl theTesterPackage = registeredTesterPackage instanceof TesterPackageImpl ? (TesterPackageImpl)registeredTesterPackage : new TesterPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
-		ContextPackage.eINSTANCE.eClass();
-		EntityPackage.eINSTANCE.eClass();
-		ExpressionPackage.eINSTANCE.eClass();
-		UtilPackage.eINSTANCE.eClass();
+		MimoPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTesterPackage.createPackageContents();
@@ -220,7 +217,6 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		// Mark meta-data to indicate it can't be changed
 		theTesterPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(TesterPackage.eNS_URI, theTesterPackage);
 		return theTesterPackage;
@@ -231,6 +227,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAsserter() {
 		return asserterEClass;
 	}
@@ -240,6 +237,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAssertionFailed() {
 		return assertionFailedEClass;
 	}
@@ -249,6 +247,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAssertionResult() {
 		return assertionResultEClass;
 	}
@@ -258,6 +257,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAssertionResult_Message() {
 		return (EAttribute)assertionResultEClass.getEStructuralFeatures().get(0);
 	}
@@ -267,6 +267,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAssertionResult_Time() {
 		return (EAttribute)assertionResultEClass.getEStructuralFeatures().get(1);
 	}
@@ -276,6 +277,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAssertionSuccess() {
 		return assertionSuccessEClass;
 	}
@@ -285,6 +287,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestAsserter() {
 		return testAsserterEClass;
 	}
@@ -294,6 +297,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestManager() {
 		return testManagerEClass;
 	}
@@ -303,6 +307,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestRunner() {
 		return testRunnerEClass;
 	}
@@ -312,6 +317,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestRunnerEvent() {
 		return testRunnerEventEClass;
 	}
@@ -321,6 +327,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTestRunnerEvent_Source() {
 		return (EReference)testRunnerEventEClass.getEStructuralFeatures().get(0);
 	}
@@ -330,6 +337,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTestRunnerEvent_Type() {
 		return (EAttribute)testRunnerEventEClass.getEStructuralFeatures().get(1);
 	}
@@ -339,6 +347,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestRunnerListener() {
 		return testRunnerListenerEClass;
 	}
@@ -348,6 +357,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestResult() {
 		return testResultEClass;
 	}
@@ -357,6 +367,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTestResult_AssertResults() {
 		return (EReference)testResultEClass.getEStructuralFeatures().get(0);
 	}
@@ -366,6 +377,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTestResult_Category() {
 		return (EAttribute)testResultEClass.getEStructuralFeatures().get(1);
 	}
@@ -375,6 +387,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTestResult_Object() {
 		return (EAttribute)testResultEClass.getEStructuralFeatures().get(2);
 	}
@@ -384,6 +397,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTestResult_Runner() {
 		return (EAttribute)testResultEClass.getEStructuralFeatures().get(3);
 	}
@@ -393,6 +407,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTestResult_Time() {
 		return (EAttribute)testResultEClass.getEStructuralFeatures().get(4);
 	}
@@ -402,6 +417,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestSuiteLauncher() {
 		return testSuiteLauncherEClass;
 	}
@@ -411,6 +427,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestSuiteRunner() {
 		return testSuiteRunnerEClass;
 	}
@@ -420,6 +437,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestUnitRunner() {
 		return testUnitRunnerEClass;
 	}
@@ -429,6 +447,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTestObject() {
 		return testObjectEClass;
 	}
@@ -438,6 +457,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTestObject_Name() {
 		return (EAttribute)testObjectEClass.getEStructuralFeatures().get(0);
 	}
@@ -447,6 +467,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTestObject_StringProperty() {
 		return (EAttribute)testObjectEClass.getEStructuralFeatures().get(1);
 	}
@@ -456,6 +477,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTestObject_IntegerProperty() {
 		return (EAttribute)testObjectEClass.getEStructuralFeatures().get(2);
 	}
@@ -465,6 +487,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTestObject_ObjectReference() {
 		return (EReference)testObjectEClass.getEStructuralFeatures().get(3);
 	}
@@ -474,6 +497,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTestObject_ObjectReferences() {
 		return (EReference)testObjectEClass.getEStructuralFeatures().get(4);
 	}
@@ -483,6 +507,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getAssertionState() {
 		return assertionStateEEnum;
 	}
@@ -492,6 +517,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTestRunnerEventType() {
 		return testRunnerEventTypeEEnum;
 	}
@@ -501,6 +527,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TesterFactory getTesterFactory() {
 		return (TesterFactory)getEFactoryInstance();
 	}

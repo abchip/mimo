@@ -12,7 +12,6 @@
 package org.abchip.mimo.entity;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.expression.PredicateExpression;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -123,14 +122,6 @@ public interface EntityReader<E extends EntityNameable> {
 	 * @generated
 	 */
 	EntityIterator<E> find(String filter);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EntityIterator<E> findByExpression(PredicateExpression filter);
 
 	/**
 	 * <!-- begin-user-doc -->

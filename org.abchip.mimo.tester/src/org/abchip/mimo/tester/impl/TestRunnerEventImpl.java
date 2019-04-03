@@ -89,6 +89,7 @@ public class TestRunnerEventImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TestRunner getSource() {
 		if (source != null && ((EObject)source).eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject)source;
@@ -115,6 +116,7 @@ public class TestRunnerEventImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSource(TestRunner newSource) {
 		TestRunner oldSource = source;
 		source = newSource;
@@ -127,6 +129,7 @@ public class TestRunnerEventImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TestRunnerEventType getType() {
 		return type;
 	}
@@ -136,6 +139,7 @@ public class TestRunnerEventImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(TestRunnerEventType newType) {
 		TestRunnerEventType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -221,7 +225,7 @@ public class TestRunnerEventImpl extends MinimalEObjectImpl.Container implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
 		result.append(')');

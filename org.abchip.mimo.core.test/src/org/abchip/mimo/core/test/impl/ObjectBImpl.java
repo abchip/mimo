@@ -103,6 +103,7 @@ public class ObjectBImpl extends EntityNameableImpl implements ObjectB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -112,6 +113,7 @@ public class ObjectBImpl extends EntityNameableImpl implements ObjectB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -124,6 +126,7 @@ public class ObjectBImpl extends EntityNameableImpl implements ObjectB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Enum1 getEnum1() {
 		return enum1;
 	}
@@ -133,6 +136,7 @@ public class ObjectBImpl extends EntityNameableImpl implements ObjectB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnum1(Enum1 newEnum1) {
 		Enum1 oldEnum1 = enum1;
 		enum1 = newEnum1 == null ? ENUM1_EDEFAULT : newEnum1;
@@ -217,7 +221,7 @@ public class ObjectBImpl extends EntityNameableImpl implements ObjectB {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", enum1: ");

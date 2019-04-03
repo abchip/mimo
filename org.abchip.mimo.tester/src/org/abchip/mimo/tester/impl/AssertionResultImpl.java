@@ -134,6 +134,7 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AssertionState getAssertionState() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -212,7 +213,7 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (message: ");
 		result.append(message);
 		result.append(", time: ");

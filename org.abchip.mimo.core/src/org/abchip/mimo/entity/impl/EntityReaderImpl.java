@@ -11,24 +11,16 @@
  */
 package org.abchip.mimo.entity.impl;
 
-import java.util.Iterator;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.entity.ResourceNotifier;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.expression.LogicalExpression;
-import org.abchip.mimo.expression.LogicalOperator;
-import org.abchip.mimo.expression.PredicateExpression;
-import org.abchip.mimo.expression.RelationalExpression;
-import org.abchip.mimo.expression.TermExpression;
-import org.abchip.mimo.expression.impl.ExpressionVisitorImpl;
+import org.abchip.mimo.entity.ResourceNotifier;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -205,16 +197,6 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public EntityIterator<E> findByExpression(PredicateExpression filter) {
-		return new EntityPredicateIterator(find(null), filter);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -315,161 +297,5 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 				return frame != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	private class EntityPredicateIterator implements EntityIterator<E> {
-
-		private EntityIterator<E> iterator;
-		private PredicateExpression filter;
-
-		private E nextEntity;
-
-		public EntityPredicateIterator(EntityIterator<E> delegate, PredicateExpression filter) {
-			this.iterator = delegate;
-			this.filter = filter;
-
-			doNext();
-		}
-
-		@Override
-		public void close() {
-			this.iterator.close();
-		}
-
-		@Override
-		public boolean hasNext() {
-			return this.nextEntity != null;
-		}
-
-		@Override
-		public E next() {
-
-			E entity = nextEntity;
-			doNext();
-
-			return entity;
-
-		}
-
-		@Override
-		public void remove() {
-			this.iterator.remove();
-		}
-
-		private void doNext() {
-
-			nextEntity = null;
-			while (iterator.hasNext()) {
-				E entity = iterator.next();
-				MyExpressionVisitor expressionVisitor = new MyExpressionVisitor((EObject) entity);
-				filter.accept(expressionVisitor);
-
-				if (!expressionVisitor.isValid())
-					continue;
-
-				nextEntity = entity;
-				break;
-			}
-		}
-		
-		@Override
-		public Iterator<E> iterator() {
-			return this;
-		}
-	}
-
-	private class MyExpressionVisitor extends ExpressionVisitorImpl {
-
-		boolean result = true;
-
-		private EObject eObject;
-
-		public MyExpressionVisitor(EObject eObject) {
-			this.eObject = eObject;
-		}
-
-		public boolean isValid() {
-			return result;
-		}
-
-		@Override
-		public boolean visit(LogicalExpression expression) {
-
-			expression.getLeftOperand().accept(this);
-			if (isValid() || expression.getOperator().equals(LogicalOperator.OR))
-				expression.getRightOperand().accept(this);
-
-			return isValid();
-		}
-
-		@Override
-		public boolean visit(RelationalExpression expression) {
-
-			// TODO
-			TermExpression leftOperand = (TermExpression) expression.getLeftOperand();
-			String feature = leftOperand.getValue();
-			
-			String eValue = getValue(feature);
-			
-			// TODO
-			TermExpression rightOperand = (TermExpression) expression.getRightOperand();
-			String value = rightOperand.getValue();
-
-			switch (expression.getOperator()) {
-			case EQUAL:
-				this.result = value.equalsIgnoreCase(eValue);
-				break;
-			case GREATER_THAN:
-				this.result = value.compareTo(eValue) > 0;
-				break;
-			case GREATER_THAN_EQUAL:
-				this.result = value.compareTo(eValue) >= 0;
-				break;
-			case LESS_THAN:
-				this.result = value.compareTo(eValue) < 0;
-				break;
-			case LESS_THAN_EQUAL:
-				this.result = value.compareTo(eValue) <= 0;
-				break;
-			case NOT_EQUAL:
-				this.result = !value.equalsIgnoreCase(eValue);
-				break;
-			}
-
-			return result;
-		}
-
-		private String getValue(String feature) {
-			
-			String[] features = feature.split("\\.");
-			
-			String eValue = null;
-			EObject tempObject = eObject;
-			for(int f = 0; f < features.length; f++) {
-				EStructuralFeature eFeature = tempObject.eClass().getEStructuralFeature(features[f]);
-				if(eFeature == null)
-					break;
-				Object object = tempObject.eGet(eFeature);
-				if(object instanceof EObject) {
-					tempObject = (EObject) object;
-					continue;
-				}
-				else {
-					if (object == null)
-						eValue = eFeature.getDefaultValueLiteral();
-					else
-						eValue = object.toString();
-					break;
-				}
-			}
-
-			return eValue;
-		}
-
 	}
 } // QResourceImpl

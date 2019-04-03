@@ -41,11 +41,6 @@ import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.Textable;
-
-import org.abchip.mimo.expression.ExpressionPackage;
-
-import org.abchip.mimo.expression.impl.ExpressionPackageImpl;
-
 import org.abchip.mimo.impl.MimoPackageImpl;
 
 import org.abchip.mimo.net.NetPackage;
@@ -300,8 +295,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
@@ -312,7 +305,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		theMimoPackage.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
-		theExpressionPackage.createPackageContents();
 		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
@@ -321,7 +313,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		theMimoPackage.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
-		theExpressionPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
@@ -907,7 +898,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Obtain other dependent packages
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter entityIteratorEClass_E = addETypeParameter(entityIteratorEClass, "E");
@@ -1157,13 +1147,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		op = addEOperation(entityReaderEClass, null, "find", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getEntityIterator());
-		g2 = createEGenericType(entityReaderEClass_E);
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
-		op = addEOperation(entityReaderEClass, null, "findByExpression", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theExpressionPackage.getPredicateExpression(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getEntityIterator());
 		g2 = createEGenericType(entityReaderEClass_E);
 		g1.getETypeArguments().add(g2);

@@ -116,6 +116,7 @@ public class ObjectAImpl extends EntityNameableImpl implements ObjectA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -125,6 +126,7 @@ public class ObjectAImpl extends EntityNameableImpl implements ObjectA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -137,6 +139,7 @@ public class ObjectAImpl extends EntityNameableImpl implements ObjectA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -146,6 +149,7 @@ public class ObjectAImpl extends EntityNameableImpl implements ObjectA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
@@ -158,6 +162,7 @@ public class ObjectAImpl extends EntityNameableImpl implements ObjectA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ObjectB getObjectB() {
 		return objectB;
 	}
@@ -182,6 +187,7 @@ public class ObjectAImpl extends EntityNameableImpl implements ObjectA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setObjectB(ObjectB newObjectB) {
 		if (newObjectB != objectB) {
 			NotificationChain msgs = null;
@@ -297,7 +303,7 @@ public class ObjectAImpl extends EntityNameableImpl implements ObjectA {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", text: ");

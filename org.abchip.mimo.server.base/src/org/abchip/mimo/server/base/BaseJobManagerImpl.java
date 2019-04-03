@@ -19,19 +19,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Identity;
 import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.EntityWriter;
-import org.abchip.mimo.expression.ExpressionParser;
-import org.abchip.mimo.expression.ExpressionParserRegistry;
-import org.abchip.mimo.expression.PredicateExpression;
+import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobCapability;
 import org.abchip.mimo.server.JobDescription;
@@ -55,13 +51,10 @@ public class BaseJobManagerImpl implements JobManager {
 	@Inject
 	private ResourceManager resourceManager;
 	@Inject
-	private ExpressionParserRegistry expressionParserRegistry;
-	@Inject
 	private ThreadManager threadManager;
 
 	private BaseSystemManagerImpl systemManager;
 	private Map<String, Job> activeJobs;
-	private ExpressionParser expressionParser;
 	private List<JobListener> listeners;
 
 	@Inject
@@ -71,11 +64,6 @@ public class BaseJobManagerImpl implements JobManager {
 		this.activeJobs = new HashMap<String, Job>(); // TODO
 														// ConcurrentHashMap????
 		this.listeners = new ArrayList<JobListener>();
-	}
-
-	@PostConstruct
-	private void init() {
-		this.expressionParser = expressionParserRegistry.lookup(ExpressionParserRegistry.DEFAULT_PARSER);
 	}
 
 	@Override
@@ -180,13 +168,11 @@ public class BaseJobManagerImpl implements JobManager {
 
 		Job jobCaller = lookup(contextID);
 
-		PredicateExpression filter = expressionParser
-				.parsePredicate("jobReference.jobName *EQ '" + name + "' *AND jobReference.jobNumber *EQ " + number + " *AND jobReference.jobUser *EQ '" + user + "'");
-
+		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
 		Job jobTarget = null;
 
 		EntityReader<Job> jobReader = resourceManager.getEntityReader(jobCaller, Job.class, ResourceScope.ROOT);
-		try (EntityIterator<Job> jobs = jobReader.findByExpression(filter);) {
+		try (EntityIterator<Job> jobs = jobReader.find(filter);) {
 
 			// first element
 			if (jobs.hasNext())
@@ -200,16 +186,16 @@ public class BaseJobManagerImpl implements JobManager {
 	public List<Job> getActiveJobs() {
 		return new ArrayList<Job>(activeJobs.values());
 	}
-	
+
 	@Override
 	public List<Job> getUserJobs(String user) {
 
 		ArrayList<Job> userJobs = new ArrayList<Job>();
-		for(Job job: getActiveJobs()){
+		for (Job job : getActiveJobs()) {
 
-		if(job.getJobReference().getJobUser().equals(user))
-			userJobs.add(job);	
-			
+			if (job.getJobReference().getJobUser().equals(user))
+				userJobs.add(job);
+
 		}
 		return userJobs;
 	}
@@ -218,7 +204,7 @@ public class BaseJobManagerImpl implements JobManager {
 	public void close(JobCapability jobCapability) {
 
 		Job job = lookup(jobCapability);
-		if(job!=null)
+		if (job != null)
 			close(job);
 	}
 
@@ -236,7 +222,7 @@ public class BaseJobManagerImpl implements JobManager {
 		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class, ResourceScope.ROOT);
 		job.setDestroyDate(new Date());
 		jobWriter.save(job, true);
-		
+
 		job.getContext().close();
 
 		jobEvent.setType(JobEventType.STOPPED);
@@ -246,7 +232,7 @@ public class BaseJobManagerImpl implements JobManager {
 
 		this.activeJobs.remove(job.getJobID());
 
-		// close thread 
+		// close thread
 		threadManager.stop(job.getJobThread());
 	}
 

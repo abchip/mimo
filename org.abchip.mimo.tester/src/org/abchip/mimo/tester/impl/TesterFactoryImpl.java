@@ -111,6 +111,7 @@ public class TesterFactoryImpl extends EFactoryImpl implements TesterFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AssertionFailed createAssertionFailed() {
 		AssertionFailedImpl assertionFailed = new AssertionFailedImpl();
 		return assertionFailed;
@@ -121,6 +122,7 @@ public class TesterFactoryImpl extends EFactoryImpl implements TesterFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AssertionSuccess createAssertionSuccess() {
 		AssertionSuccessImpl assertionSuccess = new AssertionSuccessImpl();
 		return assertionSuccess;
@@ -131,6 +133,7 @@ public class TesterFactoryImpl extends EFactoryImpl implements TesterFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TestRunnerEvent createTestRunnerEvent() {
 		TestRunnerEventImpl testRunnerEvent = new TestRunnerEventImpl();
 		return testRunnerEvent;
@@ -141,6 +144,7 @@ public class TesterFactoryImpl extends EFactoryImpl implements TesterFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TestResult createTestResult() {
 		TestResultImpl testResult = new TestResultImpl();
 		return testResult;
@@ -151,6 +155,7 @@ public class TesterFactoryImpl extends EFactoryImpl implements TesterFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TestObject createTestObject() {
 		TestObjectImpl testObject = new TestObjectImpl();
 		return testObject;
@@ -201,6 +206,7 @@ public class TesterFactoryImpl extends EFactoryImpl implements TesterFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TesterPackage getTesterPackage() {
 		return (TesterPackage)getEPackage();
 	}

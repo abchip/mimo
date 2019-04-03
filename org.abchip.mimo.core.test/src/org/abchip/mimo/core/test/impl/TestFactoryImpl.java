@@ -104,6 +104,7 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ObjectA createObjectA() {
 		ObjectAImpl objectA = new ObjectAImpl();
 		return objectA;
@@ -114,6 +115,7 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ObjectB createObjectB() {
 		ObjectBImpl objectB = new ObjectBImpl();
 		return objectB;
@@ -144,6 +146,7 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TestPackage getTestPackage() {
 		return (TestPackage)getEPackage();
 	}

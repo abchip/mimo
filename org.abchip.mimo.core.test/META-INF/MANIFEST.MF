@@ -1,13 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: MIMO Core Test
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.abchip.mimo.core.test;singleton:=true
+Automatic-Module-Name: org.abchip.mimo.core.test
 Bundle-Version: 0.1.0.qualifier
-Bundle-Vendor: ABChip
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Export-Package: org.abchip.mimo.core.test,
-  org.abchip.mimo.core.test.impl,
-  org.abchip.mimo.core.test.runner
-Require-Bundle: org.abchip.mimo.core,
+ org.abchip.mimo.core.test.impl,
+ org.abchip.mimo.core.test.runner
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.abchip.mimo.core;visibility:=reexport,
  org.abchip.mimo.tester,
  org.abchip.mimo.tester.base
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

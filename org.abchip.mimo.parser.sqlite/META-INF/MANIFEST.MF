@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Parser SQLite
+Bundle-SymbolicName: org.abchip.mimo.parser.sqlite
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: ABChip
+Automatic-Module-Name: org.abchip.mimo.parser.sqlite
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: lib/antlr-runtime-4.4.jar,
+ .

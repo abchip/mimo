@@ -113,24 +113,17 @@
     <genClasses image="false" ecoreClass="tester.ecore#//TestAsserter">
       <genOperations ecoreOperation="tester.ecore#//TestAsserter/resetTime"/>
     </genClasses>
-    <genClasses ecoreClass="tester.ecore#//TestContainer">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//TestContainer/name"/>
-    </genClasses>
     <genClasses image="false" ecoreClass="tester.ecore#//TestManager">
       <genOperations ecoreOperation="tester.ecore#//TestManager/prepareSuiteRunner">
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareSuiteRunner/context"/>
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareSuiteRunner/testMaker"/>
+        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareSuiteRunner/contextProvider"/>
         <genParameters ecoreParameter="tester.ecore#//TestManager/prepareSuiteRunner/component"/>
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareSuiteRunner/category"/>
       </genOperations>
       <genOperations ecoreOperation="tester.ecore#//TestManager/prepareUnitRunner">
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner/context"/>
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner/testMaker"/>
+        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner/contextProvider"/>
         <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner/klass"/>
       </genOperations>
       <genOperations ecoreOperation="tester.ecore#//TestManager/prepareUnitRunner.1">
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner.1/context"/>
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner.1/testMaker"/>
+        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner.1/contextProvider"/>
         <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner.1/classURI"/>
       </genOperations>
     </genClasses>
@@ -151,13 +144,6 @@
         <genParameters ecoreParameter="tester.ecore#//TestRunnerListener/handleEvent/event"/>
       </genOperations>
     </genClasses>
-    <genClasses image="false" ecoreClass="tester.ecore#//TestRunnerMaker">
-      <genOperations ecoreOperation="tester.ecore#//TestRunnerMaker/make">
-        <genParameters ecoreParameter="tester.ecore#//TestRunnerMaker/make/context"/>
-        <genParameters ecoreParameter="tester.ecore#//TestRunnerMaker/make/klass"/>
-        <genTypeParameters ecoreTypeParameter="tester.ecore#//TestRunnerMaker/make/T"/>
-      </genOperations>
-    </genClasses>
     <genClasses ecoreClass="tester.ecore#//TestResult">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tester.ecore#//TestResult/assertResults"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//TestResult/category"/>
@@ -170,8 +156,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="tester.ecore#//TestSuiteLauncher">
       <genOperations ecoreOperation="tester.ecore#//TestSuiteLauncher/createSuite">
-        <genParameters ecoreParameter="tester.ecore#//TestSuiteLauncher/createSuite/context"/>
-        <genParameters ecoreParameter="tester.ecore#//TestSuiteLauncher/createSuite/category"/>
+        <genParameters ecoreParameter="tester.ecore#//TestSuiteLauncher/createSuite/contextProvider"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="tester.ecore#//TestSuiteRunner"/>

@@ -7,8 +7,7 @@
  */
 package org.abchip.mimo.core.test.impl;
 
-import org.abchip.mimo.context.ContextPackage;
-
+import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.core.test.Enum1;
 import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
@@ -16,9 +15,6 @@ import org.abchip.mimo.core.test.TestFactory;
 import org.abchip.mimo.core.test.TestPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
-
-import org.abchip.mimo.expression.ExpressionPackage;
-import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -83,7 +79,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link TestPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -97,15 +93,13 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		if (isInited) return (TestPackage)EPackage.Registry.INSTANCE.getEPackage(TestPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TestPackageImpl theTestPackage = (TestPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TestPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TestPackageImpl());
+		Object registeredTestPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		TestPackageImpl theTestPackage = registeredTestPackage instanceof TestPackageImpl ? (TestPackageImpl)registeredTestPackage : new TestPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
-		ContextPackage.eINSTANCE.eClass();
-		EntityPackage.eINSTANCE.eClass();
-		ExpressionPackage.eINSTANCE.eClass();
-		UtilPackage.eINSTANCE.eClass();
+		MimoPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTestPackage.createPackageContents();
@@ -116,7 +110,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		// Mark meta-data to indicate it can't be changed
 		theTestPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(TestPackage.eNS_URI, theTestPackage);
 		return theTestPackage;
@@ -127,6 +120,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getObjectA() {
 		return objectAEClass;
 	}
@@ -136,6 +130,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getObjectA_Name() {
 		return (EAttribute)objectAEClass.getEStructuralFeatures().get(0);
 	}
@@ -145,6 +140,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getObjectA_Text() {
 		return (EAttribute)objectAEClass.getEStructuralFeatures().get(1);
 	}
@@ -154,6 +150,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getObjectA_ObjectB() {
 		return (EReference)objectAEClass.getEStructuralFeatures().get(2);
 	}
@@ -163,6 +160,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getObjectB() {
 		return objectBEClass;
 	}
@@ -172,6 +170,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getObjectB_Name() {
 		return (EAttribute)objectBEClass.getEStructuralFeatures().get(0);
 	}
@@ -181,6 +180,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getObjectB_Enum1() {
 		return (EAttribute)objectBEClass.getEStructuralFeatures().get(1);
 	}
@@ -190,6 +190,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getEnum1() {
 		return enum1EEnum;
 	}
@@ -199,6 +200,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TestFactory getTestFactory() {
 		return (TestFactory)getEFactoryInstance();
 	}

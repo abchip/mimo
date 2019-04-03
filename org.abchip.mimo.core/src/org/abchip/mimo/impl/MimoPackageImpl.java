@@ -20,11 +20,6 @@ import org.abchip.mimo.context.impl.ContextPackageImpl;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
-
-import org.abchip.mimo.expression.ExpressionPackage;
-
-import org.abchip.mimo.expression.impl.ExpressionPackageImpl;
-
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.util.UtilPackage;
@@ -104,8 +99,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
@@ -116,7 +109,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
-		theExpressionPackage.createPackageContents();
 		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
@@ -125,7 +117,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
-		theExpressionPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
@@ -206,7 +197,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		ApplicationPackage theApplicationPackage = (ApplicationPackage)EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 		NetPackage theNetPackage = (NetPackage)EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 
@@ -214,7 +204,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		getESubpackages().add(theApplicationPackage);
 		getESubpackages().add(theContextPackage);
 		getESubpackages().add(theEntityPackage);
-		getESubpackages().add(theExpressionPackage);
 		getESubpackages().add(theNetPackage);
 		getESubpackages().add(theUtilPackage);
 

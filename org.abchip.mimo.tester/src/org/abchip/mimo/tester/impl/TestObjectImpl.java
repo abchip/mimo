@@ -151,6 +151,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -160,6 +161,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -172,6 +174,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getStringProperty() {
 		return stringProperty;
 	}
@@ -181,6 +184,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStringProperty(String newStringProperty) {
 		String oldStringProperty = stringProperty;
 		stringProperty = newStringProperty;
@@ -193,6 +197,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getIntegerProperty() {
 		return integerProperty;
 	}
@@ -202,6 +207,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIntegerProperty(int newIntegerProperty) {
 		int oldIntegerProperty = integerProperty;
 		integerProperty = newIntegerProperty;
@@ -214,6 +220,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TestObject getObjectReference() {
 		if (objectReference != null && ((EObject)objectReference).eIsProxy()) {
 			InternalEObject oldObjectReference = (InternalEObject)objectReference;
@@ -240,6 +247,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setObjectReference(TestObject newObjectReference) {
 		TestObject oldObjectReference = objectReference;
 		objectReference = newObjectReference;
@@ -252,6 +260,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<TestObject> getObjectReferences() {
 		if (objectReferences == null) {
 			objectReferences = new EObjectResolvingEList<TestObject>(TestObject.class, this, TesterPackage.TEST_OBJECT__OBJECT_REFERENCES);
@@ -369,7 +378,7 @@ public class TestObjectImpl extends EntityNameableImpl implements TestObject {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", stringProperty: ");

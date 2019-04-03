@@ -71,7 +71,7 @@ public enum TestRunnerEventType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUITE_STOPPED(130, "SuiteStopping", "SUITE_STOPPED")
+	SUITE_STOPPED(130, "SuiteStopped", "SUITE_STOPPED")
 	;
 
 	/**
@@ -158,7 +158,7 @@ public enum TestRunnerEventType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUITE_STOPPED
-	 * @model name="SuiteStopping" literal="SUITE_STOPPED"
+	 * @model name="SuiteStopped" literal="SUITE_STOPPED"
 	 * @generated
 	 * @ordered
 	 */
@@ -282,6 +282,7 @@ public enum TestRunnerEventType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -291,6 +292,7 @@ public enum TestRunnerEventType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -300,6 +302,7 @@ public enum TestRunnerEventType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

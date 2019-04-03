@@ -35,8 +35,6 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.impl.ContextPackageImpl;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
-import org.abchip.mimo.expression.ExpressionPackage;
-import org.abchip.mimo.expression.impl.ExpressionPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.impl.NetPackageImpl;
@@ -218,8 +216,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
@@ -230,7 +226,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theMimoPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
-		theExpressionPackage.createPackageContents();
 		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
@@ -239,7 +234,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theMimoPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
-		theExpressionPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 

@@ -20,11 +20,6 @@ import org.abchip.mimo.context.impl.ContextPackageImpl;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
-
-import org.abchip.mimo.expression.ExpressionPackage;
-
-import org.abchip.mimo.expression.impl.ExpressionPackageImpl;
-
 import org.abchip.mimo.impl.MimoPackageImpl;
 
 import org.abchip.mimo.net.NetFactory;
@@ -110,8 +105,6 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
-		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(registeredPackage instanceof ExpressionPackageImpl ? registeredPackage : ExpressionPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
@@ -121,7 +114,6 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
-		theExpressionPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -130,7 +122,6 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
-		theExpressionPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
