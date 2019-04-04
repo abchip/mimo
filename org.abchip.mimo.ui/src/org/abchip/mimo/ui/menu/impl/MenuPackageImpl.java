@@ -212,6 +212,16 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMenuAction_Filter() {
+		return (EAttribute)menuActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMenuGroup() {
 		return menuGroupEClass;
 	}
@@ -262,6 +272,7 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 
 		menuActionEClass = createEClass(MENU_ACTION);
 		createEAttribute(menuActionEClass, MENU_ACTION__ACTION);
+		createEAttribute(menuActionEClass, MENU_ACTION__FILTER);
 
 		menuGroupEClass = createEClass(MENU_GROUP);
 		createEReference(menuGroupEClass, MENU_GROUP__DATA);
@@ -311,6 +322,7 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 
 		initEClass(menuActionEClass, MenuAction.class, "MenuAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMenuAction_Action(), ecorePackage.getEString(), "action", null, 0, 1, MenuAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMenuAction_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, MenuAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(menuGroupEClass, MenuGroup.class, "MenuGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenuGroup_Data(), theUIPackage.getDataNode(), null, "data", null, 0, -1, MenuGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

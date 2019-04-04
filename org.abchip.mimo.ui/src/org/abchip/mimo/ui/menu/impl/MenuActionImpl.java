@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuActionImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.impl.MenuActionImpl#getFilter <em>Filter</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +43,24 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	 * @ordered
 	 */
 	protected String action = ACTION_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getFilter() <em>Filter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FILTER_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected String filter = FILTER_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -95,10 +114,35 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	 * @generated
 	 */
 	@Override
+	public String getFilter() {
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFilter(String newFilter) {
+		String oldFilter = filter;
+		filter = newFilter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MenuPackage.MENU_ACTION__FILTER, oldFilter, filter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MenuPackage.MENU_ACTION__ACTION:
 				return getAction();
+			case MenuPackage.MENU_ACTION__FILTER:
+				return getFilter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +157,9 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 		switch (featureID) {
 			case MenuPackage.MENU_ACTION__ACTION:
 				setAction((String)newValue);
+				return;
+			case MenuPackage.MENU_ACTION__FILTER:
+				setFilter((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,6 +176,9 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 			case MenuPackage.MENU_ACTION__ACTION:
 				setAction(ACTION_EDEFAULT);
 				return;
+			case MenuPackage.MENU_ACTION__FILTER:
+				setFilter(FILTER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +193,8 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 		switch (featureID) {
 			case MenuPackage.MENU_ACTION__ACTION:
 				return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
+			case MenuPackage.MENU_ACTION__FILTER:
+				return FILTER_EDEFAULT == null ? filter != null : !FILTER_EDEFAULT.equals(filter);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,6 +211,8 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (action: ");
 		result.append(action);
+		result.append(", filter: ");
+		result.append(filter);
 		result.append(')');
 		return result.toString();
 	}

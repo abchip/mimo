@@ -47,28 +47,27 @@ public class LookupMenuServlet extends BaseServlet {
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String name = request.getParameter("name");
-		
+
 		Menu menu = null;
 		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextRoot, Menu.class, ResourceScope.CTX);
-		
-		if(name == null || name.isEmpty()) {
+
+		if (name == null || name.isEmpty()) {
 			menu = frameManager.createEntity(Menu.class);
 			menu.setName("List Menu");
-			
-			for(Menu elem: menuReader.find(null)) {
+
+			for (Menu elem : menuReader.find(null)) {
 				// build upper level group from menu
 				MenuGroup group = frameManager.createEntity(MenuGroup.class);
 				group.setId(UUID.randomUUID().toString());
 				group.setValue(elem.getName());
 				group.setIcon(elem.getIcon());
 				group.getData().addAll(elem.getElements());
-				
+
 				// append to root
 				menu.getElements().add(group);
 			}
-		}
-		else {
-			menu = menuReader.lookup(name);	
+		} else {
+			menu = menuReader.lookup(name);
 		}
 
 		ResourceSerializer<Menu> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Menu.class, SerializationType.JSON);
@@ -76,7 +75,7 @@ public class LookupMenuServlet extends BaseServlet {
 			TreeIterator<EObject> features = ((EObject) menu).eAllContents();
 
 			features.forEachRemaining(new Consumer<EObject>() {
-				
+
 				@Override
 				public void accept(EObject element) {
 					if (element instanceof MenuGroup) {
@@ -86,6 +85,8 @@ public class LookupMenuServlet extends BaseServlet {
 						}
 					} else if (element instanceof MenuAction) {
 						MenuAction menuAction = (MenuAction) element;
+						if (menuAction.getFilter() != null)
+							menuAction.setFilter(menuAction.getFilter().replaceAll("=", "%3D"));
 						if (menuAction.getId() == null || menuAction.getId().trim().isEmpty()) {
 							menuAction.setId(menuAction.getAction() + "&r=" + UUID.randomUUID().toString());
 						}

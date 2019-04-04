@@ -15,6 +15,7 @@ import org.abchip.mimo.ui.DataNode;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.menu.MenuAction#getAction <em>Action</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.menu.MenuAction#getFilter <em>Filter</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.menu.MenuPackage#getMenuAction()
@@ -48,4 +49,30 @@ public interface MenuAction extends DataNode {
 	 * @generated
 	 */
 	void setAction(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Filter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Filter</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Filter</em>' attribute.
+	 * @see #setFilter(String)
+	 * @see org.abchip.mimo.ui.menu.MenuPackage#getMenuAction_Filter()
+	 * @model
+	 * @generated
+	 */
+	String getFilter();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.menu.MenuAction#getFilter <em>Filter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Filter</em>' attribute.
+	 * @see #getFilter()
+	 * @generated
+	 */
+	void setFilter(String value);
 } // MenuAction

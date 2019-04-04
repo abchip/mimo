@@ -152,13 +152,22 @@ public interface MenuPackage extends EPackage {
 	int MENU_ACTION__ACTION = UIPackage.DATA_NODE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Filter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_ACTION__FILTER = UIPackage.DATA_NODE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_ACTION_FEATURE_COUNT = UIPackage.DATA_NODE_FEATURE_COUNT + 1;
+	int MENU_ACTION_FEATURE_COUNT = UIPackage.DATA_NODE_FEATURE_COUNT + 2;
 
 
 	/**
@@ -282,6 +291,17 @@ public interface MenuPackage extends EPackage {
 	EAttribute getMenuAction_Action();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.menu.MenuAction#getFilter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Filter</em>'.
+	 * @see org.abchip.mimo.ui.menu.MenuAction#getFilter()
+	 * @see #getMenuAction()
+	 * @generated
+	 */
+	EAttribute getMenuAction_Filter();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.menu.MenuGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -375,6 +395,14 @@ public interface MenuPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MENU_ACTION__ACTION = eINSTANCE.getMenuAction_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MENU_ACTION__FILTER = eINSTANCE.getMenuAction_Filter();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.menu.impl.MenuGroupImpl <em>Group</em>}' class.
