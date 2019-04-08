@@ -124,13 +124,22 @@ public interface UIPackage extends EPackage {
 	int DATA_NODE__ID = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_NODE__KEY = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_NODE__VALUE = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int DATA_NODE__VALUE = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Data Node</em>' class.
@@ -139,7 +148,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_NODE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int DATA_NODE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
@@ -263,6 +272,17 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataNode_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.DataNode#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see org.abchip.mimo.ui.DataNode#getKey()
+	 * @see #getDataNode()
+	 * @generated
+	 */
+	EAttribute getDataNode_Key();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.DataNode#getValue <em>Value</em>}'.
@@ -400,6 +420,14 @@ public interface UIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_NODE__ID = eINSTANCE.getDataNode_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_NODE__KEY = eINSTANCE.getDataNode_Key();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.

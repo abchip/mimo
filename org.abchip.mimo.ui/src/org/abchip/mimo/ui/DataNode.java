@@ -16,6 +16,7 @@ import org.abchip.mimo.entity.Entity;
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.DataNode#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.DataNode#getId <em>Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.DataNode#getKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.DataNode#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -75,6 +76,32 @@ public interface DataNode extends Entity {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Key</em>' attribute.
+	 * @see #setKey(String)
+	 * @see org.abchip.mimo.ui.UIPackage#getDataNode_Key()
+	 * @model
+	 * @generated
+	 */
+	String getKey();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.DataNode#getKey <em>Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Key</em>' attribute.
+	 * @see #getKey()
+	 * @generated
+	 */
+	void setKey(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

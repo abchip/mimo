@@ -59,11 +59,20 @@ public class LookupSchemaServlet extends BaseServlet {
 			Frame<?> frame = frameManager.getFrame(frameName);
 			SchemaColumn currentColumn = null;
 			for (Slot slot : frame.getSlots()) {
+				
 				SchemaColumn column = buildColumn(slot);
 				if (slot.equals(frame.getSlotName())) {
+					
+					// name
+					Lists.qINSTANCE.addFirst(schema.getColumns(), column);
 					if (currentColumn == null)
 						currentColumn = column;
-					Lists.qINSTANCE.addFirst(schema.getColumns(), column);
+					
+					// id
+//					SchemaColumn columnId = buildColumn(slot);;
+//					columnId.setId("id");					
+//					Lists.qINSTANCE.addFirst(schema.getColumns(), columnId);
+					
 				} else if (slot.getName().startsWith("created"))
 					Lists.qINSTANCE.addLast(schema.getColumns(), column);
 				else if (slot.getName().startsWith("lastUpdated"))

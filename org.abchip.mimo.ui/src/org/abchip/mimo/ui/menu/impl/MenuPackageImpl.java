@@ -11,6 +11,7 @@ import org.abchip.mimo.ui.UIPackage;
 import org.abchip.mimo.ui.form.FormPackage;
 import org.abchip.mimo.ui.form.impl.FormPackageImpl;
 import org.abchip.mimo.ui.impl.UIPackageImpl;
+import org.abchip.mimo.ui.menu.ContextMenu;
 import org.abchip.mimo.ui.menu.Menu;
 import org.abchip.mimo.ui.menu.MenuAction;
 import org.abchip.mimo.ui.menu.MenuFactory;
@@ -39,6 +40,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contextMenuEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,30 +121,30 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
-		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
-		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
 		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
+		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
+		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMenuPackage.createPackageContents();
 		theUIPackage.createPackageContents();
-		theSchemaPackage.createPackageContents();
-		theToolbarPackage.createPackageContents();
 		theFormPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
+		theSchemaPackage.createPackageContents();
+		theToolbarPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMenuPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
-		theSchemaPackage.initializePackageContents();
-		theToolbarPackage.initializePackageContents();
 		theFormPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
+		theSchemaPackage.initializePackageContents();
+		theToolbarPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theMenuPackage.freeze();
@@ -144,6 +152,46 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(MenuPackage.eNS_URI, theMenuPackage);
 		return theMenuPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContextMenu() {
+		return contextMenuEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContextMenu_Elements() {
+		return (EReference)contextMenuEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContextMenu_Icon() {
+		return (EAttribute)contextMenuEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContextMenu_Name() {
+		return (EAttribute)contextMenuEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -265,6 +313,11 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		contextMenuEClass = createEClass(CONTEXT_MENU);
+		createEReference(contextMenuEClass, CONTEXT_MENU__ELEMENTS);
+		createEAttribute(contextMenuEClass, CONTEXT_MENU__ICON);
+		createEAttribute(contextMenuEClass, CONTEXT_MENU__NAME);
+
 		menuEClass = createEClass(MENU);
 		createEReference(menuEClass, MENU__ELEMENTS);
 		createEAttribute(menuEClass, MENU__ICON);
@@ -310,11 +363,17 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		contextMenuEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		menuEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		menuActionEClass.getESuperTypes().add(theUIPackage.getDataNode());
 		menuGroupEClass.getESuperTypes().add(theUIPackage.getDataNode());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(contextMenuEClass, ContextMenu.class, "ContextMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContextMenu_Elements(), theUIPackage.getDataNode(), null, "elements", null, 0, -1, ContextMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextMenu_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, ContextMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextMenu_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContextMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenu_Elements(), theUIPackage.getDataNode(), null, "elements", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMenu_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

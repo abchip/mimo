@@ -26,14 +26,31 @@
     <genClasses image="false" ecoreClass="ui.ecore#//DataNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/icon"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//DataNode/value"/>
     </genClasses>
     <genClasses ecoreClass="ui.ecore#//View">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/frame"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/type"/>
     </genClasses>
+    <nestedGenPackages prefix="Form" disposableProviderFactory="true" ecorePackage="ui.ecore#//form">
+      <genClasses ecoreClass="ui.ecore#//form/Form">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/Form/fields"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/Form/name"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//form/FormField">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/view"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/label"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/name"/>
+      </genClasses>
+    </nestedGenPackages>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="ui.ecore#//menu">
+      <genClasses ecoreClass="ui.ecore#//menu/ContextMenu">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//menu/ContextMenu/elements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//menu/ContextMenu/icon"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//menu/ContextMenu/name"/>
+      </genClasses>
       <genClasses ecoreClass="ui.ecore#//menu/Menu">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//menu/Menu/elements"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//menu/Menu/icon"/>
@@ -45,6 +62,18 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//menu/MenuGroup">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//menu/MenuGroup/data"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Query" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="ui.ecore#//query">
+      <genClasses ecoreClass="ui.ecore#//query/Query">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//query/Query/fields"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/Query/name"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//query/QueryField">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/type"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Schema" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
@@ -70,29 +99,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/label"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/view"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Form" disposableProviderFactory="true" ecorePackage="ui.ecore#//form">
-      <genClasses ecoreClass="ui.ecore#//form/Form">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/Form/fields"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/Form/name"/>
-      </genClasses>
-      <genClasses ecoreClass="ui.ecore#//form/FormField">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/view"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/label"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/name"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Query" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="ui.ecore#//query">
-      <genClasses ecoreClass="ui.ecore#//query/Query">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//query/Query/fields"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/Query/name"/>
-      </genClasses>
-      <genClasses ecoreClass="ui.ecore#//query/QueryField">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/id"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/value"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//query/QueryField/type"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

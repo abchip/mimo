@@ -57,12 +57,24 @@ public class MenuFactoryImpl extends EFactoryImpl implements MenuFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case MenuPackage.CONTEXT_MENU: return (EObject)createContextMenu();
 			case MenuPackage.MENU: return (EObject)createMenu();
 			case MenuPackage.MENU_ACTION: return (EObject)createMenuAction();
 			case MenuPackage.MENU_GROUP: return (EObject)createMenuGroup();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ContextMenu createContextMenu() {
+		ContextMenuImpl contextMenu = new ContextMenuImpl();
+		return contextMenu;
 	}
 
 	/**

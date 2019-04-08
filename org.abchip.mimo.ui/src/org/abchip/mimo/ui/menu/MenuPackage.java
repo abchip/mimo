@@ -60,6 +60,52 @@ public interface MenuPackage extends EPackage {
 	MenuPackage eINSTANCE = org.abchip.mimo.ui.menu.impl.MenuPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.menu.impl.ContextMenuImpl <em>Context Menu</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.menu.impl.ContextMenuImpl
+	 * @see org.abchip.mimo.ui.menu.impl.MenuPackageImpl#getContextMenu()
+	 * @generated
+	 */
+	int CONTEXT_MENU = 0;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_MENU__ELEMENTS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_MENU__ICON = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_MENU__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Context Menu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_MENU_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.menu.impl.MenuImpl <em>Menu</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +113,7 @@ public interface MenuPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.menu.impl.MenuPackageImpl#getMenu()
 	 * @generated
 	 */
-	int MENU = 0;
+	int MENU = 1;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -113,7 +159,7 @@ public interface MenuPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.menu.impl.MenuPackageImpl#getMenuAction()
 	 * @generated
 	 */
-	int MENU_ACTION = 1;
+	int MENU_ACTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -132,6 +178,15 @@ public interface MenuPackage extends EPackage {
 	 * @ordered
 	 */
 	int MENU_ACTION__ID = UIPackage.DATA_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_ACTION__KEY = UIPackage.DATA_NODE__KEY;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -178,7 +233,7 @@ public interface MenuPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.menu.impl.MenuPackageImpl#getMenuGroup()
 	 * @generated
 	 */
-	int MENU_GROUP = 2;
+	int MENU_GROUP = 3;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -197,6 +252,15 @@ public interface MenuPackage extends EPackage {
 	 * @ordered
 	 */
 	int MENU_GROUP__ID = UIPackage.DATA_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_GROUP__KEY = UIPackage.DATA_NODE__KEY;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -225,6 +289,49 @@ public interface MenuPackage extends EPackage {
 	 */
 	int MENU_GROUP_FEATURE_COUNT = UIPackage.DATA_NODE_FEATURE_COUNT + 1;
 
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.menu.ContextMenu <em>Context Menu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Context Menu</em>'.
+	 * @see org.abchip.mimo.ui.menu.ContextMenu
+	 * @generated
+	 */
+	EClass getContextMenu();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.ui.menu.ContextMenu#getElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see org.abchip.mimo.ui.menu.ContextMenu#getElements()
+	 * @see #getContextMenu()
+	 * @generated
+	 */
+	EReference getContextMenu_Elements();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.menu.ContextMenu#getIcon <em>Icon</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Icon</em>'.
+	 * @see org.abchip.mimo.ui.menu.ContextMenu#getIcon()
+	 * @see #getContextMenu()
+	 * @generated
+	 */
+	EAttribute getContextMenu_Icon();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.menu.ContextMenu#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.ui.menu.ContextMenu#getName()
+	 * @see #getContextMenu()
+	 * @generated
+	 */
+	EAttribute getContextMenu_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.menu.Menu <em>Menu</em>}'.
@@ -344,6 +451,40 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.menu.impl.ContextMenuImpl <em>Context Menu</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.menu.impl.ContextMenuImpl
+		 * @see org.abchip.mimo.ui.menu.impl.MenuPackageImpl#getContextMenu()
+		 * @generated
+		 */
+		EClass CONTEXT_MENU = eINSTANCE.getContextMenu();
+
+		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT_MENU__ELEMENTS = eINSTANCE.getContextMenu_Elements();
+
+		/**
+		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_MENU__ICON = eINSTANCE.getContextMenu_Icon();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_MENU__NAME = eINSTANCE.getContextMenu_Name();
+
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.menu.impl.MenuImpl <em>Menu</em>}' class.
 		 * <!-- begin-user-doc -->

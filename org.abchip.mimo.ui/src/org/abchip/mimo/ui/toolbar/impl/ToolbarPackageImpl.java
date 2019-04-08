@@ -107,30 +107,30 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
-		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
-		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
 		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
+		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theToolbarPackage.createPackageContents();
 		theUIPackage.createPackageContents();
-		theMenuPackage.createPackageContents();
-		theSchemaPackage.createPackageContents();
 		theFormPackage.createPackageContents();
+		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
+		theSchemaPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theToolbarPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
-		theMenuPackage.initializePackageContents();
-		theSchemaPackage.initializePackageContents();
 		theFormPackage.initializePackageContents();
+		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
+		theSchemaPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theToolbarPackage.freeze();

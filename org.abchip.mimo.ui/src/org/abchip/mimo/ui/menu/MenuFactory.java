@@ -23,6 +23,15 @@ public interface MenuFactory extends EFactory {
 	MenuFactory eINSTANCE = org.abchip.mimo.ui.menu.impl.MenuFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Context Menu</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Context Menu</em>'.
+	 * @generated
+	 */
+	ContextMenu createContextMenu();
+
+	/**
 	 * Returns a new object of class '<em>Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
