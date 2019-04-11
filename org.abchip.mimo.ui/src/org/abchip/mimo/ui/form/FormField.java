@@ -3,6 +3,7 @@
  */
 package org.abchip.mimo.ui.form;
 
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 
 /**
@@ -17,6 +18,7 @@ import org.abchip.mimo.entity.Entity;
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.form.FormPackage#getFormField()
@@ -101,5 +103,31 @@ public interface FormField extends Entity {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Domain</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Domain</em>' containment reference.
+	 * @see #setDomain(Domain)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Domain()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Domain getDomain();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Domain</em>' containment reference.
+	 * @see #getDomain()
+	 * @generated
+	 */
+	void setDomain(Domain value);
 
 } // FormField

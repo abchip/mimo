@@ -115,13 +115,13 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__ID = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__HEADER = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int SCHEMA_COLUMN__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Adjust</b></em>' attribute.
@@ -133,13 +133,22 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__ADJUST = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__HEADER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 
 	/**
@@ -194,6 +203,17 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSchemaColumn_Id();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Domain</em>'.
+	 * @see org.abchip.mimo.ui.schema.SchemaColumn#getDomain()
+	 * @see #getSchemaColumn()
+	 * @generated
+	 */
+	EReference getSchemaColumn_Domain();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#getHeader <em>Header</em>}'.
@@ -282,6 +302,14 @@ public interface SchemaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCHEMA_COLUMN__ID = eINSTANCE.getSchemaColumn_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA_COLUMN__DOMAIN = eINSTANCE.getSchemaColumn_Domain();
 
 		/**
 		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.

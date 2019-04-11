@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
@@ -30,6 +31,8 @@ import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class LookupSchemaServlet extends BaseServlet {
 
@@ -109,6 +112,10 @@ public class LookupSchemaServlet extends BaseServlet {
 		}
 		column.setHeader(Strings.qINSTANCE.firstToUpper(header.toString()));
 		column.setAdjust(true);
+		
+		if(slot.getDomain() != null)
+			column.setDomain((Domain)EcoreUtil.copy((EObject) slot.getDomain()));
+		
 		return column;
 	}
 }

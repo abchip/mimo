@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
@@ -27,6 +28,8 @@ import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormField;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class LookupFormServlet extends BaseServlet {
 
@@ -87,7 +90,6 @@ public class LookupFormServlet extends BaseServlet {
 
 	private FormField buildField(Slot slot) {
 		FormField field = frameManager.createEntity(FormField.class);
-		field.setView("text");
 		field.setName(slot.getName());
 
 		StringBuffer label = new StringBuffer();
@@ -97,7 +99,14 @@ public class LookupFormServlet extends BaseServlet {
 			label.append(c);
 		}
 		field.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
-
+		
+		if(slot.getDomain() != null) {
+			field.setDomain((Domain)EcoreUtil.copy((EObject) slot.getDomain()));
+			field.setView("combo");
+		}
+		else
+			field.setView("text");
+		
 		return field;
 	}
 }

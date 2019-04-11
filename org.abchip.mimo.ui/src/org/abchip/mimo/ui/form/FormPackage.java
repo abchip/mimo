@@ -133,13 +133,22 @@ public interface FormPackage extends EPackage {
 	int FORM_FIELD__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 
 	/**
@@ -216,6 +225,17 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFormField_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Domain</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#getDomain()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EReference getFormField_Domain();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -298,6 +318,14 @@ public interface FormPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FORM_FIELD__NAME = eINSTANCE.getFormField_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORM_FIELD__DOMAIN = eINSTANCE.getFormField_Domain();
 
 	}
 

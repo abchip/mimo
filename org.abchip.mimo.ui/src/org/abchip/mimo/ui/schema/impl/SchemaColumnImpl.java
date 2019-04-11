@@ -3,6 +3,7 @@
  */
 package org.abchip.mimo.ui.schema.impl;
 
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.ui.schema.SchemaColumn;
@@ -10,8 +11,10 @@ import org.abchip.mimo.ui.schema.SchemaPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,8 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isAdjust <em>Adjust</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getHeader <em>Header</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,24 +60,14 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	protected String id = ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
+	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHeader()
+	 * @see #getDomain()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HEADER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getHeader() <em>Header</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHeader()
-	 * @generated
-	 * @ordered
-	 */
-	protected String header = HEADER_EDEFAULT;
+	protected Domain domain;
 
 	/**
 	 * The default value of the '{@link #isAdjust() <em>Adjust</em>}' attribute.
@@ -94,6 +88,26 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @ordered
 	 */
 	protected boolean adjust = ADJUST_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHeader()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HEADER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHeader() <em>Header</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHeader()
+	 * @generated
+	 * @ordered
+	 */
+	protected String header = HEADER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,6 +157,51 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @generated
 	 */
 	@Override
+	public Domain getDomain() {
+		return domain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDomain(Domain newDomain, NotificationChain msgs) {
+		Domain oldDomain = domain;
+		domain = newDomain;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__DOMAIN, oldDomain, newDomain);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDomain(Domain newDomain) {
+		if (newDomain != domain) {
+			NotificationChain msgs = null;
+			if (domain != null)
+				msgs = ((InternalEObject)domain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__DOMAIN, null, msgs);
+			if (newDomain != null)
+				msgs = ((InternalEObject)newDomain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__DOMAIN, null, msgs);
+			msgs = basicSetDomain(newDomain, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__DOMAIN, newDomain, newDomain));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getHeader() {
 		return header;
 	}
@@ -158,6 +217,20 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		header = newHeader;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__HEADER, oldHeader, header));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
+				return basicSetDomain(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -193,10 +266,12 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		switch (featureID) {
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				return getId();
-			case SchemaPackage.SCHEMA_COLUMN__HEADER:
-				return getHeader();
+			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
+				return getDomain();
 			case SchemaPackage.SCHEMA_COLUMN__ADJUST:
 				return isAdjust();
+			case SchemaPackage.SCHEMA_COLUMN__HEADER:
+				return getHeader();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,11 +287,14 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				setId((String)newValue);
 				return;
-			case SchemaPackage.SCHEMA_COLUMN__HEADER:
-				setHeader((String)newValue);
+			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
+				setDomain((Domain)newValue);
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__ADJUST:
 				setAdjust((Boolean)newValue);
+				return;
+			case SchemaPackage.SCHEMA_COLUMN__HEADER:
+				setHeader((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -233,11 +311,14 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case SchemaPackage.SCHEMA_COLUMN__HEADER:
-				setHeader(HEADER_EDEFAULT);
+			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
+				setDomain((Domain)null);
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__ADJUST:
 				setAdjust(ADJUST_EDEFAULT);
+				return;
+			case SchemaPackage.SCHEMA_COLUMN__HEADER:
+				setHeader(HEADER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,10 +334,12 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		switch (featureID) {
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case SchemaPackage.SCHEMA_COLUMN__HEADER:
-				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
+			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
+				return domain != null;
 			case SchemaPackage.SCHEMA_COLUMN__ADJUST:
 				return adjust != ADJUST_EDEFAULT;
+			case SchemaPackage.SCHEMA_COLUMN__HEADER:
+				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,10 +356,10 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (id: ");
 		result.append(id);
-		result.append(", header: ");
-		result.append(header);
 		result.append(", adjust: ");
 		result.append(adjust);
+		result.append(", header: ");
+		result.append(header);
 		result.append(')');
 		return result.toString();
 	}

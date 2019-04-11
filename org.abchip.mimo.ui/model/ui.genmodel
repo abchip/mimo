@@ -42,6 +42,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/view"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/label"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/FormField/domain"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
@@ -84,8 +85,9 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//schema/SchemaColumn">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/id"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/header"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference ui.ecore#//schema/SchemaColumn/domain"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/adjust"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/header"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Toolbar" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"

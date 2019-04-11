@@ -8,6 +8,7 @@
 package org.abchip.mimo.entity.impl;
 
 import org.abchip.mimo.entity.Cardinality;
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Slot;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isTransient <em>Transient</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isVolatile <em>Volatile</em>}</li>
@@ -66,6 +68,15 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @ordered
 	 */
 	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDomain()
+	 * @generated
+	 * @ordered
+	 */
+	protected Domain domain;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -191,6 +202,31 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	@Override
+	public Domain getDomain() {
+		return domain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDomain(Domain newDomain, NotificationChain msgs) {
+		Domain oldDomain = domain;
+		domain = newDomain;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__DOMAIN, oldDomain, newDomain);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean isTransient() {
 		return transient_;
 	}
@@ -239,6 +275,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		switch (featureID) {
 			case EntityPackage.SLOT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
+			case EntityPackage.SLOT__DOMAIN:
+				return basicSetDomain(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -255,6 +293,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return getCardinality();
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				return getDefaultValue();
+			case EntityPackage.SLOT__DOMAIN:
+				return getDomain();
 			case EntityPackage.SLOT__NAME:
 				return getName();
 			case EntityPackage.SLOT__TRANSIENT:
@@ -277,6 +317,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return cardinality != null;
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+			case EntityPackage.SLOT__DOMAIN:
+				return domain != null;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EntityPackage.SLOT__TRANSIENT:

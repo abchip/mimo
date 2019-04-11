@@ -423,6 +423,9 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Default/clear"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Default/isEmpty"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//entity/Domain">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Domain/frame"/>
+      </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/Entity">
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa"/>
       </genClasses>
@@ -727,6 +730,7 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Slot">
         <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//entity/Slot/cardinality"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/defaultValue"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//entity/Slot/domain"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/name"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/transient"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/volatile"/>

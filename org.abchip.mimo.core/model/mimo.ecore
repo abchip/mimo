@@ -576,6 +576,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
           upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
       <eOperations name="isa" lowerBound="1">
         <eGenericType eClassifier="#//entity/Frame">
@@ -1234,6 +1238,8 @@
           changeable="false" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="domain" eType="#//entity/Domain"
+          changeable="false" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false"/>

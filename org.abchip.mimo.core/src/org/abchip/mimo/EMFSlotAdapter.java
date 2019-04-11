@@ -11,7 +11,9 @@
  */
 package org.abchip.mimo;
 
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.SlotImpl;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -42,6 +44,26 @@ public class EMFSlotAdapter extends SlotImpl {
 
 		this.cardinality = new EMFCardinalityAdapter(element);
 
+		EAnnotation eAnnotation = element.getEAnnotation(EntityPackage.eNS_PREFIX);
+		
+		if(eAnnotation != null && !eAnnotation.getReferences().isEmpty()) {
+			EObject eObject = EcoreUtil.create((EClass) eAnnotation.getReferences().get(0));
+
+			for (String key : eAnnotation.getDetails().keySet()) {
+				EStructuralFeature dataDefFeature = eObject.eClass().getEStructuralFeature(key);
+
+				if (dataDefFeature == null)
+					continue;
+
+				if (dataDefFeature.getDefaultValue() instanceof Number)
+					eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
+				else
+					eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
+			}
+
+			if(eObject instanceof Domain)
+				this.domain = (Domain) eObject;			
+		}
 		
 		if (element instanceof EStructuralFeature) {
 			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);

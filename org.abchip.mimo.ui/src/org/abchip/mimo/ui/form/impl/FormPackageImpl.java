@@ -220,6 +220,16 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getFormField_Domain() {
+		return (EReference)formFieldEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public FormFactory getFormFactory() {
 		return (FormFactory)getEFactoryInstance();
 	}
@@ -251,6 +261,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		createEAttribute(formFieldEClass, FORM_FIELD__VIEW);
 		createEAttribute(formFieldEClass, FORM_FIELD__LABEL);
 		createEAttribute(formFieldEClass, FORM_FIELD__NAME);
+		createEReference(formFieldEClass, FORM_FIELD__DOMAIN);
 	}
 
 	/**
@@ -296,6 +307,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		initEAttribute(getFormField_View(), ecorePackage.getEString(), "view", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Label(), ecorePackage.getEString(), "label", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Name(), ecorePackage.getEString(), "name", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFormField_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //FormPackageImpl

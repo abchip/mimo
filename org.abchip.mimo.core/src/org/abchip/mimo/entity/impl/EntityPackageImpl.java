@@ -16,6 +16,7 @@ import org.abchip.mimo.context.impl.ContextPackageImpl;
 
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Default;
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityIterator;
@@ -79,6 +80,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass defaultEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass domainEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -390,6 +398,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getDomain() {
+		return domainEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDomain_Frame() {
+		return (EAttribute)domainEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -691,16 +719,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getSlot_Name() {
-		return (EAttribute)slotEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSlot_Transient() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -710,8 +728,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSlot_Volatile() {
+	public EAttribute getSlot_Transient() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSlot_Volatile() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -722,6 +750,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EAttribute getSlot_DefaultValue() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSlot_Domain() {
+		return (EReference)slotEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -811,6 +849,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(defaultEClass, DEFAULT__VALUE);
 		createEAttribute(defaultEClass, DEFAULT__VALUES);
 
+		domainEClass = createEClass(DOMAIN);
+		createEAttribute(domainEClass, DOMAIN__FRAME);
+
 		entityEClass = createEClass(ENTITY);
 
 		entityIteratorEClass = createEClass(ENTITY_ITERATOR);
@@ -859,6 +900,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		slotEClass = createEClass(SLOT);
 		createEReference(slotEClass, SLOT__CARDINALITY);
 		createEAttribute(slotEClass, SLOT__DEFAULT_VALUE);
+		createEReference(slotEClass, SLOT__DOMAIN);
 		createEAttribute(slotEClass, SLOT__NAME);
 		createEAttribute(slotEClass, SLOT__TRANSIENT);
 		createEAttribute(slotEClass, SLOT__VOLATILE);
@@ -930,6 +972,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Add supertypes to classes
 		cardinalityEClass.getESuperTypes().add(this.getEntity());
 		defaultEClass.getESuperTypes().add(this.getEntity());
+		domainEClass.getESuperTypes().add(this.getEntity());
 		g1 = createEGenericType(theUtilPackage.getJavaIterator());
 		EGenericType g2 = createEGenericType(entityIteratorEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -974,6 +1017,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(defaultEClass, null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(defaultEClass, ecorePackage.getEBoolean(), "isEmpty", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDomain_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1572,6 +1618,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEClass(slotEClass, Slot.class, "Slot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSlot_Cardinality(), this.getCardinality(), null, "cardinality", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSlot_Domain(), this.getDomain(), null, "domain", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Transient(), ecorePackage.getEBoolean(), "transient", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Volatile(), ecorePackage.getEBoolean(), "volatile", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

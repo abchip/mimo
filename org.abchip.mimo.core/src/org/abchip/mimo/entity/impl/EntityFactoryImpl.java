@@ -67,6 +67,7 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case EntityPackage.DEFAULT: return (EObject)createDefault();
+			case EntityPackage.DOMAIN: return (EObject)createDomain();
 			case EntityPackage.RESOURCE: return (EObject)createResource();
 			case EntityPackage.RESOURCE_NOTIFIER: return (EObject)createResourceNotifier();
 			default:
@@ -125,6 +126,17 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	public Default createDefault() {
 		DefaultImpl default_ = new DefaultImpl();
 		return default_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Domain createDomain() {
+		DomainImpl domain = new DomainImpl();
+		return domain;
 	}
 
 	/**

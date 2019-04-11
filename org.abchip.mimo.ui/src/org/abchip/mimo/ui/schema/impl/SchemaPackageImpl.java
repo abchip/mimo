@@ -193,8 +193,18 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getSchemaColumn_Domain() {
+		return (EReference)schemaColumnEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getSchemaColumn_Header() {
-		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -242,8 +252,9 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 
 		schemaColumnEClass = createEClass(SCHEMA_COLUMN);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ID);
-		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__HEADER);
+		createEReference(schemaColumnEClass, SCHEMA_COLUMN__DOMAIN);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ADJUST);
+		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__HEADER);
 	}
 
 	/**
@@ -287,8 +298,9 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 
 		initEClass(schemaColumnEClass, SchemaColumn.class, "SchemaColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSchemaColumn_Id(), ecorePackage.getEString(), "id", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchemaColumn_Header(), ecorePackage.getEString(), "header", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchemaColumn_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Adjust(), ecorePackage.getEBoolean(), "adjust", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchemaColumn_Header(), ecorePackage.getEString(), "header", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //SchemaPackageImpl

@@ -3,6 +3,7 @@
  */
 package org.abchip.mimo.ui.schema;
 
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 
 /**
@@ -15,8 +16,9 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isAdjust <em>Adjust</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getHeader <em>Header</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn()
@@ -49,6 +51,32 @@ public interface SchemaColumn extends Entity {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Domain</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Domain</em>' containment reference.
+	 * @see #setDomain(Domain)
+	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Domain()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Domain getDomain();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Domain</em>' containment reference.
+	 * @see #getDomain()
+	 * @generated
+	 */
+	void setDomain(Domain value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

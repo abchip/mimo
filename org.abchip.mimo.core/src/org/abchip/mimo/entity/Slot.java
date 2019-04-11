@@ -21,6 +21,7 @@ package org.abchip.mimo.entity;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isTransient <em>Transient</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isVolatile <em>Volatile</em>}</li>
@@ -76,6 +77,21 @@ public interface Slot extends EntityNameable {
 	 * @generated
 	 */
 	String getDefaultValue();
+
+	/**
+	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Domain</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Domain</em>' containment reference.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Domain()
+	 * @model containment="true" changeable="false"
+	 * @generated
+	 */
+	Domain getDomain();
 
 	/**
 	 * Returns the value of the '<em><b>Transient</b></em>' attribute.
