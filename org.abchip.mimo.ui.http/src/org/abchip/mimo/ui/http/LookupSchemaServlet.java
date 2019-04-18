@@ -51,6 +51,10 @@ public class LookupSchemaServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
+		Frame<?> frame = frameManager.getFrame(frameName);
+		if(frame == null)
+			return;
+		
 		ResourceSerializer<Schema> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Schema.class, SerializationType.JSON);
 
 		Schema schema = resourceManager.getEntityReader(contextRoot, Schema.class, ResourceScope.CTX).lookup(name);
@@ -59,7 +63,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			schema = frameManager.createEntity(Schema.class);
 			schema.setName("prototype");
 
-			Frame<?> frame = frameManager.getFrame(frameName);
+			
 			SchemaColumn currentColumn = null;
 			for (Slot slot : frame.getSlots()) {
 				
@@ -97,7 +101,6 @@ public class LookupSchemaServlet extends BaseServlet {
 
 		response.flushBuffer();
 		resourceSerializer.clear();
-
 	}
 
 	private SchemaColumn buildColumn(Slot slot) {

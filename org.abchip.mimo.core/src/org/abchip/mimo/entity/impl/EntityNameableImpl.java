@@ -31,7 +31,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -82,8 +82,6 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 		Slot slotName = frame.getSlotName();
 		if(slotName == null)
 			throw new UnsupportedOperationException();
-		
-		System.out.println(frame.getValue(this, slotName).toString());
 		
 		return frame.getValue(this, slotName).toString();
 	}

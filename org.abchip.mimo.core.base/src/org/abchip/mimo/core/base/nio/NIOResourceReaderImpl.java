@@ -11,6 +11,11 @@
  */
 package org.abchip.mimo.core.base.nio;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.base.BaseEntityIteratorImpl;
 import org.abchip.mimo.entity.EntityIterator;
@@ -44,6 +49,21 @@ public class NIOResourceReaderImpl extends EntityReaderImpl<Resource> {
 		return new BaseEntityIteratorImpl<Resource>(getFrame(), pathManager.getResources().values().iterator(), nrElem);
 	}
 
+	@Override
+	public List<String> findNames(String filter) {
+		List<String> names = new ArrayList<String>();
+		for(Resource resource: pathManager.getResources().values())
+			names.add(resource.getName());
+		
+		Collections.sort(names, new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {
+				return o1.compareTo(o2);
+			}
+		});
+		
+		return names;
+	}
 	@Override
 	public Resource lookup(String name) {
 		return pathManager.getResources().get(name);

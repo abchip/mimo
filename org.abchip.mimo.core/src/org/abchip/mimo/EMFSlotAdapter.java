@@ -13,11 +13,13 @@ package org.abchip.mimo;
 
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.SlotImpl;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -70,6 +72,15 @@ public class EMFSlotAdapter extends SlotImpl {
 			this.defaultValue = eStructuralFeature.getDefaultValueLiteral();
 			this.transient_ = eStructuralFeature.isTransient();
 			this.volatile_ = eStructuralFeature.isVolatile();
+			
+		}
+		
+		if (element instanceof EReference) {
+			EReference eReference = (EReference)element;
+			if(this.domain == null ) {
+				this.domain = EntityFactory.eINSTANCE.createDomain();
+				this.domain.setFrame(eReference.getEType().getName());
+			}			
 		}
 	}
 

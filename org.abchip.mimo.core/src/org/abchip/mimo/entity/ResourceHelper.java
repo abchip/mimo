@@ -13,11 +13,15 @@ package org.abchip.mimo.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.impl.EntityReaderImpl;
@@ -342,6 +346,16 @@ public class ResourceHelper {
 		public EntityIterator<E> find(String filter, int nrElem) {
 			return new QueueReaderIteratorImpl<E>(readers, filter, nrElem);
 		}
+		
+		public List<String> findNames(String filter) {
+			Set<String> names = new TreeSet<String>();
+			
+			for(EntityReader<E> reader: readers) {
+				names.addAll(reader.findNames(filter));
+			}
+
+			return new ArrayList<String>(names);
+		}
 
 		@Override
 		public E lookup(String name) {
@@ -354,7 +368,7 @@ public class ResourceHelper {
 			}
 
 			return object;
-		}	
+		}
 	}
 	
 	private static class QueueReaderIteratorImpl<E extends EntityNameable> implements EntityIterator<E> {
@@ -456,11 +470,36 @@ public class ResourceHelper {
 		@Override
 		public EntityIterator<E> find(String filter, int nrElem) {
 
-			Collection<E> values = entities.values();
+			List<E> values = new ArrayList<E>(entities.values());
 			if(nrElem != -1)
 				values = Lists.qINSTANCE.slice(new ArrayList<E>(values), 0, nrElem);				
 
+			Collections.sort(values, new Comparator<E>() {
+
+				@Override
+				public int compare(E o1, E o2) {
+					return o1.getName().compareTo(o2.getName());
+				}
+			});
+			
+			Collections.sort(values, new Comparator<E>() {
+				@Override
+				public int compare(E o1, E o2) {
+					return o1.getName().compareTo(o2.getName());
+				}
+			});
+			
 			return ResourceHelper.wrapIterator(values);
+		}
+		
+		public List<String> findNames(String filter) {
+			Set<String> names = new TreeSet<String>();
+			
+			for(E entity: entities.values()) {
+				names.add(entity.getName());
+			}
+
+			return new ArrayList<String>(names);
 		}
 
 		@Override

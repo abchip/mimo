@@ -106,6 +106,7 @@ public class LookupQueryServlet extends BaseServlet {
 			break;
 		case "java.math.BigDecimal":
 		case "long":
+		case "double":
 			field.setType("number");
 			break;
 		default:

@@ -515,6 +515,9 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find.1/filter"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find.1/nrElem"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/findNames">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/findNames/filter"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/lookup">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/lookup/name"/>
         </genOperations>

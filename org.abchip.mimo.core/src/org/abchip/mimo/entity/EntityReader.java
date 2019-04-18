@@ -11,6 +11,7 @@
  */
 package org.abchip.mimo.entity;
 
+import java.util.List;
 import org.abchip.mimo.context.ContextProvider;
 
 /**
@@ -130,6 +131,14 @@ public interface EntityReader<E extends EntityNameable> {
 	 * @generated
 	 */
 	EntityIterator<E> find(String filter, int nrElem);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	List<String> findNames(String filter);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

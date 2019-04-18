@@ -11,6 +11,7 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.util.List;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
@@ -42,8 +43,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public abstract class EntityReaderImpl<E extends EntityNameable> extends MinimalEObjectImpl.Container implements EntityReader<E> {
 	/**
 	 * The cached value of the '{@link #getContextProvider() <em>Context Provider</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getContextProvider()
 	 * @generated
 	 * @ordered
@@ -52,8 +52,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 
 	/**
 	 * The cached value of the '{@link #getNotifier() <em>Notifier</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getNotifier()
 	 * @generated
 	 * @ordered
@@ -61,9 +60,9 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	protected ResourceNotifier<E> notifier;
 
 	/**
-	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getFrame()
 	 * @generated
 	 * @ordered
@@ -88,8 +87,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -98,8 +96,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -111,8 +108,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -130,8 +126,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ResourceNotifier<E> basicGetNotifier() {
@@ -139,8 +134,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -152,8 +146,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -162,8 +155,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -197,8 +189,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -207,6 +198,13 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public abstract List<String> findNames(String filter);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -220,8 +218,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -239,8 +236,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -261,8 +257,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -282,8 +277,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
