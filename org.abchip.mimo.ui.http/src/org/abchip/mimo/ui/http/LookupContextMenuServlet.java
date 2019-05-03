@@ -29,6 +29,7 @@ import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.ui.menu.ContextMenu;
 import org.abchip.mimo.ui.menu.MenuAction;
+import org.abchip.mimo.ui.menu.MenuFactory;
 import org.abchip.mimo.ui.menu.MenuGroup;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -63,8 +64,12 @@ public class LookupContextMenuServlet extends BaseServlet {
 			
 			if(contextMenu == null)
 				contextMenu = contextMenuAko;
-			else 
+			else  {
+				MenuAction separator = MenuFactory.eINSTANCE.createMenuAction();
+				separator.setValue("-----------------");
+				contextMenu.getElements().add(separator);
 				contextMenu.getElements().addAll(contextMenuAko.getElements());
+			}
 		}
 
 		ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, ContextMenu.class, SerializationType.JSON);
