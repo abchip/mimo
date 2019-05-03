@@ -558,6 +558,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFrame_TextFormula() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFrameManager() {
 		return frameManagerEClass;
 	}
@@ -876,6 +886,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(frameEClass, FRAME__NAME);
 		createEReference(frameEClass, FRAME__SLOTS);
 		createEAttribute(frameEClass, FRAME__SUPER_NAMES);
+		createEAttribute(frameEClass, FRAME__TEXT_FORMULA);
 
 		frameManagerEClass = createEClass(FRAME_MANAGER);
 
@@ -1250,6 +1261,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getFrame_Name(), ecorePackage.getEString(), "name", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFrame_Slots(), this.getSlot(), null, "slots", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_SuperNames(), ecorePackage.getEString(), "superNames", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFrame_TextFormula(), ecorePackage.getEString(), "textFormula", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(frameEClass, null, "ako", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());

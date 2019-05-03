@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
@@ -51,6 +52,23 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 		
 		for(Frame<?> superFrame: getSuperFrames()) 
 			getSuperNames().add(superFrame.getName());
+		
+		
+		EAnnotation eTextAnnotation = null;
+		
+		// search text annotation
+		for(EAnnotation eAnnotation: eClass.getEAnnotations()) {
+			if(eAnnotation.getSource().equals(EntityPackage.eNS_PREFIX) &&
+			   eAnnotation.getReferences().contains(EntityPackage.eINSTANCE.getTextable())) {
+				eTextAnnotation = eAnnotation;
+				break;
+			}
+		}
+		
+		if(eTextAnnotation != null) {
+			String formula = eTextAnnotation.getDetails().get("formula");
+			this.textFormula = formula;
+		}
 		
 		this.slots = (EList<Slot>) getSlots();
 

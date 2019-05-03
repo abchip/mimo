@@ -32,6 +32,15 @@ public interface UIFactory extends EFactory {
 	Action createAction();
 
 	/**
+	 * Returns a new object of class '<em>Ui Frame Setup</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ui Frame Setup</em>'.
+	 * @generated
+	 */
+	UiFrameSetup createUiFrameSetup();
+
+	/**
 	 * Returns a new object of class '<em>View</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

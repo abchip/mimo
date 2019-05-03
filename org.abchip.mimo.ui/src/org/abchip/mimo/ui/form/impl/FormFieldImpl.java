@@ -25,39 +25,71 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isContextMenu <em>Context Menu</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FormFieldImpl extends EntityImpl implements FormField {
 	/**
+	 * The default value of the '{@link #isContextMenu() <em>Context Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isContextMenu()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CONTEXT_MENU_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isContextMenu() <em>Context Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isContextMenu()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean contextMenu = CONTEXT_MENU_EDEFAULT;
+
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
+	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getView()
+	 * @see #getDomain()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VIEW_EDEFAULT = null;
+	protected Domain domain;
 
 	/**
-	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
+	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getView()
+	 * @see #getIcon()
 	 * @generated
 	 * @ordered
 	 */
-	protected String view = VIEW_EDEFAULT;
+	protected static final String ICON_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIcon()
+	 * @generated
+	 * @ordered
+	 */
+	protected String icon = ICON_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
@@ -100,14 +132,24 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
+	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDomain()
+	 * @see #getView()
 	 * @generated
 	 * @ordered
 	 */
-	protected Domain domain;
+	protected static final String VIEW_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getView()
+	 * @generated
+	 * @ordered
+	 */
+	protected String view = VIEW_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +168,29 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	@Override
 	protected EClass eStaticClass() {
 		return FormPackage.Literals.FORM_FIELD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isContextMenu() {
+		return contextMenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setContextMenu(boolean newContextMenu) {
+		boolean oldContextMenu = contextMenu;
+		contextMenu = newContextMenu;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__CONTEXT_MENU, oldContextMenu, contextMenu));
 	}
 
 	/**
@@ -248,6 +313,29 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 * @generated
 	 */
 	@Override
+	public String getIcon() {
+		return icon;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIcon(String newIcon) {
+		String oldIcon = icon;
+		icon = newIcon;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__ICON, oldIcon, icon));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FormPackage.FORM_FIELD__DOMAIN:
@@ -264,14 +352,18 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FormPackage.FORM_FIELD__VIEW:
-				return getView();
+			case FormPackage.FORM_FIELD__CONTEXT_MENU:
+				return isContextMenu();
+			case FormPackage.FORM_FIELD__DOMAIN:
+				return getDomain();
+			case FormPackage.FORM_FIELD__ICON:
+				return getIcon();
 			case FormPackage.FORM_FIELD__LABEL:
 				return getLabel();
 			case FormPackage.FORM_FIELD__NAME:
 				return getName();
-			case FormPackage.FORM_FIELD__DOMAIN:
-				return getDomain();
+			case FormPackage.FORM_FIELD__VIEW:
+				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,8 +376,14 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FormPackage.FORM_FIELD__VIEW:
-				setView((String)newValue);
+			case FormPackage.FORM_FIELD__CONTEXT_MENU:
+				setContextMenu((Boolean)newValue);
+				return;
+			case FormPackage.FORM_FIELD__DOMAIN:
+				setDomain((Domain)newValue);
+				return;
+			case FormPackage.FORM_FIELD__ICON:
+				setIcon((String)newValue);
 				return;
 			case FormPackage.FORM_FIELD__LABEL:
 				setLabel((String)newValue);
@@ -293,8 +391,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__NAME:
 				setName((String)newValue);
 				return;
-			case FormPackage.FORM_FIELD__DOMAIN:
-				setDomain((Domain)newValue);
+			case FormPackage.FORM_FIELD__VIEW:
+				setView((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -308,8 +406,14 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FormPackage.FORM_FIELD__VIEW:
-				setView(VIEW_EDEFAULT);
+			case FormPackage.FORM_FIELD__CONTEXT_MENU:
+				setContextMenu(CONTEXT_MENU_EDEFAULT);
+				return;
+			case FormPackage.FORM_FIELD__DOMAIN:
+				setDomain((Domain)null);
+				return;
+			case FormPackage.FORM_FIELD__ICON:
+				setIcon(ICON_EDEFAULT);
 				return;
 			case FormPackage.FORM_FIELD__LABEL:
 				setLabel(LABEL_EDEFAULT);
@@ -317,8 +421,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case FormPackage.FORM_FIELD__DOMAIN:
-				setDomain((Domain)null);
+			case FormPackage.FORM_FIELD__VIEW:
+				setView(VIEW_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -332,14 +436,18 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FormPackage.FORM_FIELD__VIEW:
-				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
+			case FormPackage.FORM_FIELD__CONTEXT_MENU:
+				return contextMenu != CONTEXT_MENU_EDEFAULT;
+			case FormPackage.FORM_FIELD__DOMAIN:
+				return domain != null;
+			case FormPackage.FORM_FIELD__ICON:
+				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case FormPackage.FORM_FIELD__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 			case FormPackage.FORM_FIELD__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case FormPackage.FORM_FIELD__DOMAIN:
-				return domain != null;
+			case FormPackage.FORM_FIELD__VIEW:
+				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -354,12 +462,16 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (view: ");
-		result.append(view);
+		result.append(" (contextMenu: ");
+		result.append(contextMenu);
+		result.append(", icon: ");
+		result.append(icon);
 		result.append(", label: ");
 		result.append(label);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", view: ");
+		result.append(view);
 		result.append(')');
 		return result.toString();
 	}

@@ -36,8 +36,8 @@ public class TestLanguage {
 		Classification<Language> classification = languageManager.classifyLanguage(testRunner, "Hello, world!!");
 		classification = languageManager.classifyLanguage(testRunner, "Hey, chiquito!!");
 		classification = languageManager.classifyLanguage(testRunner, "Ciao, mondo!!");		
-		classification = languageManager.classifyLanguage(testRunner, "If you can dream it, you can do it. 【夢見ることができれば、それは実現できる。】-　Walt Disney　（ウォルト・ディズニー）");		
 		
+		classification = languageManager.classifyLanguage(testRunner, "If you can dream it, you can do it. 【夢見ることができれば、それは実現できる。】-　Walt Disney　（ウォルト・ディズニー）");				
 		asserter.assertEquals("Language classification", "eng", classification.getEntity().getName());
 	}
 }

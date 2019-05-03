@@ -552,6 +552,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference mimo.ecore#//entity/Frame/slots"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/superNames"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/textFormula"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/ako"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getEntityClass"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlot">

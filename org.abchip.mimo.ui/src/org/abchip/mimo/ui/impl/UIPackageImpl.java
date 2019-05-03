@@ -13,6 +13,7 @@ import org.abchip.mimo.ui.DataNode;
 import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UIPackage;
 
+import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.View;
 import org.abchip.mimo.ui.ViewType;
 import org.abchip.mimo.ui.form.FormPackage;
@@ -30,7 +31,6 @@ import org.abchip.mimo.ui.schema.impl.SchemaPackageImpl;
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -58,6 +58,13 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	private EClass dataNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass uiFrameSetupEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,6 +259,46 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getUiFrameSetup() {
+		return uiFrameSetupEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUiFrameSetup_ContextMenu() {
+		return (EAttribute)uiFrameSetupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUiFrameSetup_Name() {
+		return (EAttribute)uiFrameSetupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUiFrameSetup_Icon() {
+		return (EAttribute)uiFrameSetupEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getView() {
 		return viewEClass;
 	}
@@ -335,6 +382,11 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		createEAttribute(dataNodeEClass, DATA_NODE__KEY);
 		createEAttribute(dataNodeEClass, DATA_NODE__VALUE);
 
+		uiFrameSetupEClass = createEClass(UI_FRAME_SETUP);
+		createEAttribute(uiFrameSetupEClass, UI_FRAME_SETUP__CONTEXT_MENU);
+		createEAttribute(uiFrameSetupEClass, UI_FRAME_SETUP__NAME);
+		createEAttribute(uiFrameSetupEClass, UI_FRAME_SETUP__ICON);
+
 		viewEClass = createEClass(VIEW);
 		createEAttribute(viewEClass, VIEW__FRAME);
 		createEAttribute(viewEClass, VIEW__TYPE);
@@ -389,6 +441,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		// Add supertypes to classes
 		actionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		dataNodeEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		uiFrameSetupEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		viewEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
@@ -401,6 +454,11 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		initEAttribute(getDataNode_Id(), ecorePackage.getEString(), "id", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataNode_Key(), ecorePackage.getEString(), "key", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataNode_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(uiFrameSetupEClass, UiFrameSetup.class, "UiFrameSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUiFrameSetup_ContextMenu(), ecorePackage.getEBoolean(), "contextMenu", null, 0, 1, UiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUiFrameSetup_Name(), ecorePackage.getEString(), "name", null, 1, 1, UiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUiFrameSetup_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, UiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getView_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

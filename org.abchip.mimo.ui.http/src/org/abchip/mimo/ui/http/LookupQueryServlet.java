@@ -101,6 +101,9 @@ public class LookupQueryServlet extends BaseServlet {
 		case "char":
 			field.setType("string");
 			break;
+		case "boolean":
+			field.setType("string");
+			break;
 		case "java.util.Date":
 			field.setType("date");
 			break;

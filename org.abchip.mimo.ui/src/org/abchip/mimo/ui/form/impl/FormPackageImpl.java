@@ -30,6 +30,7 @@ import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -190,7 +191,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFormField_View() {
+	public EAttribute getFormField_ContextMenu() {
 		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -200,8 +201,18 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFormField_View() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getFormField_Label() {
-		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -211,7 +222,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 */
 	@Override
 	public EAttribute getFormField_Name() {
-		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -221,7 +232,17 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 */
 	@Override
 	public EReference getFormField_Domain() {
-		return (EReference)formFieldEClass.getEStructuralFeatures().get(3);
+		return (EReference)formFieldEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFormField_Icon() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -258,10 +279,12 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		createEAttribute(formEClass, FORM__NAME);
 
 		formFieldEClass = createEClass(FORM_FIELD);
-		createEAttribute(formFieldEClass, FORM_FIELD__VIEW);
+		createEAttribute(formFieldEClass, FORM_FIELD__CONTEXT_MENU);
+		createEReference(formFieldEClass, FORM_FIELD__DOMAIN);
+		createEAttribute(formFieldEClass, FORM_FIELD__ICON);
 		createEAttribute(formFieldEClass, FORM_FIELD__LABEL);
 		createEAttribute(formFieldEClass, FORM_FIELD__NAME);
-		createEReference(formFieldEClass, FORM_FIELD__DOMAIN);
+		createEAttribute(formFieldEClass, FORM_FIELD__VIEW);
 	}
 
 	/**
@@ -304,10 +327,35 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		initEAttribute(getForm_Name(), ecorePackage.getEString(), "name", null, 1, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formFieldEClass, FormField.class, "FormField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFormField_View(), ecorePackage.getEString(), "view", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_ContextMenu(), ecorePackage.getEBoolean(), "contextMenu", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFormField_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Label(), ecorePackage.getEString(), "label", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Name(), ecorePackage.getEString(), "name", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFormField_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_View(), ecorePackage.getEString(), "view", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Create annotations
+		// mimo-ent
+		createMimoentAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentAnnotations() {
+		String source = "mimo-ent";
+		addAnnotation
+		  (getFormField_ContextMenu(),
+		   source,
+		   new String[] {
+			   "frame", "frame"
+		   },
+		   new URI[] {
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
 	}
 
 } //FormPackageImpl

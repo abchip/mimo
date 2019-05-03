@@ -23,6 +23,7 @@ import org.abchip.mimo.ui.schema.SchemaPackage;
 
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -184,7 +185,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 */
 	@Override
 	public EAttribute getSchemaColumn_Id() {
-		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -194,7 +195,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 */
 	@Override
 	public EReference getSchemaColumn_Domain() {
-		return (EReference)schemaColumnEClass.getEStructuralFeatures().get(1);
+		return (EReference)schemaColumnEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -213,8 +214,28 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSchemaColumn_Icon() {
+		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getSchemaColumn_Adjust() {
-		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSchemaColumn_ContextMenu() {
+		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -251,10 +272,12 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		createEAttribute(schemaEClass, SCHEMA__NAME);
 
 		schemaColumnEClass = createEClass(SCHEMA_COLUMN);
-		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ID);
-		createEReference(schemaColumnEClass, SCHEMA_COLUMN__DOMAIN);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ADJUST);
+		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__CONTEXT_MENU);
+		createEReference(schemaColumnEClass, SCHEMA_COLUMN__DOMAIN);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__HEADER);
+		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ICON);
+		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ID);
 	}
 
 	/**
@@ -297,10 +320,35 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		initEAttribute(getSchema_Name(), ecorePackage.getEString(), "name", null, 1, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schemaColumnEClass, SchemaColumn.class, "SchemaColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSchemaColumn_Id(), ecorePackage.getEString(), "id", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchemaColumn_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Adjust(), ecorePackage.getEBoolean(), "adjust", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchemaColumn_ContextMenu(), ecorePackage.getEBoolean(), "contextMenu", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchemaColumn_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Header(), ecorePackage.getEString(), "header", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchemaColumn_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchemaColumn_Id(), ecorePackage.getEString(), "id", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Create annotations
+		// mimo-ent
+		createMimoentAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentAnnotations() {
+		String source = "mimo-ent";
+		addAnnotation
+		  (getSchemaColumn_ContextMenu(),
+		   source,
+		   new String[] {
+			   "frame", "frame"
+		   },
+		   new URI[] {
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
 	}
 
 } //SchemaPackageImpl

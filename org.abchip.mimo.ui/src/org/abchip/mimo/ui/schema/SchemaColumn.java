@@ -15,10 +15,12 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isAdjust <em>Adjust</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isContextMenu <em>Context Menu</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getId <em>Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn()
@@ -105,6 +107,32 @@ public interface SchemaColumn extends Entity {
 	void setHeader(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Icon</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Icon</em>' attribute.
+	 * @see #setIcon(String)
+	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Icon()
+	 * @model
+	 * @generated
+	 */
+	String getIcon();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#getIcon <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Icon</em>' attribute.
+	 * @see #getIcon()
+	 * @generated
+	 */
+	void setIcon(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Adjust</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -129,5 +157,31 @@ public interface SchemaColumn extends Entity {
 	 * @generated
 	 */
 	void setAdjust(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Context Menu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context Menu</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context Menu</em>' attribute.
+	 * @see #setContextMenu(boolean)
+	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_ContextMenu()
+	 * @model annotation="mimo-ent frame='frame'"
+	 * @generated
+	 */
+	boolean isContextMenu();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#isContextMenu <em>Context Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Context Menu</em>' attribute.
+	 * @see #isContextMenu()
+	 * @generated
+	 */
+	void setContextMenu(boolean value);
 
 } // SchemaColumn

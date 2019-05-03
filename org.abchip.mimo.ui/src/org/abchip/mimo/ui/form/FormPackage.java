@@ -106,31 +106,13 @@ public interface FormPackage extends EPackage {
 	int FORM_FIELD = 1;
 
 	/**
-	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * The feature id for the '<em><b>Context Menu</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORM_FIELD__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORM_FIELD__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int FORM_FIELD__CONTEXT_MENU = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -139,7 +121,43 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int FORM_FIELD__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -148,7 +166,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 
 	/**
@@ -194,6 +212,17 @@ public interface FormPackage extends EPackage {
 	EClass getFormField();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#isContextMenu <em>Context Menu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Context Menu</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#isContextMenu()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_ContextMenu();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +265,17 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFormField_Domain();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getIcon <em>Icon</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Icon</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#getIcon()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_Icon();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -296,6 +336,14 @@ public interface FormPackage extends EPackage {
 		EClass FORM_FIELD = eINSTANCE.getFormField();
 
 		/**
+		 * The meta object literal for the '<em><b>Context Menu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__CONTEXT_MENU = eINSTANCE.getFormField_ContextMenu();
+
+		/**
 		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -326,6 +374,14 @@ public interface FormPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FORM_FIELD__DOMAIN = eINSTANCE.getFormField_Domain();
+
+		/**
+		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__ICON = eINSTANCE.getFormField_Icon();
 
 	}
 

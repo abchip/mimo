@@ -15,10 +15,12 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#isContextMenu <em>Context Menu</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.form.FormPackage#getFormField()
@@ -26,6 +28,32 @@ import org.abchip.mimo.entity.Entity;
  * @generated
  */
 public interface FormField extends Entity {
+	/**
+	 * Returns the value of the '<em><b>Context Menu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context Menu</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context Menu</em>' attribute.
+	 * @see #setContextMenu(boolean)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_ContextMenu()
+	 * @model annotation="mimo-ent frame='frame'"
+	 * @generated
+	 */
+	boolean isContextMenu();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#isContextMenu <em>Context Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Context Menu</em>' attribute.
+	 * @see #isContextMenu()
+	 * @generated
+	 */
+	void setContextMenu(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -129,5 +157,31 @@ public interface FormField extends Entity {
 	 * @generated
 	 */
 	void setDomain(Domain value);
+
+	/**
+	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Icon</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Icon</em>' attribute.
+	 * @see #setIcon(String)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Icon()
+	 * @model
+	 * @generated
+	 */
+	String getIcon();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getIcon <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Icon</em>' attribute.
+	 * @see #getIcon()
+	 * @generated
+	 */
+	void setIcon(String value);
 
 } // FormField

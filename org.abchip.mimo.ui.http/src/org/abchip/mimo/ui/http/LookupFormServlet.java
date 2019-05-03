@@ -9,6 +9,8 @@
 package org.abchip.mimo.ui.http;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.Domain;
+import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
@@ -24,6 +27,7 @@ import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormField;
 import org.abchip.mimo.util.Lists;
@@ -59,7 +63,7 @@ public class LookupFormServlet extends BaseServlet {
 			Frame<?> frame = frameManager.getFrame(frameName);
 			FormField currentField = null;
 			for (Slot slot : frame.getSlots()) {
-				FormField field = buildField(slot);
+				FormField field = buildFormField(slot);
 				if (slot.equals(frame.getSlotName())) {
 					if (currentField == null)
 						currentField = field;
@@ -78,8 +82,10 @@ public class LookupFormServlet extends BaseServlet {
 			}
 		}
 
-		if (form != null)
+		if (form != null) {
+			completeForm(form);
 			resourceSerializer.add(form);
+		}
 
 		resourceSerializer.save(response.getOutputStream());
 
@@ -88,7 +94,7 @@ public class LookupFormServlet extends BaseServlet {
 
 	}
 
-	private FormField buildField(Slot slot) {
+	private FormField buildFormField(Slot slot) {
 		FormField field = frameManager.createEntity(FormField.class);
 		field.setName(slot.getName());
 
@@ -108,5 +114,39 @@ public class LookupFormServlet extends BaseServlet {
 			field.setView("text");
 		
 		return field;
+	}
+
+	private void completeForm(Form form) {
+		for (FormField formField : form.getFields())
+			completeFormField(formField);
+	}
+
+	private void completeFormField(FormField formField) {
+
+		Domain domain = formField.getDomain();
+
+		if (domain == null)
+			return;
+
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextRoot, UiFrameSetup.class, ResourceScope.CTX);
+		
+		Frame<?> frame = frameManager.getFrame(domain.getFrame());
+		if(frame == null)
+			return;
+		
+		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
+		Lists.qINSTANCE.addFirst(frameNames, domain.getFrame());
+		
+		for (String domainName : frameNames) {
+			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);
+			if (frameSetup == null)
+				continue;
+
+			if (formField.getIcon() == null)
+				formField.setIcon(frameSetup.getIcon());
+
+			if (!formField.isContextMenu())
+				formField.setContextMenu(frameSetup.isContextMenu());
+		}
 	}
 }

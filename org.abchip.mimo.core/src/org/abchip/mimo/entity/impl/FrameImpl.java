@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlots <em>Slots</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSuperNames <em>Super Names</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getTextFormula <em>Text Formula</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,6 +94,24 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @ordered
 	 */
 	protected EList<String> superNames;
+	/**
+	 * The default value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTextFormula()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_FORMULA_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTextFormula()
+	 * @generated
+	 * @ordered
+	 */
+	protected String textFormula = TEXT_FORMULA_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -207,6 +226,16 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
+	public String getTextFormula() {
+		return textFormula;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public List<Frame<?>> getSuperFrames() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -277,6 +306,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 				return getSlots();
 			case EntityPackage.FRAME__SUPER_NAMES:
 				return getSuperNames();
+			case EntityPackage.FRAME__TEXT_FORMULA:
+				return getTextFormula();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,6 +328,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 				return slots != null && !slots.isEmpty();
 			case EntityPackage.FRAME__SUPER_NAMES:
 				return superNames != null && !superNames.isEmpty();
+			case EntityPackage.FRAME__TEXT_FORMULA:
+				return TEXT_FORMULA_EDEFAULT == null ? textFormula != null : !TEXT_FORMULA_EDEFAULT.equals(textFormula);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -317,6 +350,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		result.append(name);
 		result.append(", superNames: ");
 		result.append(superNames);
+		result.append(", textFormula: ");
+		result.append(textFormula);
 		result.append(')');
 		return result.toString();
 	}

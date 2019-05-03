@@ -492,13 +492,22 @@ public interface EntityPackage extends EPackage {
 	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Text Formula</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Frame Manager</em>' class.
@@ -983,6 +992,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFrame_SuperNames();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#getTextFormula <em>Text Formula</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text Formula</em>'.
+	 * @see org.abchip.mimo.entity.Frame#getTextFormula()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_TextFormula();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}'.
@@ -1471,6 +1491,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FRAME__SUPER_NAMES = eINSTANCE.getFrame_SuperNames();
+
+		/**
+		 * The meta object literal for the '<em><b>Text Formula</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__TEXT_FORMULA = eINSTANCE.getFrame_TextFormula();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.

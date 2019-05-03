@@ -59,6 +59,7 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case UIPackage.ACTION: return (EObject)createAction();
+			case UIPackage.UI_FRAME_SETUP: return (EObject)createUiFrameSetup();
 			case UIPackage.VIEW: return (EObject)createView();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -108,6 +109,17 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UiFrameSetup createUiFrameSetup() {
+		UiFrameSetupImpl uiFrameSetup = new UiFrameSetupImpl();
+		return uiFrameSetup;
 	}
 
 	/**

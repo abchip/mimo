@@ -12,6 +12,8 @@
 package org.abchip.mimo.ui.http;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.Domain;
+import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
@@ -27,6 +30,7 @@ import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.util.Lists;
@@ -52,9 +56,9 @@ public class LookupSchemaServlet extends BaseServlet {
 		String prototype = request.getParameter("prototype");
 
 		Frame<?> frame = frameManager.getFrame(frameName);
-		if(frame == null)
+		if (frame == null)
 			return;
-		
+
 		ResourceSerializer<Schema> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Schema.class, SerializationType.JSON);
 
 		Schema schema = resourceManager.getEntityReader(contextRoot, Schema.class, ResourceScope.CTX).lookup(name);
@@ -63,23 +67,24 @@ public class LookupSchemaServlet extends BaseServlet {
 			schema = frameManager.createEntity(Schema.class);
 			schema.setName("prototype");
 
-			
 			SchemaColumn currentColumn = null;
 			for (Slot slot : frame.getSlots()) {
-				
+
 				SchemaColumn column = buildColumn(slot);
+
+				// field id
 				if (slot.equals(frame.getSlotName())) {
-					
+
 					// name
 					Lists.qINSTANCE.addFirst(schema.getColumns(), column);
 					if (currentColumn == null)
 						currentColumn = column;
-					
+
 					// id
-//					SchemaColumn columnId = buildColumn(slot);;
-//					columnId.setId("id");					
-//					Lists.qINSTANCE.addFirst(schema.getColumns(), columnId);
-					
+					// SchemaColumn columnId = buildColumn(slot);;
+					// columnId.setId("id");
+					// Lists.qINSTANCE.addFirst(schema.getColumns(), columnId);
+
 				} else if (slot.getName().startsWith("created"))
 					Lists.qINSTANCE.addLast(schema.getColumns(), column);
 				else if (slot.getName().startsWith("lastUpdated"))
@@ -94,8 +99,10 @@ public class LookupSchemaServlet extends BaseServlet {
 			}
 		}
 
-		if (schema != null)
+		if (schema != null) {
+			completeSchema(schema);
 			resourceSerializer.add(schema);
+		}
 
 		resourceSerializer.save(response.getOutputStream());
 
@@ -115,10 +122,44 @@ public class LookupSchemaServlet extends BaseServlet {
 		}
 		column.setHeader(Strings.qINSTANCE.firstToUpper(header.toString()));
 		column.setAdjust(true);
-		
-		if(slot.getDomain() != null)
-			column.setDomain((Domain)EcoreUtil.copy((EObject) slot.getDomain()));
-		
+
+		if (slot.getDomain() != null)
+			column.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
+
 		return column;
+	}
+
+	private void completeSchema(Schema schema) {
+		for (SchemaColumn column : schema.getColumns())
+			completeSchemaColumn(column);
+	}
+
+	private void completeSchemaColumn(SchemaColumn column) {
+
+		Domain domain = column.getDomain();
+
+		if (domain == null)
+			return;
+
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextRoot, UiFrameSetup.class, ResourceScope.CTX);
+		
+		Frame<?> frame = frameManager.getFrame(domain.getFrame());
+		if(frame == null)
+			return;
+		
+		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
+		Lists.qINSTANCE.addFirst(frameNames, domain.getFrame());
+		
+		for (String domainName : frameNames) {
+			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);
+			if (frameSetup == null)
+				continue;
+
+			if (column.getIcon() == null)
+				column.setIcon(frameSetup.getIcon());
+
+			if (!column.isContextMenu())
+				column.setContextMenu(frameSetup.isContextMenu());
+		}
 	}
 }

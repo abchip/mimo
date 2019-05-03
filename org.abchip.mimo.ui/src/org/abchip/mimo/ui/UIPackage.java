@@ -151,6 +151,52 @@ public interface UIPackage extends EPackage {
 	int DATA_NODE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.UiFrameSetupImpl <em>Ui Frame Setup</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.impl.UiFrameSetupImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getUiFrameSetup()
+	 * @generated
+	 */
+	int UI_FRAME_SETUP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Context Menu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_FRAME_SETUP__CONTEXT_MENU = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_FRAME_SETUP__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_FRAME_SETUP__ICON = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Ui Frame Setup</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_FRAME_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,7 +204,7 @@ public interface UIPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getView()
 	 * @generated
 	 */
-	int VIEW = 2;
+	int VIEW = 3;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
@@ -195,7 +241,7 @@ public interface UIPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getActionType()
 	 * @generated
 	 */
-	int ACTION_TYPE = 3;
+	int ACTION_TYPE = 4;
 
 
 	/**
@@ -206,7 +252,7 @@ public interface UIPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewType()
 	 * @generated
 	 */
-	int VIEW_TYPE = 4;
+	int VIEW_TYPE = 5;
 
 
 	/**
@@ -294,6 +340,49 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataNode_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.UiFrameSetup <em>Ui Frame Setup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ui Frame Setup</em>'.
+	 * @see org.abchip.mimo.ui.UiFrameSetup
+	 * @generated
+	 */
+	EClass getUiFrameSetup();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.UiFrameSetup#isContextMenu <em>Context Menu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Context Menu</em>'.
+	 * @see org.abchip.mimo.ui.UiFrameSetup#isContextMenu()
+	 * @see #getUiFrameSetup()
+	 * @generated
+	 */
+	EAttribute getUiFrameSetup_ContextMenu();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.UiFrameSetup#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.ui.UiFrameSetup#getName()
+	 * @see #getUiFrameSetup()
+	 * @generated
+	 */
+	EAttribute getUiFrameSetup_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.UiFrameSetup#getIcon <em>Icon</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Icon</em>'.
+	 * @see org.abchip.mimo.ui.UiFrameSetup#getIcon()
+	 * @see #getUiFrameSetup()
+	 * @generated
+	 */
+	EAttribute getUiFrameSetup_Icon();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.View <em>View</em>}'.
@@ -436,6 +525,40 @@ public interface UIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_NODE__VALUE = eINSTANCE.getDataNode_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.UiFrameSetupImpl <em>Ui Frame Setup</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.UiFrameSetupImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getUiFrameSetup()
+		 * @generated
+		 */
+		EClass UI_FRAME_SETUP = eINSTANCE.getUiFrameSetup();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Menu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UI_FRAME_SETUP__CONTEXT_MENU = eINSTANCE.getUiFrameSetup_ContextMenu();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UI_FRAME_SETUP__NAME = eINSTANCE.getUiFrameSetup_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UI_FRAME_SETUP__ICON = eINSTANCE.getUiFrameSetup_Icon();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.

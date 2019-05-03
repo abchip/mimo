@@ -106,13 +106,22 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN = 1;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Adjust</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__ID = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int SCHEMA_COLUMN__ADJUST = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Context Menu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__CONTEXT_MENU = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -121,16 +130,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Adjust</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEMA_COLUMN__ADJUST = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int SCHEMA_COLUMN__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -142,13 +142,31 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__HEADER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__ID = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 
 	/**
@@ -227,6 +245,17 @@ public interface SchemaPackage extends EPackage {
 	EAttribute getSchemaColumn_Header();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#getIcon <em>Icon</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Icon</em>'.
+	 * @see org.abchip.mimo.ui.schema.SchemaColumn#getIcon()
+	 * @see #getSchemaColumn()
+	 * @generated
+	 */
+	EAttribute getSchemaColumn_Icon();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#isAdjust <em>Adjust</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +265,17 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSchemaColumn_Adjust();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#isContextMenu <em>Context Menu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Context Menu</em>'.
+	 * @see org.abchip.mimo.ui.schema.SchemaColumn#isContextMenu()
+	 * @see #getSchemaColumn()
+	 * @generated
+	 */
+	EAttribute getSchemaColumn_ContextMenu();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -320,12 +360,28 @@ public interface SchemaPackage extends EPackage {
 		EAttribute SCHEMA_COLUMN__HEADER = eINSTANCE.getSchemaColumn_Header();
 
 		/**
+		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA_COLUMN__ICON = eINSTANCE.getSchemaColumn_Icon();
+
+		/**
 		 * The meta object literal for the '<em><b>Adjust</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SCHEMA_COLUMN__ADJUST = eINSTANCE.getSchemaColumn_Adjust();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Menu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA_COLUMN__CONTEXT_MENU = eINSTANCE.getSchemaColumn_ContextMenu();
 
 	}
 

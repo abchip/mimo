@@ -25,6 +25,7 @@ import java.util.List;
  *   <li>{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getSlots <em>Slots</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getSuperNames <em>Super Names</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#getTextFormula <em>Text Formula</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getFrame()
@@ -110,6 +111,21 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @generated
 	 */
 	List<String> getSuperNames();
+
+	/**
+	 * Returns the value of the '<em><b>Text Formula</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Text Formula</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Text Formula</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_TextFormula()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	String getTextFormula();
 
 	/**
 	 * <!-- begin-user-doc -->
