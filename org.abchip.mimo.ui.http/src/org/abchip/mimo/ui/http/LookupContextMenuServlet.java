@@ -12,6 +12,8 @@
 package org.abchip.mimo.ui.http;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.function.Consumer;
 
@@ -21,16 +23,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.menu.ContextMenu;
 import org.abchip.mimo.ui.menu.MenuAction;
 import org.abchip.mimo.ui.menu.MenuFactory;
 import org.abchip.mimo.ui.menu.MenuGroup;
+import org.abchip.mimo.util.Lists;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 
@@ -44,37 +49,52 @@ public class LookupContextMenuServlet extends BaseServlet {
 	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+
 		String frameName = request.getParameter("frame");
-		if(frameName == null)
-			return ;
-		
-		Frame<?> frame = frameManager.getFrame(frameName);
-		if(frame == null)
+		if (frameName == null)
 			return;
-		
+
+		Frame<?> frame = frameManager.getFrame(frameName);
+		if (frame == null)
+			return;
+
 		ContextMenu contextMenu = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup(frameName);
+		if(contextMenu == null) {
+			contextMenu = MenuFactory.eINSTANCE.createContextMenu();
+			contextMenu.setName(frameName);			
+		}
 		
-		for(Frame<?> ako: frame.getSuperFrames()) {
-			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup(ako.getName());;
-			if(contextMenuAko == null)
-				continue;
+		if(contextMenu.getIcon() == null)
+			contextMenu.setIcon(getIcon(frameName));
+		
+		ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup("Frame");
+		if (contextMenuFrame != null) {
+
+			MenuGroup groupFrame = MenuFactory.eINSTANCE.createMenuGroup();
+			groupFrame.setValue(frame.getName());
+			groupFrame.getData().addAll(contextMenuFrame.getElements());
+			groupFrame.setIcon(getIcon("Frame"));
 			
-			if(contextMenu == null)
+			Lists.qINSTANCE.addFirst(contextMenu.getElements(), groupFrame);
+		}
+		
+
+		for (Frame<?> ako : frame.getSuperFrames()) {
+			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup(ako.getName());
+			if (contextMenuAko == null)
+				continue;
+
+			if (contextMenu == null)
 				contextMenu = contextMenuAko;
-			else  {
-				MenuAction separator = MenuFactory.eINSTANCE.createMenuAction();
-				separator.setValue("-----------------");
-				contextMenu.getElements().add(separator);
+			else 
 				contextMenu.getElements().addAll(contextMenuAko.getElements());
-			}
 		}
 
 		ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, ContextMenu.class, SerializationType.JSON);
-		if(contextMenu != null) {
-			
+		if (contextMenu != null) {
+
 			TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
 
 			features.forEachRemaining(new Consumer<EObject>() {
@@ -103,6 +123,32 @@ public class LookupContextMenuServlet extends BaseServlet {
 		resourceSerializer.save(response.getOutputStream());
 		resourceSerializer.close();
 
-		response.flushBuffer();		
-	}	
+		response.flushBuffer();
+	}
+	
+	private String getIcon(String frameName) {
+		
+		String icon = null;
+		
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextRoot, UiFrameSetup.class, ResourceScope.CTX);
+		
+		Frame<?> frame = frameManager.getFrame(frameName);
+		if(frame == null)
+			return icon;
+		
+		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
+		Lists.qINSTANCE.addFirst(frameNames, frameName);
+		
+		for (String domainName : frameNames) {
+			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);
+			if (frameSetup == null)
+				continue;
+
+			icon = frameSetup.getIcon();
+			if(icon != null)
+				break;
+		}
+		
+		return icon;
+	}
 }
