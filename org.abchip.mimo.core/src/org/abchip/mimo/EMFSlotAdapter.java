@@ -43,15 +43,19 @@ public class EMFSlotAdapter extends SlotImpl {
 			this.name = name;
 		else
 			this.name = element.getName();
-
+		
 		this.cardinality = new EMFCardinalityAdapter(element);
-
+				
 		EAnnotation eAnnotation = element.getEAnnotation(EntityPackage.eNS_PREFIX);
 		
 		if(eAnnotation != null && !eAnnotation.getReferences().isEmpty()) {
 			EObject eObject = EcoreUtil.create((EClass) eAnnotation.getReferences().get(0));
 
 			for (String key : eAnnotation.getDetails().keySet()) {
+				
+				if(key.equals("derived"))
+					this.derived = true;
+				
 				EStructuralFeature dataDefFeature = eObject.eClass().getEStructuralFeature(key);
 
 				if (dataDefFeature == null)
@@ -70,8 +74,6 @@ public class EMFSlotAdapter extends SlotImpl {
 		if (element instanceof EStructuralFeature) {
 			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);
 			this.defaultValue = eStructuralFeature.getDefaultValueLiteral();
-			this.transient_ = eStructuralFeature.isTransient();
-			this.volatile_ = eStructuralFeature.isVolatile();
 			
 		}
 		

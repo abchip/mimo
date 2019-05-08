@@ -21,10 +21,9 @@ package org.abchip.mimo.entity;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.Slot#isTransient <em>Transient</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.Slot#isVolatile <em>Volatile</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getSlot()
@@ -79,6 +78,21 @@ public interface Slot extends EntityNameable {
 	String getDefaultValue();
 
 	/**
+	 * Returns the value of the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Derived</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Derived</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Derived()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	boolean isDerived();
+
+	/**
 	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -92,26 +106,6 @@ public interface Slot extends EntityNameable {
 	 * @generated
 	 */
 	Domain getDomain();
-
-	/**
-	 * Returns the value of the '<em><b>Transient</b></em>' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the value of the '<em>Transient</em>' attribute.
-	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Transient()
-	 * @model changeable="false"
-	 * @generated
-	 */
-	boolean isTransient();
-
-	/**
-	 * Returns the value of the '<em><b>Volatile</b></em>' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the value of the '<em>Volatile</em>' attribute.
-	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Volatile()
-	 * @model changeable="false"
-	 * @generated
-	 */
-	boolean isVolatile();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

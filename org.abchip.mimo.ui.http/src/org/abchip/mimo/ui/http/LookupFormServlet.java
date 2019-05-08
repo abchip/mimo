@@ -63,6 +63,11 @@ public class LookupFormServlet extends BaseServlet {
 			Frame<?> frame = frameManager.getFrame(frameName);
 			FormField currentField = null;
 			for (Slot slot : frame.getSlots()) {
+				
+				// derived exclusion
+				if(slot.isDerived())
+					continue;
+				
 				FormField field = buildFormField(slot);
 				if (slot.equals(frame.getSlotName())) {
 					if (currentField == null)

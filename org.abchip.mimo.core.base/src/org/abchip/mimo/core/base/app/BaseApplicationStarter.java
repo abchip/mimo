@@ -103,7 +103,7 @@ public class BaseApplicationStarter {
 
 		// commands provider
 		messageLevel++;
-		registerCommands(application.getContext(), application.getCommands());
+		registerCommands(application.getContext(), application.getContext(), application.getCommands());
 		messageLevel--;
 
 		return application;
@@ -162,7 +162,7 @@ public class BaseApplicationStarter {
 
 		// commands provider
 		messageLevel++;
-		registerCommands(application.getContext(), component.getCommands());
+		registerCommands(application.getContext(), componentContext, component.getCommands());
 		messageLevel--;
 	}
 
@@ -190,7 +190,7 @@ public class BaseApplicationStarter {
 			context.set(entity.getClass().getInterfaces()[0].getName(), entity);
 	}
 
-	private List<Object> registerCommands(ContextRoot context, List<ServiceCommandProvider> commandProviders) {
+	private List<Object> registerCommands(ContextRoot contextRoot, Context context, List<ServiceCommandProvider> commandProviders) {
 
 		List<Object> commands = new ArrayList<Object>();
 		for (ServiceCommandProvider command : commandProviders) {
@@ -201,7 +201,7 @@ public class BaseApplicationStarter {
 
 			println("+command " + command);
 			Object service = loadObject(context, command.getClassName());
-			context.set(command.getInterfaceName(), service, false, null);
+			contextRoot.set(command.getInterfaceName(), service, false, null);
 			commands.add(service);
 		}
 

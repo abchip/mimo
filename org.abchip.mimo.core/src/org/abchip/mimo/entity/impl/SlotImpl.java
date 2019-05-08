@@ -28,10 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isTransient <em>Transient</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isVolatile <em>Volatile</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,6 +68,24 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
 	/**
+	 * The default value of the '{@link #isDerived() <em>Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DERIVED_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isDerived() <em>Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean derived = DERIVED_EDEFAULT;
+	/**
 	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,43 +112,6 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isTransient() <em>Transient</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isTransient()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean TRANSIENT_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isTransient() <em>Transient</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isTransient()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean transient_ = TRANSIENT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isVolatile() <em>Volatile</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isVolatile()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean VOLATILE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isVolatile() <em>Volatile</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isVolatile()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean volatile_ = VOLATILE_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,6 +182,16 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	@Override
+	public boolean isDerived() {
+		return derived;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Domain getDomain() {
 		return domain;
 	}
@@ -219,26 +209,6 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isTransient() {
-		return transient_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isVolatile() {
-		return volatile_;
 	}
 
 	/**
@@ -293,14 +263,12 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return getCardinality();
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				return getDefaultValue();
+			case EntityPackage.SLOT__DERIVED:
+				return isDerived();
 			case EntityPackage.SLOT__DOMAIN:
 				return getDomain();
 			case EntityPackage.SLOT__NAME:
 				return getName();
-			case EntityPackage.SLOT__TRANSIENT:
-				return isTransient();
-			case EntityPackage.SLOT__VOLATILE:
-				return isVolatile();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,14 +285,12 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return cardinality != null;
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+			case EntityPackage.SLOT__DERIVED:
+				return derived != DERIVED_EDEFAULT;
 			case EntityPackage.SLOT__DOMAIN:
 				return domain != null;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EntityPackage.SLOT__TRANSIENT:
-				return transient_ != TRANSIENT_EDEFAULT;
-			case EntityPackage.SLOT__VOLATILE:
-				return volatile_ != VOLATILE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -341,12 +307,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (defaultValue: ");
 		result.append(defaultValue);
+		result.append(", derived: ");
+		result.append(derived);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", transient: ");
-		result.append(transient_);
-		result.append(", volatile: ");
-		result.append(volatile_);
 		result.append(')');
 		return result.toString();
 	}

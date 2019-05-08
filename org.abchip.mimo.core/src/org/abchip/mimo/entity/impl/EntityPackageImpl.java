@@ -729,27 +729,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getSlot_Name() {
-		return (EAttribute)slotEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSlot_Transient() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSlot_Volatile() {
-		return (EAttribute)slotEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -768,8 +748,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSlot_Derived() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getSlot_Domain() {
-		return (EReference)slotEClass.getEStructuralFeatures().get(2);
+		return (EReference)slotEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -911,10 +901,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		slotEClass = createEClass(SLOT);
 		createEReference(slotEClass, SLOT__CARDINALITY);
 		createEAttribute(slotEClass, SLOT__DEFAULT_VALUE);
+		createEAttribute(slotEClass, SLOT__DERIVED);
 		createEReference(slotEClass, SLOT__DOMAIN);
 		createEAttribute(slotEClass, SLOT__NAME);
-		createEAttribute(slotEClass, SLOT__TRANSIENT);
-		createEAttribute(slotEClass, SLOT__VOLATILE);
 
 		textableEClass = createEClass(TEXTABLE);
 
@@ -1633,10 +1622,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEClass(slotEClass, Slot.class, "Slot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSlot_Cardinality(), this.getCardinality(), null, "cardinality", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Derived(), ecorePackage.getEBoolean(), "derived", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSlot_Domain(), this.getDomain(), null, "domain", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSlot_Transient(), ecorePackage.getEBoolean(), "transient", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSlot_Volatile(), ecorePackage.getEBoolean(), "volatile", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(slotEClass, this.getEntity(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "nsPrefix", 1, 1, IS_UNIQUE, IS_ORDERED);

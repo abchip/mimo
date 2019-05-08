@@ -26,8 +26,6 @@ public class HttpActivatorHook {
 	
 	@ComponentStarting
 	public void start(Application application, SocketConfig socketConfig) {
-		
-//		BundleContext bundleContext = FrameworkUtil.getBundle(application.getContext().getClass()).getBundleContext();
 
 		Dictionary<String, Object> settings = new Hashtable<String, Object>();
 		settings.put("http.enabled", Boolean.TRUE);

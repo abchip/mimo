@@ -656,13 +656,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__DEFAULT_VALUE = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__DERIVED = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DOMAIN = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int SLOT__DOMAIN = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -671,25 +680,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Transient</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT__TRANSIENT = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT__VOLATILE = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -698,7 +689,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
@@ -1181,28 +1172,6 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isTransient <em>Transient</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transient</em>'.
-	 * @see org.abchip.mimo.entity.Slot#isTransient()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Transient();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isVolatile <em>Volatile</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Volatile</em>'.
-	 * @see org.abchip.mimo.entity.Slot#isVolatile()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Volatile();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1212,6 +1181,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSlot_DefaultValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Derived</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isDerived()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Derived();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}'.
@@ -1659,28 +1639,20 @@ public interface EntityPackage extends EPackage {
 		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Transient</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__TRANSIENT = eINSTANCE.getSlot_Transient();
-
-		/**
-		 * The meta object literal for the '<em><b>Volatile</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__VOLATILE = eINSTANCE.getSlot_Volatile();
-
-		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SLOT__DEFAULT_VALUE = eINSTANCE.getSlot_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Derived</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__DERIVED = eINSTANCE.getSlot_Derived();
 
 		/**
 		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.
