@@ -336,7 +336,7 @@ public class ResourceHelper {
 
 			return false;
 		}
-
+		
 		@Override
 		public EntityIterator<E> find(String filter) {
 			return find(filter, -1);

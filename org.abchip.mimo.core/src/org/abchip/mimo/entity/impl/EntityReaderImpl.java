@@ -168,32 +168,32 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public boolean exists(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract boolean exists(String name);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public EntityIterator<E> find(String filter) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract EntityIterator<E> find(String filter);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public abstract EntityIterator<E> find(String filter, int nrElem);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public EntityIterator<E> find(String filter, int nrElem) {
+	public EntityIterator<E> findByNameParts(List<String> names) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -208,14 +208,10 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public E lookup(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract E lookup(String name);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

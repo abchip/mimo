@@ -418,6 +418,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDomain_Route() {
+		return (EAttribute)domainEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -528,7 +538,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_Name() {
+	public EAttribute getFrame_Keys() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -538,8 +548,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFrame_Name() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getFrame_Slots() {
-		return (EReference)frameEClass.getEStructuralFeatures().get(2);
+		return (EReference)frameEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -549,7 +569,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getFrame_SuperNames() {
-		return (EAttribute)frameEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -559,7 +579,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getFrame_TextFormula() {
-		return (EAttribute)frameEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -729,7 +749,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getSlot_Name() {
-		return (EAttribute)slotEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -760,6 +780,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EReference getSlot_Domain() {
 		return (EReference)slotEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSlot_Key() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -851,6 +881,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		domainEClass = createEClass(DOMAIN);
 		createEAttribute(domainEClass, DOMAIN__FRAME);
+		createEAttribute(domainEClass, DOMAIN__ROUTE);
 
 		entityEClass = createEClass(ENTITY);
 
@@ -873,6 +904,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		frameEClass = createEClass(FRAME);
 		createEAttribute(frameEClass, FRAME__ABSTRACT);
+		createEAttribute(frameEClass, FRAME__KEYS);
 		createEAttribute(frameEClass, FRAME__NAME);
 		createEReference(frameEClass, FRAME__SLOTS);
 		createEAttribute(frameEClass, FRAME__SUPER_NAMES);
@@ -903,6 +935,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(slotEClass, SLOT__DEFAULT_VALUE);
 		createEAttribute(slotEClass, SLOT__DERIVED);
 		createEReference(slotEClass, SLOT__DOMAIN);
+		createEAttribute(slotEClass, SLOT__KEY);
 		createEAttribute(slotEClass, SLOT__NAME);
 
 		textableEClass = createEClass(TEXTABLE);
@@ -1020,6 +1053,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDomain_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDomain_Route(), ecorePackage.getEString(), "route", null, 0, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1206,6 +1240,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(entityReaderEClass, null, "findByNameParts", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "names", 0, -1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getEntityIterator());
+		g2 = createEGenericType(entityReaderEClass_E);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
 		op = addEOperation(entityReaderEClass, ecorePackage.getEString(), "findNames", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1247,6 +1288,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(frameEClass, Frame.class, "Frame", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFrame_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFrame_Keys(), ecorePackage.getEString(), "keys", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Name(), ecorePackage.getEString(), "name", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFrame_Slots(), this.getSlot(), null, "slots", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_SuperNames(), ecorePackage.getEString(), "superNames", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1267,8 +1309,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		op = addEOperation(frameEClass, this.getSlot(), "getSlot", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(frameEClass, this.getSlot(), "getSlotName", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(frameEClass, null, "getSuperFrames", 0, -1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
@@ -1278,7 +1318,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		op = addEOperation(frameEClass, ecorePackage.getEJavaObject(), "getValue", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(frameEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "slotName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(frameEClass, null, "unsetValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(frameEClass_E);
@@ -1624,6 +1664,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getSlot_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Derived(), ecorePackage.getEBoolean(), "derived", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSlot_Domain(), this.getDomain(), null, "domain", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Key(), ecorePackage.getEBoolean(), "key", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(slotEClass, this.getEntity(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);

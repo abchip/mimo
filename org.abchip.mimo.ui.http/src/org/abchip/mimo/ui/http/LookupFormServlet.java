@@ -63,13 +63,13 @@ public class LookupFormServlet extends BaseServlet {
 			Frame<?> frame = frameManager.getFrame(frameName);
 			FormField currentField = null;
 			for (Slot slot : frame.getSlots()) {
-				
+
 				// derived exclusion
-				if(slot.isDerived())
+				if (slot.isDerived())
 					continue;
-				
+
 				FormField field = buildFormField(slot);
-				if (slot.equals(frame.getSlotName())) {
+				if (slot.isKey()) {
 					if (currentField == null)
 						currentField = field;
 					Lists.qINSTANCE.addFirst(form.getFields(), field);
@@ -110,14 +110,13 @@ public class LookupFormServlet extends BaseServlet {
 			label.append(c);
 		}
 		field.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
-		
-		if(slot.getDomain() != null) {
-			field.setDomain((Domain)EcoreUtil.copy((EObject) slot.getDomain()));
+
+		if (slot.getDomain() != null) {
+			field.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 			field.setView("combo");
-		}
-		else
+		} else
 			field.setView("text");
-		
+
 		return field;
 	}
 
@@ -134,14 +133,14 @@ public class LookupFormServlet extends BaseServlet {
 			return;
 
 		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextRoot, UiFrameSetup.class, ResourceScope.CTX);
-		
+
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
-		if(frame == null)
+		if (frame == null)
 			return;
-		
+
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
 		Lists.qINSTANCE.addFirst(frameNames, domain.getFrame());
-		
+
 		for (String domainName : frameNames) {
 			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);
 			if (frameSetup == null)

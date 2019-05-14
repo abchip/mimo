@@ -180,13 +180,22 @@ public interface EntityPackage extends EPackage {
 	int DOMAIN__FRAME = ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Route</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__ROUTE = ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Domain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 1;
+	int DOMAIN_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.
@@ -465,13 +474,22 @@ public interface EntityPackage extends EPackage {
 	int FRAME__ABSTRACT = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Keys</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__KEYS = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int FRAME__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -480,7 +498,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Super Names</b></em>' attribute list.
@@ -489,7 +507,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Text Formula</b></em>' attribute.
@@ -498,7 +516,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
@@ -507,7 +525,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Frame Manager</em>' class.
@@ -674,13 +692,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__DOMAIN = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__KEY = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -689,7 +716,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
@@ -838,6 +865,17 @@ public interface EntityPackage extends EPackage {
 	EAttribute getDomain_Frame();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Domain#getRoute <em>Route</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Route</em>'.
+	 * @see org.abchip.mimo.entity.Domain#getRoute()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EAttribute getDomain_Route();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -950,6 +988,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFrame_Abstract();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.entity.Frame#getKeys <em>Keys</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Keys</em>'.
+	 * @see org.abchip.mimo.entity.Frame#getKeys()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_Keys();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}'.
@@ -1205,6 +1254,17 @@ public interface EntityPackage extends EPackage {
 	EReference getSlot_Domain();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isKey()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Key();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1347,6 +1407,14 @@ public interface EntityPackage extends EPackage {
 		EAttribute DOMAIN__FRAME = eINSTANCE.getDomain_Frame();
 
 		/**
+		 * The meta object literal for the '<em><b>Route</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOMAIN__ROUTE = eINSTANCE.getDomain_Route();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1447,6 +1515,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FRAME__ABSTRACT = eINSTANCE.getFrame_Abstract();
+
+		/**
+		 * The meta object literal for the '<em><b>Keys</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__KEYS = eINSTANCE.getFrame_Keys();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1661,6 +1737,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SLOT__DOMAIN = eINSTANCE.getSlot_Domain();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__KEY = eINSTANCE.getSlot_Key();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.

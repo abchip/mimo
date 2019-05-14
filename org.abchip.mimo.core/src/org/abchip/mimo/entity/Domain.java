@@ -18,6 +18,7 @@ package org.abchip.mimo.entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.Domain#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Domain#getRoute <em>Route</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getDomain()
@@ -50,5 +51,31 @@ public interface Domain extends Entity {
 	 * @generated
 	 */
 	void setFrame(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Route</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Route</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Route</em>' attribute.
+	 * @see #setRoute(String)
+	 * @see org.abchip.mimo.entity.EntityPackage#getDomain_Route()
+	 * @model
+	 * @generated
+	 */
+	String getRoute();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Domain#getRoute <em>Route</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Route</em>' attribute.
+	 * @see #getRoute()
+	 * @generated
+	 */
+	void setRoute(String value);
 
 } // Domain

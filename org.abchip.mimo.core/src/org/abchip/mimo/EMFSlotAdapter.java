@@ -14,9 +14,10 @@ package org.abchip.mimo;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityFactory;
-import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.SlotImpl;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -43,46 +44,48 @@ public class EMFSlotAdapter extends SlotImpl {
 			this.name = name;
 		else
 			this.name = element.getName();
-		
+
 		this.cardinality = new EMFCardinalityAdapter(element);
-				
-		EAnnotation eAnnotation = element.getEAnnotation(EntityPackage.eNS_PREFIX);
+
+		if(element instanceof EAttribute)
+			this.key = ((EAttribute)element).isID();
 		
-		if(eAnnotation != null && !eAnnotation.getReferences().isEmpty()) {
+		EAnnotation eAnnotation = element.getEAnnotation(Slot.NS_PREFIX_SLOT);
+
+		if (eAnnotation != null && !eAnnotation.getReferences().isEmpty()) {
 			EObject eObject = EcoreUtil.create((EClass) eAnnotation.getReferences().get(0));
 
 			for (String key : eAnnotation.getDetails().keySet()) {
-				
-				if(key.equals("derived"))
-					this.derived = true;
-				
+
 				EStructuralFeature dataDefFeature = eObject.eClass().getEStructuralFeature(key);
-
-				if (dataDefFeature == null)
-					continue;
-
-				if (dataDefFeature.getDefaultValue() instanceof Number)
-					eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
-				else
-					eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
+				if (dataDefFeature != null) {
+					if (dataDefFeature.getDefaultValue() instanceof Number)
+						eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
+					else
+						eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
+				} else {
+					if (key.equals("derived"))
+						this.derived = true;
+					else if (key.equals("key"))
+						this.key = true;
+				}
 			}
 
-			if(eObject instanceof Domain)
-				this.domain = (Domain) eObject;			
+			if (eObject instanceof Domain)
+				this.domain = (Domain) eObject;
 		}
-		
+
 		if (element instanceof EStructuralFeature) {
 			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);
 			this.defaultValue = eStructuralFeature.getDefaultValueLiteral();
-			
 		}
-		
+
 		if (element instanceof EReference) {
-			EReference eReference = (EReference)element;
-			if(this.domain == null ) {
+			EReference eReference = (EReference) element;
+			if (this.domain == null)
 				this.domain = EntityFactory.eINSTANCE.createDomain();
-				this.domain.setFrame(eReference.getEType().getName());
-			}			
+			if (this.getDomain().getFrame() == null)
+				this.getDomain().setFrame(eReference.getEType().getName());
 		}
 	}
 

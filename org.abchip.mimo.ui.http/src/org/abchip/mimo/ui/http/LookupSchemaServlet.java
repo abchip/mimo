@@ -73,7 +73,7 @@ public class LookupSchemaServlet extends BaseServlet {
 				SchemaColumn column = buildColumn(slot);
 
 				// field id
-				if (slot.equals(frame.getSlotName())) {
+				if (slot.isKey()) {
 
 					// name
 					Lists.qINSTANCE.addFirst(schema.getColumns(), column);

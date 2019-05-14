@@ -16,13 +16,12 @@ import java.net.URI;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Object Nameable</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Object
+ * Nameable</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
@@ -31,7 +30,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -50,8 +49,8 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public URI getURI() {
@@ -59,8 +58,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -72,18 +70,26 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public String getName() {
-		
+
+		StringBuffer name = new StringBuffer();
+
 		@SuppressWarnings("unchecked")
 		Frame<EntityNameable> frame = (Frame<EntityNameable>) isa();
-		Slot slotName = frame.getSlotName();
-		if(slotName == null)
+		for (String key : frame.getKeys()) {
+			if (!name.toString().isEmpty())
+				name.append("/");
+			name.append(frame.getValue(this, key));
+		}
+
+		if (name.toString().isEmpty())
 			throw new UnsupportedOperationException();
-		
-		return frame.getValue(this, slotName).toString();
+
+		return name.toString();
 	}
 
 } // EntityNameableImpl

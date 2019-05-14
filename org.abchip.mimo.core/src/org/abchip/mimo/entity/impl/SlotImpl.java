@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -94,6 +95,24 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @ordered
 	 */
 	protected Domain domain;
+	/**
+	 * The default value of the '{@link #isKey() <em>Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean KEY_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isKey() <em>Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean key = KEY_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -217,6 +236,16 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	@Override
+	public boolean isKey() {
+		return key;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Entity getValue(String nsPrefix) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -267,6 +296,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return isDerived();
 			case EntityPackage.SLOT__DOMAIN:
 				return getDomain();
+			case EntityPackage.SLOT__KEY:
+				return isKey();
 			case EntityPackage.SLOT__NAME:
 				return getName();
 		}
@@ -289,6 +320,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return derived != DERIVED_EDEFAULT;
 			case EntityPackage.SLOT__DOMAIN:
 				return domain != null;
+			case EntityPackage.SLOT__KEY:
+				return key != KEY_EDEFAULT;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
@@ -309,6 +342,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		result.append(defaultValue);
 		result.append(", derived: ");
 		result.append(derived);
+		result.append(", key: ");
+		result.append(key);
 		result.append(", name: ");
 		result.append(name);
 		result.append(')');

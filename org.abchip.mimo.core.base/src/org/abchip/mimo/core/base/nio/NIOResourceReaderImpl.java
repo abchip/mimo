@@ -26,12 +26,12 @@ import org.abchip.mimo.entity.impl.EntityReaderImpl;
 public class NIOResourceReaderImpl extends EntityReaderImpl<Resource> {
 
 	protected NIOPathManager pathManager;
-	
+
 	public NIOResourceReaderImpl(NIOPathManager pathManager, Frame<Resource> frame, ContextProvider contextProvider) {
 		super();
 		setContextProvider(contextProvider);
 		setFrame(frame);
-		this.pathManager = pathManager;		
+		this.pathManager = pathManager;
 	}
 
 	@Override
@@ -52,18 +52,19 @@ public class NIOResourceReaderImpl extends EntityReaderImpl<Resource> {
 	@Override
 	public List<String> findNames(String filter) {
 		List<String> names = new ArrayList<String>();
-		for(Resource resource: pathManager.getResources().values())
+		for (Resource resource : pathManager.getResources().values())
 			names.add(resource.getName());
-		
+
 		Collections.sort(names, new Comparator<String>() {
 			@Override
 			public int compare(String o1, String o2) {
 				return o1.compareTo(o2);
 			}
 		});
-		
+
 		return names;
 	}
+
 	@Override
 	public Resource lookup(String name) {
 		return pathManager.getResources().get(name);

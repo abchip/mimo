@@ -23,6 +23,7 @@ package org.abchip.mimo.entity;
  *   <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -32,6 +33,8 @@ package org.abchip.mimo.entity;
  */
 public interface Slot extends EntityNameable {
 
+	public final static String NS_PREFIX_SLOT = EntityPackage.eNS_PREFIX + "-slot";
+	
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -106,6 +109,21 @@ public interface Slot extends EntityNameable {
 	 * @generated
 	 */
 	Domain getDomain();
+
+	/**
+	 * Returns the value of the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Key</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Key()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	boolean isKey();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

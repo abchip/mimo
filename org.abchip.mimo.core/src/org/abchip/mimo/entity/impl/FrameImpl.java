@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isAbstract <em>Abstract</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlots <em>Slots</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSuperNames <em>Super Names</em>}</li>
@@ -58,6 +59,15 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @ordered
 	 */
 	protected boolean abstract_ = ABSTRACT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> keys;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -176,10 +186,11 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
-	public Slot getSlot(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public List<String> getKeys() {
+		if (keys == null) {
+			keys = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__KEYS);
+		}
+		return keys;
 	}
 
 	/**
@@ -188,7 +199,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
-	public Slot getSlotName() {
+	public Slot getSlot(String name) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -248,7 +259,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
-	public Object getValue(E entity, Slot slot) {
+	public Object getValue(E entity, String slotName) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -300,6 +311,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		switch (featureID) {
 			case EntityPackage.FRAME__ABSTRACT:
 				return isAbstract();
+			case EntityPackage.FRAME__KEYS:
+				return getKeys();
 			case EntityPackage.FRAME__NAME:
 				return getName();
 			case EntityPackage.FRAME__SLOTS:
@@ -322,6 +335,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		switch (featureID) {
 			case EntityPackage.FRAME__ABSTRACT:
 				return abstract_ != ABSTRACT_EDEFAULT;
+			case EntityPackage.FRAME__KEYS:
+				return keys != null && !keys.isEmpty();
 			case EntityPackage.FRAME__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EntityPackage.FRAME__SLOTS:
@@ -346,6 +361,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (abstract: ");
 		result.append(abstract_);
+		result.append(", keys: ");
+		result.append(keys);
 		result.append(", name: ");
 		result.append(name);
 		result.append(", superNames: ");

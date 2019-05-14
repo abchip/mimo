@@ -135,6 +135,14 @@ public interface EntityReader<E extends EntityNameable> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model namesMany="true"
+	 * @generated
+	 */
+	EntityIterator<E> findByNameParts(List<String> names);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */

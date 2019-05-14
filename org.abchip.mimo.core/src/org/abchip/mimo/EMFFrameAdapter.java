@@ -24,7 +24,6 @@ import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
@@ -39,58 +38,44 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 	private static final long serialVersionUID = 1L;
 	private EClass eClass;
 
-	private static final String nsPrefix = "il-data";
-
 	public EMFFrameAdapter(EClass eClass) {
 		super();
-		
+
 		this.eClass = eClass;
-		
+
 		this.name = this.eClass.getName();
-		
+
 		this.abstract_ = eClass.isAbstract();
-		
-		for(Frame<?> superFrame: getSuperFrames()) 
+
+		for (Frame<?> superFrame : getSuperFrames())
 			getSuperNames().add(superFrame.getName());
-		
-		
-		EAnnotation eTextAnnotation = null;
-		
-		// search text annotation
-		for(EAnnotation eAnnotation: eClass.getEAnnotations()) {
-			if(eAnnotation.getSource().equals(EntityPackage.eNS_PREFIX) &&
-			   eAnnotation.getReferences().contains(EntityPackage.eINSTANCE.getTextable())) {
-				eTextAnnotation = eAnnotation;
-				break;
-			}
-		}
-		
-		if(eTextAnnotation != null) {
+
+		EAnnotation eTextAnnotation = eClass.getEAnnotation(Frame.NS_PREFIX_FRAME);
+		if (eTextAnnotation != null && eTextAnnotation.getReferences().contains(EntityPackage.eINSTANCE.getTextable())) {
 			String formula = eTextAnnotation.getDetails().get("formula");
 			this.textFormula = formula;
 		}
-		
-		this.slots = (EList<Slot>) getSlots();
 
-		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures())
-			this.slots.add(new EMFSlotAdapter(structuralFeature));
+		// load features
+		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures()) {
+			Slot slot = new EMFSlotAdapter(structuralFeature);		
+			this.getSlots().add(slot);
+			// set keys
+			if(slot.isKey())
+				this.getKeys().add(slot.getName());
+		}
 
+		// load operations
 		for (EOperation operation : eClass.getEAllOperations()) {
 
-			EAnnotation eAnnotation = operation.getEAnnotation(nsPrefix);
+			EAnnotation eAnnotation = operation.getEAnnotation(Slot.NS_PREFIX_SLOT);
 			if (eAnnotation == null)
 				continue;
 
-			if (operation.getName().length() > 3 && operation.getName().startsWith("get") && operation.getEParameters().isEmpty()) {
-				String name = operation.getName().substring(3);
-				name = Strings.qINSTANCE.firstToLower(name);
-				this.slots.add(new EMFSlotAdapter(operation, name));
-
-				continue;
-			}
-
-			this.slots.add(new EMFSlotAdapter(operation));
+			// other operation
+			this.getSlots().add(new EMFSlotAdapter(operation));
 		}
+		
 	}
 
 	@Override
@@ -130,22 +115,12 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Slot getSlotName() {
-
-		EAttribute eAttribute = eClass.getEIDAttribute();
-		if (eAttribute == null)
-			return null;
-
-		return getSlot(eAttribute.getName());
-	}
-
-	@Override
-	public Object getValue(E entity, Slot slot) {
+	public Object getValue(E entity, String slotName) {
 
 		if (entity instanceof EObject)
-			return getValue((EObject) entity, slot);
+			return getValue((EObject) entity, slotName);
 		else
-			return getValue((Object) entity, slot);
+			return getValue((Object) entity, slotName);
 	}
 
 	@Override
@@ -154,28 +129,28 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 			unsetValue((EObject) entity, slot);
 	}
 
-	private Object getValue(EObject eObject, Slot slot) {
+	private Object getValue(EObject eObject, String slotName) {
 		Object value = null;
 
-		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(slot.getName());
+		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(slotName);
 		if (eStructuralFeature != null)
 			value = eObject.eGet(eStructuralFeature);
 		else {
-			value = getValue((Object) eObject, slot);
+			value = getValue((Object) eObject, slotName);
 		}
 
 		return value;
 	}
 
-	private Object getValue(Object object, Slot slot) {
+	private Object getValue(Object object, String slotName) {
 		Object value = null;
 
 		try {
 			String methodName = null;
-			if (slot.getName().startsWith("is"))
-				methodName = slot.getName();
+			if (slotName.startsWith("is"))
+				methodName = slotName;
 			else
-				methodName = "get" + Strings.qINSTANCE.firstToUpper(slot.getName());
+				methodName = "get" + Strings.qINSTANCE.firstToUpper(slotName);
 			Method method = object.getClass().getMethod(methodName, new Class[] {});
 			if (method != null) {
 				value = method.invoke(object, new Object[] {});

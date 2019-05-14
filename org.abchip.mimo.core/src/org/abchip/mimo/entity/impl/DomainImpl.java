@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.DomainImpl#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.DomainImpl#getRoute <em>Route</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,6 +55,26 @@ public class DomainImpl extends EntityImpl implements Domain {
 	 * @ordered
 	 */
 	protected String frame = FRAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRoute() <em>Route</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoute()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ROUTE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRoute() <em>Route</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoute()
+	 * @generated
+	 * @ordered
+	 */
+	protected String route = ROUTE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,10 +124,35 @@ public class DomainImpl extends EntityImpl implements Domain {
 	 * @generated
 	 */
 	@Override
+	public String getRoute() {
+		return route;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRoute(String newRoute) {
+		String oldRoute = route;
+		route = newRoute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.DOMAIN__ROUTE, oldRoute, route));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EntityPackage.DOMAIN__FRAME:
 				return getFrame();
+			case EntityPackage.DOMAIN__ROUTE:
+				return getRoute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,6 +167,9 @@ public class DomainImpl extends EntityImpl implements Domain {
 		switch (featureID) {
 			case EntityPackage.DOMAIN__FRAME:
 				setFrame((String)newValue);
+				return;
+			case EntityPackage.DOMAIN__ROUTE:
+				setRoute((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,6 +186,9 @@ public class DomainImpl extends EntityImpl implements Domain {
 			case EntityPackage.DOMAIN__FRAME:
 				setFrame(FRAME_EDEFAULT);
 				return;
+			case EntityPackage.DOMAIN__ROUTE:
+				setRoute(ROUTE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -151,6 +203,8 @@ public class DomainImpl extends EntityImpl implements Domain {
 		switch (featureID) {
 			case EntityPackage.DOMAIN__FRAME:
 				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
+			case EntityPackage.DOMAIN__ROUTE:
+				return ROUTE_EDEFAULT == null ? route != null : !ROUTE_EDEFAULT.equals(route);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -167,6 +221,8 @@ public class DomainImpl extends EntityImpl implements Domain {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (frame: ");
 		result.append(frame);
+		result.append(", route: ");
+		result.append(route);
 		result.append(')');
 		return result.toString();
 	}

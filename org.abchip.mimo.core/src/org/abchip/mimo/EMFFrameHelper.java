@@ -19,32 +19,28 @@ import java.util.Map.Entry;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Descriptor;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameHelper {
 
 	private static Map<String, Frame<?>> frames = null;
 
 	protected static Map<String, Frame<?>> getFrames() {
-		
-		if(frames == null) {
+
+		if (frames == null) {
 			synchronized (EMFFrameHelper.class) {
-				if(frames == null) {
+				if (frames == null) {
 					loadFrames();
 				}
 			}
 		}
-		
+
 		return frames;
 	}
-	
+
 	public static String getPackageURI(Class<? extends Entity> klass) {
 
 		Package _package = null;
@@ -70,11 +66,11 @@ public class EMFFrameHelper {
 		EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(getPackageURI(klass));
 		return ePackage;
 	}
-	
+
 	private static synchronized void loadFrames() {
-		
+
 		frames = new HashMap<String, Frame<?>>();
-		
+
 		for (Entry<?, ?> entry : EPackage.Registry.INSTANCE.entrySet()) {
 
 			EPackage ePackage = null;
@@ -83,23 +79,6 @@ public class EMFFrameHelper {
 				ePackage = descriptor.getEPackage();
 			} else
 				ePackage = (EPackage) entry.getValue();
-
-			EAnnotation eAnnotation = ePackage.getEAnnotation(EntityPackage.eNS_URI);
-			if (eAnnotation != null) {
-				EObject eObject = EcoreUtil.create((EClass) eAnnotation.getReferences().get(0));
-
-				for (String key : eAnnotation.getDetails().keySet()) {
-					EStructuralFeature dataDefFeature = eObject.eClass().getEStructuralFeature(key);
-
-					if (dataDefFeature == null)
-						continue;
-
-					if (dataDefFeature.getDefaultValue() instanceof Number)
-						eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
-					else
-						eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
-				}
-			}
 
 			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
@@ -110,7 +89,7 @@ public class EMFFrameHelper {
 				}
 			}
 		}
-		
+
 		Collections.unmodifiableMap(frames);
 	}
 }
