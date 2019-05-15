@@ -14,6 +14,7 @@ package org.abchip.mimo;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityFactory;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.SlotImpl;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -47,32 +48,35 @@ public class EMFSlotAdapter extends SlotImpl {
 
 		this.cardinality = new EMFCardinalityAdapter(element);
 
-		if(element instanceof EAttribute)
-			this.key = ((EAttribute)element).isID();
-		
-		EAnnotation eAnnotation = element.getEAnnotation(Slot.NS_PREFIX_SLOT);
+		if (element instanceof EAttribute)
+			this.key = ((EAttribute) element).isID();
 
-		if (eAnnotation != null && !eAnnotation.getReferences().isEmpty()) {
-			EObject eObject = EcoreUtil.create((EClass) eAnnotation.getReferences().get(0));
+		EAnnotation eAnnotation = element.getEAnnotation(Slot.NS_PREFIX_SLOT);
+		if (eAnnotation != null) {
+			for (String key : eAnnotation.getDetails().keySet()) {
+				if (key.equals("derived"))
+					this.derived = true;
+				else if (key.equals("key"))
+					this.key = true;
+			}
+		}
+
+		eAnnotation = element.getEAnnotation(Slot.NS_PREFIX_DOMAIN);
+		if (eAnnotation != null) {
+			EObject eObject = EcoreUtil.create(EntityPackage.eINSTANCE.getDomain());
 
 			for (String key : eAnnotation.getDetails().keySet()) {
 
 				EStructuralFeature dataDefFeature = eObject.eClass().getEStructuralFeature(key);
-				if (dataDefFeature != null) {
-					if (dataDefFeature.getDefaultValue() instanceof Number)
-						eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
-					else
+				if (dataDefFeature == null) 
+					continue;
+				if (dataDefFeature.getDefaultValue() instanceof Number)
+					eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
+				else
 						eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
-				} else {
-					if (key.equals("derived"))
-						this.derived = true;
-					else if (key.equals("key"))
-						this.key = true;
-				}
 			}
 
-			if (eObject instanceof Domain)
-				this.domain = (Domain) eObject;
+			this.domain = (Domain) eObject;
 		}
 
 		if (element instanceof EStructuralFeature) {

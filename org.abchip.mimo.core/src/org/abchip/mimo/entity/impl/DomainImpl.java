@@ -134,19 +134,6 @@ public class DomainImpl extends EntityImpl implements Domain {
 	 * @generated
 	 */
 	@Override
-	public void setRoute(String newRoute) {
-		String oldRoute = route;
-		route = newRoute;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.DOMAIN__ROUTE, oldRoute, route));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EntityPackage.DOMAIN__FRAME:
@@ -168,9 +155,6 @@ public class DomainImpl extends EntityImpl implements Domain {
 			case EntityPackage.DOMAIN__FRAME:
 				setFrame((String)newValue);
 				return;
-			case EntityPackage.DOMAIN__ROUTE:
-				setRoute((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -185,9 +169,6 @@ public class DomainImpl extends EntityImpl implements Domain {
 		switch (featureID) {
 			case EntityPackage.DOMAIN__FRAME:
 				setFrame(FRAME_EDEFAULT);
-				return;
-			case EntityPackage.DOMAIN__ROUTE:
-				setRoute(ROUTE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);

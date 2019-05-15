@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
@@ -44,16 +43,17 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 		this.eClass = eClass;
 
 		this.name = this.eClass.getName();
-
+		
 		this.abstract_ = eClass.isAbstract();
 
 		for (Frame<?> superFrame : getSuperFrames())
 			getSuperNames().add(superFrame.getName());
 
 		EAnnotation eTextAnnotation = eClass.getEAnnotation(Frame.NS_PREFIX_FRAME);
-		if (eTextAnnotation != null && eTextAnnotation.getReferences().contains(EntityPackage.eINSTANCE.getTextable())) {
+		if (eTextAnnotation != null) {
 			String formula = eTextAnnotation.getDetails().get("formula");
-			this.textFormula = formula;
+			if(formula != null)
+				this.textFormula = formula;
 		}
 
 		// load features

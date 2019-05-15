@@ -34,6 +34,7 @@ package org.abchip.mimo.entity;
 public interface Slot extends EntityNameable {
 
 	public final static String NS_PREFIX_SLOT = EntityPackage.eNS_PREFIX + "-slot";
+	public final static String NS_PREFIX_DOMAIN = EntityPackage.eNS_PREFIX + "-domain";
 	
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

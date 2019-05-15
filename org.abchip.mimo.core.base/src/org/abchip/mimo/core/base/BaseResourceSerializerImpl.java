@@ -23,27 +23,13 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.ResourceSerializerImpl;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.emfjson.jackson.annotations.EcoreTypeInfo;
-import org.emfjson.jackson.databind.EMFContext;
-import org.emfjson.jackson.databind.deser.ReferenceEntry;
-import org.emfjson.jackson.module.EMFModule;
-import org.emfjson.jackson.resource.JsonResource;
 import org.emfjson.jackson.resource.JsonResourceFactory;
-import org.emfjson.jackson.utils.ValueWriter;
 
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
@@ -57,39 +43,6 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 
 		switch (serializationType) {
 		case JSON:
-			ObjectMapper objectMapper = new ObjectMapper();
-			EMFModule module = new EMFModule();
-			module.setReferenceSerializer(new JsonSerializer<EObject>() {
-				@Override
-				public void serialize(EObject v, JsonGenerator g, SerializerProvider s) throws IOException {
-					g.writeString(((JsonResource) v.eResource()).getID(v));
-				}
-			});
-			module.setReferenceDeserializer(new JsonDeserializer<ReferenceEntry>() {
-				@Override
-				public ReferenceEntry deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException {
-					final EObject parent = EMFContext.getParent(ctxt);
-					final EReference reference = EMFContext.getReference(ctxt);
-
-					if (parser.getCurrentToken() == JsonToken.FIELD_NAME) {
-						parser.nextToken();
-					}
-
-					return new ReferenceEntry.Base(parent, reference, parser.getText());
-				}
-			});
-			if (frame.getEntityClass().equals(Frame.class)) {
-				// module.addSerializer(new EntitySerializer<E>(frame.getEntityClass()));
-				
-				module.setTypeInfo(new EcoreTypeInfo("eClass", new ValueWriter<EClass, String>() {
-					@Override
-					public String writeValue(EClass value, SerializerProvider context) {
-						return value.getName();
-					}
-				}));
-			}
-
-			objectMapper.registerModule(module);
 			this.resource = new JsonResourceFactory().createResource(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
 		case XMI:

@@ -69,7 +69,6 @@ public class LookupSchemaServlet extends BaseServlet {
 
 			SchemaColumn currentColumn = null;
 			for (Slot slot : frame.getSlots()) {
-
 				SchemaColumn column = buildColumn(slot);
 
 				// field id
@@ -142,14 +141,14 @@ public class LookupSchemaServlet extends BaseServlet {
 			return;
 
 		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextRoot, UiFrameSetup.class, ResourceScope.CTX);
-		
+
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
-		if(frame == null)
+		if (frame == null)
 			return;
-		
+
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
 		Lists.qINSTANCE.addFirst(frameNames, domain.getFrame());
-		
+
 		for (String domainName : frameNames) {
 			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);
 			if (frameSetup == null)
