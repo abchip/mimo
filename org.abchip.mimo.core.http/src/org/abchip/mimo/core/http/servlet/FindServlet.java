@@ -42,42 +42,59 @@ public class FindServlet extends BaseServlet {
 	private FrameManager frameManger;
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(request, response);
 	}
-	
+
 	private <E extends EntityNameable> void _execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
 		String nrElem = request.getParameter("nrElem");
-		
+		String[] keys = request.getParameterValues("keys");
+
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
-		if (frame == null) 
+		if (frame == null)
 			return;
-		
+
+		if (keys != null) {
+			StringBuffer sb = new StringBuffer();
+			int i = 0;
+			for (String slotKey : frame.getKeys()) {
+				if (keys.length == i)
+					break;
+
+				sb.append(slotKey + " = \"" + keys[i] + "\"");
+				i++;
+			}
+
+			if (filter != null)
+				filter += " and " + sb.toString();
+			else
+				filter = sb.toString();
+		}
+
 		ResourceSerializer<E> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, frame, SerializationType.JSON);
-		
+
 		EntityReader<E> entityReader = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX);
-		
-		EntityIterator<E> entityIterator = null;		
-		if(nrElem == null)
+
+		EntityIterator<E> entityIterator = null;
+		if (nrElem == null)
 			entityIterator = entityReader.find(filter, -1);
 		else
 			entityIterator = entityReader.find(filter, Integer.parseInt(nrElem));
 
-		
 		List<E> entityList = new ArrayList<E>();
-		
-		for(E entity: entityIterator) 		
+
+		for (E entity : entityIterator)
 			entityList.add(entity);
-		
+
 		resourceSerializer.addAll(entityList);
-			
+
 		resourceSerializer.save(response.getOutputStream());
 		response.flushBuffer();
-		resourceSerializer.clear();	
+		resourceSerializer.clear();
 	}
 }
