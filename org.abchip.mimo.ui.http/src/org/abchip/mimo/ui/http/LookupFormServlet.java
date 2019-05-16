@@ -62,6 +62,7 @@ public class LookupFormServlet extends BaseServlet {
 
 			Frame<?> frame = frameManager.getFrame(frameName);
 			FormField currentField = null;
+			FormField currentKey = null;
 			for (Slot slot : frame.getSlots()) {
 
 				// derived exclusion
@@ -70,9 +71,16 @@ public class LookupFormServlet extends BaseServlet {
 
 				FormField field = buildFormField(slot);
 				if (slot.isKey()) {
-					if (currentField == null)
+					
+					if (currentKey == null)
+						Lists.qINSTANCE.addFirst(form.getFields(), field);
+					else
+						Lists.qINSTANCE.addAfter(form.getFields(), currentKey, field);
+
+					if (currentField == null || currentField.equals(currentKey))
 						currentField = field;
-					Lists.qINSTANCE.addFirst(form.getFields(), field);
+
+					currentKey = field;
 				} else if (slot.getName().startsWith("created"))
 					Lists.qINSTANCE.addLast(form.getFields(), field);
 				else if (slot.getName().startsWith("lastUpdated"))

@@ -68,22 +68,22 @@ public class LookupSchemaServlet extends BaseServlet {
 			schema.setName("prototype");
 
 			SchemaColumn currentColumn = null;
+			SchemaColumn currentKey = null;
 			for (Slot slot : frame.getSlots()) {
 				SchemaColumn column = buildColumn(slot);
 
 				// field id
 				if (slot.isKey()) {
 
-					// name
-					Lists.qINSTANCE.addFirst(schema.getColumns(), column);
-					if (currentColumn == null)
+					if (currentKey == null)
+						Lists.qINSTANCE.addFirst(schema.getColumns(), column);
+					else
+						Lists.qINSTANCE.addAfter(schema.getColumns(), currentKey, column);
+
+					if (currentColumn == null || currentColumn.equals(currentKey))
 						currentColumn = column;
 
-					// id
-					// SchemaColumn columnId = buildColumn(slot);;
-					// columnId.setId("id");
-					// Lists.qINSTANCE.addFirst(schema.getColumns(), columnId);
-
+					currentKey = column;
 				} else if (slot.getName().startsWith("created"))
 					Lists.qINSTANCE.addLast(schema.getColumns(), column);
 				else if (slot.getName().startsWith("lastUpdated"))
@@ -121,7 +121,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		}
 		column.setHeader(Strings.qINSTANCE.firstToUpper(header.toString()));
 		column.setAdjust(true);
-
+		column.setLeftSplit(slot.isKey());
 		if (slot.getDomain() != null)
 			column.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 

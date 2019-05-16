@@ -21,6 +21,7 @@ import org.abchip.mimo.entity.Entity;
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getHeader <em>Header</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getId <em>Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn()
@@ -53,6 +54,32 @@ public interface SchemaColumn extends Entity {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Left Split</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Left Split</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Left Split</em>' attribute.
+	 * @see #setLeftSplit(boolean)
+	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_LeftSplit()
+	 * @model
+	 * @generated
+	 */
+	boolean isLeftSplit();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Left Split</em>' attribute.
+	 * @see #isLeftSplit()
+	 * @generated
+	 */
+	void setLeftSplit(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.

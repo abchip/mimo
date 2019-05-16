@@ -97,6 +97,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/header"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/id"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/leftSplit"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Toolbar" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"

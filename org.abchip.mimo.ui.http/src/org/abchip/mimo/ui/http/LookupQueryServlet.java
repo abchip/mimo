@@ -55,12 +55,20 @@ public class LookupQueryServlet extends BaseServlet {
 
 			Frame<?> frame = frameManager.getFrame(frameName);
 			QueryField currentField = null;
+			QueryField currentKey = null;
 			for (Slot slot : frame.getSlots()) {
 				QueryField field = buildField(slot);
 				if (slot.isKey()) {
-					if (currentField == null)
+
+					if (currentKey == null)
+						Lists.qINSTANCE.addFirst(query.getFields(), field);
+					else
+						Lists.qINSTANCE.addAfter(query.getFields(), currentKey, field);
+
+					if (currentField == null || currentField.equals(currentKey))
 						currentField = field;
-					Lists.qINSTANCE.addFirst(query.getFields(), field);
+
+					currentKey = field;
 				} else if (slot.getName().startsWith("created"))
 					Lists.qINSTANCE.addLast(query.getFields(), field);
 				else if (slot.getName().startsWith("lastUpdated"))

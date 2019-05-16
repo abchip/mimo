@@ -194,6 +194,16 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSchemaColumn_LeftSplit() {
+		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getSchemaColumn_Domain() {
 		return (EReference)schemaColumnEClass.getEStructuralFeatures().get(2);
 	}
@@ -278,6 +288,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__HEADER);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ICON);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ID);
+		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__LEFT_SPLIT);
 	}
 
 	/**
@@ -326,6 +337,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		initEAttribute(getSchemaColumn_Header(), ecorePackage.getEString(), "header", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Id(), ecorePackage.getEString(), "id", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchemaColumn_LeftSplit(), ecorePackage.getEBoolean(), "leftSplit", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent

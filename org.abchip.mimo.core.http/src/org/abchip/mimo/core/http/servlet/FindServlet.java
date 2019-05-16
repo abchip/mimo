@@ -30,6 +30,7 @@ import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.util.Strings;
 
 public class FindServlet extends BaseServlet {
@@ -52,6 +53,7 @@ public class FindServlet extends BaseServlet {
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
 		String nrElem = request.getParameter("nrElem");
+
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
@@ -66,12 +68,17 @@ public class FindServlet extends BaseServlet {
 				if (keys.length == i)
 					break;
 
-				sb.append(slotKey + " = \"" + keys[i] + "\"");
+				Slot slot = frame.getSlot(slotKey);
+				String dataClassName = slot.getDataClassName();
+				if(dataClassName != null && dataClassName.equals("java.lang.String"))
+					sb.append(slotKey + " = \"" + keys[i] + "\"");
+				else
+					sb.append(slotKey + " = " + keys[i] + "");
 				i++;
 			}
 
 			if (filter != null)
-				filter += " and " + sb.toString();
+				filter = sb.toString() + " and " + filter;
 			else
 				filter = sb.toString();
 		}
