@@ -21,6 +21,8 @@ import org.abchip.mimo.entity.Entity;
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#isDisabled <em>Disabled</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.form.FormPackage#getFormField()
@@ -79,6 +81,58 @@ public interface FormField extends Entity {
 	 * @generated
 	 */
 	void setView(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Top Split</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Top Split</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Top Split</em>' attribute.
+	 * @see #setTopSplit(boolean)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_TopSplit()
+	 * @model
+	 * @generated
+	 */
+	boolean isTopSplit();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Top Split</em>' attribute.
+	 * @see #isTopSplit()
+	 * @generated
+	 */
+	void setTopSplit(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Disabled</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Disabled</em>' attribute.
+	 * @see #setDisabled(boolean)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Disabled()
+	 * @model
+	 * @generated
+	 */
+	boolean isDisabled();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#isDisabled <em>Disabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Disabled</em>' attribute.
+	 * @see #isDisabled()
+	 * @generated
+	 */
+	void setDisabled(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Label</b></em>' attribute.

@@ -50,6 +50,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/label"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/view"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/topSplit"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/disabled"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"

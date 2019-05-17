@@ -160,13 +160,31 @@ public interface FormPackage extends EPackage {
 	int FORM_FIELD__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Top Split</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__TOP_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__DISABLED = EntityPackage.ENTITY_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 
 	/**
@@ -232,6 +250,28 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFormField_View();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Top Split</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#isTopSplit()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_TopSplit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#isDisabled <em>Disabled</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Disabled</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#isDisabled()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_Disabled();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getLabel <em>Label</em>}'.
@@ -350,6 +390,22 @@ public interface FormPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FORM_FIELD__VIEW = eINSTANCE.getFormField_View();
+
+		/**
+		 * The meta object literal for the '<em><b>Top Split</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__TOP_SPLIT = eINSTANCE.getFormField_TopSplit();
+
+		/**
+		 * The meta object literal for the '<em><b>Disabled</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__DISABLED = eINSTANCE.getFormField_Disabled();
 
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.

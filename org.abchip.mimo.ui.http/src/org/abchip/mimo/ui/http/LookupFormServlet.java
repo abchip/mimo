@@ -119,6 +119,8 @@ public class LookupFormServlet extends BaseServlet {
 		}
 		field.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
 
+		field.setTopSplit(slot.isKey());
+		
 		if (slot.getDomain() != null) {
 			field.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 			field.setView("combo");

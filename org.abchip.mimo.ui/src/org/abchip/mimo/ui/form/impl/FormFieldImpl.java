@@ -31,6 +31,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isTopSplit <em>Top Split</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isDisabled <em>Disabled</em>}</li>
  * </ul>
  *
  * @generated
@@ -152,6 +154,46 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	protected String view = VIEW_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isTopSplit() <em>Top Split</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTopSplit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TOP_SPLIT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isTopSplit() <em>Top Split</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTopSplit()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean topSplit = TOP_SPLIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisabled()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISABLED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisabled()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean disabled = DISABLED_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -214,6 +256,52 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		view = newView;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__VIEW, oldView, view));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isTopSplit() {
+		return topSplit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTopSplit(boolean newTopSplit) {
+		boolean oldTopSplit = topSplit;
+		topSplit = newTopSplit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__TOP_SPLIT, oldTopSplit, topSplit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isDisabled() {
+		return disabled;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDisabled(boolean newDisabled) {
+		boolean oldDisabled = disabled;
+		disabled = newDisabled;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__DISABLED, oldDisabled, disabled));
 	}
 
 	/**
@@ -364,6 +452,10 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return getName();
 			case FormPackage.FORM_FIELD__VIEW:
 				return getView();
+			case FormPackage.FORM_FIELD__TOP_SPLIT:
+				return isTopSplit();
+			case FormPackage.FORM_FIELD__DISABLED:
+				return isDisabled();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -393,6 +485,12 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return;
 			case FormPackage.FORM_FIELD__VIEW:
 				setView((String)newValue);
+				return;
+			case FormPackage.FORM_FIELD__TOP_SPLIT:
+				setTopSplit((Boolean)newValue);
+				return;
+			case FormPackage.FORM_FIELD__DISABLED:
+				setDisabled((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -424,6 +522,12 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__VIEW:
 				setView(VIEW_EDEFAULT);
 				return;
+			case FormPackage.FORM_FIELD__TOP_SPLIT:
+				setTopSplit(TOP_SPLIT_EDEFAULT);
+				return;
+			case FormPackage.FORM_FIELD__DISABLED:
+				setDisabled(DISABLED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -448,6 +552,10 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case FormPackage.FORM_FIELD__VIEW:
 				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
+			case FormPackage.FORM_FIELD__TOP_SPLIT:
+				return topSplit != TOP_SPLIT_EDEFAULT;
+			case FormPackage.FORM_FIELD__DISABLED:
+				return disabled != DISABLED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -472,6 +580,10 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		result.append(name);
 		result.append(", view: ");
 		result.append(view);
+		result.append(", topSplit: ");
+		result.append(topSplit);
+		result.append(", disabled: ");
+		result.append(disabled);
 		result.append(')');
 		return result.toString();
 	}

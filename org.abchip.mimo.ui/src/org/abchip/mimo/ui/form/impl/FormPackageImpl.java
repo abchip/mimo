@@ -211,6 +211,26 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFormField_TopSplit() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFormField_Disabled() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getFormField_Label() {
 		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(3);
 	}
@@ -285,6 +305,8 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		createEAttribute(formFieldEClass, FORM_FIELD__LABEL);
 		createEAttribute(formFieldEClass, FORM_FIELD__NAME);
 		createEAttribute(formFieldEClass, FORM_FIELD__VIEW);
+		createEAttribute(formFieldEClass, FORM_FIELD__TOP_SPLIT);
+		createEAttribute(formFieldEClass, FORM_FIELD__DISABLED);
 	}
 
 	/**
@@ -333,6 +355,8 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		initEAttribute(getFormField_Label(), ecorePackage.getEString(), "label", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Name(), ecorePackage.getEString(), "name", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_View(), ecorePackage.getEString(), "view", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_TopSplit(), ecorePackage.getEBoolean(), "topSplit", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent
