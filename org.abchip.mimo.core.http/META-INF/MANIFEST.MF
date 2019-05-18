@@ -14,7 +14,11 @@ Require-Bundle: org.abchip.mimo.core,
  org.eclipse.equinox.http.registry,
  org.eclipse.equinox.http.jetty,
  org.eclipse.equinox.http.servlet,
- org.apache.commons.io
+ org.apache.commons.io,
+ org.emfjson.jackson,
+ com.fasterxml.jackson.core.jackson-annotations,
+ com.fasterxml.jackson.core.jackson-core,
+ com.fasterxml.jackson.core.jackson-databind
 Import-Package: javax.servlet,
  javax.servlet.http,
  org.osgi.framework,
