@@ -25,7 +25,6 @@ import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.util.Strings;
@@ -65,8 +64,8 @@ public class SaveServlet extends BaseServlet {
 		E entity = null;
 		entity = resourceSerializer.get();
 
-		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextRoot, frame, ResourceScope.ROOT);
+		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextRoot, frame, "data");
 
-		entityWriter.save(entity);
+		entityWriter.save(entity, true);
 	}
 }

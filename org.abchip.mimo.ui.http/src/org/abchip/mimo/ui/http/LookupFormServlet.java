@@ -61,6 +61,8 @@ public class LookupFormServlet extends BaseServlet {
 			form.setName("prototype");
 
 			Frame<?> frame = frameManager.getFrame(frameName);
+			if (frame == null)
+				"".toString();
 			FormField currentField = null;
 			FormField currentKey = null;
 			for (Slot slot : frame.getSlots()) {
@@ -71,7 +73,7 @@ public class LookupFormServlet extends BaseServlet {
 
 				FormField field = buildFormField(slot);
 				if (slot.isKey()) {
-					
+
 					if (currentKey == null)
 						Lists.qINSTANCE.addFirst(form.getFields(), field);
 					else
@@ -120,7 +122,7 @@ public class LookupFormServlet extends BaseServlet {
 		field.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
 
 		field.setTopSplit(slot.isKey());
-		
+
 		if (slot.getDomain() != null) {
 			field.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 			field.setView("combo");
