@@ -21,6 +21,8 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Descriptor;
 
@@ -86,6 +88,16 @@ public class EMFFrameHelper {
 					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
 						frames.put(eClass.getName(), new EMFFrameAdapter<>(eClass));
 					}
+				}
+				else if (eClassifier instanceof EEnum) {
+					EEnum eEnum = (EEnum) eClassifier;
+					frames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
+				}
+				else if (eClassifier instanceof EDataType) {
+					// TODO
+				}
+				else {
+					System.out.println(eClassifier.getName());
 				}
 			}
 		}

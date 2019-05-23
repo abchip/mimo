@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.impl.SlotImpl;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -46,6 +47,9 @@ public class EMFSlotAdapter extends SlotImpl {
 		else
 			this.name = element.getName();
 
+		if (this.name.equals("entityCondition"))
+			"".toString();
+
 		this.cardinality = new EMFCardinalityAdapter(element);
 
 		if (element instanceof EAttribute)
@@ -68,12 +72,12 @@ public class EMFSlotAdapter extends SlotImpl {
 			for (String key : eAnnotation.getDetails().keySet()) {
 
 				EStructuralFeature dataDefFeature = eObject.eClass().getEStructuralFeature(key);
-				if (dataDefFeature == null) 
+				if (dataDefFeature == null)
 					continue;
 				if (dataDefFeature.getDefaultValue() instanceof Number)
 					eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
 				else
-						eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
+					eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
 			}
 
 			this.domain = (Domain) eObject;
@@ -82,15 +86,21 @@ public class EMFSlotAdapter extends SlotImpl {
 		if (element instanceof EStructuralFeature) {
 			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);
 			this.defaultValue = eStructuralFeature.getDefaultValueLiteral();
+
+			if (element instanceof EReference) {
+				if (this.domain == null)
+					this.domain = EntityFactory.eINSTANCE.createDomain();
+				if (this.getDomain().getFrame() == null)
+					this.getDomain().setFrame(eStructuralFeature.getEType().getName());
+			}
+			else if(eStructuralFeature.getEType() instanceof EEnum) {
+				if (this.domain == null)
+					this.domain = EntityFactory.eINSTANCE.createDomain();
+				if (this.getDomain().getFrame() == null)
+					this.getDomain().setFrame(eStructuralFeature.getEType().getName());
+			}
 		}
 
-		if (element instanceof EReference) {
-			EReference eReference = (EReference) element;
-			if (this.domain == null)
-				this.domain = EntityFactory.eINSTANCE.createDomain();
-			if (this.getDomain().getFrame() == null)
-				this.getDomain().setFrame(eReference.getEType().getName());
-		}
 	}
 
 	@Override
