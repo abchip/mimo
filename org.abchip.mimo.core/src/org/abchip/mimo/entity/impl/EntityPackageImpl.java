@@ -18,8 +18,10 @@ import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Default;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityIterator;
+import org.abchip.mimo.entity.EntityName;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Facet;
@@ -100,7 +102,21 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass entityEnumEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass entityIteratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityNameEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -438,8 +454,58 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEntityEnum() {
+		return entityEnumEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntityEnum_Name() {
+		return (EAttribute)entityEnumEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntityIterator() {
 		return entityIteratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEntityName() {
+		return entityNameEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntityName_Frame() {
+		return (EAttribute)entityNameEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntityName_Name() {
+		return (EAttribute)entityNameEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -885,7 +951,14 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		entityEClass = createEClass(ENTITY);
 
+		entityEnumEClass = createEClass(ENTITY_ENUM);
+		createEAttribute(entityEnumEClass, ENTITY_ENUM__NAME);
+
 		entityIteratorEClass = createEClass(ENTITY_ITERATOR);
+
+		entityNameEClass = createEClass(ENTITY_NAME);
+		createEAttribute(entityNameEClass, ENTITY_NAME__FRAME);
+		createEAttribute(entityNameEClass, ENTITY_NAME__NAME);
 
 		entityNameableEClass = createEClass(ENTITY_NAMEABLE);
 
@@ -1006,6 +1079,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		cardinalityEClass.getESuperTypes().add(this.getEntity());
 		defaultEClass.getESuperTypes().add(this.getEntity());
 		domainEClass.getESuperTypes().add(this.getEntity());
+		entityEnumEClass.getESuperTypes().add(this.getEntityNameable());
 		g1 = createEGenericType(theUtilPackage.getJavaIterator());
 		EGenericType g2 = createEGenericType(entityIteratorEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -1016,6 +1090,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theUtilPackage.getJavaCloseable());
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
+		entityNameEClass.getESuperTypes().add(this.getEntityNameable());
 		entityNameableEClass.getESuperTypes().add(this.getEntity());
 		entityNameableEClass.getESuperTypes().add(this.getNameable());
 		g1 = createEGenericType(theContextPackage.getRegistry());
@@ -1063,6 +1138,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		initEClass(entityEnumEClass, EntityEnum.class, "EntityEnum", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntityEnum_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(entityIteratorEClass, EntityIterator.class, "EntityIterator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(entityIteratorEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1074,6 +1152,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEOperation(op, g1);
 
 		addEOperation(entityIteratorEClass, null, "remove", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(entityNameEClass, EntityName.class, "EntityName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntityName_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, EntityName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityName_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityNameableEClass, EntityNameable.class, "EntityNameable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1699,6 +1781,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.XMI);
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.JSON);
+
+		// Create annotations
+		// mimo-ent-domain
+		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-domain</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentdomainAnnotations() {
+		String source = "mimo-ent-domain";
+		addAnnotation
+		  (getEntityName_Frame(),
+		   source,
+		   new String[] {
+			   "frame", "Frame"
+		   });
 	}
 
 } //EntityPackageImpl

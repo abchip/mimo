@@ -9,7 +9,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityCondition" lowerBound="1"
-        eType="#//EntityCondition" defaultValueLiteral="Selected"/>
+        eType="#//EntityCondition"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityEvent" lowerBound="1"
         eType="#//EntityEvent"/>
   </eClassifiers>
@@ -19,8 +19,26 @@
     <eLiterals name="Script" value="30" literal="SCP"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EntityEvent">
-    <eLiterals name="Create" value="10" literal="CRT"/>
+    <eLiterals name="All" value="10" literal="ALL"/>
+    <eLiterals name="Create" value="20" literal="CRT"/>
     <eLiterals name="Update" value="20" literal="UPD"/>
     <eLiterals name="Delete" value="30" literal="DLT"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" eType="#//MessageBody"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" lowerBound="1" eType="#//EntityEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sender" lowerBound="1"
+        eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityName"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
+        eType="#//MessageStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageStatus">
+    <eLiterals name="Trasmitted" value="10" literal="TRS"/>
+    <eLiterals name="Error" value="20" literal="ERR"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageBody" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
 </ecore:EPackage>

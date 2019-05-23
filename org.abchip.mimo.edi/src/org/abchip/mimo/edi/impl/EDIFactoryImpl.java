@@ -63,6 +63,8 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case EDIPackage.EDI_FRAME_SETUP: return (EObject)createEdiFrameSetup();
+			case EDIPackage.MESSAGE: return (EObject)createMessage();
+			case EDIPackage.MESSAGE_BODY: return (EObject)createMessageBody();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,6 +82,8 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 				return createEntityConditionFromString(eDataType, initialValue);
 			case EDIPackage.ENTITY_EVENT:
 				return createEntityEventFromString(eDataType, initialValue);
+			case EDIPackage.MESSAGE_STATUS:
+				return createMessageStatusFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -97,6 +101,8 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 				return convertEntityConditionToString(eDataType, instanceValue);
 			case EDIPackage.ENTITY_EVENT:
 				return convertEntityEventToString(eDataType, instanceValue);
+			case EDIPackage.MESSAGE_STATUS:
+				return convertMessageStatusToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -111,6 +117,28 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	public EdiFrameSetup createEdiFrameSetup() {
 		EdiFrameSetupImpl ediFrameSetup = new EdiFrameSetupImpl();
 		return ediFrameSetup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Message createMessage() {
+		MessageImpl message = new MessageImpl();
+		return message;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MessageBody createMessageBody() {
+		MessageBodyImpl messageBody = new MessageBodyImpl();
+		return messageBody;
 	}
 
 	/**
@@ -150,6 +178,26 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	 * @generated
 	 */
 	public String convertEntityEventToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageStatus createMessageStatusFromString(EDataType eDataType, String initialValue) {
+		MessageStatus result = MessageStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMessageStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

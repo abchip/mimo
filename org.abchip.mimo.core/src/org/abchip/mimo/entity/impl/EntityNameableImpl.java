@@ -59,13 +59,12 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getResource() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO
+		return "data";
 	}
 
 	/**

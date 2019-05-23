@@ -17,14 +17,27 @@
       <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityCondition/Script"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//EntityEvent">
+      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityEvent/All"/>
       <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityEvent/Create"/>
       <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityEvent/Update"/>
       <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityEvent/Delete"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//MessageStatus">
+      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//MessageStatus/Trasmitted"/>
+      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//MessageStatus/Error"/>
     </genEnums>
     <genClasses ecoreClass="edi.ecore#//EdiFrameSetup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//EdiFrameSetup/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//EdiFrameSetup/entityCondition"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//EdiFrameSetup/entityEvent"/>
     </genClasses>
+    <genClasses ecoreClass="edi.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//Message/messageId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi.ecore#//Message/body"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//Message/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi.ecore#//Message/sender"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//Message/status"/>
+    </genClasses>
+    <genClasses ecoreClass="edi.ecore#//MessageBody"/>
   </genPackages>
 </genmodel:GenModel>

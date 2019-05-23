@@ -84,7 +84,7 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EntityEvent ENTITY_EVENT_EDEFAULT = EntityEvent.CREATE;
+	protected static final EntityEvent ENTITY_EVENT_EDEFAULT = EntityEvent.ALL;
 
 	/**
 	 * The cached value of the '{@link #getEntityEvent() <em>Entity Event</em>}' attribute.

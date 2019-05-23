@@ -36,6 +36,24 @@ public interface EDIFactory extends EFactory {
 	EdiFrameSetup createEdiFrameSetup();
 
 	/**
+	 * Returns a new object of class '<em>Message</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message</em>'.
+	 * @generated
+	 */
+	Message createMessage();
+
+	/**
+	 * Returns a new object of class '<em>Message Body</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Body</em>'.
+	 * @generated
+	 */
+	MessageBody createMessageBody();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -430,12 +430,19 @@
       <genClasses ecoreClass="mimo.ecore#//entity/Entity">
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityEnum">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityEnum/name"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIterator">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIterator/E"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/close"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/hasNext"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/next"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/remove"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//entity/EntityName">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityName/frame"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityName/name"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/EntityNameable">
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityNameable/getResource"/>

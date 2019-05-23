@@ -47,9 +47,6 @@ public class EMFSlotAdapter extends SlotImpl {
 		else
 			this.name = element.getName();
 
-		if (this.name.equals("entityCondition"))
-			"".toString();
-
 		this.cardinality = new EMFCardinalityAdapter(element);
 
 		if (element instanceof EAttribute)

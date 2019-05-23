@@ -612,6 +612,16 @@
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="#//util/JavaCloseable"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityName" eSuperTypes="#//entity/EntityNameable">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-domain">
+          <details key="frame" value="Frame"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityNameable" abstract="true" eSuperTypes="#//entity/Entity #//entity/Nameable">
       <eOperations name="getResource" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getURI" lowerBound="1" eType="#//util/JavaURI"/>

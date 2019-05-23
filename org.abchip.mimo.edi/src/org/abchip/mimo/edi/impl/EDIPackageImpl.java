@@ -15,6 +15,9 @@ import org.abchip.mimo.edi.EdiFrameSetup;
 
 import org.abchip.mimo.edi.EntityCondition;
 import org.abchip.mimo.edi.EntityEvent;
+import org.abchip.mimo.edi.Message;
+import org.abchip.mimo.edi.MessageBody;
+import org.abchip.mimo.edi.MessageStatus;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.eclipse.emf.common.util.URI;
@@ -23,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -44,6 +48,20 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass messageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass messageBodyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum entityConditionEEnum = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -51,6 +69,13 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	private EEnum entityEventEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum messageStatusEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -162,6 +187,76 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getMessage() {
+		return messageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessage_MessageId() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessage_Body() {
+		return (EReference)messageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessage_Event() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessage_Sender() {
+		return (EReference)messageEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessage_Status() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMessageBody() {
+		return messageBodyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getEntityCondition() {
 		return entityConditionEEnum;
 	}
@@ -174,6 +269,16 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	@Override
 	public EEnum getEntityEvent() {
 		return entityEventEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getMessageStatus() {
+		return messageStatusEEnum;
 	}
 
 	/**
@@ -210,9 +315,19 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_CONDITION);
 		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_EVENT);
 
+		messageEClass = createEClass(MESSAGE);
+		createEAttribute(messageEClass, MESSAGE__MESSAGE_ID);
+		createEReference(messageEClass, MESSAGE__BODY);
+		createEAttribute(messageEClass, MESSAGE__EVENT);
+		createEReference(messageEClass, MESSAGE__SENDER);
+		createEAttribute(messageEClass, MESSAGE__STATUS);
+
+		messageBodyEClass = createEClass(MESSAGE_BODY);
+
 		// Create enums
 		entityConditionEEnum = createEEnum(ENTITY_CONDITION);
 		entityEventEEnum = createEEnum(ENTITY_EVENT);
+		messageStatusEEnum = createEEnum(MESSAGE_STATUS);
 	}
 
 	/**
@@ -247,12 +362,23 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 
 		// Add supertypes to classes
 		ediFrameSetupEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		messageEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		messageBodyEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(ediFrameSetupEClass, EdiFrameSetup.class, "EdiFrameSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEdiFrameSetup_Name(), ecorePackage.getEString(), "name", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEdiFrameSetup_EntityCondition(), this.getEntityCondition(), "entityCondition", "Selected", 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdiFrameSetup_EntityCondition(), this.getEntityCondition(), "entityCondition", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdiFrameSetup_EntityEvent(), this.getEntityEvent(), "entityEvent", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMessage_MessageId(), ecorePackage.getEString(), "messageId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_Body(), this.getMessageBody(), null, "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Event(), this.getEntityEvent(), "event", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_Sender(), theEntityPackage.getEntityName(), null, "sender", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Status(), this.getMessageStatus(), "status", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messageBodyEClass, MessageBody.class, "MessageBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(entityConditionEEnum, EntityCondition.class, "EntityCondition");
@@ -261,9 +387,14 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		addEEnumLiteral(entityConditionEEnum, EntityCondition.SCRIPT);
 
 		initEEnum(entityEventEEnum, EntityEvent.class, "EntityEvent");
+		addEEnumLiteral(entityEventEEnum, EntityEvent.ALL);
 		addEEnumLiteral(entityEventEEnum, EntityEvent.CREATE);
 		addEEnumLiteral(entityEventEEnum, EntityEvent.UPDATE);
 		addEEnumLiteral(entityEventEEnum, EntityEvent.DELETE);
+
+		initEEnum(messageStatusEEnum, MessageStatus.class, "MessageStatus");
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.TRASMITTED);
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.ERROR);
 
 		// Create resource
 		createResource(eNS_URI);

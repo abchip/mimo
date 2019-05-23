@@ -57,7 +57,6 @@ public interface EdiFrameSetup extends EntityNameable {
 
 	/**
 	 * Returns the value of the '<em><b>Entity Condition</b></em>' attribute.
-	 * The default value is <code>"Selected"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.edi.EntityCondition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -69,7 +68,7 @@ public interface EdiFrameSetup extends EntityNameable {
 	 * @see org.abchip.mimo.edi.EntityCondition
 	 * @see #setEntityCondition(EntityCondition)
 	 * @see org.abchip.mimo.edi.EDIPackage#getEdiFrameSetup_EntityCondition()
-	 * @model default="Selected" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	EntityCondition getEntityCondition();
