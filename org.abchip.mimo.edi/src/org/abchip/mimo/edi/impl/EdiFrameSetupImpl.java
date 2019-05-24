@@ -9,9 +9,6 @@ package org.abchip.mimo.edi.impl;
 
 import org.abchip.mimo.edi.EDIPackage;
 import org.abchip.mimo.edi.EdiFrameSetup;
-
-import org.abchip.mimo.edi.EntityCondition;
-import org.abchip.mimo.edi.EntityEvent;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -64,7 +61,7 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EntityCondition ENTITY_CONDITION_EDEFAULT = EntityCondition.ALL;
+	protected static final String ENTITY_CONDITION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getEntityCondition() <em>Entity Condition</em>}' attribute.
@@ -74,7 +71,7 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityCondition entityCondition = ENTITY_CONDITION_EDEFAULT;
+	protected String entityCondition = ENTITY_CONDITION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEntityEvent() <em>Entity Event</em>}' attribute.
@@ -84,7 +81,7 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EntityEvent ENTITY_EVENT_EDEFAULT = EntityEvent.ALL;
+	protected static final String ENTITY_EVENT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getEntityEvent() <em>Entity Event</em>}' attribute.
@@ -94,7 +91,7 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityEvent entityEvent = ENTITY_EVENT_EDEFAULT;
+	protected String entityEvent = ENTITY_EVENT_EDEFAULT;
 
 	/**
 	 * 
@@ -149,7 +146,7 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 */
 	@Override
-	public EntityCondition getEntityCondition() {
+	public String getEntityCondition() {
 		return entityCondition;
 	}
 
@@ -159,9 +156,9 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 */
 	@Override
-	public void setEntityCondition(EntityCondition newEntityCondition) {
-		EntityCondition oldEntityCondition = entityCondition;
-		entityCondition = newEntityCondition == null ? ENTITY_CONDITION_EDEFAULT : newEntityCondition;
+	public void setEntityCondition(String newEntityCondition) {
+		String oldEntityCondition = entityCondition;
+		entityCondition = newEntityCondition;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.EDI_FRAME_SETUP__ENTITY_CONDITION, oldEntityCondition, entityCondition));
 	}
@@ -172,7 +169,7 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 */
 	@Override
-	public EntityEvent getEntityEvent() {
+	public String getEntityEvent() {
 		return entityEvent;
 	}
 
@@ -182,9 +179,9 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 */
 	@Override
-	public void setEntityEvent(EntityEvent newEntityEvent) {
-		EntityEvent oldEntityEvent = entityEvent;
-		entityEvent = newEntityEvent == null ? ENTITY_EVENT_EDEFAULT : newEntityEvent;
+	public void setEntityEvent(String newEntityEvent) {
+		String oldEntityEvent = entityEvent;
+		entityEvent = newEntityEvent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.EDI_FRAME_SETUP__ENTITY_EVENT, oldEntityEvent, entityEvent));
 	}
@@ -219,10 +216,10 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 				setName((String)newValue);
 				return;
 			case EDIPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
-				setEntityCondition((EntityCondition)newValue);
+				setEntityCondition((String)newValue);
 				return;
 			case EDIPackage.EDI_FRAME_SETUP__ENTITY_EVENT:
-				setEntityEvent((EntityEvent)newValue);
+				setEntityEvent((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -260,9 +257,9 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 			case EDIPackage.EDI_FRAME_SETUP__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EDIPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
-				return entityCondition != ENTITY_CONDITION_EDEFAULT;
+				return ENTITY_CONDITION_EDEFAULT == null ? entityCondition != null : !ENTITY_CONDITION_EDEFAULT.equals(entityCondition);
 			case EDIPackage.EDI_FRAME_SETUP__ENTITY_EVENT:
-				return entityEvent != ENTITY_EVENT_EDEFAULT;
+				return ENTITY_EVENT_EDEFAULT == null ? entityEvent != null : !ENTITY_EVENT_EDEFAULT.equals(entityEvent);
 		}
 		return super.eIsSet(featureID);
 	}

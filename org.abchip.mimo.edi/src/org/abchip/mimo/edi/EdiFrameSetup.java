@@ -40,7 +40,7 @@ public interface EdiFrameSetup extends EntityNameable {
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.edi.EDIPackage#getEdiFrameSetup_Name()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent frame='frame'"
+	 *        annotation="mimo-ent-domain frame='Frame'"
 	 * @generated
 	 */
 	String getName();
@@ -57,7 +57,6 @@ public interface EdiFrameSetup extends EntityNameable {
 
 	/**
 	 * Returns the value of the '<em><b>Entity Condition</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.abchip.mimo.edi.EntityCondition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Condition</em>' attribute isn't clear,
@@ -65,28 +64,25 @@ public interface EdiFrameSetup extends EntityNameable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Condition</em>' attribute.
-	 * @see org.abchip.mimo.edi.EntityCondition
-	 * @see #setEntityCondition(EntityCondition)
+	 * @see #setEntityCondition(String)
 	 * @see org.abchip.mimo.edi.EDIPackage#getEdiFrameSetup_EntityCondition()
 	 * @model required="true"
 	 * @generated
 	 */
-	EntityCondition getEntityCondition();
+	String getEntityCondition();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.edi.EdiFrameSetup#getEntityCondition <em>Entity Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Entity Condition</em>' attribute.
-	 * @see org.abchip.mimo.edi.EntityCondition
 	 * @see #getEntityCondition()
 	 * @generated
 	 */
-	void setEntityCondition(EntityCondition value);
+	void setEntityCondition(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Entity Event</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.abchip.mimo.edi.EntityEvent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Event</em>' attribute isn't clear,
@@ -94,23 +90,21 @@ public interface EdiFrameSetup extends EntityNameable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Event</em>' attribute.
-	 * @see org.abchip.mimo.edi.EntityEvent
-	 * @see #setEntityEvent(EntityEvent)
+	 * @see #setEntityEvent(String)
 	 * @see org.abchip.mimo.edi.EDIPackage#getEdiFrameSetup_EntityEvent()
 	 * @model required="true"
 	 * @generated
 	 */
-	EntityEvent getEntityEvent();
+	String getEntityEvent();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.edi.EdiFrameSetup#getEntityEvent <em>Entity Event</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Entity Event</em>' attribute.
-	 * @see org.abchip.mimo.edi.EntityEvent
 	 * @see #getEntityEvent()
 	 * @generated
 	 */
-	void setEntityEvent(EntityEvent value);
+	void setEntityEvent(String value);
 
 } // EdiFrameSetup

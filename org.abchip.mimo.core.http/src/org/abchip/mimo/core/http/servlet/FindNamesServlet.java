@@ -37,34 +37,39 @@ public class FindNamesServlet extends BaseServlet {
 	private FrameManager frameManger;
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(request, response);
 	}
-	
+
 	private <E extends EntityNameable> void _execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
-		
+
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
-		if (frame == null) 
+		if (frame == null)
 			return;
-				
+
 		EntityReader<E> entityReader = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX);
+		if (entityReader == null) {
+			response.getWriter().write("[]");
+			response.flushBuffer();
+			return;
+		}
+
 		boolean first = true;
-		
 		response.getWriter().write("[");
-		for(String name: entityReader.findNames(filter)) {
-			if(!first)
+		for (String name : entityReader.findNames(filter)) {
+			if (!first)
 				response.getWriter().write(", ");
-			
-			response.getWriter().write("\"" + Strings.qINSTANCE.escape(name)+"\"");
+
+			response.getWriter().write("\"" + Strings.qINSTANCE.escape(name) + "\"");
 			first = false;
 		}
 		response.getWriter().write("]");
-		
-		response.flushBuffer();	
+
+		response.flushBuffer();
 	}
 }

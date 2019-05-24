@@ -126,7 +126,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 
 		EntityProvider resourceProvider = getEntityProvider(frame);
 		if (resourceProvider == null)
-			throw new RuntimeException("Invalid class provider: " + frame.getName());
+			return null;
 
 		EntityReader<E> resourceReader = resourceProvider.getEntityReader(contextProvider, frame, resource);
 		if (resourceReader != null)
@@ -142,7 +142,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 
 		EntityProvider resourceProvider = getEntityProvider(frame);
 		if (resourceProvider == null)
-			throw new RuntimeException("Invalid class provider: " + frame.getName());
+			return null;
 
 		EntityReader<E> resourceReader = resourceProvider.getEntityReader(contextProvider, frame, resources);
 		if (resourceReader != null)
@@ -202,7 +202,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 
 		EntityProvider resourceProvider = getEntityProvider(frame);
 		if (resourceProvider == null)
-			throw new RuntimeException("Invalid class provider: " + frame.getName());
+			return null;
 
 		EntityWriter<E> resourceWriter = resourceProvider.getEntityWriter(contextProvider, frame, resource);
 		if (resourceWriter != null)

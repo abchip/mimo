@@ -4,14 +4,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="EdiFrameSetup" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true">
-      <eAnnotations source="mimo-ent" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
-        <details key="frame" value="frame"/>
+      <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+        <details key="frame" value="Frame"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityCondition" lowerBound="1"
-        eType="#//EntityCondition"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityEvent" lowerBound="1"
-        eType="#//EntityEvent"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EntityCondition">
     <eLiterals name="All" value="10" literal="ALL"/>
