@@ -20,10 +20,12 @@ package org.abchip.mimo.entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isContainment <em>Containment</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isInfo <em>Info</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -65,6 +67,21 @@ public interface Slot extends EntityNameable {
 	 * @generated
 	 */
 	Cardinality getCardinality();
+
+	/**
+	 * Returns the value of the '<em><b>Containment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Containment</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Containment</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Containment()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	boolean isContainment();
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
@@ -125,6 +142,21 @@ public interface Slot extends EntityNameable {
 	 * @generated
 	 */
 	boolean isKey();
+
+	/**
+	 * Returns the value of the '<em><b>Info</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Info</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Info</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Info()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	boolean isInfo();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

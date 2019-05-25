@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getFrame <em>Frame</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getMessageId <em>Message Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getBody <em>Body</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getEvent <em>Event</em>}</li>
@@ -43,6 +44,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class MessageImpl extends EntityNameableImpl implements Message {
+	/**
+	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrame()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FRAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrame()
+	 * @generated
+	 * @ordered
+	 */
+	protected String frame = FRAME_EDEFAULT;
+
 	/**
 	 * 
 	 */
@@ -145,6 +166,29 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	protected EClass eStaticClass() {
 		return EDIPackage.Literals.MESSAGE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getFrame() {
+		return frame;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFrame(String newFrame) {
+		String oldFrame = frame;
+		frame = newFrame;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__FRAME, oldFrame, frame));
 	}
 
 	/**
@@ -330,6 +374,8 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case EDIPackage.MESSAGE__FRAME:
+				return getFrame();
 			case EDIPackage.MESSAGE__MESSAGE_ID:
 				return getMessageId();
 			case EDIPackage.MESSAGE__BODY:
@@ -352,6 +398,9 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case EDIPackage.MESSAGE__FRAME:
+				setFrame((String)newValue);
+				return;
 			case EDIPackage.MESSAGE__MESSAGE_ID:
 				setMessageId((String)newValue);
 				return;
@@ -379,6 +428,9 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case EDIPackage.MESSAGE__FRAME:
+				setFrame(FRAME_EDEFAULT);
+				return;
 			case EDIPackage.MESSAGE__MESSAGE_ID:
 				setMessageId(MESSAGE_ID_EDEFAULT);
 				return;
@@ -406,6 +458,8 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case EDIPackage.MESSAGE__FRAME:
+				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
 			case EDIPackage.MESSAGE__MESSAGE_ID:
 				return MESSAGE_ID_EDEFAULT == null ? messageId != null : !MESSAGE_ID_EDEFAULT.equals(messageId);
 			case EDIPackage.MESSAGE__BODY:
@@ -430,7 +484,9 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (messageId: ");
+		result.append(" (frame: ");
+		result.append(frame);
+		result.append(", messageId: ");
 		result.append(messageId);
 		result.append(", event: ");
 		result.append(event);

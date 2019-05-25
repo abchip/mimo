@@ -32,6 +32,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//EdiFrameSetup/entityEvent"/>
     </genClasses>
     <genClasses ecoreClass="edi.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//Message/frame"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//Message/messageId"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi.ecore#//Message/body"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//Message/event"/>

@@ -730,13 +730,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__CARDINALITY = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Containment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__CONTAINMENT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DEFAULT_VALUE = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int SLOT__DEFAULT_VALUE = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Derived</b></em>' attribute.
@@ -745,7 +754,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DERIVED = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int SLOT__DERIVED = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -754,7 +763,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DOMAIN = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int SLOT__DOMAIN = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -763,7 +772,16 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__KEY = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int SLOT__KEY = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Info</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__INFO = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -772,7 +790,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -781,7 +799,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
@@ -1328,6 +1346,17 @@ public interface EntityPackage extends EPackage {
 	EReference getSlot_Cardinality();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isContainment <em>Containment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Containment</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isContainment()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Containment();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1381,6 +1410,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSlot_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isInfo <em>Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Info</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isInfo()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Info();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}'.
@@ -1869,6 +1909,14 @@ public interface EntityPackage extends EPackage {
 		EReference SLOT__CARDINALITY = eINSTANCE.getSlot_Cardinality();
 
 		/**
+		 * The meta object literal for the '<em><b>Containment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__CONTAINMENT = eINSTANCE.getSlot_Containment();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1907,6 +1955,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SLOT__KEY = eINSTANCE.getSlot_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Info</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__INFO = eINSTANCE.getSlot_Info();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.

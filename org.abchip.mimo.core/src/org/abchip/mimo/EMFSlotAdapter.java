@@ -59,6 +59,8 @@ public class EMFSlotAdapter extends SlotImpl {
 					this.derived = true;
 				else if (key.equals("key"))
 					this.key = true;
+				else if (key.equals("info"))
+					this.info = true;
 			}
 		}
 
@@ -89,8 +91,8 @@ public class EMFSlotAdapter extends SlotImpl {
 					this.domain = EntityFactory.eINSTANCE.createDomain();
 				if (this.getDomain().getFrame() == null)
 					this.getDomain().setFrame(eStructuralFeature.getEType().getName());
-			}
-			else if(eStructuralFeature.getEType() instanceof EEnum) {
+				this.containment = ((EReference) element).isContainment();
+			} else if (eStructuralFeature.getEType() instanceof EEnum) {
 				if (this.domain == null)
 					this.domain = EntityFactory.eINSTANCE.createDomain();
 				if (this.getDomain().getFrame() == null)
@@ -134,4 +136,9 @@ public class EMFSlotAdapter extends SlotImpl {
 	public String getDataClassName() {
 		return element.getEType().getInstanceClassName();
 	}
+
+	public ETypedElement getETypedElement() {
+		return this.element;
+	}
+
 }

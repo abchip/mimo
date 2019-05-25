@@ -197,7 +197,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMessage_MessageId() {
+	public EAttribute getMessage_Frame() {
 		return (EAttribute)messageEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -207,8 +207,18 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMessage_MessageId() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getMessage_Body() {
-		return (EReference)messageEClass.getEStructuralFeatures().get(1);
+		return (EReference)messageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -218,7 +228,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 */
 	@Override
 	public EAttribute getMessage_Event() {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -228,7 +238,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 */
 	@Override
 	public EReference getMessage_Sender() {
-		return (EReference)messageEClass.getEStructuralFeatures().get(3);
+		return (EReference)messageEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -238,7 +248,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 */
 	@Override
 	public EAttribute getMessage_Status() {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -316,6 +326,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_EVENT);
 
 		messageEClass = createEClass(MESSAGE);
+		createEAttribute(messageEClass, MESSAGE__FRAME);
 		createEAttribute(messageEClass, MESSAGE__MESSAGE_ID);
 		createEReference(messageEClass, MESSAGE__BODY);
 		createEAttribute(messageEClass, MESSAGE__EVENT);
@@ -372,6 +383,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		initEAttribute(getEdiFrameSetup_EntityEvent(), ecorePackage.getEString(), "entityEvent", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMessage_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_MessageId(), ecorePackage.getEString(), "messageId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessage_Body(), this.getMessageBody(), null, "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Event(), this.getEntityEvent(), "event", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -414,6 +426,15 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		String source = "mimo-ent-domain";
 		addAnnotation
 		  (getEdiFrameSetup_Name(),
+		   source,
+		   new String[] {
+			   "frame", "Frame"
+		   },
+		   new URI[] {
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
+		addAnnotation
+		  (getMessage_Frame(),
 		   source,
 		   new String[] {
 			   "frame", "Frame"

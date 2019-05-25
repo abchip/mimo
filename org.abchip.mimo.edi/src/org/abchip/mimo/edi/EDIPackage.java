@@ -121,13 +121,22 @@ public interface EDIPackage extends EPackage {
 	int MESSAGE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__FRAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Message Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__MESSAGE_ID = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int MESSAGE__MESSAGE_ID = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -136,7 +145,7 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__BODY = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int MESSAGE__BODY = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Event</b></em>' attribute.
@@ -145,7 +154,7 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__EVENT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int MESSAGE__EVENT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Sender</b></em>' containment reference.
@@ -154,7 +163,7 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__SENDER = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int MESSAGE__SENDER = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -163,7 +172,7 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__STATUS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int MESSAGE__STATUS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -172,7 +181,7 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.impl.MessageBodyImpl <em>Message Body</em>}' class.
@@ -277,6 +286,17 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMessage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.Message#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frame</em>'.
+	 * @see org.abchip.mimo.edi.Message#getFrame()
+	 * @see #getMessage()
+	 * @generated
+	 */
+	EAttribute getMessage_Frame();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.Message#getMessageId <em>Message Id</em>}'.
@@ -438,6 +458,14 @@ public interface EDIPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MESSAGE = eINSTANCE.getMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE__FRAME = eINSTANCE.getMessage_Frame();
 
 		/**
 		 * The meta object literal for the '<em><b>Message Id</b></em>' attribute feature.

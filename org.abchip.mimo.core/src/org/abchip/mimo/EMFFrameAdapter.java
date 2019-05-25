@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
+import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -43,7 +44,7 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 		this.eClass = eClass;
 
 		this.name = this.eClass.getName();
-		
+
 		this.abstract_ = eClass.isAbstract();
 
 		for (Frame<?> superFrame : getSuperFrames())
@@ -52,18 +53,40 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 		EAnnotation eTextAnnotation = eClass.getEAnnotation(Frame.NS_PREFIX_FRAME);
 		if (eTextAnnotation != null) {
 			String formula = eTextAnnotation.getDetails().get("formula");
-			if(formula != null)
+			if (formula != null)
 				this.textFormula = formula;
 		}
 
+		List<String> keys = new ArrayList<String>();
+
 		// load features
 		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures()) {
-			Slot slot = new EMFSlotAdapter(structuralFeature);		
-			this.getSlots().add(slot);
+
+			Slot slot = new EMFSlotAdapter(structuralFeature);
+
 			// set keys
-			if(slot.isKey())
-				this.getKeys().add(slot.getName());
+			if (slot.isKey()) {				
+				Slot relativeKey = null;
+				for (String keyName : keys) {
+					EMFSlotAdapter slotKey = (EMFSlotAdapter) this.getSlot(keyName);
+					if (slotKey.getETypedElement().eContainer().equals(eClass))
+						relativeKey = slotKey;
+				}
+
+				if (relativeKey == null) {
+					Lists.qINSTANCE.addFirst(keys, slot.getName());
+					Lists.qINSTANCE.addFirst(this.getSlots(), slot);					
+				}
+				else {
+					Lists.qINSTANCE.addAfter(keys, relativeKey.getName(), slot.getName());
+					Lists.qINSTANCE.addAfter(this.getSlots(), relativeKey, slot);
+				}
+			}
+			else
+				this.getSlots().add(slot);
 		}
+
+		this.getKeys().addAll(keys);
 
 		// load operations
 		for (EOperation operation : eClass.getEAllOperations()) {
@@ -75,7 +98,7 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 			// other operation
 			this.getSlots().add(new EMFSlotAdapter(operation));
 		}
-		
+
 	}
 
 	@Override

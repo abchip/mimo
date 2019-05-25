@@ -27,10 +27,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isContainment <em>Containment</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isKey <em>Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isInfo <em>Info</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -46,6 +48,24 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @ordered
 	 */
 	protected Cardinality cardinality;
+	/**
+	 * The default value of the '{@link #isContainment() <em>Containment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isContainment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CONTAINMENT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isContainment() <em>Containment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isContainment()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean containment = CONTAINMENT_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -113,6 +133,24 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @ordered
 	 */
 	protected boolean key = KEY_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isInfo() <em>Info</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInfo()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean INFO_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isInfo() <em>Info</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInfo()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean info = INFO_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -191,6 +229,16 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	@Override
+	public boolean isContainment() {
+		return containment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getDefaultValue() {
 		return defaultValue;
 	}
@@ -246,6 +294,16 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	@Override
+	public boolean isInfo() {
+		return info;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Entity getValue(String nsPrefix) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -290,6 +348,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		switch (featureID) {
 			case EntityPackage.SLOT__CARDINALITY:
 				return getCardinality();
+			case EntityPackage.SLOT__CONTAINMENT:
+				return isContainment();
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				return getDefaultValue();
 			case EntityPackage.SLOT__DERIVED:
@@ -298,6 +358,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return getDomain();
 			case EntityPackage.SLOT__KEY:
 				return isKey();
+			case EntityPackage.SLOT__INFO:
+				return isInfo();
 			case EntityPackage.SLOT__NAME:
 				return getName();
 		}
@@ -314,6 +376,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		switch (featureID) {
 			case EntityPackage.SLOT__CARDINALITY:
 				return cardinality != null;
+			case EntityPackage.SLOT__CONTAINMENT:
+				return containment != CONTAINMENT_EDEFAULT;
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
 			case EntityPackage.SLOT__DERIVED:
@@ -322,6 +386,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return domain != null;
 			case EntityPackage.SLOT__KEY:
 				return key != KEY_EDEFAULT;
+			case EntityPackage.SLOT__INFO:
+				return info != INFO_EDEFAULT;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
@@ -338,12 +404,16 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (defaultValue: ");
+		result.append(" (containment: ");
+		result.append(containment);
+		result.append(", defaultValue: ");
 		result.append(defaultValue);
 		result.append(", derived: ");
 		result.append(derived);
 		result.append(", key: ");
 		result.append(key);
+		result.append(", info: ");
+		result.append(info);
 		result.append(", name: ");
 		result.append(name);
 		result.append(')');

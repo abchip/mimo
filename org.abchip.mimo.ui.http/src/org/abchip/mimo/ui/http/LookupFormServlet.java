@@ -71,6 +71,9 @@ public class LookupFormServlet extends BaseServlet {
 				if (slot.isDerived())
 					continue;
 
+				if (slot.isInfo())
+					continue;
+
 				FormField field = buildFormField(slot);
 				if (slot.isKey()) {
 
@@ -125,9 +128,22 @@ public class LookupFormServlet extends BaseServlet {
 
 		if (slot.getDomain() != null) {
 			field.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
-			field.setView("combo");
-		} else
-			field.setView("text");
+		}
+
+		// view
+		if ((slot.getDomain() != null)) {
+			// if (slot.getDomain().getFrame().equals("BizEntityNoteData"))
+			// field.setView("note");
+		}
+
+		if (field.getView() == null) {
+			if (slot.isContainment())
+				field.setView("form");
+			else if (slot.getDomain() != null)
+				field.setView("combo");
+			else
+				field.setView("text");
+		}
 
 		return field;
 	}

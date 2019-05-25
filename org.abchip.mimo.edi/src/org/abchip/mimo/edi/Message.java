@@ -19,6 +19,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.edi.Message#getFrame <em>Frame</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.Message#getMessageId <em>Message Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.Message#getBody <em>Body</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.Message#getEvent <em>Event</em>}</li>
@@ -31,6 +32,33 @@ import org.abchip.mimo.entity.EntityNameable;
  * @generated
  */
 public interface Message extends EntityNameable {
+	/**
+	 * Returns the value of the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Frame</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Frame</em>' attribute.
+	 * @see #setFrame(String)
+	 * @see org.abchip.mimo.edi.EDIPackage#getMessage_Frame()
+	 * @model required="true"
+	 *        annotation="mimo-ent-domain frame='Frame'"
+	 * @generated
+	 */
+	String getFrame();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.Message#getFrame <em>Frame</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Frame</em>' attribute.
+	 * @see #getFrame()
+	 * @generated
+	 */
+	void setFrame(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Message Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
