@@ -50,7 +50,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 	}
 
 	protected NIOPathManager getPathManager() {
-		return this.getPathManager();
+		return this.pathManager;
 	}
 
 	public String getResourceName() {
