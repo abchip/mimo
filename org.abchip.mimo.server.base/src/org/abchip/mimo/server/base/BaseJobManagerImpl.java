@@ -87,7 +87,7 @@ public class BaseJobManagerImpl implements JobManager {
 
 		// add job description resources
 		if (userProfile.getJobDescription() != null) {
-			EntityReader<JobDescription> jobDescriptionResource = resourceManager.getEntityReader(startupJob, JobDescription.class, ResourceScope.ALL);
+			EntityReader<JobDescription> jobDescriptionResource = resourceManager.getEntityReader(startupJob, JobDescription.class, ResourceScope.ROOT);
 			JobDescription jobDescription = jobDescriptionResource.lookup(userProfile.getJobDescription());
 			if (jobDescription != null)
 				for (String resource : jobDescription.getResources())

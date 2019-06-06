@@ -37,7 +37,7 @@ public class TestEntity {
 
 	private void testRead() {
 		try {
-			EntityReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class, ResourceScope.ALL);
+			EntityReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class, ResourceScope.ROOT);
 
 			EntityIterator<ObjectA> entityIterator = entityReader.find(null);
 			while (entityIterator.hasNext()) {

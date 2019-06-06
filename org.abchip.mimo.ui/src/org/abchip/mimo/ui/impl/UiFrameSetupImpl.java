@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.impl.UiFrameSetupImpl#isContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.impl.UiFrameSetupImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.impl.UiFrameSetupImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.UiFrameSetupImpl#getUpload <em>Upload</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,6 +95,26 @@ public class UiFrameSetupImpl extends EntityNameableImpl implements UiFrameSetup
 	 * @ordered
 	 */
 	protected String icon = ICON_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUpload() <em>Upload</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpload()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String UPLOAD_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUpload() <em>Upload</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpload()
+	 * @generated
+	 * @ordered
+	 */
+	protected String upload = UPLOAD_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,6 +210,29 @@ public class UiFrameSetupImpl extends EntityNameableImpl implements UiFrameSetup
 	 * @generated
 	 */
 	@Override
+	public String getUpload() {
+		return upload;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUpload(String newUpload) {
+		String oldUpload = upload;
+		upload = newUpload;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.UI_FRAME_SETUP__UPLOAD, oldUpload, upload));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case UIPackage.UI_FRAME_SETUP__CONTEXT_MENU:
@@ -197,6 +241,8 @@ public class UiFrameSetupImpl extends EntityNameableImpl implements UiFrameSetup
 				return getName();
 			case UIPackage.UI_FRAME_SETUP__ICON:
 				return getIcon();
+			case UIPackage.UI_FRAME_SETUP__UPLOAD:
+				return getUpload();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,6 +263,9 @@ public class UiFrameSetupImpl extends EntityNameableImpl implements UiFrameSetup
 				return;
 			case UIPackage.UI_FRAME_SETUP__ICON:
 				setIcon((String)newValue);
+				return;
+			case UIPackage.UI_FRAME_SETUP__UPLOAD:
+				setUpload((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,6 +288,9 @@ public class UiFrameSetupImpl extends EntityNameableImpl implements UiFrameSetup
 			case UIPackage.UI_FRAME_SETUP__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
+			case UIPackage.UI_FRAME_SETUP__UPLOAD:
+				setUpload(UPLOAD_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -257,6 +309,8 @@ public class UiFrameSetupImpl extends EntityNameableImpl implements UiFrameSetup
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UIPackage.UI_FRAME_SETUP__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
+			case UIPackage.UI_FRAME_SETUP__UPLOAD:
+				return UPLOAD_EDEFAULT == null ? upload != null : !UPLOAD_EDEFAULT.equals(upload);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,6 +331,8 @@ public class UiFrameSetupImpl extends EntityNameableImpl implements UiFrameSetup
 		result.append(name);
 		result.append(", icon: ");
 		result.append(icon);
+		result.append(", upload: ");
+		result.append(upload);
 		result.append(')');
 		return result.toString();
 	}

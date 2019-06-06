@@ -299,6 +299,16 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getUiFrameSetup_Upload() {
+		return (EAttribute)uiFrameSetupEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getView() {
 		return viewEClass;
 	}
@@ -386,6 +396,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		createEAttribute(uiFrameSetupEClass, UI_FRAME_SETUP__CONTEXT_MENU);
 		createEAttribute(uiFrameSetupEClass, UI_FRAME_SETUP__NAME);
 		createEAttribute(uiFrameSetupEClass, UI_FRAME_SETUP__ICON);
+		createEAttribute(uiFrameSetupEClass, UI_FRAME_SETUP__UPLOAD);
 
 		viewEClass = createEClass(VIEW);
 		createEAttribute(viewEClass, VIEW__FRAME);
@@ -459,6 +470,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		initEAttribute(getUiFrameSetup_ContextMenu(), ecorePackage.getEBoolean(), "contextMenu", null, 0, 1, UiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUiFrameSetup_Name(), ecorePackage.getEString(), "name", null, 1, 1, UiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUiFrameSetup_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, UiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUiFrameSetup_Upload(), ecorePackage.getEString(), "upload", null, 0, 1, UiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getView_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -33,6 +33,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiFrameSetup/contextMenu"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiFrameSetup/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiFrameSetup/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiFrameSetup/upload"/>
     </genClasses>
     <genClasses ecoreClass="ui.ecore#//View">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/frame"/>

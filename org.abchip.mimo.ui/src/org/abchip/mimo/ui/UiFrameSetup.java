@@ -17,6 +17,7 @@ import org.abchip.mimo.entity.EntityNameable;
  *   <li>{@link org.abchip.mimo.ui.UiFrameSetup#isContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.UiFrameSetup#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.UiFrameSetup#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.UiFrameSetup#getUpload <em>Upload</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.UIPackage#getUiFrameSetup()
@@ -101,5 +102,31 @@ public interface UiFrameSetup extends EntityNameable {
 	 * @generated
 	 */
 	void setIcon(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Upload</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Upload</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Upload</em>' attribute.
+	 * @see #setUpload(String)
+	 * @see org.abchip.mimo.ui.UIPackage#getUiFrameSetup_Upload()
+	 * @model
+	 * @generated
+	 */
+	String getUpload();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.UiFrameSetup#getUpload <em>Upload</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Upload</em>' attribute.
+	 * @see #getUpload()
+	 * @generated
+	 */
+	void setUpload(String value);
 
 } // UiFrameSetup

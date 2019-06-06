@@ -1794,7 +1794,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEEnum(resourceScopeEEnum, ResourceScope.class, "ResourceScope");
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ALL);
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.CTX);
-		addEEnumLiteral(resourceScopeEEnum, ResourceScope.USER);
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ROOT);
 
 		initEEnum(resourceTypeEEnum, ResourceType.class, "ResourceType");

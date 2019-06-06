@@ -189,7 +189,6 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 			break;
 		case ALL:
 		case CTX:
-		case USER:
 			throw new RuntimeException("Unsupported scope " + scope);
 		}
 
@@ -289,8 +288,6 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		case ROOT:
 			resources.add(contextDescription.getResourceRoot());
 			break;
-		case USER:
-			throw new RuntimeException("Unsupported scope " + scope);
 		}
 		return resources;
 	}
