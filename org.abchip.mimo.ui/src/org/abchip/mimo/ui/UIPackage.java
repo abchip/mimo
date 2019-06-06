@@ -188,22 +188,13 @@ public interface UIPackage extends EPackage {
 	int UI_FRAME_SETUP__ICON = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Upload</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UI_FRAME_SETUP__UPLOAD = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Ui Frame Setup</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UI_FRAME_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int UI_FRAME_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
@@ -394,17 +385,6 @@ public interface UIPackage extends EPackage {
 	EAttribute getUiFrameSetup_Icon();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.UiFrameSetup#getUpload <em>Upload</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Upload</em>'.
-	 * @see org.abchip.mimo.ui.UiFrameSetup#getUpload()
-	 * @see #getUiFrameSetup()
-	 * @generated
-	 */
-	EAttribute getUiFrameSetup_Upload();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.View <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,14 +559,6 @@ public interface UIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UI_FRAME_SETUP__ICON = eINSTANCE.getUiFrameSetup_Icon();
-
-		/**
-		 * The meta object literal for the '<em><b>Upload</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UI_FRAME_SETUP__UPLOAD = eINSTANCE.getUiFrameSetup_Upload();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
