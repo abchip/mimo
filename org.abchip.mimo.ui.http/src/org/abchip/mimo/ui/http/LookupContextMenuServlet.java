@@ -69,7 +69,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if(contextMenu.getIcon() == null)
 			contextMenu.setIcon(getIcon(frameName));
 		
-		ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup("Frame");
+/*		ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup("Frame");
 		if (contextMenuFrame != null) {
 
 			MenuGroup groupFrame = MenuFactory.eINSTANCE.createMenuGroup();
@@ -78,7 +78,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 			groupFrame.setIcon(getIcon("Frame"));
 			
 			Lists.qINSTANCE.addFirst(contextMenu.getElements(), groupFrame);
-		}
+		}*/
 		
 
 		for (Frame<?> ako : frame.getSuperFrames()) {
