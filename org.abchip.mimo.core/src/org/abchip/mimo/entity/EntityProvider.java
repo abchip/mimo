@@ -98,4 +98,28 @@ public interface EntityProvider {
 	 */
 	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frame, String resource);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model userRequired="true" passwordRequired="true"
+	 * @generated
+	 */
+	ContextProvider login(String user, String password, String tenant);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true"
+	 * @generated
+	 */
+	void logout(ContextProvider contextProvider);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void status();
+
 } // EntityProvider

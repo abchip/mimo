@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -33,21 +33,19 @@ public class LookupQueryServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
 	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = request.getParameter("frame");
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		ResourceSerializer<Query> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Query.class, SerializationType.JSON);
+		ResourceSerializer<Query> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Query.class, SerializationType.JSON);
 
-		Query query = resourceManager.getEntityReader(contextRoot, Query.class, ResourceScope.CTX).lookup(name);
+		Query query = resourceManager.getEntityReader(contextProvider, Query.class, ResourceScope.CTX).lookup(name);
 
 		if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			query = frameManager.createEntity(Query.class);

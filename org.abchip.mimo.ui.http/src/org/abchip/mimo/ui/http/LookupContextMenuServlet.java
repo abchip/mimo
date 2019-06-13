@@ -21,7 +21,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
@@ -44,13 +44,11 @@ public class LookupContextMenuServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
 	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = request.getParameter("frame");
 		if (frameName == null)
@@ -60,14 +58,14 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		ContextMenu contextMenu = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup(frameName);
+		ContextMenu contextMenu = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CTX).lookup(frameName);
 		if(contextMenu == null) {
 			contextMenu = MenuFactory.eINSTANCE.createContextMenu();
 			contextMenu.setName(frameName);			
 		}
 		
 		if(contextMenu.getIcon() == null)
-			contextMenu.setIcon(getIcon(frameName));
+			contextMenu.setIcon(getIcon(contextProvider, frameName));
 		
 /*		ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup("Frame");
 		if (contextMenuFrame != null) {
@@ -82,7 +80,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		
 
 		for (Frame<?> ako : frame.getSuperFrames()) {
-			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup(ako.getName());
+			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CTX).lookup(ako.getName());
 			if (contextMenuAko == null)
 				continue;
 
@@ -92,7 +90,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 				contextMenu.getElements().addAll(contextMenuAko.getElements());
 		}
 
-		ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, ContextMenu.class, SerializationType.JSON);
+		ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JSON);
 		if (contextMenu != null) {
 
 			TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
@@ -126,11 +124,11 @@ public class LookupContextMenuServlet extends BaseServlet {
 		response.flushBuffer();
 	}
 	
-	private String getIcon(String frameName) {
+	private String getIcon(ContextProvider contextProvider, String frameName) {
 		
 		String icon = null;
 		
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextRoot, UiFrameSetup.class, ResourceScope.CTX);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CTX);
 		
 		Frame<?> frame = frameManager.getFrame(frameName);
 		if(frame == null)

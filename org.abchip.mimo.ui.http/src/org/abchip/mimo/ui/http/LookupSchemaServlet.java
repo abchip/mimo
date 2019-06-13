@@ -19,7 +19,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.EntityReader;
@@ -43,13 +43,11 @@ public class LookupSchemaServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
 	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = request.getParameter("frame");
 		String name = request.getParameter("name");
@@ -59,9 +57,9 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		ResourceSerializer<Schema> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Schema.class, SerializationType.JSON);
+		ResourceSerializer<Schema> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Schema.class, SerializationType.JSON);
 
-		Schema schema = resourceManager.getEntityReader(contextRoot, Schema.class, ResourceScope.CTX).lookup(name);
+		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, ResourceScope.CTX).lookup(name);
 
 		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			schema = frameManager.createEntity(Schema.class);
@@ -99,7 +97,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		}
 
 		if (schema != null) {
-			completeSchema(schema);
+			completeSchema(contextProvider, schema);
 			resourceSerializer.add(schema);
 		}
 
@@ -128,19 +126,19 @@ public class LookupSchemaServlet extends BaseServlet {
 		return column;
 	}
 
-	private void completeSchema(Schema schema) {
+	private void completeSchema(ContextProvider contextProvider, Schema schema) {
 		for (SchemaColumn column : schema.getColumns())
-			completeSchemaColumn(column);
+			completeSchemaColumn(contextProvider, column);
 	}
 
-	private void completeSchemaColumn(SchemaColumn column) {
+	private void completeSchemaColumn(ContextProvider contextProvider, SchemaColumn column) {
 
 		Domain domain = column.getDomain();
 
 		if (domain == null)
 			return;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextRoot, UiFrameSetup.class, ResourceScope.CTX);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CTX);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

@@ -17,7 +17,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityWriter;
@@ -34,27 +34,24 @@ public class DeleteServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
 	private FrameManager frameManger;
 
-
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(request, response);
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(contextProvider, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String name = request.getParameter("name");
 		
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
+		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextProvider).lookup(frameName);
 		if (frame == null) 
 			return;
 
-		E entity = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX).lookup(name);
+		E entity = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CTX).lookup(name);
 
-		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextRoot, frameName, "data");
+		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName, "data");
 
 		entityWriter.delete(entity);
 	}

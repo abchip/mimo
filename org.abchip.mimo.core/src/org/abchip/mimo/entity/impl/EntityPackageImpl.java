@@ -1313,6 +1313,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(entityProviderEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "user", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "password", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenant", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(entityProviderEClass, null, "logout", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(entityProviderEClass, null, "status", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(entityProviderRegistryEClass, EntityProviderRegistry.class, "EntityProviderRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityReaderEClass, EntityReader.class, "EntityReader", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1794,6 +1804,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEEnum(resourceScopeEEnum, ResourceScope.class, "ResourceScope");
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ALL);
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.CTX);
+		addEEnumLiteral(resourceScopeEEnum, ResourceScope.USER);
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ROOT);
 
 		initEEnum(resourceTypeEEnum, ResourceType.class, "ResourceType");

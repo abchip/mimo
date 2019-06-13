@@ -13,17 +13,25 @@ package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityProvider;
+import org.abchip.mimo.entity.EntityProviderRegistry;
 
 public class LoginServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	@Inject
+	private ContextRoot contextRoot;
+
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(request, response);
 	}
 
@@ -32,7 +40,18 @@ public class LoginServlet extends BaseServlet {
 		String user = request.getParameter("user");
 		String password = request.getParameter("pass");
 		String tenant = request.getParameter("tenant");
-		response.getWriter().write("{\"id\":1,\"name\":\"Admin\"}");
+
+		EntityProviderRegistry entityProviderRegistry = contextRoot.get(EntityProviderRegistry.class);
+		EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
+
+		ContextProvider contextProvider = entityProvider.login(user, password, tenant);
+
+		tokens.put(contextProvider.getContext().getContextDescription().getName(), contextProvider);
+
+		// TODO
+		// tokens.put(contextProvider.getContext().getID(), contextProvider);
+
+		response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"name\":\"Admin\"}");
 
 		response.flushBuffer();
 	}

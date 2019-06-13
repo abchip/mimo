@@ -19,7 +19,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.FrameManager;
@@ -38,18 +38,16 @@ public class LookupMenuServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
 	private ResourceManager resourceManager;
 	@Inject
 	private FrameManager frameManager;
 
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String name = request.getParameter("name");
 
 		Menu menu = null;
-		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextRoot, Menu.class, ResourceScope.CTX);
+		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, ResourceScope.CTX);
 
 		if (name == null || name.isEmpty()) {
 			menu = frameManager.createEntity(Menu.class);
@@ -70,7 +68,7 @@ public class LookupMenuServlet extends BaseServlet {
 			menu = menuReader.lookup(name);
 		}
 
-		ResourceSerializer<Menu> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Menu.class, SerializationType.JSON);
+		ResourceSerializer<Menu> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Menu.class, SerializationType.JSON);
 		if (menu != null) {
 			TreeIterator<EObject> features = ((EObject) menu).eAllContents();
 

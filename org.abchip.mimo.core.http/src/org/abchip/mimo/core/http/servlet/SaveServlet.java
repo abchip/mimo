@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.EMFFrameAdapter;
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityWriter;
@@ -38,19 +38,18 @@ public class SaveServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private ContextRoot contextRoot;
 
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(request, response);
+
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(contextProvider, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frame = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String json = request.getParameter("json");
 
-		ResourceSerializer<E> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, frame, SerializationType.JSON);
+		ResourceSerializer<E> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, frame, SerializationType.JSON);
 
 		ObjectMapper objectMapper = new ObjectMapper();
 		Map<String, Object> map  = objectMapper.readValue(json, new TypeReference<Map<String,Object>>(){});
@@ -64,7 +63,7 @@ public class SaveServlet extends BaseServlet {
 		E entity = null;
 		entity = resourceSerializer.get();
 
-		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextRoot, frame, "data");
+		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame, "data");
 
 		entityWriter.save(entity, true);
 	}

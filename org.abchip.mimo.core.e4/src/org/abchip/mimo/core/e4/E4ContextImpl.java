@@ -206,7 +206,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject)getContextDescription()); 
 		childDescription.setName(name);
 		
-		return createChildContext(contextDescription);
+		return createChildContext(childDescription);
 	}
 	
 	@Override

@@ -17,7 +17,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
@@ -32,27 +32,25 @@ public class FindNamesServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
 	private FrameManager frameManger;
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(request, response);
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(contextProvider, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
+		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextProvider).lookup(frameName);
 		if (frame == null)
 			return;
 
-		EntityReader<E> entityReader = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX);
+		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CTX);
 		if (entityReader == null) {
 			response.getWriter().write("[]");
 			response.flushBuffer();

@@ -16,7 +16,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.EntityReader;
@@ -40,21 +40,19 @@ public class LookupFormServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
 	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = request.getParameter("frame");
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		ResourceSerializer<Form> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Form.class, SerializationType.JSON);
+		ResourceSerializer<Form> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Form.class, SerializationType.JSON);
 
-		Form form = resourceManager.getEntityReader(contextRoot, Form.class, ResourceScope.CTX).lookup(name);
+		Form form = resourceManager.getEntityReader(contextProvider, Form.class, ResourceScope.CTX).lookup(name);
 
 		if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			form = frameManager.createEntity(Form.class);
@@ -101,7 +99,7 @@ public class LookupFormServlet extends BaseServlet {
 		}
 
 		if (form != null) {
-			completeForm(form);
+			completeForm(contextProvider, form);
 			resourceSerializer.add(form);
 		}
 
@@ -148,19 +146,19 @@ public class LookupFormServlet extends BaseServlet {
 		return field;
 	}
 
-	private void completeForm(Form form) {
+	private void completeForm(ContextProvider contextProvider, Form form) {
 		for (FormField formField : form.getFields())
-			completeFormField(formField);
+			completeFormField(contextProvider, formField);
 	}
 
-	private void completeFormField(FormField formField) {
+	private void completeFormField(ContextProvider contextProvider, FormField formField) {
 
 		Domain domain = formField.getDomain();
 
 		if (domain == null)
 			return;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextRoot, UiFrameSetup.class, ResourceScope.CTX);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CTX);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

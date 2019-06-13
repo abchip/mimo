@@ -17,7 +17,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -32,13 +32,11 @@ public class LookupToolbarServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
 	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
 	
-	protected void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		String frameName = request.getParameter("frame");
 		if(frameName == null)
@@ -48,10 +46,10 @@ public class LookupToolbarServlet extends BaseServlet {
 		if(frame == null)
 			return;
 		
-		Toolbar toolbar = resourceManager.getEntityReader(contextRoot, Toolbar.class, ResourceScope.CTX).lookup(frameName);
+		Toolbar toolbar = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CTX).lookup(frameName);
 		
 		for(Frame<?> ako: frame.getSuperFrames()) {
-			Toolbar toolbarAko = resourceManager.getEntityReader(contextRoot, Toolbar.class, ResourceScope.CTX).lookup(ako.getName());;
+			Toolbar toolbarAko = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CTX).lookup(ako.getName());;
 			if(toolbarAko == null)
 				continue;
 			
@@ -61,7 +59,7 @@ public class LookupToolbarServlet extends BaseServlet {
 				toolbar.getElements().addAll(toolbarAko.getElements());
 		}
 
-		ResourceSerializer<Toolbar> resourceSerializer = resourceManager.getResourceSerializer(contextRoot, Toolbar.class, SerializationType.JSON);
+		ResourceSerializer<Toolbar> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Toolbar.class, SerializationType.JSON);
 		if(toolbar != null) 
 			resourceSerializer.add(toolbar);
 

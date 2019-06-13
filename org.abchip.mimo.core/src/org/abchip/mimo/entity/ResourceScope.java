@@ -44,6 +44,14 @@ public enum ResourceScope implements Enumerator {
 	 * @ordered
 	 */
 	CTX(20, "CTX", "Context"), /**
+	 * The '<em><b>USER</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #USER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	USER(30, "USER", "User"), /**
 	 * The '<em><b>ROOT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,7 +59,7 @@ public enum ResourceScope implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ROOT(30, "ROOT", "Root");
+	ROOT(40, "ROOT", "Root");
 
 	/**
 	 * The '<em><b>ALL</b></em>' literal value.
@@ -84,6 +92,21 @@ public enum ResourceScope implements Enumerator {
 	public static final int CTX_VALUE = 20;
 
 	/**
+	 * The '<em><b>USER</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>USER</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #USER
+	 * @model literal="User"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int USER_VALUE = 30;
+
+	/**
 	 * The '<em><b>ROOT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -96,7 +119,7 @@ public enum ResourceScope implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOT_VALUE = 30;
+	public static final int ROOT_VALUE = 40;
 
 	/**
 	 * An array of all the '<em><b>Resource Scope</b></em>' enumerators.
@@ -108,6 +131,7 @@ public enum ResourceScope implements Enumerator {
 		new ResourceScope[] {
 			ALL,
 			CTX,
+			USER,
 			ROOT,
 		};
 
@@ -167,6 +191,7 @@ public enum ResourceScope implements Enumerator {
 		switch (value) {
 			case ALL_VALUE: return ALL;
 			case CTX_VALUE: return CTX;
+			case USER_VALUE: return USER;
 			case ROOT_VALUE: return ROOT;
 		}
 		return null;

@@ -750,6 +750,15 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="resource" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="login" eType="#//context/ContextProvider">
+        <eParameters name="user" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="password" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="logout">
+        <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
+      </eOperations>
+      <eOperations name="status"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityProviderRegistry" abstract="true"
         interface="true">
