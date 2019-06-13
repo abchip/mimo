@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.tester.impl;
 
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -23,12 +23,13 @@ import org.abchip.mimo.tester.TesterPackage;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.tester.impl.AssertionResultImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link org.abchip.mimo.tester.impl.AssertionResultImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.tester.impl.AssertionResultImpl#getTime <em>Time</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class AssertionResultImpl extends EntityImpl implements AssertionResult {
+public abstract class AssertionResultImpl extends EntityNameableImpl implements AssertionResult {
 	/**
 	 * 
 	 */
@@ -51,6 +52,26 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 	 * @ordered
 	 */
 	protected String message = MESSAGE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
@@ -109,6 +130,29 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TesterPackage.ASSERTION_RESULT__NAME, oldName, name));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -150,6 +194,8 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 		switch (featureID) {
 			case TesterPackage.ASSERTION_RESULT__MESSAGE:
 				return getMessage();
+			case TesterPackage.ASSERTION_RESULT__NAME:
+				return getName();
 			case TesterPackage.ASSERTION_RESULT__TIME:
 				return getTime();
 		}
@@ -165,6 +211,9 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 		switch (featureID) {
 			case TesterPackage.ASSERTION_RESULT__MESSAGE:
 				setMessage((String)newValue);
+				return;
+			case TesterPackage.ASSERTION_RESULT__NAME:
+				setName((String)newValue);
 				return;
 			case TesterPackage.ASSERTION_RESULT__TIME:
 				setTime((Long)newValue);
@@ -183,6 +232,9 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 			case TesterPackage.ASSERTION_RESULT__MESSAGE:
 				setMessage(MESSAGE_EDEFAULT);
 				return;
+			case TesterPackage.ASSERTION_RESULT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case TesterPackage.ASSERTION_RESULT__TIME:
 				setTime(TIME_EDEFAULT);
 				return;
@@ -199,6 +251,8 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 		switch (featureID) {
 			case TesterPackage.ASSERTION_RESULT__MESSAGE:
 				return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
+			case TesterPackage.ASSERTION_RESULT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case TesterPackage.ASSERTION_RESULT__TIME:
 				return time != TIME_EDEFAULT;
 		}
@@ -216,6 +270,8 @@ public abstract class AssertionResultImpl extends EntityImpl implements Assertio
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (message: ");
 		result.append(message);
+		result.append(", name: ");
+		result.append(name);
 		result.append(", time: ");
 		result.append(time);
 		result.append(')');

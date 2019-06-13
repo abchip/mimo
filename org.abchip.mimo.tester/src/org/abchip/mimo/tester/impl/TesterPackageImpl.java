@@ -268,8 +268,18 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssertionResult_Time() {
+	public EAttribute getAssertionResult_Name() {
 		return (EAttribute)assertionResultEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAssertionResult_Time() {
+		return (EAttribute)assertionResultEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -557,6 +567,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 
 		assertionResultEClass = createEClass(ASSERTION_RESULT);
 		createEAttribute(assertionResultEClass, ASSERTION_RESULT__MESSAGE);
+		createEAttribute(assertionResultEClass, ASSERTION_RESULT__NAME);
 		createEAttribute(assertionResultEClass, ASSERTION_RESULT__TIME);
 
 		assertionSuccessEClass = createEClass(ASSERTION_SUCCESS);
@@ -632,7 +643,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 
 		// Add supertypes to classes
 		assertionFailedEClass.getESuperTypes().add(this.getAssertionResult());
-		assertionResultEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		assertionResultEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		assertionSuccessEClass.getESuperTypes().add(this.getAssertionResult());
 		testAsserterEClass.getESuperTypes().add(this.getAsserter());
 		testRunnerEClass.getESuperTypes().add(theContextPackage.getContextProvider());
@@ -740,6 +751,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 
 		initEClass(assertionResultEClass, AssertionResult.class, "AssertionResult", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAssertionResult_Message(), ecorePackage.getEString(), "message", null, 0, 1, AssertionResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssertionResult_Name(), ecorePackage.getEString(), "name", null, 1, 1, AssertionResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssertionResult_Time(), ecorePackage.getELong(), "time", null, 0, 1, AssertionResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(assertionResultEClass, this.getAssertionState(), "getAssertionState", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -828,6 +840,42 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
+		// mimo-ent-domain
+		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-slot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentslotAnnotations() {
+		String source = "mimo-ent-slot";
+		addAnnotation
+		  (assertionResultEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-domain</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentdomainAnnotations() {
+		String source = "mimo-ent-domain";
+		addAnnotation
+		  (assertionResultEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+		   });
 	}
 
 } //TesterPackageImpl

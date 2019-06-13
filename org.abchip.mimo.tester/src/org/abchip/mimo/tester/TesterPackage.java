@@ -101,7 +101,16 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSERTION_RESULT__MESSAGE = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int ASSERTION_RESULT__MESSAGE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSERTION_RESULT__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -110,7 +119,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSERTION_RESULT__TIME = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int ASSERTION_RESULT__TIME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Assertion Result</em>' class.
@@ -119,7 +128,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSERTION_RESULT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int ASSERTION_RESULT_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.tester.impl.AssertionFailedImpl <em>Assertion Failed</em>}' class.
@@ -139,6 +148,15 @@ public interface TesterPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSERTION_FAILED__MESSAGE = ASSERTION_RESULT__MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSERTION_FAILED__NAME = ASSERTION_RESULT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -176,6 +194,15 @@ public interface TesterPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSERTION_SUCCESS__MESSAGE = ASSERTION_RESULT__MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSERTION_SUCCESS__NAME = ASSERTION_RESULT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -556,6 +583,17 @@ public interface TesterPackage extends EPackage {
 	EAttribute getAssertionResult_Message();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.tester.AssertionResult#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.tester.AssertionResult#getName()
+	 * @see #getAssertionResult()
+	 * @generated
+	 */
+	EAttribute getAssertionResult_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.tester.AssertionResult#getTime <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -887,6 +925,14 @@ public interface TesterPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASSERTION_RESULT__MESSAGE = eINSTANCE.getAssertionResult_Message();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSERTION_RESULT__NAME = eINSTANCE.getAssertionResult_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.

@@ -34,6 +34,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiFrameSetup/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiFrameSetup/icon"/>
     </genClasses>
+    <genClasses ecoreClass="ui.ecore#//UiUserSetup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiUserSetup/name"/>
+    </genClasses>
     <genClasses ecoreClass="ui.ecore#//View">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/frame"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/type"/>

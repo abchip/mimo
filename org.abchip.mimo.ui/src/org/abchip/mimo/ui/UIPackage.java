@@ -197,6 +197,34 @@ public interface UIPackage extends EPackage {
 	int UI_FRAME_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.UiUserSetupImpl <em>Ui User Setup</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.impl.UiUserSetupImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getUiUserSetup()
+	 * @generated
+	 */
+	int UI_USER_SETUP = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_USER_SETUP__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ui User Setup</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_USER_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,7 +232,7 @@ public interface UIPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getView()
 	 * @generated
 	 */
-	int VIEW = 3;
+	int VIEW = 4;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
@@ -241,7 +269,7 @@ public interface UIPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getActionType()
 	 * @generated
 	 */
-	int ACTION_TYPE = 4;
+	int ACTION_TYPE = 5;
 
 
 	/**
@@ -252,7 +280,7 @@ public interface UIPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewType()
 	 * @generated
 	 */
-	int VIEW_TYPE = 5;
+	int VIEW_TYPE = 6;
 
 
 	/**
@@ -383,6 +411,27 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUiFrameSetup_Icon();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.UiUserSetup <em>Ui User Setup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ui User Setup</em>'.
+	 * @see org.abchip.mimo.ui.UiUserSetup
+	 * @generated
+	 */
+	EClass getUiUserSetup();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.UiUserSetup#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.ui.UiUserSetup#getName()
+	 * @see #getUiUserSetup()
+	 * @generated
+	 */
+	EAttribute getUiUserSetup_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.View <em>View</em>}'.
@@ -559,6 +608,24 @@ public interface UIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UI_FRAME_SETUP__ICON = eINSTANCE.getUiFrameSetup_Icon();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.UiUserSetupImpl <em>Ui User Setup</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.UiUserSetupImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getUiUserSetup()
+		 * @generated
+		 */
+		EClass UI_USER_SETUP = eINSTANCE.getUiUserSetup();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UI_USER_SETUP__NAME = eINSTANCE.getUiUserSetup_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.

@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.tester;
 
-import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityNameable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -18,6 +18,7 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.tester.AssertionResult#getMessage <em>Message</em>}</li>
+ *   <li>{@link org.abchip.mimo.tester.AssertionResult#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.tester.AssertionResult#getTime <em>Time</em>}</li>
  * </ul>
  *
@@ -25,7 +26,7 @@ import org.abchip.mimo.entity.Entity;
  * @model abstract="true"
  * @generated
  */
-public interface AssertionResult extends Entity {
+public interface AssertionResult extends EntityNameable {
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' attribute. <!--
 	 * begin-user-doc -->
@@ -51,6 +52,32 @@ public interface AssertionResult extends Entity {
 	 * @generated
 	 */
 	void setMessage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.abchip.mimo.tester.TesterPackage#getAssertionResult_Name()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.tester.AssertionResult#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Time</b></em>' attribute. <!--
@@ -82,6 +109,8 @@ public interface AssertionResult extends Entity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
+	 *        annotation="mimo-ent-slot"
+	 *        annotation="mimo-ent-domain"
 	 * @generated
 	 */
 	AssertionState getAssertionState();

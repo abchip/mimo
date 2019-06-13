@@ -106,6 +106,7 @@
     <genClasses ecoreClass="tester.ecore#//AssertionFailed"/>
     <genClasses image="false" ecoreClass="tester.ecore#//AssertionResult">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//AssertionResult/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//AssertionResult/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//AssertionResult/time"/>
       <genOperations ecoreOperation="tester.ecore#//AssertionResult/getAssertionState"/>
     </genClasses>
