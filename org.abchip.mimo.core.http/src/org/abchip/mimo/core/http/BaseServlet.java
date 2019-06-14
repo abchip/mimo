@@ -36,7 +36,7 @@ public abstract class BaseServlet extends HttpServlet {
 
 	@Inject
 	private ContextRoot contextRoot;
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -48,10 +48,12 @@ public abstract class BaseServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ContextProvider contextProvider = this.contextRoot.getChildContext(request.getParameter("contextId"));
 
-		// TODO
-		// ContextProvider contextProvider =
-		// BaseServlet.tokens.get(request.getParameter("token"));
-		execute(contextProvider, request, response);
+		if (contextProvider != null)
+			execute(contextProvider, request, response);
+		else {
+			// TODO
+			execute(this.contextRoot, request, response); // remove me!!!
+		}
 	}
 
 	protected abstract void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException;
