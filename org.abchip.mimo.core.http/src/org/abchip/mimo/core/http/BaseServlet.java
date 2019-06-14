@@ -5,9 +5,6 @@
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
  *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
  */
 package org.abchip.mimo.core.http;
 
@@ -50,10 +47,8 @@ public abstract class BaseServlet extends HttpServlet {
 
 		if (contextProvider != null)
 			execute(contextProvider, request, response);
-		else {
-			// TODO
-			execute(this.contextRoot, request, response); // remove me!!!
-		}
+		else
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 	}
 
 	protected abstract void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException;
