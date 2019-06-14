@@ -1023,6 +1023,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
+		op = addEOperation(contextEClass, this.getContext(), "getChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(contextEClass, this.getContextDescription(), "getContextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(contextEClass, ecorePackage.getEString(), "getID", 0, 1, IS_UNIQUE, IS_ORDERED);

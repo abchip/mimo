@@ -192,6 +192,9 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+      <eOperations name="getChildContext" lowerBound="1" eType="#//context/Context">
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="getContextDescription" lowerBound="1" eType="#//context/ContextDescription"/>
       <eOperations name="getID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="inject">
@@ -1223,8 +1226,7 @@
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceScope">
       <eLiterals name="ALL" value="10" literal="All"/>
       <eLiterals name="CTX" value="20" literal="Context"/>
-      <eLiterals name="USER" value="30" literal="User"/>
-      <eLiterals name="ROOT" value="40" literal="Root"/>
+      <eLiterals name="ROOT" value="30" literal="Root"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceSerializer" abstract="true"
         eSuperTypes="#//util/JavaCloseable">

@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.WeakHashMap;
 
 import javax.annotation.PostConstruct;
 
@@ -38,6 +39,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	private ContextDescription contextDescription;
 	private String contextID;
+	private Map<String, Context> childContexts = new WeakHashMap<String, Context>();
 
 	public E4ContextImpl(String contextID, ContextDescription contextDescription) {
 		this.contextID = contextID;
@@ -47,7 +49,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 	protected abstract IEclipseContext getEclipseContext();
 
 	protected abstract void removeEclipseContext();
-	
+
 	protected void initializeContext(IEclipseContext eclipseContext) {
 		eclipseContext.set(ADAPTER_FACTORIES_NAME, new HashMap<Class<?>, List<AdapterFactory>>());
 	}
@@ -56,7 +58,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 	public Context getContext() {
 		return this;
 	}
-	
+
 	@Override
 	public <T> void set(Class<T> clazz, T object) {
 		getEclipseContext().set(clazz, object);
@@ -75,7 +77,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 		if (isActivePostConstruct())
 			ContextInjectionFactory.invoke(object, PostConstruct.class, eclipseContext, object);
-		
+
 		return object;
 	}
 
@@ -94,7 +96,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 		try {
 			ContextInjectionFactory.invoke(object, qualifier, getEclipseContext());
 		} catch (Exception e) {
-			if(e.getCause() != null)
+			if (e.getCause() != null)
 				throw new RuntimeException(e.getCause());
 		}
 	}
@@ -200,31 +202,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 		}
 	}
 
-	@Override
-	public Context createChildContext(final String name) {
-
-		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject)getContextDescription()); 
-		childDescription.setName(name);
-		
-		return createChildContext(childDescription);
-	}
-	
-	@Override
-	public Context createChildContext(ContextDescription contextDescription) {
-		return createLocalContext(contextDescription);
-	}
-
-	private Context createLocalContext(ContextDescription contextDescription) {
-
-		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
-
-		initializeContext(eclipseChildContext);
-
-		Context contextChild = new E4ContextChildImpl(this, eclipseChildContext, UUID.randomUUID().toString(), contextDescription);
-
-		return contextChild;
-	}
-
 	private boolean isActivePostConstruct() {
 
 		if (postConstruct == null) {
@@ -287,5 +264,32 @@ public abstract class E4ContextImpl extends ContextImpl {
 			newValues.add(resolveAlias(value));
 
 		return newValues;
+	}
+
+	@Override
+	public Context getChildContext(String contextId) {
+		return this.childContexts.get(contextId);
+	}
+
+	@Override
+	public Context createChildContext(String name) {
+
+		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject) getContextDescription());
+		if (name != null)
+			childDescription.setName(name);
+
+		return createChildContext(childDescription);
+	}
+
+	@Override
+	public Context createChildContext(ContextDescription contextDescription) {
+
+		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
+		initializeContext(eclipseChildContext);
+
+		Context contextChild = new E4ContextChildImpl(this, eclipseChildContext, UUID.randomUUID().toString(), contextDescription);
+		this.childContexts.put(contextChild.getID(), contextChild);
+
+		return contextChild;
 	}
 }

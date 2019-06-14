@@ -114,6 +114,18 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
+	public Context getChildContext(String contextId) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ContextDescription getContextDescription() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

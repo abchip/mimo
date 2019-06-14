@@ -20,17 +20,14 @@ import java.util.Collections;
 import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.UUID;
 
 import org.abchip.mimo.MimoConstants;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.e4.core.contexts.EclipseContextFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.Constants;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
@@ -187,40 +184,5 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		Enumeration<URL> resources = bundle.getResources(path);
 
 		return Collections.list(resources);
-	}
-
-	@SuppressWarnings("unused")
-	private Context createRemoteContext(ContextDescription contextDescription) {
-
-		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
-
-		// bind remote service
-		try {
-			for (ServiceReference<?> serviceReference : bundleContext.getAllServiceReferences(null, null)) {
-				if (serviceReference.getProperty(Constants.SERVICE_IMPORTED) == null)
-					continue;
-
-				Object object = null;
-				String className = ((String[]) serviceReference.getProperty("objectClass"))[0];
-				if (eclipseChildContext.containsKey(className))
-					continue;
-				for (Bundle bundle : bundleContext.getBundles())
-					if (className.startsWith(bundle.getSymbolicName())) {
-
-						object = bundle.getBundleContext().getService(serviceReference);
-						if (object == null)
-							continue;
-
-						eclipseChildContext.set(className, object);
-						break;
-					}
-			}
-		} catch (InvalidSyntaxException e) {
-			throw new RuntimeException(e);
-		}
-
-		initializeContext(eclipseChildContext);
-
-		return new E4ContextChildImpl(this, eclipseChildContext, UUID.randomUUID().toString(), contextDescription);
 	}
 }

@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import java.util.WeakHashMap;
 
+import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextRoot;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -33,12 +34,10 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 public abstract class BaseServlet extends HttpServlet {
 
-	/**
-	 * 
-	 */
+	@Inject
+	private ContextRoot contextRoot;
+	
 	private static final long serialVersionUID = 1L;
-
-	protected static Map<String, ContextProvider> tokens = new WeakHashMap<String, ContextProvider>();
 
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,7 +46,7 @@ public abstract class BaseServlet extends HttpServlet {
 
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ContextProvider contextProvider = BaseServlet.tokens.get("token-ovsat89ewr68t");
+		ContextProvider contextProvider = this.contextRoot.getChildContext(request.getParameter("contextId"));
 
 		// TODO
 		// ContextProvider contextProvider =
