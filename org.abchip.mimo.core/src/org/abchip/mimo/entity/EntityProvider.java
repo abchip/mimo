@@ -117,9 +117,9 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model contextIdRequired="true"
 	 * @generated
 	 */
-	void status();
+	ContextProvider status(ContextProvider contextId);
 
 } // EntityProvider

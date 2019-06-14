@@ -761,7 +761,9 @@
       <eOperations name="logout">
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
       </eOperations>
-      <eOperations name="status"/>
+      <eOperations name="status" eType="#//context/ContextProvider">
+        <eParameters name="contextId" lowerBound="1" eType="#//context/ContextProvider"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityProviderRegistry" abstract="true"
         interface="true">

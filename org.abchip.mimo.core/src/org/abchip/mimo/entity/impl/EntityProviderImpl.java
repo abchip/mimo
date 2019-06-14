@@ -162,7 +162,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public void status() {
+	public ContextProvider status(ContextProvider contextId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

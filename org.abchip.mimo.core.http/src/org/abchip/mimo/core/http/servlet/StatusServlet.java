@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.entity.EntityProvider;
+import org.abchip.mimo.entity.EntityProviderRegistry;
 
 public class StatusServlet extends HttpServlet {
 
@@ -34,10 +36,18 @@ public class StatusServlet extends HttpServlet {
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ContextProvider contextProvider = this.contextRoot.getChildContext(request.getParameter("contextId"));
-
 		if (contextProvider != null) {
-			response.setStatus(HttpServletResponse.SC_ACCEPTED);
-			response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"name\":\"Admin\"}");
+
+			// TODO check su ofbiz
+			EntityProviderRegistry entityProviderRegistry = contextProvider.getContext().get(EntityProviderRegistry.class);
+			EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
+
+			if(entityProvider.status(contextProvider) == null) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			} else {
+				response.setStatus(HttpServletResponse.SC_ACCEPTED);
+				response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"name\":\"Admin\"}");
+			}
 		} else
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 
