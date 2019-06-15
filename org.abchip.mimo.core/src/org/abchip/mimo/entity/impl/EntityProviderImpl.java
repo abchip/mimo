@@ -57,6 +57,18 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		return EntityPackage.Literals.ENTITY_PROVIDER;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isActive(ContextProvider contextId) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 	@PostConstruct
 	private void init() {
 		this.frameReader = frameManager.getFrameReader(getContextRoot());
@@ -151,18 +163,6 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 */
 	@Override
 	public void logout(ContextProvider contextProvider) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ContextProvider status(ContextProvider contextId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

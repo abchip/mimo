@@ -29,6 +29,14 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model contextIdRequired="true"
+	 * @generated
+	 */
+	boolean isActive(ContextProvider contextId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true" klassRequired="true" resourceRequired="true"
 	 * @generated
 	 */
@@ -113,13 +121,5 @@ public interface EntityProvider {
 	 * @generated
 	 */
 	void logout(ContextProvider contextProvider);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextIdRequired="true"
-	 * @generated
-	 */
-	ContextProvider status(ContextProvider contextId);
 
 } // EntityProvider

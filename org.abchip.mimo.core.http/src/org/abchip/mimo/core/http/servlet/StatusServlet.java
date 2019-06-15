@@ -42,11 +42,11 @@ public class StatusServlet extends HttpServlet {
 			EntityProviderRegistry entityProviderRegistry = contextProvider.getContext().get(EntityProviderRegistry.class);
 			EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
 
-			if(entityProvider.status(contextProvider) == null) {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-			} else {
+			if(entityProvider.isActive(contextProvider)) {
 				response.setStatus(HttpServletResponse.SC_ACCEPTED);
 				response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"name\":\"Admin\"}");
+			} else {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			}
 		} else
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
