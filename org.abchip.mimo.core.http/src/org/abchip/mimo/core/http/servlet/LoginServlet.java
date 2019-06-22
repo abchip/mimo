@@ -35,13 +35,18 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String userFiled = request.getParameter("user");
-		String tenant = "";
-		
 		String[] fields = userFiled.split("/");
-		String user = fields[0];
-		if(fields.length>1)
-			tenant = fields[1];
+
+		String tenant = null;
+		String user = null;
+		if (fields.length > 1) {
+			tenant = fields[0];
+			user = fields[1];
+		} else
+			user = fields[0];
+
 		String password = request.getParameter("password");
 
 		EntityProviderRegistry entityProviderRegistry = contextRoot.get(EntityProviderRegistry.class);
