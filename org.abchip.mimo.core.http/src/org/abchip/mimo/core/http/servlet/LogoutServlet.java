@@ -15,12 +15,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.entity.EntityProvider;
+import org.abchip.mimo.entity.EntityProviderRegistry;
 
 public class LogoutServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+		EntityProviderRegistry entityProviderRegistry = contextProvider.getContext().get(EntityProviderRegistry.class);
+		EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
+		entityProvider.logout(contextProvider);
 		contextProvider.getContext().close();
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 		response.flushBuffer();

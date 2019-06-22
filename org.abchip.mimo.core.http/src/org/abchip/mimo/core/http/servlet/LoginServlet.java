@@ -35,9 +35,14 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String user = request.getParameter("user");
+		String userFiled = request.getParameter("user");
+		String tenant = "";
+		
+		String[] fields = userFiled.split("/");
+		String user = fields[0];
+		if(fields.length>1)
+			tenant = fields[1];
 		String password = request.getParameter("password");
-		String tenant = request.getParameter("tenant");
 
 		EntityProviderRegistry entityProviderRegistry = contextRoot.get(EntityProviderRegistry.class);
 		EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
@@ -48,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		else {
 			response.setStatus(HttpServletResponse.SC_ACCEPTED);
-			response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"name\":\"Admin\"}");
+			response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"user\":\"" + user + "\"}");
 		}
 
 		response.flushBuffer();
