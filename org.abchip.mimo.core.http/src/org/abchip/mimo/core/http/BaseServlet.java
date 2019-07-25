@@ -20,6 +20,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import org.abchip.mimo.context.ContextProvider;
@@ -50,13 +51,24 @@ public abstract class BaseServlet extends HttpServlet {
 		if (contextProvider != null)
 			execute(contextProvider, request, response);
 		else {
-			EntityProviderRegistry entityProviderRegistry = contextRoot.get(EntityProviderRegistry.class);
-			EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
-
-			contextProvider = entityProvider.login("", "", "");
+			
+			HttpSession session = request.getSession();
+			contextProvider = (ContextProvider) session.getAttribute("contextProvider");
+			if(contextProvider == null) {
+				EntityProviderRegistry entityProviderRegistry = contextRoot.get(EntityProviderRegistry.class);
+				EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
+	
+				contextProvider = entityProvider.login(null);
+				session.setAttribute("contextProvider", contextProvider);
+			}
+			
+			if(contextProvider == null) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				return;
+			}
+			
 			execute(contextProvider, request, response);
-		}
-//			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+		}			
 	}
 
 	protected abstract void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException;

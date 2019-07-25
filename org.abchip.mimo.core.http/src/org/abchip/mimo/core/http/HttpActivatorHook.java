@@ -43,7 +43,7 @@ public class HttpActivatorHook {
 		try {
 			String filterString = "(http.port=" + socketConfig.getPort() + ")";
 			ExtendedHttpService httpService = (ExtendedHttpService) application.getContext().get(HttpService.class, filterString);
-
+			
 			if (httpService != null) {
 				application.getContext().set(HttpService.class, httpService);
 				

@@ -109,6 +109,14 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	ContextProvider login(String tenant);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model userRequired="true" passwordRequired="true"
 	 * @generated
 	 */

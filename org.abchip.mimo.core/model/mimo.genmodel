@@ -509,9 +509,12 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.2/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/login">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login/user"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login/password"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login/tenant"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/login.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/user"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/password"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/tenant"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/logout">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/logout/contextProvider"/>

@@ -150,6 +150,18 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
+	public ContextProvider login(String tenant) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ContextProvider login(String user, String password, String tenant) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
