@@ -1324,6 +1324,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEParameter(op, ecorePackage.getEString(), "password", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(entityProviderEClass, null, "loginThirdParty", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "provider", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(entityProviderEClass, null, "logout", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 

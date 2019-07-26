@@ -516,6 +516,9 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/password"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/tenant"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/loginThirdParty">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/loginThirdParty/provider"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/logout">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/logout/contextProvider"/>
         </genOperations>

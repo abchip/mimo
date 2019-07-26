@@ -37,35 +37,42 @@ public class LoginServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String userField = request.getParameter("user");
-		String[] fields = userField.split("/");
-
-		String tenant = null;
-		String user = null;
-		if (fields.length > 1) {
-			tenant = fields[0];
-			user = fields[1];
-		} else
-			user = fields[0];
-
-		String password = request.getParameter("password");
-
+		String provider = request.getParameter("provider");
 		EntityProviderRegistry entityProviderRegistry = contextRoot.get(EntityProviderRegistry.class);
 		EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
+		
+		// traditional login
+		if(provider == null) {
+			String[] fields = userField.split("/");
 
-		ContextProvider contextProvider = null;
+			String tenant = null;
+			String user = null;
+			if (fields.length > 1) {
+				tenant = fields[0];
+				user = fields[1];
+			} else
+				user = fields[0];
 
-		if (user == null || user.trim().isEmpty())
-			contextProvider = entityProvider.login(tenant);
-		else
-			contextProvider = entityProvider.login(user, password, tenant);
+			String password = request.getParameter("password");
+			ContextProvider contextProvider = null;
 
-		if (contextProvider == null)
-			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-		else {
+			if (user == null || user.trim().isEmpty())
+				contextProvider = entityProvider.login(tenant);
+			else
+				contextProvider = entityProvider.login(user, password, tenant);
+
+			if (contextProvider == null)
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			else {
+				response.setStatus(HttpServletResponse.SC_ACCEPTED);
+				response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"user\":\"" + user + "\"}");
+			}
+			response.flushBuffer();
+		} else {
+		// Third part 
+			entityProvider.loginThirdParty(provider);
 			response.setStatus(HttpServletResponse.SC_ACCEPTED);
-			response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"user\":\"" + user + "\"}");
+			response.flushBuffer();
 		}
-
-		response.flushBuffer();
 	}
 }
