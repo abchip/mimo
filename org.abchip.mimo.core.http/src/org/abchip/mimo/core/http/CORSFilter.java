@@ -22,19 +22,23 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
 public class CORSFilter implements Filter {
-	
+
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 	}
 
 	@Override
-	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
-			throws IOException, ServletException {
-		HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
-		httpResponse.addHeader("Access-Control-Allow-Origin", "*");
-		httpResponse.addHeader("Access-Control-Allow-Methods", "*");
-		httpResponse.addHeader("Access-Control-Allow-Headers", "*");
-		filterChain.doFilter(servletRequest, servletResponse);
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+
+		HttpServletResponse httpResponse = (HttpServletResponse) response;
+
+		httpResponse.setHeader("Access-Control-Allow-Origin", "*");
+		httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
+		httpResponse.setHeader("Access-Control-Allow-Methods", "*");
+		httpResponse.setHeader("Access-Control-Max-Age", "3600");
+		httpResponse.setHeader("Access-Control-Allow-Headers", "*");
+
+		chain.doFilter(request, response);
 	}
 
 	@Override

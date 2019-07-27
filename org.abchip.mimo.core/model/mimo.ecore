@@ -192,11 +192,7 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getChildContext" lowerBound="1" eType="#//context/Context">
-        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
       <eOperations name="getContextDescription" lowerBound="1" eType="#//context/ContextDescription"/>
-      <eOperations name="getID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="inject">
         <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>

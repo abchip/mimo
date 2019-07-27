@@ -71,26 +71,10 @@ public interface Context extends Closeable, ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextIdRequired="true"
-	 * @generated
-	 */
-	Context getChildContext(String contextId);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	ContextDescription getContextDescription();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	String getID();
 
 	/**
 	 * <!-- begin-user-doc -->

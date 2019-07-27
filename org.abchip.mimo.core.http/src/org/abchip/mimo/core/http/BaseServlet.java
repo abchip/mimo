@@ -46,29 +46,28 @@ public abstract class BaseServlet extends HttpServlet {
 
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ContextProvider contextProvider = this.contextRoot.getChildContext(request.getParameter("contextId"));
 
-		if (contextProvider != null)
+		HttpSession session = request.getSession();
+		ContextProvider contextProvider = (ContextProvider) session.getAttribute("contextProvider");
+
+		if (contextProvider != null) {
 			execute(contextProvider, request, response);
-		else {
-			
-			HttpSession session = request.getSession();
-			contextProvider = (ContextProvider) session.getAttribute("contextProvider");
-			if(contextProvider == null) {
-				EntityProviderRegistry entityProviderRegistry = contextRoot.get(EntityProviderRegistry.class);
-				EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
-	
-				contextProvider = entityProvider.login(null);
-				session.setAttribute("contextProvider", contextProvider);
-			}
-			
-			if(contextProvider == null) {
+		} else {
+			System.out.println("New Context: " + session.getId());
+
+			EntityProviderRegistry entityProviderRegistry = contextRoot.get(EntityProviderRegistry.class);
+			EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
+
+			contextProvider = entityProvider.login(null);
+			session.setAttribute("contextProvider", contextProvider);
+
+			if (contextProvider == null) {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				return;
 			}
-			
+
 			execute(contextProvider, request, response);
-		}			
+		}
 	}
 
 	protected abstract void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException;

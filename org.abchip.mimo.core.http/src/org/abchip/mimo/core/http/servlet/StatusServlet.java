@@ -10,21 +10,17 @@ package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityProviderRegistry;
 
 public class StatusServlet extends HttpServlet {
-
-	@Inject
-	private ContextRoot contextRoot;
 
 	private static final long serialVersionUID = 1L;
 
@@ -35,16 +31,19 @@ public class StatusServlet extends HttpServlet {
 
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ContextProvider contextProvider = this.contextRoot.getChildContext(request.getParameter("contextId"));
+
+		HttpSession session = request.getSession();
+		ContextProvider contextProvider = (ContextProvider) session.getAttribute("contextProvider");
+		
 		if (contextProvider != null) {
 
 			// TODO check su ofbiz
 			EntityProviderRegistry entityProviderRegistry = contextProvider.getContext().get(EntityProviderRegistry.class);
 			EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
 
-			if(entityProvider.isActive(contextProvider)) {
+			if (entityProvider.isActive(contextProvider)) {
 				response.setStatus(HttpServletResponse.SC_ACCEPTED);
-				response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"name\":\"Admin\"}");
+				response.getWriter().write("{\"id\":\"" + session.getId() + "\",\"name\":\"Admin\"}");
 			} else {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			}

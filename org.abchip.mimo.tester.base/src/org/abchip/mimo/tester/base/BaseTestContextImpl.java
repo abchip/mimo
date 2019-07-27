@@ -56,11 +56,6 @@ public class BaseTestContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public String getID() {
-		return delegate.getID();
-	}
-
-	@Override
 	public void inject(Object object) {
 		delegate.inject(object);
 	}

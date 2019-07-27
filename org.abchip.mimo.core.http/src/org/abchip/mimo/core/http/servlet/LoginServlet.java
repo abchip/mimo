@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
@@ -63,7 +64,8 @@ public class LoginServlet extends HttpServlet {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		else {
 			response.setStatus(HttpServletResponse.SC_ACCEPTED);
-			response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"user\":\"" + user + "\"}");
+			HttpSession session = request.getSession();
+			response.getWriter().write("{\"id\":\"" + session.getId() + "\",\"user\":\"" + user + "\"}");
 		}
 
 		response.flushBuffer();

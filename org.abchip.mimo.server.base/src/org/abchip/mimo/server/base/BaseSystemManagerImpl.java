@@ -200,7 +200,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 		contextDescription.getResources().add("MIMO" + new DecimalFormat("000000").format(job.getJobReference().getJobNumber()));
 
 		Context jobContext = system.getContext().createChildContext(contextDescription);
-		job.setJobID(jobContext.getID());
+//		job.setJobID(jobContext.get);
 		job.setContext(jobContext);
 		
 		// Thread

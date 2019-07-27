@@ -56,7 +56,6 @@ public class ContextDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getResources() <em>Resources</em>}' attribute list.
 	 * <!-- begin-user-doc -->

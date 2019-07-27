@@ -143,11 +143,7 @@
           <genParameters ecoreParameter="mimo.ecore#//context/Context/getAdapter/adapter"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/getAdapter/T"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Context/getChildContext">
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/getChildContext/contextId"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getContextDescription"/>
-        <genOperations ecoreOperation="mimo.ecore#//context/Context/getID"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/inject">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/inject/object"/>
         </genOperations>

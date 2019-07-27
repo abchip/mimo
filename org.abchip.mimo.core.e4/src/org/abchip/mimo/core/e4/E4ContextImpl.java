@@ -17,7 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.WeakHashMap;
 
 import javax.annotation.PostConstruct;
 
@@ -38,8 +37,8 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static Boolean postConstruct = null;
 
 	private ContextDescription contextDescription;
+	@SuppressWarnings("unused")
 	private String contextID;
-	private Map<String, Context> childContexts = new WeakHashMap<String, Context>();
 
 	public E4ContextImpl(String contextID, ContextDescription contextDescription) {
 		this.contextID = contextID;
@@ -233,11 +232,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public String getID() {
-		return this.contextID;
-	}
-
-	@Override
 	public ContextDescription getContextDescription() {
 		return this.contextDescription;
 	}
@@ -267,16 +261,11 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public Context getChildContext(String contextId) {
-		return this.childContexts.get(contextId);
-	}
-
-	@Override
-	public Context createChildContext(String name) {
+	public Context createChildContext(String id) {
 
 		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject) getContextDescription());
-		if (name != null)
-			childDescription.setName(name);
+		if (id != null)
+			childDescription.setName(id);
 
 		return createChildContext(childDescription);
 	}
@@ -288,7 +277,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 		initializeContext(eclipseChildContext);
 
 		Context contextChild = new E4ContextChildImpl(this, eclipseChildContext, UUID.randomUUID().toString(), contextDescription);
-		this.childContexts.put(contextChild.getID(), contextChild);
 
 		return contextChild;
 	}
