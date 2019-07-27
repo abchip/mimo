@@ -504,6 +504,7 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.2/resource"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityProvider/getEntityWriter.2/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/getProviderUrl"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/login">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login/tenant"/>
         </genOperations>

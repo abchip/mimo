@@ -66,19 +66,14 @@ public class LoginServlet extends HttpServlet {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			else {
 				response.setStatus(HttpServletResponse.SC_ACCEPTED);
-				response.getWriter().write("{\"id\":\"" + contextProvider.getContext().getID() + "\",\"user\":\"" + user + "\"}");
+				HttpSession session = request.getSession();
+				session.setAttribute("contextProvider", contextProvider);
+				response.getWriter().write("{\"id\":\"" + session.getId() + "\",\"user\":\"" + user + "\"}");
 			}
 			response.flushBuffer();
 		} else {
 		// Third part 
-			entityProvider.loginThirdParty(provider);
-			response.setStatus(HttpServletResponse.SC_ACCEPTED);
-<<<<<<< HEAD
-			HttpSession session = request.getSession();
-			response.getWriter().write("{\"id\":\"" + session.getId() + "\",\"user\":\"" + user + "\"}");
-=======
-			response.flushBuffer();
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
+			response.sendRedirect(entityProvider.getProviderUrl() + "/entityLoginThirdParty?provider=" + provider);
 		}
 	}
 }
