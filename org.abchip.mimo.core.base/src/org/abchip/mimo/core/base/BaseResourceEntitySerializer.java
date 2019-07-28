@@ -98,7 +98,7 @@ public class BaseResourceEntitySerializer {
 
 	private <E extends EntityNameable> URI buildURI(String resource, Frame<E> frame, String name) {
 
-		String uri = MimoConstants.SCHEME_NAME + "://" + context.getContextDescription().getName() + "/" + resource + "/" + frame.getName();
+		String uri = MimoConstants.SCHEME_NAME + "://" + context.getContextDescription().getId() + "/" + resource + "/" + frame.getName();
 		URI eURI = URI.createURI(uri);
 
 		// TODO remove me

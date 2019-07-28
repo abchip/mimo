@@ -451,7 +451,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_Name() {
+	public EAttribute getContextDescription_Anonymous() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -461,7 +461,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_Resources() {
+	public EAttribute getContextDescription_Id() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -471,7 +471,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_ResourceRoot() {
+	public EAttribute getContextDescription_Resources() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -481,8 +481,38 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_ResourceTemporary() {
+	public EAttribute getContextDescription_ResourceRoot() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContextDescription_ResourceTemporary() {
+		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContextDescription_Tenant() {
+		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContextDescription_User() {
+		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -840,15 +870,18 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		contextEClass = createEClass(CONTEXT);
 
-		contextRootEClass = createEClass(CONTEXT_ROOT);
-
 		contextDescriptionEClass = createEClass(CONTEXT_DESCRIPTION);
-		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__NAME);
+		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__ANONYMOUS);
+		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__ID);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__RESOURCES);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__RESOURCE_ROOT);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY);
+		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__TENANT);
+		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__USER);
 
 		contextProviderEClass = createEClass(CONTEXT_PROVIDER);
+
+		contextRootEClass = createEClass(CONTEXT_ROOT);
 
 		entityLockerEClass = createEClass(ENTITY_LOCKER);
 
@@ -945,6 +978,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		capabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
 		contextEClass.getESuperTypes().add(this.getContextProvider());
+		contextDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextRootEClass.getESuperTypes().add(this.getContext());
 		identityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -996,12 +1030,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(contextEClass, null, "close", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(contextEClass, this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getContextDescription(), "contextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(contextEClass, null, "get", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
@@ -1022,8 +1050,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, g1, "adapter", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
-
-		addEOperation(contextEClass, this.getContextDescription(), "getContextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "inject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1080,7 +1106,28 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(contextEClass, this.getContextRoot(), "getContextRoot", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(contextDescriptionEClass, ContextDescription.class, "ContextDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getContextDescription_Anonymous(), ecorePackage.getEBoolean(), "anonymous", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDescription_Id(), ecorePackage.getEString(), "id", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDescription_Resources(), ecorePackage.getEString(), "resources", null, 0, -1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDescription_ResourceRoot(), ecorePackage.getEString(), "resourceRoot", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDescription_ResourceTemporary(), ecorePackage.getEString(), "resourceTemporary", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDescription_Tenant(), ecorePackage.getEString(), "tenant", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDescription_User(), ecorePackage.getEString(), "user", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(contextProviderEClass, ContextProvider.class, "ContextProvider", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(contextProviderEClass, this.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(contextProviderEClass, this.getContextDescription(), "getContextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(contextRootEClass, ContextRoot.class, "ContextRoot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(contextRootEClass, this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(contextRootEClass, this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getContextDescription(), "contextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextRootEClass, null, "get", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
@@ -1144,16 +1191,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "dictionary", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(contextDescriptionEClass, ContextDescription.class, "ContextDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContextDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContextDescription_Resources(), ecorePackage.getEString(), "resources", null, 0, -1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContextDescription_ResourceRoot(), ecorePackage.getEString(), "resourceRoot", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContextDescription_ResourceTemporary(), ecorePackage.getEString(), "resourceTemporary", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(contextProviderEClass, ContextProvider.class, "ContextProvider", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		addEOperation(contextProviderEClass, this.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityLockerEClass, EntityLocker.class, "EntityLocker", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

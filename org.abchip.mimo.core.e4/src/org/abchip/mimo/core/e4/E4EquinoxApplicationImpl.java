@@ -13,7 +13,6 @@ package org.abchip.mimo.core.e4;
 
 import java.util.Collections;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import org.abchip.mimo.application.Application;
@@ -101,7 +100,7 @@ public class E4EquinoxApplicationImpl implements IApplication {
 		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
 		
 		BundleContext bundleContext = bundle.getBundleContext();		
-		E4ContextRootImpl contextApplication = new E4ContextRootImpl(bundleContext, UUID.randomUUID().toString(), application.getContextDescription());
+		E4ContextRootImpl contextApplication = new E4ContextRootImpl(bundleContext, application.getContextDescription());
 		contextApplication.set(Application.class, application);
 		contextApplication.set(ContextRoot.class, contextApplication);
 		application.setContext(contextApplication);

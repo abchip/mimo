@@ -124,7 +124,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		resource = contextProvider.getContext().resolveAlias(resource);
 
-		EntityProvider resourceProvider = getEntityProvider(frame);
+		EntityProvider resourceProvider = getProvider(frame);
 		if (resourceProvider == null)
 			return null;
 
@@ -140,7 +140,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 
 		resources = contextProvider.getContext().resolveAliases(resources);
 
-		EntityProvider resourceProvider = getEntityProvider(frame);
+		EntityProvider resourceProvider = getProvider(frame);
 		if (resourceProvider == null)
 			return null;
 
@@ -199,7 +199,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		resource = contextProvider.getContext().resolveAlias(resource);
 
-		EntityProvider resourceProvider = getEntityProvider(frame);
+		EntityProvider resourceProvider = getProvider(frame);
 		if (resourceProvider == null)
 			return null;
 
@@ -208,27 +208,6 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 			prepareListener(resourceWriter, frame);
 
 		return resourceWriter;
-	}
-
-	private EntityProvider getEntityProvider(Frame<?> frame) {
-		String filter = "(" + MimoConstants.PROVIDER_FRAME + "=" + frame.getName() + ")";
-
-		EntityProvider entityProvider = null;
-
-		for (EntityProvider ep : contextRoot.getAll(EntityProvider.class, filter)) {
-			entityProvider = ep;
-			break;
-		}
-
-		if (entityProvider == null) {
-			for (Frame<?> ako : frame.getSuperFrames()) {
-				entityProvider = getEntityProvider(ako);
-				if (entityProvider != null)
-					break;
-			}
-		}
-
-		return entityProvider;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -291,4 +270,42 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		}
 		return resources;
 	}
+
+	@Override
+	public <E extends EntityNameable> EntityProvider getProvider(Class<E> klass) {
+		return getProvider(klass.getSimpleName());
+	}
+
+	@Override
+	public <E extends EntityNameable> EntityProvider getProvider(String frameName) {
+		@SuppressWarnings("unchecked")
+		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		return getProvider(frame);
+	}
+
+	@Override
+	public <E extends EntityNameable> EntityProvider getProvider(Frame<E> frame) {
+		return getEntityProvider(frame);
+	}
+	
+	private EntityProvider getEntityProvider(Frame<?> frame) {
+		String filter = "(" + MimoConstants.PROVIDER_FRAME + "=" + frame.getName() + ")";
+
+		EntityProvider entityProvider = null;
+
+		for (EntityProvider ep : contextRoot.getAll(EntityProvider.class, filter)) {
+			entityProvider = ep;
+			break;
+		}
+
+		if (entityProvider == null) {
+			for (Frame<?> ako : frame.getSuperFrames()) {
+				entityProvider = getEntityProvider(ako);
+				if (entityProvider != null)
+					break;
+			}
+		}
+
+		return entityProvider;
+	}	
 }

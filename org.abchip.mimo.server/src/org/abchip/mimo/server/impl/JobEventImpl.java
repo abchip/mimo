@@ -93,6 +93,7 @@ public class JobEventImpl extends MinimalEObjectImpl.Container implements JobEve
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Job getSource() {
 		if (source != null && ((EObject)source).eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject)source;
@@ -119,6 +120,7 @@ public class JobEventImpl extends MinimalEObjectImpl.Container implements JobEve
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSource(Job newSource) {
 		Job oldSource = source;
 		source = newSource;
@@ -131,6 +133,7 @@ public class JobEventImpl extends MinimalEObjectImpl.Container implements JobEve
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobEventType getType() {
 		return type;
 	}
@@ -140,6 +143,7 @@ public class JobEventImpl extends MinimalEObjectImpl.Container implements JobEve
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(JobEventType newType) {
 		JobEventType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -225,7 +229,7 @@ public class JobEventImpl extends MinimalEObjectImpl.Container implements JobEve
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
 		result.append(')');

@@ -13,7 +13,6 @@
 package org.abchip.mimo.entity;
 
 import java.util.List;
-
 import org.abchip.mimo.context.ContextProvider;
 
 /**
@@ -29,10 +28,10 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextIdRequired="true"
+	 * @model contextProviderRequired="true"
 	 * @generated
 	 */
-	boolean isActive(ContextProvider contextId);
+	boolean isActive(ContextProvider contextProvider);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,18 +116,18 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model contextIdRequired="true"
 	 * @generated
 	 */
-	ContextProvider login(String tenant);
+	ContextProvider login(String contextId, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model userRequired="true" passwordRequired="true"
+	 * @model contextIdRequired="true" userRequired="true" passwordRequired="true"
 	 * @generated
 	 */
-	ContextProvider login(String user, String password, String tenant);
+	ContextProvider login(String contextId, String user, String password, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->

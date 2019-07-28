@@ -49,7 +49,7 @@ public class BaseSystemActivator {
 
 		String resolvedString = varString;
 		if (resolvedString.indexOf("${rt.core.application.name}") >= 0)
-			resolvedString = resolvedString.replace("${rt.core.application.name}", contextRoot.getContextDescription().getName());
+			resolvedString = resolvedString.replace("${rt.core.application.name}", contextRoot.getContextDescription().getId());
 		if (resolvedString.indexOf("${osgi.instance.area}") >= 0)
 			resolvedString = resolvedString.replace("${osgi.instance.area}", System.getProperty("osgi.instance.area"));
 

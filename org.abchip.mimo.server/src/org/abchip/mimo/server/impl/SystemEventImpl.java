@@ -92,6 +92,7 @@ public class SystemEventImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.abchip.mimo.server.System getSource() {
 		if (source != null && ((EObject)source).eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject)source;
@@ -118,6 +119,7 @@ public class SystemEventImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSource(org.abchip.mimo.server.System newSource) {
 		org.abchip.mimo.server.System oldSource = source;
 		source = newSource;
@@ -130,6 +132,7 @@ public class SystemEventImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SystemEventType getType() {
 		return type;
 	}
@@ -139,6 +142,7 @@ public class SystemEventImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(SystemEventType newType) {
 		SystemEventType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -224,7 +228,7 @@ public class SystemEventImpl extends MinimalEObjectImpl.Container implements Sys
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
 		result.append(')');

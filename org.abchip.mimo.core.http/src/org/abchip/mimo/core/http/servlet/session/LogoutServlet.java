@@ -6,28 +6,35 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.http.servlet;
+package org.abchip.mimo.core.http.servlet.session;
 
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
-import org.abchip.mimo.entity.EntityProvider;
-import org.abchip.mimo.entity.EntityProviderRegistry;
+import org.abchip.mimo.core.http.ServletUtils;
 
 public class LogoutServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		EntityProviderRegistry entityProviderRegistry = contextProvider.getContext().get(EntityProviderRegistry.class);
-		EntityProvider entityProvider = entityProviderRegistry.lookup("*OFBIZ");
-		entityProvider.logout(contextProvider);
+		System.out.println(this.getServletName());
+
+		HttpSession session = request.getSession();
+		System.out.println(session.getId());
+		
+		ServletUtils.removeContextProvider(session.getId());
+		
+		this.getDefaultProvider().logout(contextProvider);
+		
 		contextProvider.getContext().close();
+		
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 		response.flushBuffer();
 	}

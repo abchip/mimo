@@ -133,6 +133,7 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -142,6 +143,7 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -175,6 +177,7 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getResources() {
 		if (resources == null) {
 			resources = new EDataTypeUniqueEList<String>(String.class, this, ServerPackage.JOB_DESCRIPTION__RESOURCES);
@@ -187,6 +190,7 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -196,6 +200,7 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
@@ -297,7 +302,7 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", resources: ");

@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 
@@ -26,8 +25,6 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public abstract class E4ContextImpl extends ContextImpl {
 
@@ -37,11 +34,8 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static Boolean postConstruct = null;
 
 	private ContextDescription contextDescription;
-	@SuppressWarnings("unused")
-	private String contextID;
 
-	public E4ContextImpl(String contextID, ContextDescription contextDescription) {
-		this.contextID = contextID;
+	public E4ContextImpl(ContextDescription contextDescription) {
 		this.contextDescription = contextDescription;
 	}
 
@@ -258,26 +252,5 @@ public abstract class E4ContextImpl extends ContextImpl {
 			newValues.add(resolveAlias(value));
 
 		return newValues;
-	}
-
-	@Override
-	public Context createChildContext(String id) {
-
-		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject) getContextDescription());
-		if (id != null)
-			childDescription.setName(id);
-
-		return createChildContext(childDescription);
-	}
-
-	@Override
-	public Context createChildContext(ContextDescription contextDescription) {
-
-		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
-		initializeContext(eclipseChildContext);
-
-		Context contextChild = new E4ContextChildImpl(this, eclipseChildContext, UUID.randomUUID().toString(), contextDescription);
-
-		return contextChild;
 	}
 }

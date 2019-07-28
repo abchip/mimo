@@ -47,7 +47,7 @@
     </genEnums>
     <genClasses ecoreClass="server.ecore#//Job">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference server.ecore#//Job/context"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference server.ecore#//Job/creationInfo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//Job/creationDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//Job/currentResource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//Job/dateFormat"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//Job/dateSeparator"/>
@@ -72,15 +72,15 @@
     </genClasses>
     <genClasses ecoreClass="server.ecore#//JobCapability">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference server.ecore#//JobCapability/jobReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobCapability/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobCapability/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobCapability/text"/>
     </genClasses>
     <genClasses ecoreClass="server.ecore#//JobDescription">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference server.ecore#//JobDescription/jobQueue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobDescription/jobPriorityOnJobq"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference server.ecore#//JobDescription/outQueue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobDescription/outputPriorityOnOutq"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobDescription/user"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobDescription/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobDescription/resources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobDescription/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//JobDescription/user"/>
     </genClasses>
     <genClasses ecoreClass="server.ecore#//JobEvent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference server.ecore#//JobEvent/source"/>
@@ -222,15 +222,11 @@
     </genClasses>
     <genClasses ecoreClass="server.ecore#//System">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference server.ecore#//System/context"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference server.ecore#//System/creationInfo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//System/lastJobNumber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//System/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//System/port"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//System/status"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//System/systemResource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//System/systemUser"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//System/temporaryResource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//System/pathOsgiLog"/>
       <genOperations ecoreOperation="server.ecore#//System/getAvailableProcessors"/>
       <genOperations ecoreOperation="server.ecore#//System/getLoadAverage"/>
     </genClasses>

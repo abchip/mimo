@@ -37,7 +37,7 @@ public class BaseTestManagerImpl implements TestManager {
 		Bundle bundle = FrameworkUtil.getBundle(klass);
 		String classURI = MimoConstants.SCHEME_NAME + ":/bundle/" + bundle.getSymbolicName() + "/" + klass.getName();
 
-		Context testContext = new BaseTestContextImpl(contextProvider.getContext().createChildContext(klass.getSimpleName()));
+		Context testContext = new BaseTestContextImpl(contextProvider.getContext());
 		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, classURI);
 		return testRunner;
 	}
@@ -45,7 +45,7 @@ public class BaseTestManagerImpl implements TestManager {
 	@Override
 	public TestUnitRunner prepareUnitRunner(ContextProvider contextProvider, String classURI) {
 
-		Context testContext = new BaseTestContextImpl(contextProvider.getContext().createChildContext(classURI));
+		Context testContext = new BaseTestContextImpl(contextProvider.getContext());
 		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, classURI);
 		return testRunner;
 	}
@@ -71,7 +71,7 @@ public class BaseTestManagerImpl implements TestManager {
 		for (ServiceReference<TestSuiteLauncher> serviceRef : serviceReferences) {
 			TestSuiteLauncher testSuiteLauncher = bundleContext.getService(serviceRef);
 
-			Context testContext = new BaseTestContextImpl(contextProvider.getContext().createChildContext(testSuiteLauncher.getClass().getSimpleName()));
+			Context testContext = new BaseTestContextImpl(contextProvider.getContext());
 			TestSuiteRunner suiteRunner = testSuiteLauncher.createSuite(testContext);
 			suiteRunners.add(suiteRunner);
 		}

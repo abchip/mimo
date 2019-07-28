@@ -20,12 +20,16 @@ import java.util.Collections;
 import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.UUID;
 
 import org.abchip.mimo.MimoConstants;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.e4.core.contexts.EclipseContextFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
@@ -37,8 +41,8 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	private BundleContext bundleContext;
 	private IEclipseContext eclipseContext;
 
-	public E4ContextRootImpl(BundleContext bundleContext, String contextID, ContextDescription contextDescription) {
-		super(contextID, contextDescription);
+	public E4ContextRootImpl(BundleContext bundleContext, ContextDescription contextDescription) {
+		super(contextDescription);
 
 		this.bundleContext = bundleContext;
 		this.eclipseContext = EclipseContextFactory.getServiceContext(bundleContext);
@@ -69,13 +73,13 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	public Class<?> loadClass(String className) {
 
 		Class<?> klass = null;
-		
-		if(className.startsWith(MimoConstants.SCHEME_NAME + ":")) {
+
+		if (className.startsWith(MimoConstants.SCHEME_NAME + ":")) {
 			URI uri = URI.create(className);
 			String tokens[] = uri.getPath().split("/");
-			if(tokens[1].equals("bundle")) {
-				for(Bundle bundle: bundleContext.getBundles()) {
-					if(bundle.getSymbolicName().equals(tokens[2])) {
+			if (tokens[1].equals("bundle")) {
+				for (Bundle bundle : bundleContext.getBundles()) {
+					if (bundle.getSymbolicName().equals(tokens[2])) {
 						try {
 							klass = bundle.loadClass(tokens[3]);
 							break;
@@ -85,12 +89,11 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 					}
 				}
 			}
-		}
-		else {
+		} else {
 			for (Bundle bundle : getBundleContext().getBundles()) {
 				try {
 					klass = bundle.loadClass(className);
-					break;				
+					break;
 				} catch (ClassNotFoundException e) {
 					continue;
 				}
@@ -184,5 +187,28 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		Enumeration<URL> resources = bundle.getResources(path);
 
 		return Collections.list(resources);
+	}
+
+	@Override
+	public Context createChildContext(String id) {
+
+		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject) getContextDescription());
+		childDescription.setId(id);
+
+		return createChildContext(childDescription);
+	}
+
+	@Override
+	public Context createChildContext(ContextDescription contextDescription) {
+
+		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
+		initializeContext(eclipseChildContext);
+
+		if (contextDescription.getId() == null)
+			contextDescription.setId(UUID.randomUUID().toString());
+
+		Context contextChild = new E4ContextChildImpl(this, eclipseChildContext, contextDescription);
+
+		return contextChild;
 	}
 }

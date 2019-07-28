@@ -83,6 +83,7 @@ public class JobRunInfoImpl extends EntityImpl implements JobRunInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public long getMemorySize() {
 		return memorySize;
 	}
@@ -92,6 +93,7 @@ public class JobRunInfoImpl extends EntityImpl implements JobRunInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMemorySize(long newMemorySize) {
 		long oldMemorySize = memorySize;
 		memorySize = newMemorySize;
@@ -166,7 +168,7 @@ public class JobRunInfoImpl extends EntityImpl implements JobRunInfo {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (memorySize: ");
 		result.append(memorySize);
 		result.append(')');

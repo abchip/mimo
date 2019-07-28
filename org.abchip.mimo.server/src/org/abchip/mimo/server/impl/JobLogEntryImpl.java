@@ -258,7 +258,7 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (gravity: ");
 		result.append(gravity);
 		result.append(", message: ");

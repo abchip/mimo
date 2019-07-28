@@ -226,16 +226,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextRoot()
 	 * @generated
 	 */
-	int CONTEXT_ROOT = 6;
-
-	/**
-	 * The number of structural features of the '<em>Root</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_ROOT_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 0;
+	int CONTEXT_ROOT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ContextDescriptionImpl <em>Description</em>}' class.
@@ -245,16 +236,25 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextDescription()
 	 * @generated
 	 */
-	int CONTEXT_DESCRIPTION = 7;
+	int CONTEXT_DESCRIPTION = 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Anonymous</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__NAME = 0;
+	int CONTEXT_DESCRIPTION__ANONYMOUS = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DESCRIPTION__ID = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
@@ -263,7 +263,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__RESOURCES = 1;
+	int CONTEXT_DESCRIPTION__RESOURCES = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Resource Root</b></em>' attribute.
@@ -272,7 +272,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__RESOURCE_ROOT = 2;
+	int CONTEXT_DESCRIPTION__RESOURCE_ROOT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Resource Temporary</b></em>' attribute.
@@ -281,7 +281,25 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY = 3;
+	int CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DESCRIPTION__TENANT = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>User</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DESCRIPTION__USER = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Description</em>' class.
@@ -290,7 +308,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION_FEATURE_COUNT = 4;
+	int CONTEXT_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ContextProvider <em>Provider</em>}' class.
@@ -300,7 +318,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextProvider()
 	 * @generated
 	 */
-	int CONTEXT_PROVIDER = 8;
+	int CONTEXT_PROVIDER = 7;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -310,6 +328,15 @@ public interface ContextPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTEXT_PROVIDER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Root</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_ROOT_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.EntityLocker <em>Entity Locker</em>}' class.
@@ -821,15 +848,26 @@ public interface ContextPackage extends EPackage {
 	EClass getContextDescription();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#isAnonymous <em>Anonymous</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.context.ContextDescription#getName()
+	 * @return the meta object for the attribute '<em>Anonymous</em>'.
+	 * @see org.abchip.mimo.context.ContextDescription#isAnonymous()
 	 * @see #getContextDescription()
 	 * @generated
 	 */
-	EAttribute getContextDescription_Name();
+	EAttribute getContextDescription_Anonymous();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.abchip.mimo.context.ContextDescription#getId()
+	 * @see #getContextDescription()
+	 * @generated
+	 */
+	EAttribute getContextDescription_Id();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.context.ContextDescription#getResources <em>Resources</em>}'.
@@ -863,6 +901,28 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContextDescription_ResourceTemporary();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#getTenant <em>Tenant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tenant</em>'.
+	 * @see org.abchip.mimo.context.ContextDescription#getTenant()
+	 * @see #getContextDescription()
+	 * @generated
+	 */
+	EAttribute getContextDescription_Tenant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#getUser <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>User</em>'.
+	 * @see org.abchip.mimo.context.ContextDescription#getUser()
+	 * @see #getContextDescription()
+	 * @generated
+	 */
+	EAttribute getContextDescription_User();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.ContextProvider <em>Provider</em>}'.
@@ -1324,12 +1384,20 @@ public interface ContextPackage extends EPackage {
 		EClass CONTEXT_DESCRIPTION = eINSTANCE.getContextDescription();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Anonymous</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTEXT_DESCRIPTION__NAME = eINSTANCE.getContextDescription_Name();
+		EAttribute CONTEXT_DESCRIPTION__ANONYMOUS = eINSTANCE.getContextDescription_Anonymous();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_DESCRIPTION__ID = eINSTANCE.getContextDescription_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Resources</b></em>' attribute list feature.
@@ -1354,6 +1422,22 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY = eINSTANCE.getContextDescription_ResourceTemporary();
+
+		/**
+		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_DESCRIPTION__TENANT = eINSTANCE.getContextDescription_Tenant();
+
+		/**
+		 * The meta object literal for the '<em><b>User</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_DESCRIPTION__USER = eINSTANCE.getContextDescription_User();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.ContextProvider <em>Provider</em>}' class.

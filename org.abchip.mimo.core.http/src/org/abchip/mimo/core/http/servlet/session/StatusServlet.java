@@ -6,37 +6,31 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.http;
+package org.abchip.mimo.core.http.servlet.session;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 import javax.inject.Inject;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
 
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.core.http.ServletUtils;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.ResourceManager;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.abchip.mimo.entity.ResourceSerializer;
+import org.abchip.mimo.entity.SerializationType;
 
-public abstract class BaseServlet extends HttpServlet {
+public class StatusServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	private ResourceManager resourceManager;
-
-	private static final long serialVersionUID = 1L;
 
 	private EntityProvider entityProvider = null;
 
@@ -73,48 +67,29 @@ public abstract class BaseServlet extends HttpServlet {
 			// TODO reactivate context on provider
 		}
 
-		// invalid access
+		// new session with anonymous user
 		if (contextProvider == null) {
 			ServletUtils.removeContextProvider(session.getId());
+
+			contextProvider = this.getDefaultProvider().login(session.getId(), null);
+			ServletUtils.addContextProvider(contextProvider);
+		}
+
+		if (contextProvider == null) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;
 		}
 
-		execute(contextProvider, request, response);
-	}
+		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-	protected abstract void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException;
+		ResourceSerializer<ContextDescription> serializer = resourceManager.getResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JSON);
+		serializer.add(contextProvider.getContext().getContextDescription());
+		serializer.save(response.getOutputStream());
+		serializer.close();
 
-	protected Map<String, Part> parseRequest(HttpServletRequest request) throws IOException, ServletException {
+		// response.getWriter().write("{\"id\":\"" + session.getId() +
+		// "\",\"user\":\"Admin\"}");
 
-		ServletFileUpload upload = null;
-
-		// Must return non-null File. See Servlet 3.1 §4.8.1
-		File baseStorage = (File) request.getServletContext().getAttribute(ServletContext.TEMPDIR);
-		baseStorage.mkdirs();
-
-		File storage = new File(UUID.randomUUID().toString());
-
-		if (!storage.isAbsolute()) {
-			storage = new File(baseStorage, storage.getPath());
-		}
-
-		DiskFileItemFactory factory = new DiskFileItemFactory();
-		factory.setRepository(baseStorage);
-		upload = new ServletFileUpload(factory);
-
-		Map<String, Part> parts = new HashMap<String, Part>();
-
-		try {
-			for (Object item : upload.parseRequest(request)) {
-				DiskFileItem diskFileItem = (DiskFileItem) item;
-
-				parts.put(diskFileItem.getFieldName(), new MultipartSupportPart(diskFileItem));
-			}
-		} catch (FileUploadException fnfe) {
-			throw new IOException(fnfe);
-		}
-
-		return parts;
+		response.flushBuffer();
 	}
 }

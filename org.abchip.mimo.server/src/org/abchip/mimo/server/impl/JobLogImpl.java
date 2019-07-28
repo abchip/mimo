@@ -90,6 +90,7 @@ public class JobLogImpl extends EntityNameableImpl implements JobLog {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Job getJob() {
 		if (job != null && ((EObject)job).eIsProxy()) {
 			InternalEObject oldJob = (InternalEObject)job;
@@ -116,6 +117,7 @@ public class JobLogImpl extends EntityNameableImpl implements JobLog {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setJob(Job newJob) {
 		Job oldJob = job;
 		job = newJob;
@@ -128,6 +130,7 @@ public class JobLogImpl extends EntityNameableImpl implements JobLog {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<JobLogEntry> getEntries() {
 		if (entries == null) {
 			entries = new EObjectContainmentEList<JobLogEntry>(JobLogEntry.class, this, ServerPackage.JOB_LOG__ENTRIES);

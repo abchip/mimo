@@ -226,7 +226,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ServerPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -240,7 +240,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		if (isInited) return (ServerPackage)EPackage.Registry.INSTANCE.getEPackage(ServerPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ServerPackageImpl theServerPackage = (ServerPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ServerPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ServerPackageImpl());
+		Object registeredServerPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ServerPackageImpl theServerPackage = registeredServerPackage instanceof ServerPackageImpl ? (ServerPackageImpl)registeredServerPackage : new ServerPackageImpl();
 
 		isInited = true;
 
@@ -256,7 +257,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		// Mark meta-data to indicate it can't be changed
 		theServerPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ServerPackage.eNS_URI, theServerPackage);
 		return theServerPackage;
@@ -267,6 +267,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJob() {
 		return jobEClass;
 	}
@@ -276,6 +277,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJob_Context() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(0);
 	}
@@ -285,6 +287,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_CreationDate() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(1);
 	}
@@ -294,6 +297,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_CurrentResource() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(2);
 	}
@@ -303,6 +307,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_DateFormat() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(3);
 	}
@@ -312,6 +317,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_DateSeparator() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(4);
 	}
@@ -321,6 +327,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_DestroyDate() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(5);
 	}
@@ -330,6 +337,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_JobID() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(6);
 	}
@@ -339,6 +347,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJob_JobReference() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(7);
 	}
@@ -348,6 +357,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJob_JobRunInfo() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(8);
 	}
@@ -357,6 +367,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJob_JobThread() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(9);
 	}
@@ -366,6 +377,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_JobType() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(10);
 	}
@@ -375,6 +387,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_Resources() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(11);
 	}
@@ -384,6 +397,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJob_Messages() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(12);
 	}
@@ -393,6 +407,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJob_System() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(13);
 	}
@@ -402,6 +417,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJob_TimeSeparator() {
 		return (EAttribute)jobEClass.getEStructuralFeatures().get(14);
 	}
@@ -411,6 +427,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobCapability() {
 		return jobCapabilityEClass;
 	}
@@ -420,6 +437,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJobCapability_JobReference() {
 		return (EReference)jobCapabilityEClass.getEStructuralFeatures().get(0);
 	}
@@ -429,6 +447,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobCapability_Name() {
 		return (EAttribute)jobCapabilityEClass.getEStructuralFeatures().get(1);
 	}
@@ -438,6 +457,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobCapability_Port() {
 		return (EAttribute)jobCapabilityEClass.getEStructuralFeatures().get(2);
 	}
@@ -447,6 +467,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobCapability_Text() {
 		return (EAttribute)jobCapabilityEClass.getEStructuralFeatures().get(3);
 	}
@@ -456,6 +477,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobDescription() {
 		return jobDescriptionEClass;
 	}
@@ -465,6 +487,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobDescription_Name() {
 		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(0);
 	}
@@ -474,6 +497,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobDescription_User() {
 		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(3);
 	}
@@ -483,6 +507,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobDescription_Resources() {
 		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(1);
 	}
@@ -492,6 +517,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobDescription_Text() {
 		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(2);
 	}
@@ -501,6 +527,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobEvent() {
 		return jobEventEClass;
 	}
@@ -510,6 +537,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJobEvent_Source() {
 		return (EReference)jobEventEClass.getEStructuralFeatures().get(0);
 	}
@@ -519,6 +547,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobEvent_Type() {
 		return (EAttribute)jobEventEClass.getEStructuralFeatures().get(1);
 	}
@@ -528,6 +557,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobListener() {
 		return jobListenerEClass;
 	}
@@ -537,6 +567,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobLog() {
 		return jobLogEClass;
 	}
@@ -546,6 +577,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJobLog_Job() {
 		return (EReference)jobLogEClass.getEStructuralFeatures().get(0);
 	}
@@ -555,6 +587,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJobLog_Entries() {
 		return (EReference)jobLogEClass.getEStructuralFeatures().get(1);
 	}
@@ -564,6 +597,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobLogEntry() {
 		return jobLogEntryEClass;
 	}
@@ -573,6 +607,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobLogEntry_Gravity() {
 		return (EAttribute)jobLogEntryEClass.getEStructuralFeatures().get(0);
 	}
@@ -582,6 +617,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobLogEntry_Message() {
 		return (EAttribute)jobLogEntryEClass.getEStructuralFeatures().get(1);
 	}
@@ -591,6 +627,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobLogEntry_CreationDate() {
 		return (EAttribute)jobLogEntryEClass.getEStructuralFeatures().get(2);
 	}
@@ -600,6 +637,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobLogManager() {
 		return jobLogManagerEClass;
 	}
@@ -609,6 +647,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobManager() {
 		return jobManagerEClass;
 	}
@@ -618,6 +657,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobMessage() {
 		return jobMessageEClass;
 	}
@@ -627,6 +667,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobMessage_MessageId() {
 		return (EAttribute)jobMessageEClass.getEStructuralFeatures().get(0);
 	}
@@ -636,6 +677,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobMessage_MessageText() {
 		return (EAttribute)jobMessageEClass.getEStructuralFeatures().get(1);
 	}
@@ -645,6 +687,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobReference() {
 		return jobReferenceEClass;
 	}
@@ -654,6 +697,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobReference_JobNumber() {
 		return (EAttribute)jobReferenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -663,6 +707,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobReference_JobUser() {
 		return (EAttribute)jobReferenceEClass.getEStructuralFeatures().get(1);
 	}
@@ -672,6 +717,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobReference_JobName() {
 		return (EAttribute)jobReferenceEClass.getEStructuralFeatures().get(2);
 	}
@@ -681,6 +727,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJobRunInfo() {
 		return jobRunInfoEClass;
 	}
@@ -690,6 +737,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getJobRunInfo_MemorySize() {
 		return (EAttribute)jobRunInfoEClass.getEStructuralFeatures().get(0);
 	}
@@ -699,6 +747,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSystem() {
 		return systemEClass;
 	}
@@ -708,6 +757,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSystem_Context() {
 		return (EReference)systemEClass.getEStructuralFeatures().get(0);
 	}
@@ -717,6 +767,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSystem_LastJobNumber() {
 		return (EAttribute)systemEClass.getEStructuralFeatures().get(1);
 	}
@@ -726,6 +777,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSystem_Name() {
 		return (EAttribute)systemEClass.getEStructuralFeatures().get(2);
 	}
@@ -735,6 +787,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSystem_Port() {
 		return (EAttribute)systemEClass.getEStructuralFeatures().get(3);
 	}
@@ -744,6 +797,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSystem_Status() {
 		return (EAttribute)systemEClass.getEStructuralFeatures().get(4);
 	}
@@ -753,6 +807,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSystem_SystemUser() {
 		return (EAttribute)systemEClass.getEStructuralFeatures().get(5);
 	}
@@ -762,6 +817,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSystemEvent() {
 		return systemEventEClass;
 	}
@@ -771,6 +827,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSystemEvent_Source() {
 		return (EReference)systemEventEClass.getEStructuralFeatures().get(0);
 	}
@@ -780,6 +837,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSystemEvent_Type() {
 		return (EAttribute)systemEventEClass.getEStructuralFeatures().get(1);
 	}
@@ -789,6 +847,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSystemListener() {
 		return systemListenerEClass;
 	}
@@ -798,6 +857,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSystemManager() {
 		return systemManagerEClass;
 	}
@@ -807,6 +867,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getJobEventType() {
 		return jobEventTypeEEnum;
 	}
@@ -816,6 +877,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getJobStatus() {
 		return jobStatusEEnum;
 	}
@@ -825,6 +887,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getJobType() {
 		return jobTypeEEnum;
 	}
@@ -834,6 +897,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getSystemEventType() {
 		return systemEventTypeEEnum;
 	}
@@ -843,6 +907,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getSystemStatus() {
 		return systemStatusEEnum;
 	}
@@ -852,6 +917,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServerFactory getServerFactory() {
 		return (ServerFactory)getEFactoryInstance();
 	}

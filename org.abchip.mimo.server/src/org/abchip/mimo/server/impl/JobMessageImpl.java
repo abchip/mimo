@@ -98,6 +98,7 @@ public class JobMessageImpl extends EntityImpl implements JobMessage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMessageId() {
 		return messageId;
 	}
@@ -107,6 +108,7 @@ public class JobMessageImpl extends EntityImpl implements JobMessage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageId(String newMessageId) {
 		String oldMessageId = messageId;
 		messageId = newMessageId;
@@ -119,6 +121,7 @@ public class JobMessageImpl extends EntityImpl implements JobMessage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMessageText() {
 		return messageText;
 	}
@@ -128,6 +131,7 @@ public class JobMessageImpl extends EntityImpl implements JobMessage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageText(String newMessageText) {
 		String oldMessageText = messageText;
 		messageText = newMessageText;
@@ -212,7 +216,7 @@ public class JobMessageImpl extends EntityImpl implements JobMessage {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (messageId: ");
 		result.append(messageId);
 		result.append(", messageText: ");

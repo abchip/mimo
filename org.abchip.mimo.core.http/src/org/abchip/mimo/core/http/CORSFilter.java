@@ -5,9 +5,6 @@
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
  *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
  */
 package org.abchip.mimo.core.http;
 
@@ -35,8 +32,9 @@ public class CORSFilter implements Filter {
 		httpResponse.setHeader("Access-Control-Allow-Origin", "*");
 		httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
 		httpResponse.setHeader("Access-Control-Allow-Methods", "*");
-		httpResponse.setHeader("Access-Control-Max-Age", "3600");
+//		httpResponse.setHeader("Access-Control-Max-Age", "3600");
 		httpResponse.setHeader("Access-Control-Allow-Headers", "*");
+//		httpResponse.setHeader("Access-Control-Expose-Headers", "*");
 
 		chain.doFilter(request, response);
 	}

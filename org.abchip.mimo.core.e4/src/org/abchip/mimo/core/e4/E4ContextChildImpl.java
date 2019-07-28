@@ -21,8 +21,8 @@ public class E4ContextChildImpl extends E4ContextImpl {
 	private IEclipseContext eclipseContext;
 	private Context contextParent;
 	
-	public E4ContextChildImpl(Context contextParent, IEclipseContext eclipseContext, String contextID, ContextDescription contextDescription) {
-		super(contextID, contextDescription);
+	public E4ContextChildImpl(Context contextParent, IEclipseContext eclipseContext, ContextDescription contextDescription) {
+		super(contextDescription);
 		
 		this.contextParent = contextParent;
 		this.eclipseContext = eclipseContext;

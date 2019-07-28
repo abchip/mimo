@@ -138,6 +138,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobReference getJobReference() {
 		if (jobReference != null && ((EObject)jobReference).eIsProxy()) {
 			InternalEObject oldJobReference = (InternalEObject)jobReference;
@@ -164,6 +165,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setJobReference(JobReference newJobReference) {
 		JobReference oldJobReference = jobReference;
 		jobReference = newJobReference;
@@ -176,6 +178,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -185,6 +188,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -197,6 +201,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPort() {
 		return port;
 	}
@@ -206,6 +211,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPort(int newPort) {
 		int oldPort = port;
 		port = newPort;
@@ -218,6 +224,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -227,6 +234,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
@@ -332,7 +340,7 @@ public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", port: ");

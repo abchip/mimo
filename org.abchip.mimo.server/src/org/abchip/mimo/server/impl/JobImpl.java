@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobMessage;
@@ -339,6 +340,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSystem(org.abchip.mimo.server.System newSystem) {
 		org.abchip.mimo.server.System oldSystem = system;
 		system = newSystem;
@@ -372,6 +374,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobReference getJobReference() {
 		return jobReference;
 	}
@@ -396,6 +399,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setJobReference(JobReference newJobReference) {
 		if (newJobReference != jobReference) {
 			NotificationChain msgs = null;
@@ -415,6 +419,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobRunInfo getJobRunInfo() {
 		return jobRunInfo;
 	}
@@ -439,6 +444,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setJobRunInfo(JobRunInfo newJobRunInfo) {
 		if (newJobRunInfo != jobRunInfo) {
 			NotificationChain msgs = null;
@@ -458,6 +464,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.abchip.mimo.util.Thread getJobThread() {
 		return jobThread;
 	}
@@ -467,6 +474,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setJobThread(org.abchip.mimo.util.Thread newJobThread) {
 		org.abchip.mimo.util.Thread oldJobThread = jobThread;
 		jobThread = newJobThread;
@@ -500,6 +508,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getResources() {
 		if (resources == null) {
 			resources = new EDataTypeUniqueEList<String>(String.class, this, ServerPackage.JOB__RESOURCES);
@@ -623,6 +632,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DateFormat getDateFormat() {
 		return dateFormat;
 	}
@@ -632,6 +642,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDateFormat(DateFormat newDateFormat) {
 		DateFormat oldDateFormat = dateFormat;
 		dateFormat = newDateFormat == null ? DATE_FORMAT_EDEFAULT : newDateFormat;
@@ -643,6 +654,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDateSeparator() {
 		return dateSeparator;
 	}
@@ -651,6 +663,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDateSeparator(String newDateSeparator) {
 		String oldDateSeparator = dateSeparator;
 		dateSeparator = newDateSeparator;
@@ -663,6 +676,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Date getDestroyDate() {
 		return destroyDate;
 	}
@@ -672,6 +686,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDestroyDate(Date newDestroyDate) {
 		Date oldDestroyDate = destroyDate;
 		destroyDate = newDestroyDate;
@@ -683,6 +698,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTimeSeparator() {
 		return timeSeparator;
 	}
@@ -691,6 +707,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTimeSeparator(String newTimeSeparator) {
 		String oldTimeSeparator = timeSeparator;
 		timeSeparator = newTimeSeparator;
@@ -733,6 +750,18 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 */
 	public boolean isRouted() {
 		return getJobThread() != null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ContextDescription getContextDescription() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -800,6 +829,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Date getCreationDate() {
 		return creationDate;
 	}
@@ -809,6 +839,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCreationDate(Date newCreationDate) {
 		Date oldCreationDate = creationDate;
 		creationDate = newCreationDate;
@@ -821,6 +852,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCurrentResource() {
 		return currentResource;
 	}
@@ -1050,7 +1082,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (creationDate: ");
 		result.append(creationDate);
 		result.append(", currentResource: ");

@@ -165,12 +165,6 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//util/JavaCloseable #//context/ContextProvider">
       <eOperations name="close" lowerBound="1"/>
-      <eOperations name="createChildContext" lowerBound="1" eType="#//context/Context">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="createChildContext" lowerBound="1" eType="#//context/Context">
-        <eParameters name="contextDescription" lowerBound="1" eType="#//context/ContextDescription"/>
-      </eOperations>
       <eOperations name="get" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/get/T"/>
         <eTypeParameters name="T"/>
@@ -192,7 +186,6 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getContextDescription" lowerBound="1" eType="#//context/ContextDescription"/>
       <eOperations name="inject">
         <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>
@@ -251,7 +244,31 @@
       </eOperations>
       <eOperations name="getContextRoot" lowerBound="1" eType="#//context/ContextRoot"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextDescription" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="anonymous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resources" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceRoot" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceTemporary" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextProvider" abstract="true" interface="true">
+      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
+      <eOperations name="getContextDescription" lowerBound="1" eType="#//context/ContextDescription"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContextRoot" abstract="true" eSuperTypes="#//context/Context">
+      <eOperations name="createChildContext" lowerBound="1" eType="#//context/Context">
+        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="createChildContext" lowerBound="1" eType="#//context/Context">
+        <eParameters name="contextDescription" lowerBound="1" eType="#//context/ContextDescription"/>
+      </eOperations>
       <eOperations name="get">
         <eGenericType eTypeParameter="#//context/ContextRoot/get/T"/>
         <eTypeParameters name="T"/>
@@ -314,19 +331,6 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextDescription">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resources" upperBound="-1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceRoot" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceTemporary" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextProvider" abstract="true" interface="true">
-      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityLocker" abstract="true" interface="true">
       <eTypeParameters name="N">
@@ -627,7 +631,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityProvider" abstract="true">
       <eOperations name="isActive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eParameters name="contextId" lowerBound="1" eType="#//context/ContextProvider"/>
+        <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
       </eOperations>
       <eOperations name="getEntityReader">
         <eGenericType eClassifier="#//entity/EntityReader">
@@ -754,9 +758,11 @@
       </eOperations>
       <eOperations name="getProviderUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="login" eType="#//context/ContextProvider">
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="login" eType="#//context/ContextProvider">
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="user" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="password" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1079,6 +1085,32 @@
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="provider" lowerBound="1" eType="#//entity/EntityProvider"/>
+      </eOperations>
+      <eOperations name="getProvider" eType="#//entity/EntityProvider">
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="klass" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/getProvider/E"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getProvider" eType="#//entity/EntityProvider">
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="frame" lowerBound="1">
+          <eGenericType eClassifier="#//entity/Frame">
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/getProvider.1/E"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getProvider" eType="#//entity/EntityProvider">
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityNameable"/>
+        </eTypeParameters>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getEntityReader">
         <eGenericType eClassifier="#//entity/EntityReader">

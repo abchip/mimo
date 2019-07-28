@@ -75,6 +75,30 @@ public interface ResourceManager extends EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model klassRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityProvider getProvider(Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityProvider getProvider(Frame<E> frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityProvider getProvider(String frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true" klassRequired="true"
 	 * @generated
 	 */

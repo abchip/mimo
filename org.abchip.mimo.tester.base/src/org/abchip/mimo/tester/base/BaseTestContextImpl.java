@@ -33,7 +33,7 @@ public class BaseTestContextImpl extends ContextImpl {
 		this.delegate.close();
 	}
 
-	@Override
+/*	@Override
 	public Context createChildContext(String name) {
 		Context childContext = delegate.createChildContext(name);
 		return new BaseTestContextImpl(childContext);
@@ -43,7 +43,7 @@ public class BaseTestContextImpl extends ContextImpl {
 	public Context createChildContext(ContextDescription contextDescription) {
 		Context childContext = delegate.createChildContext(contextDescription);
 		return new BaseTestContextImpl(childContext);
-	}
+	}*/
 
 	@Override
 	public <T> T get(Class<T> clazz) {

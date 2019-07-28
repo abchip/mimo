@@ -21,6 +21,7 @@ import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceHook;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -252,6 +253,18 @@ public class ApplicationComponentImpl extends EntityNameableImpl implements Appl
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_COMPONENT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ContextDescription getContextDescription() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

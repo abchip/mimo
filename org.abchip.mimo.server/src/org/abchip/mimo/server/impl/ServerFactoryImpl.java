@@ -145,6 +145,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Job createJob() {
 		JobImpl job = new JobImpl();
 		return job;
@@ -155,6 +156,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobCapability createJobCapability() {
 		JobCapabilityImpl jobCapability = new JobCapabilityImpl();
 		return jobCapability;
@@ -165,6 +167,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobDescription createJobDescription() {
 		JobDescriptionImpl jobDescription = new JobDescriptionImpl();
 		return jobDescription;
@@ -175,6 +178,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobEvent createJobEvent() {
 		JobEventImpl jobEvent = new JobEventImpl();
 		return jobEvent;
@@ -185,6 +189,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobLog createJobLog() {
 		JobLogImpl jobLog = new JobLogImpl();
 		return jobLog;
@@ -195,6 +200,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobLogEntry createJobLogEntry() {
 		JobLogEntryImpl jobLogEntry = new JobLogEntryImpl();
 		return jobLogEntry;
@@ -205,6 +211,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobMessage createJobMessage() {
 		JobMessageImpl jobMessage = new JobMessageImpl();
 		return jobMessage;
@@ -215,6 +222,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobReference createJobReference() {
 		JobReferenceImpl jobReference = new JobReferenceImpl();
 		return jobReference;
@@ -225,6 +233,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JobRunInfo createJobRunInfo() {
 		JobRunInfoImpl jobRunInfo = new JobRunInfoImpl();
 		return jobRunInfo;
@@ -235,6 +244,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.abchip.mimo.server.System createSystem() {
 		SystemImpl system = new SystemImpl();
 		return system;
@@ -245,6 +255,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SystemEvent createSystemEvent() {
 		SystemEventImpl systemEvent = new SystemEventImpl();
 		return systemEvent;
@@ -355,6 +366,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServerPackage getServerPackage() {
 		return (ServerPackage)getEPackage();
 	}

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestRunnerEvent;
 import org.abchip.mimo.tester.TestRunnerListener;
@@ -24,14 +25,22 @@ public abstract class BaseTestRunnerImpl implements TestRunner {
 
 	private Context context;
 	private List<TestRunnerListener> listeners = new ArrayList<TestRunnerListener>();
-	
+
 	protected BaseTestRunnerImpl(Context context) {
 		this.context = context;
 	}
-	
+
 	@Override
 	public Context getContext() {
 		return this.context;
+	}
+
+	@Override
+	public ContextDescription getContextDescription() {
+		if (this.context != null)
+			return this.context.getContextDescription();
+		else
+			return null;
 	}
 
 	@Override

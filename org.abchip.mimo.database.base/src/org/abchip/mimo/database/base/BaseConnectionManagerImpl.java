@@ -17,7 +17,6 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.database.CatalogContainer;
 import org.abchip.mimo.database.DatabaseManager;
 import org.abchip.mimo.database.connection.Connection;
 import org.abchip.mimo.database.connection.ConnectionManager;
@@ -52,7 +51,6 @@ public class BaseConnectionManagerImpl implements ConnectionManager {
 		return createConnection(null, catalog, user, password);
 	}
 
-	@SuppressWarnings("resource")
 	private Connection createConnection(Context context, String catalog, String user, String password) throws SQLException {
 
 		if (!(databaseManager instanceof BaseDatabaseManagerImpl))
@@ -60,7 +58,7 @@ public class BaseConnectionManagerImpl implements ConnectionManager {
 
 		BaseDatabaseManagerImpl baseDatabaseManagerImpl = (BaseDatabaseManagerImpl) databaseManager;
 
-		String connectionID = nextConnectionID(baseDatabaseManagerImpl);
+/*		String connectionID = nextConnectionID(baseDatabaseManagerImpl);
 
 		CatalogContainer catalogContainer = baseDatabaseManagerImpl.getCatalogContainer(catalog);
 
@@ -69,9 +67,9 @@ public class BaseConnectionManagerImpl implements ConnectionManager {
 		if (context != null)
 			contextChild = context.createChildContext(connectionID);
 		else
-			contextChild = catalogContainer.getCatalogContext().createChildContext(connectionID);
+			contextChild = catalogContainer.getCatalogContext().createChildContext(connectionID);*/
 
-		Connection connection = new BaseConnectionImpl(baseDatabaseManagerImpl.getDatabaseContainer(), contextChild);
+		Connection connection = new BaseConnectionImpl(baseDatabaseManagerImpl.getDatabaseContainer(), context);
 		connection.setCatalog(catalog);
 
 		return connection;
@@ -80,7 +78,7 @@ public class BaseConnectionManagerImpl implements ConnectionManager {
 	protected synchronized String nextConnectionID(BaseDatabaseManagerImpl baseDatabaseManagerImpl) {
 
 		connectionID++;
-		String stringID = contextRoot.getContextDescription().getName() + "/" + connectionID;
+		String stringID = contextRoot.getContextDescription().getId() + "/" + connectionID;
 
 		return stringID;
 	}

@@ -11,7 +11,6 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
@@ -63,7 +62,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public boolean isActive(ContextProvider contextId) {
+	public boolean isActive(ContextProvider contextProvider) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -162,7 +161,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public ContextProvider login(String tenant) {
+	public ContextProvider login(String contextId, String tenant) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -174,7 +173,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public ContextProvider login(String user, String password, String tenant) {
+	public ContextProvider login(String contextId, String user, String password, String tenant) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

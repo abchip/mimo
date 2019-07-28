@@ -14,6 +14,7 @@ package org.abchip.mimo.server.impl;
 import java.lang.management.ManagementFactory;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.abchip.mimo.server.ServerPackage;
 import org.abchip.mimo.server.SystemStatus;
@@ -272,6 +273,7 @@ public class SystemImpl extends EntityNameableImpl implements org.abchip.mimo.se
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPort() {
 		return port;
 	}
@@ -281,6 +283,7 @@ public class SystemImpl extends EntityNameableImpl implements org.abchip.mimo.se
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPort(int newPort) {
 		int oldPort = port;
 		port = newPort;
@@ -350,6 +353,18 @@ public class SystemImpl extends EntityNameableImpl implements org.abchip.mimo.se
 	 */
 	public double getLoadAverage() {
 		return ManagementFactory.getOperatingSystemMXBean().getSystemLoadAverage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ContextDescription getContextDescription() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -483,7 +498,7 @@ public class SystemImpl extends EntityNameableImpl implements org.abchip.mimo.se
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (lastJobNumber: ");
 		result.append(lastJobNumber);
 		result.append(", name: ");

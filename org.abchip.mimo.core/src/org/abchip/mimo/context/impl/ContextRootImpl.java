@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Dictionary;
 import java.util.List;
+import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextRoot;
 
@@ -41,6 +43,30 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	@Override
 	protected EClass eStaticClass() {
 		return ContextPackage.Literals.CONTEXT_ROOT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Context createChildContext(String id) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Context createChildContext(ContextDescription contextDescription) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

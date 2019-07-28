@@ -125,6 +125,7 @@ public class JobReferenceImpl extends EntityImpl implements JobReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getJobNumber() {
 		return jobNumber;
 	}
@@ -134,6 +135,7 @@ public class JobReferenceImpl extends EntityImpl implements JobReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setJobNumber(int newJobNumber) {
 		int oldJobNumber = jobNumber;
 		jobNumber = newJobNumber;
@@ -146,6 +148,7 @@ public class JobReferenceImpl extends EntityImpl implements JobReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getJobUser() {
 		return jobUser;
 	}
@@ -155,6 +158,7 @@ public class JobReferenceImpl extends EntityImpl implements JobReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setJobUser(String newJobUser) {
 		String oldJobUser = jobUser;
 		jobUser = newJobUser;
@@ -167,6 +171,7 @@ public class JobReferenceImpl extends EntityImpl implements JobReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getJobName() {
 		return jobName;
 	}
@@ -176,6 +181,7 @@ public class JobReferenceImpl extends EntityImpl implements JobReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setJobName(String newJobName) {
 		String oldJobName = jobName;
 		jobName = newJobName;
@@ -270,7 +276,7 @@ public class JobReferenceImpl extends EntityImpl implements JobReference {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (jobNumber: ");
 		result.append(jobNumber);
 		result.append(", jobUser: ");

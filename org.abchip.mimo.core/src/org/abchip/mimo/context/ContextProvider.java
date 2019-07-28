@@ -28,4 +28,12 @@ public interface ContextProvider {
 	 */
 	Context getContext();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	ContextDescription getContextDescription();
+
 } // ContextProvider

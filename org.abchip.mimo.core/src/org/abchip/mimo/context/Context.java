@@ -39,22 +39,6 @@ public interface Context extends Closeable, ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" nameRequired="true"
-	 * @generated
-	 */
-	Context createChildContext(String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" contextDescriptionRequired="true"
-	 * @generated
-	 */
-	Context createChildContext(ContextDescription contextDescription);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" clazzRequired="true"
 	 * @generated
 	 */
@@ -67,14 +51,6 @@ public interface Context extends Closeable, ContextProvider {
 	 * @generated
 	 */
 	<T extends Object> T getAdapter(Object adaptable, Class<T> adapter);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	ContextDescription getContextDescription();
 
 	/**
 	 * <!-- begin-user-doc -->
