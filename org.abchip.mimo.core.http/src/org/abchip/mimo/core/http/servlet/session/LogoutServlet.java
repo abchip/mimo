@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.BaseServlet;
-import org.abchip.mimo.core.http.ServletUtils;
+import org.abchip.mimo.core.http.ContextUtils;
 
 public class LogoutServlet extends BaseServlet {
 
@@ -24,12 +24,9 @@ public class LogoutServlet extends BaseServlet {
 	
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		System.out.println(this.getServletName());
-
 		HttpSession session = request.getSession();
-		System.out.println(session.getId());
 		
-		ServletUtils.removeContextProvider(session.getId());
+		ContextUtils.removeContextProvider(session.getId());
 		
 		this.getDefaultProvider().logout(contextProvider);
 		

@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.ServletUtils;
+import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceSerializer;
@@ -54,12 +54,9 @@ public class StatusServlet extends HttpServlet {
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println(this.getServletName());
-
 		HttpSession session = request.getSession();
-		System.out.println(session.getId());
 
-		ContextProvider contextProvider = ServletUtils.getContextProvider(session.getId());
+		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
 		// invalid session
 		if (contextProvider != null && !this.getDefaultProvider().isActive(contextProvider)) {
@@ -69,10 +66,10 @@ public class StatusServlet extends HttpServlet {
 
 		// new session with anonymous user
 		if (contextProvider == null) {
-			ServletUtils.removeContextProvider(session.getId());
+			ContextUtils.removeContextProvider(session.getId());
 
 			contextProvider = this.getDefaultProvider().login(session.getId(), null);
-			ServletUtils.addContextProvider(contextProvider);
+			ContextUtils.addContextProvider(contextProvider);
 		}
 
 		if (contextProvider == null) {

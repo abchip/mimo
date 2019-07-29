@@ -60,12 +60,9 @@ public abstract class BaseServlet extends HttpServlet {
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println(this.getServletName());
-
 		HttpSession session = request.getSession();
-		System.out.println(session.getId());
 
-		ContextProvider contextProvider = ServletUtils.getContextProvider(session.getId());
+		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
 		// invalid session
 		if (contextProvider != null && !this.getDefaultProvider().isActive(contextProvider)) {
@@ -75,7 +72,7 @@ public abstract class BaseServlet extends HttpServlet {
 
 		// invalid access
 		if (contextProvider == null) {
-			ServletUtils.removeContextProvider(session.getId());
+			ContextUtils.removeContextProvider(session.getId());
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;
 		}

@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 
 import org.abchip.mimo.context.ContextProvider;
 
-public class ServletUtils {
+public class ContextUtils {
 
 	private static WeakHashMap<String, ContextProvider> contexts = new WeakHashMap<String, ContextProvider>();
 
