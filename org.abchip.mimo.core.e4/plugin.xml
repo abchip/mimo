@@ -23,10 +23,10 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="org.abchip.mimo.core.e4.mimo-ap"
-            name="net.abchip.biz">
+            name="abchip-net">
          <property
                name="appName"
-               value="net.abchip.biz">
+               value="abchip-net">
          </property>
       </product>
    </extension>
