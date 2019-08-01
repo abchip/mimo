@@ -73,6 +73,8 @@ public class EMFFrameHelper {
 
 		frames = new HashMap<String, Frame<?>>();
 
+		EntityPackage.eINSTANCE.getEntity();
+		
 		for (Entry<?, ?> entry : EPackage.Registry.INSTANCE.entrySet()) {
 
 			EPackage ePackage = null;
