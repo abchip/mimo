@@ -91,6 +91,9 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> void registerProvider(String frameName, EntityProvider provider) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		// TODO remove me
+		if(frame == null)
+			return;
 		registerProvider(frame, provider);		
 	}	
 

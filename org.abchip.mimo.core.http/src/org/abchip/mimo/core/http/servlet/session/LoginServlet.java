@@ -9,6 +9,7 @@
 package org.abchip.mimo.core.http.servlet.session;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -20,14 +21,22 @@ import javax.servlet.http.HttpSession;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
+import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
+import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+
+	public static final String AUTHORIZE_URI = "https://accounts.google.com/o/oauth2/auth";
+	public static final String DEFAULT_SCOPE = "openid%20email%20profile";
+	// public static final String SESSION_GOOGLE_STATE = "_GOOGLE_STATE_";
 
 	@Inject
 	private ResourceManager resourceManager;
@@ -51,6 +60,7 @@ public class LoginServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -62,9 +72,47 @@ public class LoginServlet extends HttpServlet {
 
 		// Third part
 		if (provider != null) {
-			response.sendRedirect(this.getDefaultProvider().getProviderUrl() + "/entityLoginThirdParty?provider=" + provider);
+
+			// anonymous access
+			ContextProvider contextProvider = getDefaultProvider().login(null, null);
+
+			String entityName = "OAuth2" + provider;
+
+			EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CTX);
+
+			// String url = request.getScheme() + "://" + request.getServerName() + ":" +
+			// request.getServerPort();
+			EntityNameable oauth2Google = oauth2Reader.find(null).next();
+
+			if (oauth2Google != null) {
+
+				String clientId = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "clientId").toString();
+				String returnURI = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "returnUrl").toString();
+
+				// Get user authorization code
+				try {
+					String redirectUrl = AUTHORIZE_URI + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&redirect_uri="
+							+ URLEncoder.encode(returnURI, "UTF-8");
+
+					response.getWriter().write(redirectUrl);
+
+					// response.sendRedirect(redirectUrl);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			} else {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				response.flushBuffer();
+			}
+
+			getDefaultProvider().logout(contextProvider);
+			contextProvider.getContext().close();
+
 			return;
 		}
+
+		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
 		// user password login
 		String[] fields = userField.split("/");
@@ -79,8 +127,6 @@ public class LoginServlet extends HttpServlet {
 			user = fields[1];
 		} else
 			user = fields[0];
-
-		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
 		// invalid session
 		if (contextProvider != null && !this.getDefaultProvider().isActive(contextProvider)) {
