@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getProvider <em>Provider</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getUser <em>User</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getToken <em>Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getAccessToken <em>Access Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getIdToken <em>Id Token</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,49 +55,49 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	protected String provider = PROVIDER_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getAccessToken() <em>Access Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccessToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ACCESS_TOKEN_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAccessToken() <em>Access Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccessToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected String accessToken = ACCESS_TOKEN_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIdToken() <em>Id Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_TOKEN_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIdToken() <em>Id Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected String idToken = ID_TOKEN_EDEFAULT;
+
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getUser() <em>User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUser() <em>User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected String user = USER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getToken() <em>Token</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToken()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TOKEN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getToken() <em>Token</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToken()
-	 * @generated
-	 * @ordered
-	 */
-	protected String token = TOKEN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,8 +147,8 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 * @generated
 	 */
 	@Override
-	public String getUser() {
-		return user;
+	public String getAccessToken() {
+		return accessToken;
 	}
 
 	/**
@@ -157,11 +157,11 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 * @generated
 	 */
 	@Override
-	public void setUser(String newUser) {
-		String oldUser = user;
-		user = newUser;
+	public void setAccessToken(String newAccessToken) {
+		String oldAccessToken = accessToken;
+		accessToken = newAccessToken;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__USER, oldUser, user));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN, oldAccessToken, accessToken));
 	}
 
 	/**
@@ -170,8 +170,8 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 * @generated
 	 */
 	@Override
-	public String getToken() {
-		return token;
+	public String getIdToken() {
+		return idToken;
 	}
 
 	/**
@@ -180,11 +180,11 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 * @generated
 	 */
 	@Override
-	public void setToken(String newToken) {
-		String oldToken = token;
-		token = newToken;
+	public void setIdToken(String newIdToken) {
+		String oldIdToken = idToken;
+		idToken = newIdToken;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__TOKEN, oldToken, token));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN, oldIdToken, idToken));
 	}
 
 	/**
@@ -197,10 +197,10 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		switch (featureID) {
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				return getProvider();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
-				return getUser();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__TOKEN:
-				return getToken();
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
+				return getAccessToken();
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
+				return getIdToken();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,11 +216,11 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				setProvider((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
-				setUser((String)newValue);
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
+				setAccessToken((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__TOKEN:
-				setToken((String)newValue);
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
+				setIdToken((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -237,11 +237,11 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				setProvider(PROVIDER_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
-				setUser(USER_EDEFAULT);
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
+				setAccessToken(ACCESS_TOKEN_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__TOKEN:
-				setToken(TOKEN_EDEFAULT);
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
+				setIdToken(ID_TOKEN_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -257,10 +257,10 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		switch (featureID) {
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				return PROVIDER_EDEFAULT == null ? provider != null : !PROVIDER_EDEFAULT.equals(provider);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
-				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__TOKEN:
-				return TOKEN_EDEFAULT == null ? token != null : !TOKEN_EDEFAULT.equals(token);
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
+				return ACCESS_TOKEN_EDEFAULT == null ? accessToken != null : !ACCESS_TOKEN_EDEFAULT.equals(accessToken);
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
+				return ID_TOKEN_EDEFAULT == null ? idToken != null : !ID_TOKEN_EDEFAULT.equals(idToken);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,10 +277,10 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (provider: ");
 		result.append(provider);
-		result.append(", user: ");
-		result.append(user);
-		result.append(", token: ");
-		result.append(token);
+		result.append(", accessToken: ");
+		result.append(accessToken);
+		result.append(", idToken: ");
+		result.append(idToken);
 		result.append(')');
 		return result.toString();
 	}

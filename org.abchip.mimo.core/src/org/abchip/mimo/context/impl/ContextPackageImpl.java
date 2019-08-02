@@ -437,7 +437,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAuthenticationUserToken_User() {
+	public EAttribute getAuthenticationUserToken_AccessToken() {
 		return (EAttribute)authenticationUserTokenEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -447,7 +447,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAuthenticationUserToken_Token() {
+	public EAttribute getAuthenticationUserToken_IdToken() {
 		return (EAttribute)authenticationUserTokenEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -943,8 +943,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		authenticationUserTokenEClass = createEClass(AUTHENTICATION_USER_TOKEN);
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__PROVIDER);
-		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__USER);
-		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__TOKEN);
+		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN);
+		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__ID_TOKEN);
 
 		authenticationAnonymousEClass = createEClass(AUTHENTICATION_ANONYMOUS);
 
@@ -1109,8 +1109,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(authenticationUserTokenEClass, AuthenticationUserToken.class, "AuthenticationUserToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationUserToken_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAuthenticationUserToken_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAuthenticationUserToken_Token(), ecorePackage.getEString(), "token", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthenticationUserToken_AccessToken(), ecorePackage.getEString(), "accessToken", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthenticationUserToken_IdToken(), ecorePackage.getEString(), "idToken", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationAnonymousEClass, AuthenticationAnonymous.class, "AuthenticationAnonymous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

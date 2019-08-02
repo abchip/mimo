@@ -18,7 +18,9 @@ Require-Bundle: org.abchip.mimo.core,
  org.emfjson.jackson,
  com.fasterxml.jackson.core.jackson-annotations,
  com.fasterxml.jackson.core.jackson-core,
- com.fasterxml.jackson.core.jackson-databind
+ com.fasterxml.jackson.core.jackson-databind,
+ org.apache.httpcomponents.httpclient,
+ org.apache.httpcomponents.httpcore
 Import-Package: javax.servlet,
  javax.servlet.http,
  org.osgi.framework,

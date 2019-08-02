@@ -126,8 +126,8 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationUserToken">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/provider"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/user"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/token"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/accessToken"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/idToken"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationAnonymous"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Capability">

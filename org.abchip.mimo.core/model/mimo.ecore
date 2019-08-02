@@ -156,9 +156,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationUserToken" eSuperTypes="#//context/Authentication">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessToken" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="idToken" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationAnonymous" eSuperTypes="#//context/Authentication"/>

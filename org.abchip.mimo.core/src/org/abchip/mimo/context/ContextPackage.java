@@ -191,22 +191,22 @@ public interface ContextPackage extends EPackage {
 	int AUTHENTICATION_USER_TOKEN__PROVIDER = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>User</b></em>' attribute.
+	 * The feature id for the '<em><b>Access Token</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_USER_TOKEN__USER = AUTHENTICATION_FEATURE_COUNT + 1;
+	int AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN = AUTHENTICATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Token</b></em>' attribute.
+	 * The feature id for the '<em><b>Id Token</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_USER_TOKEN__TOKEN = AUTHENTICATION_FEATURE_COUNT + 2;
+	int AUTHENTICATION_USER_TOKEN__ID_TOKEN = AUTHENTICATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Authentication User Token</em>' class.
@@ -892,26 +892,26 @@ public interface ContextPackage extends EPackage {
 	EAttribute getAuthenticationUserToken_Provider();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getUser <em>User</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getAccessToken <em>Access Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User</em>'.
-	 * @see org.abchip.mimo.context.AuthenticationUserToken#getUser()
+	 * @return the meta object for the attribute '<em>Access Token</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationUserToken#getAccessToken()
 	 * @see #getAuthenticationUserToken()
 	 * @generated
 	 */
-	EAttribute getAuthenticationUserToken_User();
+	EAttribute getAuthenticationUserToken_AccessToken();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getToken <em>Token</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getIdToken <em>Id Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Token</em>'.
-	 * @see org.abchip.mimo.context.AuthenticationUserToken#getToken()
+	 * @return the meta object for the attribute '<em>Id Token</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationUserToken#getIdToken()
 	 * @see #getAuthenticationUserToken()
 	 * @generated
 	 */
-	EAttribute getAuthenticationUserToken_Token();
+	EAttribute getAuthenticationUserToken_IdToken();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.AuthenticationAnonymous <em>Authentication Anonymous</em>}'.
@@ -1492,20 +1492,20 @@ public interface ContextPackage extends EPackage {
 		EAttribute AUTHENTICATION_USER_TOKEN__PROVIDER = eINSTANCE.getAuthenticationUserToken_Provider();
 
 		/**
-		 * The meta object literal for the '<em><b>User</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Access Token</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AUTHENTICATION_USER_TOKEN__USER = eINSTANCE.getAuthenticationUserToken_User();
+		EAttribute AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN = eINSTANCE.getAuthenticationUserToken_AccessToken();
 
 		/**
-		 * The meta object literal for the '<em><b>Token</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Id Token</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AUTHENTICATION_USER_TOKEN__TOKEN = eINSTANCE.getAuthenticationUserToken_Token();
+		EAttribute AUTHENTICATION_USER_TOKEN__ID_TOKEN = eINSTANCE.getAuthenticationUserToken_IdToken();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.AuthenticationAnonymousImpl <em>Authentication Anonymous</em>}' class.
