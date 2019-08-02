@@ -9,7 +9,6 @@
 package org.abchip.mimo.core.http.servlet.session;
 
 import java.io.IOException;
-import java.net.URLEncoder;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -29,14 +28,11 @@ import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
+import org.eclipse.jetty.http.HttpHeader;
 
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
-	public static final String AUTHORIZE_URI = "https://accounts.google.com/o/oauth2/auth";
-	public static final String DEFAULT_SCOPE = "openid%20email%20profile";
-	// public static final String SESSION_GOOGLE_STATE = "_GOOGLE_STATE_";
 
 	@Inject
 	private ResourceManager resourceManager;
@@ -80,35 +76,21 @@ public class LoginServlet extends HttpServlet {
 
 			EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CTX);
 
-			// String url = request.getScheme() + "://" + request.getServerName() + ":" +
-			// request.getServerPort();
-			EntityNameable oauth2Google = oauth2Reader.find(null).next();
-
-			if (oauth2Google != null) {
-
-				String clientId = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "clientId").toString();
-				String returnURI = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "returnUrl").toString();
-
-				// Get user authorization code
-				try {
-					String redirectUrl = AUTHORIZE_URI + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&redirect_uri="
-							+ URLEncoder.encode(returnURI, "UTF-8");
-
-					response.getWriter().write(redirectUrl);
-
-					// response.sendRedirect(redirectUrl);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
-			} else {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				response.flushBuffer();
-			}
+			EntityNameable oauth2Entity = oauth2Reader.find(null).next();
 
 			getDefaultProvider().logout(contextProvider);
 			contextProvider.getContext().close();
 
+			if (oauth2Entity != null) {
+				String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+
+				String location = ((Frame<EntityNameable>) oauth2Entity.isa()).getValue(oauth2Entity, "localRedirectUri").toString();
+				response.setHeader(HttpHeader.LOCATION.name(), url + location);
+				response.setStatus(HttpServletResponse.SC_ACCEPTED);
+			} else {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				response.flushBuffer();
+			}
 			return;
 		}
 

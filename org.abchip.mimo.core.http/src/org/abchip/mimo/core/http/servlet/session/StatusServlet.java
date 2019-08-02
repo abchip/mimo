@@ -55,6 +55,7 @@ public class StatusServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
+		System.out.println(session.getId());
 
 		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 

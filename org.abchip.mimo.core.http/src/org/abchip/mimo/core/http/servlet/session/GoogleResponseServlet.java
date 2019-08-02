@@ -47,9 +47,8 @@ public class GoogleResponseServlet extends HttpServlet {
 
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		
-		System.out.println(request.getHeader("origin"));
 		
-		"".toString();
 	}
 }

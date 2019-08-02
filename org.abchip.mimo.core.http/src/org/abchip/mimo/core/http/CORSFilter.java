@@ -18,6 +18,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
+import org.eclipse.jetty.http.HttpHeader;
+
 public class CORSFilter implements Filter {
 
 	@Override
@@ -28,14 +30,14 @@ public class CORSFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
-//		HttpServletRequest httpRequest = (HttpServletRequest) request;
+		// HttpServletRequest httpRequest = (HttpServletRequest) request;
 
 		httpResponse.setHeader("Access-Control-Allow-Origin", "*");
 		httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
 		httpResponse.setHeader("Access-Control-Allow-Methods", "*");
 		httpResponse.setHeader("Access-Control-Max-Age", "3600");
 		httpResponse.setHeader("Access-Control-Allow-Headers", "*");
-//		httpResponse.setHeader("Access-Control-Expose-Headers", "*");
+		httpResponse.setHeader("Access-Control-Expose-Headers", HttpHeader.LOCATION.name());
 
 		chain.doFilter(request, response);
 	}
