@@ -64,7 +64,8 @@ public class LoginServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-
+		System.out.println(getServletName() + ": " + session.getId());
+		
 		String provider = request.getParameter("provider");
 		String userField = request.getParameter("user");
 		String password = request.getParameter("password");
@@ -127,7 +128,7 @@ public class LoginServlet extends HttpServlet {
 			authentication.setUser(user);
 			authentication.setPassword(password);
 			authentication.setTenant(tenant);
-			
+
 			contextProvider = this.getDefaultProvider().login(session.getId(), authentication);
 			ContextUtils.addContextProvider(contextProvider);
 		}
@@ -139,10 +140,10 @@ public class LoginServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.getResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JSON);
-		serializer.add(contextProvider.getContext().getContextDescription());
-		serializer.save(response.getOutputStream());
-		serializer.close();
+		try (ResourceSerializer<ContextDescription> serializer = resourceManager.getResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JSON)) {
+			serializer.add(contextProvider.getContext().getContextDescription());
+			serializer.save(response.getOutputStream());
+		}
 
 		response.flushBuffer();
 	}

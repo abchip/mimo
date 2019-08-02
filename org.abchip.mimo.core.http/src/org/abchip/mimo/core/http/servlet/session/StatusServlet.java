@@ -57,8 +57,8 @@ public class StatusServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(session.getId());
-
+		System.out.println(getServletName() + ": " + session.getId());
+		
 		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
 		// invalid session
@@ -70,7 +70,7 @@ public class StatusServlet extends HttpServlet {
 		// new session with anonymous user
 		if (contextProvider == null) {
 			ContextUtils.removeContextProvider(session.getId());
-			
+
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
 			contextProvider = getDefaultProvider().login(session.getId(), authentication);
 
