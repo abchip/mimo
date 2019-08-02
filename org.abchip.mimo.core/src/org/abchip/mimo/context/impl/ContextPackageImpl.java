@@ -16,8 +16,10 @@ import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.impl.ApplicationPackageImpl;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Authentication;
+import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
+import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.Capability;
 import org.abchip.mimo.context.CapabilityRight;
 import org.abchip.mimo.context.Context;
@@ -94,6 +96,20 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EClass authenticationUserPasswordEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass authenticationUserTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass authenticationAnonymousEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -383,6 +399,66 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	@Override
 	public EAttribute getAuthenticationUserPassword_Password() {
 		return (EAttribute)authenticationUserPasswordEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAuthenticationUserPassword_Tenant() {
+		return (EAttribute)authenticationUserPasswordEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAuthenticationUserToken() {
+		return authenticationUserTokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAuthenticationUserToken_Provider() {
+		return (EAttribute)authenticationUserTokenEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAuthenticationUserToken_User() {
+		return (EAttribute)authenticationUserTokenEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAuthenticationUserToken_Token() {
+		return (EAttribute)authenticationUserTokenEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAuthenticationAnonymous() {
+		return authenticationAnonymousEClass;
 	}
 
 	/**
@@ -863,6 +939,14 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		authenticationUserPasswordEClass = createEClass(AUTHENTICATION_USER_PASSWORD);
 		createEAttribute(authenticationUserPasswordEClass, AUTHENTICATION_USER_PASSWORD__USER);
 		createEAttribute(authenticationUserPasswordEClass, AUTHENTICATION_USER_PASSWORD__PASSWORD);
+		createEAttribute(authenticationUserPasswordEClass, AUTHENTICATION_USER_PASSWORD__TENANT);
+
+		authenticationUserTokenEClass = createEClass(AUTHENTICATION_USER_TOKEN);
+		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__PROVIDER);
+		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__USER);
+		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__TOKEN);
+
+		authenticationAnonymousEClass = createEClass(AUTHENTICATION_ANONYMOUS);
 
 		capabilityEClass = createEClass(CAPABILITY);
 		createEAttribute(capabilityEClass, CAPABILITY__RIGHTS);
@@ -975,6 +1059,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		// Add supertypes to classes
 		authenticationEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		authenticationUserPasswordEClass.getESuperTypes().add(this.getAuthentication());
+		authenticationUserTokenEClass.getESuperTypes().add(this.getAuthentication());
+		authenticationAnonymousEClass.getESuperTypes().add(this.getAuthentication());
 		capabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
 		contextEClass.getESuperTypes().add(this.getContextProvider());
@@ -1016,9 +1102,17 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		initEClass(authenticationUserPasswordEClass, AuthenticationUserPassword.class, "AuthenticationUserPassword", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(authenticationUserPasswordEClass, AuthenticationUserPassword.class, "AuthenticationUserPassword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationUserPassword_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserPassword_Password(), ecorePackage.getEString(), "password", null, 1, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthenticationUserPassword_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(authenticationUserTokenEClass, AuthenticationUserToken.class, "AuthenticationUserToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAuthenticationUserToken_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthenticationUserToken_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthenticationUserToken_Token(), ecorePackage.getEString(), "token", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(authenticationAnonymousEClass, AuthenticationAnonymous.class, "AuthenticationAnonymous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(capabilityEClass, Capability.class, "Capability", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCapability_Rights(), this.getCapabilityRight(), "rights", null, 0, -1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

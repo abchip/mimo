@@ -30,11 +30,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserPasswordImpl#getUser <em>User</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserPasswordImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserPasswordImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class AuthenticationUserPasswordImpl extends EntityImpl implements AuthenticationUserPassword {
+public class AuthenticationUserPasswordImpl extends EntityImpl implements AuthenticationUserPassword {
 	/**
 	 * 
 	 */
@@ -79,6 +80,26 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 	 * @ordered
 	 */
 	protected String password = PASSWORD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TENANT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tenant = TENANT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,12 +172,37 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 	 * @generated
 	 */
 	@Override
+	public String getTenant() {
+		return tenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTenant(String newTenant) {
+		String oldTenant = tenant;
+		tenant = newTenant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT, oldTenant, tenant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ContextPackage.AUTHENTICATION_USER_PASSWORD__USER:
 				return getUser();
 			case ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
 				return getPassword();
+			case ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
+				return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,6 +220,9 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 				return;
 			case ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
 				setPassword((String)newValue);
+				return;
+			case ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
+				setTenant((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,6 +242,9 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 			case ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
 				return;
+			case ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
+				setTenant(TENANT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -209,6 +261,8 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
 			case ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
+			case ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
+				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -227,6 +281,8 @@ public abstract class AuthenticationUserPasswordImpl extends EntityImpl implemen
 		result.append(user);
 		result.append(", password: ");
 		result.append(password);
+		result.append(", tenant: ");
+		result.append(tenant);
 		result.append(')');
 		return result.toString();
 	}

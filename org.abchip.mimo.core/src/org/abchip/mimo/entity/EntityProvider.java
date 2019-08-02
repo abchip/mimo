@@ -13,6 +13,9 @@
 package org.abchip.mimo.entity;
 
 import java.util.List;
+import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationUserPassword;
+import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextProvider;
 
 /**
@@ -116,26 +119,34 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextIdRequired="true"
+	 * @model contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	ContextProvider login(String contextId, String tenant);
+	ContextProvider login(String contextId, AuthenticationAnonymous authentication);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextIdRequired="true" userRequired="true" passwordRequired="true"
+	 * @model contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	ContextProvider login(String contextId, String user, String password, String tenant);
+	ContextProvider login(String contextId, AuthenticationUserPassword authentication);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	void loginThirdParty(String provider);
+	ContextProvider login(String contextId, AuthenticationUserToken authentication);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model authenticationRequired="true" createRequired="true"
+	 * @generated
+	 */
+	void checkLogin(AuthenticationUserToken authentication, boolean create);
 
 	/**
 	 * <!-- begin-user-doc -->

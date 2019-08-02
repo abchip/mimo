@@ -120,7 +120,14 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationUserPassword">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserPassword/user"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserPassword/password"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserPassword/tenant"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationUserToken">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/provider"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/user"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/token"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationAnonymous"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Capability">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/Capability/rights"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/Capability/entityURI"/>
@@ -510,16 +517,19 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/getProviderUrl"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/login">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login/tenant"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login/authentication"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/login.1">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/user"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/password"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/tenant"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.1/authentication"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/loginThirdParty">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/loginThirdParty/provider"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/login.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.2/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/login.2/authentication"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/checkLogin">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/checkLogin/authentication"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/checkLogin/create"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityProvider/logout">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityProvider/logout/contextProvider"/>

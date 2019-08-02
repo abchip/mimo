@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
@@ -61,7 +63,8 @@ public class GoogleRedirectServlet extends HttpServlet {
 
 
 		// anonymous access
-		ContextProvider contextProvider = getDefaultProvider().login(null, null);
+		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
+		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
 
 		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, "OAuth2Google", ResourceScope.CTX);
 		EntityNameable oauth2Google = oauth2Reader.find(null).next();

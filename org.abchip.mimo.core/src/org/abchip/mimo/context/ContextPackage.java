@@ -154,13 +154,87 @@ public interface ContextPackage extends EPackage {
 	int AUTHENTICATION_USER_PASSWORD__PASSWORD = AUTHENTICATION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_USER_PASSWORD__TENANT = AUTHENTICATION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Authentication User Password</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_USER_PASSWORD_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 2;
+	int AUTHENTICATION_USER_PASSWORD_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl <em>Authentication User Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.impl.AuthenticationUserTokenImpl
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getAuthenticationUserToken()
+	 * @generated
+	 */
+	int AUTHENTICATION_USER_TOKEN = 4;
+
+	/**
+	 * The feature id for the '<em><b>Provider</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_USER_TOKEN__PROVIDER = AUTHENTICATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>User</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_USER_TOKEN__USER = AUTHENTICATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_USER_TOKEN__TOKEN = AUTHENTICATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Authentication User Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_USER_TOKEN_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.impl.AuthenticationAnonymousImpl <em>Authentication Anonymous</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.impl.AuthenticationAnonymousImpl
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getAuthenticationAnonymous()
+	 * @generated
+	 */
+	int AUTHENTICATION_ANONYMOUS = 5;
+
+	/**
+	 * The number of structural features of the '<em>Authentication Anonymous</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_ANONYMOUS_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.CapabilityImpl <em>Capability</em>}' class.
@@ -170,7 +244,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getCapability()
 	 * @generated
 	 */
-	int CAPABILITY = 4;
+	int CAPABILITY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Rights</b></em>' attribute list.
@@ -207,7 +281,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContext()
 	 * @generated
 	 */
-	int CONTEXT = 5;
+	int CONTEXT = 7;
 
 	/**
 	 * The number of structural features of the '<em>Context</em>' class.
@@ -226,7 +300,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextRoot()
 	 * @generated
 	 */
-	int CONTEXT_ROOT = 8;
+	int CONTEXT_ROOT = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ContextDescriptionImpl <em>Description</em>}' class.
@@ -236,7 +310,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextDescription()
 	 * @generated
 	 */
-	int CONTEXT_DESCRIPTION = 6;
+	int CONTEXT_DESCRIPTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Anonymous</b></em>' attribute.
@@ -318,7 +392,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextProvider()
 	 * @generated
 	 */
-	int CONTEXT_PROVIDER = 7;
+	int CONTEXT_PROVIDER = 9;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -346,7 +420,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getEntityLocker()
 	 * @generated
 	 */
-	int ENTITY_LOCKER = 9;
+	int ENTITY_LOCKER = 11;
 
 	/**
 	 * The number of structural features of the '<em>Entity Locker</em>' class.
@@ -365,7 +439,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getExceptionManager()
 	 * @generated
 	 */
-	int EXCEPTION_MANAGER = 10;
+	int EXCEPTION_MANAGER = 12;
 
 	/**
 	 * The number of structural features of the '<em>Exception Manager</em>' class.
@@ -384,7 +458,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getIdentity()
 	 * @generated
 	 */
-	int IDENTITY = 11;
+	int IDENTITY = 13;
 
 	/**
 	 * The number of structural features of the '<em>Identity</em>' class.
@@ -403,7 +477,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockManager()
 	 * @generated
 	 */
-	int LOCK_MANAGER = 12;
+	int LOCK_MANAGER = 14;
 
 	/**
 	 * The number of structural features of the '<em>Lock Manager</em>' class.
@@ -422,7 +496,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLogger()
 	 * @generated
 	 */
-	int LOGGER = 13;
+	int LOGGER = 15;
 
 	/**
 	 * The number of structural features of the '<em>Logger</em>' class.
@@ -441,7 +515,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageDescription()
 	 * @generated
 	 */
-	int MESSAGE_DESCRIPTION = 14;
+	int MESSAGE_DESCRIPTION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -505,7 +579,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageDataField()
 	 * @generated
 	 */
-	int MESSAGE_DATA_FIELD = 15;
+	int MESSAGE_DATA_FIELD = 17;
 
 	/**
 	 * The feature id for the '<em><b>Output Mask</b></em>' attribute.
@@ -542,7 +616,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageFile()
 	 * @generated
 	 */
-	int MESSAGE_FILE = 16;
+	int MESSAGE_FILE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
@@ -588,7 +662,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistry()
 	 * @generated
 	 */
-	int REGISTRY = 17;
+	int REGISTRY = 19;
 
 	/**
 	 * The number of structural features of the '<em>Registry</em>' class.
@@ -607,7 +681,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistryFactory()
 	 * @generated
 	 */
-	int REGISTRY_FACTORY = 18;
+	int REGISTRY_FACTORY = 20;
 
 	/**
 	 * The number of structural features of the '<em>Registry Factory</em>' class.
@@ -626,7 +700,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserProfile()
 	 * @generated
 	 */
-	int USER_PROFILE = 19;
+	int USER_PROFILE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Job Description</b></em>' attribute.
@@ -681,7 +755,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getCapabilityRight()
 	 * @generated
 	 */
-	int CAPABILITY_RIGHT = 20;
+	int CAPABILITY_RIGHT = 22;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.LockType <em>Lock Type</em>}' enum.
@@ -691,7 +765,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockType()
 	 * @generated
 	 */
-	int LOCK_TYPE = 21;
+	int LOCK_TYPE = 23;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}' enum.
@@ -701,7 +775,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserClass()
 	 * @generated
 	 */
-	int USER_CLASS = 22;
+	int USER_CLASS = 24;
 
 	/**
 	 * The meta object id for the '<em>Message Variable List</em>' data type.
@@ -710,7 +784,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageVariableList()
 	 * @generated
 	 */
-	int MESSAGE_VARIABLE_LIST = 23;
+	int MESSAGE_VARIABLE_LIST = 25;
 
 	/**
 	 * The meta object id for the '<em>Message Exception</em>' data type.
@@ -720,7 +794,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageException()
 	 * @generated
 	 */
-	int MESSAGE_EXCEPTION = 24;
+	int MESSAGE_EXCEPTION = 26;
 
 
 	/**
@@ -784,6 +858,70 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAuthenticationUserPassword_Password();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserPassword#getTenant <em>Tenant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tenant</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationUserPassword#getTenant()
+	 * @see #getAuthenticationUserPassword()
+	 * @generated
+	 */
+	EAttribute getAuthenticationUserPassword_Tenant();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.AuthenticationUserToken <em>Authentication User Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Authentication User Token</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationUserToken
+	 * @generated
+	 */
+	EClass getAuthenticationUserToken();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getProvider <em>Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Provider</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationUserToken#getProvider()
+	 * @see #getAuthenticationUserToken()
+	 * @generated
+	 */
+	EAttribute getAuthenticationUserToken_Provider();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getUser <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>User</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationUserToken#getUser()
+	 * @see #getAuthenticationUserToken()
+	 * @generated
+	 */
+	EAttribute getAuthenticationUserToken_User();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getToken <em>Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Token</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationUserToken#getToken()
+	 * @see #getAuthenticationUserToken()
+	 * @generated
+	 */
+	EAttribute getAuthenticationUserToken_Token();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.AuthenticationAnonymous <em>Authentication Anonymous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Authentication Anonymous</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationAnonymous
+	 * @generated
+	 */
+	EClass getAuthenticationAnonymous();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.Capability <em>Capability</em>}'.
@@ -1326,6 +1464,58 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute AUTHENTICATION_USER_PASSWORD__PASSWORD = eINSTANCE.getAuthenticationUserPassword_Password();
+
+		/**
+		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATION_USER_PASSWORD__TENANT = eINSTANCE.getAuthenticationUserPassword_Tenant();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl <em>Authentication User Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.impl.AuthenticationUserTokenImpl
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getAuthenticationUserToken()
+		 * @generated
+		 */
+		EClass AUTHENTICATION_USER_TOKEN = eINSTANCE.getAuthenticationUserToken();
+
+		/**
+		 * The meta object literal for the '<em><b>Provider</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATION_USER_TOKEN__PROVIDER = eINSTANCE.getAuthenticationUserToken_Provider();
+
+		/**
+		 * The meta object literal for the '<em><b>User</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATION_USER_TOKEN__USER = eINSTANCE.getAuthenticationUserToken_User();
+
+		/**
+		 * The meta object literal for the '<em><b>Token</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATION_USER_TOKEN__TOKEN = eINSTANCE.getAuthenticationUserToken_Token();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.AuthenticationAnonymousImpl <em>Authentication Anonymous</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.impl.AuthenticationAnonymousImpl
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getAuthenticationAnonymous()
+		 * @generated
+		 */
+		EClass AUTHENTICATION_ANONYMOUS = eINSTANCE.getAuthenticationAnonymous();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.CapabilityImpl <em>Capability</em>}' class.

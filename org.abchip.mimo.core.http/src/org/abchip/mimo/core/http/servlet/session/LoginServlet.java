@@ -17,7 +17,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityNameable;
@@ -70,7 +73,8 @@ public class LoginServlet extends HttpServlet {
 		if (provider != null) {
 
 			// anonymous access
-			ContextProvider contextProvider = getDefaultProvider().login(null, null);
+			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
+			ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
 
 			String entityName = "OAuth2" + provider;
 
@@ -119,7 +123,12 @@ public class LoginServlet extends HttpServlet {
 		if (contextProvider == null) {
 			ContextUtils.removeContextProvider(session.getId());
 
-			contextProvider = this.getDefaultProvider().login(session.getId(), user, password, tenant);
+			AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+			authentication.setUser(user);
+			authentication.setPassword(password);
+			authentication.setTenant(tenant);
+			
+			contextProvider = this.getDefaultProvider().login(session.getId(), authentication);
 			ContextUtils.addContextProvider(contextProvider);
 		}
 

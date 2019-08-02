@@ -1320,16 +1320,19 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		op = addEOperation(entityProviderEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "tenant", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getAuthenticationAnonymous(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(entityProviderEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "user", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "password", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "tenant", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getAuthenticationUserPassword(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityProviderEClass, null, "loginThirdParty", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "provider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(entityProviderEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(entityProviderEClass, null, "checkLogin", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(entityProviderEClass, null, "logout", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);

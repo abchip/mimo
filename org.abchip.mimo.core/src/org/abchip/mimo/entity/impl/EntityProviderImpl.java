@@ -11,6 +11,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationUserPassword;
+import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
@@ -161,7 +164,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public ContextProvider login(String contextId, String tenant) {
+	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -173,7 +176,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public ContextProvider login(String contextId, String user, String password, String tenant) {
+	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -185,7 +188,19 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public void loginThirdParty(String provider) {
+	public ContextProvider login(String contextId, AuthenticationUserToken authentication) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void checkLogin(AuthenticationUserToken authentication, boolean create) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

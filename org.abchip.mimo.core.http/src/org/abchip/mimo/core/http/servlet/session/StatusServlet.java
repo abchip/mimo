@@ -17,7 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityProvider;
@@ -68,8 +70,10 @@ public class StatusServlet extends HttpServlet {
 		// new session with anonymous user
 		if (contextProvider == null) {
 			ContextUtils.removeContextProvider(session.getId());
+			
+			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
+			contextProvider = getDefaultProvider().login(session.getId(), authentication);
 
-			contextProvider = this.getDefaultProvider().login(session.getId(), null);
 			ContextUtils.addContextProvider(contextProvider);
 		}
 
