@@ -41,10 +41,12 @@
           <genParameters ecoreParameter="mimo.ecore#//application/ApplicationManager/start/application"/>
           <genParameters ecoreParameter="mimo.ecore#//application/ApplicationManager/start/output"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//application/ApplicationManager/restart"/>
-        <genOperations ecoreOperation="mimo.ecore#//application/ApplicationManager/restartCalled"/>
-        <genOperations ecoreOperation="mimo.ecore#//application/ApplicationManager/stop"/>
-        <genOperations ecoreOperation="mimo.ecore#//application/ApplicationManager/stopCalled"/>
+        <genOperations ecoreOperation="mimo.ecore#//application/ApplicationManager/restart">
+          <genParameters ecoreParameter="mimo.ecore#//application/ApplicationManager/restart/application"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//application/ApplicationManager/stop">
+          <genParameters ecoreParameter="mimo.ecore#//application/ApplicationManager/stop/application"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ApplicationModule">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/name"/>

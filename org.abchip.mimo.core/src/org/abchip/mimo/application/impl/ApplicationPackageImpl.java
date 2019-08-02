@@ -898,13 +898,11 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaOutputStream(), "output", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(applicationManagerEClass, null, "restart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(applicationManagerEClass, ecorePackage.getEBoolean(), "restart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(applicationManagerEClass, ecorePackage.getEBoolean(), "restartCalled", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(applicationManagerEClass, null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(applicationManagerEClass, ecorePackage.getEBoolean(), "stopCalled", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(applicationManagerEClass, ecorePackage.getEBoolean(), "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(applicationModuleEClass, ApplicationModule.class, "ApplicationModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplicationModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

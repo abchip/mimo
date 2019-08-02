@@ -25,6 +25,9 @@ public class BaseEntityActivator {
 	private void start(ContextRoot contextRoot, ResourceManager resourceManager) {
 
 		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(contextRoot, Resource.class, ResourceScope.ROOT);
+		if(resourceWriter == null)
+			return;
+		
 		Resource tempResource = resourceWriter.lookup(contextRoot.getContextDescription().getResourceTemporary());
 		if (tempResource != null)
 			return;

@@ -15,12 +15,8 @@ import java.io.OutputStream;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationManager;
-import org.abchip.mimo.core.base.app.BaseApplicationStarter;
 
 public class BaseApplicationManagerImpl implements ApplicationManager {
-
-	private boolean restart = false;
-	private boolean stop = false;
 
 	@Override
 	public Application start(Class<?> context, Application application, OutputStream output) {
@@ -36,23 +32,14 @@ public class BaseApplicationManagerImpl implements ApplicationManager {
 	}
 
 	@Override
-	public void restart() {
-		restart = true;
+	public boolean restart(Application application) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
-	public boolean restartCalled() {
-		return restart;
+	public boolean stop(Application application) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-
-	@Override
-	public void stop() {
-		stop = true;
-	}
-
-	@Override
-	public boolean stopCalled() {
-		return stop;
-	}
-
 }

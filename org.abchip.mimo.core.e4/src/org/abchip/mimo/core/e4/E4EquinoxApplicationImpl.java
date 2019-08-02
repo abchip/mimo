@@ -42,20 +42,18 @@ public class E4EquinoxApplicationImpl implements IApplication {
 		String applicationConfig = null;
 		String applicationName = null;
 		String applicationPort = null;
-		
+
 		String[] arguments = (String[]) context.getArguments().get(IApplicationContext.APPLICATION_ARGS);
 		for (int i = 0; i < arguments.length; i++) {
 			if (arguments[i].equals("-mimo.config")) {
 				applicationConfig = arguments[i + 1];
 				i++;
 				continue;
-			}
-			else if (arguments[i].equals("-mimo.application.name")) {
+			} else if (arguments[i].equals("-mimo.application.name")) {
 				applicationName = arguments[i + 1];
 				i++;
 				continue;
-			}
-			else if (arguments[i].equals("-mimo.application.port")) {
+			} else if (arguments[i].equals("-mimo.application.port")) {
 				applicationPort = arguments[i + 1];
 				i++;
 				continue;
@@ -80,26 +78,26 @@ public class E4EquinoxApplicationImpl implements IApplication {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URI uri = null;
-		
-		if(applicationConfig.startsWith("http"))
+
+		if (applicationConfig.startsWith("http"))
 			uri = URI.createURI(applicationConfig);
 		else
 			uri = URI.createFileURI(applicationConfig);
-		
+
 		Resource resource = resourceSet.getResource(uri, true);
 		resource.load(Collections.EMPTY_MAP);
 		application = (Application) resource.getContents().get(0);
 
-		if(applicationName != null)
+		if (applicationName != null)
 			application.setName(applicationName);
-		
-		if(applicationPort != null)
+
+		if (applicationPort != null)
 			application.setPort(Integer.parseInt(applicationPort));
 
 		// context
 		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
-		
-		BundleContext bundleContext = bundle.getBundleContext();		
+
+		BundleContext bundleContext = bundle.getBundleContext();
 		E4ContextRootImpl contextApplication = new E4ContextRootImpl(bundleContext, application.getContextDescription());
 		contextApplication.set(Application.class, application);
 		contextApplication.set(ContextRoot.class, contextApplication);
@@ -108,23 +106,23 @@ public class E4EquinoxApplicationImpl implements IApplication {
 		// application manager
 		ServiceReference<ApplicationManager> applicationManagerReference = bundleContext.getServiceReference(ApplicationManager.class);
 		applicationManager = bundleContext.getService(applicationManagerReference);
-		
+
 		System.out.println("Starting " + application);
 		applicationManager.start(this.getClass(), application, System.out);
-		
+
 		return waitForStopOrRestart();
 	}
 
 	private Object waitForStopOrRestart() {
-		while(true) {
+		while (true) {
 			try {
-				if(applicationManager == null)
+				if (applicationManager == null)
 					continue;
-			    TimeUnit.MILLISECONDS.sleep(1000);
-			    if (applicationManager.restartCalled()) 
-			    	return EXIT_RESTART;
-			    if (applicationManager.stopCalled()) 
-			    	return EXIT_OK;
+				TimeUnit.MILLISECONDS.sleep(1000);
+				if (applicationManager.restart(application))
+					return EXIT_RESTART;
+				if (applicationManager.stop(application))
+					return EXIT_OK;
 			} catch (InterruptedException e) {
 			}
 		}
@@ -133,7 +131,7 @@ public class E4EquinoxApplicationImpl implements IApplication {
 	@Override
 	public void stop() {
 		System.out.println("Stopping " + application.getText());
-		applicationManager.stop();
+		applicationManager.stop(application);
 	}
 
 }

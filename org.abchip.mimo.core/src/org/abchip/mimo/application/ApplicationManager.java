@@ -35,33 +35,17 @@ public interface ApplicationManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model applicationRequired="true"
 	 * @generated
 	 */
-	void restart();
+	boolean restart(Application application);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model applicationRequired="true"
 	 * @generated
 	 */
-	boolean restartCalled();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void stop();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	boolean stopCalled();
+	boolean stop(Application application);
 
 } // ApplicationManager

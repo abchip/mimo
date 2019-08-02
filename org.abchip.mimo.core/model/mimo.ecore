@@ -47,10 +47,12 @@
         <eParameters name="application" lowerBound="1" eType="#//application/Application"/>
         <eParameters name="output" eType="#//util/JavaOutputStream"/>
       </eOperations>
-      <eOperations name="restart"/>
-      <eOperations name="restartCalled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="stop"/>
-      <eOperations name="stopCalled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="restart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="application" lowerBound="1" eType="#//application/Application"/>
+      </eOperations>
+      <eOperations name="stop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="application" lowerBound="1" eType="#//application/Application"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

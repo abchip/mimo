@@ -69,6 +69,9 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> void registerListener(String frameName, ResourceListener<E> listener) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		if (frame == null)
+			return;
+
 		registerListener(frame, listener);
 	}
 
@@ -92,10 +95,10 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
 		// TODO remove me
-		if(frame == null)
+		if (frame == null)
 			return;
-		registerProvider(frame, provider);		
-	}	
+		registerProvider(frame, provider);
+	}
 
 	@Override
 	public <E extends EntityNameable> void registerProvider(Frame<E> frame, EntityProvider provider) {
@@ -103,7 +106,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		dictionary.put(MimoConstants.DOMAIN_NAME, "mimo");
 		dictionary.put(MimoConstants.PROVIDER_FRAME, frame.getName());
 
-		contextRoot.set(EntityProvider.class.getName(), provider, false, dictionary);		
+		contextRoot.set(EntityProvider.class.getName(), provider, false, dictionary);
 	}
 
 	@Override
@@ -115,6 +118,9 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frameName, ResourceScope scope) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		if (frame == null)
+			return null;
+
 		return getEntityReader(contextProvider, frame, scope);
 	}
 
@@ -163,7 +169,10 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends Entity> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frameName, SerializationType serializationType) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		return getResourceSerializer(contextProvider, frame,serializationType);
+		if (frame == null)
+			return null;
+
+		return getResourceSerializer(contextProvider, frame, serializationType);
 	}
 
 	@Override
@@ -180,6 +189,8 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frameName, ResourceScope scope) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		if (frame == null)
+			return null;
 		return getEntityWriter(contextProvider, frame, scope);
 	}
 
@@ -255,7 +266,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 				Resource resource = resourceIterator.next();
 				if (resource.getResourceType() == ResourceType.TEMP)
 					continue;
-				if(!resources.contains(resource.getName()))
+				if (!resources.contains(resource.getName()))
 					resources.add(resource.getName());
 			}
 			break;
@@ -263,7 +274,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		case CTX:
 			resources.add(contextDescription.getResourceTemporary());
 			for (String resourceName : contextDescription.getResources()) {
-				if(!resources.contains(resourceName))
+				if (!resources.contains(resourceName))
 					resources.add(resourceName);
 			}
 			break;
@@ -283,6 +294,9 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> EntityProvider getProvider(String frameName) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		if(frame == null)
+			return null;
+
 		return getProvider(frame);
 	}
 
@@ -290,7 +304,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> EntityProvider getProvider(Frame<E> frame) {
 		return getEntityProvider(frame);
 	}
-	
+
 	private EntityProvider getEntityProvider(Frame<?> frame) {
 		String filter = "(" + MimoConstants.PROVIDER_FRAME + "=" + frame.getName() + ")";
 
@@ -310,5 +324,5 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		}
 
 		return entityProvider;
-	}	
+	}
 }
