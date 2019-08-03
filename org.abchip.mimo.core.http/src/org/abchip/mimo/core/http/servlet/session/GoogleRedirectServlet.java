@@ -23,7 +23,6 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
 
@@ -57,7 +56,6 @@ public class GoogleRedirectServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -77,8 +75,8 @@ public class GoogleRedirectServlet extends HttpServlet {
 			return;
 		}
 
-		String clientId = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "clientId").toString();
-		String returnURI = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "returnUrl").toString();
+		String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId").toString();
+		String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
 
 		// Get user authorization code
 		try {

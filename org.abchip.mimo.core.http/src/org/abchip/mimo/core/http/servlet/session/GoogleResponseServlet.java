@@ -25,7 +25,6 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
 import org.apache.http.HttpResponse;
@@ -77,7 +76,6 @@ public class GoogleResponseServlet extends HttpServlet {
 	}
 
 	@Override
-	@SuppressWarnings("unchecked")
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String authorizationCode = request.getParameter("code");
@@ -101,9 +99,9 @@ public class GoogleResponseServlet extends HttpServlet {
 			return;
         }
         
-		String clientId = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "clientId").toString();
-		String returnURI = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "returnUrl").toString();
-		String secret = ((Frame<EntityNameable>) oauth2Google.isa()).getValue(oauth2Google, "clientSecret").toString();
+		String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId").toString();
+		String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
+		String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret").toString();
         String accessToken = null;
         String idToken = null;
         
@@ -126,7 +124,7 @@ public class GoogleResponseServlet extends HttpServlet {
             if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
             	JsonFactory factory = new JsonFactory();
             	JsonParser  parser  = factory.createParser(responseString);            	
-            	HashMap<String,Object> userMap = new ObjectMapper().readValue(parser, HashMap.class);
+            	HashMap<?, ?> userMap = new ObjectMapper().readValue(parser, HashMap.class);
                 accessToken = (String) userMap.get("access_token");
                 idToken = (String) userMap.get("id_token");
                 // Debug.logInfo("Generated Access Token : " + accessToken, module);

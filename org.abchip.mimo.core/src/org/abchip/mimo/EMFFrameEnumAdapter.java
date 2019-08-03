@@ -52,7 +52,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Frame<?> ako() {
+	public Frame<? super E> ako() {
 		return null;
 	}
 
@@ -76,12 +76,12 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object getValue(E entity, String slotName) {
+	public Object getValue(Entity entity, String slotName) {
 		return null;
 	}
 
 	@Override
-	public void unsetValue(E entity, Slot slot) {
+	public void unsetValue(Entity entity, Slot slot) {
 	}
 
 	@Override
@@ -96,9 +96,9 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public List<Frame<?>> getSuperFrames() {
+	public List<Frame<? super E>> getSuperFrames() {
 
-		List<Frame<?>> frames = new ArrayList<Frame<?>>();
+		List<Frame<? super E>> frames = new ArrayList<Frame<? super E>>();
 
 		return frames;
 	}

@@ -58,7 +58,7 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @model
 	 * @generated
 	 */
-	Frame<?> ako();
+	Frame<? super E> ako();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -140,7 +140,7 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @model kind="operation"
 	 * @generated
 	 */
-	List<Frame<?>> getSuperFrames();
+	List<Frame<? super E>> getSuperFrames();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,7 +148,15 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @model required="true" entityRequired="true" slotNameRequired="true"
 	 * @generated
 	 */
-	Object getValue(E entity, String slotName);
+	Object getValue(Entity entity, String slotName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model entityRequired="true" slotRequired="true"
+	 * @generated
+	 */
+	void unsetValue(Entity entity, Slot slot);
 
 	/**
 	 * Returns the value of the '<em><b>Abstract</b></em>' attribute. <!--
@@ -160,11 +168,4 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @generated
 	 */
 	boolean isAbstract();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model entityRequired="true" slotRequired="true"
-	 * @generated
-	 */
-	void unsetValue(E entity, Slot slot);
 } // Frame

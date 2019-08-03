@@ -26,7 +26,6 @@ import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
@@ -59,7 +58,6 @@ public class LoginServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -89,7 +87,7 @@ public class LoginServlet extends HttpServlet {
 			if (oauth2Entity != null) {
 				String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
 
-				String location = ((Frame<EntityNameable>) oauth2Entity.isa()).getValue(oauth2Entity, "localRedirectUri").toString();
+				String location = oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri").toString();
 				response.setHeader(HttpHeader.LOCATION.name(), url + location);
 				response.setStatus(HttpServletResponse.SC_ACCEPTED);
 			} else {

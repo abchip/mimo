@@ -55,7 +55,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	@Override
-	public Frame<?> isa() {
+	public Frame<? extends Entity> isa() {
 
 		EClass eClass = eClass();
 

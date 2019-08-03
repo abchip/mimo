@@ -911,7 +911,9 @@
       </eTypeParameters>
       <eOperations name="ako">
         <eGenericType eClassifier="#//entity/Frame">
-          <eTypeArguments/>
+          <eTypeArguments>
+            <eLowerBound eTypeParameter="#//entity/Frame/E"/>
+          </eTypeArguments>
         </eGenericType>
       </eOperations>
       <eOperations name="getEntityClass" lowerBound="1">
@@ -924,19 +926,17 @@
       </eOperations>
       <eOperations name="getSuperFrames" upperBound="-1">
         <eGenericType eClassifier="#//entity/Frame">
-          <eTypeArguments/>
+          <eTypeArguments>
+            <eLowerBound eTypeParameter="#//entity/Frame/E"/>
+          </eTypeArguments>
         </eGenericType>
       </eOperations>
       <eOperations name="getValue" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
-        <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//entity/Frame/E"/>
-        </eParameters>
+        <eParameters name="entity" lowerBound="1" eType="#//entity/Entity"/>
         <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="unsetValue">
-        <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//entity/Frame/E"/>
-        </eParameters>
+        <eParameters name="entity" lowerBound="1" eType="#//entity/Entity"/>
         <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"

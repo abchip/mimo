@@ -1511,6 +1511,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
+		EGenericType g3 = createEGenericType(frameEClass_E);
+		g2.setELowerBound(g3);
 		initEOperation(op, g1);
 
 		op = addEOperation(frameEClass, null, "getEntityClass", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1526,16 +1528,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
+		g3 = createEGenericType(frameEClass_E);
+		g2.setELowerBound(g3);
 		initEOperation(op, g1);
 
 		op = addEOperation(frameEClass, ecorePackage.getEJavaObject(), "getValue", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(frameEClass_E);
-		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEntity(), "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "slotName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(frameEClass, null, "unsetValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(frameEClass_E);
-		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEntity(), "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(frameManagerEClass, FrameManager.class, "FrameManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1570,7 +1572,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(this.getEntityReader());
 		g2 = createEGenericType(this.getFrame());
 		g1.getETypeArguments().add(g2);
-		EGenericType g3 = createEGenericType(t1);
+		g3 = createEGenericType(t1);
 		g2.getETypeArguments().add(g3);
 		initEOperation(op, g1);
 

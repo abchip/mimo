@@ -12,7 +12,6 @@
 package org.abchip.mimo.entity.impl;
 
 import java.net.URI;
-
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
@@ -77,8 +76,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 
 		StringBuffer name = new StringBuffer();
 
-		@SuppressWarnings("unchecked")
-		Frame<EntityNameable> frame = (Frame<EntityNameable>) isa();
+		Frame<?> frame = isa();
 		for (String key : frame.getKeys()) {
 			if (!name.toString().isEmpty())
 				name.append("/");

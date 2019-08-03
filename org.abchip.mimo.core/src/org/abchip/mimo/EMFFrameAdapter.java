@@ -106,9 +106,9 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 		return null;
 	}
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public Frame<?> ako() {
+	public Frame<? super E> ako() {
 
 		EList<EClass> classes = this.eClass.getESuperTypes();
 		if (classes == null || classes.isEmpty())
@@ -138,7 +138,7 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object getValue(E entity, String slotName) {
+	public Object getValue(Entity entity, String slotName) {
 
 		if (entity instanceof EObject)
 			return getValue((EObject) entity, slotName);
@@ -147,7 +147,7 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public void unsetValue(E entity, Slot slot) {
+	public void unsetValue(Entity entity, Slot slot) {
 		if (entity instanceof EObject)
 			unsetValue((EObject) entity, slot);
 	}
@@ -204,16 +204,16 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public List<Frame<?>> getSuperFrames() {
+	public List<Frame<? super E>> getSuperFrames() {
 
-		List<Frame<?>> frames = new ArrayList<Frame<?>>();
+		List<Frame<? super E>> frames = new ArrayList<Frame<? super E>>();
 		addFrames(this, frames);
 
 		return frames;
 	}
 
-	private void addFrames(Frame<?> frame, List<Frame<?>> frames) {
-		Frame<?> ako = frame.ako();
+	private void addFrames(Frame<? super E> frame, List<Frame<? super E>> frames) {
+		Frame<? super E> ako = frame.ako();
 		if (ako != null) {
 			frames.add(ako);
 			addFrames(ako, frames);

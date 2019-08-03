@@ -162,7 +162,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
-	public Frame<?> ako() {
+	public Frame<? super E> ako() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -247,7 +247,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
-	public List<Frame<?>> getSuperFrames() {
+	public List<Frame<? super E>> getSuperFrames() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -259,7 +259,19 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
-	public Object getValue(E entity, String slotName) {
+	public Object getValue(Entity entity, String slotName) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void unsetValue(Entity entity, Slot slot) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -273,18 +285,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	@Override
 	public boolean isAbstract() {
 		return abstract_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void unsetValue(E entity, Slot slot) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
