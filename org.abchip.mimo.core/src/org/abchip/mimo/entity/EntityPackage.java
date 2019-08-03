@@ -520,7 +520,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_TYPE__SLOTS = ENTITY_FEATURE_COUNT + 0;
+	int ENTITY_TYPE__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class.
@@ -529,7 +529,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_TYPE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 1;
+	int ENTITY_TYPE_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Context Provider</b></em>' reference.
