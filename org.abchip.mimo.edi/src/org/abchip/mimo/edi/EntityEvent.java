@@ -31,7 +31,9 @@ public enum EntityEvent implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ALL(10, "All", "ALL"), /**
+	ALL(10, "All", "ALL"),
+
+	/**
 	 * The '<em><b>Create</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

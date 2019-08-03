@@ -5,17 +5,17 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi.impl;
+package org.abchip.mimo.edi.message.impl;
 
-import org.abchip.mimo.edi.EDIPackage;
 import org.abchip.mimo.edi.EntityEvent;
-import org.abchip.mimo.edi.Message;
-import org.abchip.mimo.edi.MessageBody;
-import org.abchip.mimo.edi.MessageStatus;
 
-import org.abchip.mimo.entity.EntityName;
+import org.abchip.mimo.edi.message.Message;
+import org.abchip.mimo.edi.message.MessageBody;
+import org.abchip.mimo.edi.message.MessagePackage;
+import org.abchip.mimo.edi.message.MessageStatus;
+import org.abchip.mimo.edi.message.MessageType;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityTypedImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -33,37 +33,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getMessageId <em>Message Id</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getBody <em>Body</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getEvent <em>Event</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getSender <em>Sender</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.impl.MessageImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageId <em>Message Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageTypeId <em>Message Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getFrameId <em>Frame Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEvent <em>Event</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getSenderId <em>Sender Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MessageImpl extends EntityNameableImpl implements Message {
-	/**
-	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFrame()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FRAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFrame()
-	 * @generated
-	 * @ordered
-	 */
-	protected String frame = FRAME_EDEFAULT;
-
+public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implements Message {
 	/**
 	 * 
 	 */
@@ -88,6 +69,46 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	 * @ordered
 	 */
 	protected String messageId = MESSAGE_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMessageTypeId() <em>Message Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MESSAGE_TYPE_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMessageTypeId() <em>Message Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String messageTypeId = MESSAGE_TYPE_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFrameId() <em>Frame Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrameId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FRAME_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFrameId() <em>Frame Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrameId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String frameId = FRAME_ID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
@@ -120,14 +141,24 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	protected EntityEvent event = EVENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSender() <em>Sender</em>}' containment reference.
+	 * The default value of the '{@link #getSenderId() <em>Sender Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSender()
+	 * @see #getSenderId()
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityName sender;
+	protected static final String SENDER_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSenderId() <em>Sender Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSenderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String senderId = SENDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -165,30 +196,7 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EDIPackage.Literals.MESSAGE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getFrame() {
-		return frame;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFrame(String newFrame) {
-		String oldFrame = frame;
-		frame = newFrame;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__FRAME, oldFrame, frame));
+		return MessagePackage.Literals.MESSAGE;
 	}
 
 	/**
@@ -211,7 +219,53 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 		String oldMessageId = messageId;
 		messageId = newMessageId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__MESSAGE_ID, oldMessageId, messageId));
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__MESSAGE_ID, oldMessageId, messageId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getMessageTypeId() {
+		return messageTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setMessageTypeId(String newMessageTypeId) {
+		String oldMessageTypeId = messageTypeId;
+		messageTypeId = newMessageTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__MESSAGE_TYPE_ID, oldMessageTypeId, messageTypeId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getFrameId() {
+		return frameId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFrameId(String newFrameId) {
+		String oldFrameId = frameId;
+		frameId = newFrameId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__FRAME_ID, oldFrameId, frameId));
 	}
 
 	/**
@@ -233,7 +287,7 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 		MessageBody oldBody = body;
 		body = newBody;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__BODY, oldBody, newBody);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__BODY, oldBody, newBody);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -249,14 +303,14 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 		if (newBody != body) {
 			NotificationChain msgs = null;
 			if (body != null)
-				msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EDIPackage.MESSAGE__BODY, null, msgs);
+				msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MessagePackage.MESSAGE__BODY, null, msgs);
 			if (newBody != null)
-				msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EDIPackage.MESSAGE__BODY, null, msgs);
+				msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MessagePackage.MESSAGE__BODY, null, msgs);
 			msgs = basicSetBody(newBody, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__BODY, newBody, newBody));
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__BODY, newBody, newBody));
 	}
 
 	/**
@@ -279,7 +333,7 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 		EntityEvent oldEvent = event;
 		event = newEvent == null ? EVENT_EDEFAULT : newEvent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__EVENT, oldEvent, event));
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__EVENT, oldEvent, event));
 	}
 
 	/**
@@ -288,23 +342,8 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	 * @generated
 	 */
 	@Override
-	public EntityName getSender() {
-		return sender;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSender(EntityName newSender, NotificationChain msgs) {
-		EntityName oldSender = sender;
-		sender = newSender;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__SENDER, oldSender, newSender);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public String getSenderId() {
+		return senderId;
 	}
 
 	/**
@@ -313,18 +352,11 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	 * @generated
 	 */
 	@Override
-	public void setSender(EntityName newSender) {
-		if (newSender != sender) {
-			NotificationChain msgs = null;
-			if (sender != null)
-				msgs = ((InternalEObject)sender).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EDIPackage.MESSAGE__SENDER, null, msgs);
-			if (newSender != null)
-				msgs = ((InternalEObject)newSender).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EDIPackage.MESSAGE__SENDER, null, msgs);
-			msgs = basicSetSender(newSender, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__SENDER, newSender, newSender));
+	public void setSenderId(String newSenderId) {
+		String oldSenderId = senderId;
+		senderId = newSenderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__SENDER_ID, oldSenderId, senderId));
 	}
 
 	/**
@@ -347,7 +379,7 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 		MessageStatus oldStatus = status;
 		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EDIPackage.MESSAGE__STATUS, oldStatus, status));
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__STATUS, oldStatus, status));
 	}
 
 	/**
@@ -358,10 +390,8 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EDIPackage.MESSAGE__BODY:
+			case MessagePackage.MESSAGE__BODY:
 				return basicSetBody(null, msgs);
-			case EDIPackage.MESSAGE__SENDER:
-				return basicSetSender(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -374,17 +404,19 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EDIPackage.MESSAGE__FRAME:
-				return getFrame();
-			case EDIPackage.MESSAGE__MESSAGE_ID:
+			case MessagePackage.MESSAGE__MESSAGE_ID:
 				return getMessageId();
-			case EDIPackage.MESSAGE__BODY:
+			case MessagePackage.MESSAGE__MESSAGE_TYPE_ID:
+				return getMessageTypeId();
+			case MessagePackage.MESSAGE__FRAME_ID:
+				return getFrameId();
+			case MessagePackage.MESSAGE__BODY:
 				return getBody();
-			case EDIPackage.MESSAGE__EVENT:
+			case MessagePackage.MESSAGE__EVENT:
 				return getEvent();
-			case EDIPackage.MESSAGE__SENDER:
-				return getSender();
-			case EDIPackage.MESSAGE__STATUS:
+			case MessagePackage.MESSAGE__SENDER_ID:
+				return getSenderId();
+			case MessagePackage.MESSAGE__STATUS:
 				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -398,22 +430,25 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EDIPackage.MESSAGE__FRAME:
-				setFrame((String)newValue);
-				return;
-			case EDIPackage.MESSAGE__MESSAGE_ID:
+			case MessagePackage.MESSAGE__MESSAGE_ID:
 				setMessageId((String)newValue);
 				return;
-			case EDIPackage.MESSAGE__BODY:
+			case MessagePackage.MESSAGE__MESSAGE_TYPE_ID:
+				setMessageTypeId((String)newValue);
+				return;
+			case MessagePackage.MESSAGE__FRAME_ID:
+				setFrameId((String)newValue);
+				return;
+			case MessagePackage.MESSAGE__BODY:
 				setBody((MessageBody)newValue);
 				return;
-			case EDIPackage.MESSAGE__EVENT:
+			case MessagePackage.MESSAGE__EVENT:
 				setEvent((EntityEvent)newValue);
 				return;
-			case EDIPackage.MESSAGE__SENDER:
-				setSender((EntityName)newValue);
+			case MessagePackage.MESSAGE__SENDER_ID:
+				setSenderId((String)newValue);
 				return;
-			case EDIPackage.MESSAGE__STATUS:
+			case MessagePackage.MESSAGE__STATUS:
 				setStatus((MessageStatus)newValue);
 				return;
 		}
@@ -428,22 +463,25 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EDIPackage.MESSAGE__FRAME:
-				setFrame(FRAME_EDEFAULT);
-				return;
-			case EDIPackage.MESSAGE__MESSAGE_ID:
+			case MessagePackage.MESSAGE__MESSAGE_ID:
 				setMessageId(MESSAGE_ID_EDEFAULT);
 				return;
-			case EDIPackage.MESSAGE__BODY:
+			case MessagePackage.MESSAGE__MESSAGE_TYPE_ID:
+				setMessageTypeId(MESSAGE_TYPE_ID_EDEFAULT);
+				return;
+			case MessagePackage.MESSAGE__FRAME_ID:
+				setFrameId(FRAME_ID_EDEFAULT);
+				return;
+			case MessagePackage.MESSAGE__BODY:
 				setBody((MessageBody)null);
 				return;
-			case EDIPackage.MESSAGE__EVENT:
+			case MessagePackage.MESSAGE__EVENT:
 				setEvent(EVENT_EDEFAULT);
 				return;
-			case EDIPackage.MESSAGE__SENDER:
-				setSender((EntityName)null);
+			case MessagePackage.MESSAGE__SENDER_ID:
+				setSenderId(SENDER_ID_EDEFAULT);
 				return;
-			case EDIPackage.MESSAGE__STATUS:
+			case MessagePackage.MESSAGE__STATUS:
 				setStatus(STATUS_EDEFAULT);
 				return;
 		}
@@ -458,17 +496,19 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EDIPackage.MESSAGE__FRAME:
-				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
-			case EDIPackage.MESSAGE__MESSAGE_ID:
+			case MessagePackage.MESSAGE__MESSAGE_ID:
 				return MESSAGE_ID_EDEFAULT == null ? messageId != null : !MESSAGE_ID_EDEFAULT.equals(messageId);
-			case EDIPackage.MESSAGE__BODY:
+			case MessagePackage.MESSAGE__MESSAGE_TYPE_ID:
+				return MESSAGE_TYPE_ID_EDEFAULT == null ? messageTypeId != null : !MESSAGE_TYPE_ID_EDEFAULT.equals(messageTypeId);
+			case MessagePackage.MESSAGE__FRAME_ID:
+				return FRAME_ID_EDEFAULT == null ? frameId != null : !FRAME_ID_EDEFAULT.equals(frameId);
+			case MessagePackage.MESSAGE__BODY:
 				return body != null;
-			case EDIPackage.MESSAGE__EVENT:
+			case MessagePackage.MESSAGE__EVENT:
 				return event != EVENT_EDEFAULT;
-			case EDIPackage.MESSAGE__SENDER:
-				return sender != null;
-			case EDIPackage.MESSAGE__STATUS:
+			case MessagePackage.MESSAGE__SENDER_ID:
+				return SENDER_ID_EDEFAULT == null ? senderId != null : !SENDER_ID_EDEFAULT.equals(senderId);
+			case MessagePackage.MESSAGE__STATUS:
 				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -484,12 +524,16 @@ public class MessageImpl extends EntityNameableImpl implements Message {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (frame: ");
-		result.append(frame);
-		result.append(", messageId: ");
+		result.append(" (messageId: ");
 		result.append(messageId);
+		result.append(", messageTypeId: ");
+		result.append(messageTypeId);
+		result.append(", frameId: ");
+		result.append(frameId);
 		result.append(", event: ");
 		result.append(event);
+		result.append(", senderId: ");
+		result.append(senderId);
 		result.append(", status: ");
 		result.append(status);
 		result.append(')');

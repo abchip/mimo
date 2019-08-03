@@ -5,17 +5,17 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi;
+package org.abchip.mimo.edi.message;
 
 import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Message Body</b></em>'.
+ * A representation of the model object '<em><b>Body</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.edi.EDIPackage#getMessageBody()
+ * @see org.abchip.mimo.edi.message.MessagePackage#getMessageBody()
  * @model
  * @generated
  */

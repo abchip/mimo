@@ -24,26 +24,59 @@
     <eLiterals name="Update" value="20" literal="UPD"/>
     <eLiterals name="Delete" value="30" literal="DLT"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
-        <details key="frame" value="Frame"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageId" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" eType="#//MessageBody"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" lowerBound="1" eType="#//EntityEvent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sender" lowerBound="1"
-        eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityName"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
-        eType="#//MessageStatus"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="MessageStatus">
-    <eLiterals name="Trasmitted" value="10" literal="TRS"/>
-    <eLiterals name="Error" value="20" literal="ERR"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MessageBody" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
+  <eSubpackages name="message" nsURI="http://www.abchip.org/biz/edi/message" nsPrefix="biz-edi-message">
+    <eClassifiers xsi:type="ecore:EClass" name="Message" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageId" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true">
+        <eAnnotations source="mimo-ent-slot">
+          <details key="key" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageTypeId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+          <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+            <details key="frame" value="MessageType"/>
+          </eAnnotations>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+          <details key="frame" value="Frame"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1"
+          eType="#//message/MessageBody" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" lowerBound="1"
+          eType="#//EntityEvent"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="senderId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+          <details key="frame" value="Party"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
+          eType="#//message/MessageStatus"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityTyped">
+        <eTypeArguments eClassifier="#//message/MessageType">
+          <eTypeArguments/>
+        </eTypeArguments>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageBody" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageReceived" eSuperTypes="#//message/Message"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageSent" eSuperTypes="#//message/Message"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="MessageStatus">
+      <eLiterals name="Trasmitted" value="10" literal="TRS"/>
+      <eLiterals name="Error" value="20" literal="ERR"/>
+      <eLiterals name="Pending" value="30" literal="PEND"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageType">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//message/Message"/>
+      </eTypeParameters>
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityType">
+        <eTypeArguments eTypeParameter="#//message/MessageType/E"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>

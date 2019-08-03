@@ -9,6 +9,7 @@ package org.abchip.mimo.edi.impl;
 
 import org.abchip.mimo.edi.EDIPackage;
 import org.abchip.mimo.edi.EdiFrameSetup;
+
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -33,6 +34,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSetup {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -92,11 +98,6 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @ordered
 	 */
 	protected String entityEvent = ENTITY_EVENT_EDEFAULT;
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -67,15 +67,6 @@ public interface EntityFactory extends EFactory {
 	<T extends EntityType<?>> EntityTyped<T> createEntityTyped();
 
 	/**
-	 * Returns a new object of class '<em>Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type</em>'.
-	 * @generated
-	 */
-	<E extends EntityTyped<?>> EntityType<E> createEntityType();
-
-	/**
 	 * Returns a new object of class '<em>Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

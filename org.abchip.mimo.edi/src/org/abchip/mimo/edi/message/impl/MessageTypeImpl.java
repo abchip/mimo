@@ -5,23 +5,24 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi.impl;
+package org.abchip.mimo.edi.message.impl;
 
-import org.abchip.mimo.edi.EDIPackage;
-import org.abchip.mimo.edi.MessageBody;
+import org.abchip.mimo.edi.message.Message;
+import org.abchip.mimo.edi.message.MessagePackage;
+import org.abchip.mimo.edi.message.MessageType;
 
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.entity.impl.EntityTypeImpl;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Message Body</b></em>'.
+ * An implementation of the model object '<em><b>Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class MessageBodyImpl extends EntityImpl implements MessageBody {
+public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implements MessageType<E> {
 	/**
 	 * 
 	 */
@@ -32,7 +33,7 @@ public class MessageBodyImpl extends EntityImpl implements MessageBody {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MessageBodyImpl() {
+	protected MessageTypeImpl() {
 		super();
 	}
 
@@ -43,7 +44,7 @@ public class MessageBodyImpl extends EntityImpl implements MessageBody {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EDIPackage.Literals.MESSAGE_BODY;
+		return MessagePackage.Literals.MESSAGE_TYPE;
 	}
 
-} //MessageBodyImpl
+} //MessageTypeImpl

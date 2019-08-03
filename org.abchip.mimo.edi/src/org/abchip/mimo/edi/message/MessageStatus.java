@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi;
+package org.abchip.mimo.edi.message;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,10 +15,10 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Message Status</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Status</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.edi.EDIPackage#getMessageStatus()
+ * @see org.abchip.mimo.edi.message.MessagePackage#getMessageStatus()
  * @model
  * @generated
  */
@@ -41,7 +41,17 @@ public enum MessageStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ERROR(20, "Error", "ERR");
+	ERROR(20, "Error", "ERR"),
+
+	/**
+	 * The '<em><b>Pending</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PENDING_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	PENDING(30, "Pending", "PEND");
 
 	/**
 	 * The '<em><b>Trasmitted</b></em>' literal value.
@@ -74,7 +84,22 @@ public enum MessageStatus implements Enumerator {
 	public static final int ERROR_VALUE = 20;
 
 	/**
-	 * An array of all the '<em><b>Message Status</b></em>' enumerators.
+	 * The '<em><b>Pending</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Pending</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #PENDING
+	 * @model name="Pending" literal="PEND"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PENDING_VALUE = 30;
+
+	/**
+	 * An array of all the '<em><b>Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -83,10 +108,11 @@ public enum MessageStatus implements Enumerator {
 		new MessageStatus[] {
 			TRASMITTED,
 			ERROR,
+			PENDING,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Message Status</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -94,7 +120,7 @@ public enum MessageStatus implements Enumerator {
 	public static final List<MessageStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Message Status</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Status</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
@@ -112,7 +138,7 @@ public enum MessageStatus implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Message Status</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Status</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
@@ -130,7 +156,7 @@ public enum MessageStatus implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Message Status</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Status</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
@@ -141,6 +167,7 @@ public enum MessageStatus implements Enumerator {
 		switch (value) {
 			case TRASMITTED_VALUE: return TRASMITTED;
 			case ERROR_VALUE: return ERROR;
+			case PENDING_VALUE: return PENDING;
 		}
 		return null;
 	}

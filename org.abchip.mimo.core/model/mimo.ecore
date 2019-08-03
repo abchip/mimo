@@ -849,7 +849,7 @@
         <eGenericType eTypeParameter="#//entity/EntityTyped/T"/>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityType" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
+    <eClassifiers xsi:type="ecore:EClass" name="EntityType" abstract="true" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityTyped">
           <eTypeArguments/>

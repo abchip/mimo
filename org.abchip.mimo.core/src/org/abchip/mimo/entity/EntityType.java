@@ -22,7 +22,7 @@ import java.util.List;
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getEntityType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface EntityType<E extends EntityTyped<?>> extends EntityNameable, Textable {

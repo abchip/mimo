@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNameableImpl implements EntityType<E> {
+public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNameableImpl implements EntityType<E> {
 	/**
 	 * 
 	 */
