@@ -118,6 +118,13 @@ public class LoginServlet extends HttpServlet {
 			contextProvider = null;
 		}
 
+		if(contextProvider != null) {
+			ContextUtils.removeContextProvider(session.getId());
+			this.getDefaultProvider().logout(contextProvider);
+			contextProvider.getContext().close();
+			contextProvider = null;
+		}
+		
 		// new session with user password
 		if (contextProvider == null) {
 			ContextUtils.removeContextProvider(session.getId());
