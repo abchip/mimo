@@ -66,10 +66,11 @@ public abstract class BaseServlet extends HttpServlet {
 		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
 		// invalid session
-		if (contextProvider != null && !this.getDefaultProvider().isActive(contextProvider)) {
-			contextProvider = null;
-			// TODO reactivate context on provider
-		}
+		// if (contextProvider != null &&
+		// !this.getDefaultProvider().isActive(contextProvider)) {
+		// contextProvider = null;
+		// TODO reactivate context on provider
+		// }
 
 		// invalid access
 		if (contextProvider == null) {
