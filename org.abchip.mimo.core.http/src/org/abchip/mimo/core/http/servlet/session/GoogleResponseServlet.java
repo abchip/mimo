@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationUserToken;
@@ -78,6 +79,8 @@ public class GoogleResponseServlet extends HttpServlet {
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		HttpSession session = request.getSession();
+		
         String authorizationCode = request.getParameter("code");
         if (authorizationCode == null || authorizationCode.isEmpty()) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google failed fo get authorization code");
@@ -143,6 +146,8 @@ public class GoogleResponseServlet extends HttpServlet {
     	authenticationUserToken.setAccessToken(accessToken);
     	authenticationUserToken.setProvider("Google");
 
-    	this.getDefaultProvider().checkLogin(authenticationUserToken, true);
+    	if(this.getDefaultProvider().checkLogin(authenticationUserToken, true)) {
+    		this.getDefaultProvider().login(session.getId(), authenticationUserToken);
+    	}
 	}
 }

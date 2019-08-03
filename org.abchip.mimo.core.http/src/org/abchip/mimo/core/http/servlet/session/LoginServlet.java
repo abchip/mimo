@@ -117,7 +117,8 @@ public class LoginServlet extends HttpServlet {
 		if (contextProvider != null && !this.getDefaultProvider().isActive(contextProvider)) {
 			contextProvider = null;
 		}
-
+		
+		// close previous 
 		if(contextProvider != null) {
 			ContextUtils.removeContextProvider(session.getId());
 			this.getDefaultProvider().logout(contextProvider);

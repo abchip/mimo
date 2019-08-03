@@ -146,7 +146,7 @@ public interface EntityProvider {
 	 * @model authenticationRequired="true" createRequired="true"
 	 * @generated
 	 */
-	void checkLogin(AuthenticationUserToken authentication, boolean create);
+	boolean checkLogin(AuthenticationUserToken authentication, boolean create);
 
 	/**
 	 * <!-- begin-user-doc -->

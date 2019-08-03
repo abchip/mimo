@@ -1394,7 +1394,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityProviderEClass, null, "checkLogin", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(entityProviderEClass, ecorePackage.getEBoolean(), "checkLogin", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
 
