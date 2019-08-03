@@ -566,6 +566,18 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/lookup/name"/>
         </genOperations>
       </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//entity/EntityTyped">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityTyped/T"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityTyped/getType"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//entity/EntityType">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityType/E"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/EntityType/slots"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/getFrame"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/getTypeId"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/hasTable"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/getText"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityWriter">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityWriter/E"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/copy">

@@ -105,7 +105,8 @@
          id="org.abchip.mimo.database.jtds"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.abchip.mimo.database.base"
@@ -132,7 +133,8 @@
          id="org.abchip.mimo.database.mysql"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.eclipse.net4j.db"

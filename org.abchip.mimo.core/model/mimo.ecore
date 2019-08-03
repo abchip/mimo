@@ -264,8 +264,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceTemporary" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
@@ -593,8 +592,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="route" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="route" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
       <eOperations name="isa" lowerBound="1">
@@ -840,6 +838,33 @@
           <eTypeArguments eTypeParameter="#//entity/EntityReader/E"/>
         </eGenericType>
       </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityTyped" eSuperTypes="#//entity/EntityNameable">
+      <eTypeParameters name="T">
+        <eBounds eClassifier="#//entity/EntityType">
+          <eTypeArguments/>
+        </eBounds>
+      </eTypeParameters>
+      <eOperations name="getType" lowerBound="1">
+        <eGenericType eTypeParameter="#//entity/EntityTyped/T"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityType" eSuperTypes="#//entity/Entity #//entity/Textable">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/EntityTyped">
+          <eTypeArguments/>
+        </eBounds>
+      </eTypeParameters>
+      <eOperations name="getFrame" lowerBound="1">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments eTypeParameter="#//entity/EntityType/E"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getTypeId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="hasTable" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="getText" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="slots" upperBound="-1"
+          eType="#//entity/Slot" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityWriter" abstract="true" interface="true">
       <eTypeParameters name="E">

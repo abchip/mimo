@@ -61,10 +61,21 @@ public interface Domain extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Route</em>' attribute.
+	 * @see #setRoute(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getDomain_Route()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	String getRoute();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Domain#getRoute <em>Route</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Route</em>' attribute.
+	 * @see #getRoute()
+	 * @generated
+	 */
+	void setRoute(String value);
 
 } // Domain

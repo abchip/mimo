@@ -37,6 +37,8 @@ import org.abchip.mimo.entity.ResourceNotifier;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityProviderRegistry;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.EntityType;
+import org.abchip.mimo.entity.EntityTyped;
 import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.ResourceType;
@@ -131,6 +133,20 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass entityReaderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityTypedEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -556,6 +572,36 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EReference getEntityReader_Frame() {
 		return (EReference)entityReaderEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEntityTyped() {
+		return entityTypedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEntityType() {
+		return entityTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEntityType_Slots() {
+		return (EReference)entityTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -991,6 +1037,11 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEReference(entityReaderEClass, ENTITY_READER__NOTIFIER);
 		createEReference(entityReaderEClass, ENTITY_READER__FRAME);
 
+		entityTypedEClass = createEClass(ENTITY_TYPED);
+
+		entityTypeEClass = createEClass(ENTITY_TYPE);
+		createEReference(entityTypeEClass, ENTITY_TYPE__SLOTS);
+
 		entityWriterEClass = createEClass(ENTITY_WRITER);
 
 		facetEClass = createEClass(FACET);
@@ -1072,6 +1123,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Create type parameters
 		ETypeParameter entityIteratorEClass_E = addETypeParameter(entityIteratorEClass, "E");
 		ETypeParameter entityReaderEClass_E = addETypeParameter(entityReaderEClass, "E");
+		ETypeParameter entityTypedEClass_T = addETypeParameter(entityTypedEClass, "T");
+		ETypeParameter entityTypeEClass_E = addETypeParameter(entityTypeEClass, "E");
 		ETypeParameter entityWriterEClass_E = addETypeParameter(entityWriterEClass, "E");
 		ETypeParameter frameEClass_E = addETypeParameter(frameEClass, "E");
 		ETypeParameter resourceEventEClass_E = addETypeParameter(resourceEventEClass, "E");
@@ -1084,6 +1137,14 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityIteratorEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(this.getEntityNameable());
 		entityReaderEClass_E.getEBounds().add(g1);
+		g1 = createEGenericType(this.getEntityType());
+		EGenericType g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		entityTypedEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getEntityTyped());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		entityTypeEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(this.getEntityNameable());
 		entityWriterEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(this.getEntity());
@@ -1103,7 +1164,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		domainEClass.getESuperTypes().add(this.getEntity());
 		entityEnumEClass.getESuperTypes().add(this.getEntityNameable());
 		g1 = createEGenericType(theUtilPackage.getJavaIterator());
-		EGenericType g2 = createEGenericType(entityIteratorEClass_E);
+		g2 = createEGenericType(entityIteratorEClass_E);
 		g1.getETypeArguments().add(g2);
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theUtilPackage.getJavaIterable());
@@ -1119,6 +1180,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(this.getEntityProvider());
 		g1.getETypeArguments().add(g2);
 		entityProviderRegistryEClass.getEGenericSuperTypes().add(g1);
+		entityTypedEClass.getESuperTypes().add(this.getEntityNameable());
+		entityTypeEClass.getESuperTypes().add(this.getEntity());
+		entityTypeEClass.getESuperTypes().add(this.getTextable());
 		g1 = createEGenericType(this.getEntityReader());
 		g2 = createEGenericType(entityWriterEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -1150,7 +1214,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDomain_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDomain_Route(), ecorePackage.getEString(), "route", null, 0, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDomain_Route(), ecorePackage.getEString(), "route", null, 0, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1382,6 +1446,27 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityReaderEClass_E);
 		initEOperation(op, g1);
+
+		initEClass(entityTypedEClass, EntityTyped.class, "EntityTyped", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(entityTypedEClass, null, "getType", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(entityTypedEClass_T);
+		initEOperation(op, g1);
+
+		initEClass(entityTypeEClass, EntityType.class, "EntityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityType_Slots(), this.getSlot(), null, "slots", null, 0, -1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = addEOperation(entityTypeEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getFrame());
+		g2 = createEGenericType(entityTypeEClass_E);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		addEOperation(entityTypeEClass, ecorePackage.getEString(), "getTypeId", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(entityTypeEClass, ecorePackage.getEBoolean(), "hasTable", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(entityTypeEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityWriterEClass, EntityWriter.class, "EntityWriter", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

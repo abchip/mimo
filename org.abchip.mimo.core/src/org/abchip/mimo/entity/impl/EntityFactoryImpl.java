@@ -69,6 +69,8 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 			case EntityPackage.DEFAULT: return (EObject)createDefault();
 			case EntityPackage.DOMAIN: return (EObject)createDomain();
 			case EntityPackage.ENTITY_NAME: return (EObject)createEntityName();
+			case EntityPackage.ENTITY_TYPED: return (EObject)createEntityTyped();
+			case EntityPackage.ENTITY_TYPE: return (EObject)createEntityType();
 			case EntityPackage.RESOURCE: return (EObject)createResource();
 			case EntityPackage.RESOURCE_NOTIFIER: return (EObject)createResourceNotifier();
 			default:
@@ -149,6 +151,28 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	public EntityName createEntityName() {
 		EntityNameImpl entityName = new EntityNameImpl();
 		return entityName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <T extends EntityType<?>> EntityTyped<T> createEntityTyped() {
+		EntityTypedImpl<T> entityTyped = new EntityTypedImpl<T>();
+		return entityTyped;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <E extends EntityTyped<?>> EntityType<E> createEntityType() {
+		EntityTypeImpl<E> entityType = new EntityTypeImpl<E>();
+		return entityType;
 	}
 
 	/**

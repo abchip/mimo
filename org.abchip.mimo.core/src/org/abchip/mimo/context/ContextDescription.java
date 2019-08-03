@@ -144,7 +144,7 @@ public interface ContextDescription extends Entity {
 	 * @return the value of the '<em>Tenant</em>' attribute.
 	 * @see #setTenant(String)
 	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_Tenant()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getTenant();
