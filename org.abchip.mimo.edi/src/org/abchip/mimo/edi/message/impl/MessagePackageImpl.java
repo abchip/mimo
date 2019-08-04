@@ -8,13 +8,8 @@
 package org.abchip.mimo.edi.message.impl;
 
 import org.abchip.mimo.MimoPackage;
-
-import org.abchip.mimo.edi.EDIPackage;
-
-import org.abchip.mimo.edi.impl.EDIPackageImpl;
-
+import org.abchip.mimo.edi.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.edi.message.Message;
-import org.abchip.mimo.edi.message.MessageBody;
 import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessagePackage;
 import org.abchip.mimo.edi.message.MessageReceived;
@@ -31,7 +26,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -49,13 +43,6 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	private EClass messageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass messageBodyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,16 +123,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		MimoPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EDIPackage.eNS_URI);
-		EDIPackageImpl theEDIPackage = (EDIPackageImpl)(registeredPackage instanceof EDIPackageImpl ? registeredPackage : EDIPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.edi.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.edi.entity.EntityPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMessagePackage.createPackageContents();
-		theEDIPackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMessagePackage.initializePackageContents();
-		theEDIPackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theMessagePackage.freeze();
@@ -192,26 +179,6 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 */
 	@Override
 	public EAttribute getMessage_FrameId() {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMessage_Body() {
-		return (EReference)messageEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMessage_Event() {
 		return (EAttribute)messageEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -221,17 +188,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMessage_SenderId() {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMessage_Status() {
+	public EAttribute getMessage_Body() {
 		return (EAttribute)messageEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -241,8 +198,28 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMessageBody() {
-		return messageBodyEClass;
+	public EAttribute getMessage_Event() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessage_SenderId() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessage_Status() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -273,6 +250,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	@Override
 	public EClass getMessageType() {
 		return messageTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessageType_MessageTypeId() {
+		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -317,19 +304,18 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		messageEClass = createEClass(MESSAGE);
 		createEAttribute(messageEClass, MESSAGE__MESSAGE_ID);
 		createEAttribute(messageEClass, MESSAGE__MESSAGE_TYPE_ID);
-		createEAttribute(messageEClass, MESSAGE__FRAME_ID);
-		createEReference(messageEClass, MESSAGE__BODY);
-		createEAttribute(messageEClass, MESSAGE__EVENT);
-		createEAttribute(messageEClass, MESSAGE__SENDER_ID);
 		createEAttribute(messageEClass, MESSAGE__STATUS);
-
-		messageBodyEClass = createEClass(MESSAGE_BODY);
+		createEAttribute(messageEClass, MESSAGE__SENDER_ID);
+		createEAttribute(messageEClass, MESSAGE__FRAME_ID);
+		createEAttribute(messageEClass, MESSAGE__EVENT);
+		createEAttribute(messageEClass, MESSAGE__BODY);
 
 		messageReceivedEClass = createEClass(MESSAGE_RECEIVED);
 
 		messageSentEClass = createEClass(MESSAGE_SENT);
 
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
+		createEAttribute(messageTypeEClass, MESSAGE_TYPE__MESSAGE_TYPE_ID);
 
 		// Create enums
 		messageStatusEEnum = createEEnum(MESSAGE_STATUS);
@@ -359,8 +345,8 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		EDIPackage theEDIPackage = (EDIPackage)EPackage.Registry.INSTANCE.getEPackage(EDIPackage.eNS_URI);
+		EntityPackage theEntityPackage_1 = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		org.abchip.mimo.edi.entity.EntityPackage theEntityPackage = (org.abchip.mimo.edi.entity.EntityPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.edi.entity.EntityPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter messageTypeEClass_E = addETypeParameter(messageTypeEClass, "E");
@@ -370,43 +356,48 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		messageTypeEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		g1 = createEGenericType(theEntityPackage.getEntityTyped());
+		g1 = createEGenericType(theEntityPackage_1.getEntityTyped());
 		EGenericType g2 = createEGenericType(this.getMessageType());
 		g1.getETypeArguments().add(g2);
 		EGenericType g3 = createEGenericType();
 		g2.getETypeArguments().add(g3);
 		messageEClass.getEGenericSuperTypes().add(g1);
-		messageBodyEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		g1 = createEGenericType(theEntityPackage_1.getEntityInfo());
+		messageEClass.getEGenericSuperTypes().add(g1);
 		messageReceivedEClass.getESuperTypes().add(this.getMessage());
 		messageSentEClass.getESuperTypes().add(this.getMessage());
-		g1 = createEGenericType(theEntityPackage.getEntityType());
+		g1 = createEGenericType(theEntityPackage_1.getEntityType());
 		g2 = createEGenericType(messageTypeEClass_E);
 		g1.getETypeArguments().add(g2);
+		messageTypeEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theEntityPackage_1.getEntityInfo());
 		messageTypeEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageEClass, Message.class, "Message", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessage_MessageId(), ecorePackage.getEString(), "messageId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_MessageTypeId(), ecorePackage.getEString(), "messageTypeId", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_FrameId(), ecorePackage.getEString(), "frameId", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessage_Body(), this.getMessageBody(), null, "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_Event(), theEDIPackage.getEntityEvent(), "event", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_SenderId(), ecorePackage.getEString(), "senderId", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_Status(), this.getMessageStatus(), "status", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(messageBodyEClass, MessageBody.class, "MessageBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMessage_MessageTypeId(), ecorePackage.getEString(), "messageTypeId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Status(), this.getMessageStatus(), "status", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_SenderId(), ecorePackage.getEString(), "senderId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_FrameId(), ecorePackage.getEString(), "frameId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Event(), theEntityPackage.getEntityEvent(), "event", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Body(), ecorePackage.getEByteArray(), "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageReceivedEClass, MessageReceived.class, "MessageReceived", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(messageSentEClass, MessageSent.class, "MessageSent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMessageType_MessageTypeId(), ecorePackage.getEString(), "messageTypeId", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(messageStatusEEnum, MessageStatus.class, "MessageStatus");
 		addEEnumLiteral(messageStatusEEnum, MessageStatus.TRASMITTED);
 		addEEnumLiteral(messageStatusEEnum, MessageStatus.ERROR);
 		addEEnumLiteral(messageStatusEEnum, MessageStatus.PENDING);
+
+		// Create resource
+		createResource(eNS_URI);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -425,6 +416,12 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		String source = "mimo-ent-slot";
 		addAnnotation
 		  (getMessage_MessageId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getMessageType_MessageTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -458,19 +455,19 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getMessage_FrameId(),
+		  (getMessage_SenderId(),
 		   source,
 		   new String[] {
-			   "frame", "Frame"
+			   "frame", "Party"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getMessage_SenderId(),
+		  (getMessage_FrameId(),
 		   source,
 		   new String[] {
-			   "frame", "Party"
+			   "frame", "Frame"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

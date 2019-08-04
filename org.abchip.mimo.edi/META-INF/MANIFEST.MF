@@ -8,11 +8,10 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: org.abchip.mimo.edi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.abchip.mimo.edi,
- org.abchip.mimo.edi.impl,
+Export-Package: org.abchip.mimo.edi.entity,
+ org.abchip.mimo.edi.entity.impl,
  org.abchip.mimo.edi.message,
- org.abchip.mimo.edi.message.impl,
- org.abchip.mimo.edi.message.util
+ org.abchip.mimo.edi.message.impl
 Require-Bundle: org.eclipse.core.runtime;resolution:=optional;x-installation:=greedy,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.abchip.mimo.core;visibility:=reexport

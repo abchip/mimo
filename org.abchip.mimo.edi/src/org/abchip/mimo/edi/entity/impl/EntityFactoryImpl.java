@@ -5,9 +5,9 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi.impl;
+package org.abchip.mimo.edi.entity.impl;
 
-import org.abchip.mimo.edi.*;
+import org.abchip.mimo.edi.entity.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -24,24 +24,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
+public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static EDIFactory init() {
+	public static EntityFactory init() {
 		try {
-			EDIFactory theEDIFactory = (EDIFactory)EPackage.Registry.INSTANCE.getEFactory(EDIPackage.eNS_URI);
-			if (theEDIFactory != null) {
-				return theEDIFactory;
+			EntityFactory theEntityFactory = (EntityFactory)EPackage.Registry.INSTANCE.getEFactory(EntityPackage.eNS_URI);
+			if (theEntityFactory != null) {
+				return theEntityFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new EDIFactoryImpl();
+		return new EntityFactoryImpl();
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDIFactoryImpl() {
+	public EntityFactoryImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case EDIPackage.EDI_FRAME_SETUP: return (EObject)createEdiFrameSetup();
+			case EntityPackage.EDI_FRAME_SETUP: return (EObject)createEdiFrameSetup();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,9 +76,9 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case EDIPackage.ENTITY_CONDITION:
+			case EntityPackage.ENTITY_CONDITION:
 				return createEntityConditionFromString(eDataType, initialValue);
-			case EDIPackage.ENTITY_EVENT:
+			case EntityPackage.ENTITY_EVENT:
 				return createEntityEventFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -93,9 +93,9 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case EDIPackage.ENTITY_CONDITION:
+			case EntityPackage.ENTITY_CONDITION:
 				return convertEntityConditionToString(eDataType, instanceValue);
-			case EDIPackage.ENTITY_EVENT:
+			case EntityPackage.ENTITY_EVENT:
 				return convertEntityEventToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -159,8 +159,8 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	 * @generated
 	 */
 	@Override
-	public EDIPackage getEDIPackage() {
-		return (EDIPackage)getEPackage();
+	public EntityPackage getEntityPackage() {
+		return (EntityPackage)getEPackage();
 	}
 
 	/**
@@ -170,8 +170,8 @@ public class EDIFactoryImpl extends EFactoryImpl implements EDIFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static EDIPackage getPackage() {
-		return EDIPackage.eINSTANCE;
+	public static EntityPackage getPackage() {
+		return EntityPackage.eINSTANCE;
 	}
 
-} //EDIFactoryImpl
+} //EntityFactoryImpl

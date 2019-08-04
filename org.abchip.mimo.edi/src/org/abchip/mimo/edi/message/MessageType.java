@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.edi.message;
 
+import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityType;
 
 /**
@@ -14,10 +15,43 @@ import org.abchip.mimo.entity.EntityType;
  * A representation of the model object '<em><b>Type</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.edi.message.MessageType#getMessageTypeId <em>Message Type Id</em>}</li>
+ * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType()
  * @model
  * @generated
  */
-public interface MessageType<E extends Message> extends EntityType<E> {
+public interface MessageType<E extends Message> extends EntityType<E>, EntityInfo {
+
+	/**
+	 * Returns the value of the '<em><b>Message Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Message Type Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Message Type Id</em>' attribute.
+	 * @see #setMessageTypeId(String)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_MessageTypeId()
+	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getMessageTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#getMessageTypeId <em>Message Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Message Type Id</em>' attribute.
+	 * @see #getMessageTypeId()
+	 * @generated
+	 */
+	void setMessageTypeId(String value);
 } // MessageType

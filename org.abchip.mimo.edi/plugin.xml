@@ -14,15 +14,15 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated edi -->
       <package
-            uri="http://www.abchip.org/mimo/edi"
-            class="org.abchip.mimo.edi.EDIPackage"
+            uri="http://www.abchip.org/mimo/edi/ent"
+            class="org.abchip.mimo.edi.entity.EntityPackage"
             genModel="model/edi.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated edi -->
       <package
-            uri="http://www.abchip.org/biz/edi/message"
+            uri="http://www.abchip.org/mimo/edi/message"
             class="org.abchip.mimo.edi.message.MessagePackage"
             genModel="model/edi.genmodel"/>
    </extension>

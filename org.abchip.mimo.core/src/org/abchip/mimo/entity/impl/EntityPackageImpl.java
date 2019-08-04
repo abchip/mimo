@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityFactory;
+import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityName;
 import org.abchip.mimo.entity.EntityNameable;
@@ -98,6 +99,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass entityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityInfoEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -462,6 +470,56 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EClass getEntity() {
 		return entityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEntityInfo() {
+		return entityInfoEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntityInfo_CreatedStamp() {
+		return (EAttribute)entityInfoEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntityInfo_CreatedTxStamp() {
+		return (EAttribute)entityInfoEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntityInfo_LastUpdatedStamp() {
+		return (EAttribute)entityInfoEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntityInfo_LastUpdatedTxStamp() {
+		return (EAttribute)entityInfoEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1017,6 +1075,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		entityEClass = createEClass(ENTITY);
 
+		entityInfoEClass = createEClass(ENTITY_INFO);
+		createEAttribute(entityInfoEClass, ENTITY_INFO__CREATED_STAMP);
+		createEAttribute(entityInfoEClass, ENTITY_INFO__CREATED_TX_STAMP);
+		createEAttribute(entityInfoEClass, ENTITY_INFO__LAST_UPDATED_STAMP);
+		createEAttribute(entityInfoEClass, ENTITY_INFO__LAST_UPDATED_TX_STAMP);
+
 		entityEnumEClass = createEClass(ENTITY_ENUM);
 		createEAttribute(entityEnumEClass, ENTITY_ENUM__NAME);
 
@@ -1223,6 +1287,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
+
+		initEClass(entityInfoEClass, EntityInfo.class, "EntityInfo", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntityInfo_CreatedStamp(), ecorePackage.getEDate(), "createdStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityInfo_CreatedTxStamp(), ecorePackage.getEDate(), "createdTxStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityInfo_LastUpdatedStamp(), ecorePackage.getEDate(), "lastUpdatedStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityInfo_LastUpdatedTxStamp(), ecorePackage.getEDate(), "lastUpdatedTxStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEnumEClass, EntityEnum.class, "EntityEnum", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityEnum_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1941,8 +2011,44 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.JSON);
 
 		// Create annotations
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-slot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentslotAnnotations() {
+		String source = "mimo-ent-slot";
+		addAnnotation
+		  (getEntityInfo_CreatedStamp(),
+		   source,
+		   new String[] {
+			   "info", "true"
+		   });
+		addAnnotation
+		  (getEntityInfo_CreatedTxStamp(),
+		   source,
+		   new String[] {
+			   "info", "true"
+		   });
+		addAnnotation
+		  (getEntityInfo_LastUpdatedStamp(),
+		   source,
+		   new String[] {
+			   "info", "true"
+		   });
+		addAnnotation
+		  (getEntityInfo_LastUpdatedTxStamp(),
+		   source,
+		   new String[] {
+			   "info", "true"
+		   });
 	}
 
 	/**

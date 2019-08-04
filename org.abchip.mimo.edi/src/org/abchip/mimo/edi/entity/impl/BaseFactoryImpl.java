@@ -5,10 +5,9 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi.message.impl;
+package org.abchip.mimo.edi.entity.impl;
 
-import org.abchip.mimo.edi.message.*;
-
+import org.abchip.mimo.edi.entity.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -24,24 +23,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
+public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static MessageFactory init() {
+	public static BaseFactory init() {
 		try {
-			MessageFactory theMessageFactory = (MessageFactory)EPackage.Registry.INSTANCE.getEFactory(MessagePackage.eNS_URI);
-			if (theMessageFactory != null) {
-				return theMessageFactory;
+			BaseFactory theBaseFactory = (BaseFactory)EPackage.Registry.INSTANCE.getEFactory(BasePackage.eNS_URI);
+			if (theBaseFactory != null) {
+				return theBaseFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new MessageFactoryImpl();
+		return new BaseFactoryImpl();
 	}
 
 	/**
@@ -50,7 +49,7 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageFactoryImpl() {
+	public BaseFactoryImpl() {
 		super();
 	}
 
@@ -62,9 +61,7 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MessagePackage.MESSAGE_RECEIVED: return (EObject)createMessageReceived();
-			case MessagePackage.MESSAGE_SENT: return (EObject)createMessageSent();
-			case MessagePackage.MESSAGE_TYPE: return (EObject)createMessageType();
+			case BasePackage.EDI_FRAME_SETUP: return (EObject)createEdiFrameSetup();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,8 +75,10 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case MessagePackage.MESSAGE_STATUS:
-				return createMessageStatusFromString(eDataType, initialValue);
+			case BasePackage.ENTITY_CONDITION:
+				return createEntityConditionFromString(eDataType, initialValue);
+			case BasePackage.ENTITY_EVENT:
+				return createEntityEventFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -93,8 +92,10 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case MessagePackage.MESSAGE_STATUS:
-				return convertMessageStatusToString(eDataType, instanceValue);
+			case BasePackage.ENTITY_CONDITION:
+				return convertEntityConditionToString(eDataType, instanceValue);
+			case BasePackage.ENTITY_EVENT:
+				return convertEntityEventToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -106,9 +107,9 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * @generated
 	 */
 	@Override
-	public MessageReceived createMessageReceived() {
-		MessageReceivedImpl messageReceived = new MessageReceivedImpl();
-		return messageReceived;
+	public EdiFrameSetup createEdiFrameSetup() {
+		EdiFrameSetupImpl ediFrameSetup = new EdiFrameSetupImpl();
+		return ediFrameSetup;
 	}
 
 	/**
@@ -116,30 +117,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public MessageSent createMessageSent() {
-		MessageSentImpl messageSent = new MessageSentImpl();
-		return messageSent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public <E extends Message> MessageType<E> createMessageType() {
-		MessageTypeImpl<E> messageType = new MessageTypeImpl<E>();
-		return messageType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageStatus createMessageStatusFromString(EDataType eDataType, String initialValue) {
-		MessageStatus result = MessageStatus.get(initialValue);
+	public EntityCondition createEntityConditionFromString(EDataType eDataType, String initialValue) {
+		EntityCondition result = EntityCondition.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -149,7 +128,27 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertMessageStatusToString(EDataType eDataType, Object instanceValue) {
+	public String convertEntityConditionToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityEvent createEntityEventFromString(EDataType eDataType, String initialValue) {
+		EntityEvent result = EntityEvent.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEntityEventToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -159,8 +158,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * @generated
 	 */
 	@Override
-	public MessagePackage getMessagePackage() {
-		return (MessagePackage)getEPackage();
+	public BasePackage getBasePackage() {
+		return (BasePackage)getEPackage();
 	}
 
 	/**
@@ -170,8 +169,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static MessagePackage getPackage() {
-		return MessagePackage.eINSTANCE;
+	public static BasePackage getPackage() {
+		return BasePackage.eINSTANCE;
 	}
 
-} //MessageFactoryImpl
+} //BaseFactoryImpl

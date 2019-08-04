@@ -440,6 +440,12 @@
       <genClasses ecoreClass="mimo.ecore#//entity/Entity">
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityInfo">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/createdStamp"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/createdTxStamp"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/lastUpdatedStamp"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/lastUpdatedTxStamp"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityEnum">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityEnum/name"/>
       </genClasses>

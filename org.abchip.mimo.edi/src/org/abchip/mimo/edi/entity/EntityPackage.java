@@ -5,9 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi;
-
-import org.abchip.mimo.entity.EntityPackage;
+package org.abchip.mimo.edi.entity;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -25,18 +23,18 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.edi.EDIFactory
+ * @see org.abchip.mimo.edi.entity.EntityFactory
  * @model kind="package"
  * @generated
  */
-public interface EDIPackage extends EPackage {
+public interface EntityPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "edi";
+	String eNAME = "entity";
 
 	/**
 	 * The package namespace URI.
@@ -44,7 +42,7 @@ public interface EDIPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.abchip.org/mimo/edi";
+	String eNS_URI = "http://www.abchip.org/mimo/edi/ent";
 
 	/**
 	 * The package namespace name.
@@ -52,7 +50,7 @@ public interface EDIPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "edi";
+	String eNS_PREFIX = "mimo-edi-ent";
 
 	/**
 	 * The singleton instance of the package.
@@ -60,14 +58,14 @@ public interface EDIPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	EDIPackage eINSTANCE = org.abchip.mimo.edi.impl.EDIPackageImpl.init();
+	EntityPackage eINSTANCE = org.abchip.mimo.edi.entity.impl.EntityPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.edi.impl.EdiFrameSetupImpl <em>Edi Frame Setup</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl <em>Edi Frame Setup</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.edi.impl.EdiFrameSetupImpl
-	 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getEdiFrameSetup()
+	 * @see org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl
+	 * @see org.abchip.mimo.edi.entity.impl.EntityPackageImpl#getEdiFrameSetup()
 	 * @generated
 	 */
 	int EDI_FRAME_SETUP = 0;
@@ -79,7 +77,7 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int EDI_FRAME_SETUP__NAME = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Entity Condition</b></em>' attribute.
@@ -88,7 +86,7 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__ENTITY_CONDITION = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int EDI_FRAME_SETUP__ENTITY_CONDITION = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Entity Event</b></em>' attribute.
@@ -97,7 +95,7 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__ENTITY_EVENT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int EDI_FRAME_SETUP__ENTITY_EVENT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Edi Frame Setup</em>' class.
@@ -106,89 +104,88 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
-
+	int EDI_FRAME_SETUP_FEATURE_COUNT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.edi.EntityCondition <em>Entity Condition</em>}' enum.
+	 * The meta object id for the '{@link org.abchip.mimo.edi.entity.EntityCondition <em>Condition</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.edi.EntityCondition
-	 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getEntityCondition()
+	 * @see org.abchip.mimo.edi.entity.EntityCondition
+	 * @see org.abchip.mimo.edi.entity.impl.EntityPackageImpl#getEntityCondition()
 	 * @generated
 	 */
 	int ENTITY_CONDITION = 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.edi.EntityEvent <em>Entity Event</em>}' enum.
+	 * The meta object id for the '{@link org.abchip.mimo.edi.entity.EntityEvent <em>Event</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.edi.EntityEvent
-	 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getEntityEvent()
+	 * @see org.abchip.mimo.edi.entity.EntityEvent
+	 * @see org.abchip.mimo.edi.entity.impl.EntityPackageImpl#getEntityEvent()
 	 * @generated
 	 */
 	int ENTITY_EVENT = 2;
 
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.edi.EdiFrameSetup <em>Edi Frame Setup</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.edi.entity.EdiFrameSetup <em>Edi Frame Setup</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Edi Frame Setup</em>'.
-	 * @see org.abchip.mimo.edi.EdiFrameSetup
+	 * @see org.abchip.mimo.edi.entity.EdiFrameSetup
 	 * @generated
 	 */
 	EClass getEdiFrameSetup();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.EdiFrameSetup#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.edi.EdiFrameSetup#getName()
+	 * @see org.abchip.mimo.edi.entity.EdiFrameSetup#getName()
 	 * @see #getEdiFrameSetup()
 	 * @generated
 	 */
 	EAttribute getEdiFrameSetup_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.EdiFrameSetup#getEntityCondition <em>Entity Condition</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityCondition <em>Entity Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Entity Condition</em>'.
-	 * @see org.abchip.mimo.edi.EdiFrameSetup#getEntityCondition()
+	 * @see org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityCondition()
 	 * @see #getEdiFrameSetup()
 	 * @generated
 	 */
 	EAttribute getEdiFrameSetup_EntityCondition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.EdiFrameSetup#getEntityEvent <em>Entity Event</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityEvent <em>Entity Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Entity Event</em>'.
-	 * @see org.abchip.mimo.edi.EdiFrameSetup#getEntityEvent()
+	 * @see org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityEvent()
 	 * @see #getEdiFrameSetup()
 	 * @generated
 	 */
 	EAttribute getEdiFrameSetup_EntityEvent();
 
 	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.EntityCondition <em>Entity Condition</em>}'.
+	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.entity.EntityCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Entity Condition</em>'.
-	 * @see org.abchip.mimo.edi.EntityCondition
+	 * @return the meta object for enum '<em>Condition</em>'.
+	 * @see org.abchip.mimo.edi.entity.EntityCondition
 	 * @generated
 	 */
 	EEnum getEntityCondition();
 
 	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.EntityEvent <em>Entity Event</em>}'.
+	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.entity.EntityEvent <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Entity Event</em>'.
-	 * @see org.abchip.mimo.edi.EntityEvent
+	 * @return the meta object for enum '<em>Event</em>'.
+	 * @see org.abchip.mimo.edi.entity.EntityEvent
 	 * @generated
 	 */
 	EEnum getEntityEvent();
@@ -200,7 +197,7 @@ public interface EDIPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	EDIFactory getEDIFactory();
+	EntityFactory getEntityFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,11 +213,11 @@ public interface EDIPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.edi.impl.EdiFrameSetupImpl <em>Edi Frame Setup</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl <em>Edi Frame Setup</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.edi.impl.EdiFrameSetupImpl
-		 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getEdiFrameSetup()
+		 * @see org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl
+		 * @see org.abchip.mimo.edi.entity.impl.EntityPackageImpl#getEdiFrameSetup()
 		 * @generated
 		 */
 		EClass EDI_FRAME_SETUP = eINSTANCE.getEdiFrameSetup();
@@ -250,25 +247,25 @@ public interface EDIPackage extends EPackage {
 		EAttribute EDI_FRAME_SETUP__ENTITY_EVENT = eINSTANCE.getEdiFrameSetup_EntityEvent();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.edi.EntityCondition <em>Entity Condition</em>}' enum.
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.entity.EntityCondition <em>Condition</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.edi.EntityCondition
-		 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getEntityCondition()
+		 * @see org.abchip.mimo.edi.entity.EntityCondition
+		 * @see org.abchip.mimo.edi.entity.impl.EntityPackageImpl#getEntityCondition()
 		 * @generated
 		 */
 		EEnum ENTITY_CONDITION = eINSTANCE.getEntityCondition();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.edi.EntityEvent <em>Entity Event</em>}' enum.
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.entity.EntityEvent <em>Event</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.edi.EntityEvent
-		 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getEntityEvent()
+		 * @see org.abchip.mimo.edi.entity.EntityEvent
+		 * @see org.abchip.mimo.edi.entity.impl.EntityPackageImpl#getEntityEvent()
 		 * @generated
 		 */
 		EEnum ENTITY_EVENT = eINSTANCE.getEntityEvent();
 
 	}
 
-} //EDIPackage
+} //EntityPackage

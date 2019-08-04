@@ -7,8 +7,8 @@
  */
 package org.abchip.mimo.edi.message;
 
-import org.abchip.mimo.edi.EntityEvent;
-
+import org.abchip.mimo.edi.entity.EntityEvent;
+import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityTyped;
 
 /**
@@ -22,18 +22,18 @@ import org.abchip.mimo.entity.EntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getMessageId <em>Message Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getMessageTypeId <em>Message Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.Message#getFrameId <em>Frame Id</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.Message#getEvent <em>Event</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.Message#getSenderId <em>Sender Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getSenderId <em>Sender Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getFrameId <em>Frame Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getEvent <em>Event</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessage()
  * @model abstract="true"
  * @generated
  */
-public interface Message extends EntityTyped<MessageType<?>> {
+public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	/**
 	 * Returns the value of the '<em><b>Message Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,8 @@ public interface Message extends EntityTyped<MessageType<?>> {
 	 * @return the value of the '<em>Message Type Id</em>' attribute.
 	 * @see #setMessageTypeId(String)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_MessageTypeId()
-	 * @model annotation="mimo-ent-domain"
+	 * @model required="true"
+	 *        annotation="mimo-ent-domain"
 	 * @generated
 	 */
 	String getMessageTypeId();
@@ -98,7 +99,8 @@ public interface Message extends EntityTyped<MessageType<?>> {
 	 * @return the value of the '<em>Frame Id</em>' attribute.
 	 * @see #setFrameId(String)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_FrameId()
-	 * @model annotation="mimo-ent-domain frame='Frame'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-domain frame='Frame'"
 	 * @generated
 	 */
 	String getFrameId();
@@ -114,34 +116,34 @@ public interface Message extends EntityTyped<MessageType<?>> {
 	void setFrameId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Body</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Body</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Body</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body</em>' containment reference.
-	 * @see #setBody(MessageBody)
+	 * @return the value of the '<em>Body</em>' attribute.
+	 * @see #setBody(byte[])
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Body()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
-	MessageBody getBody();
+	byte[] getBody();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body</em>' containment reference.
+	 * @param value the new value of the '<em>Body</em>' attribute.
 	 * @see #getBody()
 	 * @generated
 	 */
-	void setBody(MessageBody value);
+	void setBody(byte[] value);
 
 	/**
 	 * Returns the value of the '<em><b>Event</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.abchip.mimo.edi.EntityEvent}.
+	 * The literals are from the enumeration {@link org.abchip.mimo.edi.entity.EntityEvent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Event</em>' attribute isn't clear,
@@ -149,10 +151,10 @@ public interface Message extends EntityTyped<MessageType<?>> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event</em>' attribute.
-	 * @see org.abchip.mimo.edi.EntityEvent
+	 * @see org.abchip.mimo.edi.entity.EntityEvent
 	 * @see #setEvent(EntityEvent)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Event()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EntityEvent getEvent();
@@ -162,7 +164,7 @@ public interface Message extends EntityTyped<MessageType<?>> {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Event</em>' attribute.
-	 * @see org.abchip.mimo.edi.EntityEvent
+	 * @see org.abchip.mimo.edi.entity.EntityEvent
 	 * @see #getEvent()
 	 * @generated
 	 */
@@ -179,7 +181,8 @@ public interface Message extends EntityTyped<MessageType<?>> {
 	 * @return the value of the '<em>Sender Id</em>' attribute.
 	 * @see #setSenderId(String)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_SenderId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getSenderId();
@@ -207,7 +210,7 @@ public interface Message extends EntityTyped<MessageType<?>> {
 	 * @see org.abchip.mimo.edi.message.MessageStatus
 	 * @see #setStatus(MessageStatus)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Status()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	MessageStatus getStatus();

@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi;
+package org.abchip.mimo.edi.entity;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,14 +15,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Entity Event</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Entity Condition</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.edi.EDIPackage#getEntityEvent()
+ * @see org.abchip.mimo.edi.entity.EntityPackage#getEntityCondition()
  * @model
  * @generated
  */
-public enum EntityEvent implements Enumerator {
+public enum EntityCondition implements Enumerator {
 	/**
 	 * The '<em><b>All</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -34,34 +34,24 @@ public enum EntityEvent implements Enumerator {
 	ALL(10, "All", "ALL"),
 
 	/**
-	 * The '<em><b>Create</b></em>' literal object.
+	 * The '<em><b>Selected</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CREATE_VALUE
+	 * @see #SELECTED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CREATE(20, "Create", "CRT"),
+	SELECTED(20, "Selected", "SLC"),
 
 	/**
-	 * The '<em><b>Update</b></em>' literal object.
+	 * The '<em><b>Script</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #UPDATE_VALUE
+	 * @see #SCRIPT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	UPDATE(20, "Update", "UPD"),
-
-	/**
-	 * The '<em><b>Delete</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DELETE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	DELETE(30, "Delete", "DLT");
+	SCRIPT(30, "Script", "SCP");
 
 	/**
 	 * The '<em><b>All</b></em>' literal value.
@@ -79,83 +69,67 @@ public enum EntityEvent implements Enumerator {
 	public static final int ALL_VALUE = 10;
 
 	/**
-	 * The '<em><b>Create</b></em>' literal value.
+	 * The '<em><b>Selected</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Create</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Selected</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CREATE
-	 * @model name="Create" literal="CRT"
+	 * @see #SELECTED
+	 * @model name="Selected" literal="SLC"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CREATE_VALUE = 20;
+	public static final int SELECTED_VALUE = 20;
 
 	/**
-	 * The '<em><b>Update</b></em>' literal value.
+	 * The '<em><b>Script</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Update</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Script</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #UPDATE
-	 * @model name="Update" literal="UPD"
+	 * @see #SCRIPT
+	 * @model name="Script" literal="SCP"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UPDATE_VALUE = 20;
+	public static final int SCRIPT_VALUE = 30;
 
 	/**
-	 * The '<em><b>Delete</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Delete</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #DELETE
-	 * @model name="Delete" literal="DLT"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DELETE_VALUE = 30;
-
-	/**
-	 * An array of all the '<em><b>Entity Event</b></em>' enumerators.
+	 * An array of all the '<em><b>Condition</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EntityEvent[] VALUES_ARRAY =
-		new EntityEvent[] {
+	private static final EntityCondition[] VALUES_ARRAY =
+		new EntityCondition[] {
 			ALL,
-			CREATE,
-			UPDATE,
-			DELETE,
+			SELECTED,
+			SCRIPT,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Entity Event</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Condition</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<EntityEvent> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<EntityCondition> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Entity Event</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Condition</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static EntityEvent get(String literal) {
+	public static EntityCondition get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			EntityEvent result = VALUES_ARRAY[i];
+			EntityCondition result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -164,16 +138,16 @@ public enum EntityEvent implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Entity Event</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Condition</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static EntityEvent getByName(String name) {
+	public static EntityCondition getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			EntityEvent result = VALUES_ARRAY[i];
+			EntityCondition result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -182,18 +156,18 @@ public enum EntityEvent implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Entity Event</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Condition</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static EntityEvent get(int value) {
+	public static EntityCondition get(int value) {
 		switch (value) {
 			case ALL_VALUE: return ALL;
-			case CREATE_VALUE: return CREATE;
-			case DELETE_VALUE: return DELETE;
+			case SELECTED_VALUE: return SELECTED;
+			case SCRIPT_VALUE: return SCRIPT;
 		}
 		return null;
 	}
@@ -225,7 +199,7 @@ public enum EntityEvent implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EntityEvent(int value, String name, String literal) {
+	private EntityCondition(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -272,4 +246,4 @@ public enum EntityEvent implements Enumerator {
 		return literal;
 	}
 	
-} //EntityEvent
+} //EntityCondition

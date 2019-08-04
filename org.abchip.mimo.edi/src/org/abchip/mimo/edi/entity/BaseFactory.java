@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi;
+package org.abchip.mimo.edi.entity;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -14,17 +14,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.edi.EDIPackage
+ * @see org.abchip.mimo.edi.entity.BasePackage
  * @generated
  */
-public interface EDIFactory extends EFactory {
+public interface BaseFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	EDIFactory eINSTANCE = org.abchip.mimo.edi.impl.EDIFactoryImpl.init();
+	BaseFactory eINSTANCE = org.abchip.mimo.edi.entity.impl.BaseFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Edi Frame Setup</em>'.
@@ -42,6 +42,6 @@ public interface EDIFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	EDIPackage getEDIPackage();
+	BasePackage getBasePackage();
 
-} //EDIFactory
+} //BaseFactory

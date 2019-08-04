@@ -5,16 +5,14 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi.impl;
+package org.abchip.mimo.edi.entity.impl;
 
 import org.abchip.mimo.MimoPackage;
-
-import org.abchip.mimo.edi.EDIFactory;
-import org.abchip.mimo.edi.EDIPackage;
-import org.abchip.mimo.edi.EdiFrameSetup;
-import org.abchip.mimo.edi.EntityCondition;
-import org.abchip.mimo.edi.EntityEvent;
-
+import org.abchip.mimo.edi.entity.BaseFactory;
+import org.abchip.mimo.edi.entity.BasePackage;
+import org.abchip.mimo.edi.entity.EdiFrameSetup;
+import org.abchip.mimo.edi.entity.EntityCondition;
+import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.MessagePackage;
 
 import org.abchip.mimo.edi.message.impl.MessagePackageImpl;
@@ -36,7 +34,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
+public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,12 +67,12 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.edi.EDIPackage#eNS_URI
+	 * @see org.abchip.mimo.edi.entity.BasePackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private EDIPackageImpl() {
-		super(eNS_URI, EDIFactory.eINSTANCE);
+	private BasePackageImpl() {
+		super(eNS_URI, BaseFactory.eINSTANCE);
 	}
 
 	/**
@@ -87,7 +85,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link EDIPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link BasePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,12 +94,12 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static EDIPackage init() {
-		if (isInited) return (EDIPackage)EPackage.Registry.INSTANCE.getEPackage(EDIPackage.eNS_URI);
+	public static BasePackage init() {
+		if (isInited) return (BasePackage)EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredEDIPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		EDIPackageImpl theEDIPackage = registeredEDIPackage instanceof EDIPackageImpl ? (EDIPackageImpl)registeredEDIPackage : new EDIPackageImpl();
+		Object registeredBasePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		BasePackageImpl theBasePackage = registeredBasePackage instanceof BasePackageImpl ? (BasePackageImpl)registeredBasePackage : new BasePackageImpl();
 
 		isInited = true;
 
@@ -113,19 +111,19 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		MessagePackageImpl theMessagePackage = (MessagePackageImpl)(registeredPackage instanceof MessagePackageImpl ? registeredPackage : MessagePackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theEDIPackage.createPackageContents();
+		theBasePackage.createPackageContents();
 		theMessagePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theEDIPackage.initializePackageContents();
+		theBasePackage.initializePackageContents();
 		theMessagePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theEDIPackage.freeze();
+		theBasePackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(EDIPackage.eNS_URI, theEDIPackage);
-		return theEDIPackage;
+		EPackage.Registry.INSTANCE.put(BasePackage.eNS_URI, theBasePackage);
+		return theBasePackage;
 	}
 
 	/**
@@ -194,8 +192,8 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	@Override
-	public EDIFactory getEDIFactory() {
-		return (EDIFactory)getEFactoryInstance();
+	public BaseFactory getBaseFactory() {
+		return (BaseFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -251,11 +249,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		MessagePackage theMessagePackage = (MessagePackage)EPackage.Registry.INSTANCE.getEPackage(MessagePackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theMessagePackage);
 
 		// Create type parameters
 
@@ -267,8 +261,8 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(ediFrameSetupEClass, EdiFrameSetup.class, "EdiFrameSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEdiFrameSetup_Name(), ecorePackage.getEString(), "name", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEdiFrameSetup_EntityCondition(), ecorePackage.getEString(), "entityCondition", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEdiFrameSetup_EntityEvent(), ecorePackage.getEString(), "entityEvent", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdiFrameSetup_EntityCondition(), this.getEntityCondition(), "entityCondition", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdiFrameSetup_EntityEvent(), this.getEntityEvent(), "entityEvent", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(entityConditionEEnum, EntityCondition.class, "EntityCondition");
@@ -309,4 +303,4 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		   });
 	}
 
-} //EDIPackageImpl
+} //BasePackageImpl

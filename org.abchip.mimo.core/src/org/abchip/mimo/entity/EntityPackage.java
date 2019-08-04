@@ -198,6 +198,61 @@ public interface EntityPackage extends EPackage {
 	int DOMAIN_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.EntityInfoImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityInfo()
+	 * @generated
+	 */
+	int ENTITY_INFO = 4;
+
+	/**
+	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_INFO__CREATED_STAMP = 0;
+
+	/**
+	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_INFO__CREATED_TX_STAMP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_INFO__LAST_UPDATED_STAMP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_INFO__LAST_UPDATED_TX_STAMP = 3;
+
+	/**
+	 * The number of structural features of the '<em>Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_INFO_FEATURE_COUNT = 4;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,7 +260,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIterator()
 	 * @generated
 	 */
-	int ENTITY_ITERATOR = 5;
+	int ENTITY_ITERATOR = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityNameImpl <em>Name</em>}' class.
@@ -215,7 +270,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityName()
 	 * @generated
 	 */
-	int ENTITY_NAME = 6;
+	int ENTITY_NAME = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityNameableImpl <em>Nameable</em>}' class.
@@ -225,7 +280,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityNameable()
 	 * @generated
 	 */
-	int ENTITY_NAMEABLE = 7;
+	int ENTITY_NAMEABLE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Nameable</em>' class.
@@ -244,7 +299,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityEnum()
 	 * @generated
 	 */
-	int ENTITY_ENUM = 4;
+	int ENTITY_ENUM = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -308,7 +363,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityReader()
 	 * @generated
 	 */
-	int ENTITY_READER = 10;
+	int ENTITY_READER = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityWriter <em>Writer</em>}' class.
@@ -318,7 +373,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityWriter()
 	 * @generated
 	 */
-	int ENTITY_WRITER = 13;
+	int ENTITY_WRITER = 14;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
@@ -328,7 +383,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFacet()
 	 * @generated
 	 */
-	int FACET = 14;
+	int FACET = 15;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.
@@ -338,7 +393,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
 	 * @generated
 	 */
-	int FRAME = 15;
+	int FRAME = 16;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.
@@ -348,7 +403,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrameManager()
 	 * @generated
 	 */
-	int FRAME_MANAGER = 16;
+	int FRAME_MANAGER = 17;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Nameable <em>Nameable</em>}' class.
@@ -358,7 +413,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getNameable()
 	 * @generated
 	 */
-	int NAMEABLE = 17;
+	int NAMEABLE = 18;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.ResourceImpl <em>Resource</em>}' class.
@@ -368,7 +423,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 18;
+	int RESOURCE = 19;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceEvent <em>Resource Event</em>}' class.
@@ -378,7 +433,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceEvent()
 	 * @generated
 	 */
-	int RESOURCE_EVENT = 19;
+	int RESOURCE_EVENT = 20;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceListener <em>Resource Listener</em>}' class.
@@ -388,7 +443,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceListener()
 	 * @generated
 	 */
-	int RESOURCE_LISTENER = 20;
+	int RESOURCE_LISTENER = 21;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceManager <em>Resource Manager</em>}' class.
@@ -398,7 +453,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceManager()
 	 * @generated
 	 */
-	int RESOURCE_MANAGER = 21;
+	int RESOURCE_MANAGER = 22;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.ResourceNotifierImpl <em>Resource Notifier</em>}' class.
@@ -408,7 +463,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceNotifier()
 	 * @generated
 	 */
-	int RESOURCE_NOTIFIER = 22;
+	int RESOURCE_NOTIFIER = 23;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityProviderImpl <em>Provider</em>}' class.
@@ -418,7 +473,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityProvider()
 	 * @generated
 	 */
-	int ENTITY_PROVIDER = 8;
+	int ENTITY_PROVIDER = 9;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -437,7 +492,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityProviderRegistry()
 	 * @generated
 	 */
-	int ENTITY_PROVIDER_REGISTRY = 9;
+	int ENTITY_PROVIDER_REGISTRY = 10;
 
 	/**
 	 * The number of structural features of the '<em>Provider Registry</em>' class.
@@ -492,7 +547,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityTyped()
 	 * @generated
 	 */
-	int ENTITY_TYPED = 11;
+	int ENTITY_TYPED = 12;
 
 	/**
 	 * The number of structural features of the '<em>Typed</em>' class.
@@ -511,7 +566,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityType()
 	 * @generated
 	 */
-	int ENTITY_TYPE = 12;
+	int ENTITY_TYPE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -728,7 +783,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceSerializer()
 	 * @generated
 	 */
-	int RESOURCE_SERIALIZER = 23;
+	int RESOURCE_SERIALIZER = 24;
 
 	/**
 	 * The feature id for the '<em><b>Context Provider</b></em>' reference.
@@ -765,7 +820,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 	 * @generated
 	 */
-	int SLOT = 24;
+	int SLOT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -856,7 +911,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getTextable()
 	 * @generated
 	 */
-	int TEXTABLE = 25;
+	int TEXTABLE = 26;
 
 	/**
 	 * The number of structural features of the '<em>Textable</em>' class.
@@ -875,7 +930,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceEventType()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_TYPE = 26;
+	int RESOURCE_EVENT_TYPE = 27;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceScope <em>Resource Scope</em>}' enum.
@@ -885,7 +940,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceScope()
 	 * @generated
 	 */
-	int RESOURCE_SCOPE = 27;
+	int RESOURCE_SCOPE = 28;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceType <em>Resource Type</em>}' enum.
@@ -895,7 +950,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceType()
 	 * @generated
 	 */
-	int RESOURCE_TYPE = 28;
+	int RESOURCE_TYPE = 29;
 
 
 	/**
@@ -906,7 +961,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 29;
+	int SERIALIZATION_TYPE = 30;
 
 
 	/**
@@ -1014,6 +1069,60 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityInfo <em>Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Info</em>'.
+	 * @see org.abchip.mimo.entity.EntityInfo
+	 * @generated
+	 */
+	EClass getEntityInfo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityInfo#getCreatedStamp <em>Created Stamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Created Stamp</em>'.
+	 * @see org.abchip.mimo.entity.EntityInfo#getCreatedStamp()
+	 * @see #getEntityInfo()
+	 * @generated
+	 */
+	EAttribute getEntityInfo_CreatedStamp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityInfo#getCreatedTxStamp <em>Created Tx Stamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Created Tx Stamp</em>'.
+	 * @see org.abchip.mimo.entity.EntityInfo#getCreatedTxStamp()
+	 * @see #getEntityInfo()
+	 * @generated
+	 */
+	EAttribute getEntityInfo_CreatedTxStamp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityInfo#getLastUpdatedStamp <em>Last Updated Stamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Last Updated Stamp</em>'.
+	 * @see org.abchip.mimo.entity.EntityInfo#getLastUpdatedStamp()
+	 * @see #getEntityInfo()
+	 * @generated
+	 */
+	EAttribute getEntityInfo_LastUpdatedStamp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityInfo#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Last Updated Tx Stamp</em>'.
+	 * @see org.abchip.mimo.entity.EntityInfo#getLastUpdatedTxStamp()
+	 * @see #getEntityInfo()
+	 * @generated
+	 */
+	EAttribute getEntityInfo_LastUpdatedTxStamp();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityEnum <em>Enum</em>}'.
@@ -1659,6 +1768,48 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.EntityInfoImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityInfo()
+		 * @generated
+		 */
+		EClass ENTITY_INFO = eINSTANCE.getEntityInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Created Stamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_INFO__CREATED_STAMP = eINSTANCE.getEntityInfo_CreatedStamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Created Tx Stamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_INFO__CREATED_TX_STAMP = eINSTANCE.getEntityInfo_CreatedTxStamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Last Updated Stamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_INFO__LAST_UPDATED_STAMP = eINSTANCE.getEntityInfo_LastUpdatedStamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Last Updated Tx Stamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_INFO__LAST_UPDATED_TX_STAMP = eINSTANCE.getEntityInfo_LastUpdatedTxStamp();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityEnumImpl <em>Enum</em>}' class.

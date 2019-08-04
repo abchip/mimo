@@ -11,24 +11,27 @@
   <foreignModel>edi.ecore</foreignModel>
   <genPackages prefix="EDI" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="edi.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//EntityCondition">
-      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityCondition/All"/>
-      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityCondition/Selected"/>
-      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityCondition/Script"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//EntityEvent">
-      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityEvent/All"/>
-      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityEvent/Create"/>
-      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityEvent/Update"/>
-      <genEnumLiterals ecoreEnumLiteral="edi.ecore#//EntityEvent/Delete"/>
-    </genEnums>
-    <genClasses ecoreClass="edi.ecore#//EdiFrameSetup">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//EdiFrameSetup/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//EdiFrameSetup/entityCondition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//EdiFrameSetup/entityEvent"/>
-    </genClasses>
+    <nestedGenPackages prefix="Entity" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="edi.ecore#//entity">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//entity/EntityCondition">
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/All"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/Selected"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/Script"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//entity/EntityEvent">
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/All"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/Create"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/Update"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/Delete"/>
+      </genEnums>
+      <genClasses ecoreClass="edi.ecore#//entity/EdiFrameSetup">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/entityCondition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/entityEvent"/>
+      </genClasses>
+    </nestedGenPackages>
     <nestedGenPackages prefix="Message" basePackage="org.abchip.mimo.edi" disposableProviderFactory="true"
-        ecorePackage="edi.ecore#//message">
+        adapterFactory="false" ecorePackage="edi.ecore#//message">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//message/MessageStatus">
         <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Trasmitted"/>
         <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Error"/>
@@ -37,17 +40,17 @@
       <genClasses image="false" ecoreClass="edi.ecore#//message/Message">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/messageId"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/messageTypeId"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/frameId"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi.ecore#//message/Message/body"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/event"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/senderId"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/status"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/senderId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/frameId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/event"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/body"/>
       </genClasses>
-      <genClasses ecoreClass="edi.ecore#//message/MessageBody"/>
       <genClasses ecoreClass="edi.ecore#//message/MessageReceived"/>
       <genClasses ecoreClass="edi.ecore#//message/MessageSent"/>
       <genClasses ecoreClass="edi.ecore#//message/MessageType">
         <genTypeParameters ecoreTypeParameter="edi.ecore#//message/MessageType/E"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/messageTypeId"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

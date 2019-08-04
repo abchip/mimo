@@ -5,39 +5,37 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi.message.impl;
+package org.abchip.mimo.entity.impl;
 
 import java.util.Date;
-import org.abchip.mimo.edi.message.Message;
-import org.abchip.mimo.edi.message.MessagePackage;
-import org.abchip.mimo.edi.message.MessageType;
 
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.entity.impl.EntityTypeImpl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Type</b></em>'.
+ * An implementation of the model object '<em><b>Info</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getCreatedStamp <em>Created Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getMessageTypeId <em>Message Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.EntityInfoImpl#getCreatedStamp <em>Created Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.EntityInfoImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.EntityInfoImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.EntityInfoImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implements MessageType<E> {
+public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implements EntityInfo {
 	/**
 	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,6 +45,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final Date CREATED_STAMP_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -56,6 +55,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected Date createdStamp = CREATED_STAMP_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getCreatedTxStamp() <em>Created Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,6 +65,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final Date CREATED_TX_STAMP_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getCreatedTxStamp() <em>Created Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,6 +75,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected Date createdTxStamp = CREATED_TX_STAMP_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLastUpdatedStamp() <em>Last Updated Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,6 +85,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final Date LAST_UPDATED_STAMP_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLastUpdatedStamp() <em>Last Updated Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -92,6 +95,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected Date lastUpdatedStamp = LAST_UPDATED_STAMP_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLastUpdatedTxStamp() <em>Last Updated Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -101,6 +105,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final Date LAST_UPDATED_TX_STAMP_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLastUpdatedTxStamp() <em>Last Updated Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -110,35 +115,13 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected Date lastUpdatedTxStamp = LAST_UPDATED_TX_STAMP_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getMessageTypeId() <em>Message Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMessageTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MESSAGE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getMessageTypeId() <em>Message Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMessageTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String messageTypeId = MESSAGE_TYPE_ID_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MessageTypeImpl() {
+	protected EntityInfoImpl() {
 		super();
 	}
 
@@ -149,7 +132,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MessagePackage.Literals.MESSAGE_TYPE;
+		return EntityPackage.Literals.ENTITY_INFO;
 	}
 
 	/**
@@ -172,7 +155,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		Date oldCreatedStamp = createdStamp;
 		createdStamp = newCreatedStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__CREATED_STAMP, oldCreatedStamp, createdStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__CREATED_STAMP, oldCreatedStamp, createdStamp));
 	}
 
 	/**
@@ -195,7 +178,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		Date oldCreatedTxStamp = createdTxStamp;
 		createdTxStamp = newCreatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
 	}
 
 	/**
@@ -218,7 +201,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		Date oldLastUpdatedStamp = lastUpdatedStamp;
 		lastUpdatedStamp = newLastUpdatedStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
 	}
 
 	/**
@@ -241,30 +224,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		Date oldLastUpdatedTxStamp = lastUpdatedTxStamp;
 		lastUpdatedTxStamp = newLastUpdatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getMessageTypeId() {
-		return messageTypeId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setMessageTypeId(String newMessageTypeId) {
-		String oldMessageTypeId = messageTypeId;
-		messageTypeId = newMessageTypeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID, oldMessageTypeId, messageTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
 	}
 
 	/**
@@ -275,16 +235,14 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
+			case EntityPackage.ENTITY_INFO__CREATED_STAMP:
 				return getCreatedStamp();
-			case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP:
+			case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP:
 				return getCreatedTxStamp();
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP:
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP:
 				return getLastUpdatedStamp();
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP:
 				return getLastUpdatedTxStamp();
-			case MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID:
-				return getMessageTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,20 +255,17 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
+			case EntityPackage.ENTITY_INFO__CREATED_STAMP:
 				setCreatedStamp((Date)newValue);
 				return;
-			case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP:
+			case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP:
 				setCreatedTxStamp((Date)newValue);
 				return;
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP:
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP:
 				setLastUpdatedStamp((Date)newValue);
 				return;
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp((Date)newValue);
-				return;
-			case MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID:
-				setMessageTypeId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,20 +279,17 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
+			case EntityPackage.ENTITY_INFO__CREATED_STAMP:
 				setCreatedStamp(CREATED_STAMP_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP:
+			case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP:
 				setCreatedTxStamp(CREATED_TX_STAMP_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP:
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP:
 				setLastUpdatedStamp(LAST_UPDATED_STAMP_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp(LAST_UPDATED_TX_STAMP_EDEFAULT);
-				return;
-			case MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID:
-				setMessageTypeId(MESSAGE_TYPE_ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -351,56 +303,16 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
+			case EntityPackage.ENTITY_INFO__CREATED_STAMP:
 				return CREATED_STAMP_EDEFAULT == null ? createdStamp != null : !CREATED_STAMP_EDEFAULT.equals(createdStamp);
-			case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP:
+			case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP:
 				return CREATED_TX_STAMP_EDEFAULT == null ? createdTxStamp != null : !CREATED_TX_STAMP_EDEFAULT.equals(createdTxStamp);
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP:
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP:
 				return LAST_UPDATED_STAMP_EDEFAULT == null ? lastUpdatedStamp != null : !LAST_UPDATED_STAMP_EDEFAULT.equals(lastUpdatedStamp);
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
+			case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP:
 				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
-			case MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID:
-				return MESSAGE_TYPE_ID_EDEFAULT == null ? messageTypeId != null : !MESSAGE_TYPE_ID_EDEFAULT.equals(messageTypeId);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EntityInfo.class) {
-			switch (derivedFeatureID) {
-				case MessagePackage.MESSAGE_TYPE__CREATED_STAMP: return EntityPackage.ENTITY_INFO__CREATED_STAMP;
-				case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP: return EntityPackage.ENTITY_INFO__CREATED_TX_STAMP;
-				case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP;
-				case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EntityInfo.class) {
-			switch (baseFeatureID) {
-				case EntityPackage.ENTITY_INFO__CREATED_STAMP: return MessagePackage.MESSAGE_TYPE__CREATED_STAMP;
-				case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP: return MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP;
-				case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP: return MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP;
-				case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP: return MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -421,10 +333,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		result.append(lastUpdatedStamp);
 		result.append(", lastUpdatedTxStamp: ");
 		result.append(lastUpdatedTxStamp);
-		result.append(", messageTypeId: ");
-		result.append(messageTypeId);
 		result.append(')');
 		return result.toString();
 	}
 
-} //MessageTypeImpl
+} //EntityInfoImpl
