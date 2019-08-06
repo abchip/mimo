@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
@@ -35,37 +35,38 @@ public class LookupToolbarServlet extends BaseServlet {
 	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+
 		String frameName = request.getParameter("frame");
-		if(frameName == null)
-			return ;
-		
-		Frame<?> frame = frameManager.getFrame(frameName);
-		if(frame == null)
+		if (frameName == null)
 			return;
-		
+
+		Frame<?> frame = frameManager.getFrame(frameName);
+		if (frame == null)
+			return;
+
 		Toolbar toolbar = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CTX).lookup(frameName);
-		
-		for(Frame<?> ako: frame.getSuperFrames()) {
-			Toolbar toolbarAko = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CTX).lookup(ako.getName());;
-			if(toolbarAko == null)
+
+		for (Frame<?> ako : frame.getSuperFrames()) {
+			Toolbar toolbarAko = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CTX).lookup(ako.getName());
+			;
+			if (toolbarAko == null)
 				continue;
-			
-			if(toolbar == null)
+
+			if (toolbar == null)
 				toolbar = toolbarAko;
-			else 
+			else
 				toolbar.getElements().addAll(toolbarAko.getElements());
 		}
 
-		ResourceSerializer<Toolbar> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Toolbar.class, SerializationType.JSON);
-		if(toolbar != null) 
-			resourceSerializer.add(toolbar);
+		try (ResourceSerializer<Toolbar> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Toolbar.class, SerializationType.JSON)) {
+			if (toolbar != null)
+				resourceSerializer.add(toolbar);
 
-		resourceSerializer.save(response.getOutputStream());
-		resourceSerializer.close();
+			resourceSerializer.save(response.getOutputStream());
+		}
 
-		response.flushBuffer();		
-	}	
+		response.flushBuffer();
+	}
 }

@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.core.http.ContextUtils;
+import org.abchip.mimo.core.http.servlet.BaseServlet;
 
 public class LogoutServlet extends BaseServlet {
 

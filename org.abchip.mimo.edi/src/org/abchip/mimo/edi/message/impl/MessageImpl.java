@@ -179,7 +179,7 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MessageStatus STATUS_EDEFAULT = MessageStatus.TRASMITTED;
+	protected static final MessageStatus STATUS_EDEFAULT = MessageStatus.TRS;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.

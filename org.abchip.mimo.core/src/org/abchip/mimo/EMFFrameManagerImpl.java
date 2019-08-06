@@ -25,8 +25,8 @@ public class EMFFrameManagerImpl implements FrameManager {
 	@Override
 	public <E extends Entity> E createEntity(Frame<E> frame) {
 
-		if (frame instanceof EMFFrameAdapter)
-			return (E) EcoreUtil.create(((EMFFrameAdapter<E>) frame).getEClass());
+		if (frame instanceof EMFFrameClassAdapter)
+			return (E) EcoreUtil.create(((EMFFrameClassAdapter<E>) frame).getEClass());
 		else
 			return null;
 	}

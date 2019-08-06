@@ -1585,12 +1585,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2.setELowerBound(g3);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameEClass, null, "getEntityClass", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType(frameEClass_E);
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
 		op = addEOperation(frameEClass, this.getSlot(), "getSlot", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1873,7 +1867,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(resourceManagerEClass, null, "createResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getEntity());
 		t1.getEBounds().add(g1);
@@ -1888,7 +1882,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(resourceManagerEClass, null, "createResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getEntity());
 		t1.getEBounds().add(g1);
@@ -1903,7 +1897,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(resourceManagerEClass, null, "getResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(resourceManagerEClass, null, "createResourceSerializer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getEntity());
 		t1.getEBounds().add(g1);
@@ -1954,6 +1948,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		op = addEOperation(resourceSerializerEClass, null, "load", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaInputStream(), "inputStream", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "append", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, theUtilPackage.getJavaIOException());
 
 		op = addEOperation(resourceSerializerEClass, null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);

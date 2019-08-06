@@ -16,9 +16,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.EMFFrameAdapter;
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.ResourceManager;
@@ -36,7 +34,6 @@ public class SaveServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(contextProvider, request, response);
 	}
@@ -46,22 +43,22 @@ public class SaveServlet extends BaseServlet {
 		String frame = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String json = request.getParameter("json");
 
-		ResourceSerializer<E> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, frame, SerializationType.JSON);
+		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JSON)) {
+			ObjectMapper objectMapper = new ObjectMapper();
+			Map<String, Object> map = objectMapper.readValue(json, new TypeReference<Map<String, Object>>() {
+			});
+			if (!map.containsKey("eClass")) {
+				String eClass = resourceSerializer.getFrame().getURI().toString();
+				map.put("eClass", eClass);
+				json = objectMapper.writeValueAsString(map);
+			}
 
-		ObjectMapper objectMapper = new ObjectMapper();
-		Map<String, Object> map  = objectMapper.readValue(json, new TypeReference<Map<String,Object>>(){});
-		if(!map.containsKey("eClass")) {
-			String eClass = ((EMFFrameAdapter<E>) resourceSerializer.getFrame()).getEClass().getEPackage().getNsURI() + "#//" + frame;
-			map.put("eClass", eClass);
-			json = objectMapper.writeValueAsString(map);
+			resourceSerializer.load(new ByteArrayInputStream(json.getBytes()), false);
+			E entity = null;
+			entity = resourceSerializer.get();
+
+			EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame, "data");
+			entityWriter.save(entity, true);
 		}
-
-		resourceSerializer.load(new ByteArrayInputStream(json.getBytes()));
-		E entity = null;
-		entity = resourceSerializer.get();
-
-		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame, "data");
-
-		entityWriter.save(entity, true);
 	}
 }

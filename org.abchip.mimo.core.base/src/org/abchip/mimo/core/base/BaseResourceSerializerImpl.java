@@ -14,47 +14,40 @@ package org.abchip.mimo.core.base;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.ResourceSerializerImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.emfjson.jackson.resource.JsonResourceFactory;
-
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.emfjson.jackson.module.EMFModule;
+import org.emfjson.jackson.resource.JsonResource;
 
 public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerializerImpl<E> {
 
-	private Resource resource = null;
+	private ResourceReusable resource = null;
 
-	public BaseResourceSerializerImpl(SerializationType serializationType, Frame<E> frame) {
+	public BaseResourceSerializerImpl(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
 
+		this.setContextProvider(contextProvider);
 		this.setFrame(frame);
 
 		switch (serializationType) {
 		case JSON:
-			this.resource = new JsonResourceFactory().createResource(URI.createURI("mimo:/" + getFrame().getName() + "s"));
+			this.resource = new JSONProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
 		case XMI:
-			this.resource = new XMIResourceFactoryImpl().createResource(URI.createURI("mimo:/" + getFrame().getName() + "s"));
+			this.resource = new XMIProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
 		}
-	}
-
-	@Override
-	public void close() throws IOException {
-		this.resource.unload();
-		this.resource = null;
 	}
 
 	@Override
@@ -80,47 +73,96 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<E> getAll() {
-		return (List<E>) this.resource.getContents();
+		return (List<E>) new ArrayList<EObject>(resource.getContents());
 	}
 
 	@Override
 	public void clear() {
-		this.resource.getContents().clear();
+		// empty contents
+		this.resource.clear();
 	}
 
 	@Override
-	public void load(InputStream inputStream) throws IOException {
-		this.resource.load(inputStream, Collections.EMPTY_MAP);
+	public void close() throws IOException {
+		EcoreUtil.removeAll(this.resource.getContents());
+		
+		this.resource.unload();
+		this.resource = null;
+	}
+
+	@Override
+	public void load(InputStream inputStream, boolean append) throws IOException {
+		this.resource.load(inputStream, append);
 	}
 
 	@Override
 	public void save(OutputStream outputStream) throws IOException {
-		this.resource.save(outputStream, Collections.EMPTY_MAP);
-	}
-}
-
-class EntitySerializer<E extends Entity> extends StdSerializer<E> {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	public EntitySerializer() {
-		this(null);
+		this.resource.save(outputStream);
 	}
 
-	public EntitySerializer(Class<E> t) {
-		super(t);
+	private interface ResourceReusable {
+		public void clear();
+
+		public List<EObject> getContents();
+
+		public void save(OutputStream outputStream) throws IOException;
+
+		public void unload();
+
+		public void load(InputStream inputStream, boolean append) throws IOException;
 	}
 
-	@Override
-	public void serialize(E value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
+	private class XMIProxyResourceImpl extends XMIResourceImpl implements ResourceReusable {
 
-		jgen.writeStartObject();
-		// jgen.writeNumberField("id", value.id);
-		// jgen.writeStringField("itemName", value.itemName);
-		// jgen.writeNumberField("owner", value.owner.id);
-		jgen.writeEndObject();
+		public XMIProxyResourceImpl(URI uri) {
+			super(uri);
+		}
+
+		@Override
+		public void clear() {
+			EcoreUtil.removeAll(this.getContents());
+			this.getContents().clear();
+			this.setLoaded(false);
+		}
+
+		@Override
+		public void load(InputStream inputStream, boolean append) throws IOException {
+			if (append)
+				this.setLoaded(false);
+
+			super.load(inputStream, Collections.EMPTY_MAP);
+		}
+
+		@Override
+		public void save(OutputStream outputStream) throws IOException {
+			super.save(outputStream, Collections.EMPTY_MAP);
+		}
+	}
+
+	private class JSONProxyResourceImpl extends JsonResource implements ResourceReusable {
+
+		public JSONProxyResourceImpl(URI uri) {
+			super(uri, EMFModule.setupDefaultMapper());
+		}
+
+		@Override
+		public void clear() {
+			EcoreUtil.removeAll(this.getContents());
+			this.getContents().clear();
+			this.setLoaded(false);
+		}
+
+		@Override
+		public void load(InputStream inputStream, boolean append) throws IOException {
+			if (append)
+				this.setLoaded(false);
+
+			super.load(inputStream, Collections.EMPTY_MAP);
+		}
+
+		@Override
+		public void save(OutputStream outputStream) throws IOException {
+			super.save(outputStream, Collections.EMPTY_MAP);
+		}
 	}
 }

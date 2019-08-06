@@ -26,15 +26,15 @@ public class BaseThreadHelper {
 		case NEW:
 			return ThreadStatus.NEW;
 		case RUNNABLE:
-			return ThreadStatus.RUNNABLE;
+			return ThreadStatus.RUN;
 		case TIMED_WAITING:
-			return ThreadStatus.TIMED_WAITING;
+			return ThreadStatus.TIME_WAIT;
 		case BLOCKED:
-			return ThreadStatus.BLOCKED;
+			return ThreadStatus.BLOCK;
 		case WAITING:
-			return ThreadStatus.WAITING;
+			return ThreadStatus.WAIT;
 		case TERMINATED:
-			return ThreadStatus.TERMINATED;
+			return ThreadStatus.END;
 		}
 		
 		return null;

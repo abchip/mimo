@@ -25,10 +25,10 @@ import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.ResourceHelper;
+import org.abchip.mimo.entity.ResourceSerializer;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -36,8 +36,8 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 
 	private LockManager lockManager;
 
-	public NIOEntityWriterImpl(NIOPathManager fileManager, EntityProvider resourceProvider, ContextProvider contextProvider, String resource, Frame<E> frame, Logger logger, LockManager lockManager) {
-		super(fileManager, resourceProvider, contextProvider, resource, frame, logger);
+	public NIOEntityWriterImpl(NIOPathManager fileManager, ResourceSerializer<E> resourceSerializer, ContextProvider contextProvider, String resource, Frame<E> frame, Logger logger, LockManager lockManager) {
+		super(fileManager, resourceSerializer, resource, frame, logger);
 		this.lockManager = lockManager;
 	}
 
@@ -99,10 +99,13 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 		entityLocker.lock(LockType.WRITE);
 
 		try {
+//			ByteArrayOutputStream output = getEntitySerializer(context).serialize(getResourceName(), getFrame(), entity.getName(), entity);
 
-			ByteArrayOutputStream output = getEntitySerializer(context).serialize(getResourceName(), getFrame(), entity.getName(), entity);
+			ByteArrayOutputStream output = new ByteArrayOutputStream(); 
+			this.getResourceSerializer().save(output);
 			ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-			if (replace)
+			
+			if (replace)				
 				Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
 			else {
 

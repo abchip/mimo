@@ -30,7 +30,7 @@ public class EMFFrameHelper {
 
 	private static Map<String, Frame<?>> frames = null;
 
-	protected static Map<String, Frame<?>> getFrames() {
+	public static Map<String, Frame<?>> getFrames() {
 
 		if (frames == null) {
 			synchronized (EMFFrameHelper.class) {
@@ -88,7 +88,7 @@ public class EMFFrameHelper {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
 					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
-						frames.put(eClass.getName(), new EMFFrameAdapter<>(eClass));
+						frames.put(eClass.getName(), new EMFFrameClassAdapter<>(eClass));
 					}
 				}
 				else if (eClassifier instanceof EEnum) {

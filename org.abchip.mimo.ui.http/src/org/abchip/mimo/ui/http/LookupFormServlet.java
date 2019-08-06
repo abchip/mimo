@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
@@ -49,8 +49,6 @@ public class LookupFormServlet extends BaseServlet {
 		String frameName = request.getParameter("frame");
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
-
-		ResourceSerializer<Form> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Form.class, SerializationType.JSON);
 
 		Form form = resourceManager.getEntityReader(contextProvider, Form.class, ResourceScope.CTX).lookup(name);
 
@@ -98,15 +96,16 @@ public class LookupFormServlet extends BaseServlet {
 			}
 		}
 
-		if (form != null) {
-			completeForm(contextProvider, form);
-			resourceSerializer.add(form);
+		try (ResourceSerializer<Form> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Form.class, SerializationType.JSON)) {
+			if (form != null) {
+				completeForm(contextProvider, form);
+				resourceSerializer.add(form);
+			}
+
+			resourceSerializer.save(response.getOutputStream());
 		}
 
-		resourceSerializer.save(response.getOutputStream());
-
 		response.flushBuffer();
-		resourceSerializer.clear();
 
 	}
 

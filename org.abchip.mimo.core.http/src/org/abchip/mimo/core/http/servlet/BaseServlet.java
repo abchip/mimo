@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.http;
+package org.abchip.mimo.core.http.servlet;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,6 +24,8 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.core.http.ContextUtils;
+import org.abchip.mimo.core.http.MultipartSupportPart;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.ResourceManager;
 import org.apache.commons.fileupload.FileUploadException;

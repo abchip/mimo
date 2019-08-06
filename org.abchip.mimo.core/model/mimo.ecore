@@ -938,11 +938,6 @@
           </eTypeArguments>
         </eGenericType>
       </eOperations>
-      <eOperations name="getEntityClass" lowerBound="1">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-          <eTypeArguments eTypeParameter="#//entity/Frame/E"/>
-        </eGenericType>
-      </eOperations>
       <eOperations name="getSlot" lowerBound="1" eType="#//entity/Slot">
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
@@ -1055,12 +1050,12 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceEventType">
-      <eLiterals name="PRESAVE" value="10" literal="PreSave"/>
-      <eLiterals name="POSTSAVE" value="20" literal="PostSave"/>
-      <eLiterals name="PREDLT" value="60" literal="PreDelete"/>
-      <eLiterals name="POSTDLT" value="70" literal="PostDelete"/>
-      <eLiterals name="PRERNM" value="80" literal="PreRename"/>
-      <eLiterals name="POSTRNM" value="90" literal="PostRename"/>
+      <eLiterals name="PRESAVE" value="10" literal="Pre Save"/>
+      <eLiterals name="POSTSAVE" value="20" literal="Post Save"/>
+      <eLiterals name="PREDLT" value="60" literal="Pre Delete"/>
+      <eLiterals name="POSTDLT" value="70" literal="Post Delete"/>
+      <eLiterals name="PRERNM" value="80" literal="Pre Rename"/>
+      <eLiterals name="POSTRNM" value="90" literal="Post Rename"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceListener" abstract="true"
         interface="true">
@@ -1255,9 +1250,9 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="scope" eType="#//entity/ResourceScope"/>
       </eOperations>
-      <eOperations name="getResourceSerializer">
+      <eOperations name="createResourceSerializer">
         <eGenericType eClassifier="#//entity/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer/E"/>
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
@@ -1265,14 +1260,14 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer/E"/>
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
       </eOperations>
-      <eOperations name="getResourceSerializer">
+      <eOperations name="createResourceSerializer">
         <eGenericType eClassifier="#//entity/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer.1/E"/>
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer.1/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
@@ -1280,14 +1275,14 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer.1/E"/>
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer.1/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
       </eOperations>
-      <eOperations name="getResourceSerializer">
+      <eOperations name="createResourceSerializer">
         <eGenericType eClassifier="#//entity/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//entity/ResourceManager/getResourceSerializer.2/E"/>
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer.2/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
@@ -1344,6 +1339,7 @@
       <eOperations name="clear"/>
       <eOperations name="load" eExceptions="#//util/JavaIOException">
         <eParameters name="inputStream" lowerBound="1" eType="#//util/JavaInputStream"/>
+        <eParameters name="append" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="save" eExceptions="#//util/JavaIOException">
         <eParameters name="outputStream" lowerBound="1" eType="#//util/JavaOutputStream"/>
@@ -1883,12 +1879,12 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ThreadStatus">
-      <eLiterals name="New" value="10" literal="NEW"/>
-      <eLiterals name="Runnable" value="20" literal="RUN"/>
-      <eLiterals name="Blocked" value="30" literal="BLOCK"/>
-      <eLiterals name="Waiting" value="40" literal="WAIT"/>
-      <eLiterals name="TimedWaiting" value="50" literal="TIME_WAIT"/>
-      <eLiterals name="Terminated" value="60" literal="END"/>
+      <eLiterals name="NEW" value="10" literal="New"/>
+      <eLiterals name="RUN" value="20" literal="Runnable"/>
+      <eLiterals name="BLOCK" value="30" literal="Blocked"/>
+      <eLiterals name="WAIT" value="40" literal="Waiting"/>
+      <eLiterals name="TIME_WAIT" value="50" literal="Timed Waiting"/>
+      <eLiterals name="END" value="60" literal="Terminated"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="TimeFormat">
       <eLiterals name="ISO" value="5" literal="*ISO"/>

@@ -42,7 +42,7 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 	@Override
 	public boolean isStopped() {
 		if (audioPlayer != null) {
-			return audioPlayer.getThreadStatus() == ThreadStatus.TERMINATED;
+			return audioPlayer.getThreadStatus() == ThreadStatus.END;
 		}
 		else
 			return true;

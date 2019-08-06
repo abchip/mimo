@@ -2090,11 +2090,11 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		initEEnum(threadStatusEEnum, ThreadStatus.class, "ThreadStatus");
 		addEEnumLiteral(threadStatusEEnum, ThreadStatus.NEW);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.RUNNABLE);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.BLOCKED);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.WAITING);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.TIMED_WAITING);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.TERMINATED);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.RUN);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.BLOCK);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.WAIT);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.TIME_WAIT);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.END);
 
 		initEEnum(timeFormatEEnum, TimeFormat.class, "TimeFormat");
 		addEEnumLiteral(timeFormatEEnum, TimeFormat.ISO);

@@ -89,12 +89,6 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		return URI.create(EcoreUtil.getURI(eEnum).toString());
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public Class<E> getEntityClass() {
-		return (Class<E>) eEnum.getInstanceClass();
-	}
-
 	@Override
 	public List<Frame<? super E>> getSuperFrames() {
 

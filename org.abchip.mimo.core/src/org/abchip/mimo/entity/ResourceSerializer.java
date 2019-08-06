@@ -111,10 +111,10 @@ public interface ResourceSerializer<E extends Entity> extends Closeable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.util.JavaIOException" inputStreamDataType="org.abchip.mimo.util.JavaInputStream" inputStreamRequired="true"
+	 * @model exceptions="org.abchip.mimo.util.JavaIOException" inputStreamDataType="org.abchip.mimo.util.JavaInputStream" inputStreamRequired="true" appendRequired="true"
 	 * @generated
 	 */
-	void load(InputStream inputStream) throws IOException;
+	void load(InputStream inputStream, boolean append) throws IOException;
 
 	/**
 	 * <!-- begin-user-doc -->

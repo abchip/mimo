@@ -14,15 +14,15 @@
     <nestedGenPackages prefix="Entity" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="edi.ecore#//entity">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//entity/EntityCondition">
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/All"/>
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/Selected"/>
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/Script"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/ALL"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/SLC"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityCondition/SCP"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//entity/EntityEvent">
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/All"/>
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/Create"/>
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/Update"/>
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/Delete"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/ALL"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/CRT"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/UPD"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/DLT"/>
       </genEnums>
       <genClasses ecoreClass="edi.ecore#//entity/EdiFrameSetup">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/name"/>
@@ -33,9 +33,9 @@
     <nestedGenPackages prefix="Message" basePackage="org.abchip.mimo.edi" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="edi.ecore#//message">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//message/MessageStatus">
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Trasmitted"/>
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Error"/>
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Pending"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/TRS"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/ERR"/>
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/PEND"/>
       </genEnums>
       <genClasses image="false" ecoreClass="edi.ecore#//message/Message">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/messageId"/>

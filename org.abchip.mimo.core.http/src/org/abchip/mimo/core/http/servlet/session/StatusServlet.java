@@ -58,7 +58,7 @@ public class StatusServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		System.out.println(getServletName() + ": " + session.getId());
-		
+
 		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
 		// invalid session
@@ -84,13 +84,10 @@ public class StatusServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.getResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JSON);
-		serializer.add(contextProvider.getContext().getContextDescription());
-		serializer.save(response.getOutputStream());
-		serializer.close();
-
-		// response.getWriter().write("{\"id\":\"" + session.getId() +
-		// "\",\"user\":\"Admin\"}");
+		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JSON)) {
+			serializer.add(contextProvider.getContext().getContextDescription());
+			serializer.save(response.getOutputStream());
+		}
 
 		response.flushBuffer();
 	}

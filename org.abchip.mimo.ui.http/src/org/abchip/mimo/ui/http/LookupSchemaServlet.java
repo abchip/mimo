@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
@@ -56,8 +56,6 @@ public class LookupSchemaServlet extends BaseServlet {
 		Frame<?> frame = frameManager.getFrame(frameName);
 		if (frame == null)
 			return;
-
-		ResourceSerializer<Schema> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Schema.class, SerializationType.JSON);
 
 		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, ResourceScope.CTX).lookup(name);
 
@@ -96,15 +94,16 @@ public class LookupSchemaServlet extends BaseServlet {
 			}
 		}
 
-		if (schema != null) {
-			completeSchema(contextProvider, schema);
-			resourceSerializer.add(schema);
+		try (ResourceSerializer<Schema> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Schema.class, SerializationType.JSON)) {
+			if (schema != null) {
+				completeSchema(contextProvider, schema);
+				resourceSerializer.add(schema);
+			}
+
+			resourceSerializer.save(response.getOutputStream());
 		}
 
-		resourceSerializer.save(response.getOutputStream());
-
 		response.flushBuffer();
-		resourceSerializer.clear();
 	}
 
 	private SchemaColumn buildColumn(Slot slot) {

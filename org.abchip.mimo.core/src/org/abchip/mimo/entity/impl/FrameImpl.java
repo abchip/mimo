@@ -174,18 +174,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
-	public Class<E> getEntityClass() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public List<String> getKeys() {
 		if (keys == null) {
 			keys = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__KEYS);

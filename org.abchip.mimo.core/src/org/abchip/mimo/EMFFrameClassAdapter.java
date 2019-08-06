@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
+public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	/**
 	 * 
@@ -38,7 +38,7 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 	private static final long serialVersionUID = 1L;
 	private EClass eClass;
 
-	public EMFFrameAdapter(EClass eClass) {
+	public EMFFrameClassAdapter(EClass eClass) {
 		super();
 
 		this.eClass = eClass;
@@ -65,7 +65,7 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 			Slot slot = new EMFSlotAdapter(structuralFeature);
 
 			// set keys
-			if (slot.isKey()) {				
+			if (slot.isKey()) {
 				Slot relativeKey = null;
 				for (String keyName : keys) {
 					EMFSlotAdapter slotKey = (EMFSlotAdapter) this.getSlot(keyName);
@@ -75,14 +75,12 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 
 				if (relativeKey == null) {
 					Lists.qINSTANCE.addFirst(keys, slot.getName());
-					Lists.qINSTANCE.addFirst(this.getSlots(), slot);					
-				}
-				else {
+					Lists.qINSTANCE.addFirst(this.getSlots(), slot);
+				} else {
 					Lists.qINSTANCE.addAfter(keys, relativeKey.getName(), slot.getName());
 					Lists.qINSTANCE.addAfter(this.getSlots(), relativeKey, slot);
 				}
-			}
-			else
+			} else
 				this.getSlots().add(slot);
 		}
 
@@ -103,7 +101,7 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public String getResource() {
-		return null;
+		return "emf";
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -115,7 +113,11 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 			return null;
 
 		EClass eAko = classes.get(0);
-		return new EMFFrameAdapter(eAko);
+		Frame<? super E> akoFrame = (Frame<? super E>) EMFFrameHelper.getFrames().get(eAko.getName());
+		if (akoFrame != null)
+			return akoFrame;
+		else
+			return new EMFFrameClassAdapter(eAko);
 	}
 
 	public EClass getEClass() {
@@ -195,12 +197,6 @@ public class EMFFrameAdapter<E extends Entity> extends FrameImpl<E> {
 	@Override
 	public URI getURI() {
 		return URI.create(EcoreUtil.getURI(eClass).toString());
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public Class<E> getEntityClass() {
-		return (Class<E>) eClass.getInstanceClass();
 	}
 
 	@Override

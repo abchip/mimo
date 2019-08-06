@@ -22,35 +22,35 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.abchip.mimo.EMFResourceFactoryImpl;
-import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.core.base.BaseEntityIteratorImpl;
-import org.abchip.mimo.core.base.BaseResourceEntitySerializer;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.impl.EntityReaderImpl;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 
 public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderImpl<E> {
 
 	private Logger logger;
 	private NIOPathManager pathManager;
 	private String resource;
+	private ResourceSerializer<E> resourceSerializer = null;
 
-	public NIOEntityReaderImpl(NIOPathManager pathManager, EntityProvider resourceProvider, ContextProvider contextProvider, String resource, Frame<E> frame, Logger logger) {
-		setContextProvider(contextProvider);
+	public NIOEntityReaderImpl(NIOPathManager pathManager, ResourceSerializer<E> resourceSerializer, String resource, Frame<E> frame, Logger logger) {
+		setContextProvider(resourceSerializer.getContextProvider());
 		this.pathManager = pathManager;
 		this.resource = resource;
+		this.resourceSerializer = resourceSerializer;
 		setFrame(frame);
 	}
 
 	protected NIOPathManager getPathManager() {
 		return this.pathManager;
+	}
+
+	protected ResourceSerializer<E> getResourceSerializer() {
+		return resourceSerializer;
 	}
 
 	public String getResourceName() {
@@ -75,9 +75,14 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 		E entity = null;
 		try {
 			InputStream inputStream = Files.newInputStream(file);
-			entity = getEntitySerializer(contextProvider).deserialize(resource, frame, name, inputStream);
+			this.getResourceSerializer().load(inputStream, true);
+			entity = this.getResourceSerializer().get();
+			// entity = getEntitySerializer(contextProvider).deserialize(resource, frame,
+			// name, inputStream);
 		} catch (IOException e) {
 			logger.error(e);
+		} finally {
+			this.getResourceSerializer().clear();
 		}
 
 		return entity;
@@ -90,12 +95,12 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 	@Override
 	public EntityIterator<E> find(String filter, int nrElem) {
-		
+
 		List<E> entries = new ArrayList<E>();
-		
+
 		Path folder = getClassFolder(frame, false);
 		if (folder == null)
-			return new BaseEntityIteratorImpl<E>(frame, entries.iterator(), nrElem);
+			return new BaseEntityIteratorImpl<E>(entries.iterator(), nrElem);
 
 		try {
 			DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder);
@@ -103,6 +108,8 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 			int i = 0;
 			for (Path path : dirStream) {
 				if (Files.isDirectory(path))
+					continue;
+				if (Files.isHidden(path))
 					continue;
 
 				String entityName = path.getFileName().toString();
@@ -125,19 +132,27 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 				try {
 					InputStream inputStream = Files.newInputStream(path);
-					entries.add(getEntitySerializer(contextProvider).deserialize(resource, frame, entityName, inputStream));
+					this.getResourceSerializer().load(inputStream, true);
+
+					// entries.add(getEntitySerializer(contextProvider).deserialize(resource, frame,
+					// entityName, inputStream));
 					i++;
 				} catch (Exception e) {
 					System.err.println(e.getMessage());
 				}
 
-				if(nrElem != -1 && i >= nrElem)
+				if (nrElem != -1 && i >= nrElem)
 					break;
 			}
+
+			entries.addAll(this.getResourceSerializer().getAll());
+
 			dirStream.close();
 
 		} catch (Exception e) {
 			logger.error(e);
+		} finally {
+			this.getResourceSerializer().clear();
 		}
 
 		Collections.sort(entries, new Comparator<E>() {
@@ -148,13 +163,13 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 			}
 		});
 
-		return new BaseEntityIteratorImpl<E>(frame, entries.iterator(), nrElem);
+		return new BaseEntityIteratorImpl<E>(entries.iterator(), nrElem);
 	}
 
 	@Override
 	public List<String> findNames(String filter) {
 		List<String> names = new ArrayList<String>();
-		
+
 		Path folder = getClassFolder(frame, false);
 		if (folder == null)
 			return names;
@@ -197,10 +212,10 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 				return o1.compareTo(o2);
 			}
 		});
-		
+
 		return names;
-	}	
-	
+	}
+
 	protected Path getClassFolder(Frame<E> frame, boolean create) {
 
 		Path folder = pathManager.getPath().resolve(resource).resolve(frame.getName());
@@ -222,26 +237,27 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 		return folder;
 	}
 
-	protected BaseResourceEntitySerializer getEntitySerializer(ContextProvider contextProvider) {
-		Context context = contextProvider.getContext();
-
-		BaseResourceEntitySerializer objectSerializer = context.get(BaseResourceEntitySerializer.class);
-		if (objectSerializer == null) {
-			synchronized (context) {
-				objectSerializer = context.get(BaseResourceEntitySerializer.class);
-				if (objectSerializer == null) {
-
-					ResourceSetImpl resourceSet = new ResourceSetImpl();
-					resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
-
-					org.eclipse.emf.ecore.resource.Resource.Factory resourceFatory = new EMFResourceFactoryImpl();
-					resourceSet.getResourceFactoryRegistry().getContentTypeToFactoryMap().put("mimo", resourceFatory);
-
-					objectSerializer = new BaseResourceEntitySerializer(context, resourceSet);
-					context.set(BaseResourceEntitySerializer.class, objectSerializer);
-				}
-			}
-		}
-		return objectSerializer;
-	}
+	/*
+	 * protected BaseResourceEntitySerializer getEntitySerializer(ContextProvider
+	 * contextProvider) { Context context = contextProvider.getContext();
+	 * 
+	 * BaseResourceEntitySerializer objectSerializer =
+	 * context.get(BaseResourceEntitySerializer.class); if (objectSerializer ==
+	 * null) { synchronized (context) { objectSerializer =
+	 * context.get(BaseResourceEntitySerializer.class); if (objectSerializer ==
+	 * null) {
+	 * 
+	 * ResourceSetImpl resourceSet = new ResourceSetImpl();
+	 * resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE,
+	 * true);
+	 * 
+	 * org.eclipse.emf.ecore.resource.Resource.Factory resourceFatory = new
+	 * EMFResourceFactoryImpl();
+	 * resourceSet.getResourceFactoryRegistry().getContentTypeToFactoryMap().put(
+	 * "mimo", resourceFatory);
+	 * 
+	 * objectSerializer = new BaseResourceEntitySerializer(context, resourceSet);
+	 * context.set(BaseResourceEntitySerializer.class, objectSerializer); } } }
+	 * return objectSerializer; }
+	 */
 }

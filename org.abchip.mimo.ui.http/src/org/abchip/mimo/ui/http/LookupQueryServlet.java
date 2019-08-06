@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
@@ -42,8 +42,6 @@ public class LookupQueryServlet extends BaseServlet {
 		String frameName = request.getParameter("frame");
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
-
-		ResourceSerializer<Query> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Query.class, SerializationType.JSON);
 
 		Query query = resourceManager.getEntityReader(contextProvider, Query.class, ResourceScope.CTX).lookup(name);
 
@@ -80,14 +78,15 @@ public class LookupQueryServlet extends BaseServlet {
 				}
 			}
 		}
+		try (ResourceSerializer<Query> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Query.class, SerializationType.JSON)) {
+			if (query != null)
+				resourceSerializer.add(query);
 
-		if (query != null)
-			resourceSerializer.add(query);
-
-		resourceSerializer.save(response.getOutputStream());
+			resourceSerializer.save(response.getOutputStream());
+		}
 
 		response.flushBuffer();
-		resourceSerializer.clear();
+
 	}
 
 	private QueryField buildField(Slot slot) {

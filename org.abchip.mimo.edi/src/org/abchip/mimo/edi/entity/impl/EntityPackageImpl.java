@@ -267,14 +267,14 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Initialize enums and add enum literals
 		initEEnum(entityConditionEEnum, EntityCondition.class, "EntityCondition");
 		addEEnumLiteral(entityConditionEEnum, EntityCondition.ALL);
-		addEEnumLiteral(entityConditionEEnum, EntityCondition.SELECTED);
-		addEEnumLiteral(entityConditionEEnum, EntityCondition.SCRIPT);
+		addEEnumLiteral(entityConditionEEnum, EntityCondition.SLC);
+		addEEnumLiteral(entityConditionEEnum, EntityCondition.SCP);
 
 		initEEnum(entityEventEEnum, EntityEvent.class, "EntityEvent");
 		addEEnumLiteral(entityEventEEnum, EntityEvent.ALL);
-		addEEnumLiteral(entityEventEEnum, EntityEvent.CREATE);
-		addEEnumLiteral(entityEventEEnum, EntityEvent.UPDATE);
-		addEEnumLiteral(entityEventEEnum, EntityEvent.DELETE);
+		addEEnumLiteral(entityEventEEnum, EntityEvent.CRT);
+		addEEnumLiteral(entityEventEEnum, EntityEvent.UPD);
+		addEEnumLiteral(entityEventEEnum, EntityEvent.DLT);
 
 		// Create resource
 		createResource(eNS_URI);

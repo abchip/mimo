@@ -392,9 +392,9 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(messageStatusEEnum, MessageStatus.class, "MessageStatus");
-		addEEnumLiteral(messageStatusEEnum, MessageStatus.TRASMITTED);
-		addEEnumLiteral(messageStatusEEnum, MessageStatus.ERROR);
-		addEEnumLiteral(messageStatusEEnum, MessageStatus.PENDING);
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.TRS);
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.ERR);
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.PEND);
 
 		// Create resource
 		createResource(eNS_URI);

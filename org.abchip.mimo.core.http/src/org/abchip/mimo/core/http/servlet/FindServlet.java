@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
@@ -65,7 +64,7 @@ public class FindServlet extends BaseServlet {
 
 				Slot slot = frame.getSlot(slotKey);
 				String dataClassName = slot.getDataClassName();
-				if(dataClassName != null && dataClassName.equals("java.lang.String"))
+				if (dataClassName != null && dataClassName.equals("java.lang.String"))
 					sb.append(slotKey + " = \"" + keys[i] + "\"");
 				else
 					sb.append(slotKey + " = " + keys[i] + "");
@@ -90,11 +89,11 @@ public class FindServlet extends BaseServlet {
 		for (E entity : entityIterator)
 			entityList.add(entity);
 
-
-		ResourceSerializer<E> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, frame, SerializationType.JSON);
-		resourceSerializer.addAll(entityList);
-		resourceSerializer.save(response.getOutputStream());
+		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JSON)) {
+			resourceSerializer.addAll(entityList);
+			resourceSerializer.save(response.getOutputStream());
+		}
+		
 		response.flushBuffer();
-		resourceSerializer.clear();
 	}
 }

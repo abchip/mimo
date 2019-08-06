@@ -24,79 +24,75 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum MessageStatus implements Enumerator {
 	/**
-	 * The '<em><b>Trasmitted</b></em>' literal object.
+	 * The '<em><b>TRS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TRASMITTED_VALUE
+	 * @see #TRS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TRASMITTED(10, "Trasmitted", "TRS"),
-
-	/**
-	 * The '<em><b>Error</b></em>' literal object.
+	TRS(10, "TRS", "Trasmitted"), /**
+	 * The '<em><b>ERR</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ERROR_VALUE
+	 * @see #ERR_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ERROR(20, "Error", "ERR"),
-
-	/**
-	 * The '<em><b>Pending</b></em>' literal object.
+	ERR(20, "ERR", "Error"), /**
+	 * The '<em><b>PEND</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PENDING_VALUE
+	 * @see #PEND_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PENDING(30, "Pending", "PEND");
+	PEND(30, "PEND", "Pending");
 
 	/**
-	 * The '<em><b>Trasmitted</b></em>' literal value.
+	 * The '<em><b>TRS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Trasmitted</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>TRS</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TRASMITTED
-	 * @model name="Trasmitted" literal="TRS"
+	 * @see #TRS
+	 * @model literal="Trasmitted"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TRASMITTED_VALUE = 10;
+	public static final int TRS_VALUE = 10;
 
 	/**
-	 * The '<em><b>Error</b></em>' literal value.
+	 * The '<em><b>ERR</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Error</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>ERR</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #ERROR
-	 * @model name="Error" literal="ERR"
+	 * @see #ERR
+	 * @model literal="Error"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ERROR_VALUE = 20;
+	public static final int ERR_VALUE = 20;
 
 	/**
-	 * The '<em><b>Pending</b></em>' literal value.
+	 * The '<em><b>PEND</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Pending</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>PEND</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PENDING
-	 * @model name="Pending" literal="PEND"
+	 * @see #PEND
+	 * @model literal="Pending"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PENDING_VALUE = 30;
+	public static final int PEND_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>Status</b></em>' enumerators.
@@ -106,9 +102,9 @@ public enum MessageStatus implements Enumerator {
 	 */
 	private static final MessageStatus[] VALUES_ARRAY =
 		new MessageStatus[] {
-			TRASMITTED,
-			ERROR,
-			PENDING,
+			TRS,
+			ERR,
+			PEND,
 		};
 
 	/**
@@ -165,9 +161,9 @@ public enum MessageStatus implements Enumerator {
 	 */
 	public static MessageStatus get(int value) {
 		switch (value) {
-			case TRASMITTED_VALUE: return TRASMITTED;
-			case ERROR_VALUE: return ERROR;
-			case PENDING_VALUE: return PENDING;
+			case TRS_VALUE: return TRS;
+			case ERR_VALUE: return ERR;
+			case PEND_VALUE: return PEND;
 		}
 		return null;
 	}

@@ -61,13 +61,6 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	Frame<? super E> ako();
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	Class<E> getEntityClass();
-
-	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->

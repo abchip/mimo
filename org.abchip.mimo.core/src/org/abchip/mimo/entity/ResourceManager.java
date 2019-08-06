@@ -150,7 +150,7 @@ public interface ResourceManager extends EntityProvider {
 	 * @model contextProviderRequired="true" klassRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,7 +158,7 @@ public interface ResourceManager extends EntityProvider {
 	 * @model contextProviderRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,6 +166,6 @@ public interface ResourceManager extends EntityProvider {
 	 * @model contextProviderRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> getResourceSerializer(ContextProvider contextProvider, String frame, SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, String frame, SerializationType serializationType);
 
 } // ResourceManager

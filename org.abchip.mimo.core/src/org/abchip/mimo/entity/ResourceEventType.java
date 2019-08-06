@@ -33,7 +33,7 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRESAVE(10, "PRESAVE", "PreSave"), /**
+	PRESAVE(10, "PRESAVE", "Pre Save"), /**
 	 * The '<em><b>POSTSAVE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -41,7 +41,7 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POSTSAVE(20, "POSTSAVE", "PostSave"), /**
+	POSTSAVE(20, "POSTSAVE", "Post Save"), /**
 	 * The '<em><b>PREDLT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,7 +49,7 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PREDLT(60, "PREDLT", "PreDelete"), /**
+	PREDLT(60, "PREDLT", "Pre Delete"), /**
 	 * The '<em><b>POSTDLT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,7 +57,7 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POSTDLT(70, "POSTDLT", "PostDelete"), /**
+	POSTDLT(70, "POSTDLT", "Post Delete"), /**
 	 * The '<em><b>PRERNM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +65,7 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRERNM(80, "PRERNM", "PreRename"), /**
+	PRERNM(80, "PRERNM", "Pre Rename"), /**
 	 * The '<em><b>POSTRNM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,7 +73,7 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POSTRNM(90, "POSTRNM", "PostRename");
+	POSTRNM(90, "POSTRNM", "Post Rename");
 
 	/**
 	 * The '<em><b>PRESAVE</b></em>' literal value.
@@ -84,7 +84,7 @@ public enum ResourceEventType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PRESAVE
-	 * @model literal="PreSave"
+	 * @model literal="Pre Save"
 	 * @generated
 	 * @ordered
 	 */
@@ -99,7 +99,7 @@ public enum ResourceEventType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #POSTSAVE
-	 * @model literal="PostSave"
+	 * @model literal="Post Save"
 	 * @generated
 	 * @ordered
 	 */
@@ -114,7 +114,7 @@ public enum ResourceEventType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PREDLT
-	 * @model literal="PreDelete"
+	 * @model literal="Pre Delete"
 	 * @generated
 	 * @ordered
 	 */
@@ -129,7 +129,7 @@ public enum ResourceEventType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #POSTDLT
-	 * @model literal="PostDelete"
+	 * @model literal="Post Delete"
 	 * @generated
 	 * @ordered
 	 */
@@ -144,7 +144,7 @@ public enum ResourceEventType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PRERNM
-	 * @model literal="PreRename"
+	 * @model literal="Pre Rename"
 	 * @generated
 	 * @ordered
 	 */
@@ -159,7 +159,7 @@ public enum ResourceEventType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #POSTRNM
-	 * @model literal="PostRename"
+	 * @model literal="Post Rename"
 	 * @generated
 	 * @ordered
 	 */

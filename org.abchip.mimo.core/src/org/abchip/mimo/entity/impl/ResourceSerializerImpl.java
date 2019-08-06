@@ -167,7 +167,7 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	 * @generated
 	 */
 	@Override
-	public void load(InputStream inputStream) throws IOException {
+	public void load(InputStream inputStream, boolean append) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
@@ -68,7 +68,6 @@ public class LookupMenuServlet extends BaseServlet {
 			menu = menuReader.lookup(name);
 		}
 
-		ResourceSerializer<Menu> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, Menu.class, SerializationType.JSON);
 		if (menu != null) {
 			TreeIterator<EObject> features = ((EObject) menu).eAllContents();
 
@@ -91,12 +90,14 @@ public class LookupMenuServlet extends BaseServlet {
 					}
 				}
 			});
-
-			resourceSerializer.add(menu);
 		}
 
-		resourceSerializer.save(response.getOutputStream());
-		resourceSerializer.close();
+		try (ResourceSerializer<Menu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Menu.class, SerializationType.JSON)) {
+			if (menu != null)
+				resourceSerializer.add(menu);
+
+			resourceSerializer.save(response.getOutputStream());
+		}
 
 		response.flushBuffer();
 	}

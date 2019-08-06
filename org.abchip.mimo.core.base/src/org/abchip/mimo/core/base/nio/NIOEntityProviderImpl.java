@@ -28,6 +28,8 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceHelper;
 import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.entity.ResourceSerializer;
+import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 
 public class NIOEntityProviderImpl extends EntityProviderImpl {
@@ -59,7 +61,8 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		if (isResource(frame)) {
 			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextRoot);
 		} else {
-			entityReader = new NIOEntityReaderImpl<E>(pathManager, this, contextProvider, resourceName, frame, logger);
+			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XMI);
+			entityReader = new NIOEntityReaderImpl<E>(pathManager, resourceSerializer, resourceName, frame, logger);
 		}
 
 		return entityReader;
@@ -74,7 +77,8 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 			if (isResource(frame)) {
 				readers.add((EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextRoot));
 			} else {
-				NIOEntityReaderImpl<E> resourceReader = new NIOEntityReaderImpl<E>(pathManager, this, contextProvider, resourceName, frame, logger);
+				ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XMI);
+				NIOEntityReaderImpl<E> resourceReader = new NIOEntityReaderImpl<E>(pathManager, resourceSerializer, resourceName, frame, logger);
 				readers.add(resourceReader);
 			}
 		}
@@ -89,7 +93,8 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		if (isResource(frame)) {
 			resourceWriter = (EntityWriter<E>) new NIOResourceWriterImpl(pathManager, (Frame<Resource>) frame, contextProvider, lockManager);
 		} else {
-			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, this, contextProvider, resourceName, frame, logger, lockManager);
+			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XMI);
+			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, resourceSerializer, contextProvider, resourceName, frame, logger, lockManager);
 		}
 
 		return resourceWriter;

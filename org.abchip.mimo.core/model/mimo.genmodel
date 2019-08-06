@@ -617,7 +617,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/superNames"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/textFormula"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/ako"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getEntityClass"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlot">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getSlot/name"/>
         </genOperations>
@@ -754,23 +753,23 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.2/scope"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getEntityWriter.2/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getResourceSerializer">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer/contextProvider"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer/klass"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer/serializationType"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createResourceSerializer">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1/contextProvider"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1/serializationType"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.1/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2/contextProvider"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2/serializationType"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getResourceSerializer.2/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2/E"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/ResourceNotifier">
@@ -798,6 +797,7 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/clear"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/load">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/load/inputStream"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/load/append"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/save">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/save/outputStream"/>
@@ -885,12 +885,12 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/FloatingType/Double"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/ThreadStatus">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/New"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Runnable"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Blocked"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Waiting"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/TimedWaiting"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Terminated"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/NEW"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/RUN"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/BLOCK"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/WAIT"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/TIME_WAIT"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/END"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/TimeFormat">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/ISO"/>

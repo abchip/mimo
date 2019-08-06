@@ -46,7 +46,7 @@ public class NIOResourceReaderImpl extends EntityReaderImpl<Resource> {
 
 	@Override
 	public EntityIterator<Resource> find(String filter, int nrElem) {
-		return new BaseEntityIteratorImpl<Resource>(getFrame(), pathManager.getResources().values().iterator(), nrElem);
+		return new BaseEntityIteratorImpl<Resource>(pathManager.getResources().values().iterator(), nrElem);
 	}
 
 	@Override

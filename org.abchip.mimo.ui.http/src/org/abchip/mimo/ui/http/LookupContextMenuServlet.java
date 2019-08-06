@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.http.BaseServlet;
+import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -59,25 +59,26 @@ public class LookupContextMenuServlet extends BaseServlet {
 			return;
 
 		ContextMenu contextMenu = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CTX).lookup(frameName);
-		if(contextMenu == null) {
+		if (contextMenu == null) {
 			contextMenu = MenuFactory.eINSTANCE.createContextMenu();
-			contextMenu.setName(frameName);			
+			contextMenu.setName(frameName);
 		}
-		
-		if(contextMenu.getIcon() == null)
-			contextMenu.setIcon(getIcon(contextProvider, frameName));
-		
-/*		ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot, ContextMenu.class, ResourceScope.CTX).lookup("Frame");
-		if (contextMenuFrame != null) {
 
-			MenuGroup groupFrame = MenuFactory.eINSTANCE.createMenuGroup();
-			groupFrame.setValue(frame.getName());
-			groupFrame.getData().addAll(contextMenuFrame.getElements());
-			groupFrame.setIcon(getIcon("Frame"));
-			
-			Lists.qINSTANCE.addFirst(contextMenu.getElements(), groupFrame);
-		}*/
-		
+		if (contextMenu.getIcon() == null)
+			contextMenu.setIcon(getIcon(contextProvider, frameName));
+
+		/*
+		 * ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot,
+		 * ContextMenu.class, ResourceScope.CTX).lookup("Frame"); if (contextMenuFrame
+		 * != null) {
+		 * 
+		 * MenuGroup groupFrame = MenuFactory.eINSTANCE.createMenuGroup();
+		 * groupFrame.setValue(frame.getName());
+		 * groupFrame.getData().addAll(contextMenuFrame.getElements());
+		 * groupFrame.setIcon(getIcon("Frame"));
+		 * 
+		 * Lists.qINSTANCE.addFirst(contextMenu.getElements(), groupFrame); }
+		 */
 
 		for (Frame<?> ako : frame.getSuperFrames()) {
 			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CTX).lookup(ako.getName());
@@ -86,13 +87,11 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 			if (contextMenu == null)
 				contextMenu = contextMenuAko;
-			else 
+			else
 				contextMenu.getElements().addAll(contextMenuAko.getElements());
 		}
 
-		ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.getResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JSON);
-		if (contextMenu != null) {
-
+		try (ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JSON)) {
 			TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
 
 			features.forEachRemaining(new Consumer<EObject>() {
@@ -116,37 +115,35 @@ public class LookupContextMenuServlet extends BaseServlet {
 			});
 
 			resourceSerializer.add(contextMenu);
+			resourceSerializer.save(response.getOutputStream());
 		}
-
-		resourceSerializer.save(response.getOutputStream());
-		resourceSerializer.close();
 
 		response.flushBuffer();
 	}
-	
+
 	private String getIcon(ContextProvider contextProvider, String frameName) {
-		
+
 		String icon = null;
-		
+
 		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CTX);
-		
+
 		Frame<?> frame = frameManager.getFrame(frameName);
-		if(frame == null)
+		if (frame == null)
 			return icon;
-		
+
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
 		Lists.qINSTANCE.addFirst(frameNames, frameName);
-		
+
 		for (String domainName : frameNames) {
 			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);
 			if (frameSetup == null)
 				continue;
 
 			icon = frameSetup.getIcon();
-			if(icon != null)
+			if (icon != null)
 				break;
 		}
-		
+
 		return icon;
 	}
 }
