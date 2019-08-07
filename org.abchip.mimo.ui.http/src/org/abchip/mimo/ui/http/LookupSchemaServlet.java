@@ -57,7 +57,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, ResourceScope.CTX).lookup(name);
+		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, ResourceScope.CONTEXT).lookup(name);
 
 		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			schema = frameManager.createEntity(Schema.class);
@@ -94,7 +94,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			}
 		}
 
-		try (ResourceSerializer<Schema> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Schema.class, SerializationType.JSON)) {
+		try (ResourceSerializer<Schema> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			if (schema != null) {
 				completeSchema(contextProvider, schema);
 				resourceSerializer.add(schema);
@@ -137,7 +137,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CTX);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CONTEXT);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

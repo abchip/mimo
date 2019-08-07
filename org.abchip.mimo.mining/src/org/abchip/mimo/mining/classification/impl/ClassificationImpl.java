@@ -90,6 +90,7 @@ public class ClassificationImpl<E extends Entity> extends MinimalEObjectImpl.Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getScore() {
 		return score;
 	}
@@ -99,6 +100,7 @@ public class ClassificationImpl<E extends Entity> extends MinimalEObjectImpl.Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScore(double newScore) {
 		double oldScore = score;
 		score = newScore;
@@ -112,6 +114,7 @@ public class ClassificationImpl<E extends Entity> extends MinimalEObjectImpl.Con
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public E getEntity() {
 		if (entity != null && ((EObject)entity).eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -138,6 +141,7 @@ public class ClassificationImpl<E extends Entity> extends MinimalEObjectImpl.Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(E newEntity) {
 		E oldEntity = entity;
 		entity = newEntity;

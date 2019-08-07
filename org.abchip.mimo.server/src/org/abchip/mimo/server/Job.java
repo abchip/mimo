@@ -127,7 +127,7 @@ public interface Job extends EntityNameable, ContextProvider {
 
 	/**
 	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.
-	 * The default value is <code>"*DMY"</code>.
+	 * The default value is <code>"DMY"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.util.DateFormat}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +139,7 @@ public interface Job extends EntityNameable, ContextProvider {
 	 * @see org.abchip.mimo.util.DateFormat
 	 * @see #setDateFormat(DateFormat)
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_DateFormat()
-	 * @model default="*DMY"
+	 * @model default="DMY"
 	 * @generated
 	 */
 	DateFormat getDateFormat();

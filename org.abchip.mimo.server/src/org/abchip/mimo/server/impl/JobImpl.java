@@ -535,7 +535,7 @@ public class JobImpl extends EntityNameableImpl implements Job {
 		switch (thread.getThreadStatus()) {
 		case NEW:
 			return JobStatus.ACTIVE;		
-		case END:
+		case TERMINATED:
 			if(isError())
 				return JobStatus.MESSAGE_WAITING;
 
@@ -543,20 +543,20 @@ public class JobImpl extends EntityNameableImpl implements Job {
 				return JobStatus.ACTIVE;
 			else
 				return JobStatus.END;
-		case RUN:			
+		case RUNNABLE:			
 			return JobStatus.RUN;
-		case WAIT:
+		case WAITING:
 			if(thread.isSuspended())
 				return JobStatus.HOLD;
 			
 			return JobStatus.RUN;
 			
 			// TODO JobStatus.MESSAGE_WAITING
-		case TIME_WAIT:
+		case TIMED_WAITING:
 			if(thread.isSuspended())
 				return JobStatus.HOLD;
 			return JobStatus.TIME_WAITING;
-		case BLOCK:
+		case BLOCKED:
 			return JobStatus.LOCK_WAITING;
 		}
 		

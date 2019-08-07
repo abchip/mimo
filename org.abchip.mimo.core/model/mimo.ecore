@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mimo" nsURI="http://www.abchip.org/mimo" nsPrefix="mimo">
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="mimo" nsURI="http://www.abchip.org/mimo" nsPrefix="mimo">
   <eClassifiers xsi:type="ecore:EClass" name="Mimo"/>
   <eSubpackages name="application" nsURI="http://www.abchip.org/mimo/application"
       nsPrefix="mimo-app">
@@ -102,9 +102,9 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">
-      <eLiterals name="ACT" literal="Active"/>
-      <eLiterals name="STP" value="20" literal="Stopped"/>
-      <eLiterals name="TST" value="30" literal="Testing"/>
+      <eLiterals name="Active" literal="ACT"/>
+      <eLiterals name="Stopped" value="20" literal="STP"/>
+      <eLiterals name="Testing" value="30" literal="TST"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceServlet" eSuperTypes="#//application/ServiceRef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" lowerBound="1"
@@ -170,9 +170,9 @@
           eType="#//util/JavaURI"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="CapabilityRight">
-      <eLiterals name="READ" value="10" literal="Read"/>
-      <eLiterals name="WRITE" value="20" literal="Write"/>
-      <eLiterals name="EXEC" value="30" literal="Execute"/>
+      <eLiterals name="Read" value="10" literal="READ"/>
+      <eLiterals name="Write" value="20" literal="WRT"/>
+      <eLiterals name="Execute" value="30" literal="EXC"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//util/JavaCloseable #//context/ContextProvider">
       <eOperations name="close" lowerBound="1"/>
@@ -436,8 +436,8 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="LockType">
-      <eLiterals name="READ" value="10" literal="Read"/>
-      <eLiterals name="WRITE" value="20" literal="Write"/>
+      <eLiterals name="Read" value="10" literal="READ"/>
+      <eLiterals name="Write" value="20" literal="WRT"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Logger" abstract="true" interface="true">
       <eOperations name="debug">
@@ -562,7 +562,7 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="UserClass">
-      <eLiterals name="USER" value="10" literal="User"/>
+      <eLiterals name="User" value="10" literal="USR"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="UserProfile" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1053,12 +1053,12 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceEventType">
-      <eLiterals name="PRESAVE" value="10" literal="Pre Save"/>
-      <eLiterals name="POSTSAVE" value="20" literal="Post Save"/>
-      <eLiterals name="PREDLT" value="60" literal="Pre Delete"/>
-      <eLiterals name="POSTDLT" value="70" literal="Post Delete"/>
-      <eLiterals name="PRERNM" value="80" literal="Pre Rename"/>
-      <eLiterals name="POSTRNM" value="90" literal="Post Rename"/>
+      <eLiterals name="Before_Save" value="10" literal="PRESAVE"/>
+      <eLiterals name="After_Save" value="20" literal="POSTSAVE"/>
+      <eLiterals name="Before_Delete" value="60" literal="PREDLT"/>
+      <eLiterals name="After_Delete" value="70" literal="POSTDLT"/>
+      <eLiterals name="Before_Rename" value="80" literal="PRERNM"/>
+      <eLiterals name="After_Rename" value="90" literal="POSTRNM"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceListener" abstract="true"
         interface="true">
@@ -1320,9 +1320,9 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceScope">
-      <eLiterals name="ALL" value="10" literal="All"/>
-      <eLiterals name="CTX" value="20" literal="Context"/>
-      <eLiterals name="ROOT" value="30" literal="Root"/>
+      <eLiterals name="All" value="10" literal="ALL"/>
+      <eLiterals name="Context" value="20" literal="CTX"/>
+      <eLiterals name="Root" value="30" literal="ROOT"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceSerializer" abstract="true"
         eSuperTypes="#//util/JavaCloseable">
@@ -1363,9 +1363,9 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceType">
-      <eLiterals name="PROD" value="10" literal="Production"/>
-      <eLiterals name="TEST" value="20" literal="Test"/>
-      <eLiterals name="TEMP" value="30" literal="Temporary"/>
+      <eLiterals name="Production" value="10" literal="PRD"/>
+      <eLiterals name="Test" value="20" literal="TST"/>
+      <eLiterals name="TEMP" value="30" literal="TMP"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
       <eOperations name="getValue" eType="#//entity/Entity">
@@ -1397,8 +1397,8 @@
       <eOperations name="getText" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="SerializationType">
-      <eLiterals name="XMI" value="10" literal="XML Metadata Interchange"/>
-      <eLiterals name="JSON" value="20" literal="JavaScript Object Notation"/>
+      <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
+      <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="net" nsURI="http://www.abchip.org/mimo/net" nsPrefix="mimo-net">
@@ -1418,7 +1418,7 @@
     <eClassifiers xsi:type="ecore:EEnum" name="BinaryType">
       <eLiterals name="Byte" value="10" literal="BYTE"/>
       <eLiterals name="Short" value="20" literal="SHORT"/>
-      <eLiterals name="Integer" value="30" literal="INTEGER"/>
+      <eLiterals name="Integer" value="30" literal="INT"/>
       <eLiterals name="Long" value="40" literal="LONG"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CharacterDef">
@@ -1453,25 +1453,25 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="DataDefType">
-      <eLiterals name="Adapter" value="10" literal="ADAPTER"/>
-      <eLiterals name="Array" value="20" literal="ARRAY"/>
-      <eLiterals name="Binary" value="30" literal="BINARY"/>
-      <eLiterals name="Buffer" value="40" literal="BUFFER"/>
-      <eLiterals name="Character" value="50" literal="CHAR"/>
-      <eLiterals name="DataStruct" value="60" literal="DATASTRUCT"/>
-      <eLiterals name="Datetime" value="70" literal="DATETIME"/>
-      <eLiterals name="Decimal" value="80" literal="DECIMAL"/>
-      <eLiterals name="Floating" value="90" literal="FLOAT"/>
+      <eLiterals name="Adapter" value="10" literal="ADP"/>
+      <eLiterals name="Array" value="20" literal="ARR"/>
+      <eLiterals name="Binary" value="30" literal="BIN"/>
+      <eLiterals name="Buffer" value="40" literal="BUF"/>
+      <eLiterals name="Character" value="50" literal="CHR"/>
+      <eLiterals name="DataStruct" value="60" literal="DS"/>
+      <eLiterals name="Datetime" value="70" literal="DTT"/>
+      <eLiterals name="Decimal" value="80" literal="DEC"/>
+      <eLiterals name="Floating" value="90" literal="FLT"/>
       <eLiterals name="Hexadecimal" value="100" literal="HEX"/>
       <eLiterals name="Identity" value="105" literal="IDN"/>
       <eLiterals name="Indicator" value="110" literal="IND"/>
-      <eLiterals name="List" value="120" literal="LIST"/>
-      <eLiterals name="Pointer" value="140" literal="POINTER"/>
-      <eLiterals name="Scroller" value="150" literal="SCROLLER"/>
-      <eLiterals name="String" value="160" literal="STRING"/>
-      <eLiterals name="Stroller" value="170" literal="STROLLER"/>
-      <eLiterals name="Struct" value="180" literal="STRUCT"/>
-      <eLiterals name="Wrapper" value="190" literal="WRAPPER"/>
+      <eLiterals name="List" value="120" literal="LST"/>
+      <eLiterals name="Pointer" value="140" literal="PNT"/>
+      <eLiterals name="Scroller" value="150" literal="SCR"/>
+      <eLiterals name="String" value="160" literal="STR"/>
+      <eLiterals name="Stroller" value="170" literal="STL"/>
+      <eLiterals name="Struct" value="180" literal="STC"/>
+      <eLiterals name="Wrapper" value="190" literal="WRP"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DatetimeDef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
@@ -1485,19 +1485,17 @@
     <eClassifiers xsi:type="ecore:EEnum" name="DatetimeType">
       <eLiterals name="Date" value="10" literal="DATE"/>
       <eLiterals name="Time" value="20" literal="TIME"/>
-      <eLiterals name="TimeStamp" value="30" literal="TIMESTAMP"/>
+      <eLiterals name="TimeStamp" value="30" literal="TMS"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="DateFormat">
-      <eLiterals name="ISO" value="5" literal="*ISO"/>
-      <eLiterals name="MDY" value="10" literal="*MDY"/>
-      <eLiterals name="DMY" value="20" literal="*DMY"/>
-      <eLiterals name="YMD" value="30" literal="*YMD"/>
-      <eLiterals name="YYMD" value="31" literal="*YYMD"/>
-      <eLiterals name="JUL" value="40" literal="*JUL"/>
-      <eLiterals name="USA" value="60" literal="*USA"/>
-      <eLiterals name="EUR" value="70" literal="*EUR"/>
-      <eLiterals name="JIS" value="80" literal="*JIS"/>
-      <eLiterals name="JOBRUN" value="90" literal="*JOBRUN"/>
+      <eLiterals name="ISO" value="5" literal="ISO"/>
+      <eLiterals name="MDY" value="10" literal="MDY"/>
+      <eLiterals name="DMY" value="20" literal="DMY"/>
+      <eLiterals name="YMD" value="30" literal="YMD"/>
+      <eLiterals name="YYMD" value="31" literal="YYMD"/>
+      <eLiterals name="JUL" value="40" literal="JUL"/>
+      <eLiterals name="USA" value="60" literal="USA"/>
+      <eLiterals name="EUR" value="70" literal="EUR"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DecimalDef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" lowerBound="1"
@@ -1509,8 +1507,8 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="DecimalType">
-      <eLiterals name="Zoned" value="10" literal="ZONED"/>
-      <eLiterals name="Packed" value="20" literal="PACKED"/>
+      <eLiterals name="Zoned" value="10" literal="ZND"/>
+      <eLiterals name="Packed" value="20" literal="PCK"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Files" abstract="true" interface="true">
       <eOperations name="getBaseName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1535,8 +1533,8 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="FloatingType">
-      <eLiterals name="Single" value="10" literal="SINGLE"/>
-      <eLiterals name="Double" value="20" literal="DOUBLE"/>
+      <eLiterals name="Float" value="10" literal="FLT"/>
+      <eLiterals name="Double" value="20" literal="DBL"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IdentityDef">
       <eGenericSuperTypes eClassifier="#//util/DataDef">
@@ -1885,20 +1883,18 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ThreadStatus">
-      <eLiterals name="NEW" value="10" literal="New"/>
-      <eLiterals name="RUN" value="20" literal="Runnable"/>
-      <eLiterals name="BLOCK" value="30" literal="Blocked"/>
-      <eLiterals name="WAIT" value="40" literal="Waiting"/>
-      <eLiterals name="TIME_WAIT" value="50" literal="Timed Waiting"/>
-      <eLiterals name="END" value="60" literal="Terminated"/>
+      <eLiterals name="New" value="10" literal="NEW"/>
+      <eLiterals name="Runnable" value="20" literal="RUN"/>
+      <eLiterals name="Blocked" value="30" literal="BLC"/>
+      <eLiterals name="Waiting" value="40" literal="WAIT"/>
+      <eLiterals name="TimedWaiting" value="50" literal="TMW"/>
+      <eLiterals name="Terminated" value="60" literal="END"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="TimeFormat">
-      <eLiterals name="ISO" value="5" literal="*ISO"/>
-      <eLiterals name="HMS" value="10" literal="*HMS"/>
-      <eLiterals name="USA" value="30" literal="*USA"/>
-      <eLiterals name="EUR" value="40" literal="*EUR"/>
-      <eLiterals name="JIS" value="50" literal="*JIS"/>
-      <eLiterals name="JOBRUN" value="60" literal="*JOBRUN"/>
+      <eLiterals name="ISO" value="5" literal="ISO"/>
+      <eLiterals name="HMS" value="10" literal="HMS"/>
+      <eLiterals name="USA" value="30" literal="USA"/>
+      <eLiterals name="EUR" value="40" literal="EUR"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="URIs" abstract="true" interface="true">
       <eOperations name="getBaseName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">

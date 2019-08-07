@@ -28,16 +28,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum FloatingType implements Enumerator {
 	/**
-	 * The '<em><b>Single</b></em>' literal object.
+	 * The '<em><b>Float</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SINGLE_VALUE
+	 * @see #FLOAT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SINGLE(10, "Single", "SINGLE"),
-
-	/**
+	FLOAT(10, "Float", "FLT"), /**
 	 * The '<em><b>Double</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,22 +43,22 @@ public enum FloatingType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOUBLE(20, "Double", "DOUBLE");
+	DOUBLE(20, "Double", "DBL");
 
 	/**
-	 * The '<em><b>Single</b></em>' literal value.
+	 * The '<em><b>Float</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Single</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Float</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SINGLE
-	 * @model name="Single" literal="SINGLE"
+	 * @see #FLOAT
+	 * @model name="Float" literal="FLT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SINGLE_VALUE = 10;
+	public static final int FLOAT_VALUE = 10;
 
 	/**
 	 * The '<em><b>Double</b></em>' literal value.
@@ -71,7 +69,7 @@ public enum FloatingType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DOUBLE
-	 * @model name="Double" literal="DOUBLE"
+	 * @model name="Double" literal="DBL"
 	 * @generated
 	 * @ordered
 	 */
@@ -85,7 +83,7 @@ public enum FloatingType implements Enumerator {
 	 */
 	private static final FloatingType[] VALUES_ARRAY =
 		new FloatingType[] {
-			SINGLE,
+			FLOAT,
 			DOUBLE,
 		};
 
@@ -143,7 +141,7 @@ public enum FloatingType implements Enumerator {
 	 */
 	public static FloatingType get(int value) {
 		switch (value) {
-			case SINGLE_VALUE: return SINGLE;
+			case FLOAT_VALUE: return FLOAT;
 			case DOUBLE_VALUE: return DOUBLE;
 		}
 		return null;

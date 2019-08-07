@@ -50,7 +50,7 @@ public class LookupFormServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Form form = resourceManager.getEntityReader(contextProvider, Form.class, ResourceScope.CTX).lookup(name);
+		Form form = resourceManager.getEntityReader(contextProvider, Form.class, ResourceScope.CONTEXT).lookup(name);
 
 		if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			form = frameManager.createEntity(Form.class);
@@ -96,7 +96,7 @@ public class LookupFormServlet extends BaseServlet {
 			}
 		}
 
-		try (ResourceSerializer<Form> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Form.class, SerializationType.JSON)) {
+		try (ResourceSerializer<Form> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Form.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			if (form != null) {
 				completeForm(contextProvider, form);
 				resourceSerializer.add(form);
@@ -157,7 +157,7 @@ public class LookupFormServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CTX);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CONTEXT);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

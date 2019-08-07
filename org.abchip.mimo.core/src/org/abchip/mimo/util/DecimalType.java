@@ -35,7 +35,7 @@ public enum DecimalType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ZONED(10, "Zoned", "ZONED"),
+	ZONED(10, "Zoned", "ZND"),
 
 	/**
 	 * The '<em><b>Packed</b></em>' literal object.
@@ -45,7 +45,7 @@ public enum DecimalType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PACKED(20, "Packed", "PACKED");
+	PACKED(20, "Packed", "PCK");
 
 	/**
 	 * The '<em><b>Zoned</b></em>' literal value.
@@ -56,7 +56,7 @@ public enum DecimalType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ZONED
-	 * @model name="Zoned" literal="ZONED"
+	 * @model name="Zoned" literal="ZND"
 	 * @generated
 	 * @ordered
 	 */
@@ -71,7 +71,7 @@ public enum DecimalType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PACKED
-	 * @model name="Packed" literal="PACKED"
+	 * @model name="Packed" literal="PCK"
 	 * @generated
 	 * @ordered
 	 */

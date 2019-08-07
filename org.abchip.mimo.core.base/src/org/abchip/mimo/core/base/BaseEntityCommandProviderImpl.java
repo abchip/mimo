@@ -40,7 +40,7 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 		
-		for(E entity: resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX).find(null)) 
+		for(E entity: resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).find(null)) 
 			System.out.println(entity);
 	}
 
@@ -54,7 +54,7 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		
 		String entityName = interpreter.nextArgument();
 		
-		E entity = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CTX).lookup(entityName);				
+		E entity = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).lookup(entityName);				
 		System.out.println(entity);
 	}
 

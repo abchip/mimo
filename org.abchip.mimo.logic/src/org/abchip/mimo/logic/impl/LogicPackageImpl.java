@@ -152,6 +152,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGoal() {
 		return goalEClass;
 	}
@@ -161,6 +162,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGoal_Terms() {
 		return (EReference)goalEClass.getEStructuralFeatures().get(0);
 	}
@@ -170,6 +172,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMindManager() {
 		return mindManagerEClass;
 	}
@@ -179,6 +182,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getQuestion() {
 		return questionEClass;
 	}
@@ -188,6 +192,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getQuestion_Object() {
 		return (EReference)questionEClass.getEStructuralFeatures().get(0);
 	}
@@ -197,6 +202,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getQuestion_Subject() {
 		return (EReference)questionEClass.getEStructuralFeatures().get(1);
 	}
@@ -206,6 +212,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getQuestion_Relation() {
 		return (EReference)questionEClass.getEStructuralFeatures().get(2);
 	}
@@ -215,6 +222,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getQuestion_Rule() {
 		return (EReference)questionEClass.getEStructuralFeatures().get(3);
 	}
@@ -224,6 +232,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTerm() {
 		return termEClass;
 	}
@@ -233,6 +242,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTerm_Name() {
 		return (EAttribute)termEClass.getEStructuralFeatures().get(0);
 	}
@@ -242,6 +252,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTheory() {
 		return theoryEClass;
 	}
@@ -251,6 +262,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTheory_Name() {
 		return (EAttribute)theoryEClass.getEStructuralFeatures().get(0);
 	}
@@ -260,6 +272,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTheory_Facts() {
 		return (EReference)theoryEClass.getEStructuralFeatures().get(1);
 	}
@@ -269,6 +282,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getReasoner() {
 		return reasonerEClass;
 	}
@@ -278,6 +292,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LogicFactory getLogicFactory() {
 		return (LogicFactory)getEFactoryInstance();
 	}

@@ -74,6 +74,7 @@ public class ClassificationFactoryImpl extends EFactoryImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <E extends Entity> Classification<E> createClassification() {
 		ClassificationImpl<E> classification = new ClassificationImpl<E>();
 		return classification;
@@ -84,6 +85,7 @@ public class ClassificationFactoryImpl extends EFactoryImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ClassificationPackage getClassificationPackage() {
 		return (ClassificationPackage)getEPackage();
 	}

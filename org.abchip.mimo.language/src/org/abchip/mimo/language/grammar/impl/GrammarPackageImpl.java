@@ -452,12 +452,12 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(genderEEnum, Gender.class, "Gender");
-		addEEnumLiteral(genderEEnum, Gender.M);
-		addEEnumLiteral(genderEEnum, Gender.F);
+		addEEnumLiteral(genderEEnum, Gender.MASCULINE);
+		addEEnumLiteral(genderEEnum, Gender.FEMININE);
 
 		initEEnum(numberEEnum, org.abchip.mimo.language.grammar.Number.class, "Number");
-		addEEnumLiteral(numberEEnum, org.abchip.mimo.language.grammar.Number.S);
-		addEEnumLiteral(numberEEnum, org.abchip.mimo.language.grammar.Number.P);
+		addEEnumLiteral(numberEEnum, org.abchip.mimo.language.grammar.Number.SINGULAR);
+		addEEnumLiteral(numberEEnum, org.abchip.mimo.language.grammar.Number.PLURAL);
 	}
 
 } //GrammarPackageImpl

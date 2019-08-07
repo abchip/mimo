@@ -74,7 +74,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link TwitterPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -88,7 +88,8 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 		if (isInited) return (TwitterPackage)EPackage.Registry.INSTANCE.getEPackage(TwitterPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TwitterPackageImpl theTwitterPackage = (TwitterPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TwitterPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TwitterPackageImpl());
+		Object registeredTwitterPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		TwitterPackageImpl theTwitterPackage = registeredTwitterPackage instanceof TwitterPackageImpl ? (TwitterPackageImpl)registeredTwitterPackage : new TwitterPackageImpl();
 
 		isInited = true;
 
@@ -104,7 +105,6 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 		// Mark meta-data to indicate it can't be changed
 		theTwitterPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(TwitterPackage.eNS_URI, theTwitterPackage);
 		return theTwitterPackage;
@@ -115,6 +115,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTweet() {
 		return tweetEClass;
 	}
@@ -124,6 +125,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Date() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(0);
 	}
@@ -133,6 +135,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Entities() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(1);
 	}
@@ -142,6 +145,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Geolocation() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(2);
 	}
@@ -151,6 +155,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Hashtags() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(3);
 	}
@@ -160,6 +165,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Id() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(4);
 	}
@@ -169,6 +175,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Language() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(5);
 	}
@@ -178,6 +185,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Medias() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(6);
 	}
@@ -187,6 +195,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Place() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(7);
 	}
@@ -196,6 +205,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Symbols() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(8);
 	}
@@ -205,6 +215,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_Text() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(9);
 	}
@@ -214,6 +225,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_User() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(10);
 	}
@@ -223,6 +235,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTweet_UserMentions() {
 		return (EAttribute)tweetEClass.getEStructuralFeatures().get(11);
 	}
@@ -232,6 +245,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTwitterManager() {
 		return twitterManagerEClass;
 	}
@@ -241,6 +255,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TwitterFactory getTwitterFactory() {
 		return (TwitterFactory)getEFactoryInstance();
 	}

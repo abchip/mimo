@@ -28,75 +28,75 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ServiceStatus implements Enumerator {
 	/**
-	 * The '<em><b>ACT</b></em>' literal object.
+	 * The '<em><b>Active</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ACT_VALUE
+	 * @see #ACTIVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ACT(0, "ACT", "Active"), /**
-	 * The '<em><b>STP</b></em>' literal object.
+	ACTIVE(0, "Active", "ACT"), /**
+	 * The '<em><b>Stopped</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #STP_VALUE
+	 * @see #STOPPED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	STP(20, "STP", "Stopped"), /**
-	 * The '<em><b>TST</b></em>' literal object.
+	STOPPED(20, "Stopped", "STP"), /**
+	 * The '<em><b>Testing</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TST_VALUE
+	 * @see #TESTING_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TST(30, "TST", "Testing");
+	TESTING(30, "Testing", "TST");
 
 	/**
-	 * The '<em><b>ACT</b></em>' literal value.
+	 * The '<em><b>Active</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>ACT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Active</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #ACT
-	 * @model literal="Active"
+	 * @see #ACTIVE
+	 * @model name="Active" literal="ACT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ACT_VALUE = 0;
+	public static final int ACTIVE_VALUE = 0;
 
 	/**
-	 * The '<em><b>STP</b></em>' literal value.
+	 * The '<em><b>Stopped</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>STP</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Stopped</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #STP
-	 * @model literal="Stopped"
+	 * @see #STOPPED
+	 * @model name="Stopped" literal="STP"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STP_VALUE = 20;
+	public static final int STOPPED_VALUE = 20;
 
 	/**
-	 * The '<em><b>TST</b></em>' literal value.
+	 * The '<em><b>Testing</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TST</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Testing</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TST
-	 * @model literal="Testing"
+	 * @see #TESTING
+	 * @model name="Testing" literal="TST"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TST_VALUE = 30;
+	public static final int TESTING_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>Service Status</b></em>' enumerators.
@@ -106,9 +106,9 @@ public enum ServiceStatus implements Enumerator {
 	 */
 	private static final ServiceStatus[] VALUES_ARRAY =
 		new ServiceStatus[] {
-			ACT,
-			STP,
-			TST,
+			ACTIVE,
+			STOPPED,
+			TESTING,
 		};
 
 	/**
@@ -165,9 +165,9 @@ public enum ServiceStatus implements Enumerator {
 	 */
 	public static ServiceStatus get(int value) {
 		switch (value) {
-			case ACT_VALUE: return ACT;
-			case STP_VALUE: return STP;
-			case TST_VALUE: return TST;
+			case ACTIVE_VALUE: return ACTIVE;
+			case STOPPED_VALUE: return STOPPED;
+			case TESTING_VALUE: return TESTING;
 		}
 		return null;
 	}

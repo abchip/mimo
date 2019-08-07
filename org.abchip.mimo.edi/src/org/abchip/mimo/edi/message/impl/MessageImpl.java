@@ -179,7 +179,7 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MessageStatus STATUS_EDEFAULT = MessageStatus.TRS;
+	protected static final MessageStatus STATUS_EDEFAULT = MessageStatus.TRASMITTED;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -259,7 +259,7 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 * @ordered
 	 */
-	protected static final byte[] BODY_EDEFAULT = null;
+	protected static final String BODY_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getBody() <em>Body</em>}' attribute.
@@ -269,7 +269,7 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 * @ordered
 	 */
-	protected byte[] body = BODY_EDEFAULT;
+	protected String body = BODY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -457,7 +457,7 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public byte[] getBody() {
+	public String getBody() {
 		return body;
 	}
 
@@ -467,8 +467,8 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public void setBody(byte[] newBody) {
-		byte[] oldBody = body;
+	public void setBody(String newBody) {
+		String oldBody = body;
 		body = newBody;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__BODY, oldBody, body));
@@ -616,7 +616,7 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 				setEvent((EntityEvent)newValue);
 				return;
 			case MessagePackage.MESSAGE__BODY:
-				setBody((byte[])newValue);
+				setBody((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

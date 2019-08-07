@@ -20,79 +20,75 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ViewType implements Enumerator {
 	/**
-	 * The '<em><b>TBL</b></em>' literal object.
+	 * The '<em><b>Table</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TBL_VALUE
+	 * @see #TABLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TBL(10, "TBL", "Table"),
-
-	/**
-	 * The '<em><b>BRW</b></em>' literal object.
+	TABLE(10, "Table", "TBL"), /**
+	 * The '<em><b>Browse</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BRW_VALUE
+	 * @see #BROWSE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BRW(20, "BRW", "Browser"),
-
-	/**
-	 * The '<em><b>DSH</b></em>' literal object.
+	BROWSE(20, "Browse", "BRW"), /**
+	 * The '<em><b>Dashboard</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DSH_VALUE
+	 * @see #DASHBOARD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DSH(30, "DSH", "Dashboard");
+	DASHBOARD(30, "Dashboard", "DSH");
 
 	/**
-	 * The '<em><b>TBL</b></em>' literal value.
+	 * The '<em><b>Table</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TBL</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Table</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TBL
-	 * @model literal="Table"
+	 * @see #TABLE
+	 * @model name="Table" literal="TBL"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TBL_VALUE = 10;
+	public static final int TABLE_VALUE = 10;
 
 	/**
-	 * The '<em><b>BRW</b></em>' literal value.
+	 * The '<em><b>Browse</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>BRW</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Browse</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #BRW
-	 * @model literal="Browser"
+	 * @see #BROWSE
+	 * @model name="Browse" literal="BRW"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BRW_VALUE = 20;
+	public static final int BROWSE_VALUE = 20;
 
 	/**
-	 * The '<em><b>DSH</b></em>' literal value.
+	 * The '<em><b>Dashboard</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>DSH</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Dashboard</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DSH
-	 * @model literal="Dashboard"
+	 * @see #DASHBOARD
+	 * @model name="Dashboard" literal="DSH"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DSH_VALUE = 30;
+	public static final int DASHBOARD_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>View Type</b></em>' enumerators.
@@ -102,9 +98,9 @@ public enum ViewType implements Enumerator {
 	 */
 	private static final ViewType[] VALUES_ARRAY =
 		new ViewType[] {
-			TBL,
-			BRW,
-			DSH,
+			TABLE,
+			BROWSE,
+			DASHBOARD,
 		};
 
 	/**
@@ -161,9 +157,9 @@ public enum ViewType implements Enumerator {
 	 */
 	public static ViewType get(int value) {
 		switch (value) {
-			case TBL_VALUE: return TBL;
-			case BRW_VALUE: return BRW;
-			case DSH_VALUE: return DSH;
+			case TABLE_VALUE: return TABLE;
+			case BROWSE_VALUE: return BROWSE;
+			case DASHBOARD_VALUE: return DASHBOARD;
 		}
 		return null;
 	}

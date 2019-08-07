@@ -16,15 +16,15 @@
           eType="#//entity/EntityEvent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EntityCondition">
-      <eLiterals name="ALL" value="10" literal="All"/>
-      <eLiterals name="SLC" value="20" literal="Selected"/>
-      <eLiterals name="SCP" value="30" literal="Script"/>
+      <eLiterals name="All" value="10" literal="ALL"/>
+      <eLiterals name="Selected" value="20" literal="SLC"/>
+      <eLiterals name="Script" value="30" literal="SCP"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EntityEvent">
-      <eLiterals name="ALL" value="10" literal="All"/>
-      <eLiterals name="CRT" value="20" literal="Create"/>
-      <eLiterals name="UPD" value="20" literal="Update"/>
-      <eLiterals name="DLT" value="30" literal="Delete"/>
+      <eLiterals name="All" value="10" literal="ALL"/>
+      <eLiterals name="Create" value="20" literal="CRT"/>
+      <eLiterals name="Update" value="30" literal="UPD"/>
+      <eLiterals name="Delete" value="40" literal="DLT"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="message" nsURI="http://www.abchip.org/mimo/edi/message" nsPrefix="mimo-edi-message">
@@ -57,7 +57,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="#//entity/EntityEvent"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityTyped">
         <eTypeArguments eClassifier="#//message/MessageType">
           <eTypeArguments/>
@@ -68,9 +68,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="MessageReceived" eSuperTypes="#//message/Message"/>
     <eClassifiers xsi:type="ecore:EClass" name="MessageSent" eSuperTypes="#//message/Message"/>
     <eClassifiers xsi:type="ecore:EEnum" name="MessageStatus">
-      <eLiterals name="TRS" value="10" literal="Trasmitted"/>
-      <eLiterals name="ERR" value="20" literal="Error"/>
-      <eLiterals name="PEND" value="30" literal="Pending"/>
+      <eLiterals name="Trasmitted" value="10" literal="TRS"/>
+      <eLiterals name="Error" value="20" literal="ERR"/>
+      <eLiterals name="Pending" value="30" literal="PND"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageType">
       <eTypeParameters name="E">

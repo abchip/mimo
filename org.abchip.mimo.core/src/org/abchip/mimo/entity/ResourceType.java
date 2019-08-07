@@ -28,22 +28,22 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ResourceType implements Enumerator {
 	/**
-	 * The '<em><b>PROD</b></em>' literal object.
+	 * The '<em><b>Production</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PROD_VALUE
+	 * @see #PRODUCTION_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PROD(10, "PROD", "Production"), /**
-	 * The '<em><b>TEST</b></em>' literal object.
+	PRODUCTION(10, "Production", "PRD"), /**
+	 * The '<em><b>Test</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #TEST_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TEST(20, "TEST", "Test"),
+	TEST(20, "Test", "TST"),
 
 	/**
 	 * The '<em><b>TEMP</b></em>' literal object.
@@ -53,25 +53,25 @@ public enum ResourceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TEMP(30, "TEMP", "Temporary");
+	TEMP(30, "TEMP", "TMP");
 
 	/**
-	 * The '<em><b>PROD</b></em>' literal value.
+	 * The '<em><b>Production</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>PROD</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Production</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PROD
-	 * @model literal="Production"
+	 * @see #PRODUCTION
+	 * @model name="Production" literal="PRD"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROD_VALUE = 10;
+	public static final int PRODUCTION_VALUE = 10;
 
 	/**
-	 * The '<em><b>TEST</b></em>' literal value.
+	 * The '<em><b>Test</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Test</b></em>' literal object isn't clear,
@@ -79,7 +79,7 @@ public enum ResourceType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TEST
-	 * @model literal="Test"
+	 * @model name="Test" literal="TST"
 	 * @generated
 	 * @ordered
 	 */
@@ -94,7 +94,7 @@ public enum ResourceType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TEMP
-	 * @model literal="Temporary"
+	 * @model literal="TMP"
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public enum ResourceType implements Enumerator {
 	 */
 	private static final ResourceType[] VALUES_ARRAY =
 		new ResourceType[] {
-			PROD,
+			PRODUCTION,
 			TEST,
 			TEMP,
 		};
@@ -167,7 +167,7 @@ public enum ResourceType implements Enumerator {
 	 */
 	public static ResourceType get(int value) {
 		switch (value) {
-			case PROD_VALUE: return PROD;
+			case PRODUCTION_VALUE: return PRODUCTION;
 			case TEST_VALUE: return TEST;
 			case TEMP_VALUE: return TEMP;
 		}

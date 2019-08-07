@@ -24,43 +24,43 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum EntityEvent implements Enumerator {
 	/**
-	 * The '<em><b>ALL</b></em>' literal object.
+	 * The '<em><b>All</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ALL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ALL(10, "ALL", "All"),
+	ALL(10, "All", "ALL"),
 
 	/**
-	 * The '<em><b>CRT</b></em>' literal object.
+	 * The '<em><b>Create</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CRT_VALUE
+	 * @see #CREATE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CRT(20, "CRT", "Create"), /**
-	 * The '<em><b>UPD</b></em>' literal object.
+	CREATE(20, "Create", "CRT"), /**
+	 * The '<em><b>Update</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #UPD_VALUE
+	 * @see #UPDATE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	UPD(20, "UPD", "Update"), /**
-	 * The '<em><b>DLT</b></em>' literal object.
+	UPDATE(30, "Update", "UPD"), /**
+	 * The '<em><b>Delete</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DLT_VALUE
+	 * @see #DELETE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DLT(30, "DLT", "Delete");
+	DELETE(40, "Delete", "DLT");
 
 	/**
-	 * The '<em><b>ALL</b></em>' literal value.
+	 * The '<em><b>All</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>All</b></em>' literal object isn't clear,
@@ -68,56 +68,56 @@ public enum EntityEvent implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ALL
-	 * @model literal="All"
+	 * @model name="All" literal="ALL"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int ALL_VALUE = 10;
 
 	/**
-	 * The '<em><b>CRT</b></em>' literal value.
+	 * The '<em><b>Create</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>CRT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Create</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CRT
-	 * @model literal="Create"
+	 * @see #CREATE
+	 * @model name="Create" literal="CRT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CRT_VALUE = 20;
+	public static final int CREATE_VALUE = 20;
 
 	/**
-	 * The '<em><b>UPD</b></em>' literal value.
+	 * The '<em><b>Update</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>UPD</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Update</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #UPD
-	 * @model literal="Update"
+	 * @see #UPDATE
+	 * @model name="Update" literal="UPD"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UPD_VALUE = 20;
+	public static final int UPDATE_VALUE = 30;
 
 	/**
-	 * The '<em><b>DLT</b></em>' literal value.
+	 * The '<em><b>Delete</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>DLT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Delete</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DLT
-	 * @model literal="Delete"
+	 * @see #DELETE
+	 * @model name="Delete" literal="DLT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DLT_VALUE = 30;
+	public static final int DELETE_VALUE = 40;
 
 	/**
 	 * An array of all the '<em><b>Event</b></em>' enumerators.
@@ -128,9 +128,9 @@ public enum EntityEvent implements Enumerator {
 	private static final EntityEvent[] VALUES_ARRAY =
 		new EntityEvent[] {
 			ALL,
-			CRT,
-			UPD,
-			DLT,
+			CREATE,
+			UPDATE,
+			DELETE,
 		};
 
 	/**
@@ -188,8 +188,9 @@ public enum EntityEvent implements Enumerator {
 	public static EntityEvent get(int value) {
 		switch (value) {
 			case ALL_VALUE: return ALL;
-			case CRT_VALUE: return CRT;
-			case DLT_VALUE: return DLT;
+			case CREATE_VALUE: return CREATE;
+			case UPDATE_VALUE: return UPDATE;
+			case DELETE_VALUE: return DELETE;
 		}
 		return null;
 	}

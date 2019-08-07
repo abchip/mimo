@@ -33,37 +33,37 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum TargetItem implements Enumerator {
 	/**
-	 * The '<em><b>ALL</b></em>' literal object.
+	 * The '<em><b>All</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ALL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ALL(0, "ALL", "ALL"),
+	ALL(0, "All", "ALL"),
 
 	/**
-	 * The '<em><b>CURRENT</b></em>' literal object.
+	 * The '<em><b>Current</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #CURRENT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CURRENT(1, "CURRENT", "CURRENT"),
+	CURRENT(1, "Current", "CUR"),
 
 	/**
-	 * The '<em><b>ALLSQL</b></em>' literal object.
+	 * The '<em><b>Sql</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ALLSQL_VALUE
+	 * @see #SQL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ALLSQL(2, "ALLSQL", "ALL SQL");
+	SQL(2, "Sql", "SQL");
 
 	/**
-	 * The '<em><b>ALL</b></em>' literal value.
+	 * The '<em><b>All</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>ALL</b></em>' literal object isn't clear,
@@ -71,14 +71,14 @@ public enum TargetItem implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ALL
-	 * @model
+	 * @model name="All" literal="ALL"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int ALL_VALUE = 0;
 
 	/**
-	 * The '<em><b>CURRENT</b></em>' literal value.
+	 * The '<em><b>Current</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>CURRENT</b></em>' literal object isn't clear,
@@ -86,26 +86,26 @@ public enum TargetItem implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CURRENT
-	 * @model
+	 * @model name="Current" literal="CUR"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int CURRENT_VALUE = 1;
 
 	/**
-	 * The '<em><b>ALLSQL</b></em>' literal value.
+	 * The '<em><b>Sql</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>ALLSQL</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Sql</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #ALLSQL
-	 * @model literal="ALL SQL"
+	 * @see #SQL
+	 * @model name="Sql" literal="SQL"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ALLSQL_VALUE = 2;
+	public static final int SQL_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Target Item</b></em>' enumerators.
@@ -116,7 +116,7 @@ public enum TargetItem implements Enumerator {
 	private static final TargetItem[] VALUES_ARRAY = new TargetItem[] {
 			ALL,
 			CURRENT,
-			ALLSQL,
+			SQL,
 		};
 
 	/**
@@ -175,7 +175,7 @@ public enum TargetItem implements Enumerator {
 		switch (value) {
 			case ALL_VALUE: return ALL;
 			case CURRENT_VALUE: return CURRENT;
-			case ALLSQL_VALUE: return ALLSQL;
+			case SQL_VALUE: return SQL;
 		}
 		return null;
 	}

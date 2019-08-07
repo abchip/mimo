@@ -118,6 +118,7 @@ public class MiningPackageImpl extends EPackageImpl implements MiningPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMiningManager() {
 		return miningManagerEClass;
 	}
@@ -127,6 +128,7 @@ public class MiningPackageImpl extends EPackageImpl implements MiningPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MiningFactory getMiningFactory() {
 		return (MiningFactory)getEFactoryInstance();
 	}

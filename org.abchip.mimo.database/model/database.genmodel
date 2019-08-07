@@ -170,9 +170,9 @@
     <nestedGenPackages prefix="DatabaseConnection" basePackage="org.abchip.mimo.database"
         disposableProviderFactory="true" adapterFactory="false" ecorePackage="database.ecore#//connection">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//connection/StatementType">
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DML"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DDL"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DBL"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DataManipulationLanguage"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DataDefinitionLanguage"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//connection/StatementType/DataBindingLanguage"/>
       </genEnums>
       <genDataTypes ecoreDataType="database.ecore#//connection/DatabaseResultSet"/>
       <genDataTypes ecoreDataType="database.ecore#//connection/DatabaseResultSetMetaData"/>
@@ -299,27 +299,27 @@
         disposableProviderFactory="true" adapterFactory="false" contentTypeIdentifier=""
         ecorePackage="database.ecore#//definition">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/DropRange">
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/DropRange/RESTRICT"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/DropRange/CASCADE"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/DropRange/Restrict"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/DropRange/Cascade"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/OrderingType">
         <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/OrderingType/Ascend"/>
         <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/OrderingType/Descend"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/ShareMode">
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/ShareMode/SHARE"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/ShareMode/EXCLUSIVE"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/ShareMode/Share"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/ShareMode/Exclusive"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/TargetElement">
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/ALIAS"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/INDEX"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/VIEW"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/TABLE"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/Alias"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/Index"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/View"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetElement/Table"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="database.ecore#//definition/TargetItem">
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/ALL"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/CURRENT"/>
-        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/ALLSQL"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/All"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/Current"/>
+        <genEnumLiterals ecoreEnumLiteral="database.ecore#//definition/TargetItem/Sql"/>
       </genEnums>
       <genClasses ecoreClass="database.ecore#//definition/CallStatement">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference database.ecore#//definition/CallStatement/procedureName"/>

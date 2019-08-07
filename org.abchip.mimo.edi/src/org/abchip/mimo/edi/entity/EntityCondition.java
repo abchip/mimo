@@ -24,35 +24,35 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum EntityCondition implements Enumerator {
 	/**
-	 * The '<em><b>ALL</b></em>' literal object.
+	 * The '<em><b>All</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ALL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ALL(10, "ALL", "All"),
+	ALL(10, "All", "ALL"),
 
 	/**
-	 * The '<em><b>SLC</b></em>' literal object.
+	 * The '<em><b>Selected</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SLC_VALUE
+	 * @see #SELECTED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SLC(20, "SLC", "Selected"), /**
-	 * The '<em><b>SCP</b></em>' literal object.
+	SELECTED(20, "Selected", "SLC"), /**
+	 * The '<em><b>Script</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SCP_VALUE
+	 * @see #SCRIPT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SCP(30, "SCP", "Script");
+	SCRIPT(30, "Script", "SCP");
 
 	/**
-	 * The '<em><b>ALL</b></em>' literal value.
+	 * The '<em><b>All</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>All</b></em>' literal object isn't clear,
@@ -60,41 +60,41 @@ public enum EntityCondition implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ALL
-	 * @model literal="All"
+	 * @model name="All" literal="ALL"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int ALL_VALUE = 10;
 
 	/**
-	 * The '<em><b>SLC</b></em>' literal value.
+	 * The '<em><b>Selected</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SLC</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Selected</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SLC
-	 * @model literal="Selected"
+	 * @see #SELECTED
+	 * @model name="Selected" literal="SLC"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SLC_VALUE = 20;
+	public static final int SELECTED_VALUE = 20;
 
 	/**
-	 * The '<em><b>SCP</b></em>' literal value.
+	 * The '<em><b>Script</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SCP</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Script</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SCP
-	 * @model literal="Script"
+	 * @see #SCRIPT
+	 * @model name="Script" literal="SCP"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SCP_VALUE = 30;
+	public static final int SCRIPT_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>Condition</b></em>' enumerators.
@@ -105,8 +105,8 @@ public enum EntityCondition implements Enumerator {
 	private static final EntityCondition[] VALUES_ARRAY =
 		new EntityCondition[] {
 			ALL,
-			SLC,
-			SCP,
+			SELECTED,
+			SCRIPT,
 		};
 
 	/**
@@ -164,8 +164,8 @@ public enum EntityCondition implements Enumerator {
 	public static EntityCondition get(int value) {
 		switch (value) {
 			case ALL_VALUE: return ALL;
-			case SLC_VALUE: return SLC;
-			case SCP_VALUE: return SCP;
+			case SELECTED_VALUE: return SELECTED;
+			case SCRIPT_VALUE: return SCRIPT;
 		}
 		return null;
 	}

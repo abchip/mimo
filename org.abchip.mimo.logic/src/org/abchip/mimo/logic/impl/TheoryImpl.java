@@ -97,6 +97,7 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -106,6 +107,7 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -118,6 +120,7 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<Term> getFacts() {
 		if (facts == null) {
 			facts = new EObjectContainmentEList<Term>(Term.class, this, LogicPackage.THEORY__FACTS);

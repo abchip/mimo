@@ -45,7 +45,7 @@ public class DeleteServlet extends BaseServlet {
 		if (frame == null) 
 			return;
 
-		E entity = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CTX).lookup(name);
+		E entity = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CONTEXT).lookup(name);
 
 		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName, "data");
 

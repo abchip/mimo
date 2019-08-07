@@ -58,7 +58,7 @@ public class TestAudio {
 		
 //		recordAudio();
 		
-		EntityReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class, ResourceScope.CTX);
+		EntityReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class, ResourceScope.CONTEXT);
 		for (Audio audio : audioReader.find(null)) {
 			
 			asserter.assertNotNull("Audio content", audio.getContent());
@@ -80,7 +80,7 @@ public class TestAudio {
 		
 		audioManager.play(testRunner, AudioStyle.A, "I found the following languages in the system", true, true);
 
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CTX);
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
 		for (Language language : languageReader.find(null)) {			
 			audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
 		}

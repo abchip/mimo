@@ -43,7 +43,7 @@ public class LookupQueryServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Query query = resourceManager.getEntityReader(contextProvider, Query.class, ResourceScope.CTX).lookup(name);
+		Query query = resourceManager.getEntityReader(contextProvider, Query.class, ResourceScope.CONTEXT).lookup(name);
 
 		if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			query = frameManager.createEntity(Query.class);
@@ -78,7 +78,7 @@ public class LookupQueryServlet extends BaseServlet {
 				}
 			}
 		}
-		try (ResourceSerializer<Query> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Query.class, SerializationType.JSON)) {
+		try (ResourceSerializer<Query> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			if (query != null)
 				resourceSerializer.add(query);
 

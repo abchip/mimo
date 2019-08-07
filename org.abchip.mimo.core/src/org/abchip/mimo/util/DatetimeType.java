@@ -55,7 +55,7 @@ public enum DatetimeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TIME_STAMP(30, "TimeStamp", "TIMESTAMP");
+	TIME_STAMP(30, "TimeStamp", "TMS");
 
 	/**
 	 * The '<em><b>Date</b></em>' literal value.
@@ -96,7 +96,7 @@ public enum DatetimeType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TIME_STAMP
-	 * @model name="TimeStamp" literal="TIMESTAMP"
+	 * @model name="TimeStamp" literal="TMS"
 	 * @generated
 	 * @ordered
 	 */

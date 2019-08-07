@@ -55,7 +55,7 @@ public enum BinaryType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INTEGER(30, "Integer", "INTEGER"),
+	INTEGER(30, "Integer", "INT"),
 
 	/**
 	 * The '<em><b>Long</b></em>' literal object.
@@ -106,7 +106,7 @@ public enum BinaryType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INTEGER
-	 * @model name="Integer" literal="INTEGER"
+	 * @model name="Integer" literal="INT"
 	 * @generated
 	 * @ordered
 	 */

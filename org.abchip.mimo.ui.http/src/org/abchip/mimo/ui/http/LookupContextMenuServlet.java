@@ -58,7 +58,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		ContextMenu contextMenu = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CTX).lookup(frameName);
+		ContextMenu contextMenu = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CONTEXT).lookup(frameName);
 		if (contextMenu == null) {
 			contextMenu = MenuFactory.eINSTANCE.createContextMenu();
 			contextMenu.setName(frameName);
@@ -69,7 +69,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 		/*
 		 * ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot,
-		 * ContextMenu.class, ResourceScope.CTX).lookup("Frame"); if (contextMenuFrame
+		 * ContextMenu.class, ResourceScope.CONTEXT).lookup("Frame"); if (contextMenuFrame
 		 * != null) {
 		 * 
 		 * MenuGroup groupFrame = MenuFactory.eINSTANCE.createMenuGroup();
@@ -81,7 +81,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		 */
 
 		for (Frame<?> ako : frame.getSuperFrames()) {
-			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CTX).lookup(ako.getName());
+			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CONTEXT).lookup(ako.getName());
 			if (contextMenuAko == null)
 				continue;
 
@@ -91,7 +91,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 				contextMenu.getElements().addAll(contextMenuAko.getElements());
 		}
 
-		try (ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JSON)) {
+		try (ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
 
 			features.forEachRemaining(new Consumer<EObject>() {
@@ -125,7 +125,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 		String icon = null;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CTX);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CONTEXT);
 
 		Frame<?> frame = frameManager.getFrame(frameName);
 		if (frame == null)

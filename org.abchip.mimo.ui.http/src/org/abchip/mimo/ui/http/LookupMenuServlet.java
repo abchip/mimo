@@ -47,7 +47,7 @@ public class LookupMenuServlet extends BaseServlet {
 		String name = request.getParameter("name");
 
 		Menu menu = null;
-		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, ResourceScope.CTX);
+		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, ResourceScope.CONTEXT);
 
 		if (name == null || name.isEmpty()) {
 			menu = frameManager.createEntity(Menu.class);
@@ -92,7 +92,7 @@ public class LookupMenuServlet extends BaseServlet {
 			});
 		}
 
-		try (ResourceSerializer<Menu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Menu.class, SerializationType.JSON)) {
+		try (ResourceSerializer<Menu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Menu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			if (menu != null)
 				resourceSerializer.add(menu);
 

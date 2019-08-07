@@ -6,9 +6,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ActionType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActionType">
-    <eLiterals name="UI" value="10" literal="User Interface"/>
-    <eLiterals name="SRV" value="20" literal="Service"/>
-    <eLiterals name="EVT" value="30" literal="Event"/>
+    <eLiterals name="UserInterface" value="10" literal="UI"/>
+    <eLiterals name="Service" value="20" literal="SRV"/>
+    <eLiterals name="Event" value="30" literal="EVT"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataNode" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -31,9 +31,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ViewType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ViewType">
-    <eLiterals name="TBL" value="10" literal="Table"/>
-    <eLiterals name="BRW" value="20" literal="Browser"/>
-    <eLiterals name="DSH" value="30" literal="Dashboard"/>
+    <eLiterals name="Table" value="10" literal="TBL"/>
+    <eLiterals name="Browse" value="20" literal="BRW"/>
+    <eLiterals name="Dashboard" value="30" literal="DSH"/>
   </eClassifiers>
   <eSubpackages name="form" nsURI="http://www.abchip.org/mimo/ui/form" nsPrefix="ui-form">
     <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">

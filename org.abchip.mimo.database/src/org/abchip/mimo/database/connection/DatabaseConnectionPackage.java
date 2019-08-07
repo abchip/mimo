@@ -189,6 +189,15 @@ public interface DatabaseConnectionPackage extends EPackage {
 	int CONNECTION_CREDENTIALS__PASSWORD = ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD;
 
 	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_CREDENTIALS__TENANT = ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT;
+
+	/**
 	 * The number of structural features of the '<em>Connection Credentials</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

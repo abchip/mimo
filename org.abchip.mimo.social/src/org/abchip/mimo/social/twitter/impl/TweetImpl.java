@@ -271,6 +271,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Date getDate() {
 		return date;
 	}
@@ -291,6 +292,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDate(Date newDate) {
 		Date oldDate = date;
 		date = newDate;
@@ -303,6 +305,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getEntities() {
 		if (entities == null) {
 			entities = new EDataTypeUniqueEList<String>(String.class, this, TwitterPackage.TWEET__ENTITIES);
@@ -315,6 +318,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getGeolocation() {
 		return geolocation;
 	}
@@ -324,6 +328,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGeolocation(String newGeolocation) {
 		String oldGeolocation = geolocation;
 		geolocation = newGeolocation;
@@ -336,6 +341,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getHashtags() {
 		if (hashtags == null) {
 			hashtags = new EDataTypeUniqueEList<String>(String.class, this, TwitterPackage.TWEET__HASHTAGS);
@@ -348,6 +354,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public long getId() {
 		return id;
 	}
@@ -357,6 +364,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(long newId) {
 		long oldId = id;
 		id = newId;
@@ -369,6 +377,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLanguage() {
 		return language;
 	}
@@ -378,6 +387,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLanguage(String newLanguage) {
 		String oldLanguage = language;
 		language = newLanguage;
@@ -390,6 +400,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getMedias() {
 		if (medias == null) {
 			medias = new EDataTypeUniqueEList<String>(String.class, this, TwitterPackage.TWEET__MEDIAS);
@@ -402,6 +413,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPlace() {
 		return place;
 	}
@@ -411,6 +423,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPlace(String newPlace) {
 		String oldPlace = place;
 		place = newPlace;
@@ -423,6 +436,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getSymbols() {
 		if (symbols == null) {
 			symbols = new EDataTypeUniqueEList<String>(String.class, this, TwitterPackage.TWEET__SYMBOLS);
@@ -435,6 +449,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -444,6 +459,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
@@ -456,6 +472,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUser() {
 		return user;
 	}
@@ -465,6 +482,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUser(String newUser) {
 		String oldUser = user;
 		user = newUser;
@@ -477,6 +495,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<String> getUserMentions() {
 		if (userMentions == null) {
 			userMentions = new EDataTypeUniqueEList<String>(String.class, this, TwitterPackage.TWEET__USER_MENTIONS);
@@ -667,7 +686,7 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (date: ");
 		result.append(date);
 		result.append(", entities: ");

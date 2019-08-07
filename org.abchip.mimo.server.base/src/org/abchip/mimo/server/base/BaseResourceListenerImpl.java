@@ -33,13 +33,13 @@ public class BaseResourceListenerImpl implements ResourceListener<Resource> {
 	@Override
 	public void handleEvent(ResourceEvent<Resource> event) {
 
-		if (event.getEventType() != ResourceEventType.PRESAVE && event.getEventType() != ResourceEventType.PREDLT)
+		if (event.getEventType() != ResourceEventType.BEFORE_SAVE && event.getEventType() != ResourceEventType.BEFORE_DELETE)
 			return;
 
 		switch (event.getEventType()) {
-		case PRESAVE:
+		case BEFORE_SAVE:
 			break;
-		case PREDLT:
+		case BEFORE_DELETE:
 			break;
 		default:
 			break;

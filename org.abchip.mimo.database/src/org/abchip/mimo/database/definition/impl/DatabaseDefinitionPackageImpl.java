@@ -1705,7 +1705,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		initEEnum(targetItemEEnum, TargetItem.class, "TargetItem");
 		addEEnumLiteral(targetItemEEnum, TargetItem.ALL);
 		addEEnumLiteral(targetItemEEnum, TargetItem.CURRENT);
-		addEEnumLiteral(targetItemEEnum, TargetItem.ALLSQL);
+		addEEnumLiteral(targetItemEEnum, TargetItem.SQL);
 	}
 
 } //DatabaseDefinitionPackageImpl

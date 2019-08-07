@@ -75,6 +75,7 @@ public class LogicFactoryImpl extends EFactoryImpl implements LogicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Goal createGoal() {
 		GoalImpl goal = new GoalImpl();
 		return goal;
@@ -85,6 +86,7 @@ public class LogicFactoryImpl extends EFactoryImpl implements LogicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Question createQuestion() {
 		QuestionImpl question = new QuestionImpl();
 		return question;
@@ -95,6 +97,7 @@ public class LogicFactoryImpl extends EFactoryImpl implements LogicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Term createTerm() {
 		TermImpl term = new TermImpl();
 		return term;
@@ -105,6 +108,7 @@ public class LogicFactoryImpl extends EFactoryImpl implements LogicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Theory createTheory() {
 		TheoryImpl theory = new TheoryImpl();
 		return theory;
@@ -115,6 +119,7 @@ public class LogicFactoryImpl extends EFactoryImpl implements LogicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LogicPackage getLogicPackage() {
 		return (LogicPackage)getEPackage();
 	}

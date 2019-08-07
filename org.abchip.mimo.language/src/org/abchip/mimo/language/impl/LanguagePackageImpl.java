@@ -474,19 +474,19 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
 		// Initialize enums and add enum literals
 		initEEnum(languageScopeEEnum, LanguageScope.class, "LanguageScope");
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.I);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.M);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.C);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.R);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.S);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.D);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.INDIVIDUAL);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.MACROLANGUAGE);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.COLLECTIONS);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.RESERVED);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.SPECIALS);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.DIALECTS);
 
 		initEEnum(languageTypeEEnum, LanguageType.class, "LanguageType");
-		addEEnumLiteral(languageTypeEEnum, LanguageType.L);
-		addEEnumLiteral(languageTypeEEnum, LanguageType.E);
-		addEEnumLiteral(languageTypeEEnum, LanguageType.A);
-		addEEnumLiteral(languageTypeEEnum, LanguageType.H);
-		addEEnumLiteral(languageTypeEEnum, LanguageType.C);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.LIVING);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.EXTINCT);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.ANCIENT);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.HISTORICAL);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.CONSTRUCTED);
 
 		// Create resource
 		createResource(eNS_URI);

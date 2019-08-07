@@ -35,7 +35,7 @@ public enum TimeFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ISO(5, "ISO", "*ISO"),
+	ISO(5, "ISO", "ISO"),
 
 	/**
 	 * The '<em><b>HMS</b></em>' literal object.
@@ -45,7 +45,7 @@ public enum TimeFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HMS(10, "HMS", "*HMS"),
+	HMS(10, "HMS", "HMS"),
 
 	/**
 	 * The '<em><b>USA</b></em>' literal object.
@@ -55,7 +55,7 @@ public enum TimeFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USA(30, "USA", "*USA"),
+	USA(30, "USA", "USA"),
 
 	/**
 	 * The '<em><b>EUR</b></em>' literal object.
@@ -65,27 +65,7 @@ public enum TimeFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EUR(40, "EUR", "*EUR"),
-
-	/**
-	 * The '<em><b>JIS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JIS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	JIS(50, "JIS", "*JIS"),
-
-	/**
-	 * The '<em><b>JOBRUN</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JOBRUN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	JOBRUN(60, "JOBRUN", "*JOBRUN");
+	EUR(40, "EUR", "EUR");
 
 	/**
 	 * The '<em><b>ISO</b></em>' literal value.
@@ -96,7 +76,7 @@ public enum TimeFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ISO
-	 * @model literal="*ISO"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -111,7 +91,7 @@ public enum TimeFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #HMS
-	 * @model literal="*HMS"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -126,7 +106,7 @@ public enum TimeFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #USA
-	 * @model literal="*USA"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -141,41 +121,11 @@ public enum TimeFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EUR
-	 * @model literal="*EUR"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
 	public static final int EUR_VALUE = 40;
-
-	/**
-	 * The '<em><b>JIS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>JIS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #JIS
-	 * @model literal="*JIS"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int JIS_VALUE = 50;
-
-	/**
-	 * The '<em><b>JOBRUN</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>JOBRUN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #JOBRUN
-	 * @model literal="*JOBRUN"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int JOBRUN_VALUE = 60;
 
 	/**
 	 * An array of all the '<em><b>Time Format</b></em>' enumerators.
@@ -189,8 +139,6 @@ public enum TimeFormat implements Enumerator {
 			HMS,
 			USA,
 			EUR,
-			JIS,
-			JOBRUN,
 		};
 
 	/**
@@ -251,8 +199,6 @@ public enum TimeFormat implements Enumerator {
 			case HMS_VALUE: return HMS;
 			case USA_VALUE: return USA;
 			case EUR_VALUE: return EUR;
-			case JIS_VALUE: return JIS;
-			case JOBRUN_VALUE: return JOBRUN;
 		}
 		return null;
 	}

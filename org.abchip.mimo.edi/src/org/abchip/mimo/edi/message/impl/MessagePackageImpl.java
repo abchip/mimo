@@ -381,7 +381,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getMessage_SenderId(), ecorePackage.getEString(), "senderId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_FrameId(), ecorePackage.getEString(), "frameId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Event(), theEntityPackage.getEntityEvent(), "event", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_Body(), ecorePackage.getEByteArray(), "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Body(), ecorePackage.getEString(), "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageReceivedEClass, MessageReceived.class, "MessageReceived", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -392,9 +392,9 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(messageStatusEEnum, MessageStatus.class, "MessageStatus");
-		addEEnumLiteral(messageStatusEEnum, MessageStatus.TRS);
-		addEEnumLiteral(messageStatusEEnum, MessageStatus.ERR);
-		addEEnumLiteral(messageStatusEEnum, MessageStatus.PEND);
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.TRASMITTED);
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.ERROR);
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.PENDING);
 
 		// Create resource
 		createResource(eNS_URI);

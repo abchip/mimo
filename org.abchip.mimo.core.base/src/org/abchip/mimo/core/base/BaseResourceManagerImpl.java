@@ -202,7 +202,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 			resource = contextProvider.getContext().getContextDescription().getResourceRoot();
 			break;
 		case ALL:
-		case CTX:
+		case CONTEXT:
 			throw new RuntimeException("Unsupported scope " + scope);
 		}
 
@@ -271,7 +271,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 			}
 			break;
 		}
-		case CTX:
+		case CONTEXT:
 			resources.add(contextDescription.getResourceTemporary());
 			for (String resourceName : contextDescription.getResources()) {
 				if (!resources.contains(resourceName))

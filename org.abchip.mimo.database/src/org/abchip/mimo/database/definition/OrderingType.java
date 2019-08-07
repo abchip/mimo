@@ -39,7 +39,7 @@ public enum OrderingType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ASCEND(10, "Ascend", "A"),
+	ASCEND(10, "Ascend", "ASC"),
 	/**
 	 * The '<em><b>Descend</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -47,7 +47,7 @@ public enum OrderingType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DESCEND(20, "Descend", "D");
+	DESCEND(20, "Descend", "DESC");
 
 	/**
 	 * The '<em><b>Ascend</b></em>' literal value.
@@ -58,7 +58,7 @@ public enum OrderingType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ASCEND
-	 * @model name="Ascend" literal="A"
+	 * @model name="Ascend" literal="ASC"
 	 * @generated
 	 * @ordered
 	 */
@@ -73,7 +73,7 @@ public enum OrderingType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DESCEND
-	 * @model name="Descend" literal="D"
+	 * @model name="Descend" literal="DESC"
 	 * @generated
 	 * @ordered
 	 */

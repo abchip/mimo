@@ -47,7 +47,7 @@ public class FloatingDefImpl extends DataDefImpl<Float> implements FloatingDef {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final FloatingType TYPE_EDEFAULT = FloatingType.SINGLE;
+	protected static final FloatingType TYPE_EDEFAULT = FloatingType.FLOAT;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

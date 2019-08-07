@@ -340,9 +340,9 @@
     <eClassifiers xsi:type="ecore:EDataType" name="StatementBatchResult" instanceClassName="int[]"
         serializable="false"/>
     <eClassifiers xsi:type="ecore:EEnum" name="StatementType">
-      <eLiterals name="DML"/>
-      <eLiterals name="DDL" value="1"/>
-      <eLiterals name="DBL" value="2"/>
+      <eLiterals name="DataManipulationLanguage" literal="DML"/>
+      <eLiterals name="DataDefinitionLanguage" value="1" literal="DDL"/>
+      <eLiterals name="DataBindingLanguage" value="2" literal="DBL"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="definition" nsURI="http://www.abchip.org/mimo/database/definition"
@@ -523,8 +523,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="#//definition/TargetItem"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="DropRange">
-      <eLiterals name="RESTRICT"/>
-      <eLiterals name="CASCADE" value="1"/>
+      <eLiterals name="Restrict" literal="RST"/>
+      <eLiterals name="Cascade" value="1" literal="CSC"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DropStatement" eSuperTypes="#//definition/DefinitionStatement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="#//definition/DropRange"/>
@@ -553,8 +553,8 @@
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="OrderingType">
-      <eLiterals name="Ascend" value="10" literal="A"/>
-      <eLiterals name="Descend" value="20" literal="D"/>
+      <eLiterals name="Ascend" value="10" literal="ASC"/>
+      <eLiterals name="Descend" value="20" literal="DESC"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReleaseStatement" eSuperTypes="#//definition/DefinitionStatement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
@@ -574,8 +574,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SchemaDef" eSuperTypes="#//definition/DatabaseObjectDef"/>
     <eClassifiers xsi:type="ecore:EEnum" name="ShareMode">
-      <eLiterals name="SHARE"/>
-      <eLiterals name="EXCLUSIVE" value="1"/>
+      <eLiterals name="Share" literal="SHR"/>
+      <eLiterals name="Exclusive" value="1" literal="EXC"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TableDef" eSuperTypes="#//definition/DatabaseObjectDef">
       <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
@@ -600,15 +600,15 @@
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="TargetElement">
-      <eLiterals name="ALIAS"/>
-      <eLiterals name="INDEX" value="1"/>
-      <eLiterals name="VIEW" value="2"/>
-      <eLiterals name="TABLE" value="3"/>
+      <eLiterals name="Alias" literal="ALS"/>
+      <eLiterals name="Index" value="1" literal="IDX"/>
+      <eLiterals name="View" value="2" literal="VIEW"/>
+      <eLiterals name="Table" value="3" literal="TBL"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="TargetItem">
-      <eLiterals name="ALL"/>
-      <eLiterals name="CURRENT" value="1"/>
-      <eLiterals name="ALLSQL" value="2" literal="ALL SQL"/>
+      <eLiterals name="All" literal="ALL"/>
+      <eLiterals name="Current" value="1" literal="CUR"/>
+      <eLiterals name="Sql" value="2" literal="SQL"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ViewDef" eSuperTypes="#//definition/TableDef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="querySelect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

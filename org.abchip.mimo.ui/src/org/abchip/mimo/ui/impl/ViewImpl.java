@@ -63,7 +63,7 @@ public class ViewImpl extends EntityImpl implements View {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType TYPE_EDEFAULT = ViewType.TBL;
+	protected static final ViewType TYPE_EDEFAULT = ViewType.TABLE;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

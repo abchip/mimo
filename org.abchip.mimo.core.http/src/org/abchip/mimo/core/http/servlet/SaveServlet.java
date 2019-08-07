@@ -43,7 +43,7 @@ public class SaveServlet extends BaseServlet {
 		String frame = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String json = request.getParameter("json");
 
-		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JSON)) {
+		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			ObjectMapper objectMapper = new ObjectMapper();
 			Map<String, Object> map = objectMapper.readValue(json, new TypeReference<Map<String, Object>>() {
 			});

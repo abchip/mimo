@@ -103,6 +103,7 @@ public class AudioFactoryImpl extends EFactoryImpl implements AudioFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Audio createAudio() {
 		AudioImpl audio = new AudioImpl();
 		return audio;
@@ -133,6 +134,7 @@ public class AudioFactoryImpl extends EFactoryImpl implements AudioFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AudioPackage getAudioPackage() {
 		return (AudioPackage)getEPackage();
 	}

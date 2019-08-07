@@ -24,59 +24,59 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ThreadStatus implements Enumerator {
 	/**
-	 * The '<em><b>NEW</b></em>' literal object.
+	 * The '<em><b>New</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NEW_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NEW(10, "NEW", "New"),
+	NEW(10, "New", "NEW"),
 
 	/**
-	 * The '<em><b>RUN</b></em>' literal object.
+	 * The '<em><b>Runnable</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RUN_VALUE
+	 * @see #RUNNABLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RUN(20, "RUN", "Runnable"), /**
-	 * The '<em><b>BLOCK</b></em>' literal object.
+	RUNNABLE(20, "Runnable", "RUN"), /**
+	 * The '<em><b>Blocked</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BLOCK_VALUE
+	 * @see #BLOCKED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BLOCK(30, "BLOCK", "Blocked"), /**
-	 * The '<em><b>WAIT</b></em>' literal object.
+	BLOCKED(30, "Blocked", "BLC"), /**
+	 * The '<em><b>Waiting</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #WAIT_VALUE
+	 * @see #WAITING_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	WAIT(40, "WAIT", "Waiting"), /**
-	 * The '<em><b>TIME WAIT</b></em>' literal object.
+	WAITING(40, "Waiting", "WAIT"), /**
+	 * The '<em><b>Timed Waiting</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TIME_WAIT_VALUE
+	 * @see #TIMED_WAITING_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TIME_WAIT(50, "TIME_WAIT", "Timed Waiting"), /**
-	 * The '<em><b>END</b></em>' literal object.
+	TIMED_WAITING(50, "TimedWaiting", "TMW"), /**
+	 * The '<em><b>Terminated</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #END_VALUE
+	 * @see #TERMINATED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	END(60, "END", "Terminated");
+	TERMINATED(60, "Terminated", "END");
 
 	/**
-	 * The '<em><b>NEW</b></em>' literal value.
+	 * The '<em><b>New</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>New</b></em>' literal object isn't clear,
@@ -84,86 +84,86 @@ public enum ThreadStatus implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NEW
-	 * @model literal="New"
+	 * @model name="New" literal="NEW"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int NEW_VALUE = 10;
 
 	/**
-	 * The '<em><b>RUN</b></em>' literal value.
+	 * The '<em><b>Runnable</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>RUN</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Runnable</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #RUN
-	 * @model literal="Runnable"
+	 * @see #RUNNABLE
+	 * @model name="Runnable" literal="RUN"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RUN_VALUE = 20;
+	public static final int RUNNABLE_VALUE = 20;
 
 	/**
-	 * The '<em><b>BLOCK</b></em>' literal value.
+	 * The '<em><b>Blocked</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>BLOCK</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Blocked</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #BLOCK
-	 * @model literal="Blocked"
+	 * @see #BLOCKED
+	 * @model name="Blocked" literal="BLC"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BLOCK_VALUE = 30;
+	public static final int BLOCKED_VALUE = 30;
 
 	/**
-	 * The '<em><b>WAIT</b></em>' literal value.
+	 * The '<em><b>Waiting</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>WAIT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Waiting</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #WAIT
-	 * @model literal="Waiting"
+	 * @see #WAITING
+	 * @model name="Waiting" literal="WAIT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WAIT_VALUE = 40;
+	public static final int WAITING_VALUE = 40;
 
 	/**
-	 * The '<em><b>TIME WAIT</b></em>' literal value.
+	 * The '<em><b>Timed Waiting</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TIME WAIT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Timed Waiting</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TIME_WAIT
-	 * @model literal="Timed Waiting"
+	 * @see #TIMED_WAITING
+	 * @model name="TimedWaiting" literal="TMW"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TIME_WAIT_VALUE = 50;
+	public static final int TIMED_WAITING_VALUE = 50;
 
 	/**
-	 * The '<em><b>END</b></em>' literal value.
+	 * The '<em><b>Terminated</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>END</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Terminated</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #END
-	 * @model literal="Terminated"
+	 * @see #TERMINATED
+	 * @model name="Terminated" literal="END"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int END_VALUE = 60;
+	public static final int TERMINATED_VALUE = 60;
 
 	/**
 	 * An array of all the '<em><b>Thread Status</b></em>' enumerators.
@@ -174,11 +174,11 @@ public enum ThreadStatus implements Enumerator {
 	private static final ThreadStatus[] VALUES_ARRAY =
 		new ThreadStatus[] {
 			NEW,
-			RUN,
-			BLOCK,
-			WAIT,
-			TIME_WAIT,
-			END,
+			RUNNABLE,
+			BLOCKED,
+			WAITING,
+			TIMED_WAITING,
+			TERMINATED,
 		};
 
 	/**
@@ -236,11 +236,11 @@ public enum ThreadStatus implements Enumerator {
 	public static ThreadStatus get(int value) {
 		switch (value) {
 			case NEW_VALUE: return NEW;
-			case RUN_VALUE: return RUN;
-			case BLOCK_VALUE: return BLOCK;
-			case WAIT_VALUE: return WAIT;
-			case TIME_WAIT_VALUE: return TIME_WAIT;
-			case END_VALUE: return END;
+			case RUNNABLE_VALUE: return RUNNABLE;
+			case BLOCKED_VALUE: return BLOCKED;
+			case WAITING_VALUE: return WAITING;
+			case TIMED_WAITING_VALUE: return TIMED_WAITING;
+			case TERMINATED_VALUE: return TERMINATED;
 		}
 		return null;
 	}

@@ -91,7 +91,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final LanguageScope SCOPE_EDEFAULT = LanguageScope.I;
+	protected static final LanguageScope SCOPE_EDEFAULT = LanguageScope.INDIVIDUAL;
 
 	/**
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' attribute.
@@ -131,7 +131,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final LanguageType TYPE_EDEFAULT = LanguageType.L;
+	protected static final LanguageType TYPE_EDEFAULT = LanguageType.LIVING;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

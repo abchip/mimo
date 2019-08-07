@@ -27,27 +27,27 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum LockType implements Enumerator {
 	/**
-	 * The '<em><b>READ</b></em>' literal object.
+	 * The '<em><b>Read</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * @see #READ_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	READ(10, "READ", "Read"),
+	READ(10, "Read", "READ"),
 
 	/**
-	 * The '<em><b>WRITE</b></em>' literal object.
+	 * The '<em><b>Write</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * @see #WRITE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	WRITE(20, "WRITE", "Write");
+	WRITE(20, "Write", "WRT");
 
 	/**
-	 * The '<em><b>READ</b></em>' literal value.
+	 * The '<em><b>Read</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Read</b></em>' literal object isn't clear,
@@ -55,14 +55,14 @@ public enum LockType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #READ
-	 * @model literal="Read"
+	 * @model name="Read" literal="READ"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int READ_VALUE = 10;
 
 	/**
-	 * The '<em><b>WRITE</b></em>' literal value.
+	 * The '<em><b>Write</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Write</b></em>' literal object isn't clear,
@@ -70,7 +70,7 @@ public enum LockType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WRITE
-	 * @model literal="Write"
+	 * @model name="Write" literal="WRT"
 	 * @generated
 	 * @ordered
 	 */

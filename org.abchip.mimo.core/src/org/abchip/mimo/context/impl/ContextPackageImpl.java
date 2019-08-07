@@ -1496,7 +1496,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEEnum(capabilityRightEEnum, CapabilityRight.class, "CapabilityRight");
 		addEEnumLiteral(capabilityRightEEnum, CapabilityRight.READ);
 		addEEnumLiteral(capabilityRightEEnum, CapabilityRight.WRITE);
-		addEEnumLiteral(capabilityRightEEnum, CapabilityRight.EXEC);
+		addEEnumLiteral(capabilityRightEEnum, CapabilityRight.EXECUTE);
 
 		initEEnum(lockTypeEEnum, LockType.class, "LockType");
 		addEEnumLiteral(lockTypeEEnum, LockType.READ);

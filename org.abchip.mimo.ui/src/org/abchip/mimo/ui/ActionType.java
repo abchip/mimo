@@ -20,79 +20,75 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ActionType implements Enumerator {
 	/**
-	 * The '<em><b>UI</b></em>' literal object.
+	 * The '<em><b>User Interface</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #UI_VALUE
+	 * @see #USER_INTERFACE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	UI(10, "UI", "User Interface"),
-
-	/**
-	 * The '<em><b>SRV</b></em>' literal object.
+	USER_INTERFACE(10, "UserInterface", "UI"), /**
+	 * The '<em><b>Service</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SRV_VALUE
+	 * @see #SERVICE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SRV(20, "SRV", "Service"),
-
-	/**
-	 * The '<em><b>EVT</b></em>' literal object.
+	SERVICE(20, "Service", "SRV"), /**
+	 * The '<em><b>Event</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EVT_VALUE
+	 * @see #EVENT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EVT(30, "EVT", "Event");
+	EVENT(30, "Event", "EVT");
 
 	/**
-	 * The '<em><b>UI</b></em>' literal value.
+	 * The '<em><b>User Interface</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>UI</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>User Interface</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #UI
-	 * @model literal="User Interface"
+	 * @see #USER_INTERFACE
+	 * @model name="UserInterface" literal="UI"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UI_VALUE = 10;
+	public static final int USER_INTERFACE_VALUE = 10;
 
 	/**
-	 * The '<em><b>SRV</b></em>' literal value.
+	 * The '<em><b>Service</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SRV</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Service</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SRV
-	 * @model literal="Service"
+	 * @see #SERVICE
+	 * @model name="Service" literal="SRV"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SRV_VALUE = 20;
+	public static final int SERVICE_VALUE = 20;
 
 	/**
-	 * The '<em><b>EVT</b></em>' literal value.
+	 * The '<em><b>Event</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>EVT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Event</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #EVT
-	 * @model literal="Event"
+	 * @see #EVENT
+	 * @model name="Event" literal="EVT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EVT_VALUE = 30;
+	public static final int EVENT_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>Action Type</b></em>' enumerators.
@@ -102,9 +98,9 @@ public enum ActionType implements Enumerator {
 	 */
 	private static final ActionType[] VALUES_ARRAY =
 		new ActionType[] {
-			UI,
-			SRV,
-			EVT,
+			USER_INTERFACE,
+			SERVICE,
+			EVENT,
 		};
 
 	/**
@@ -161,9 +157,9 @@ public enum ActionType implements Enumerator {
 	 */
 	public static ActionType get(int value) {
 		switch (value) {
-			case UI_VALUE: return UI;
-			case SRV_VALUE: return SRV;
-			case EVT_VALUE: return EVT;
+			case USER_INTERFACE_VALUE: return USER_INTERFACE;
+			case SERVICE_VALUE: return SERVICE;
+			case EVENT_VALUE: return EVENT;
 		}
 		return null;
 	}

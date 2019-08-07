@@ -10,19 +10,19 @@
   <genPackages prefix="Language" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="language.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//LanguageScope">
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/I"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/M"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/C"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/R"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/S"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/D"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Individual"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Macrolanguage"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Collections"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Reserved"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Specials"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageScope/Dialects"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//LanguageType">
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/L"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/E"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/A"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/H"/>
-      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/C"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Living"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Extinct"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Ancient"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Historical"/>
+      <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Constructed"/>
     </genEnums>
     <genClasses ecoreClass="language.ecore#//Language">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/iso_639_1"/>
@@ -65,12 +65,12 @@
     <nestedGenPackages prefix="Grammar" basePackage="org.abchip.mimo.language" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="language.ecore#//grammar">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//grammar/Gender">
-        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Gender/M"/>
-        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Gender/F"/>
+        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Gender/Masculine"/>
+        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Gender/Feminine"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//grammar/Number">
-        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Number/S"/>
-        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Number/P"/>
+        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Number/Singular"/>
+        <genEnumLiterals ecoreEnumLiteral="language.ecore#//grammar/Number/Plural"/>
       </genEnums>
       <genClasses ecoreClass="language.ecore#//grammar/Adjective"/>
       <genClasses ecoreClass="language.ecore#//grammar/Dialog"/>

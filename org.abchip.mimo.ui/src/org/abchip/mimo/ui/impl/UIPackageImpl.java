@@ -501,14 +501,14 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(actionTypeEEnum, ActionType.class, "ActionType");
-		addEEnumLiteral(actionTypeEEnum, ActionType.UI);
-		addEEnumLiteral(actionTypeEEnum, ActionType.SRV);
-		addEEnumLiteral(actionTypeEEnum, ActionType.EVT);
+		addEEnumLiteral(actionTypeEEnum, ActionType.USER_INTERFACE);
+		addEEnumLiteral(actionTypeEEnum, ActionType.SERVICE);
+		addEEnumLiteral(actionTypeEEnum, ActionType.EVENT);
 
 		initEEnum(viewTypeEEnum, ViewType.class, "ViewType");
-		addEEnumLiteral(viewTypeEEnum, ViewType.TBL);
-		addEEnumLiteral(viewTypeEEnum, ViewType.BRW);
-		addEEnumLiteral(viewTypeEEnum, ViewType.DSH);
+		addEEnumLiteral(viewTypeEEnum, ViewType.TABLE);
+		addEEnumLiteral(viewTypeEEnum, ViewType.BROWSE);
+		addEEnumLiteral(viewTypeEEnum, ViewType.DASHBOARD);
 
 		// Create resource
 		createResource(eNS_URI);

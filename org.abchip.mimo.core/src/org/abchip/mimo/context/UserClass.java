@@ -24,17 +24,17 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum UserClass implements Enumerator {
 	/**
-	 * The '<em><b>USER</b></em>' literal object.
+	 * The '<em><b>User</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #USER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	USER(10, "USER", "User");
+	USER(10, "User", "USR");
 
 	/**
-	 * The '<em><b>USER</b></em>' literal value.
+	 * The '<em><b>User</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>User</b></em>' literal object isn't clear,
@@ -42,7 +42,7 @@ public enum UserClass implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #USER
-	 * @model literal="User"
+	 * @model name="User" literal="USR"
 	 * @generated
 	 * @ordered
 	 */

@@ -144,6 +144,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getClassification() {
 		return classificationEClass;
 	}
@@ -153,6 +154,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getClassification_Score() {
 		return (EAttribute)classificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -162,6 +164,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getClassification_Entity() {
 		return (EReference)classificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -171,6 +174,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getClassifier() {
 		return classifierEClass;
 	}
@@ -180,6 +184,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getClassifierRegistry() {
 		return classifierRegistryEClass;
 	}
@@ -189,6 +194,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEvaluator() {
 		return evaluatorEClass;
 	}
@@ -198,6 +204,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ClassificationFactory getClassificationFactory() {
 		return (ClassificationFactory)getEFactoryInstance();
 	}

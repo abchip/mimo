@@ -70,8 +70,8 @@ public class TestTwitter {
 		if(true)
 			return;
 		
-		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CTX);
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CTX);
+		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
 		
 		Tweet t = tweetReader.lookup("939830847619944449");
 
@@ -141,14 +141,14 @@ public class TestTwitter {
 	private void testConfusionMatrix() {
 				
 		List<Language> languages = new ArrayList<Language>();
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CTX);
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
 		for(Language language: languageReader.find(null))
 			languages.add(language);
 		
 		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);
 		Evaluator evaluator = classifier.buildEvaluator(Language.class, String.class);
 
-		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CTX);		
+		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);		
 		for (Tweet tweet : tweetReader.find(null)) {
 			
 			Language language = lookupLanguageByIso(languages, tweet.getLanguage());

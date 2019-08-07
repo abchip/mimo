@@ -11,7 +11,7 @@ public class EMFEntityEnumAdapter extends EntityEnumImpl {
 	private static final long serialVersionUID = 1L;
 
 	public EMFEntityEnumAdapter(EEnumLiteral eEnumLiteral) {
-		this.name = eEnumLiteral.getName();
-		this.text = eEnumLiteral.getLiteral();
+		this.name = eEnumLiteral.getLiteral();
+		this.text = eEnumLiteral.getName();		
 	}
 }

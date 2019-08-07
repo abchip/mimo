@@ -24,54 +24,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum SerializationType implements Enumerator {
 	/**
-	 * The '<em><b>XMI</b></em>' literal object.
+	 * The '<em><b>XML Metadata Interchange</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #XMI_VALUE
+	 * @see #XML_METADATA_INTERCHANGE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	XMI(10, "XMI", "XML Metadata Interchange"),
-
-	/**
-	 * The '<em><b>JSON</b></em>' literal object.
+	XML_METADATA_INTERCHANGE(10, "XML_Metadata_Interchange", "XMI"), /**
+	 * The '<em><b>Java Script Object Notation</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #JSON_VALUE
+	 * @see #JAVA_SCRIPT_OBJECT_NOTATION_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	JSON(20, "JSON", "JavaScript Object Notation");
+	JAVA_SCRIPT_OBJECT_NOTATION(20, "JavaScript_Object_Notation", "JSON");
 
 	/**
-	 * The '<em><b>XMI</b></em>' literal value.
+	 * The '<em><b>XML Metadata Interchange</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>XMI</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>XML Metadata Interchange</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #XMI
-	 * @model literal="XML Metadata Interchange"
+	 * @see #XML_METADATA_INTERCHANGE
+	 * @model name="XML_Metadata_Interchange" literal="XMI"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int XMI_VALUE = 10;
+	public static final int XML_METADATA_INTERCHANGE_VALUE = 10;
 
 	/**
-	 * The '<em><b>JSON</b></em>' literal value.
+	 * The '<em><b>Java Script Object Notation</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>JSON</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Java Script Object Notation</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #JSON
-	 * @model literal="JavaScript Object Notation"
+	 * @see #JAVA_SCRIPT_OBJECT_NOTATION
+	 * @model name="JavaScript_Object_Notation" literal="JSON"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int JSON_VALUE = 20;
+	public static final int JAVA_SCRIPT_OBJECT_NOTATION_VALUE = 20;
 
 	/**
 	 * An array of all the '<em><b>Serialization Type</b></em>' enumerators.
@@ -81,8 +79,8 @@ public enum SerializationType implements Enumerator {
 	 */
 	private static final SerializationType[] VALUES_ARRAY =
 		new SerializationType[] {
-			XMI,
-			JSON,
+			XML_METADATA_INTERCHANGE,
+			JAVA_SCRIPT_OBJECT_NOTATION,
 		};
 
 	/**
@@ -139,8 +137,8 @@ public enum SerializationType implements Enumerator {
 	 */
 	public static SerializationType get(int value) {
 		switch (value) {
-			case XMI_VALUE: return XMI;
-			case JSON_VALUE: return JSON;
+			case XML_METADATA_INTERCHANGE_VALUE: return XML_METADATA_INTERCHANGE;
+			case JAVA_SCRIPT_OBJECT_NOTATION_VALUE: return JAVA_SCRIPT_OBJECT_NOTATION;
 		}
 		return null;
 	}

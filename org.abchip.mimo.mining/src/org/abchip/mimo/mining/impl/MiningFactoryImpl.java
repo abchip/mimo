@@ -71,6 +71,7 @@ public class MiningFactoryImpl extends EFactoryImpl implements MiningFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MiningPackage getMiningPackage() {
 		return (MiningPackage)getEPackage();
 	}

@@ -26,144 +26,144 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ResourceEventType implements Enumerator {
 	/**
-	 * The '<em><b>PRESAVE</b></em>' literal object.
+	 * The '<em><b>Before Save</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PRESAVE_VALUE
+	 * @see #BEFORE_SAVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PRESAVE(10, "PRESAVE", "Pre Save"), /**
-	 * The '<em><b>POSTSAVE</b></em>' literal object.
+	BEFORE_SAVE(10, "Before_Save", "PRESAVE"), /**
+	 * The '<em><b>After Save</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #POSTSAVE_VALUE
+	 * @see #AFTER_SAVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	POSTSAVE(20, "POSTSAVE", "Post Save"), /**
-	 * The '<em><b>PREDLT</b></em>' literal object.
+	AFTER_SAVE(20, "After_Save", "POSTSAVE"), /**
+	 * The '<em><b>Before Delete</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PREDLT_VALUE
+	 * @see #BEFORE_DELETE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PREDLT(60, "PREDLT", "Pre Delete"), /**
-	 * The '<em><b>POSTDLT</b></em>' literal object.
+	BEFORE_DELETE(60, "Before_Delete", "PREDLT"), /**
+	 * The '<em><b>After Delete</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #POSTDLT_VALUE
+	 * @see #AFTER_DELETE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	POSTDLT(70, "POSTDLT", "Post Delete"), /**
-	 * The '<em><b>PRERNM</b></em>' literal object.
+	AFTER_DELETE(70, "After_Delete", "POSTDLT"), /**
+	 * The '<em><b>Before Rename</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PRERNM_VALUE
+	 * @see #BEFORE_RENAME_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PRERNM(80, "PRERNM", "Pre Rename"), /**
-	 * The '<em><b>POSTRNM</b></em>' literal object.
+	BEFORE_RENAME(80, "Before_Rename", "PRERNM"), /**
+	 * The '<em><b>After Rename</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #POSTRNM_VALUE
+	 * @see #AFTER_RENAME_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	POSTRNM(90, "POSTRNM", "Post Rename");
+	AFTER_RENAME(90, "After_Rename", "POSTRNM");
 
 	/**
-	 * The '<em><b>PRESAVE</b></em>' literal value.
+	 * The '<em><b>Before Save</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>PRESAVE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Before Save</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PRESAVE
-	 * @model literal="Pre Save"
+	 * @see #BEFORE_SAVE
+	 * @model name="Before_Save" literal="PRESAVE"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRESAVE_VALUE = 10;
+	public static final int BEFORE_SAVE_VALUE = 10;
 
 	/**
-	 * The '<em><b>POSTSAVE</b></em>' literal value.
+	 * The '<em><b>After Save</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>POSTSAVE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>After Save</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #POSTSAVE
-	 * @model literal="Post Save"
+	 * @see #AFTER_SAVE
+	 * @model name="After_Save" literal="POSTSAVE"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POSTSAVE_VALUE = 20;
+	public static final int AFTER_SAVE_VALUE = 20;
 
 	/**
-	 * The '<em><b>PREDLT</b></em>' literal value.
+	 * The '<em><b>Before Delete</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>PREDLT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Before Delete</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PREDLT
-	 * @model literal="Pre Delete"
+	 * @see #BEFORE_DELETE
+	 * @model name="Before_Delete" literal="PREDLT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PREDLT_VALUE = 60;
+	public static final int BEFORE_DELETE_VALUE = 60;
 
 	/**
-	 * The '<em><b>POSTDLT</b></em>' literal value.
+	 * The '<em><b>After Delete</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>POSTDLT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>After Delete</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #POSTDLT
-	 * @model literal="Post Delete"
+	 * @see #AFTER_DELETE
+	 * @model name="After_Delete" literal="POSTDLT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POSTDLT_VALUE = 70;
+	public static final int AFTER_DELETE_VALUE = 70;
 
 	/**
-	 * The '<em><b>PRERNM</b></em>' literal value.
+	 * The '<em><b>Before Rename</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>PRERNM</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Before Rename</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PRERNM
-	 * @model literal="Pre Rename"
+	 * @see #BEFORE_RENAME
+	 * @model name="Before_Rename" literal="PRERNM"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRERNM_VALUE = 80;
+	public static final int BEFORE_RENAME_VALUE = 80;
 
 	/**
-	 * The '<em><b>POSTRNM</b></em>' literal value.
+	 * The '<em><b>After Rename</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>POSTRNM</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>After Rename</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #POSTRNM
-	 * @model literal="Post Rename"
+	 * @see #AFTER_RENAME
+	 * @model name="After_Rename" literal="POSTRNM"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POSTRNM_VALUE = 90;
+	public static final int AFTER_RENAME_VALUE = 90;
 
 	/**
 	 * An array of all the '<em><b>Resource Event Type</b></em>' enumerators.
@@ -171,12 +171,12 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 */
 	private static final ResourceEventType[] VALUES_ARRAY = new ResourceEventType[] {
-			PRESAVE,
-			POSTSAVE,
-			PREDLT,
-			POSTDLT,
-			PRERNM,
-			POSTRNM,
+			BEFORE_SAVE,
+			AFTER_SAVE,
+			BEFORE_DELETE,
+			AFTER_DELETE,
+			BEFORE_RENAME,
+			AFTER_RENAME,
 		};
 
 	/**
@@ -229,12 +229,12 @@ public enum ResourceEventType implements Enumerator {
 	 */
 	public static ResourceEventType get(int value) {
 		switch (value) {
-			case PRESAVE_VALUE: return PRESAVE;
-			case POSTSAVE_VALUE: return POSTSAVE;
-			case PREDLT_VALUE: return PREDLT;
-			case POSTDLT_VALUE: return POSTDLT;
-			case PRERNM_VALUE: return PRERNM;
-			case POSTRNM_VALUE: return POSTRNM;
+			case BEFORE_SAVE_VALUE: return BEFORE_SAVE;
+			case AFTER_SAVE_VALUE: return AFTER_SAVE;
+			case BEFORE_DELETE_VALUE: return BEFORE_DELETE;
+			case AFTER_DELETE_VALUE: return AFTER_DELETE;
+			case BEFORE_RENAME_VALUE: return BEFORE_RENAME;
+			case AFTER_RENAME_VALUE: return AFTER_RENAME;
 		}
 		return null;
 	}

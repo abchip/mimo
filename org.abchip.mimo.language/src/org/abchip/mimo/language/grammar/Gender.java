@@ -24,52 +24,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Gender implements Enumerator {
 	/**
-	 * The '<em><b>M</b></em>' literal object.
+	 * The '<em><b>Masculine</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #M_VALUE
+	 * @see #MASCULINE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	M(10, "M", "Masculine"), /**
-	 * The '<em><b>F</b></em>' literal object.
+	MASCULINE(10, "Masculine", "M"), /**
+	 * The '<em><b>Feminine</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #F_VALUE
+	 * @see #FEMININE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	F(20, "F", "Feminine");
+	FEMININE(20, "Feminine", "F");
 
 	/**
-	 * The '<em><b>M</b></em>' literal value.
+	 * The '<em><b>Masculine</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>M</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Masculine</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #M
-	 * @model literal="Masculine"
+	 * @see #MASCULINE
+	 * @model name="Masculine" literal="M"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int M_VALUE = 10;
+	public static final int MASCULINE_VALUE = 10;
 
 	/**
-	 * The '<em><b>F</b></em>' literal value.
+	 * The '<em><b>Feminine</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>F</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Feminine</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #F
-	 * @model literal="Feminine"
+	 * @see #FEMININE
+	 * @model name="Feminine" literal="F"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int F_VALUE = 20;
+	public static final int FEMININE_VALUE = 20;
 
 	/**
 	 * An array of all the '<em><b>Gender</b></em>' enumerators.
@@ -79,8 +79,8 @@ public enum Gender implements Enumerator {
 	 */
 	private static final Gender[] VALUES_ARRAY =
 		new Gender[] {
-			M,
-			F,
+			MASCULINE,
+			FEMININE,
 		};
 
 	/**
@@ -137,8 +137,8 @@ public enum Gender implements Enumerator {
 	 */
 	public static Gender get(int value) {
 		switch (value) {
-			case M_VALUE: return M;
-			case F_VALUE: return F;
+			case MASCULINE_VALUE: return MASCULINE;
+			case FEMININE_VALUE: return FEMININE;
 		}
 		return null;
 	}

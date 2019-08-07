@@ -32,79 +32,75 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum StatementType implements Enumerator {
 	/**
-	 * The '<em><b>DML</b></em>' literal object.
+	 * The '<em><b>Data Manipulation Language</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DML_VALUE
+	 * @see #DATA_MANIPULATION_LANGUAGE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DML(0, "DML", "DML"),
-
-	/**
-	 * The '<em><b>DDL</b></em>' literal object.
+	DATA_MANIPULATION_LANGUAGE(0, "DataManipulationLanguage", "DML"), /**
+	 * The '<em><b>Data Definition Language</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DDL_VALUE
+	 * @see #DATA_DEFINITION_LANGUAGE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DDL(1, "DDL", "DDL"),
-
-	/**
-	 * The '<em><b>DBL</b></em>' literal object.
+	DATA_DEFINITION_LANGUAGE(1, "DataDefinitionLanguage", "DDL"), /**
+	 * The '<em><b>Data Binding Language</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DBL_VALUE
+	 * @see #DATA_BINDING_LANGUAGE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DBL(2, "DBL", "DBL");
+	DATA_BINDING_LANGUAGE(2, "DataBindingLanguage", "DBL");
 
 	/**
-	 * The '<em><b>DML</b></em>' literal value.
+	 * The '<em><b>Data Manipulation Language</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>DML</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Data Manipulation Language</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DML
-	 * @model
+	 * @see #DATA_MANIPULATION_LANGUAGE
+	 * @model name="DataManipulationLanguage" literal="DML"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DML_VALUE = 0;
+	public static final int DATA_MANIPULATION_LANGUAGE_VALUE = 0;
 
 	/**
-	 * The '<em><b>DDL</b></em>' literal value.
+	 * The '<em><b>Data Definition Language</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>DDL</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Data Definition Language</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DDL
-	 * @model
+	 * @see #DATA_DEFINITION_LANGUAGE
+	 * @model name="DataDefinitionLanguage" literal="DDL"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DDL_VALUE = 1;
+	public static final int DATA_DEFINITION_LANGUAGE_VALUE = 1;
 
 	/**
-	 * The '<em><b>DBL</b></em>' literal value.
+	 * The '<em><b>Data Binding Language</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>DBL</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Data Binding Language</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DBL
-	 * @model
+	 * @see #DATA_BINDING_LANGUAGE
+	 * @model name="DataBindingLanguage" literal="DBL"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DBL_VALUE = 2;
+	public static final int DATA_BINDING_LANGUAGE_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Statement Type</b></em>' enumerators.
@@ -113,9 +109,9 @@ public enum StatementType implements Enumerator {
 	 * @generated
 	 */
 	private static final StatementType[] VALUES_ARRAY = new StatementType[] {
-			DML,
-			DDL,
-			DBL,
+			DATA_MANIPULATION_LANGUAGE,
+			DATA_DEFINITION_LANGUAGE,
+			DATA_BINDING_LANGUAGE,
 		};
 
 	/**
@@ -172,9 +168,9 @@ public enum StatementType implements Enumerator {
 	 */
 	public static StatementType get(int value) {
 		switch (value) {
-			case DML_VALUE: return DML;
-			case DDL_VALUE: return DDL;
-			case DBL_VALUE: return DBL;
+			case DATA_MANIPULATION_LANGUAGE_VALUE: return DATA_MANIPULATION_LANGUAGE;
+			case DATA_DEFINITION_LANGUAGE_VALUE: return DATA_DEFINITION_LANGUAGE;
+			case DATA_BINDING_LANGUAGE_VALUE: return DATA_BINDING_LANGUAGE;
 		}
 		return null;
 	}

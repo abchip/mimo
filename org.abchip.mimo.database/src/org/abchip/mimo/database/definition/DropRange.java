@@ -33,27 +33,27 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum DropRange implements Enumerator {
 	/**
-	 * The '<em><b>RESTRICT</b></em>' literal object.
+	 * The '<em><b>Restrict</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #RESTRICT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RESTRICT(0, "RESTRICT", "RESTRICT"),
+	RESTRICT(0, "Restrict", "RST"),
 
 	/**
-	 * The '<em><b>CASCADE</b></em>' literal object.
+	 * The '<em><b>Cascade</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #CASCADE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CASCADE(1, "CASCADE", "CASCADE");
+	CASCADE(1, "Cascade", "CSC");
 
 	/**
-	 * The '<em><b>RESTRICT</b></em>' literal value.
+	 * The '<em><b>Restrict</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>RESTRICT</b></em>' literal object isn't clear,
@@ -61,14 +61,14 @@ public enum DropRange implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RESTRICT
-	 * @model
+	 * @model name="Restrict" literal="RST"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int RESTRICT_VALUE = 0;
 
 	/**
-	 * The '<em><b>CASCADE</b></em>' literal value.
+	 * The '<em><b>Cascade</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>CASCADE</b></em>' literal object isn't clear,
@@ -76,7 +76,7 @@ public enum DropRange implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CASCADE
-	 * @model
+	 * @model name="Cascade" literal="CSC"
 	 * @generated
 	 * @ordered
 	 */

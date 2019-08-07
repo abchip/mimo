@@ -35,7 +35,7 @@ public enum DateFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ISO(5, "ISO", "*ISO"),
+	ISO(5, "ISO", "ISO"),
 
 	/**
 	 * The '<em><b>MDY</b></em>' literal object.
@@ -45,7 +45,7 @@ public enum DateFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MDY(10, "MDY", "*MDY"),
+	MDY(10, "MDY", "MDY"),
 
 	/**
 	 * The '<em><b>DMY</b></em>' literal object.
@@ -55,7 +55,7 @@ public enum DateFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DMY(20, "DMY", "*DMY"),
+	DMY(20, "DMY", "DMY"),
 
 	/**
 	 * The '<em><b>YMD</b></em>' literal object.
@@ -65,7 +65,7 @@ public enum DateFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	YMD(30, "YMD", "*YMD"),
+	YMD(30, "YMD", "YMD"),
 
 	/**
 	 * The '<em><b>YYMD</b></em>' literal object.
@@ -75,7 +75,7 @@ public enum DateFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	YYMD(31, "YYMD", "*YYMD"),
+	YYMD(31, "YYMD", "YYMD"),
 
 	/**
 	 * The '<em><b>JUL</b></em>' literal object.
@@ -85,7 +85,7 @@ public enum DateFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	JUL(40, "JUL", "*JUL"),
+	JUL(40, "JUL", "JUL"),
 
 	/**
 	 * The '<em><b>USA</b></em>' literal object.
@@ -95,7 +95,7 @@ public enum DateFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USA(60, "USA", "*USA"),
+	USA(60, "USA", "USA"),
 
 	/**
 	 * The '<em><b>EUR</b></em>' literal object.
@@ -105,27 +105,7 @@ public enum DateFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EUR(70, "EUR", "*EUR"),
-
-	/**
-	 * The '<em><b>JIS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JIS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	JIS(80, "JIS", "*JIS"),
-
-	/**
-	 * The '<em><b>JOBRUN</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JOBRUN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	JOBRUN(90, "JOBRUN", "*JOBRUN");
+	EUR(70, "EUR", "EUR");
 
 	/**
 	 * The '<em><b>ISO</b></em>' literal value.
@@ -136,7 +116,7 @@ public enum DateFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ISO
-	 * @model literal="*ISO"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -151,7 +131,7 @@ public enum DateFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MDY
-	 * @model literal="*MDY"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -166,7 +146,7 @@ public enum DateFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DMY
-	 * @model literal="*DMY"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +161,7 @@ public enum DateFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YMD
-	 * @model literal="*YMD"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -196,7 +176,7 @@ public enum DateFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YYMD
-	 * @model literal="*YYMD"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -211,7 +191,7 @@ public enum DateFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #JUL
-	 * @model literal="*JUL"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -226,7 +206,7 @@ public enum DateFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #USA
-	 * @model literal="*USA"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -241,41 +221,11 @@ public enum DateFormat implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EUR
-	 * @model literal="*EUR"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
 	public static final int EUR_VALUE = 70;
-
-	/**
-	 * The '<em><b>JIS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>JIS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #JIS
-	 * @model literal="*JIS"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int JIS_VALUE = 80;
-
-	/**
-	 * The '<em><b>JOBRUN</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>JOBRUN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #JOBRUN
-	 * @model literal="*JOBRUN"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int JOBRUN_VALUE = 90;
 
 	/**
 	 * An array of all the '<em><b>Date Format</b></em>' enumerators.
@@ -293,8 +243,6 @@ public enum DateFormat implements Enumerator {
 			JUL,
 			USA,
 			EUR,
-			JIS,
-			JOBRUN,
 		};
 
 	/**
@@ -359,8 +307,6 @@ public enum DateFormat implements Enumerator {
 			case JUL_VALUE: return JUL;
 			case USA_VALUE: return USA;
 			case EUR_VALUE: return EUR;
-			case JIS_VALUE: return JIS;
-			case JOBRUN_VALUE: return JOBRUN;
 		}
 		return null;
 	}

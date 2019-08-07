@@ -123,6 +123,7 @@ public class AudioImpl extends EntityNameableImpl implements Audio {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public byte[] getContent() {
 		return content;
 	}
@@ -132,6 +133,7 @@ public class AudioImpl extends EntityNameableImpl implements Audio {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContent(byte[] newContent) {
 		byte[] oldContent = content;
 		content = newContent;
@@ -144,6 +146,7 @@ public class AudioImpl extends EntityNameableImpl implements Audio {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -153,6 +156,7 @@ public class AudioImpl extends EntityNameableImpl implements Audio {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -165,6 +169,7 @@ public class AudioImpl extends EntityNameableImpl implements Audio {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -174,6 +179,7 @@ public class AudioImpl extends EntityNameableImpl implements Audio {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
@@ -268,7 +274,7 @@ public class AudioImpl extends EntityNameableImpl implements Audio {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (content: ");
 		result.append(content);
 		result.append(", name: ");

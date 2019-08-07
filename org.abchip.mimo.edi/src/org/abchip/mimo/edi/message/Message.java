@@ -124,12 +124,12 @@ public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Body</em>' attribute.
-	 * @see #setBody(byte[])
+	 * @see #setBody(String)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Body()
 	 * @model required="true"
 	 * @generated
 	 */
-	byte[] getBody();
+	String getBody();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}' attribute.
@@ -139,7 +139,7 @@ public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	 * @see #getBody()
 	 * @generated
 	 */
-	void setBody(byte[] value);
+	void setBody(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Event</b></em>' attribute.

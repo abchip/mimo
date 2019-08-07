@@ -50,7 +50,7 @@ public class ResourceHelper {
 
 			@Override
 			public ResourceEventType getEventType() {
-				return ResourceEventType.PREDLT;
+				return ResourceEventType.BEFORE_DELETE;
 			}
 
 			@Override
@@ -89,7 +89,7 @@ public class ResourceHelper {
 
 			@Override
 			public ResourceEventType getEventType() {
-				return ResourceEventType.POSTDLT;
+				return ResourceEventType.AFTER_DELETE;
 			}
 
 			@Override
@@ -128,7 +128,7 @@ public class ResourceHelper {
 
 			@Override
 			public ResourceEventType getEventType() {
-				return ResourceEventType.PRERNM;
+				return ResourceEventType.BEFORE_RENAME;
 			}
 
 			@Override
@@ -167,7 +167,7 @@ public class ResourceHelper {
 
 			@Override
 			public ResourceEventType getEventType() {
-				return ResourceEventType.POSTRNM;
+				return ResourceEventType.AFTER_RENAME;
 			}
 
 			@Override
@@ -207,7 +207,7 @@ public class ResourceHelper {
 
 			@Override
 			public ResourceEventType getEventType() {
-				return ResourceEventType.PRESAVE;
+				return ResourceEventType.BEFORE_SAVE;
 			}
 
 			@Override
@@ -247,7 +247,7 @@ public class ResourceHelper {
 
 			@Override
 			public ResourceEventType getEventType() {
-				return ResourceEventType.POSTSAVE;
+				return ResourceEventType.AFTER_SAVE;
 			}
 
 			@Override

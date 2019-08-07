@@ -47,9 +47,9 @@ public class LookupServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JSON)) {
+		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 
-			E entity = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CTX).lookup(name);
+			E entity = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CONTEXT).lookup(name);
 			if (entity != null)
 				resourceSerializer.add(entity);
 

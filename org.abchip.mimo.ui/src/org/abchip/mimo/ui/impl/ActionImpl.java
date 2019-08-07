@@ -63,7 +63,7 @@ public class ActionImpl extends EntityImpl implements Action {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActionType TYPE_EDEFAULT = ActionType.UI;
+	protected static final ActionType TYPE_EDEFAULT = ActionType.USER_INTERFACE;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

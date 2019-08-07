@@ -77,7 +77,7 @@ public class LoginServlet extends HttpServlet {
 
 			String entityName = "OAuth2" + provider;
 
-			EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CTX);
+			EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CONTEXT);
 
 			EntityNameable oauth2Entity = oauth2Reader.find(null).next();
 
@@ -146,7 +146,7 @@ public class LoginServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JSON)) {
+		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			serializer.add(contextProvider.getContext().getContextDescription());
 			serializer.save(response.getOutputStream());
 		}

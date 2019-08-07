@@ -101,7 +101,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link AudioPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -115,7 +115,8 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 		if (isInited) return (AudioPackage)EPackage.Registry.INSTANCE.getEPackage(AudioPackage.eNS_URI);
 
 		// Obtain or create and register package
-		AudioPackageImpl theAudioPackage = (AudioPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AudioPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AudioPackageImpl());
+		Object registeredAudioPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		AudioPackageImpl theAudioPackage = registeredAudioPackage instanceof AudioPackageImpl ? (AudioPackageImpl)registeredAudioPackage : new AudioPackageImpl();
 
 		isInited = true;
 
@@ -131,7 +132,6 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 		// Mark meta-data to indicate it can't be changed
 		theAudioPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(AudioPackage.eNS_URI, theAudioPackage);
 		return theAudioPackage;
@@ -142,6 +142,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAudio() {
 		return audioEClass;
 	}
@@ -151,6 +152,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAudio_Content() {
 		return (EAttribute)audioEClass.getEStructuralFeatures().get(0);
 	}
@@ -160,6 +162,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAudio_Name() {
 		return (EAttribute)audioEClass.getEStructuralFeatures().get(1);
 	}
@@ -169,6 +172,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAudio_Text() {
 		return (EAttribute)audioEClass.getEStructuralFeatures().get(2);
 	}
@@ -178,6 +182,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAudioManager() {
 		return audioManagerEClass;
 	}
@@ -187,6 +192,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAudioRecorder() {
 		return audioRecorderEClass;
 	}
@@ -196,6 +202,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAudioPlayer() {
 		return audioPlayerEClass;
 	}
@@ -205,6 +212,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getAudioStyle() {
 		return audioStyleEEnum;
 	}
@@ -214,6 +222,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AudioFactory getAudioFactory() {
 		return (AudioFactory)getEFactoryInstance();
 	}

@@ -10,14 +10,14 @@
   <genPackages prefix="UI" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="ui.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ui.ecore#//ActionType">
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/UI"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/SRV"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/EVT"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/UserInterface"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/Service"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/Event"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ui.ecore#//ViewType">
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/TBL"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/BRW"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/DSH"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Table"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Browse"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Dashboard"/>
     </genEnums>
     <genClasses ecoreClass="ui.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/command"/>

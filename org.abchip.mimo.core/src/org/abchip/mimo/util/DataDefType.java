@@ -35,7 +35,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ADAPTER(10, "Adapter", "ADAPTER"),
+	ADAPTER(10, "Adapter", "ADP"),
 
 	/**
 	 * The '<em><b>Array</b></em>' literal object.
@@ -45,7 +45,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ARRAY(20, "Array", "ARRAY"),
+	ARRAY(20, "Array", "ARR"),
 
 	/**
 	 * The '<em><b>Binary</b></em>' literal object.
@@ -55,7 +55,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BINARY(30, "Binary", "BINARY"),
+	BINARY(30, "Binary", "BIN"),
 
 	/**
 	 * The '<em><b>Buffer</b></em>' literal object.
@@ -65,7 +65,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BUFFER(40, "Buffer", "BUFFER"),
+	BUFFER(40, "Buffer", "BUF"),
 
 	/**
 	 * The '<em><b>Character</b></em>' literal object.
@@ -75,7 +75,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CHARACTER(50, "Character", "CHAR"),
+	CHARACTER(50, "Character", "CHR"),
 
 	/**
 	 * The '<em><b>Data Struct</b></em>' literal object.
@@ -85,7 +85,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DATA_STRUCT(60, "DataStruct", "DATASTRUCT"),
+	DATA_STRUCT(60, "DataStruct", "DS"),
 
 	/**
 	 * The '<em><b>Datetime</b></em>' literal object.
@@ -95,7 +95,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DATETIME(70, "Datetime", "DATETIME"),
+	DATETIME(70, "Datetime", "DTT"),
 
 	/**
 	 * The '<em><b>Decimal</b></em>' literal object.
@@ -105,7 +105,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DECIMAL(80, "Decimal", "DECIMAL"),
+	DECIMAL(80, "Decimal", "DEC"),
 
 	/**
 	 * The '<em><b>Floating</b></em>' literal object.
@@ -115,7 +115,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FLOATING(90, "Floating", "FLOAT"),
+	FLOATING(90, "Floating", "FLT"),
 
 	/**
 	 * The '<em><b>Hexadecimal</b></em>' literal object.
@@ -155,7 +155,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LIST(120, "List", "LIST"),
+	LIST(120, "List", "LST"),
 
 	/**
 	 * The '<em><b>Pointer</b></em>' literal object.
@@ -165,7 +165,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POINTER(140, "Pointer", "POINTER"),
+	POINTER(140, "Pointer", "PNT"),
 
 	/**
 	 * The '<em><b>Scroller</b></em>' literal object.
@@ -175,7 +175,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SCROLLER(150, "Scroller", "SCROLLER"),
+	SCROLLER(150, "Scroller", "SCR"),
 
 	/**
 	 * The '<em><b>String</b></em>' literal object.
@@ -185,7 +185,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STRING(160, "String", "STRING"),
+	STRING(160, "String", "STR"),
 
 	/**
 	 * The '<em><b>Stroller</b></em>' literal object.
@@ -195,7 +195,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STROLLER(170, "Stroller", "STROLLER"),
+	STROLLER(170, "Stroller", "STL"),
 
 	/**
 	 * The '<em><b>Struct</b></em>' literal object.
@@ -205,7 +205,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STRUCT(180, "Struct", "STRUCT"),
+	STRUCT(180, "Struct", "STC"),
 
 	/**
 	 * The '<em><b>Wrapper</b></em>' literal object.
@@ -215,7 +215,7 @@ public enum DataDefType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WRAPPER(190, "Wrapper", "WRAPPER");
+	WRAPPER(190, "Wrapper", "WRP");
 
 	/**
 	 * The '<em><b>Adapter</b></em>' literal value.
@@ -226,7 +226,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ADAPTER
-	 * @model name="Adapter" literal="ADAPTER"
+	 * @model name="Adapter" literal="ADP"
 	 * @generated
 	 * @ordered
 	 */
@@ -241,7 +241,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ARRAY
-	 * @model name="Array" literal="ARRAY"
+	 * @model name="Array" literal="ARR"
 	 * @generated
 	 * @ordered
 	 */
@@ -256,7 +256,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BINARY
-	 * @model name="Binary" literal="BINARY"
+	 * @model name="Binary" literal="BIN"
 	 * @generated
 	 * @ordered
 	 */
@@ -271,7 +271,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BUFFER
-	 * @model name="Buffer" literal="BUFFER"
+	 * @model name="Buffer" literal="BUF"
 	 * @generated
 	 * @ordered
 	 */
@@ -286,7 +286,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHARACTER
-	 * @model name="Character" literal="CHAR"
+	 * @model name="Character" literal="CHR"
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DATA_STRUCT
-	 * @model name="DataStruct" literal="DATASTRUCT"
+	 * @model name="DataStruct" literal="DS"
 	 * @generated
 	 * @ordered
 	 */
@@ -316,7 +316,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DATETIME
-	 * @model name="Datetime" literal="DATETIME"
+	 * @model name="Datetime" literal="DTT"
 	 * @generated
 	 * @ordered
 	 */
@@ -331,7 +331,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DECIMAL
-	 * @model name="Decimal" literal="DECIMAL"
+	 * @model name="Decimal" literal="DEC"
 	 * @generated
 	 * @ordered
 	 */
@@ -346,7 +346,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FLOATING
-	 * @model name="Floating" literal="FLOAT"
+	 * @model name="Floating" literal="FLT"
 	 * @generated
 	 * @ordered
 	 */
@@ -406,7 +406,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LIST
-	 * @model name="List" literal="LIST"
+	 * @model name="List" literal="LST"
 	 * @generated
 	 * @ordered
 	 */
@@ -421,7 +421,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #POINTER
-	 * @model name="Pointer" literal="POINTER"
+	 * @model name="Pointer" literal="PNT"
 	 * @generated
 	 * @ordered
 	 */
@@ -436,7 +436,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SCROLLER
-	 * @model name="Scroller" literal="SCROLLER"
+	 * @model name="Scroller" literal="SCR"
 	 * @generated
 	 * @ordered
 	 */
@@ -451,7 +451,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #STRING
-	 * @model name="String" literal="STRING"
+	 * @model name="String" literal="STR"
 	 * @generated
 	 * @ordered
 	 */
@@ -466,7 +466,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #STROLLER
-	 * @model name="Stroller" literal="STROLLER"
+	 * @model name="Stroller" literal="STL"
 	 * @generated
 	 * @ordered
 	 */
@@ -481,7 +481,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #STRUCT
-	 * @model name="Struct" literal="STRUCT"
+	 * @model name="Struct" literal="STC"
 	 * @generated
 	 * @ordered
 	 */
@@ -496,7 +496,7 @@ public enum DataDefType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WRAPPER
-	 * @model name="Wrapper" literal="WRAPPER"
+	 * @model name="Wrapper" literal="WRP"
 	 * @generated
 	 * @ordered
 	 */

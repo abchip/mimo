@@ -2010,26 +2010,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(resourceEventTypeEEnum, ResourceEventType.class, "ResourceEventType");
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PRESAVE);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POSTSAVE);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PREDLT);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POSTDLT);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.PRERNM);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.POSTRNM);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_SAVE);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_SAVE);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_DELETE);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_DELETE);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_RENAME);
+		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_RENAME);
 
 		initEEnum(resourceScopeEEnum, ResourceScope.class, "ResourceScope");
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ALL);
-		addEEnumLiteral(resourceScopeEEnum, ResourceScope.CTX);
+		addEEnumLiteral(resourceScopeEEnum, ResourceScope.CONTEXT);
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ROOT);
 
 		initEEnum(resourceTypeEEnum, ResourceType.class, "ResourceType");
-		addEEnumLiteral(resourceTypeEEnum, ResourceType.PROD);
+		addEEnumLiteral(resourceTypeEEnum, ResourceType.PRODUCTION);
 		addEEnumLiteral(resourceTypeEEnum, ResourceType.TEST);
 		addEEnumLiteral(resourceTypeEEnum, ResourceType.TEMP);
 
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
-		addEEnumLiteral(serializationTypeEEnum, SerializationType.XMI);
-		addEEnumLiteral(serializationTypeEEnum, SerializationType.JSON);
+		addEEnumLiteral(serializationTypeEEnum, SerializationType.XML_METADATA_INTERCHANGE);
+		addEEnumLiteral(serializationTypeEEnum, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
 		// Create annotations
 		// mimo-ent-slot

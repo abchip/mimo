@@ -77,7 +77,7 @@ public class FindServlet extends BaseServlet {
 				filter = sb.toString();
 		}
 
-		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CTX);
+		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CONTEXT);
 
 		EntityIterator<E> entityIterator = null;
 		if (nrElem == null)
@@ -89,7 +89,7 @@ public class FindServlet extends BaseServlet {
 		for (E entity : entityIterator)
 			entityList.add(entity);
 
-		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JSON)) {
+		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			resourceSerializer.addAll(entityList);
 			resourceSerializer.save(response.getOutputStream());
 		}

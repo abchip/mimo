@@ -9,6 +9,10 @@
   <foreignModel>audio.ecore</foreignModel>
   <genPackages prefix="Audio" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="audio.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="audio.ecore#//AudioStyle">
+      <genEnumLiterals ecoreEnumLiteral="audio.ecore#//AudioStyle/A"/>
+      <genEnumLiterals ecoreEnumLiteral="audio.ecore#//AudioStyle/B"/>
+    </genEnums>
     <genClasses ecoreClass="audio.ecore#//Audio">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute audio.ecore#//Audio/content"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute audio.ecore#//Audio/name"/>
@@ -18,11 +22,31 @@
       <genOperations ecoreOperation="audio.ecore#//AudioManager/record">
         <genParameters ecoreParameter="audio.ecore#//AudioManager/record/contextProvider"/>
       </genOperations>
+      <genOperations ecoreOperation="audio.ecore#//AudioManager/play">
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play/contextProvider"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play/audio"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play/start"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play/waitEnd"/>
+      </genOperations>
+      <genOperations ecoreOperation="audio.ecore#//AudioManager/play.1">
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/contextProvider"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/style"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/text"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/start"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/waitEnd"/>
+      </genOperations>
     </genClasses>
-    <genClasses image="false" ecoreClass="audio.ecore#//AudioRecording">
-      <genOperations ecoreOperation="audio.ecore#//AudioRecording/getInputStream"/>
-      <genOperations ecoreOperation="audio.ecore#//AudioRecording/start"/>
-      <genOperations ecoreOperation="audio.ecore#//AudioRecording/stop"/>
+    <genClasses image="false" ecoreClass="audio.ecore#//AudioRecorder">
+      <genOperations ecoreOperation="audio.ecore#//AudioRecorder/getOutputStream"/>
+      <genOperations ecoreOperation="audio.ecore#//AudioRecorder/isStopped"/>
+      <genOperations ecoreOperation="audio.ecore#//AudioRecorder/start"/>
+      <genOperations ecoreOperation="audio.ecore#//AudioRecorder/stop"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="audio.ecore#//AudioPlayer">
+      <genOperations ecoreOperation="audio.ecore#//AudioPlayer/getAudio"/>
+      <genOperations ecoreOperation="audio.ecore#//AudioPlayer/isStopped"/>
+      <genOperations ecoreOperation="audio.ecore#//AudioPlayer/start"/>
+      <genOperations ecoreOperation="audio.ecore#//AudioPlayer/stop"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -42,19 +42,19 @@
     </eGenericSuperTypes>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LanguageScope">
-    <eLiterals name="I" value="10" literal="Individual"/>
-    <eLiterals name="M" value="20" literal="Macrolanguage"/>
-    <eLiterals name="C" value="30" literal="Collections"/>
-    <eLiterals name="R" value="40" literal="Reserved"/>
-    <eLiterals name="S" value="50" literal="Specials"/>
-    <eLiterals name="D" value="60" literal="Dialects"/>
+    <eLiterals name="Individual" value="10" literal="I"/>
+    <eLiterals name="Macrolanguage" value="20" literal="M"/>
+    <eLiterals name="Collections" value="30" literal="C"/>
+    <eLiterals name="Reserved" value="40" literal="R"/>
+    <eLiterals name="Specials" value="50" literal="S"/>
+    <eLiterals name="Dialects" value="60" literal="D"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LanguageType">
-    <eLiterals name="L" value="10" literal="Living"/>
-    <eLiterals name="E" value="20" literal="Extinct"/>
-    <eLiterals name="A" value="30" literal="Ancient"/>
-    <eLiterals name="H" value="40" literal="Historical"/>
-    <eLiterals name="C" value="50" literal="Constructed"/>
+    <eLiterals name="Living" value="10" literal="L"/>
+    <eLiterals name="Extinct" value="20" literal="E"/>
+    <eLiterals name="Ancient" value="30" literal="A"/>
+    <eLiterals name="Historical" value="40" literal="H"/>
+    <eLiterals name="Constructed" value="50" literal="C"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageLinearizer" abstract="true"
       interface="true">
@@ -75,8 +75,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="Adjective" eSuperTypes="#//grammar/Word"/>
     <eClassifiers xsi:type="ecore:EClass" name="Dialog" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EEnum" name="Gender">
-      <eLiterals name="M" value="10" literal="Masculine"/>
-      <eLiterals name="F" value="20" literal="Feminine"/>
+      <eLiterals name="Masculine" value="10" literal="M"/>
+      <eLiterals name="Feminine" value="20" literal="F"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Grammar" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Textable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
@@ -86,8 +86,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Noun" eSuperTypes="#//grammar/Word"/>
     <eClassifiers xsi:type="ecore:EEnum" name="Number">
-      <eLiterals name="S" value="10" literal="Singular"/>
-      <eLiterals name="P" value="20" literal="Plural"/>
+      <eLiterals name="Singular" value="10" literal="S"/>
+      <eLiterals name="Plural" value="20" literal="P"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Predicate" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="Pronoun" eSuperTypes="#//grammar/Word"/>

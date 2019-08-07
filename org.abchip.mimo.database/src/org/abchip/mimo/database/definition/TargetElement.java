@@ -33,47 +33,47 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum TargetElement implements Enumerator {
 	/**
-	 * The '<em><b>ALIAS</b></em>' literal object.
+	 * The '<em><b>Alias</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ALIAS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ALIAS(0, "ALIAS", "ALIAS"),
+	ALIAS(0, "Alias", "ALS"),
 
 	/**
-	 * The '<em><b>INDEX</b></em>' literal object.
+	 * The '<em><b>Index</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #INDEX_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INDEX(1, "INDEX", "INDEX"),
+	INDEX(1, "Index", "IDX"),
 
 	/**
-	 * The '<em><b>VIEW</b></em>' literal object.
+	 * The '<em><b>View</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #VIEW_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	VIEW(2, "VIEW", "VIEW"),
+	VIEW(2, "View", "VIEW"),
 
 	/**
-	 * The '<em><b>TABLE</b></em>' literal object.
+	 * The '<em><b>Table</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #TABLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TABLE(3, "TABLE", "TABLE");
+	TABLE(3, "Table", "TBL");
 
 	/**
-	 * The '<em><b>ALIAS</b></em>' literal value.
+	 * The '<em><b>Alias</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>ALIAS</b></em>' literal object isn't clear,
@@ -81,14 +81,14 @@ public enum TargetElement implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ALIAS
-	 * @model
+	 * @model name="Alias" literal="ALS"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int ALIAS_VALUE = 0;
 
 	/**
-	 * The '<em><b>INDEX</b></em>' literal value.
+	 * The '<em><b>Index</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>INDEX</b></em>' literal object isn't clear,
@@ -96,14 +96,14 @@ public enum TargetElement implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INDEX
-	 * @model
+	 * @model name="Index" literal="IDX"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int INDEX_VALUE = 1;
 
 	/**
-	 * The '<em><b>VIEW</b></em>' literal value.
+	 * The '<em><b>View</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>VIEW</b></em>' literal object isn't clear,
@@ -111,14 +111,14 @@ public enum TargetElement implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #VIEW
-	 * @model
+	 * @model name="View" literal="VIEW"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int VIEW_VALUE = 2;
 
 	/**
-	 * The '<em><b>TABLE</b></em>' literal value.
+	 * The '<em><b>Table</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>TABLE</b></em>' literal object isn't clear,
@@ -126,7 +126,7 @@ public enum TargetElement implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TABLE
-	 * @model
+	 * @model name="Table" literal="TBL"
 	 * @generated
 	 * @ordered
 	 */

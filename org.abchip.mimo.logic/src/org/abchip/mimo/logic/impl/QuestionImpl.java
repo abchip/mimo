@@ -101,6 +101,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Term getObject() {
 		return object;
 	}
@@ -125,6 +126,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setObject(Term newObject) {
 		if (newObject != object) {
 			NotificationChain msgs = null;
@@ -144,6 +146,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Term getSubject() {
 		return subject;
 	}
@@ -168,6 +171,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSubject(Term newSubject) {
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
@@ -187,6 +191,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Term getRelation() {
 		return relation;
 	}
@@ -211,6 +216,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRelation(Term newRelation) {
 		if (newRelation != relation) {
 			NotificationChain msgs = null;
@@ -230,6 +236,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Term getRule() {
 		return rule;
 	}
@@ -254,6 +261,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRule(Term newRule) {
 		if (newRule != rule) {
 			NotificationChain msgs = null;

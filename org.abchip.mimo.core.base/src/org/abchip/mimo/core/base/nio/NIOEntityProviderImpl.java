@@ -61,7 +61,7 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		if (isResource(frame)) {
 			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextRoot);
 		} else {
-			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XMI);
+			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
 			entityReader = new NIOEntityReaderImpl<E>(pathManager, resourceSerializer, resourceName, frame, logger);
 		}
 
@@ -77,7 +77,7 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 			if (isResource(frame)) {
 				readers.add((EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextRoot));
 			} else {
-				ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XMI);
+				ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
 				NIOEntityReaderImpl<E> resourceReader = new NIOEntityReaderImpl<E>(pathManager, resourceSerializer, resourceName, frame, logger);
 				readers.add(resourceReader);
 			}
@@ -93,7 +93,7 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		if (isResource(frame)) {
 			resourceWriter = (EntityWriter<E>) new NIOResourceWriterImpl(pathManager, (Frame<Resource>) frame, contextProvider, lockManager);
 		} else {
-			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XMI);
+			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
 			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, resourceSerializer, contextProvider, resourceName, frame, logger, lockManager);
 		}
 

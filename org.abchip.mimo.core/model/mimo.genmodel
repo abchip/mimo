@@ -12,9 +12,9 @@
     <nestedGenPackages prefix="Application" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//application">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ServiceStatus">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/ACT"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/STP"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/TST"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Active"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Stopped"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Testing"/>
       </genEnums>
       <genClasses ecoreClass="mimo.ecore#//application/Application">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/commands"/>
@@ -92,16 +92,16 @@
     <nestedGenPackages prefix="Context" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//context">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/CapabilityRight">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/READ"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/WRITE"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/EXEC"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/Read"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/Write"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/Execute"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/LockType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/READ"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/WRITE"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Read"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Write"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/UserClass">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/USER"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/User"/>
       </genEnums>
       <genDataTypes ecoreDataType="mimo.ecore#//context/MessageVariableList"/>
       <genDataTypes ecoreDataType="mimo.ecore#//context/MessageException"/>
@@ -400,26 +400,26 @@
     <nestedGenPackages prefix="Entity" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" contentTypeIdentifier="" ecorePackage="mimo.ecore#//entity">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/ResourceEventType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PRESAVE"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/POSTSAVE"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PREDLT"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/POSTDLT"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/PRERNM"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/POSTRNM"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/Before_Save"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/After_Save"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/Before_Delete"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/After_Delete"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/Before_Rename"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/After_Rename"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/ResourceScope">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/ALL"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/CTX"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/ROOT"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/All"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/Context"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/Root"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/ResourceType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/PROD"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/TEST"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/Production"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/Test"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceType/TEMP"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/SerializationType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/XMI"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/JSON"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/XML_Metadata_Interchange"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/JavaScript_Object_Notation"/>
       </genEnums>
       <genClasses ecoreClass="mimo.ecore#//entity/Cardinality">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Cardinality/max"/>
@@ -875,32 +875,28 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/JUL"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/USA"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/EUR"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/JIS"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/JOBRUN"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/DecimalType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DecimalType/Zoned"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DecimalType/Packed"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/FloatingType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/FloatingType/Single"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/FloatingType/Float"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/FloatingType/Double"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/ThreadStatus">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/NEW"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/RUN"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/BLOCK"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/WAIT"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/TIME_WAIT"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/END"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/New"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Runnable"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Blocked"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Waiting"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/TimedWaiting"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Terminated"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/TimeFormat">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/ISO"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/HMS"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/USA"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/EUR"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/JIS"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/JOBRUN"/>
       </genEnums>
       <genDataTypes ecoreDataType="mimo.ecore#//util/JavaAnnotation"/>
       <genDataTypes ecoreDataType="mimo.ecore#//util/JavaDictionary">

@@ -120,7 +120,7 @@ public class ResourceImpl extends EntityNameableImpl implements Resource {
 	 * @generated NOT
 	 */
 	public ResourceType getResourceType() {
-		return ResourceType.PROD;
+		return ResourceType.PRODUCTION;
 	}
 
 	/**

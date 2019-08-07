@@ -2077,32 +2077,28 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		addEEnumLiteral(dateFormatEEnum, DateFormat.JUL);
 		addEEnumLiteral(dateFormatEEnum, DateFormat.USA);
 		addEEnumLiteral(dateFormatEEnum, DateFormat.EUR);
-		addEEnumLiteral(dateFormatEEnum, DateFormat.JIS);
-		addEEnumLiteral(dateFormatEEnum, DateFormat.JOBRUN);
 
 		initEEnum(decimalTypeEEnum, DecimalType.class, "DecimalType");
 		addEEnumLiteral(decimalTypeEEnum, DecimalType.ZONED);
 		addEEnumLiteral(decimalTypeEEnum, DecimalType.PACKED);
 
 		initEEnum(floatingTypeEEnum, FloatingType.class, "FloatingType");
-		addEEnumLiteral(floatingTypeEEnum, FloatingType.SINGLE);
+		addEEnumLiteral(floatingTypeEEnum, FloatingType.FLOAT);
 		addEEnumLiteral(floatingTypeEEnum, FloatingType.DOUBLE);
 
 		initEEnum(threadStatusEEnum, ThreadStatus.class, "ThreadStatus");
 		addEEnumLiteral(threadStatusEEnum, ThreadStatus.NEW);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.RUN);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.BLOCK);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.WAIT);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.TIME_WAIT);
-		addEEnumLiteral(threadStatusEEnum, ThreadStatus.END);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.RUNNABLE);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.BLOCKED);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.WAITING);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.TIMED_WAITING);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.TERMINATED);
 
 		initEEnum(timeFormatEEnum, TimeFormat.class, "TimeFormat");
 		addEEnumLiteral(timeFormatEEnum, TimeFormat.ISO);
 		addEEnumLiteral(timeFormatEEnum, TimeFormat.HMS);
 		addEEnumLiteral(timeFormatEEnum, TimeFormat.USA);
 		addEEnumLiteral(timeFormatEEnum, TimeFormat.EUR);
-		addEEnumLiteral(timeFormatEEnum, TimeFormat.JIS);
-		addEEnumLiteral(timeFormatEEnum, TimeFormat.JOBRUN);
 
 		// Initialize data types
 		initEDataType(javaAnnotationEDataType, Annotation.class, "JavaAnnotation", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

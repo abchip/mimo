@@ -33,27 +33,27 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ShareMode implements Enumerator {
 	/**
-	 * The '<em><b>SHARE</b></em>' literal object.
+	 * The '<em><b>Share</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SHARE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SHARE(0, "SHARE", "SHARE"),
+	SHARE(0, "Share", "SHR"),
 
 	/**
-	 * The '<em><b>EXCLUSIVE</b></em>' literal object.
+	 * The '<em><b>Exclusive</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #EXCLUSIVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EXCLUSIVE(1, "EXCLUSIVE", "EXCLUSIVE");
+	EXCLUSIVE(1, "Exclusive", "EXC");
 
 	/**
-	 * The '<em><b>SHARE</b></em>' literal value.
+	 * The '<em><b>Share</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>SHARE</b></em>' literal object isn't clear,
@@ -61,14 +61,14 @@ public enum ShareMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SHARE
-	 * @model
+	 * @model name="Share" literal="SHR"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int SHARE_VALUE = 0;
 
 	/**
-	 * The '<em><b>EXCLUSIVE</b></em>' literal value.
+	 * The '<em><b>Exclusive</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>EXCLUSIVE</b></em>' literal object isn't clear,
@@ -76,7 +76,7 @@ public enum ShareMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EXCLUSIVE
-	 * @model
+	 * @model name="Exclusive" literal="EXC"
 	 * @generated
 	 * @ordered
 	 */

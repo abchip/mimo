@@ -46,10 +46,10 @@ public class LookupToolbarServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		Toolbar toolbar = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CTX).lookup(frameName);
+		Toolbar toolbar = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CONTEXT).lookup(frameName);
 
 		for (Frame<?> ako : frame.getSuperFrames()) {
-			Toolbar toolbarAko = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CTX).lookup(ako.getName());
+			Toolbar toolbarAko = resourceManager.getEntityReader(contextProvider, Toolbar.class, ResourceScope.CONTEXT).lookup(ako.getName());
 			;
 			if (toolbarAko == null)
 				continue;
@@ -60,7 +60,7 @@ public class LookupToolbarServlet extends BaseServlet {
 				toolbar.getElements().addAll(toolbarAko.getElements());
 		}
 
-		try (ResourceSerializer<Toolbar> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Toolbar.class, SerializationType.JSON)) {
+		try (ResourceSerializer<Toolbar> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Toolbar.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			if (toolbar != null)
 				resourceSerializer.add(toolbar);
 

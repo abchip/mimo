@@ -75,6 +75,7 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -84,6 +85,7 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

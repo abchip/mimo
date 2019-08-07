@@ -171,7 +171,7 @@ public class BaseApplicationStarter {
 		List<Object> services = new ArrayList<Object>();
 		for (ServiceHook hook : hooks) {
 			// STOPPED
-			if (hook.getStatus() == ServiceStatus.STP) {
+			if (hook.getStatus() == ServiceStatus.STOPPED) {
 				println("-hook " + hook + " unactive");
 				continue;
 			}
@@ -194,7 +194,7 @@ public class BaseApplicationStarter {
 
 		List<Object> commands = new ArrayList<Object>();
 		for (ServiceCommandProvider command : commandProviders) {
-			if (command.getStatus() == ServiceStatus.STP) {
+			if (command.getStatus() == ServiceStatus.STOPPED) {
 				println("-command " + command + " unactive");
 				continue;
 			}
@@ -210,7 +210,7 @@ public class BaseApplicationStarter {
 
 	private void registerService(ApplicationComponent component, ServiceRef serviceRef) throws ClassNotFoundException {
 		// STOPPED
-		if (serviceRef.getStatus() == ServiceStatus.STP) {
+		if (serviceRef.getStatus() == ServiceStatus.STOPPED) {
 			println("-service " + serviceRef + " unactive");
 			return;
 		}

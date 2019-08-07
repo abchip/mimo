@@ -72,6 +72,7 @@ public class TwitterFactoryImpl extends EFactoryImpl implements TwitterFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Tweet createTweet() {
 		TweetImpl tweet = new TweetImpl();
 		return tweet;
@@ -82,6 +83,7 @@ public class TwitterFactoryImpl extends EFactoryImpl implements TwitterFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TwitterPackage getTwitterPackage() {
 		return (TwitterPackage)getEPackage();
 	}

@@ -33,11 +33,11 @@ public class TestResource {
 	public void start() throws IOException {
 
 		Frame<Resource> resourceFrame = frameManager.getFrame(Resource.class);
-		try (ResourceSerializer<Frame> frameSerializer = resourceManager.createResourceSerializer(testRunner, Frame.class, SerializationType.XMI)) {
+		try (ResourceSerializer<Frame> frameSerializer = resourceManager.createResourceSerializer(testRunner, Frame.class, SerializationType.XML_METADATA_INTERCHANGE)) {
 			frameSerializer.add(resourceFrame);
 			frameSerializer.save(System.out);
 		}
-		try (ResourceSerializer<Frame> frameSerializer = resourceManager.createResourceSerializer(testRunner, Frame.class, SerializationType.XMI)) {
+		try (ResourceSerializer<Frame> frameSerializer = resourceManager.createResourceSerializer(testRunner, Frame.class, SerializationType.XML_METADATA_INTERCHANGE)) {
 			frameSerializer.add(resourceFrame);
 			frameSerializer.save(System.out);
 		}

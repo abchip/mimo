@@ -28,33 +28,33 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ResourceScope implements Enumerator {
 	/**
-	 * The '<em><b>ALL</b></em>' literal object.
+	 * The '<em><b>All</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ALL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ALL(10, "ALL", "All"), /**
-	 * The '<em><b>CTX</b></em>' literal object.
+	ALL(10, "All", "ALL"), /**
+	 * The '<em><b>Context</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CTX_VALUE
+	 * @see #CONTEXT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CTX(20, "CTX", "Context"), /**
-	 * The '<em><b>ROOT</b></em>' literal object.
+	CONTEXT(20, "Context", "CTX"), /**
+	 * The '<em><b>Root</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ROOT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ROOT(30, "ROOT", "Root");
+	ROOT(30, "Root", "ROOT");
 
 	/**
-	 * The '<em><b>ALL</b></em>' literal value.
+	 * The '<em><b>All</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>ALL</b></em>' literal object isn't clear,
@@ -62,29 +62,29 @@ public enum ResourceScope implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ALL
-	 * @model literal="All"
+	 * @model name="All" literal="ALL"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int ALL_VALUE = 10;
 
 	/**
-	 * The '<em><b>CTX</b></em>' literal value.
+	 * The '<em><b>Context</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>CTX</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Context</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CTX
-	 * @model literal="Context"
+	 * @see #CONTEXT
+	 * @model name="Context" literal="CTX"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CTX_VALUE = 20;
+	public static final int CONTEXT_VALUE = 20;
 
 	/**
-	 * The '<em><b>ROOT</b></em>' literal value.
+	 * The '<em><b>Root</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>ROOT</b></em>' literal object isn't clear,
@@ -92,7 +92,7 @@ public enum ResourceScope implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ROOT
-	 * @model literal="Root"
+	 * @model name="Root" literal="ROOT"
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public enum ResourceScope implements Enumerator {
 	private static final ResourceScope[] VALUES_ARRAY =
 		new ResourceScope[] {
 			ALL,
-			CTX,
+			CONTEXT,
 			ROOT,
 		};
 
@@ -166,7 +166,7 @@ public enum ResourceScope implements Enumerator {
 	public static ResourceScope get(int value) {
 		switch (value) {
 			case ALL_VALUE: return ALL;
-			case CTX_VALUE: return CTX;
+			case CONTEXT_VALUE: return CONTEXT;
 			case ROOT_VALUE: return ROOT;
 		}
 		return null;

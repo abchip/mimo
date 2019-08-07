@@ -656,9 +656,9 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 
 		// Initialize enums and add enum literals
 		initEEnum(statementTypeEEnum, StatementType.class, "StatementType");
-		addEEnumLiteral(statementTypeEEnum, StatementType.DML);
-		addEEnumLiteral(statementTypeEEnum, StatementType.DDL);
-		addEEnumLiteral(statementTypeEEnum, StatementType.DBL);
+		addEEnumLiteral(statementTypeEEnum, StatementType.DATA_MANIPULATION_LANGUAGE);
+		addEEnumLiteral(statementTypeEEnum, StatementType.DATA_DEFINITION_LANGUAGE);
+		addEEnumLiteral(statementTypeEEnum, StatementType.DATA_BINDING_LANGUAGE);
 
 		// Initialize data types
 		initEDataType(databaseResultSetEDataType, ResultSet.class, "DatabaseResultSet", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

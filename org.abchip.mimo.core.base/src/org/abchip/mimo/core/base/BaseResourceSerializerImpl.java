@@ -41,10 +41,10 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 		this.setFrame(frame);
 
 		switch (serializationType) {
-		case JSON:
+		case JAVA_SCRIPT_OBJECT_NOTATION:
 			this.resource = new JSONProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
-		case XMI:
+		case XML_METADATA_INTERCHANGE:
 			this.resource = new XMIProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
 		}
