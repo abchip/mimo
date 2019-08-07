@@ -268,6 +268,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMessageType_Text() {
+		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getMessageStatus() {
 		return messageStatusEEnum;
 	}
@@ -316,6 +326,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__MESSAGE_TYPE_ID);
+		createEAttribute(messageTypeEClass, MESSAGE_TYPE__TEXT);
 
 		// Create enums
 		messageStatusEEnum = createEEnum(MESSAGE_STATUS);
@@ -389,6 +400,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageType_MessageTypeId(), ecorePackage.getEString(), "messageTypeId", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageType_Text(), ecorePackage.getEString(), "text", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(messageStatusEEnum, MessageStatus.class, "MessageStatus");

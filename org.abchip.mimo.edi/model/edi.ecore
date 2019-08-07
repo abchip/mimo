@@ -83,6 +83,8 @@
           <details key="key" value="true"/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityType">
         <eTypeArguments eTypeParameter="#//message/MessageType/E"/>
       </eGenericSuperTypes>

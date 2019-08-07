@@ -481,13 +481,22 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_TYPE__MESSAGE_TYPE_ID = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__TEXT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
+	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.
@@ -629,6 +638,17 @@ public interface MessagePackage extends EPackage {
 	EAttribute getMessageType_MessageTypeId();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.MessageType#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.abchip.mimo.edi.message.MessageType#getText()
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	EAttribute getMessageType_Text();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -763,6 +783,14 @@ public interface MessagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MESSAGE_TYPE__MESSAGE_TYPE_ID = eINSTANCE.getMessageType_MessageTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_TYPE__TEXT = eINSTANCE.getMessageType_Text();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.

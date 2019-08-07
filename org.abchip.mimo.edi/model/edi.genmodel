@@ -51,6 +51,7 @@
       <genClasses ecoreClass="edi.ecore#//message/MessageType">
         <genTypeParameters ecoreTypeParameter="edi.ecore#//message/MessageType/E"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/messageTypeId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/text"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

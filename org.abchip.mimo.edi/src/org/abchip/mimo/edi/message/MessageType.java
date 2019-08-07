@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.EntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getMessageTypeId <em>Message Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.MessageType#getText <em>Text</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType()
@@ -54,4 +55,30 @@ public interface MessageType<E extends Message> extends EntityType<E>, EntityInf
 	 * @generated
 	 */
 	void setMessageTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Text</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Text</em>' attribute.
+	 * @see #setText(String)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_Text()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getText();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#getText <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text</em>' attribute.
+	 * @see #getText()
+	 * @generated
+	 */
+	void setText(String value);
 } // MessageType
