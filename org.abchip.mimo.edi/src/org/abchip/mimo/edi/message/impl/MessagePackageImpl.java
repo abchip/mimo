@@ -440,15 +440,6 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		  (getMessage_MessageTypeId(),
 		   source,
 		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMessage_MessageTypeId(),
-		   new boolean[] { true },
-		   "mimo-ent-domain",
-		   new String[] {
 			   "frame", "MessageType"
 		   },
 		   new URI[] {

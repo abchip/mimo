@@ -39,9 +39,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageTypeId" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
-          <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
-            <details key="frame" value="MessageType"/>
-          </eAnnotations>
+          <details key="frame" value="MessageType"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//message/MessageStatus"/>

@@ -73,7 +73,7 @@ public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	 * @see #setMessageTypeId(String)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_MessageTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-domain"
+	 *        annotation="mimo-ent-domain frame='MessageType'"
 	 * @generated
 	 */
 	String getMessageTypeId();

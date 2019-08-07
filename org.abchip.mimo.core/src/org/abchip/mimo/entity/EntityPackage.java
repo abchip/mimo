@@ -311,13 +311,22 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_ENUM__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ENUM__TEXT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Enum</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ENUM_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int ENTITY_ENUM_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Iterator</em>' class.
@@ -1155,6 +1164,17 @@ public interface EntityPackage extends EPackage {
 	EAttribute getEntityEnum_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityEnum#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.abchip.mimo.entity.EntityEnum#getText()
+	 * @see #getEntityEnum()
+	 * @generated
+	 */
+	EAttribute getEntityEnum_Text();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1848,6 +1868,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_ENUM__NAME = eINSTANCE.getEntityEnum_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_ENUM__TEXT = eINSTANCE.getEntityEnum_Text();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.

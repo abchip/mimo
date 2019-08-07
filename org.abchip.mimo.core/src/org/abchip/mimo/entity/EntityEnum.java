@@ -18,13 +18,14 @@ package org.abchip.mimo.entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.EntityEnum#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.EntityEnum#getText <em>Text</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getEntityEnum()
  * @model abstract="true"
  * @generated
  */
-public interface EntityEnum extends EntityNameable {
+public interface EntityEnum extends EntityNameable, Textable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -39,5 +40,20 @@ public interface EntityEnum extends EntityNameable {
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Returns the value of the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Text</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Text</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getEntityEnum_Text()
+	 * @model required="true" changeable="false"
+	 * @generated
+	 */
+	String getText();
 
 } // EntityEnum

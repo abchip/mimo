@@ -5,17 +5,14 @@
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
  *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
  */
 package org.abchip.mimo;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityEnum;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
@@ -51,12 +48,18 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		return null;
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public Frame<? super E> ako() {
-		return null;
+		Frame<? super E> akoFrame = (Frame<? super E>) EMFFrameHelper.getFrames().get(EntityEnum.class.getSimpleName());
+		if (akoFrame != null)
+			return akoFrame;
+		else
+			return new EMFFrameClassAdapter(EntityPackage.eINSTANCE.getEntityEnum());
+
 	}
 
-	public EEnum getEEnum() {
+	protected EEnum getEEnum() {
 		return this.eEnum;
 	}
 
@@ -87,13 +90,5 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	@Override
 	public URI getURI() {
 		return URI.create(EcoreUtil.getURI(eEnum).toString());
-	}
-
-	@Override
-	public List<Frame<? super E>> getSuperFrames() {
-
-		List<Frame<? super E>> frames = new ArrayList<Frame<? super E>>();
-
-		return frames;
 	}
 }

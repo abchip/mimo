@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
@@ -232,15 +233,25 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public List<Frame<? super E>> getSuperFrames() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		List<Frame<? super E>> frames = new ArrayList<Frame<? super E>>();
+		addFrames(this, frames);
+
+		return frames;
 	}
 
+	private void addFrames(Frame<? super E> frame, List<Frame<? super E>> frames) {
+		Frame<? super E> ako = frame.ako();
+		if (ako != null) {
+			frames.add(ako);
+			addFrames(ako, frames);
+		}
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

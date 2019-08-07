@@ -623,8 +623,11 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityEnum" abstract="true" eSuperTypes="#//entity/EntityNameable">
+    <eClassifiers xsi:type="ecore:EClass" name="EntityEnum" abstract="true" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false"/>
     </eClassifiers>

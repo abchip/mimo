@@ -24,129 +24,121 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum LanguageType implements Enumerator {
 	/**
-	 * The '<em><b>Living</b></em>' literal object.
+	 * The '<em><b>L</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LIVING_VALUE
+	 * @see #L_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LIVING(10, "Living", "L"),
-
-	/**
-	 * The '<em><b>Extinct</b></em>' literal object.
+	L(10, "L", "Living"), /**
+	 * The '<em><b>E</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EXTINCT_VALUE
+	 * @see #E_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EXTINCT(20, "Extinct", "E"),
-
-	/**
-	 * The '<em><b>Ancient</b></em>' literal object.
+	E(20, "E", "Extinct"), /**
+	 * The '<em><b>A</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ANCIENT_VALUE
+	 * @see #A_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ANCIENT(30, "Ancient", "A"),
-
-	/**
-	 * The '<em><b>Historical</b></em>' literal object.
+	A(30, "A", "Ancient"), /**
+	 * The '<em><b>H</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HISTORICAL_VALUE
+	 * @see #H_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	HISTORICAL(40, "Historical", "H"),
-
-	/**
-	 * The '<em><b>Constructed</b></em>' literal object.
+	H(40, "H", "Historical"), /**
+	 * The '<em><b>C</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CONSTRUCTED_VALUE
+	 * @see #C_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CONSTRUCTED(50, "Constructed", "C");
+	C(50, "C", "Constructed");
 
 	/**
-	 * The '<em><b>Living</b></em>' literal value.
+	 * The '<em><b>L</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Living</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>L</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LIVING
-	 * @model name="Living" literal="L"
+	 * @see #L
+	 * @model literal="Living"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LIVING_VALUE = 10;
+	public static final int L_VALUE = 10;
 
 	/**
-	 * The '<em><b>Extinct</b></em>' literal value.
+	 * The '<em><b>E</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Extinct</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>E</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #EXTINCT
-	 * @model name="Extinct" literal="E"
+	 * @see #E
+	 * @model literal="Extinct"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EXTINCT_VALUE = 20;
+	public static final int E_VALUE = 20;
 
 	/**
-	 * The '<em><b>Ancient</b></em>' literal value.
+	 * The '<em><b>A</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Ancient</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>A</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #ANCIENT
-	 * @model name="Ancient" literal="A"
+	 * @see #A
+	 * @model literal="Ancient"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ANCIENT_VALUE = 30;
+	public static final int A_VALUE = 30;
 
 	/**
-	 * The '<em><b>Historical</b></em>' literal value.
+	 * The '<em><b>H</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Historical</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>H</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #HISTORICAL
-	 * @model name="Historical" literal="H"
+	 * @see #H
+	 * @model literal="Historical"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HISTORICAL_VALUE = 40;
+	public static final int H_VALUE = 40;
 
 	/**
-	 * The '<em><b>Constructed</b></em>' literal value.
+	 * The '<em><b>C</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Constructed</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>C</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CONSTRUCTED
-	 * @model name="Constructed" literal="C"
+	 * @see #C
+	 * @model literal="Constructed"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CONSTRUCTED_VALUE = 50;
+	public static final int C_VALUE = 50;
 
 	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
@@ -156,11 +148,11 @@ public enum LanguageType implements Enumerator {
 	 */
 	private static final LanguageType[] VALUES_ARRAY =
 		new LanguageType[] {
-			LIVING,
-			EXTINCT,
-			ANCIENT,
-			HISTORICAL,
-			CONSTRUCTED,
+			L,
+			E,
+			A,
+			H,
+			C,
 		};
 
 	/**
@@ -217,11 +209,11 @@ public enum LanguageType implements Enumerator {
 	 */
 	public static LanguageType get(int value) {
 		switch (value) {
-			case LIVING_VALUE: return LIVING;
-			case EXTINCT_VALUE: return EXTINCT;
-			case ANCIENT_VALUE: return ANCIENT;
-			case HISTORICAL_VALUE: return HISTORICAL;
-			case CONSTRUCTED_VALUE: return CONSTRUCTED;
+			case L_VALUE: return L;
+			case E_VALUE: return E;
+			case A_VALUE: return A;
+			case H_VALUE: return H;
+			case C_VALUE: return C;
 		}
 		return null;
 	}
@@ -264,6 +256,7 @@ public enum LanguageType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -273,6 +266,7 @@ public enum LanguageType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -282,6 +276,7 @@ public enum LanguageType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

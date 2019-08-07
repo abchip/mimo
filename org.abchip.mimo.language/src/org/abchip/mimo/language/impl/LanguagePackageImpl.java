@@ -180,6 +180,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLanguage() {
 		return languageEClass;
 	}
@@ -189,6 +190,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLanguage_Iso_639_1() {
 		return (EAttribute)languageEClass.getEStructuralFeatures().get(0);
 	}
@@ -198,6 +200,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLanguage_Name() {
 		return (EAttribute)languageEClass.getEStructuralFeatures().get(1);
 	}
@@ -207,6 +210,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLanguage_Scope() {
 		return (EAttribute)languageEClass.getEStructuralFeatures().get(2);
 	}
@@ -216,6 +220,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLanguage_Text() {
 		return (EAttribute)languageEClass.getEStructuralFeatures().get(3);
 	}
@@ -225,6 +230,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLanguage_Type() {
 		return (EAttribute)languageEClass.getEStructuralFeatures().get(4);
 	}
@@ -234,6 +240,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLanguageExpression() {
 		return languageExpressionEClass;
 	}
@@ -243,6 +250,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLanguageExpression_ExpressionRow() {
 		return (EAttribute)languageExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -252,6 +260,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLanguageManager() {
 		return languageManagerEClass;
 	}
@@ -261,6 +270,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLanguageParser() {
 		return languageParserEClass;
 	}
@@ -270,6 +280,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLanguageParserRegistry() {
 		return languageParserRegistryEClass;
 	}
@@ -279,6 +290,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLanguageLinearizer() {
 		return languageLinearizerEClass;
 	}
@@ -288,6 +300,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLanguageLinearizerRegistry() {
 		return languageLinearizerRegistryEClass;
 	}
@@ -297,6 +310,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getLanguageScope() {
 		return languageScopeEEnum;
 	}
@@ -306,6 +320,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getLanguageType() {
 		return languageTypeEEnum;
 	}
@@ -315,6 +330,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LanguageFactory getLanguageFactory() {
 		return (LanguageFactory)getEFactoryInstance();
 	}
@@ -458,19 +474,19 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
 		// Initialize enums and add enum literals
 		initEEnum(languageScopeEEnum, LanguageScope.class, "LanguageScope");
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.INDIVIDUAL);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.MACROLANGUAGE);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.COLLECTIONS);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.RESERVED);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.SPECIALS);
-		addEEnumLiteral(languageScopeEEnum, LanguageScope.DIALECTS);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.I);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.M);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.C);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.R);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.S);
+		addEEnumLiteral(languageScopeEEnum, LanguageScope.D);
 
 		initEEnum(languageTypeEEnum, LanguageType.class, "LanguageType");
-		addEEnumLiteral(languageTypeEEnum, LanguageType.LIVING);
-		addEEnumLiteral(languageTypeEEnum, LanguageType.EXTINCT);
-		addEEnumLiteral(languageTypeEEnum, LanguageType.ANCIENT);
-		addEEnumLiteral(languageTypeEEnum, LanguageType.HISTORICAL);
-		addEEnumLiteral(languageTypeEEnum, LanguageType.CONSTRUCTED);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.L);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.E);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.A);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.H);
+		addEEnumLiteral(languageTypeEEnum, LanguageType.C);
 
 		// Create resource
 		createResource(eNS_URI);

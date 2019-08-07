@@ -24,154 +24,144 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum LanguageScope implements Enumerator {
 	/**
-	 * The '<em><b>Individual</b></em>' literal object.
+	 * The '<em><b>I</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #INDIVIDUAL_VALUE
+	 * @see #I_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INDIVIDUAL(10, "Individual", "I"),
-
-	/**
-	 * The '<em><b>Macrolanguage</b></em>' literal object.
+	I(10, "I", "Individual"), /**
+	 * The '<em><b>M</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MACROLANGUAGE_VALUE
+	 * @see #M_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MACROLANGUAGE(20, "Macrolanguage", "M"),
-
-	/**
-	 * The '<em><b>Collections</b></em>' literal object.
+	M(20, "M", "Macrolanguage"), /**
+	 * The '<em><b>C</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #COLLECTIONS_VALUE
+	 * @see #C_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	COLLECTIONS(30, "Collections", "C"),
-
-	/**
-	 * The '<em><b>Reserved</b></em>' literal object.
+	C(30, "C", "Collections"), /**
+	 * The '<em><b>R</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RESERVED_VALUE
+	 * @see #R_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RESERVED(40, "Reserved", "R"),
-
-	/**
-	 * The '<em><b>Specials</b></em>' literal object.
+	R(40, "R", "Reserved"), /**
+	 * The '<em><b>S</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SPECIALS_VALUE
+	 * @see #S_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SPECIALS(50, "Specials", "S"),
-
-	/**
-	 * The '<em><b>Dialects</b></em>' literal object.
+	S(50, "S", "Specials"), /**
+	 * The '<em><b>D</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DIALECTS_VALUE
+	 * @see #D_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DIALECTS(60, "Dialects", "D");
+	D(60, "D", "Dialects");
 
 	/**
-	 * The '<em><b>Individual</b></em>' literal value.
+	 * The '<em><b>I</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Individual</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>I</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #INDIVIDUAL
-	 * @model name="Individual" literal="I"
+	 * @see #I
+	 * @model literal="Individual"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INDIVIDUAL_VALUE = 10;
+	public static final int I_VALUE = 10;
 
 	/**
-	 * The '<em><b>Macrolanguage</b></em>' literal value.
+	 * The '<em><b>M</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Macrolanguage</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>M</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MACROLANGUAGE
-	 * @model name="Macrolanguage" literal="M"
+	 * @see #M
+	 * @model literal="Macrolanguage"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MACROLANGUAGE_VALUE = 20;
+	public static final int M_VALUE = 20;
 
 	/**
-	 * The '<em><b>Collections</b></em>' literal value.
+	 * The '<em><b>C</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Collections</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>C</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #COLLECTIONS
-	 * @model name="Collections" literal="C"
+	 * @see #C
+	 * @model literal="Collections"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COLLECTIONS_VALUE = 30;
+	public static final int C_VALUE = 30;
 
 	/**
-	 * The '<em><b>Reserved</b></em>' literal value.
+	 * The '<em><b>R</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Reserved</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>R</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #RESERVED
-	 * @model name="Reserved" literal="R"
+	 * @see #R
+	 * @model literal="Reserved"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RESERVED_VALUE = 40;
+	public static final int R_VALUE = 40;
 
 	/**
-	 * The '<em><b>Specials</b></em>' literal value.
+	 * The '<em><b>S</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Specials</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>S</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SPECIALS
-	 * @model name="Specials" literal="S"
+	 * @see #S
+	 * @model literal="Specials"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPECIALS_VALUE = 50;
+	public static final int S_VALUE = 50;
 
 	/**
-	 * The '<em><b>Dialects</b></em>' literal value.
+	 * The '<em><b>D</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Dialects</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>D</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DIALECTS
-	 * @model name="Dialects" literal="D"
+	 * @see #D
+	 * @model literal="Dialects"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DIALECTS_VALUE = 60;
+	public static final int D_VALUE = 60;
 
 	/**
 	 * An array of all the '<em><b>Scope</b></em>' enumerators.
@@ -181,12 +171,12 @@ public enum LanguageScope implements Enumerator {
 	 */
 	private static final LanguageScope[] VALUES_ARRAY =
 		new LanguageScope[] {
-			INDIVIDUAL,
-			MACROLANGUAGE,
-			COLLECTIONS,
-			RESERVED,
-			SPECIALS,
-			DIALECTS,
+			I,
+			M,
+			C,
+			R,
+			S,
+			D,
 		};
 
 	/**
@@ -243,12 +233,12 @@ public enum LanguageScope implements Enumerator {
 	 */
 	public static LanguageScope get(int value) {
 		switch (value) {
-			case INDIVIDUAL_VALUE: return INDIVIDUAL;
-			case MACROLANGUAGE_VALUE: return MACROLANGUAGE;
-			case COLLECTIONS_VALUE: return COLLECTIONS;
-			case RESERVED_VALUE: return RESERVED;
-			case SPECIALS_VALUE: return SPECIALS;
-			case DIALECTS_VALUE: return DIALECTS;
+			case I_VALUE: return I;
+			case M_VALUE: return M;
+			case C_VALUE: return C;
+			case R_VALUE: return R;
+			case S_VALUE: return S;
+			case D_VALUE: return D;
 		}
 		return null;
 	}
@@ -291,6 +281,7 @@ public enum LanguageScope implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -300,6 +291,7 @@ public enum LanguageScope implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -309,6 +301,7 @@ public enum LanguageScope implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

@@ -73,6 +73,7 @@ public class LanguageExpressionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object getExpressionRow() {
 		return expressionRow;
 	}
@@ -82,6 +83,7 @@ public class LanguageExpressionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpressionRow(Object newExpressionRow) {
 		Object oldExpressionRow = expressionRow;
 		expressionRow = newExpressionRow;

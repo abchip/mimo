@@ -24,54 +24,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Number implements Enumerator {
 	/**
-	 * The '<em><b>Singular</b></em>' literal object.
+	 * The '<em><b>S</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SINGULAR_VALUE
+	 * @see #S_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SINGULAR(10, "Singular", "S"),
-
-	/**
-	 * The '<em><b>Plural</b></em>' literal object.
+	S(10, "S", "Singular"), /**
+	 * The '<em><b>P</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PLURAL_VALUE
+	 * @see #P_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PLURAL(20, "Plural", "P");
+	P(20, "P", "Plural");
 
 	/**
-	 * The '<em><b>Singular</b></em>' literal value.
+	 * The '<em><b>S</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Singular</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>S</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SINGULAR
-	 * @model name="Singular" literal="S"
+	 * @see #S
+	 * @model literal="Singular"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SINGULAR_VALUE = 10;
+	public static final int S_VALUE = 10;
 
 	/**
-	 * The '<em><b>Plural</b></em>' literal value.
+	 * The '<em><b>P</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Plural</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>P</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PLURAL
-	 * @model name="Plural" literal="P"
+	 * @see #P
+	 * @model literal="Plural"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PLURAL_VALUE = 20;
+	public static final int P_VALUE = 20;
 
 	/**
 	 * An array of all the '<em><b>Number</b></em>' enumerators.
@@ -81,8 +79,8 @@ public enum Number implements Enumerator {
 	 */
 	private static final Number[] VALUES_ARRAY =
 		new Number[] {
-			SINGULAR,
-			PLURAL,
+			S,
+			P,
 		};
 
 	/**
@@ -139,8 +137,8 @@ public enum Number implements Enumerator {
 	 */
 	public static Number get(int value) {
 		switch (value) {
-			case SINGULAR_VALUE: return SINGULAR;
-			case PLURAL_VALUE: return PLURAL;
+			case S_VALUE: return S;
+			case P_VALUE: return P;
 		}
 		return null;
 	}
@@ -183,6 +181,7 @@ public enum Number implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -192,6 +191,7 @@ public enum Number implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -201,6 +201,7 @@ public enum Number implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

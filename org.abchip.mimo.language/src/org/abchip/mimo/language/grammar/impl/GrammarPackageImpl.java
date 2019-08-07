@@ -196,6 +196,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAdjective() {
 		return adjectiveEClass;
 	}
@@ -205,6 +206,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDialog() {
 		return dialogEClass;
 	}
@@ -214,6 +216,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGrammar() {
 		return grammarEClass;
 	}
@@ -223,6 +226,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGrammar_Name() {
 		return (EAttribute)grammarEClass.getEStructuralFeatures().get(0);
 	}
@@ -232,6 +236,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGrammar_Text() {
 		return (EAttribute)grammarEClass.getEStructuralFeatures().get(1);
 	}
@@ -241,6 +246,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNoun() {
 		return nounEClass;
 	}
@@ -250,6 +256,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPredicate() {
 		return predicateEClass;
 	}
@@ -259,6 +266,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPronoun() {
 		return pronounEClass;
 	}
@@ -268,6 +276,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSentence() {
 		return sentenceEClass;
 	}
@@ -277,6 +286,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getVerb() {
 		return verbEClass;
 	}
@@ -286,6 +296,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getWord() {
 		return wordEClass;
 	}
@@ -295,6 +306,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getWord_Name() {
 		return (EAttribute)wordEClass.getEStructuralFeatures().get(0);
 	}
@@ -304,6 +316,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getNumber() {
 		return numberEEnum;
 	}
@@ -313,6 +326,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGender() {
 		return genderEEnum;
 	}
@@ -322,6 +336,7 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GrammarFactory getGrammarFactory() {
 		return (GrammarFactory)getEFactoryInstance();
 	}
@@ -437,12 +452,12 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(genderEEnum, Gender.class, "Gender");
-		addEEnumLiteral(genderEEnum, Gender.MASCULINE);
-		addEEnumLiteral(genderEEnum, Gender.FEMININE);
+		addEEnumLiteral(genderEEnum, Gender.M);
+		addEEnumLiteral(genderEEnum, Gender.F);
 
 		initEEnum(numberEEnum, org.abchip.mimo.language.grammar.Number.class, "Number");
-		addEEnumLiteral(numberEEnum, org.abchip.mimo.language.grammar.Number.SINGULAR);
-		addEEnumLiteral(numberEEnum, org.abchip.mimo.language.grammar.Number.PLURAL);
+		addEEnumLiteral(numberEEnum, org.abchip.mimo.language.grammar.Number.S);
+		addEEnumLiteral(numberEEnum, org.abchip.mimo.language.grammar.Number.P);
 	}
 
 } //GrammarPackageImpl

@@ -448,6 +448,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityEnum">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityEnum/name"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityEnum/text"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIterator">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIterator/E"/>

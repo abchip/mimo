@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
@@ -26,23 +27,25 @@ import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 
 public class EMFEntityProviderImpl extends EntityProviderImpl {
-	
+
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	@PostConstruct
 	private void init() {
-		resourceManager.registerProvider(Frame.class.getSimpleName(), this);
+		resourceManager.registerProvider(Frame.class, this);
+		resourceManager.registerProvider(EntityEnum.class, this);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		if (isFrame(frame)) {
 			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames());
-		} else {
+		} else if (isEnum(frame)) {
+			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+		} else
 			throw new UnsupportedOperationException();
-		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -50,11 +53,12 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, List<String> resources) {
 		if (isFrame(frame)) {
 			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames());
-		} else {
+		} else if (isEnum(frame)) {
+			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+		} else
 			throw new UnsupportedOperationException();
-		}
 	}
-	
+
 	@Override
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		if (isFrame(frame)) {
@@ -63,8 +67,12 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 			throw new UnsupportedOperationException();
 		}
 	}
-	
+
 	private boolean isFrame(Frame<?> frame) {
 		return frame.getName().equals(Frame.class.getSimpleName());
+	}
+
+	private boolean isEnum(Frame<?> frame) {
+		return frame instanceof EMFFrameEnumAdapter;
 	}
 }

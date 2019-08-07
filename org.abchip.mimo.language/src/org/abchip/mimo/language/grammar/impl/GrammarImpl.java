@@ -102,6 +102,7 @@ public class GrammarImpl extends EntityNameableImpl implements Grammar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -111,6 +112,7 @@ public class GrammarImpl extends EntityNameableImpl implements Grammar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -123,6 +125,7 @@ public class GrammarImpl extends EntityNameableImpl implements Grammar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -132,6 +135,7 @@ public class GrammarImpl extends EntityNameableImpl implements Grammar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;

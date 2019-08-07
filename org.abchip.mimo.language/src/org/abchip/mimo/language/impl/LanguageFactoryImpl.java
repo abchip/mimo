@@ -108,6 +108,7 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Language createLanguage() {
 		LanguageImpl language = new LanguageImpl();
 		return language;
@@ -118,6 +119,7 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LanguageExpression createLanguageExpression() {
 		LanguageExpressionImpl languageExpression = new LanguageExpressionImpl();
 		return languageExpression;
@@ -168,6 +170,7 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LanguagePackage getLanguagePackage() {
 		return (LanguagePackage)getEPackage();
 	}

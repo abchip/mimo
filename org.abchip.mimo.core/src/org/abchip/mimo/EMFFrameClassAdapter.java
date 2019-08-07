@@ -5,9 +5,6 @@
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
  *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
  */
 package org.abchip.mimo;
 
@@ -120,7 +117,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return new EMFFrameClassAdapter(eAko);
 	}
 
-	public EClass getEClass() {
+	protected EClass getEClass() {
 		return this.eClass;
 	}
 
@@ -197,22 +194,5 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	@Override
 	public URI getURI() {
 		return URI.create(EcoreUtil.getURI(eClass).toString());
-	}
-
-	@Override
-	public List<Frame<? super E>> getSuperFrames() {
-
-		List<Frame<? super E>> frames = new ArrayList<Frame<? super E>>();
-		addFrames(this, frames);
-
-		return frames;
-	}
-
-	private void addFrames(Frame<? super E> frame, List<Frame<? super E>> frames) {
-		Frame<? super E> ako = frame.ako();
-		if (ako != null) {
-			frames.add(ako);
-			addFrames(ako, frames);
-		}
 	}
 }

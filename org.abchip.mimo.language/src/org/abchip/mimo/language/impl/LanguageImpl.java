@@ -91,7 +91,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final LanguageScope SCOPE_EDEFAULT = LanguageScope.INDIVIDUAL;
+	protected static final LanguageScope SCOPE_EDEFAULT = LanguageScope.I;
 
 	/**
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' attribute.
@@ -131,7 +131,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final LanguageType TYPE_EDEFAULT = LanguageType.LIVING;
+	protected static final LanguageType TYPE_EDEFAULT = LanguageType.L;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -167,6 +167,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getIso_639_1() {
 		return iso_639_1;
 	}
@@ -176,6 +177,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIso_639_1(String newIso_639_1) {
 		String oldIso_639_1 = iso_639_1;
 		iso_639_1 = newIso_639_1;
@@ -188,6 +190,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -197,6 +200,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -209,6 +213,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LanguageScope getScope() {
 		return scope;
 	}
@@ -218,6 +223,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScope(LanguageScope newScope) {
 		LanguageScope oldScope = scope;
 		scope = newScope == null ? SCOPE_EDEFAULT : newScope;
@@ -230,6 +236,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -239,6 +246,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
@@ -251,6 +259,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LanguageType getType() {
 		return type;
 	}
@@ -260,6 +269,7 @@ public class LanguageImpl extends EntityNameableImpl implements Language {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(LanguageType newType) {
 		LanguageType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;

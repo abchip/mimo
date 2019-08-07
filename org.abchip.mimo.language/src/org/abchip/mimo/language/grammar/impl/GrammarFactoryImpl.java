@@ -123,6 +123,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adjective createAdjective() {
 		AdjectiveImpl adjective = new AdjectiveImpl();
 		return adjective;
@@ -133,6 +134,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Dialog createDialog() {
 		DialogImpl dialog = new DialogImpl();
 		return dialog;
@@ -143,6 +145,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Grammar createGrammar() {
 		GrammarImpl grammar = new GrammarImpl();
 		return grammar;
@@ -153,6 +156,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Noun createNoun() {
 		NounImpl noun = new NounImpl();
 		return noun;
@@ -163,6 +167,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Predicate createPredicate() {
 		PredicateImpl predicate = new PredicateImpl();
 		return predicate;
@@ -173,6 +178,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Pronoun createPronoun() {
 		PronounImpl pronoun = new PronounImpl();
 		return pronoun;
@@ -183,6 +189,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Sentence createSentence() {
 		SentenceImpl sentence = new SentenceImpl();
 		return sentence;
@@ -193,6 +200,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Verb createVerb() {
 		VerbImpl verb = new VerbImpl();
 		return verb;
@@ -203,6 +211,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Word createWord() {
 		WordImpl word = new WordImpl();
 		return word;
@@ -253,6 +262,7 @@ public class GrammarFactoryImpl extends EFactoryImpl implements GrammarFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GrammarPackage getGrammarPackage() {
 		return (GrammarPackage)getEPackage();
 	}

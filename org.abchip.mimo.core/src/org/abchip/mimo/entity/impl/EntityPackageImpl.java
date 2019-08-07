@@ -548,6 +548,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEntityEnum_Text() {
+		return (EAttribute)entityEnumEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntityIterator() {
 		return entityIteratorEClass;
 	}
@@ -1093,6 +1103,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		entityEnumEClass = createEClass(ENTITY_ENUM);
 		createEAttribute(entityEnumEClass, ENTITY_ENUM__NAME);
+		createEAttribute(entityEnumEClass, ENTITY_ENUM__TEXT);
 
 		entityIteratorEClass = createEClass(ENTITY_ITERATOR);
 
@@ -1238,6 +1249,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		defaultEClass.getESuperTypes().add(this.getEntity());
 		domainEClass.getESuperTypes().add(this.getEntity());
 		entityEnumEClass.getESuperTypes().add(this.getEntityNameable());
+		entityEnumEClass.getESuperTypes().add(this.getTextable());
 		g1 = createEGenericType(theUtilPackage.getJavaIterator());
 		g2 = createEGenericType(entityIteratorEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -1308,6 +1320,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(entityEnumEClass, EntityEnum.class, "EntityEnum", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityEnum_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityEnum_Text(), ecorePackage.getEString(), "text", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityIteratorEClass, EntityIterator.class, "EntityIterator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
