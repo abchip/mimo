@@ -67,7 +67,7 @@ public class LookupFormServlet extends BaseServlet {
 				if (slot.isDerived())
 					continue;
 
-				if (slot.isInfo())
+				if (slot.getGroup() != null && slot.getGroup().equals("info"))
 					continue;
 
 				FormField field = buildFormField(slot);

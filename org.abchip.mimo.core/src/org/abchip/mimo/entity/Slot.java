@@ -24,16 +24,17 @@ package org.abchip.mimo.entity;
  *   <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.Slot#isInfo <em>Info</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getSlot()
  * @model abstract="true"
  * @generated
  */
-public interface Slot extends EntityNameable {
+public interface Slot extends EntityNameable, Textable {
 
 	public final static String NS_PREFIX_SLOT = EntityPackage.eNS_PREFIX + "-slot";
 	public final static String NS_PREFIX_DOMAIN = EntityPackage.eNS_PREFIX + "-domain";
@@ -52,6 +53,21 @@ public interface Slot extends EntityNameable {
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Returns the value of the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Text</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Text</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Text()
+	 * @model required="true" changeable="false"
+	 * @generated
+	 */
+	String getText();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
@@ -129,6 +145,21 @@ public interface Slot extends EntityNameable {
 	Domain getDomain();
 
 	/**
+	 * Returns the value of the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Group</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Group</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Group()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	String getGroup();
+
+	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -142,21 +173,6 @@ public interface Slot extends EntityNameable {
 	 * @generated
 	 */
 	boolean isKey();
-
-	/**
-	 * Returns the value of the '<em><b>Info</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Info</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Info</em>' attribute.
-	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Info()
-	 * @model changeable="false"
-	 * @generated
-	 */
-	boolean isInfo();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

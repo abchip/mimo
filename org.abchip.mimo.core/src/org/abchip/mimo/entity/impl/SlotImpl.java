@@ -31,9 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isKey <em>Key</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isInfo <em>Info</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getText <em>Text</em>}</li>
  * </ul>
  *
  * @generated
@@ -116,6 +117,24 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	protected Domain domain;
 	/**
+	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GROUP_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected String group = GROUP_EDEFAULT;
+	/**
 	 * The default value of the '{@link #isKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -134,24 +153,6 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	protected boolean key = KEY_EDEFAULT;
 	/**
-	 * The default value of the '{@link #isInfo() <em>Info</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isInfo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean INFO_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isInfo() <em>Info</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isInfo()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean info = INFO_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,6 +170,24 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String text = TEXT_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,6 +215,16 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	@Override
 	public String getName() {
 		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getText() {
+		return text;
 	}
 
 	/**
@@ -284,8 +313,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	@Override
-	public boolean isKey() {
-		return key;
+	public String getGroup() {
+		return group;
 	}
 
 	/**
@@ -294,8 +323,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	@Override
-	public boolean isInfo() {
-		return info;
+	public boolean isKey() {
+		return key;
 	}
 
 	/**
@@ -356,12 +385,14 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return isDerived();
 			case EntityPackage.SLOT__DOMAIN:
 				return getDomain();
+			case EntityPackage.SLOT__GROUP:
+				return getGroup();
 			case EntityPackage.SLOT__KEY:
 				return isKey();
-			case EntityPackage.SLOT__INFO:
-				return isInfo();
 			case EntityPackage.SLOT__NAME:
 				return getName();
+			case EntityPackage.SLOT__TEXT:
+				return getText();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -384,12 +415,14 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return derived != DERIVED_EDEFAULT;
 			case EntityPackage.SLOT__DOMAIN:
 				return domain != null;
+			case EntityPackage.SLOT__GROUP:
+				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 			case EntityPackage.SLOT__KEY:
 				return key != KEY_EDEFAULT;
-			case EntityPackage.SLOT__INFO:
-				return info != INFO_EDEFAULT;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case EntityPackage.SLOT__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -410,12 +443,14 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		result.append(defaultValue);
 		result.append(", derived: ");
 		result.append(derived);
+		result.append(", group: ");
+		result.append(group);
 		result.append(", key: ");
 		result.append(key);
-		result.append(", info: ");
-		result.append(info);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", text: ");
+		result.append(text);
 		result.append(')');
 		return result.toString();
 	}

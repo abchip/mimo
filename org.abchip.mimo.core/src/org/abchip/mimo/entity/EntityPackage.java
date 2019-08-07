@@ -868,22 +868,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__DOMAIN = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__GROUP = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__KEY = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Info</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT__INFO = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int SLOT__KEY = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -895,13 +895,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__TEXT = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
@@ -1555,6 +1564,17 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.abchip.mimo.entity.Slot#getText()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Text();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1588,6 +1608,17 @@ public interface EntityPackage extends EPackage {
 	EReference getSlot_Domain();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Group</em>'.
+	 * @see org.abchip.mimo.entity.Slot#getGroup()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Group();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1597,17 +1628,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSlot_Key();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isInfo <em>Info</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Info</em>'.
-	 * @see org.abchip.mimo.entity.Slot#isInfo()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Info();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}'.
@@ -2182,6 +2202,14 @@ public interface EntityPackage extends EPackage {
 		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__TEXT = eINSTANCE.getSlot_Text();
+
+		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2206,20 +2234,20 @@ public interface EntityPackage extends EPackage {
 		EReference SLOT__DOMAIN = eINSTANCE.getSlot_Domain();
 
 		/**
+		 * The meta object literal for the '<em><b>Group</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__GROUP = eINSTANCE.getSlot_Group();
+
+		/**
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SLOT__KEY = eINSTANCE.getSlot_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Info</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__INFO = eINSTANCE.getSlot_Info();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.

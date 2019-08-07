@@ -40,7 +40,7 @@ public interface EntityInfo {
 	 * @return the value of the '<em>Created Stamp</em>' attribute.
 	 * @see #setCreatedStamp(Date)
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityInfo_CreatedStamp()
-	 * @model annotation="mimo-ent-slot info='true'"
+	 * @model annotation="mimo-ent-slot group='info'"
 	 * @generated
 	 */
 	Date getCreatedStamp();
@@ -66,7 +66,7 @@ public interface EntityInfo {
 	 * @return the value of the '<em>Created Tx Stamp</em>' attribute.
 	 * @see #setCreatedTxStamp(Date)
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityInfo_CreatedTxStamp()
-	 * @model annotation="mimo-ent-slot info='true'"
+	 * @model annotation="mimo-ent-slot group='info'"
 	 * @generated
 	 */
 	Date getCreatedTxStamp();
@@ -92,7 +92,7 @@ public interface EntityInfo {
 	 * @return the value of the '<em>Last Updated Stamp</em>' attribute.
 	 * @see #setLastUpdatedStamp(Date)
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityInfo_LastUpdatedStamp()
-	 * @model annotation="mimo-ent-slot info='true'"
+	 * @model annotation="mimo-ent-slot group='info'"
 	 * @generated
 	 */
 	Date getLastUpdatedStamp();
@@ -118,7 +118,7 @@ public interface EntityInfo {
 	 * @return the value of the '<em>Last Updated Tx Stamp</em>' attribute.
 	 * @see #setLastUpdatedTxStamp(Date)
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityInfo_LastUpdatedTxStamp()
-	 * @model annotation="mimo-ent-slot info='true'"
+	 * @model annotation="mimo-ent-slot group='info'"
 	 * @generated
 	 */
 	Date getLastUpdatedTxStamp();

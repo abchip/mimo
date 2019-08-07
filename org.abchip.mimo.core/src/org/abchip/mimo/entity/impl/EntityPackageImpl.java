@@ -938,6 +938,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSlot_Text() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getSlot_DefaultValue() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(2);
 	}
@@ -968,7 +978,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSlot_Key() {
+	public EAttribute getSlot_Group() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -978,7 +988,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSlot_Info() {
+	public EAttribute getSlot_Key() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1144,9 +1154,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(slotEClass, SLOT__DEFAULT_VALUE);
 		createEAttribute(slotEClass, SLOT__DERIVED);
 		createEReference(slotEClass, SLOT__DOMAIN);
+		createEAttribute(slotEClass, SLOT__GROUP);
 		createEAttribute(slotEClass, SLOT__KEY);
-		createEAttribute(slotEClass, SLOT__INFO);
 		createEAttribute(slotEClass, SLOT__NAME);
+		createEAttribute(slotEClass, SLOT__TEXT);
 
 		textableEClass = createEClass(TEXTABLE);
 
@@ -1258,6 +1269,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		resourceManagerEClass.getESuperTypes().add(this.getEntityProvider());
 		resourceSerializerEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
 		slotEClass.getESuperTypes().add(this.getEntityNameable());
+		slotEClass.getESuperTypes().add(this.getTextable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1969,9 +1981,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getSlot_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Derived(), ecorePackage.getEBoolean(), "derived", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSlot_Domain(), this.getDomain(), null, "domain", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Group(), ecorePackage.getEString(), "group", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Key(), ecorePackage.getEBoolean(), "key", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSlot_Info(), ecorePackage.getEBoolean(), "info", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Text(), ecorePackage.getEString(), "text", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(slotEClass, this.getEntity(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "nsPrefix", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -2024,25 +2037,25 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		  (getEntityInfo_CreatedStamp(),
 		   source,
 		   new String[] {
-			   "info", "true"
+			   "group", "info"
 		   });
 		addAnnotation
 		  (getEntityInfo_CreatedTxStamp(),
 		   source,
 		   new String[] {
-			   "info", "true"
+			   "group", "info"
 		   });
 		addAnnotation
 		  (getEntityInfo_LastUpdatedStamp(),
 		   source,
 		   new String[] {
-			   "info", "true"
+			   "group", "info"
 		   });
 		addAnnotation
 		  (getEntityInfo_LastUpdatedTxStamp(),
 		   source,
 		   new String[] {
-			   "info", "true"
+			   "group", "info"
 		   });
 	}
 

@@ -62,7 +62,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		// load features
 		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures()) {
 
-			Slot slot = new EMFSlotAdapter(structuralFeature);
+			Slot slot = new EMFSlotAdapter(this, structuralFeature);
 
 			// set keys
 			if (slot.isKey()) {
@@ -94,7 +94,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				continue;
 
 			// other operation
-			this.getSlots().add(new EMFSlotAdapter(operation));
+			this.getSlots().add(new EMFSlotAdapter(this, operation));
 		}
 
 	}

@@ -604,22 +604,22 @@
     <eClassifiers xsi:type="ecore:EClass" name="EntityInfo" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
         <eAnnotations source="mimo-ent-slot">
-          <details key="info" value="true"/>
+          <details key="group" value="info"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdTxStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
         <eAnnotations source="mimo-ent-slot">
-          <details key="info" value="true"/>
+          <details key="group" value="info"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastUpdatedStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
         <eAnnotations source="mimo-ent-slot">
-          <details key="info" value="true"/>
+          <details key="group" value="info"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastUpdatedTxStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
         <eAnnotations source="mimo-ent-slot">
-          <details key="info" value="true"/>
+          <details key="group" value="info"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -1364,7 +1364,7 @@
       <eLiterals name="TEST" value="20" literal="Test"/>
       <eLiterals name="TEMP" value="30" literal="Temporary"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityNameable">
+    <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
       <eOperations name="getValue" eType="#//entity/Entity">
         <eParameters name="nsPrefix" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
@@ -1379,11 +1379,14 @@
           changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="domain" eType="#//entity/Domain"
           changeable="false" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           changeable="false"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="info" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false"/>
     </eClassifiers>
