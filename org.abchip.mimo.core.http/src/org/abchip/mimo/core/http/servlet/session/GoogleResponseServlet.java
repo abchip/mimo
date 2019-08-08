@@ -152,11 +152,20 @@ public class GoogleResponseServlet extends HttpServlet {
 
     	if(this.getDefaultProvider().checkLogin(authenticationUserToken, true)) {
     		ContextUtils.removeContextProvider(session.getId());
-    		this.getDefaultProvider().login(session.getId(), authenticationUserToken);
+    		contextProvider = this.getDefaultProvider().login(session.getId(), authenticationUserToken);
 			ContextUtils.addContextProvider(contextProvider);
+/*			
+			// test verifica context
+			response.setStatus(HttpServletResponse.SC_ACCEPTED);
+
+			try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
+				serializer.add(contextProvider.getContext().getContextDescription());
+				serializer.save(response.getOutputStream());
+			}
+*/			
 			response.sendRedirect(response.encodeURL("http://localhost:8081/#!/home"));
     	} else {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error in checkLogin");
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error in google response");
 			return;
     	}
 	}
