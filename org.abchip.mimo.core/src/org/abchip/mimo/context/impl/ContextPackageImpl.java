@@ -457,6 +457,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAuthenticationUserToken_User() {
+		return (EAttribute)authenticationUserTokenEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAuthenticationAnonymous() {
 		return authenticationAnonymousEClass;
 	}
@@ -945,6 +955,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__PROVIDER);
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN);
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__ID_TOKEN);
+		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__USER);
 
 		authenticationAnonymousEClass = createEClass(AUTHENTICATION_ANONYMOUS);
 
@@ -1111,6 +1122,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getAuthenticationUserToken_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserToken_AccessToken(), ecorePackage.getEString(), "accessToken", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserToken_IdToken(), ecorePackage.getEString(), "idToken", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthenticationUserToken_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationAnonymousEClass, AuthenticationAnonymous.class, "AuthenticationAnonymous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -20,6 +20,7 @@ package org.abchip.mimo.context;
  *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getProvider <em>Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getIdToken <em>Id Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getUser <em>User</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken()
@@ -104,5 +105,31 @@ public interface AuthenticationUserToken extends Authentication {
 	 * @generated
 	 */
 	void setIdToken(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User</em>' attribute.
+	 * @see #setUser(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken_User()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getUser();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserToken#getUser <em>User</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>User</em>' attribute.
+	 * @see #getUser()
+	 * @generated
+	 */
+	void setUser(String value);
 
 } // AuthenticationUserToken

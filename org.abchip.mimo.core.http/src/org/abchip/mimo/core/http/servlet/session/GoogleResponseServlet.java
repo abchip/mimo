@@ -23,6 +23,7 @@ import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
@@ -80,6 +81,8 @@ public class GoogleResponseServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
+		System.out.println(getServletName() + ": " + session.getId());
+
 		
         String authorizationCode = request.getParameter("code");
         if (authorizationCode == null || authorizationCode.isEmpty()) {
@@ -95,6 +98,7 @@ public class GoogleResponseServlet extends HttpServlet {
 		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CONTEXT);
 		EntityNameable oauth2Google = oauth2Reader.find(null).next();
 
+		this.getDefaultProvider().logout(contextProvider);
 		contextProvider.getContext().close();
 		
         if (oauth2Google == null) {
@@ -147,7 +151,13 @@ public class GoogleResponseServlet extends HttpServlet {
     	authenticationUserToken.setProvider("Google");
 
     	if(this.getDefaultProvider().checkLogin(authenticationUserToken, true)) {
+    		ContextUtils.removeContextProvider(session.getId());
     		this.getDefaultProvider().login(session.getId(), authenticationUserToken);
+			ContextUtils.addContextProvider(contextProvider);
+			response.sendRedirect(response.encodeURL("http://localhost:8081/#!/home"));
+    	} else {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error in checkLogin");
+			return;
     	}
 	}
 }
