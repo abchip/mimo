@@ -416,6 +416,30 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-frame</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentframeAnnotations() {
+		String source = "mimo-ent-frame";
+		addAnnotation
+		  (messageReceivedEClass,
+		   source,
+		   new String[] {
+			   "autoIncrement", "true"
+		   });
+		addAnnotation
+		  (messageSentEClass,
+		   source,
+		   new String[] {
+			   "autoIncrement", "true"
+		   });
 	}
 
 	/**

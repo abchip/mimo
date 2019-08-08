@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isAbstract <em>Abstract</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isAutoIncrement <em>Auto Increment</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlots <em>Slots</em>}</li>
@@ -60,6 +61,24 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @ordered
 	 */
 	protected boolean abstract_ = ABSTRACT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isAutoIncrement() <em>Auto Increment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAutoIncrement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean AUTO_INCREMENT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isAutoIncrement() <em>Auto Increment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAutoIncrement()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean autoIncrement = AUTO_INCREMENT_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -292,6 +311,16 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
+	public boolean isAutoIncrement() {
+		return autoIncrement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case EntityPackage.FRAME__SLOTS:
@@ -310,6 +339,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		switch (featureID) {
 			case EntityPackage.FRAME__ABSTRACT:
 				return isAbstract();
+			case EntityPackage.FRAME__AUTO_INCREMENT:
+				return isAutoIncrement();
 			case EntityPackage.FRAME__KEYS:
 				return getKeys();
 			case EntityPackage.FRAME__NAME:
@@ -334,6 +365,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		switch (featureID) {
 			case EntityPackage.FRAME__ABSTRACT:
 				return abstract_ != ABSTRACT_EDEFAULT;
+			case EntityPackage.FRAME__AUTO_INCREMENT:
+				return autoIncrement != AUTO_INCREMENT_EDEFAULT;
 			case EntityPackage.FRAME__KEYS:
 				return keys != null && !keys.isEmpty();
 			case EntityPackage.FRAME__NAME:
@@ -360,6 +393,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (abstract: ");
 		result.append(abstract_);
+		result.append(", autoIncrement: ");
+		result.append(autoIncrement);
 		result.append(", keys: ");
 		result.append(keys);
 		result.append(", name: ");

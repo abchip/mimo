@@ -15,7 +15,7 @@ package org.abchip.mimo.edi.message;
  *
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessageReceived()
- * @model
+ * @model annotation="mimo-ent-frame autoIncrement='true'"
  * @generated
  */
 public interface MessageReceived extends Message {

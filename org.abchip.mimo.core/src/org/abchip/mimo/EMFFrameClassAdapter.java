@@ -47,11 +47,15 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		for (Frame<?> superFrame : getSuperFrames())
 			getSuperNames().add(superFrame.getName());
 
-		EAnnotation eTextAnnotation = eClass.getEAnnotation(Frame.NS_PREFIX_FRAME);
-		if (eTextAnnotation != null) {
-			String formula = eTextAnnotation.getDetails().get("formula");
+		// TODO super
+		EAnnotation eFrameAnnotation = eClass.getEAnnotation(Frame.NS_PREFIX_FRAME);
+		if (eFrameAnnotation != null) {
+			String formula = eFrameAnnotation.getDetails().get("formula");
 			if (formula != null)
 				this.textFormula = formula;
+			String autoIncrement = eFrameAnnotation.getDetails().get("autoIncrement");
+			if (autoIncrement != null)
+				this.autoIncrement = Boolean.parseBoolean(autoIncrement);
 		}
 
 		List<String> keys = new ArrayList<String>();

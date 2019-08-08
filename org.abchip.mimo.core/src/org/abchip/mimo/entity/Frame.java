@@ -22,6 +22,7 @@ import java.util.List;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.Frame#isAbstract <em>Abstract</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#isAutoIncrement <em>Auto Increment</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getSlots <em>Slots</em>}</li>
@@ -161,4 +162,19 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @generated
 	 */
 	boolean isAbstract();
+
+	/**
+	 * Returns the value of the '<em><b>Auto Increment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auto Increment</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auto Increment</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_AutoIncrement()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	boolean isAutoIncrement();
 } // Frame

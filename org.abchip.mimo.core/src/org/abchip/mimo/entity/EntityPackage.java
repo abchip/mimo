@@ -650,13 +650,22 @@ public interface EntityPackage extends EPackage {
 	int FRAME__ABSTRACT = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Auto Increment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__AUTO_INCREMENT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Keys</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__KEYS = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int FRAME__KEYS = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -665,7 +674,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int FRAME__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -674,7 +683,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Super Names</b></em>' attribute list.
@@ -683,7 +692,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Text Formula</b></em>' attribute.
@@ -692,7 +701,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
@@ -701,7 +710,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Frame Manager</em>' class.
@@ -1340,6 +1349,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFrame_Abstract();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#isAutoIncrement <em>Auto Increment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auto Increment</em>'.
+	 * @see org.abchip.mimo.entity.Frame#isAutoIncrement()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_AutoIncrement();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.entity.Frame#getKeys <em>Keys</em>}'.
@@ -2022,6 +2042,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FRAME__ABSTRACT = eINSTANCE.getFrame_Abstract();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Increment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__AUTO_INCREMENT = eINSTANCE.getFrame_AutoIncrement();
 
 		/**
 		 * The meta object literal for the '<em><b>Keys</b></em>' attribute list feature.
