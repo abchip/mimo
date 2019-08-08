@@ -55,7 +55,9 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	private Map<String, ResourceNotifier<?>> notifiers = null;
 
 	@PostConstruct
-	private void init() {
+	protected void init() {
+		super.init();
+
 		this.notifiers = new HashMap<String, ResourceNotifier<?>>();
 		this.frameReader = frameManager.getFrameReader(contextRoot);
 	}
@@ -114,12 +116,16 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		return getEntityReader(contextProvider, klass.getSimpleName(), scope);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frameName, ResourceScope scope) {
-		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		if (frame == null)
-			return null;
+		if (frame == null) {
+			this.frameReader = frameManager.getFrameReader(contextRoot);
+			frame = (Frame<E>) frameReader.lookup(frameName);
+			if (frame == null)
+				return null;
+		}
 
 		return getEntityReader(contextProvider, frame, scope);
 	}
@@ -294,7 +300,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	public <E extends EntityNameable> EntityProvider getProvider(String frameName) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		if(frame == null)
+		if (frame == null)
 			return null;
 
 		return getProvider(frame);

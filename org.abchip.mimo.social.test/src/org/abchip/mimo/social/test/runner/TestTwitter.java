@@ -57,79 +57,78 @@ public class TestTwitter {
 	private TestRunner testRunner;
 	@Inject
 	private AudioManager audioManager;
-	
+
 	@SuppressWarnings("unused")
 	@TestStarted
 	public void start() throws InterruptedException {
-		
+
 		loadTweets();
-		
+
 		testConfusionMatrix();
 
-		
-		if(true)
+		if (true)
 			return;
-		
+
 		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);
 		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
-		
+
 		Tweet t = tweetReader.lookup("939830847619944449");
 
 		EntityReader<Frame<Entity>> frameReader = frameManager.getFrameReader(testRunner);
-		
-		for(Frame<?> frame: frameReader.find(null)) {
+
+		for (Frame<?> frame : frameReader.find(null)) {
 			String text = "The frame " + frame.getName() + " has the following properties:";
-//			audioManager.play(testRunner, AudioStyle.A, text, true, true);
+			// audioManager.play(testRunner, AudioStyle.A, text, true, true);
 			StringBuffer sb = new StringBuffer();
-			for(Slot slot: frame.getSlots()) {
+			for (Slot slot : frame.getSlots()) {
 				sb.append(slot.getName() + ". ");
 			}
-//			audioManager.play(testRunner, AudioStyle.B, sb.toString(), true, true);
+			// audioManager.play(testRunner, AudioStyle.B, sb.toString(), true, true);
 		}
-		
 
 		Set<String> users = new HashSet<String>();
 		Set<String> languages = new HashSet<String>();
 		for (Tweet tweet : tweetReader.find(null)) {
 			users.add(tweet.getUser());
-			if(tweet.getLanguage() != null)
+			if (tweet.getLanguage() != null)
 				languages.add(tweet.getLanguage());
 		}
-		
+
 		audioManager.play(testRunner, AudioStyle.A, "The following languages have been spoken on Twitter", true, true);
 
-		for(String languageName: languages) {
+		for (String languageName : languages) {
 			Language language = languageReader.lookup(languageName.toUpperCase());
-			if(language == null)
+			if (language == null)
 				"".toCharArray();
-//				audioManager.play(testRunner, AudioStyle.A, "Unknown language: " + languageName, true, true);
+			// audioManager.play(testRunner, AudioStyle.A, "Unknown language: " +
+			// languageName, true, true);
 			else
 				audioManager.play(testRunner, AudioStyle.A, language.getText(), true, true);
 		}
-		
+
 		audioManager.play(testRunner, AudioStyle.A, "The following users have written on Twitter", true, true);
 
 		Thread.sleep(1000);
-		
-		for(String user: users) {
-//			audioManager.play(testRunner, AudioStyle.A, user, true, true);
+
+		for (String user : users) {
+			// audioManager.play(testRunner, AudioStyle.A, user, true, true);
 		}
-		
+
 		audioManager.play(testRunner, AudioStyle.A, "I found the following tweets in the system", true, true);
 
 		for (Tweet tweet : tweetReader.find(null)) {
-			
-			if(tweet.getLanguage() == null)
+
+			if (tweet.getLanguage() == null)
 				continue;
 			String text = tweet.getText();
-			for(String entity: tweet.getEntities()) {
+			for (String entity : tweet.getEntities()) {
 				text = text.replaceAll(entity, "");
 			}
-			for(String hashtag: tweet.getHashtags()) {
-				text = text.replaceAll("#"+hashtag, "");
+			for (String hashtag : tweet.getHashtags()) {
+				text = text.replaceAll("#" + hashtag, "");
 			}
-			
-			if(tweet.getLanguage().equalsIgnoreCase("EN")) {
+
+			if (tweet.getLanguage().equalsIgnoreCase("EN")) {
 				audioManager.play(testRunner, AudioStyle.A, tweet.getUser() + " wrote:", true, true);
 				audioManager.play(testRunner, AudioStyle.A, text, true, true);
 			}
@@ -137,38 +136,38 @@ public class TestTwitter {
 			asserter.assertEquals("Tweet language: " + tweet.getText(), tweet.getLanguage().toUpperCase(), classification.getEntity().getName());
 		}
 	}
-	
+
 	private void testConfusionMatrix() {
-				
+
 		List<Language> languages = new ArrayList<Language>();
 		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
-		for(Language language: languageReader.find(null))
+		for (Language language : languageReader.find(null))
 			languages.add(language);
-		
+
 		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);
 		Evaluator evaluator = classifier.buildEvaluator(Language.class, String.class);
 
-		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);		
+		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);
 		for (Tweet tweet : tweetReader.find(null)) {
-			
+
 			Language language = lookupLanguageByIso(languages, tweet.getLanguage());
-			if(language != null)
+			if (language != null)
 				evaluator.evaluate(tweet.getText(), language.getText().toLowerCase());
 		}
-		
+
 		evaluator.printConfusionMatrix();
 	}
 
 	private Language lookupLanguageByIso(List<Language> languages, String iso) {
-		for(Language language: languages) {
-			if(language.getIso_639_1().equalsIgnoreCase(iso))
+		for (Language language : languages) {
+			if (language.getIso_639_1().equalsIgnoreCase(iso))
 				return language;
 		}
 		return null;
 	}
-	
+
 	private void loadTweets() {
-		
+
 		EntityIterator<Tweet> tweetIterator = twitterManager.search(testRunner, null, "#ai", 1000);
 		asserter.assertTrue("Count tweets", tweetIterator.hasNext());
 

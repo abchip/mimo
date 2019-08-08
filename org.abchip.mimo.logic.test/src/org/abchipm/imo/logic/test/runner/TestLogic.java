@@ -23,7 +23,7 @@ import org.abchip.mimo.tester.TestStarted;
 
 @Test(entity = "Logic")
 public class TestLogic {
-		
+
 	@Inject
 	private FrameManager frameManager;
 	@Inject
@@ -33,13 +33,13 @@ public class TestLogic {
 
 	@TestStarted
 	public void start() {
-		
+
 		EntityReader<Frame<Entity>> frameReader = frameManager.getFrameReader(testRunner);
-		Frame<?> frame = frameReader.lookup(EntityPackage.eINSTANCE.getFrame().getName()); 
-				
+		Frame<?> frame = frameReader.lookup(EntityPackage.eINSTANCE.getFrame().getName());
+
 		Theory theory = mindManager.buildTheory(testRunner, frame);
-		
-		for(Term mindTerm: theory.getFacts())
+
+		for (Term mindTerm : theory.getFacts())
 			mindTerm.toString();
 	}
 }

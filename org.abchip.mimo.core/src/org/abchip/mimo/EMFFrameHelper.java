@@ -30,19 +30,19 @@ import org.eclipse.emf.ecore.EPackage.Descriptor;
 
 public class EMFFrameHelper {
 
-	private static Map<String, Frame<?>> frames = null;
+	private static Map<String, Frame<?>> publicFrames = null;
 
 	public static Map<String, Frame<?>> getFrames() {
 
-		if (frames == null) {
+		if (publicFrames == null) {
 			synchronized (EMFFrameHelper.class) {
-				if (frames == null) {
+				if (publicFrames == null) {
 					loadFrames();
 				}
 			}
 		}
 
-		return frames;
+		return publicFrames;
 	}
 
 	public static Map<String, EntityEnum> getEnumerators(Frame<EntityEnum> frame) {
@@ -86,8 +86,10 @@ public class EMFFrameHelper {
 
 	private static synchronized void loadFrames() {
 
-		frames = new HashMap<String, Frame<?>>();
-
+		Map<String, Frame<?>> tempFrames = new HashMap<String, Frame<?>>();
+		if(publicFrames == null)
+			publicFrames = tempFrames;
+		
 		EntityPackage.eINSTANCE.getEntity();
 		
 		for (Entry<?, ?> entry : EPackage.Registry.INSTANCE.entrySet()) {
@@ -103,12 +105,12 @@ public class EMFFrameHelper {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
 					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
-						frames.put(eClass.getName(), new EMFFrameClassAdapter<>(eClass));
+						tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(eClass));
 					}
 				}
 				else if (eClassifier instanceof EEnum) {
 					EEnum eEnum = (EEnum) eClassifier;
-					frames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
+					tempFrames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
 				}
 				else if (eClassifier instanceof EDataType) {
 					// TODO
@@ -119,6 +121,8 @@ public class EMFFrameHelper {
 			}
 		}
 
-		Collections.unmodifiableMap(frames);
+		Collections.unmodifiableMap(tempFrames);
+		
+		publicFrames = tempFrames;
 	}
 }

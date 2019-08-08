@@ -32,29 +32,29 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 	@Inject
 	private ResourceManager resourceManager;
 
-	public <E extends EntityNameable>void _find(CommandInterpreter interpreter) throws Exception {
+	public <E extends EntityNameable> void _find(CommandInterpreter interpreter) throws Exception {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
-		
-		for(E entity: resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).find(null)) 
+
+		for (E entity : resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).find(null))
 			System.out.println(entity);
 	}
 
-	public <E extends EntityNameable>void _lookup(CommandInterpreter interpreter) throws Exception {
+	public <E extends EntityNameable> void _lookup(CommandInterpreter interpreter) throws Exception {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextRoot).lookup(frameName);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
-		
+
 		String entityName = interpreter.nextArgument();
-		
-		E entity = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).lookup(entityName);				
+
+		E entity = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).lookup(entityName);
 		System.out.println(entity);
 	}
 

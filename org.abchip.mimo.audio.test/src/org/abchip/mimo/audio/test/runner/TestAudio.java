@@ -39,56 +39,56 @@ public class TestAudio {
 	@Inject
 	private ResourceManager resourceManager;
 	@Inject
-	private LanguageManager languageManager;	
+	private LanguageManager languageManager;
 	@Inject
 	private TestAsserter asserter;
 	@Inject
 	private TestRunner testRunner;
 	@Inject
 	private FrameManager frameManger;
-	
+
 	@TestStarted
 	public void start() throws InterruptedException {
-		
+
 		audioManager.play(testRunner, AudioStyle.A, "Hi Diana, there is a kitchen to clean!!", true, true);
-		
+
 		audioManager.play(testRunner, AudioStyle.A, "Hi Mattia, how are you?", true, true);
 
 		readFrames();
-		
-//		recordAudio();
-		
+
+		// recordAudio();
+
 		EntityReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class, ResourceScope.CONTEXT);
 		for (Audio audio : audioReader.find(null)) {
-			
+
 			asserter.assertNotNull("Audio content", audio.getContent());
-			
+
 			audioManager.play(testRunner, audio, true, true);
-			
+
 			Classification<Language> classification = languageManager.classifyLanguage(testRunner, audio.getText());
 			System.out.println(classification);
 		}
 	}
-	
+
 	private void readFrames() throws InterruptedException {
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following frames in the system", true, true);
 
-		for(Frame<Entity> frame: frameManger.getFrameReader(testRunner).find(null)) {
+		for (Frame<Entity> frame : frameManger.getFrameReader(testRunner).find(null)) {
 			audioManager.play(testRunner, AudioStyle.B, frame.getName(), true, true);
 		}
-		
+
 		audioManager.play(testRunner, AudioStyle.A, "I found the following languages in the system", true, true);
 
 		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
-		for (Language language : languageReader.find(null)) {			
+		for (Language language : languageReader.find(null)) {
 			audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
 		}
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void recordAudio() throws InterruptedException {
-		
+
 		AudioRecorder audioRecorder = audioManager.record(testRunner);
 		audioRecorder.start();
 		Thread.sleep(5000);
@@ -97,8 +97,8 @@ public class TestAudio {
 		Audio audio = AudioFactory.eINSTANCE.createAudio();
 		audio.setName("mimo-test");
 		audio.setText("Mimo audio test");
-		audio.setContent(((ByteArrayOutputStream)audioRecorder.getOutputStream()).toByteArray());
-		
+		audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
+
 		EntityWriter<Audio> audioWriter = resourceManager.getEntityWriter(testRunner, Audio.class, testRunner.getContext().getContextDescription().getResourceTemporary());
 		audioWriter.save(audio, true);
 	}

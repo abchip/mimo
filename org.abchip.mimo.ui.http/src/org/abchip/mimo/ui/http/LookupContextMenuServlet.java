@@ -69,8 +69,8 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 		/*
 		 * ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot,
-		 * ContextMenu.class, ResourceScope.CONTEXT).lookup("Frame"); if (contextMenuFrame
-		 * != null) {
+		 * ContextMenu.class, ResourceScope.CONTEXT).lookup("Frame"); if
+		 * (contextMenuFrame != null) {
 		 * 
 		 * MenuGroup groupFrame = MenuFactory.eINSTANCE.createMenuGroup();
 		 * groupFrame.setValue(frame.getName());

@@ -32,7 +32,9 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 	private ResourceManager resourceManager;
 
 	@PostConstruct
-	private void init() {
+	protected void init() {
+		super.init();
+		
 		resourceManager.registerProvider(Frame.class, this);
 		resourceManager.registerProvider(EntityEnum.class, this);
 	}

@@ -313,8 +313,14 @@ public class BaseApplicationStarter {
 
 	private Object loadObject(Context context, String className) {
 		Class<?> tempClass = context.getContextRoot().loadClass(className);
-		if (tempClass == null)
+		if (tempClass == null) {
+			try {
+				tempClass = Class.forName(className);
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
 			return null;
+		}
 
 		return context.make(tempClass);
 	}

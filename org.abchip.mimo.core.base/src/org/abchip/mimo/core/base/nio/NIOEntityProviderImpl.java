@@ -46,8 +46,9 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 	private NIOPathManager pathManager;
 
 	@PostConstruct
-	private void init() {
-
+	protected void init() {
+		super.init();
+		
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getResourceRoot());
 		
 		resourceManager.registerProvider(Resource.class, this);

@@ -9,8 +9,8 @@ package org.abchip.mimo.entity.impl;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
@@ -37,6 +37,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	@Inject
 	private ContextRoot contextRoot;
+
 	@Inject
 	private FrameManager frameManager;
 
@@ -44,6 +45,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityProviderImpl() {
@@ -52,6 +54,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -60,8 +63,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,11 +74,17 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		throw new UnsupportedOperationException();
 	}
 
-	@PostConstruct
-	private void init() {
+	protected void init() {
+
+		if (frameManager == null)
+			"".toString();
+
+		if (getContextRoot() == null)
+			"".toString();
+
 		this.frameReader = frameManager.getFrameReader(getContextRoot());
 	}
-	
+
 	protected ContextRoot getContextRoot() {
 		return contextRoot;
 	}
@@ -147,8 +156,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -159,8 +168,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,8 +180,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -183,8 +192,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -195,8 +204,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -207,8 +216,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

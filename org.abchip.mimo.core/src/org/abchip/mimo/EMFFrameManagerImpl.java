@@ -17,7 +17,7 @@ import org.abchip.mimo.entity.ResourceHelper;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameManagerImpl implements FrameManager {
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends Entity> E createEntity(Frame<E> frame) {
@@ -31,7 +31,7 @@ public class EMFFrameManagerImpl implements FrameManager {
 	@Override
 	public <E extends Entity> E createEntity(Class<E> klass) {
 		return createEntity(getFrame(klass));
-	}	
+	}
 
 	@Override
 	public <E extends Entity> EntityReader<Frame<E>> getFrameReader(ContextProvider contextProvider) {
