@@ -50,10 +50,7 @@ public class GoogleResponseServlet extends HttpServlet {
 	public static final String TokenServiceUri = "https://oauth2.googleapis.com/token";
 	public static final String TokenInfoUri = "https://oauth2.googleapis.com/tokeninfo";
 
-	public static final RequestConfig StandardRequestConfig = RequestConfig.custom()
-            .setCookieSpec(CookieSpecs.STANDARD)
-            .build();
-
+	public static final RequestConfig StandardRequestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
 
 	@Inject
 	private ResourceManager resourceManager;
@@ -80,93 +77,103 @@ public class GoogleResponseServlet extends HttpServlet {
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		HttpSession session = request.getSession();
-		System.out.println(getServletName() + ": " + session.getId());
+		String state = request.getParameter("state");
 
+		HttpSession session = request.getSession();
+		System.out.println(getServletName() + ": " + state + "\t" + session.getId());
+
+		String authorizationCode = request.getParameter("code");
+
+		/*
+		Enumeration<String> paramNames = request.getParameterNames();
+		while (paramNames.hasMoreElements()) {
+			String paramName = paramNames.nextElement();
+			System.out.println(paramName + ": " + request.getParameter(paramName));
+		}
+*/
 		
-        String authorizationCode = request.getParameter("code");
-        if (authorizationCode == null || authorizationCode.isEmpty()) {
+		if (authorizationCode == null || authorizationCode.isEmpty()) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google failed fo get authorization code");
 			return;
-        }
+		}
 
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
 		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
 
-        // dovremmo accedere con ProductStore e data
+		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2Google";
 		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CONTEXT);
 		EntityNameable oauth2Google = oauth2Reader.find(null).next();
 
 		this.getDefaultProvider().logout(contextProvider);
 		contextProvider.getContext().close();
-		
-        if (oauth2Google == null) {
+
+		if (oauth2Google == null) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google get OAuth2 configuration error");
 			return;
-        }
-        
-		String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId").toString();
-		String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
-		String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret").toString();
-        String accessToken = null;
-        String idToken = null;
-        
-        HttpPost postMethod = null;
-        try {
-            URI uri = new URIBuilder()
-                    .setPath(TokenServiceUri)
-                    .setParameter("client_id", clientId)
-                    .setParameter("client_secret", secret)
-                    .setParameter("grant_type", "authorization_code")
-                    .setParameter("code", authorizationCode)
-                    .setParameter("redirect_uri", returnURI)
-                    .build();
+		}
 
-            postMethod = new HttpPost(uri);
-            CloseableHttpClient client = HttpClients.custom().build();
-            postMethod.setConfig(StandardRequestConfig);
-            HttpResponse postResponse = client.execute(postMethod);
-            String responseString = new BasicResponseHandler().handleResponse(postResponse);
-            if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-            	JsonFactory factory = new JsonFactory();
-            	JsonParser  parser  = factory.createParser(responseString);            	
-            	HashMap<?, ?> userMap = new ObjectMapper().readValue(parser, HashMap.class);
-                accessToken = (String) userMap.get("access_token");
-                idToken = (String) userMap.get("id_token");
-                // Debug.logInfo("Generated Access Token : " + accessToken, module);
-            } else {
-    			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google get OAuth2 access token error");
-    			return;
-            }
-        } catch (Exception e) {
+		String accessToken = null;
+		String idToken = null;
+
+		HttpPost postMethod = null;
+		try (CloseableHttpClient client = HttpClients.custom().build()) {
+			String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId").toString();
+			String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
+			String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret").toString();
+
+			URI uri = new URIBuilder().setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
+					.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();
+
+			postMethod = new HttpPost(uri);
+			postMethod.setConfig(StandardRequestConfig);
+			HttpResponse postResponse = client.execute(postMethod);
+			String responseString = new BasicResponseHandler().handleResponse(postResponse);
+			if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+				JsonFactory factory = new JsonFactory();
+				JsonParser parser = factory.createParser(responseString);
+				HashMap<?, ?> userMap = new ObjectMapper().readValue(parser, HashMap.class);
+				accessToken = (String) userMap.get("access_token");
+				idToken = (String) userMap.get("id_token");
+				// Debug.logInfo("Generated Access Token : " + accessToken, module);
+			} else {
+				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google get OAuth2 access token error");
+				return;
+			}
+		} catch (Exception e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;
-		}        
+		}
 
-        // checkLogin
-    	AuthenticationUserToken authenticationUserToken = ContextFactory.eINSTANCE.createAuthenticationUserToken();
-    	authenticationUserToken.setIdToken(idToken);
-    	authenticationUserToken.setAccessToken(accessToken);
-    	authenticationUserToken.setProvider("Google");
+		// checkLogin
+		AuthenticationUserToken authenticationUserToken = ContextFactory.eINSTANCE.createAuthenticationUserToken();
+		authenticationUserToken.setIdToken(idToken);
+		authenticationUserToken.setAccessToken(accessToken);
+		authenticationUserToken.setProvider("Google");
 
-    	if(this.getDefaultProvider().checkLogin(authenticationUserToken, true)) {
-    		ContextUtils.removeContextProvider(session.getId());
-    		contextProvider = this.getDefaultProvider().login(session.getId(), authenticationUserToken);
+		if (this.getDefaultProvider().checkLogin(authenticationUserToken, true)) {
+			ContextUtils.removeContextProvider(state);
+			contextProvider = this.getDefaultProvider().login(state, authenticationUserToken);
 			ContextUtils.addContextProvider(contextProvider);
-/*			
-			// test verifica context
-			response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-			try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-				serializer.add(contextProvider.getContext().getContextDescription());
-				serializer.save(response.getOutputStream());
-			}
-*/			
-			response.sendRedirect(response.encodeURL("http://localhost:8081/#!/home"));
-    	} else {
+			// String location = "http://localhost:8081;jsessionid=" + state + ".node0";
+			String location = "http://localhost:8081";
+			System.err.println(("Response location: " + location));
+
+			response.sendRedirect(location);
+
+			/*
+			 * // test verifica context response.setStatus(HttpServletResponse.SC_ACCEPTED);
+			 * 
+			 * try (ResourceSerializer<ContextDescription> serializer =
+			 * resourceManager.createResourceSerializer(contextProvider,
+			 * ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
+			 * serializer.add(contextProvider.getContext().getContextDescription());
+			 * serializer.save(response.getOutputStream()); }
+			 */
+		} else {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error in google response");
 			return;
-    	}
+		}
 	}
 }

@@ -10,12 +10,14 @@ package org.abchip.mimo.core.http.servlet.session;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.ContextFactory;
@@ -59,6 +61,8 @@ public class GoogleRedirectServlet extends HttpServlet {
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		HttpSession session = request.getSession();
+		System.out.println(getServletName() + ": " + session.getId());
 
 		// anonymous access
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
@@ -66,7 +70,7 @@ public class GoogleRedirectServlet extends HttpServlet {
 
 		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, "OAuth2Google", ResourceScope.CONTEXT);
 		EntityNameable oauth2Google = oauth2Reader.find(null).next();
-		
+
 		getDefaultProvider().logout(contextProvider);
 		contextProvider.getContext().close();
 
@@ -77,18 +81,20 @@ public class GoogleRedirectServlet extends HttpServlet {
 
 		String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId").toString();
 		String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
-
 		// Get user authorization code
 		try {
-			String location = AUTHORIZE_URI + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&redirect_uri=" + URLEncoder.encode(returnURI, "UTF-8");
+			String location = AUTHORIZE_URI + "?client_id=" + clientId 
+											+ "&response_type=code" 
+											+ "&scope=" + DEFAULT_SCOPE 
+											+ "&nonce=" + UUID.randomUUID() 
+											+ "&redirect_uri="+ URLEncoder.encode(returnURI, "UTF8")
+											+ "&state=" + session.getId();
+//											+ "&state=" + URLEncoder.encode(";jsessionId=" + session.getId(), "UTF8");
 
-			// response.setHeader(HttpHeader.LOCATION.name(), location);
-			// response.setStatus(HttpServletResponse.SC_ACCEPTED);
-			// response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
+//			location = response.encodeURL(location);
+			System.err.println(("Redirect location: " + location));
 
 			response.sendRedirect(location);
-			// response.setStatus(HttpServletResponse.SC_ACCEPTED);
-			// response.getWriter().write(redirectUrl);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

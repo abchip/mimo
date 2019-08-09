@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		System.out.println(getServletName() + ": " + session.getId());
-		
+
 		String provider = request.getParameter("provider");
 		String userField = request.getParameter("user");
 		String password = request.getParameter("password");
@@ -85,15 +85,27 @@ public class LoginServlet extends HttpServlet {
 			contextProvider.getContext().close();
 
 			if (oauth2Entity != null) {
-				String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+				String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri").toString();
 
-				String location = oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri").toString();
-				response.setHeader(HttpHeader.LOCATION.name(), url + location);
+				location = response.encodeURL(location);
+				System.err.println(("Login location: " + location));
+
+				response.setHeader(HttpHeader.LOCATION.name(), location);
 				response.setStatus(HttpServletResponse.SC_ACCEPTED);
+				
+				try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class,
+						SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
+					ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
+					tempContextDescription.setId(session.getId());
+					tempContextDescription.setAnonymous(true);
+					serializer.add(tempContextDescription);
+					serializer.save(response.getOutputStream());
+				}
 			} else {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				response.flushBuffer();
 			}
+			
+			response.flushBuffer();
 			return;
 		}
 
@@ -117,15 +129,15 @@ public class LoginServlet extends HttpServlet {
 		if (contextProvider != null && !this.getDefaultProvider().isActive(contextProvider)) {
 			contextProvider = null;
 		}
-		
-		// close previous 
-		if(contextProvider != null) {
+
+		// close previous
+		if (contextProvider != null) {
 			ContextUtils.removeContextProvider(session.getId());
 			this.getDefaultProvider().logout(contextProvider);
 			contextProvider.getContext().close();
 			contextProvider = null;
 		}
-		
+
 		// new session with user password
 		if (contextProvider == null) {
 			ContextUtils.removeContextProvider(session.getId());
@@ -146,7 +158,8 @@ public class LoginServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
+		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class,
+				SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			serializer.add(contextProvider.getContext().getContextDescription());
 			serializer.save(response.getOutputStream());
 		}
