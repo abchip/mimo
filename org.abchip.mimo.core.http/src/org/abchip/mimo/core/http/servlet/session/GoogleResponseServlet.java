@@ -120,12 +120,11 @@ public class GoogleResponseServlet extends HttpServlet {
 		HttpPost postMethod = null;
 		try (CloseableHttpClient client = HttpClients.custom().build()) {
 			String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId").toString();
-//			String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
+			String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
 			String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret").toString();
 
 			URI uri = new URIBuilder().setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
-					.setParameter("code", authorizationCode).build();
-					//.setParameter("redirect_uri", returnURI).build();
+					.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();
 
 			postMethod = new HttpPost(uri);
 			postMethod.setConfig(StandardRequestConfig);
@@ -158,10 +157,8 @@ public class GoogleResponseServlet extends HttpServlet {
 			contextProvider = this.getDefaultProvider().login(state, authenticationUserToken);
 			ContextUtils.addContextProvider(contextProvider);
 
-
-			String location = "http://localhost:8081";
-//			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
-//			System.err.println(("Response location: " + location));
+			String location = response.encodeURL("http://localhost:8081");
+			// System.err.println(("Response location: " + location));
 
 			response.sendRedirect(location);
 		} else {
