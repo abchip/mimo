@@ -63,7 +63,7 @@ public abstract class BaseServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(getServletName() + ": " + session.getId());
+		System.out.println(session.getId() + ": " + getServletName());
 
 		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 

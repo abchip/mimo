@@ -12,6 +12,7 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -62,11 +63,17 @@ public class LoginServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(getServletName() + ": " + session.getId());
+		System.out.println(session.getId() + ": " + getServletName());
 
 		String provider = request.getParameter("provider");
 		String userField = request.getParameter("user");
 		String password = request.getParameter("password");
+
+		if (request.getCookies() != null) {
+			for (Cookie cookie : request.getCookies()) {
+				System.out.println(cookie.getName());
+			}
+		}
 
 		// Third part
 		if (provider != null) {
@@ -85,14 +92,15 @@ public class LoginServlet extends HttpServlet {
 			contextProvider.getContext().close();
 
 			if (oauth2Entity != null) {
-				String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri").toString();
+				String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+						+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri").toString();
 
 				location = response.encodeURL(location);
-				System.err.println(("Login location: " + location));
+				// System.err.println(("Login location: " + location));
 
 				response.setHeader(HttpHeader.LOCATION.name(), location);
 				response.setStatus(HttpServletResponse.SC_ACCEPTED);
-				
+
 				try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class,
 						SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 					ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
@@ -104,7 +112,7 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			}
-			
+
 			response.flushBuffer();
 			return;
 		}

@@ -80,18 +80,19 @@ public class GoogleResponseServlet extends HttpServlet {
 		String state = request.getParameter("state");
 
 		HttpSession session = request.getSession();
-		System.out.println(getServletName() + ": " + state + "\t" + session.getId());
+		System.out.println(state + ": " + getServletName());
+
+		if (state != session.getId())
+			session.invalidate();
 
 		String authorizationCode = request.getParameter("code");
 
 		/*
-		Enumeration<String> paramNames = request.getParameterNames();
-		while (paramNames.hasMoreElements()) {
-			String paramName = paramNames.nextElement();
-			System.out.println(paramName + ": " + request.getParameter(paramName));
-		}
-*/
-		
+		 * Enumeration<String> paramNames = request.getParameterNames(); while
+		 * (paramNames.hasMoreElements()) { String paramName = paramNames.nextElement();
+		 * System.out.println(paramName + ": " + request.getParameter(paramName)); }
+		 */
+
 		if (authorizationCode == null || authorizationCode.isEmpty()) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google failed fo get authorization code");
 			return;
@@ -119,11 +120,12 @@ public class GoogleResponseServlet extends HttpServlet {
 		HttpPost postMethod = null;
 		try (CloseableHttpClient client = HttpClients.custom().build()) {
 			String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId").toString();
-			String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
+//			String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl").toString();
 			String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret").toString();
 
 			URI uri = new URIBuilder().setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
-					.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();
+					.setParameter("code", authorizationCode).build();
+					//.setParameter("redirect_uri", returnURI).build();
 
 			postMethod = new HttpPost(uri);
 			postMethod.setConfig(StandardRequestConfig);
@@ -156,21 +158,12 @@ public class GoogleResponseServlet extends HttpServlet {
 			contextProvider = this.getDefaultProvider().login(state, authenticationUserToken);
 			ContextUtils.addContextProvider(contextProvider);
 
-			// String location = "http://localhost:8081;jsessionid=" + state + ".node0";
+
 			String location = "http://localhost:8081";
-			System.err.println(("Response location: " + location));
+//			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+//			System.err.println(("Response location: " + location));
 
 			response.sendRedirect(location);
-
-			/*
-			 * // test verifica context response.setStatus(HttpServletResponse.SC_ACCEPTED);
-			 * 
-			 * try (ResourceSerializer<ContextDescription> serializer =
-			 * resourceManager.createResourceSerializer(contextProvider,
-			 * ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			 * serializer.add(contextProvider.getContext().getContextDescription());
-			 * serializer.save(response.getOutputStream()); }
-			 */
 		} else {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error in google response");
 			return;

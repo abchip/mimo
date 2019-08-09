@@ -62,7 +62,7 @@ public class GoogleRedirectServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(getServletName() + ": " + session.getId());
+		System.out.println(session.getId() + ": " + getServletName());
 
 		// anonymous access
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
@@ -92,7 +92,7 @@ public class GoogleRedirectServlet extends HttpServlet {
 //											+ "&state=" + URLEncoder.encode(";jsessionId=" + session.getId(), "UTF8");
 
 //			location = response.encodeURL(location);
-			System.err.println(("Redirect location: " + location));
+//			System.err.println(("Redirect location: " + location));
 
 			response.sendRedirect(location);
 		} catch (Exception e) {
