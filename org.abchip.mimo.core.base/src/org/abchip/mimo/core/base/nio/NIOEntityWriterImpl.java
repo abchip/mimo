@@ -29,8 +29,6 @@ import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.ResourceHelper;
 import org.abchip.mimo.entity.ResourceSerializer;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityReaderImpl<E> implements EntityWriter<E> {
 
@@ -118,43 +116,5 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 		} finally {
 			entityLocker.unlock(LockType.WRITE);
 		}
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public void rename(E entity, String newName) {
-		try {
-
-			ResourceHelper.firePreRenameEvent(this, entity, newName);
-
-			String oldName = entity.getName();
-
-			E newEntity = (E) EcoreUtil.copy((EObject) entity);
-			EObject eObject = (EObject) newEntity;
-
-			// new name
-			eObject.eSet(eObject.eClass().getEStructuralFeature("name"), newName);
-
-			doSave(newEntity, true);
-			doDelete(entity);
-
-			ResourceHelper.firePostRenameEvent(this, newEntity, oldName);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public E copy(E entity, String name) {
-
-		EObject eObject = EcoreUtil.copy((EObject) entity);
-
-		// new name
-		eObject.eSet(eObject.eClass().getEStructuralFeature("name"), name);
-
-		save((E) eObject);
-
-		return (E) eObject;
 	}
 }

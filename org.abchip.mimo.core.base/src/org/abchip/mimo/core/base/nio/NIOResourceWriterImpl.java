@@ -36,12 +36,6 @@ public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements Enti
 	}
 
 	@Override
-	public Resource copy(Resource entity, String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void delete(Resource resource) {
 		Context context = contextProvider.getContext();
 	
@@ -97,12 +91,6 @@ public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements Enti
 		finally {
 			resourceLocker.unlock(LockType.WRITE);
 		}
-	}
-
-	@Override
-	public void rename(Resource entity, String newName) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

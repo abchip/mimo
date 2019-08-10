@@ -405,8 +405,6 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/After_Save"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/Before_Delete"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/After_Delete"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/Before_Rename"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceEventType/After_Rename"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/ResourceScope">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/ResourceScope/All"/>
@@ -588,24 +586,16 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityWriter">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityWriter/E"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/copy">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/copy/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/copy/name"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/delete">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/delete/entity"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/getResourceName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/save">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/save/object"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/save/entity"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/save.1">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/save.1/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/save.1/replace"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/rename">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/rename/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/rename/newName"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Facet"/>

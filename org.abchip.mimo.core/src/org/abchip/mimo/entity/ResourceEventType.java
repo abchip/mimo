@@ -57,23 +57,7 @@ public enum ResourceEventType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AFTER_DELETE(70, "After_Delete", "POSTDLT"), /**
-	 * The '<em><b>Before Rename</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BEFORE_RENAME_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BEFORE_RENAME(80, "Before_Rename", "PRERNM"), /**
-	 * The '<em><b>After Rename</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #AFTER_RENAME_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	AFTER_RENAME(90, "After_Rename", "POSTRNM");
+	AFTER_DELETE(70, "After_Delete", "POSTDLT");
 
 	/**
 	 * The '<em><b>Before Save</b></em>' literal value.
@@ -136,36 +120,6 @@ public enum ResourceEventType implements Enumerator {
 	public static final int AFTER_DELETE_VALUE = 70;
 
 	/**
-	 * The '<em><b>Before Rename</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Before Rename</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #BEFORE_RENAME
-	 * @model name="Before_Rename" literal="PRERNM"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BEFORE_RENAME_VALUE = 80;
-
-	/**
-	 * The '<em><b>After Rename</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>After Rename</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #AFTER_RENAME
-	 * @model name="After_Rename" literal="POSTRNM"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int AFTER_RENAME_VALUE = 90;
-
-	/**
 	 * An array of all the '<em><b>Resource Event Type</b></em>' enumerators.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -175,8 +129,6 @@ public enum ResourceEventType implements Enumerator {
 			AFTER_SAVE,
 			BEFORE_DELETE,
 			AFTER_DELETE,
-			BEFORE_RENAME,
-			AFTER_RENAME,
 		};
 
 	/**
@@ -233,8 +185,6 @@ public enum ResourceEventType implements Enumerator {
 			case AFTER_SAVE_VALUE: return AFTER_SAVE;
 			case BEFORE_DELETE_VALUE: return BEFORE_DELETE;
 			case AFTER_DELETE_VALUE: return AFTER_DELETE;
-			case BEFORE_RENAME_VALUE: return BEFORE_RENAME;
-			case AFTER_RENAME_VALUE: return AFTER_RENAME;
 		}
 		return null;
 	}

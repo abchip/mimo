@@ -897,13 +897,6 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityNameable"/>
       </eTypeParameters>
-      <eOperations name="copy" lowerBound="1">
-        <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
-        <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
-        </eParameters>
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
       <eOperations name="delete">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
@@ -911,7 +904,7 @@
       </eOperations>
       <eOperations name="getResourceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="save">
-        <eParameters name="object" lowerBound="1">
+        <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
         </eParameters>
       </eOperations>
@@ -920,12 +913,6 @@
           <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
         </eParameters>
         <eParameters name="replace" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eOperations>
-      <eOperations name="rename">
-        <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
-        </eParameters>
-        <eParameters name="newName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eGenericSuperTypes eClassifier="#//entity/EntityReader">
         <eTypeArguments eTypeParameter="#//entity/EntityWriter/E"/>
@@ -1061,8 +1048,6 @@
       <eLiterals name="After_Save" value="20" literal="POSTSAVE"/>
       <eLiterals name="Before_Delete" value="60" literal="PREDLT"/>
       <eLiterals name="After_Delete" value="70" literal="POSTDLT"/>
-      <eLiterals name="Before_Rename" value="80" literal="PRERNM"/>
-      <eLiterals name="After_Rename" value="90" literal="POSTRNM"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceListener" abstract="true"
         interface="true">

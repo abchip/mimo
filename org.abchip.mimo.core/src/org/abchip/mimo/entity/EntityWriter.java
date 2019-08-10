@@ -24,14 +24,6 @@ public interface EntityWriter<E extends EntityNameable> extends EntityReader<E> 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" entityRequired="true" nameRequired="true"
-	 * @generated
-	 */
-	E copy(E entity, String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model entityRequired="true"
 	 * @generated
 	 */
@@ -48,10 +40,10 @@ public interface EntityWriter<E extends EntityNameable> extends EntityReader<E> 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model objectRequired="true"
+	 * @model entityRequired="true"
 	 * @generated
 	 */
-	void save(E object);
+	void save(E entity);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,13 +52,5 @@ public interface EntityWriter<E extends EntityNameable> extends EntityReader<E> 
 	 * @generated
 	 */
 	void save(E entity, boolean replace);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" newNameRequired="true"
-	 * @generated
-	 */
-	void rename(E entity, String newName);
 
 } // EntityWriter

@@ -89,10 +89,6 @@ public class GoogleRedirectServlet extends HttpServlet {
 											+ "&nonce=" + UUID.randomUUID() 
 											+ "&redirect_uri="+ URLEncoder.encode(returnURI, "UTF8")
 											+ "&state=" + session.getId();
-//											+ "&state=" + URLEncoder.encode(";jsessionId=" + session.getId(), "UTF8");
-
-//			location = response.encodeURL(location);
-//			System.err.println(("Redirect location: " + location));
 
 			response.sendRedirect(location);
 		} catch (Exception e) {

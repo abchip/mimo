@@ -1576,13 +1576,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		initEClass(entityWriterEClass, EntityWriter.class, "EntityWriter", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(entityWriterEClass, null, "copy", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(entityWriterEClass_E);
-		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(entityWriterEClass_E);
-		initEOperation(op, g1);
-
 		op = addEOperation(entityWriterEClass, null, "delete", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1591,17 +1584,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		op = addEOperation(entityWriterEClass, null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityWriterEClass_E);
-		addEParameter(op, g1, "object", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(entityWriterEClass, null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "replace", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(entityWriterEClass, null, "rename", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(entityWriterEClass_E);
-		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "newName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facetEClass, Facet.class, "Facet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2026,8 +2014,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_SAVE);
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_DELETE);
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_DELETE);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_RENAME);
-		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_RENAME);
 
 		initEEnum(resourceScopeEEnum, ResourceScope.class, "ResourceScope");
 		addEEnumLiteral(resourceScopeEEnum, ResourceScope.ALL);
