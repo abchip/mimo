@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="edi" nsURI="http://www.abchip.org/mimo/edi" nsPrefix="mimo-edi">
-  <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/edi/ent" nsPrefix="mimo-edi-ent">
+  <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/edi/entity" nsPrefix="mimo-edi-ent">
     <eClassifiers xsi:type="ecore:EClass" name="EdiFrameSetup" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -42,7 +42,8 @@
           <details key="frame" value="MessageType"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//message/MessageStatus"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
+          eType="#//message/MessageStatus"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="senderId" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">

@@ -34,7 +34,8 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 
 	private LockManager lockManager;
 
-	public NIOEntityWriterImpl(NIOPathManager fileManager, ResourceSerializer<E> resourceSerializer, ContextProvider contextProvider, String resource, Frame<E> frame, Logger logger, LockManager lockManager) {
+	public NIOEntityWriterImpl(NIOPathManager fileManager, ResourceSerializer<E> resourceSerializer, ContextProvider contextProvider, String resource, Frame<E> frame, Logger logger,
+			LockManager lockManager) {
 		super(fileManager, resourceSerializer, resource, frame, logger);
 		this.lockManager = lockManager;
 	}
@@ -70,16 +71,16 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 	}
 
 	@Override
-	public void save(E entity) {
-		save(entity, false);
+	public void create(E entity) {
+		create(entity, false);
 	}
 
 	@Override
-	public void save(E entity, boolean replace) {
+	public void create(E entity, boolean replace) {
 		try {
 			ResourceHelper.firePreSaveEvent(this, entity);
 
-			doSave(entity, replace);
+			doCreate(entity, replace);
 
 			ResourceHelper.firePostSaveEvent(this, entity);
 		} catch (IOException e) {
@@ -87,7 +88,8 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 		}
 	}
 
-	private void doSave(E entity, boolean replace) throws IOException {
+	@Override
+	public void update(E entity) {
 
 		Context context = contextProvider.getContext();
 
@@ -97,13 +99,39 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 		entityLocker.lock(LockType.WRITE);
 
 		try {
-//			ByteArrayOutputStream output = getEntitySerializer(context).serialize(getResourceName(), getFrame(), entity.getName(), entity);
 
-			ByteArrayOutputStream output = new ByteArrayOutputStream(); 
+			ByteArrayOutputStream output = new ByteArrayOutputStream();
 			this.getResourceSerializer().save(output);
 			ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-			
-			if (replace)				
+
+			if (!Files.exists(file))
+				throw new IOException("Resource not exists: " + entity.getName());
+
+			Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
+
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		} finally {
+			entityLocker.unlock(LockType.WRITE);
+		}
+	}
+
+	private void doCreate(E entity, boolean replace) throws IOException {
+
+		Context context = contextProvider.getContext();
+
+		Path file = getClassFolder(getFrame(), true).resolve(entity.getName());
+
+		EntityLocker<?> entityLocker = lockManager.getLocker(context, file.toUri());
+		entityLocker.lock(LockType.WRITE);
+
+		try {
+
+			ByteArrayOutputStream output = new ByteArrayOutputStream();
+			this.getResourceSerializer().save(output);
+			ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
+
+			if (replace)
 				Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
 			else {
 

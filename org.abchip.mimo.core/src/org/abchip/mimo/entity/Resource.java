@@ -40,7 +40,7 @@ public interface Resource extends EntityNameable, Textable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getResource_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

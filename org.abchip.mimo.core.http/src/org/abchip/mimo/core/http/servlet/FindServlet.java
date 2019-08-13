@@ -89,11 +89,15 @@ public class FindServlet extends BaseServlet {
 		for (E entity : entityIterator)
 			entityList.add(entity);
 
-		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			resourceSerializer.addAll(entityList);
-			resourceSerializer.save(response.getOutputStream());
+		if (entityList.isEmpty())
+			response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+		else {
+			try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
+				resourceSerializer.addAll(entityList);
+				resourceSerializer.save(response.getOutputStream());
+			}
+			response.setStatus(HttpServletResponse.SC_FOUND);
+			response.flushBuffer();
 		}
-		
-		response.flushBuffer();
 	}
 }

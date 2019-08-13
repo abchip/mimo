@@ -198,6 +198,43 @@ public interface EntityPackage extends EPackage {
 	int DOMAIN_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityContainerImpl <em>Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.EntityContainerImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityContainer()
+	 * @generated
+	 */
+	int ENTITY_CONTAINER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_CONTAINER__CONTENTS = ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_CONTAINER__NAME = ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_CONTAINER_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,7 +242,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityInfo()
 	 * @generated
 	 */
-	int ENTITY_INFO = 4;
+	int ENTITY_INFO = 5;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -260,7 +297,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIterator()
 	 * @generated
 	 */
-	int ENTITY_ITERATOR = 6;
+	int ENTITY_ITERATOR = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityNameImpl <em>Name</em>}' class.
@@ -270,7 +307,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityName()
 	 * @generated
 	 */
-	int ENTITY_NAME = 7;
+	int ENTITY_NAME = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityNameableImpl <em>Nameable</em>}' class.
@@ -280,7 +317,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityNameable()
 	 * @generated
 	 */
-	int ENTITY_NAMEABLE = 8;
+	int ENTITY_NAMEABLE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Nameable</em>' class.
@@ -299,7 +336,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityEnum()
 	 * @generated
 	 */
-	int ENTITY_ENUM = 5;
+	int ENTITY_ENUM = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -372,7 +409,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityReader()
 	 * @generated
 	 */
-	int ENTITY_READER = 11;
+	int ENTITY_READER = 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityWriter <em>Writer</em>}' class.
@@ -382,7 +419,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityWriter()
 	 * @generated
 	 */
-	int ENTITY_WRITER = 14;
+	int ENTITY_WRITER = 15;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
@@ -392,7 +429,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFacet()
 	 * @generated
 	 */
-	int FACET = 15;
+	int FACET = 16;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.
@@ -402,7 +439,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
 	 * @generated
 	 */
-	int FRAME = 16;
+	int FRAME = 17;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.
@@ -412,7 +449,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrameManager()
 	 * @generated
 	 */
-	int FRAME_MANAGER = 17;
+	int FRAME_MANAGER = 18;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Nameable <em>Nameable</em>}' class.
@@ -422,7 +459,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getNameable()
 	 * @generated
 	 */
-	int NAMEABLE = 18;
+	int NAMEABLE = 19;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.ResourceImpl <em>Resource</em>}' class.
@@ -432,7 +469,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 19;
+	int RESOURCE = 20;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceEvent <em>Resource Event</em>}' class.
@@ -442,7 +479,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceEvent()
 	 * @generated
 	 */
-	int RESOURCE_EVENT = 20;
+	int RESOURCE_EVENT = 21;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceListener <em>Resource Listener</em>}' class.
@@ -452,7 +489,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceListener()
 	 * @generated
 	 */
-	int RESOURCE_LISTENER = 21;
+	int RESOURCE_LISTENER = 22;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceManager <em>Resource Manager</em>}' class.
@@ -462,7 +499,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceManager()
 	 * @generated
 	 */
-	int RESOURCE_MANAGER = 22;
+	int RESOURCE_MANAGER = 23;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.ResourceNotifierImpl <em>Resource Notifier</em>}' class.
@@ -472,7 +509,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceNotifier()
 	 * @generated
 	 */
-	int RESOURCE_NOTIFIER = 23;
+	int RESOURCE_NOTIFIER = 24;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityProviderImpl <em>Provider</em>}' class.
@@ -482,7 +519,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityProvider()
 	 * @generated
 	 */
-	int ENTITY_PROVIDER = 9;
+	int ENTITY_PROVIDER = 10;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -501,7 +538,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityProviderRegistry()
 	 * @generated
 	 */
-	int ENTITY_PROVIDER_REGISTRY = 10;
+	int ENTITY_PROVIDER_REGISTRY = 11;
 
 	/**
 	 * The number of structural features of the '<em>Provider Registry</em>' class.
@@ -556,7 +593,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityTyped()
 	 * @generated
 	 */
-	int ENTITY_TYPED = 12;
+	int ENTITY_TYPED = 13;
 
 	/**
 	 * The number of structural features of the '<em>Typed</em>' class.
@@ -575,7 +612,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityType()
 	 * @generated
 	 */
-	int ENTITY_TYPE = 13;
+	int ENTITY_TYPE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -801,7 +838,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceSerializer()
 	 * @generated
 	 */
-	int RESOURCE_SERIALIZER = 24;
+	int RESOURCE_SERIALIZER = 25;
 
 	/**
 	 * The feature id for the '<em><b>Context Provider</b></em>' reference.
@@ -838,7 +875,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 	 * @generated
 	 */
-	int SLOT = 25;
+	int SLOT = 26;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -938,7 +975,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getTextable()
 	 * @generated
 	 */
-	int TEXTABLE = 26;
+	int TEXTABLE = 27;
 
 	/**
 	 * The number of structural features of the '<em>Textable</em>' class.
@@ -957,7 +994,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceEventType()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_TYPE = 27;
+	int RESOURCE_EVENT_TYPE = 28;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceScope <em>Resource Scope</em>}' enum.
@@ -967,7 +1004,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceScope()
 	 * @generated
 	 */
-	int RESOURCE_SCOPE = 28;
+	int RESOURCE_SCOPE = 29;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceType <em>Resource Type</em>}' enum.
@@ -977,7 +1014,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceType()
 	 * @generated
 	 */
-	int RESOURCE_TYPE = 29;
+	int RESOURCE_TYPE = 30;
 
 
 	/**
@@ -988,7 +1025,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 30;
+	int SERIALIZATION_TYPE = 31;
 
 
 	/**
@@ -1096,6 +1133,38 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityContainer <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Container</em>'.
+	 * @see org.abchip.mimo.entity.EntityContainer
+	 * @generated
+	 */
+	EClass getEntityContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.entity.EntityContainer#getContents <em>Contents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contents</em>'.
+	 * @see org.abchip.mimo.entity.EntityContainer#getContents()
+	 * @see #getEntityContainer()
+	 * @generated
+	 */
+	EReference getEntityContainer_Contents();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityContainer#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.entity.EntityContainer#getName()
+	 * @see #getEntityContainer()
+	 * @generated
+	 */
+	EAttribute getEntityContainer_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityInfo <em>Info</em>}'.
@@ -1828,6 +1897,32 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityContainerImpl <em>Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.EntityContainerImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityContainer()
+		 * @generated
+		 */
+		EClass ENTITY_CONTAINER = eINSTANCE.getEntityContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Contents</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_CONTAINER__CONTENTS = eINSTANCE.getEntityContainer_Contents();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_CONTAINER__NAME = eINSTANCE.getEntityContainer_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.

@@ -20,6 +20,7 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.ResourceManager;
+import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.util.Strings;
@@ -54,11 +55,12 @@ public class SaveServlet extends BaseServlet {
 			}
 
 			resourceSerializer.load(new ByteArrayInputStream(json.getBytes()), false);
-			E entity = null;
-			entity = resourceSerializer.get();
+			E entity = resourceSerializer.get();
 
-			EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame, "data");
-			entityWriter.save(entity, true);
+			EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame, ResourceScope.ROOT);
+			entityWriter.create(entity, true);
+			
+			response.setStatus(HttpServletResponse.SC_OK);
 		}
 	}
 }

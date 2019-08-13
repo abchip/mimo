@@ -49,6 +49,15 @@ public interface EntityFactory extends EFactory {
 	Domain createDomain();
 
 	/**
+	 * Returns a new object of class '<em>Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Container</em>'.
+	 * @generated
+	 */
+	EntityContainer createEntityContainer();
+
+	/**
 	 * Returns a new object of class '<em>Name</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

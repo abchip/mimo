@@ -50,5 +50,7 @@ public class DeleteServlet extends BaseServlet {
 		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName, "data");
 
 		entityWriter.delete(entity);
+		
+		response.setStatus(HttpServletResponse.SC_OK);
 	}
 }

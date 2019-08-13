@@ -603,6 +603,13 @@
         </eGenericType>
       </eOperations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityContainer" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
+          eType="#//entity/EntityNameable" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityInfo" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
         <eAnnotations source="mimo-ent-slot">
@@ -839,12 +846,6 @@
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="nrElem" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
-      <eOperations name="findByNameParts">
-        <eGenericType eClassifier="#//entity/EntityIterator">
-          <eTypeArguments eTypeParameter="#//entity/EntityReader/E"/>
-        </eGenericType>
-        <eParameters name="names" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
       <eOperations name="findNames" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
@@ -903,16 +904,21 @@
         </eParameters>
       </eOperations>
       <eOperations name="getResourceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="save">
+      <eOperations name="create">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
         </eParameters>
       </eOperations>
-      <eOperations name="save">
+      <eOperations name="create">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
         </eParameters>
-        <eParameters name="replace" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="update" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
+      <eOperations name="update">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
+        </eParameters>
       </eOperations>
       <eGenericSuperTypes eClassifier="#//entity/EntityReader">
         <eTypeArguments eTypeParameter="#//entity/EntityWriter/E"/>
@@ -1026,7 +1032,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
       <eOperations name="getResourceType" lowerBound="1" eType="#//entity/ResourceType"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>

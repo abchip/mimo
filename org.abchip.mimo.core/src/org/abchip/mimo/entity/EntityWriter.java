@@ -43,14 +43,22 @@ public interface EntityWriter<E extends EntityNameable> extends EntityReader<E> 
 	 * @model entityRequired="true"
 	 * @generated
 	 */
-	void save(E entity);
+	void create(E entity);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" replaceRequired="true"
+	 * @model entityRequired="true" updateRequired="true"
 	 * @generated
 	 */
-	void save(E entity, boolean replace);
+	void create(E entity, boolean update);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model entityRequired="true"
+	 * @generated
+	 */
+	void update(E entity);
 
 } // EntityWriter

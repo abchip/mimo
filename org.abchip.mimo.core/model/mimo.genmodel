@@ -439,6 +439,10 @@
       <genClasses ecoreClass="mimo.ecore#//entity/Entity">
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa"/>
       </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//entity/EntityContainer">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/EntityContainer/contents"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityContainer/name"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityInfo">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/createdStamp"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/createdTxStamp"/>
@@ -562,9 +566,6 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find.1/filter"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find.1/nrElem"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/findByNameParts">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/findByNameParts/names"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/findNames">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/findNames/filter"/>
         </genOperations>
@@ -590,12 +591,15 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/delete/entity"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/getResourceName"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/save">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/save/entity"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/create">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/create/entity"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/save.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/save.1/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/save.1/replace"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/create.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/create.1/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/create.1/update"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/update">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/update/entity"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Facet"/>

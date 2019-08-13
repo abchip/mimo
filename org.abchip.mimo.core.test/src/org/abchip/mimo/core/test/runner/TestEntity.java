@@ -65,7 +65,7 @@ public class TestEntity {
 			objectB.setEnum1(Enum1.VALUE1);
 			objectA.setObjectB(objectB);
 
-			entityWriter.save(objectA);
+			entityWriter.create(objectA);
 
 			objectA = TestFactory.eINSTANCE.createObjectA();
 			objectA.setName("PAPERINO");
@@ -76,7 +76,7 @@ public class TestEntity {
 			objectB.setEnum1(Enum1.VALUE2);
 			objectA.setObjectB(objectB);
 
-			entityWriter.save(objectA);
+			entityWriter.create(objectA);
 		} catch (Exception exc) {
 			asserter.fail("Resource writing failed: " + exc.getMessage());
 		}

@@ -91,7 +91,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 
 				// save
 				EntityWriter<JobLog> jobLogWriter = resourceManager.getEntityWriter(job, JobLog.class, ResourceScope.ROOT);
-				jobLogWriter.save(jobLog, true);
+				jobLogWriter.create(jobLog, true);
 			}
 		};
 	}

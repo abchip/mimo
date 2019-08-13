@@ -36,6 +36,6 @@ public class BaseEntityActivator {
 		tempResource.setName(contextRoot.getContextDescription().getResourceTemporary());
 		tempResource.setText(contextRoot.getContextDescription().getResourceTemporary() + " Text");
 		
-		resourceWriter.save(tempResource);
+		resourceWriter.create(tempResource);
 	}
 }

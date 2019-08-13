@@ -210,7 +210,7 @@ public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	 * @see org.abchip.mimo.edi.message.MessageStatus
 	 * @see #setStatus(MessageStatus)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Status()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	MessageStatus getStatus();

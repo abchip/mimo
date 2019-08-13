@@ -174,7 +174,7 @@ public class TestTwitter {
 		EntityWriter<Tweet> tweetWriter = resourceManager.getEntityWriter(testRunner, Tweet.class, testRunner.getContext().getContextDescription().getResourceTemporary());
 		for (Tweet tweet : tweetIterator) {
 			try {
-				tweetWriter.save(tweet, true);
+				tweetWriter.create(tweet, true);
 			} catch (Exception e) {
 				System.err.println(e.getMessage());
 			}

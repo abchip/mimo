@@ -29,7 +29,7 @@ import org.abchip.mimo.entity.Resource;
 public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements EntityWriter<Resource> {
 
 	private LockManager lockManager;
-	
+
 	public NIOResourceWriterImpl(NIOPathManager fileManager, Frame<Resource> frame, ContextProvider contextProvider, LockManager lockManager) {
 		super(fileManager, frame, contextProvider);
 		this.lockManager = lockManager;
@@ -38,7 +38,7 @@ public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements Enti
 	@Override
 	public void delete(Resource resource) {
 		Context context = contextProvider.getContext();
-	
+
 		Path resourcePath = pathManager.getPath().resolve(resource.getName());
 		if (!Files.exists(resourcePath))
 			return;
@@ -47,25 +47,25 @@ public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements Enti
 		resourceLocker.lock(LockType.WRITE);
 
 		try {
-			pathManager.deletePath(resourcePath);			
+			pathManager.deletePath(resourcePath);
 			pathManager.getResources().remove(resource.getName());
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		} finally {
 			resourceLocker.unlock(LockType.WRITE);
-		}		
+		}
 	}
 
 	@Override
-	public void save(Resource entity) {
-		save(entity, false);
+	public void create(Resource entity) {
+		create(entity, false);
 	}
 
 	@Override
-	public void save(Resource resource, boolean replace) {
+	public void create(Resource entity, boolean replace) {
 
-		Context context = contextProvider.getContext();	
-		Path resourcePath = pathManager.getPath().resolve(resource.getName());
+		Context context = contextProvider.getContext();
+		Path resourcePath = pathManager.getPath().resolve(entity.getName());
 
 		EntityLocker<Resource> resourceLocker = lockManager.getLocker(context, resourcePath.toUri());
 		resourceLocker.lock(LockType.WRITE);
@@ -73,7 +73,7 @@ public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements Enti
 		try {
 			boolean exists = Files.exists(resourcePath);
 			if (exists && !replace)
-				throw new IOException("Resource already exists: " + resource.getName());
+				throw new IOException("Resource already exists: " + entity.getName());
 
 			if (exists)
 				pathManager.deletePath(resourcePath);
@@ -81,14 +81,40 @@ public class NIOResourceWriterImpl extends NIOResourceReaderImpl implements Enti
 			resourcePath = Files.createDirectories(resourcePath);
 
 			UserDefinedFileAttributeView view = Files.getFileAttributeView(resourcePath, UserDefinedFileAttributeView.class);
-			view.write("text", Charset.defaultCharset().encode(resource.getText()));
-			
-			pathManager.getResources().put(resource.getName(), pathManager.buildResource(resourcePath));
-		} 
-		catch (IOException e) {
+			view.write("text", Charset.defaultCharset().encode(entity.getText()));
+
+			pathManager.getResources().put(entity.getName(), pathManager.buildResource(resourcePath));
+		} catch (IOException e) {
 			throw new RuntimeException(e);
+		} finally {
+			resourceLocker.unlock(LockType.WRITE);
 		}
-		finally {
+	}
+
+	@Override
+	public void update(Resource entity) {
+
+		Context context = contextProvider.getContext();
+		Path resourcePath = pathManager.getPath().resolve(entity.getName());
+
+		EntityLocker<Resource> resourceLocker = lockManager.getLocker(context, resourcePath.toUri());
+		resourceLocker.lock(LockType.WRITE);
+
+		try {
+			if (!Files.exists(resourcePath))
+				throw new IOException("Resource not exists: " + entity.getName());
+
+			pathManager.deletePath(resourcePath);
+
+			resourcePath = Files.createDirectories(resourcePath);
+
+			UserDefinedFileAttributeView view = Files.getFileAttributeView(resourcePath, UserDefinedFileAttributeView.class);
+			view.write("text", Charset.defaultCharset().encode(entity.getText()));
+
+			pathManager.getResources().put(entity.getName(), pathManager.buildResource(resourcePath));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		} finally {
 			resourceLocker.unlock(LockType.WRITE);
 		}
 	}

@@ -73,8 +73,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 			return null;
 
 		E entity = null;
-		try {
-			InputStream inputStream = Files.newInputStream(file);
+		try (InputStream inputStream = Files.newInputStream(file)) {
 			this.getResourceSerializer().load(inputStream, true);
 			entity = this.getResourceSerializer().get();
 			// entity = getEntitySerializer(contextProvider).deserialize(resource, frame,
@@ -130,10 +129,9 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 				}
 
-				try {
-					InputStream inputStream = Files.newInputStream(path);
-					this.getResourceSerializer().load(inputStream, true);
+				try (InputStream inputStream = Files.newInputStream(path)) {
 
+					this.getResourceSerializer().load(inputStream, true);
 					// entries.add(getEntitySerializer(contextProvider).deserialize(resource, frame,
 					// entityName, inputStream));
 					i++;
@@ -236,28 +234,4 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 		return folder;
 	}
-
-	/*
-	 * protected BaseResourceEntitySerializer getEntitySerializer(ContextProvider
-	 * contextProvider) { Context context = contextProvider.getContext();
-	 * 
-	 * BaseResourceEntitySerializer objectSerializer =
-	 * context.get(BaseResourceEntitySerializer.class); if (objectSerializer ==
-	 * null) { synchronized (context) { objectSerializer =
-	 * context.get(BaseResourceEntitySerializer.class); if (objectSerializer ==
-	 * null) {
-	 * 
-	 * ResourceSetImpl resourceSet = new ResourceSetImpl();
-	 * resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE,
-	 * true);
-	 * 
-	 * org.eclipse.emf.ecore.resource.Resource.Factory resourceFatory = new
-	 * EMFResourceFactoryImpl();
-	 * resourceSet.getResourceFactoryRegistry().getContentTypeToFactoryMap().put(
-	 * "mimo", resourceFatory);
-	 * 
-	 * objectSerializer = new BaseResourceEntitySerializer(context, resourceSet);
-	 * context.set(BaseResourceEntitySerializer.class, objectSerializer); } } }
-	 * return objectSerializer; }
-	 */
 }

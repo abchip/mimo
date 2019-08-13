@@ -99,7 +99,7 @@ public class LoginServlet extends HttpServlet {
 				// System.err.println(("Login location: " + location));
 
 				response.setHeader(HttpHeader.LOCATION.name(), location);
-				response.setStatus(HttpServletResponse.SC_ACCEPTED);
+				response.setStatus(HttpServletResponse.SC_OK);
 
 				try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class,
 						SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
@@ -164,7 +164,7 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 
-		response.setStatus(HttpServletResponse.SC_ACCEPTED);
+		response.setStatus(HttpServletResponse.SC_OK);
 
 		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class,
 				SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {

@@ -40,7 +40,7 @@ public class TestSerializer {
 			resource = EntityFactory.eINSTANCE.createResource();
 			resource.setName(resourceName);
 			resource.setText(resourceText);
-			resourceWriter.save(resource);
+			resourceWriter.create(resource);
 		}
 	}
 	

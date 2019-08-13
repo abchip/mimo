@@ -50,6 +50,8 @@ public class FindNamesServlet extends BaseServlet {
 		if (entityReader == null) {
 			response.getWriter().write("[]");
 			response.flushBuffer();
+			
+			response.setStatus(HttpServletResponse.SC_NO_CONTENT);
 			return;
 		}
 
@@ -63,7 +65,8 @@ public class FindNamesServlet extends BaseServlet {
 			first = false;
 		}
 		response.getWriter().write("]");
-
 		response.flushBuffer();
+		
+		response.setStatus(HttpServletResponse.SC_FOUND);
 	}
 }

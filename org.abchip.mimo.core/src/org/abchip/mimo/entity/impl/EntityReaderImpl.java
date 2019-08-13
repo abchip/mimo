@@ -188,18 +188,6 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	public abstract EntityIterator<E> find(String filter, int nrElem);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EntityIterator<E> findByNameParts(List<String> names) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated NOT
 	 */

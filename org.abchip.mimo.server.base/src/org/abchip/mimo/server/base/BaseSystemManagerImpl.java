@@ -43,7 +43,6 @@ import org.abchip.mimo.server.SystemManager;
 import org.abchip.mimo.server.SystemStatus;
 import org.abchip.mimo.util.ThreadManager;
 
-
 public class BaseSystemManagerImpl implements SystemManager {
 
 	protected static final SimpleDateFormat YYMMDD = new SimpleDateFormat("yyMMdd");
@@ -52,14 +51,14 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 	private List<SystemListener> listeners = new ArrayList<SystemListener>();
 	private Job jobKernel;
-	
+
 	@Inject
 	private LockManager lockManager;
 	@Inject
 	private ResourceManager resourceManager;
 	@Inject
 	private ThreadManager threadManager;
-	
+
 	@Override
 	public void registerListener(SystemListener listener) {
 		this.listeners.add(listener);
@@ -75,23 +74,23 @@ public class BaseSystemManagerImpl implements SystemManager {
 	protected Job getJobKernel() {
 		return this.jobKernel;
 	}
-	
+
 	protected synchronized int nextJobID(JobType jobType, org.abchip.mimo.server.System system, Job job) {
 
 		int lastNumber = 0;
-		
-		if(jobType.equals(JobType.KERNEL)){
+
+		if (jobType.equals(JobType.KERNEL)) {
 			lastNumber = nextJobNumber++;
 		} else {
 			lastNumber = system.getLastJobNumber();
 			lastNumber++;
-			// 
-			if(lastNumber==1000000)
-				lastNumber=1;
+			//
+			if (lastNumber == 1000000)
+				lastNumber = 1;
 
 			EntityWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getEntityWriter(job, org.abchip.mimo.server.System.class, ResourceScope.ROOT);
 			system.setLastJobNumber(lastNumber);
-			systemWriter.save(system, true);
+			systemWriter.update(system);
 		}
 		return lastNumber;
 	}
@@ -109,14 +108,15 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 		// acquire system lock
 		EntityLocker<org.abchip.mimo.server.System> locker = lockManager.getLocker(system.getContext(), system);
-		while (!locker.tryLock(org.abchip.mimo.server.System.LOCK_TIMEOUT, LockType.WRITE));
+		while (!locker.tryLock(org.abchip.mimo.server.System.LOCK_TIMEOUT, LockType.WRITE))
+			;
 
 		try {
 			SystemEvent systemEvent = ServerFactory.eINSTANCE.createSystemEvent();
 			systemEvent.setSource(system);
 			systemEvent.setType(SystemEventType.STARTING);
 			fireEvent(systemEvent);
-		
+
 			jobKernel = createJob(system, JobType.KERNEL, principal, "KERNEL");
 
 			EntityWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getEntityWriter(jobKernel, org.abchip.mimo.server.System.class, ResourceScope.ROOT);
@@ -125,12 +125,12 @@ public class BaseSystemManagerImpl implements SystemManager {
 				system.setLastJobNumber(persistedSystem.getLastJobNumber());
 			}
 			system.setStatus(SystemStatus.STARTED);
-			systemWriter.save(system, true);
+			systemWriter.update(system);
 
 			systemEvent = ServerFactory.eINSTANCE.createSystemEvent();
 			systemEvent.setSource(system);
 			systemEvent.setType(SystemEventType.STARTED);
-			
+
 			fireEvent(systemEvent);
 		} finally {
 			locker.unlock(LockType.WRITE);
@@ -143,7 +143,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 	public void stop() {
 
 		org.abchip.mimo.server.System system = jobKernel.getSystem();
-		
+
 		// TODO system not able to stop
 		if (!ServerHelper.isStoppable(system))
 			return;
@@ -151,20 +151,19 @@ public class BaseSystemManagerImpl implements SystemManager {
 		// acquire system lock
 		EntityLocker<org.abchip.mimo.server.System> locker = lockManager.getLocker(jobKernel.getContext(), system);
 		locker.lock(LockType.WRITE);
-		
+
 		try {
-			
+
 			SystemEvent systemEvent = ServerFactory.eINSTANCE.createSystemEvent();
 			systemEvent.setSource(system);
 			systemEvent.setType(SystemEventType.STOPPING);
 			fireEvent(systemEvent);
-	
+
 			systemEvent = ServerFactory.eINSTANCE.createSystemEvent();
 			systemEvent.setSource(system);
 			systemEvent.setType(SystemEventType.STOPPED);
 			fireEvent(systemEvent);
-		}
-		finally {
+		} finally {
 			locker.unlock(LockType.WRITE);
 		}
 	}
@@ -172,7 +171,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 	protected Job createJob(JobType jobType, Principal principal, String jobName) {
 		return createJob(jobKernel.getSystem(), jobType, principal, jobName);
 	}
-	
+
 	protected Job createJob(org.abchip.mimo.server.System system, JobType jobType, Principal principal, String jobName) {
 
 		// job
@@ -200,13 +199,13 @@ public class BaseSystemManagerImpl implements SystemManager {
 		contextDescription.setId(job.getJobReference().getJobName());
 		contextDescription.getResources().add("MIMO" + new DecimalFormat("000000").format(job.getJobReference().getJobNumber()));
 
-		Context jobContext = ((ContextRoot)system.getContext()).createChildContext(contextDescription);
-//		job.setJobID(jobContext.get);
+		Context jobContext = ((ContextRoot) system.getContext()).createChildContext(contextDescription);
+		// job.setJobID(jobContext.get);
 		job.setContext(jobContext);
-		
+
 		// Thread
 		job.setJobThread(threadManager.currentThread());
-		
+
 		jobContext.set(Job.class, job);
 
 		return job;

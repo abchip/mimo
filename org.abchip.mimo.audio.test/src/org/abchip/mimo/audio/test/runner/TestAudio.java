@@ -100,6 +100,6 @@ public class TestAudio {
 		audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
 
 		EntityWriter<Audio> audioWriter = resourceManager.getEntityWriter(testRunner, Audio.class, testRunner.getContext().getContextDescription().getResourceTemporary());
-		audioWriter.save(audio, true);
+		audioWriter.create(audio);
 	}
 }

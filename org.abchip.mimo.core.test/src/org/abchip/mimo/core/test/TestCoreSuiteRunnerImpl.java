@@ -37,7 +37,7 @@ public class TestCoreSuiteRunnerImpl extends BaseTestSuiteDirectoryRunnerImpl {
 		resource.setName(resourceName);
 		resource.setText("Text " + resourceName);
 
-		resourceWriter.save(resource);
+		resourceWriter.create(resource);
 	}
 
 	@TestStopped

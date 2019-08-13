@@ -44,18 +44,23 @@ public class LookupServlet extends BaseServlet {
 
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextProvider).lookup(frameName);
-		if (frame == null)
+		if (frame == null) {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return;
+		}
 
 		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 
 			E entity = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CONTEXT).lookup(name);
-			if (entity != null)
+			if (entity == null) 
+				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+			else {
 				resourceSerializer.add(entity);
-
-			resourceSerializer.save(response.getOutputStream());
+				resourceSerializer.save(response.getOutputStream());
+				response.flushBuffer();
+				
+				response.setStatus(HttpServletResponse.SC_FOUND);
+			}
 		}
-		
-		response.flushBuffer();
 	}
 }

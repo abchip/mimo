@@ -14,10 +14,13 @@ package org.abchip.mimo.core.base;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
@@ -31,6 +34,9 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.emfjson.jackson.module.EMFModule;
 import org.emfjson.jackson.resource.JsonResource;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
 public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerializerImpl<E> {
 
 	private ResourceReusable resource = null;
@@ -42,7 +48,21 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 
 		switch (serializationType) {
 		case JAVA_SCRIPT_OBJECT_NOTATION:
-			this.resource = new JSONProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
+
+			final ObjectMapper mapper = new ObjectMapper(null);
+			// same as emf
+			final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
+			dateFormat.setTimeZone(TimeZone.getDefault());
+
+			mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+			mapper.setDateFormat(dateFormat);
+			mapper.setTimeZone(TimeZone.getDefault());
+			EMFModule module = new EMFModule();
+			module.configure(EMFModule.Feature.OPTION_SERIALIZE_DEFAULT_VALUE, true);
+			mapper.registerModule(module);
+
+			// mapper.
+			this.resource = new JSONProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"), mapper);
 			break;
 		case XML_METADATA_INTERCHANGE:
 			this.resource = new XMIProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
@@ -85,7 +105,7 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 	@Override
 	public void close() throws IOException {
 		EcoreUtil.removeAll(this.resource.getContents());
-		
+
 		this.resource.unload();
 		this.resource = null;
 	}
@@ -141,8 +161,8 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 
 	private class JSONProxyResourceImpl extends JsonResource implements ResourceReusable {
 
-		public JSONProxyResourceImpl(URI uri) {
-			super(uri, EMFModule.setupDefaultMapper());
+		public JSONProxyResourceImpl(URI uri, ObjectMapper mapper) {
+			super(uri, mapper);
 		}
 
 		@Override

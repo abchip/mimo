@@ -18,6 +18,7 @@ import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Default;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityContainer;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityInfo;
@@ -99,6 +100,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass entityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityContainerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -470,6 +478,36 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EClass getEntity() {
 		return entityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEntityContainer() {
+		return entityContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEntityContainer_Contents() {
+		return (EReference)entityContainerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntityContainer_Name() {
+		return (EAttribute)entityContainerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1105,6 +1143,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		entityEClass = createEClass(ENTITY);
 
+		entityContainerEClass = createEClass(ENTITY_CONTAINER);
+		createEReference(entityContainerEClass, ENTITY_CONTAINER__CONTENTS);
+		createEAttribute(entityContainerEClass, ENTITY_CONTAINER__NAME);
+
 		entityInfoEClass = createEClass(ENTITY_INFO);
 		createEAttribute(entityInfoEClass, ENTITY_INFO__CREATED_STAMP);
 		createEAttribute(entityInfoEClass, ENTITY_INFO__CREATED_TX_STAMP);
@@ -1259,6 +1301,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		cardinalityEClass.getESuperTypes().add(this.getEntity());
 		defaultEClass.getESuperTypes().add(this.getEntity());
 		domainEClass.getESuperTypes().add(this.getEntity());
+		entityContainerEClass.getESuperTypes().add(this.getEntity());
 		entityEnumEClass.getESuperTypes().add(this.getEntityNameable());
 		entityEnumEClass.getESuperTypes().add(this.getTextable());
 		g1 = createEGenericType(theUtilPackage.getJavaIterator());
@@ -1322,6 +1365,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
+
+		initEClass(entityContainerEClass, EntityContainer.class, "EntityContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityContainer_Contents(), this.getEntityNameable(), null, "contents", null, 0, -1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityContainer_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityInfoEClass, EntityInfo.class, "EntityInfo", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityInfo_CreatedStamp(), ecorePackage.getEDate(), "createdStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1538,13 +1585,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(entityReaderEClass, null, "findByNameParts", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "names", 0, -1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getEntityIterator());
-		g2 = createEGenericType(entityReaderEClass_E);
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
 		op = addEOperation(entityReaderEClass, ecorePackage.getEString(), "findNames", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1582,14 +1622,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(entityWriterEClass, ecorePackage.getEString(), "getResourceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityWriterEClass, null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(entityWriterEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(entityWriterEClass, null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(entityWriterEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "replace", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(entityWriterEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(entityWriterEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facetEClass, Facet.class, "Facet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1690,7 +1734,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(nameableEClass, ecorePackage.getEString(), "getName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_Text(), ecorePackage.getEString(), "text", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(resourceEClass, this.getResourceType(), "getResourceType", 1, 1, IS_UNIQUE, IS_ORDERED);

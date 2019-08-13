@@ -14,7 +14,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated edi -->
       <package
-            uri="http://www.abchip.org/mimo/edi/ent"
+            uri="http://www.abchip.org/mimo/edi/entity"
             class="org.abchip.mimo.edi.entity.EntityPackage"
             genModel="model/edi.genmodel"/>
    </extension>

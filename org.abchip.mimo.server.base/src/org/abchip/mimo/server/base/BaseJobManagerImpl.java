@@ -101,7 +101,7 @@ public class BaseJobManagerImpl implements JobManager {
 
 		// save
 		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class, ResourceScope.ROOT);
-		jobWriter.save(job);
+		jobWriter.create(job);
 
 		jobEvent.setType(JobEventType.STARTED);
 		fireEvent(jobEvent);
@@ -221,7 +221,7 @@ public class BaseJobManagerImpl implements JobManager {
 		// save destroy date job
 		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class, ResourceScope.ROOT);
 		job.setDestroyDate(new Date());
-		jobWriter.save(job, true);
+		jobWriter.update(job);
 
 		job.getContext().close();
 
