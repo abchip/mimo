@@ -178,9 +178,10 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			else
 				methodName = "get" + Strings.qINSTANCE.firstToUpper(slotName);
 			Method method = object.getClass().getMethod(methodName, new Class[] {});
-			if (method != null) {
+			if (method != null)
 				value = method.invoke(object, new Object[] {});
-			}
+		} catch (NoSuchMethodException e) {
+			e.toString();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

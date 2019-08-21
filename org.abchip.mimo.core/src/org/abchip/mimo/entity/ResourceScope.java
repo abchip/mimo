@@ -57,7 +57,7 @@ public enum ResourceScope implements Enumerator {
 	 * The '<em><b>All</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>ALL</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>All</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -87,7 +87,7 @@ public enum ResourceScope implements Enumerator {
 	 * The '<em><b>Root</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>ROOT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Root</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
