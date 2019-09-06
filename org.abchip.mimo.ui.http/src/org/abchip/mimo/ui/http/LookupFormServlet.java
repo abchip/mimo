@@ -66,7 +66,7 @@ public class LookupFormServlet extends BaseServlet {
 				// derived exclusion
 				if (slot.isDerived())
 					continue;
-
+				
 				if (slot.getGroup() != null && slot.getGroup().equals("info"))
 					continue;
 

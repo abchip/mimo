@@ -27,6 +27,7 @@ package org.abchip.mimo.entity;
  *   <li>{@link org.abchip.mimo.entity.Slot#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isRoute <em>Route</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -53,6 +54,21 @@ public interface Slot extends EntityNameable, Textable {
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Returns the value of the '<em><b>Route</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Route</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Route</em>' attribute.
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Route()
+	 * @model changeable="false"
+	 * @generated
+	 */
+	boolean isRoute();
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.

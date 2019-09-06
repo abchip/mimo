@@ -34,7 +34,6 @@ import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.util.Lists;
-import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -66,6 +65,10 @@ public class LookupSchemaServlet extends BaseServlet {
 			SchemaColumn currentColumn = null;
 			SchemaColumn currentKey = null;
 			for (Slot slot : frame.getSlots()) {
+
+				if (slot.isRoute())
+					continue;
+
 				SchemaColumn column = buildColumn(slot);
 
 				// field id
@@ -109,14 +112,7 @@ public class LookupSchemaServlet extends BaseServlet {
 	private SchemaColumn buildColumn(Slot slot) {
 		SchemaColumn column = frameManager.createEntity(SchemaColumn.class);
 		column.setId(slot.getName());
-
-		StringBuffer header = new StringBuffer();
-		for (char c : slot.getName().toCharArray()) {
-			if (Character.isUpperCase(c) && header.length() != 0)
-				header.append(" ");
-			header.append(c);
-		}
-		column.setHeader(Strings.qINSTANCE.firstToUpper(header.toString()));
+		column.setHeader(slot.getText());
 		column.setAdjust(true);
 		column.setLeftSplit(slot.isKey());
 		if (slot.getDomain() != null)

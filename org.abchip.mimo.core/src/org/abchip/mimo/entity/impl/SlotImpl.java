@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isRoute <em>Route</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -171,6 +172,24 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	protected String name = NAME_EDEFAULT;
 	/**
+	 * The default value of the '{@link #isRoute() <em>Route</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRoute()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ROUTE_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isRoute() <em>Route</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRoute()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean route = ROUTE_EDEFAULT;
+	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -215,6 +234,16 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	@Override
 	public String getName() {
 		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isRoute() {
+		return route;
 	}
 
 	/**
@@ -391,6 +420,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return isKey();
 			case EntityPackage.SLOT__NAME:
 				return getName();
+			case EntityPackage.SLOT__ROUTE:
+				return isRoute();
 			case EntityPackage.SLOT__TEXT:
 				return getText();
 		}
@@ -421,6 +452,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 				return key != KEY_EDEFAULT;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case EntityPackage.SLOT__ROUTE:
+				return route != ROUTE_EDEFAULT;
 			case EntityPackage.SLOT__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
@@ -449,6 +482,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		result.append(key);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", route: ");
+		result.append(route);
 		result.append(", text: ");
 		result.append(text);
 		result.append(')');

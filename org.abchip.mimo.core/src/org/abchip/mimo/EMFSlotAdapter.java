@@ -164,5 +164,8 @@ public class EMFSlotAdapter extends SlotImpl {
 			} else
 				"".toString();
 		}
+		
+		if(this.domain != null)
+			this.route = this.domain.getRoute() != null;
 	}
 }

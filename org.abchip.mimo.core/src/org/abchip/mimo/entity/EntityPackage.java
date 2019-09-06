@@ -950,13 +950,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Route</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__ROUTE = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__TEXT = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+	int SLOT__TEXT = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -965,7 +974,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
+	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
@@ -1673,6 +1682,17 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isRoute <em>Route</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Route</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isRoute()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Route();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2351,6 +2371,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Route</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__ROUTE = eINSTANCE.getSlot_Route();
 
 		/**
 		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
