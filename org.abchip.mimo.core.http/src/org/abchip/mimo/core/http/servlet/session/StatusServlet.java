@@ -22,6 +22,7 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
+import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceSerializer;
@@ -57,7 +58,7 @@ public class StatusServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(session.getId() + ": " + getServletName());
+		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
 
 		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
@@ -84,7 +85,8 @@ public class StatusServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
+		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class,
+				SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			serializer.add(contextProvider.getContext().getContextDescription());
 			serializer.save(response.getOutputStream());
 		}

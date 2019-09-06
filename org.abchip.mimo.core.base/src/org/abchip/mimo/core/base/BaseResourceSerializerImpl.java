@@ -51,7 +51,7 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 
 			final ObjectMapper mapper = new ObjectMapper(null);
 			// same as emf
-			final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
+			final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.ENGLISH);
 			dateFormat.setTimeZone(TimeZone.getDefault());
 
 			mapper.configure(SerializationFeature.INDENT_OUTPUT, true);

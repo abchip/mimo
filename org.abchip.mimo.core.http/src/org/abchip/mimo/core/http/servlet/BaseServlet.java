@@ -25,6 +25,7 @@ import javax.servlet.http.Part;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
+import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.core.http.MultipartSupportPart;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.ResourceManager;
@@ -63,7 +64,7 @@ public abstract class BaseServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(session.getId() + ": " + getServletName());
+		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
 
 		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 

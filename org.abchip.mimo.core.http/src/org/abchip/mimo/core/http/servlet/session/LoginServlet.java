@@ -24,6 +24,7 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
+import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
@@ -63,7 +64,7 @@ public class LoginServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(session.getId() + ": " + getServletName());
+		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
 
 		String provider = request.getParameter("provider");
 		String userField = request.getParameter("user");
