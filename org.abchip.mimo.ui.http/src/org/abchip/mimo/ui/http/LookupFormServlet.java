@@ -144,6 +144,8 @@ public class LookupFormServlet extends BaseServlet {
 				field.setView("datepicker");
 			else if (slot.getText().toLowerCase().contains("level"))
 				field.setView("counter");
+			else if (slot.getText().toLowerCase().contains("image"))
+				field.setView("photo");
 			else
 				field.setView("text");
 		}
