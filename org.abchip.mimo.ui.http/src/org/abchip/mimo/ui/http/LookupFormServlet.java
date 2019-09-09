@@ -66,7 +66,7 @@ public class LookupFormServlet extends BaseServlet {
 				// derived exclusion
 				if (slot.isDerived())
 					continue;
-				
+
 				if (slot.getGroup() != null && slot.getGroup().equals("info"))
 					continue;
 
@@ -138,6 +138,10 @@ public class LookupFormServlet extends BaseServlet {
 				field.setView("form");
 			else if (slot.getDomain() != null)
 				field.setView("combo");
+			else if (slot.isBoolean())
+				field.setView("checkbox");
+			else if (slot.isDate())
+				field.setView("datepicker");
 			else
 				field.setView("text");
 		}

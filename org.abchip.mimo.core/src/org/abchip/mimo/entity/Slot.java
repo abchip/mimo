@@ -204,4 +204,20 @@ public interface Slot extends EntityNameable, Textable {
 	 * @generated
 	 */
 	String getDataClassName();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	boolean isBoolean();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	boolean isDate();
 } // Slot

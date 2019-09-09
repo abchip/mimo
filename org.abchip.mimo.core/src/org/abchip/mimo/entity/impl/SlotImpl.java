@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.util.Date;
+
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
@@ -378,6 +380,38 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isBoolean() {
+		if(this.getDataClassName() == null)
+			return false;
+		
+		if(this.getDataClassName().equals(Boolean.class.getSimpleName().toLowerCase()))
+			return true;
+		
+		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isDate() {
+		if(this.getDataClassName() == null)
+			return false;
+		
+		if(this.getDataClassName().equals(Date.class.getCanonicalName()))
+			return true;
+
+		return false;
 	}
 
 	/**

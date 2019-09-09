@@ -160,13 +160,22 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__ID = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Left Split</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__LEFT_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int SCHEMA_COLUMN__LEFT_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Column</em>' class.
@@ -175,7 +184,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 7;
+	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 
 	/**
@@ -230,6 +239,17 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSchemaColumn_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.schema.SchemaColumn#getView()
+	 * @see #getSchemaColumn()
+	 * @generated
+	 */
+	EAttribute getSchemaColumn_View();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}'.
@@ -362,6 +382,14 @@ public interface SchemaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCHEMA_COLUMN__ID = eINSTANCE.getSchemaColumn_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA_COLUMN__VIEW = eINSTANCE.getSchemaColumn_View();
 
 		/**
 		 * The meta object literal for the '<em><b>Left Split</b></em>' attribute feature.

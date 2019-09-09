@@ -2060,6 +2060,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(slotEClass, ecorePackage.getEString(), "getDataClassName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isBoolean", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isDate", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(textableEClass, Textable.class, "Textable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(textableEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);

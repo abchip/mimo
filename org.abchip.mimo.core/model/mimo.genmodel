@@ -817,6 +817,8 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/Slot/getValue/nsPrefix"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getDataClassName"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isBoolean"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isDate"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Textable">
         <genOperations ecoreOperation="mimo.ecore#//entity/Textable/getText"/>

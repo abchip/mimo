@@ -115,8 +115,15 @@ public class LookupSchemaServlet extends BaseServlet {
 		column.setHeader(slot.getText());
 		column.setAdjust(true);
 		column.setLeftSplit(slot.isKey());
-		if (slot.getDomain() != null)
+
+		if (slot.getDomain() != null) {
 			column.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
+		}
+			
+		if (column.getView() == null) {
+			if(slot.isBoolean())
+				column.setView("checkbox");
+		}
 
 		return column;
 	}

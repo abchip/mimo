@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getView <em>View</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isLeftSplit <em>Left Split</em>}</li>
  * </ul>
  *
@@ -153,6 +154,26 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	protected String id = ID_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getView()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VIEW_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getView()
+	 * @generated
+	 * @ordered
+	 */
+	protected String view = VIEW_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #isLeftSplit() <em>Left Split</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,6 +233,29 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getView() {
+		return view;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setView(String newView) {
+		String oldView = view;
+		view = newView;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__VIEW, oldView, view));
 	}
 
 	/**
@@ -408,6 +452,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return getIcon();
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				return getId();
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				return getView();
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				return isLeftSplit();
 		}
@@ -439,6 +485,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				setId((String)newValue);
+				return;
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				setView((String)newValue);
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				setLeftSplit((Boolean)newValue);
@@ -473,6 +522,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				setView(VIEW_EDEFAULT);
+				return;
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				setLeftSplit(LEFT_SPLIT_EDEFAULT);
 				return;
@@ -500,6 +552,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				return leftSplit != LEFT_SPLIT_EDEFAULT;
 		}
@@ -526,6 +580,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		result.append(icon);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", view: ");
+		result.append(view);
 		result.append(", leftSplit: ");
 		result.append(leftSplit);
 		result.append(')');
