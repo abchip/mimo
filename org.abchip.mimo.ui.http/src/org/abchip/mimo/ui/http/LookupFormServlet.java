@@ -142,6 +142,8 @@ public class LookupFormServlet extends BaseServlet {
 				field.setView("checkbox");
 			else if (slot.isDate())
 				field.setView("datepicker");
+			else if (slot.getText().toLowerCase().contains("level"))
+				field.setView("counter");
 			else
 				field.setView("text");
 		}
