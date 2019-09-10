@@ -30,6 +30,7 @@ import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.menu.ContextMenu;
 import org.abchip.mimo.ui.menu.MenuAction;
@@ -91,6 +92,19 @@ public class LookupContextMenuServlet extends BaseServlet {
 				contextMenu.getElements().addAll(contextMenuAko.getElements());
 		}
 
+		// routes
+		 MenuGroup groupRoutes = MenuFactory.eINSTANCE.createMenuGroup();
+		 groupRoutes.setValue("Routes");
+		 contextMenu.getElements().add(groupRoutes);
+		 for(Slot slot: frame.getSlots()) {
+			 if(!slot.isRoute())
+				 continue;
+			 
+			 MenuAction routeAction = MenuFactory.eINSTANCE.createMenuAction();
+			 routeAction.setValue(slot.getText());
+			 groupRoutes.getData().add(routeAction);			 
+		 }
+		
 		try (ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
 
