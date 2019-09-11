@@ -93,18 +93,20 @@ public class LookupContextMenuServlet extends BaseServlet {
 		}
 
 		// routes
-		 MenuGroup groupRoutes = MenuFactory.eINSTANCE.createMenuGroup();
-		 groupRoutes.setValue("Routes");
-		 contextMenu.getElements().add(groupRoutes);
-		 for(Slot slot: frame.getSlots()) {
-			 if(!slot.isRoute())
-				 continue;
-			 
-			 MenuAction routeAction = MenuFactory.eINSTANCE.createMenuAction();
-			 routeAction.setValue(slot.getText());
-			 groupRoutes.getData().add(routeAction);			 
-		 }
+		MenuGroup groupRoutes = MenuFactory.eINSTANCE.createMenuGroup();
+		groupRoutes.setValue("Routes");
+		for (Slot slot : frame.getSlots()) {
+			if (!slot.isRoute())
+				continue;
+
+			MenuAction routeAction = MenuFactory.eINSTANCE.createMenuAction();
+			routeAction.setValue(slot.getText());
+			groupRoutes.getData().add(routeAction);
+		}
 		
+		if (!groupRoutes.getData().isEmpty())
+			contextMenu.getElements().add(groupRoutes);
+
 		try (ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 			TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
 
