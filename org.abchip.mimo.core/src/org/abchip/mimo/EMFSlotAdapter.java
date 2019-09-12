@@ -109,11 +109,11 @@ public class EMFSlotAdapter extends SlotImpl {
 	private void setSlotText(Frame<?> frame) {
 
 		// remove prefix from slotText
-		if (this.getName().startsWith(frame.getName().toLowerCase()))
+		if (this.getName().toLowerCase().startsWith(frame.getName().toLowerCase()))
 			this.text = this.getName().substring(frame.getName().length());
 		else if (!frame.getSuperNames().isEmpty()) {
 			for (String superName : frame.getSuperNames()) {
-				if (this.getName().startsWith(superName.toLowerCase())) {
+				if (this.getName().toLowerCase().startsWith(superName.toLowerCase())) {
 					this.text = this.getName().substring(superName.length());
 					break;
 				}
