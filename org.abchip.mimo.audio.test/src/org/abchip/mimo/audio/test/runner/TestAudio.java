@@ -22,7 +22,6 @@ import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.mining.classification.Classification;
@@ -58,7 +57,7 @@ public class TestAudio {
 
 		// recordAudio();
 
-		EntityReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class, ResourceScope.CONTEXT);
+		EntityReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class);
 		for (Audio audio : audioReader.find(null)) {
 
 			asserter.assertNotNull("Audio content", audio.getContent());
@@ -80,7 +79,7 @@ public class TestAudio {
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following languages in the system", true, true);
 
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
 		for (Language language : languageReader.find(null)) {
 			audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
 		}
@@ -99,7 +98,7 @@ public class TestAudio {
 		audio.setText("Mimo audio test");
 		audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
 
-		EntityWriter<Audio> audioWriter = resourceManager.getEntityWriter(testRunner, Audio.class, testRunner.getContext().getContextDescription().getResourceTemporary());
+		EntityWriter<Audio> audioWriter = resourceManager.getEntityWriter(testRunner, Audio.class);
 		audioWriter.create(audio);
 	}
 }

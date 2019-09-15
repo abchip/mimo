@@ -7,16 +7,15 @@
  */
 package org.abchip.mimo.context.impl;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
-
+import java.net.URL;
 import java.util.List;
 
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
-
-import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -162,30 +161,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public String resolveAlias(String value) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> resolveAliases(List<String> values) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public <T> void set(Class<T> klass, T object) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -210,7 +185,19 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public ContextRoot getContextRoot() {
+	public URL getResource(Class<?> context, String path) throws IOException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<URL> getResources(Class<?> context, String path) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

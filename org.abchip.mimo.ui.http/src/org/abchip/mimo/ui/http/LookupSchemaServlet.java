@@ -26,7 +26,6 @@ import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
@@ -56,7 +55,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, ResourceScope.CONTEXT).lookup(name);
+		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class).lookup(name);
 
 		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			schema = frameManager.createEntity(Schema.class);
@@ -140,7 +139,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CONTEXT);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

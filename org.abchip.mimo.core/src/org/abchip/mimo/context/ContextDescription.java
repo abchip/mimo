@@ -11,7 +11,6 @@
  */
 package org.abchip.mimo.context;
 
-import java.util.List;
 import org.abchip.mimo.entity.Entity;
 
 /**
@@ -24,10 +23,8 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#isAnonymous <em>Anonymous</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ContextDescription#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.context.ContextDescription#getResources <em>Resources</em>}</li>
- *   <li>{@link org.abchip.mimo.context.ContextDescription#getResourceRoot <em>Resource Root</em>}</li>
- *   <li>{@link org.abchip.mimo.context.ContextDescription#getResourceTemporary <em>Resource Temporary</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getUser <em>User</em>}</li>
  * </ul>
@@ -64,6 +61,32 @@ public interface ContextDescription extends Entity {
 	void setAnonymous(boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Data Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Path</em>' attribute.
+	 * @see #setDataPath(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_DataPath()
+	 * @model
+	 * @generated
+	 */
+	String getDataPath();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getDataPath <em>Data Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Data Path</em>' attribute.
+	 * @see #getDataPath()
+	 * @generated
+	 */
+	void setDataPath(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -88,50 +111,6 @@ public interface ContextDescription extends Entity {
 	 * @generated
 	 */
 	void setId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Resource Root</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Root</em>' attribute.
-	 * @see #setResourceRoot(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_ResourceRoot()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getResourceRoot();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getResourceRoot <em>Resource Root</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Root</em>' attribute.
-	 * @see #getResourceRoot()
-	 * @generated
-	 */
-	void setResourceRoot(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Resource Temporary</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Temporary</em>' attribute.
-	 * @see #setResourceTemporary(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_ResourceTemporary()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getResourceTemporary();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getResourceTemporary <em>Resource Temporary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Temporary</em>' attribute.
-	 * @see #getResourceTemporary()
-	 * @generated
-	 */
-	void setResourceTemporary(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
@@ -186,19 +165,11 @@ public interface ContextDescription extends Entity {
 	void setUser(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Resources</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resources</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resources</em>' attribute list.
-	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_Resources()
-	 * @model
+	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	List<String> getResources();
+	boolean isTenant();
 
 } // ContextDescription

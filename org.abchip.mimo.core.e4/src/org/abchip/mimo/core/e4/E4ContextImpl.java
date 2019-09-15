@@ -11,8 +11,12 @@
  */
 package org.abchip.mimo.core.e4;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,11 +29,12 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 public abstract class E4ContextImpl extends ContextImpl {
 
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
-	private static final String QTEMP = "MIMO-TEMP";
 
 	private static Boolean postConstruct = null;
 
@@ -231,26 +236,26 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public String resolveAlias(String value) {
+	public URL getResource(Class<?> context, String path) {
 
-		String newValue = null;
-		if (value.equalsIgnoreCase(QTEMP))
-			newValue = getContextDescription().getResourceTemporary();
+		Bundle bundle = FrameworkUtil.getBundle(context);
+		if (bundle == null)
+			return null;
 
-		if (newValue != null && !newValue.isEmpty())
-			return newValue;
-		else
-			return value;
+		URL resource = bundle.getResource(path);
+
+		return resource;
 	}
 
 	@Override
-	public List<String> resolveAliases(List<String> values) {
+	public List<URL> getResources(Class<?> context, String path) throws IOException {
 
-		List<String> newValues = new ArrayList<String>();
+		Bundle bundle = FrameworkUtil.getBundle(context);
+		if (bundle == null)
+			return null;
 
-		for (String value : values)
-			newValues.add(resolveAlias(value));
+		Enumeration<URL> resources = bundle.getResources(path);
 
-		return newValues;
+		return Collections.list(resources);
 	}
 }

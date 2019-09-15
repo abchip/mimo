@@ -11,16 +11,12 @@
  */
 package org.abchip.mimo.server.impl;
 
-import java.util.Collection;
-import java.util.List;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.abchip.mimo.server.JobDescription;
 import org.abchip.mimo.server.ServerPackage;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -30,7 +26,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.server.impl.JobDescriptionImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobDescriptionImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobDescriptionImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobDescriptionImpl#getUser <em>User</em>}</li>
  * </ul>
@@ -62,16 +57,6 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The cached value of the '{@link #getResources() <em>Resources</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResources()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> resources;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -178,19 +163,6 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	 * @generated
 	 */
 	@Override
-	public List<String> getResources() {
-		if (resources == null) {
-			resources = new EDataTypeUniqueEList<String>(String.class, this, ServerPackage.JOB_DESCRIPTION__RESOURCES);
-		}
-		return resources;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getText() {
 		return text;
 	}
@@ -217,8 +189,6 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 		switch (featureID) {
 			case ServerPackage.JOB_DESCRIPTION__NAME:
 				return getName();
-			case ServerPackage.JOB_DESCRIPTION__RESOURCES:
-				return getResources();
 			case ServerPackage.JOB_DESCRIPTION__TEXT:
 				return getText();
 			case ServerPackage.JOB_DESCRIPTION__USER:
@@ -231,16 +201,11 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ServerPackage.JOB_DESCRIPTION__NAME:
 				setName((String)newValue);
-				return;
-			case ServerPackage.JOB_DESCRIPTION__RESOURCES:
-				getResources().clear();
-				getResources().addAll((Collection<? extends String>)newValue);
 				return;
 			case ServerPackage.JOB_DESCRIPTION__TEXT:
 				setText((String)newValue);
@@ -262,9 +227,6 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 			case ServerPackage.JOB_DESCRIPTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ServerPackage.JOB_DESCRIPTION__RESOURCES:
-				getResources().clear();
-				return;
 			case ServerPackage.JOB_DESCRIPTION__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
@@ -284,8 +246,6 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 		switch (featureID) {
 			case ServerPackage.JOB_DESCRIPTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ServerPackage.JOB_DESCRIPTION__RESOURCES:
-				return resources != null && !resources.isEmpty();
 			case ServerPackage.JOB_DESCRIPTION__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case ServerPackage.JOB_DESCRIPTION__USER:
@@ -305,8 +265,6 @@ public class JobDescriptionImpl extends EntityNameableImpl implements JobDescrip
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", resources: ");
-		result.append(resources);
 		result.append(", text: ");
 		result.append(text);
 		result.append(", user: ");

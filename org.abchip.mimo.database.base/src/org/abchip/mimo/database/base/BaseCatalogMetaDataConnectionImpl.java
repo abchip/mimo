@@ -16,7 +16,6 @@ import java.util.List;
 
 import org.abchip.mimo.database.CatalogMetaData;
 import org.abchip.mimo.database.SearchStrategy;
-import org.abchip.mimo.database.connection.Connection;
 import org.eclipse.datatools.modelbase.sql.constraints.Index;
 import org.eclipse.datatools.modelbase.sql.schema.Schema;
 import org.eclipse.datatools.modelbase.sql.tables.Table;
@@ -24,25 +23,21 @@ import org.eclipse.datatools.modelbase.sql.tables.ViewTable;
 
 public class BaseCatalogMetaDataConnectionImpl implements CatalogMetaData {
 
-	private Connection connection;
 	private CatalogMetaData catalogMetaData;
 	
-	public BaseCatalogMetaDataConnectionImpl(Connection connection, CatalogMetaData catalogMetaData) {
-		this.connection = connection;
+	public BaseCatalogMetaDataConnectionImpl(CatalogMetaData catalogMetaData) {
 		this.catalogMetaData = catalogMetaData;
 	}
 	
 	@Override
 	public Index getIndex(String schema, String table, String index) {
 		
-		schema = connection.getContext().resolveAlias(schema);
 		return catalogMetaData.getIndex(schema, table, index);
 	}
 
 	@Override
 	public Schema getSchema(String schema) {
 		
-		schema = connection.getContext().resolveAlias(schema);
 		return catalogMetaData.getSchema(schema);
 	}
 
@@ -54,10 +49,12 @@ public class BaseCatalogMetaDataConnectionImpl implements CatalogMetaData {
 	@Override
 	public List<Schema> getCurrentSchemas() {
 		
-		List<Schema> schemas = new ArrayList<Schema>();		
-		for(String resource: connection.getContext().getContextDescription().getResources()) {
-			schemas.add(getSchema(resource));
-		}
+		List<Schema> schemas = new ArrayList<Schema>();
+		
+		// TODO
+//		for(String resource: connection.getContext().getContextDescription().getResources()) {
+//			schemas.add(getSchema(resource));
+//		}
 		
 		return schemas;
 	}
@@ -65,7 +62,6 @@ public class BaseCatalogMetaDataConnectionImpl implements CatalogMetaData {
 	@Override
 	public Table getTable(String schema, String table) {
 		
-		schema = connection.getContext().resolveAlias(schema);
 		return catalogMetaData.getTable(schema, table);
 	}
 
@@ -94,7 +90,6 @@ public class BaseCatalogMetaDataConnectionImpl implements CatalogMetaData {
 	@Override
 	public ViewTable getView(String schema, String table) {
 		
-		schema = connection.getContext().resolveAlias(schema);
 		return catalogMetaData.getView(schema, table);
 	}
 

@@ -3,16 +3,7 @@
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http:/**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.database;
 
@@ -24,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Search Stategy</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Search Strategy</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.abchip.mimo.database.DatabasePackage#getSearchStrategy()
@@ -88,7 +79,8 @@ public enum SearchStrategy implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final SearchStrategy[] VALUES_ARRAY = new SearchStrategy[] {
+	private static final SearchStrategy[] VALUES_ARRAY =
+		new SearchStrategy[] {
 			CURRENT,
 			ALL,
 		};
@@ -226,5 +218,5 @@ public enum SearchStrategy implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-
-} //SearchStategy
+	
+} //SearchStrategy

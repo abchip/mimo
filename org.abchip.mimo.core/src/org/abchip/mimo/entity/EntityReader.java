@@ -141,6 +141,14 @@ public interface EntityReader<E extends EntityNameable> {
 	List<String> findNames(String filter);
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	String getResourceName();
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model nameRequired="true"
 	 * @generated

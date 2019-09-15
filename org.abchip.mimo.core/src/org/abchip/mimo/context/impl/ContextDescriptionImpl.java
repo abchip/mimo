@@ -7,31 +7,23 @@
  */
 package org.abchip.mimo.context.impl;
 
-import java.util.Collection;
-import java.util.List;
-
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Description</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Description</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#isAnonymous <em>Anonymous</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getResources <em>Resources</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getResourceRoot <em>Resource Root</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getResourceTemporary <em>Resource Temporary</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getUser <em>User</em>}</li>
  * </ul>
@@ -41,8 +33,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 public class ContextDescriptionImpl extends EntityImpl implements ContextDescription {
 	/**
 	 * The default value of the '{@link #isAnonymous() <em>Anonymous</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isAnonymous()
 	 * @generated
 	 * @ordered
@@ -51,8 +42,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 
 	/**
 	 * The cached value of the '{@link #isAnonymous() <em>Anonymous</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isAnonymous()
 	 * @generated
 	 * @ordered
@@ -60,78 +50,49 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	protected boolean anonymous = ANONYMOUS_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getDataPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DATA_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getDataPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String dataPath = DATA_PATH_EDEFAULT;
+
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String ID_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getResources() <em>Resources</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResources()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> resources;
-	/**
-	 * The default value of the '{@link #getResourceRoot() <em>Resource Root</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceRoot()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESOURCE_ROOT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getResourceRoot() <em>Resource Root</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceRoot()
-	 * @generated
-	 * @ordered
-	 */
-	protected String resourceRoot = RESOURCE_ROOT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getResourceTemporary() <em>Resource Temporary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceTemporary()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESOURCE_TEMPORARY_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getResourceTemporary() <em>Resource Temporary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceTemporary()
-	 * @generated
-	 * @ordered
-	 */
-	protected String resourceTemporary = RESOURCE_TEMPORARY_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -140,8 +101,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 
 	/**
 	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -149,9 +109,9 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	protected String tenant = TENANT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUser() <em>User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getUser() <em>User</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getUser()
 	 * @generated
 	 * @ordered
@@ -159,9 +119,9 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	protected static final String USER_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUser() <em>User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getUser() <em>User</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getUser()
 	 * @generated
 	 * @ordered
@@ -169,8 +129,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	protected String user = USER_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ContextDescriptionImpl() {
@@ -178,8 +137,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -188,8 +146,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -198,8 +155,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -211,8 +167,28 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDataPath() {
+		return dataPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDataPath(String newDataPath) {
+		String oldDataPath = dataPath;
+		dataPath = newDataPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH, oldDataPath, dataPath));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -221,8 +197,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -234,67 +209,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> getResources() {
-		if (resources == null) {
-			resources = new EDataTypeUniqueEList<String>(String.class, this, ContextPackage.CONTEXT_DESCRIPTION__RESOURCES);
-		}
-		return resources;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getResourceRoot() {
-		return resourceRoot;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setResourceRoot(String newResourceRoot) {
-		String oldResourceRoot = resourceRoot;
-		resourceRoot = newResourceRoot;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_ROOT, oldResourceRoot, resourceRoot));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getResourceTemporary() {
-		return resourceTemporary;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setResourceTemporary(String newResourceTemporary) {
-		String oldResourceTemporary = resourceTemporary;
-		resourceTemporary = newResourceTemporary;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY, oldResourceTemporary, resourceTemporary));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -303,8 +218,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -316,8 +230,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -326,8 +239,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -339,8 +251,20 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isTenant() {
+		if (this.getTenant() != null && !this.getTenant().isEmpty())
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -348,14 +272,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		switch (featureID) {
 			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
 				return isAnonymous();
+			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
+				return getDataPath();
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				return getId();
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCES:
-				return getResources();
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_ROOT:
-				return getResourceRoot();
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY:
-				return getResourceTemporary();
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				return getTenant();
 			case ContextPackage.CONTEXT_DESCRIPTION__USER:
@@ -365,29 +285,20 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
 				setAnonymous((Boolean)newValue);
 				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
+				setDataPath((String)newValue);
+				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				setId((String)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCES:
-				getResources().clear();
-				getResources().addAll((Collection<? extends String>)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_ROOT:
-				setResourceRoot((String)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY:
-				setResourceTemporary((String)newValue);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				setTenant((String)newValue);
@@ -400,8 +311,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -410,17 +320,11 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
 				setAnonymous(ANONYMOUS_EDEFAULT);
 				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
+				setDataPath(DATA_PATH_EDEFAULT);
+				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				setId(ID_EDEFAULT);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCES:
-				getResources().clear();
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_ROOT:
-				setResourceRoot(RESOURCE_ROOT_EDEFAULT);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY:
-				setResourceTemporary(RESOURCE_TEMPORARY_EDEFAULT);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				setTenant(TENANT_EDEFAULT);
@@ -433,8 +337,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -442,14 +345,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		switch (featureID) {
 			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
 				return anonymous != ANONYMOUS_EDEFAULT;
+			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
+				return DATA_PATH_EDEFAULT == null ? dataPath != null : !DATA_PATH_EDEFAULT.equals(dataPath);
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCES:
-				return resources != null && !resources.isEmpty();
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_ROOT:
-				return RESOURCE_ROOT_EDEFAULT == null ? resourceRoot != null : !RESOURCE_ROOT_EDEFAULT.equals(resourceRoot);
-			case ContextPackage.CONTEXT_DESCRIPTION__RESOURCE_TEMPORARY:
-				return RESOURCE_TEMPORARY_EDEFAULT == null ? resourceTemporary != null : !RESOURCE_TEMPORARY_EDEFAULT.equals(resourceTemporary);
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 			case ContextPackage.CONTEXT_DESCRIPTION__USER:
@@ -459,8 +358,7 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -470,14 +368,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (anonymous: ");
 		result.append(anonymous);
+		result.append(", dataPath: ");
+		result.append(dataPath);
 		result.append(", id: ");
 		result.append(id);
-		result.append(", resources: ");
-		result.append(resources);
-		result.append(", resourceRoot: ");
-		result.append(resourceRoot);
-		result.append(", resourceTemporary: ");
-		result.append(resourceTemporary);
 		result.append(", tenant: ");
 		result.append(tenant);
 		result.append(", user: ");
@@ -486,4 +380,4 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		return result.toString();
 	}
 
-} //ContextDescriptionImpl
+} // ContextDescriptionImpl

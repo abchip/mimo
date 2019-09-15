@@ -11,36 +11,29 @@
  */
 package org.abchip.mimo.core.base;
 
-import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.MimoConstants;
-import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityFactory;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceListener;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceNotifier;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
-import org.abchip.mimo.entity.ResourceType;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 
@@ -112,54 +105,13 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	}
 
 	@Override
-	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Class<E> klass, ResourceScope scope) {
-		return getEntityReader(contextProvider, klass.getSimpleName(), scope);
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frameName, ResourceScope scope) {
-		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		if (frame == null) {
-			this.frameReader = frameManager.getFrameReader(contextRoot);
-			frame = (Frame<E>) frameReader.lookup(frameName);
-			if (frame == null)
-				return null;
-		}
-
-		return getEntityReader(contextProvider, frame, scope);
-	}
-
-	@Override
-	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, ResourceScope scope) {
-		return getEntityReader(contextProvider, frame, resources(contextProvider, scope));
-	}
-
-	@Override
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
-		resource = contextProvider.getContext().resolveAlias(resource);
-
+		
 		EntityProvider resourceProvider = getProvider(frame);
 		if (resourceProvider == null)
 			return null;
 
 		EntityReader<E> resourceReader = resourceProvider.getEntityReader(contextProvider, frame, resource);
-		if (resourceReader != null)
-			prepareListener(resourceReader, frame);
-
-		return resourceReader;
-	}
-
-	@Override
-	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, List<String> resources) {
-
-		resources = contextProvider.getContext().resolveAliases(resources);
-
-		EntityProvider resourceProvider = getProvider(frame);
-		if (resourceProvider == null)
-			return null;
-
-		EntityReader<E> resourceReader = resourceProvider.getEntityReader(contextProvider, frame, resources);
 		if (resourceReader != null)
 			prepareListener(resourceReader, frame);
 
@@ -187,37 +139,7 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	}
 
 	@Override
-	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Class<E> klass, ResourceScope scope) {
-		return getEntityWriter(contextProvider, klass.getSimpleName(), scope);
-	}
-
-	@Override
-	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frameName, ResourceScope scope) {
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		if (frame == null)
-			return null;
-		return getEntityWriter(contextProvider, frame, scope);
-	}
-
-	@Override
-	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, ResourceScope scope) {
-		String resource = null;
-		switch (scope) {
-		case ROOT:
-			resource = contextProvider.getContext().getContextDescription().getResourceRoot();
-			break;
-		case ALL:
-		case CONTEXT:
-			throw new RuntimeException("Unsupported scope " + scope);
-		}
-
-		return getEntityWriter(contextProvider, frame, resource);
-	}
-
-	@Override
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
-		resource = contextProvider.getContext().resolveAlias(resource);
 
 		EntityProvider resourceProvider = getProvider(frame);
 		if (resourceProvider == null)
@@ -256,39 +178,6 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		}
 
 		return notifier;
-	}
-
-	private List<String> resources(ContextProvider contextProvider, ResourceScope scope) {
-
-		ContextDescription contextDescription = contextProvider.getContext().getContextDescription();
-		List<String> resources = new ArrayList<>();
-
-		// set scope resources
-		switch (scope) {
-		case ALL: {
-			resources.add(contextDescription.getResourceTemporary());
-			EntityIterator<Resource> resourceIterator = getEntityReader(contextProvider, Resource.class, contextDescription.getResourceRoot()).find(null);
-			while (resourceIterator.hasNext()) {
-				Resource resource = resourceIterator.next();
-				if (resource.getResourceType() == ResourceType.TEMP)
-					continue;
-				if (!resources.contains(resource.getName()))
-					resources.add(resource.getName());
-			}
-			break;
-		}
-		case CONTEXT:
-			resources.add(contextDescription.getResourceTemporary());
-			for (String resourceName : contextDescription.getResources()) {
-				if (!resources.contains(resourceName))
-					resources.add(resourceName);
-			}
-			break;
-		case ROOT:
-			resources.add(contextDescription.getResourceRoot());
-			break;
-		}
-		return resources;
 	}
 
 	@Override

@@ -37,16 +37,17 @@ public class BaseTestManagerImpl implements TestManager {
 		Bundle bundle = FrameworkUtil.getBundle(klass);
 		String classURI = MimoConstants.SCHEME_NAME + ":/bundle/" + bundle.getSymbolicName() + "/" + klass.getName();
 
-		Context testContext = new BaseTestContextImpl(contextProvider.getContext());
-		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, classURI);
-		return testRunner;
-	}
+		Class<?> testClass = null;
+		try {
+			testClass = bundle.loadClass(classURI);
+		} catch (ClassNotFoundException e) {
+		}
+		if (testClass == null)
+			throw new RuntimeException("Invalid runner: " + classURI);
 
-	@Override
-	public TestUnitRunner prepareUnitRunner(ContextProvider contextProvider, String classURI) {
 
 		Context testContext = new BaseTestContextImpl(contextProvider.getContext());
-		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, classURI);
+		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, testClass);
 		return testRunner;
 	}
 

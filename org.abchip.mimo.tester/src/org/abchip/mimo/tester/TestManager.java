@@ -37,12 +37,4 @@ public interface TestManager {
 	 */
 	TestUnitRunner prepareUnitRunner(ContextProvider contextProvider, Class<?> klass);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" classURIRequired="true"
-	 * @generated
-	 */
-	TestUnitRunner prepareUnitRunner(ContextProvider contextProvider, String classURI);
-
 } // QTestManager

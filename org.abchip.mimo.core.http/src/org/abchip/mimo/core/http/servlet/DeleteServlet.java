@@ -20,7 +20,6 @@ import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.util.Strings;
 
 public class DeleteServlet extends BaseServlet {
@@ -39,18 +38,17 @@ public class DeleteServlet extends BaseServlet {
 	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String name = request.getParameter("name");
-		
+
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextProvider).lookup(frameName);
-		if (frame == null) 
+		if (frame == null)
 			return;
 
-		E entity = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CONTEXT).lookup(name);
+		E entity = resourceManager.getEntityReader(contextProvider, frame).lookup(name);
 
-		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName, "data");
-
+		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName);
 		entityWriter.delete(entity);
-		
+
 		response.setStatus(HttpServletResponse.SC_OK);
 	}
 }

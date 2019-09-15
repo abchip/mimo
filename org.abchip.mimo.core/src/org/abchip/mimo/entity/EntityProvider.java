@@ -12,7 +12,6 @@
  */
 package org.abchip.mimo.entity;
 
-import java.util.List;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
@@ -35,6 +34,30 @@ public interface EntityProvider {
 	 * @generated
 	 */
 	boolean isActive(ContextProvider contextProvider);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,26 +86,26 @@ public interface EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true" resourcesRequired="true" resourcesMany="true"
+	 * @model contextProviderRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Class<E> klass, List<String> resources);
+	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" resourcesRequired="true" resourcesMany="true"
+	 * @model contextProviderRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, List<String> resources);
+	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" resourcesRequired="true" resourcesMany="true"
+	 * @model contextProviderRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frame, List<String> resources);
+	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,14 +130,6 @@ public interface EntityProvider {
 	 * @generated
 	 */
 	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frame, String resource);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	String getProviderUrl();
 
 	/**
 	 * <!-- begin-user-doc -->

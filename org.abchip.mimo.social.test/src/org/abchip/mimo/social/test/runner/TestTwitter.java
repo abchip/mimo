@@ -23,7 +23,6 @@ import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
@@ -69,8 +68,8 @@ public class TestTwitter {
 		if (true)
 			return;
 
-		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
+		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class);
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
 
 		Tweet t = tweetReader.lookup("939830847619944449");
 
@@ -140,14 +139,14 @@ public class TestTwitter {
 	private void testConfusionMatrix() {
 
 		List<Language> languages = new ArrayList<Language>();
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class, ResourceScope.CONTEXT);
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
 		for (Language language : languageReader.find(null))
 			languages.add(language);
 
 		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);
 		Evaluator evaluator = classifier.buildEvaluator(Language.class, String.class);
 
-		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class, ResourceScope.CONTEXT);
+		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class);
 		for (Tweet tweet : tweetReader.find(null)) {
 
 			Language language = lookupLanguageByIso(languages, tweet.getLanguage());
@@ -171,7 +170,7 @@ public class TestTwitter {
 		EntityIterator<Tweet> tweetIterator = twitterManager.search(testRunner, null, "#ai", 1000);
 		asserter.assertTrue("Count tweets", tweetIterator.hasNext());
 
-		EntityWriter<Tweet> tweetWriter = resourceManager.getEntityWriter(testRunner, Tweet.class, testRunner.getContext().getContextDescription().getResourceTemporary());
+		EntityWriter<Tweet> tweetWriter = resourceManager.getEntityWriter(testRunner, Tweet.class);
 		for (Tweet tweet : tweetIterator) {
 			try {
 				tweetWriter.create(tweet, true);

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.server;
 
-import java.util.List;
-
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Textable;
 
@@ -22,7 +20,6 @@ import org.abchip.mimo.entity.Textable;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.server.JobDescription#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.server.JobDescription#getResources <em>Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.server.JobDescription#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.server.JobDescription#getUser <em>User</em>}</li>
  * </ul>
@@ -83,22 +80,6 @@ public interface JobDescription extends EntityNameable, Textable {
 	 * @generated
 	 */
 	void setUser(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Resources</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resources</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resources</em>' attribute list.
-	 * @see org.abchip.mimo.server.ServerPackage#getJobDescription_Resources()
-	 * @model
-	 * @generated
-	 */
-	List<String> getResources();
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.

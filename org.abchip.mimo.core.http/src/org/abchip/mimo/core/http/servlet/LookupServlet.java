@@ -19,7 +19,6 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.util.Strings;
@@ -51,7 +50,7 @@ public class LookupServlet extends BaseServlet {
 
 		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
 
-			E entity = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CONTEXT).lookup(name);
+			E entity = resourceManager.getEntityReader(contextProvider, frame).lookup(name);
 			if (entity == null) 
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			else {

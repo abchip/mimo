@@ -17,7 +17,6 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.ClassificationFactory;
@@ -112,7 +111,7 @@ public class LPClassifierImpl implements Classifier {
 	}
 
 	private void loadLanguages() {
-		EntityReader<Language> languageReader = resourceManager.getEntityReader(contextRoot, Language.class, ResourceScope.CONTEXT);
+		EntityReader<Language> languageReader = resourceManager.getEntityReader(contextRoot, Language.class);
 		for (Language language : languageReader.find(null))
 			languages.put(language.getName(), language);
 	}

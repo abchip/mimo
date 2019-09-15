@@ -160,7 +160,7 @@ public class BaseConnectionImpl implements Connection {
 			synchronized (this) {
 				if (this.catalogMetaData == null) {
 					try {
-						catalogMetaData = new BaseCatalogMetaDataConnectionImpl(this, getCatalogConnection().getCatalogMetaData());
+						catalogMetaData = new BaseCatalogMetaDataConnectionImpl(getCatalogConnection().getCatalogMetaData());
 					} catch (SQLException e) {
 						e.printStackTrace();
 						return null;

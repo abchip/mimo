@@ -81,12 +81,4 @@ public interface Resource extends EntityNameable, Textable {
 	 */
 	void setText(String value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	ResourceType getResourceType();
-
 } // Resource

@@ -70,7 +70,8 @@ public class NIOResourceReaderImpl extends EntityReaderImpl<Resource> {
 		return pathManager.getResources().get(name);
 	}
 
-	public Resource getResource() {
-		return pathManager.getResourceRoot();
+	@Override
+	public String getResourceName() {
+		return pathManager.getResourceRoot().getName();
 	}
 }

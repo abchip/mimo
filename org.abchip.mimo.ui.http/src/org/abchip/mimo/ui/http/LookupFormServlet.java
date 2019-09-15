@@ -23,7 +23,6 @@ import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
@@ -50,7 +49,7 @@ public class LookupFormServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Form form = resourceManager.getEntityReader(contextProvider, Form.class, ResourceScope.CONTEXT).lookup(name);
+		Form form = resourceManager.getEntityReader(contextProvider, Form.class).lookup(name);
 
 		if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			form = frameManager.createEntity(Form.class);
@@ -165,7 +164,7 @@ public class LookupFormServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CONTEXT);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

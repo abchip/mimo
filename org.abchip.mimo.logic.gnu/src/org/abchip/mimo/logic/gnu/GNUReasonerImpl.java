@@ -22,7 +22,6 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.logic.Goal;
 import org.abchip.mimo.logic.LogicFactory;
 import org.abchip.mimo.logic.Question;
@@ -72,8 +71,7 @@ public class GNUReasonerImpl implements Reasoner {
 
 		environment = new GNUEnvironment();
 
-		ContextRoot contextRoot = contextProvider.getContext().getContextRoot();
-		URL resource = contextRoot.getResource(this.getClass(), "/theories/asup_base.pl");
+		URL resource = contextProvider.getContext().getResource(this.getClass(), "/theories/asup_base.pl");
 		// environment.ensureLoaded(AtomTerm.get(resource.getFile()));
 
 		PrologTextLoaderState ptls = environment.getPrologTextLoaderState();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.entity.impl;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
@@ -43,6 +41,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	private EntityReader<Frame<Entity>> frameReader;
 
+	private static String RESOURCE_DEFAULT = "master";
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -72,11 +72,46 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	}
 
 	protected void init() {
-		this.frameReader = frameManager.getFrameReader(getContextRoot());
+		this.frameReader = frameManager.getFrameReader(this.contextRoot);
 	}
 
-	protected ContextRoot getContextRoot() {
-		return contextRoot;
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Class<E> klass) {
+		return getEntityReader(contextProvider, klass.getSimpleName());
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frameName) {
+		@SuppressWarnings("unchecked")
+		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
+		return getEntityReader(contextProvider, frame);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame) {
+
+		String resource = null;
+		if (contextProvider.getContextDescription().isTenant())
+			resource = contextProvider.getContextDescription().getTenant();
+		else
+			resource = RESOURCE_DEFAULT;
+
+		return getEntityReader(contextProvider, frame, resource);
 	}
 
 	/**
@@ -106,9 +141,16 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * 
 	 * @generated NOT
 	 */
+	public abstract <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
 	@Override
-	public final <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Class<E> klass, List<String> resources) {
-		return getEntityReader(contextProvider, klass.getSimpleName(), resources);
+	public final <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Class<E> klass) {
+		return getEntityWriter(contextProvider, klass.getSimpleName());
 	}
 
 	/**
@@ -117,10 +159,27 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frameName, List<String> resources) {
+	public final <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frameName) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
-		return getEntityReader(contextProvider, frame, resources);
+		return getEntityWriter(contextProvider, frame);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame) {
+
+		String resource = null;
+		if (contextProvider.getContextDescription().isTenant())
+			resource = contextProvider.getContextDescription().getTenant();
+		else
+			resource = RESOURCE_DEFAULT;
+
+		return getEntityWriter(contextProvider, frame, resource);
 	}
 
 	/**
@@ -147,14 +206,10 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
-	@Override
-	public String getProviderUrl() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -210,25 +265,4 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public abstract <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource);
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public abstract <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, List<String> resources);
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public abstract <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource);
 } // EntityProviderImpl

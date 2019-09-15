@@ -28,7 +28,6 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
@@ -38,7 +37,6 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
@@ -104,7 +102,7 @@ public class GitHubResponseServlet extends HttpServlet {
 
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2GitHub";
-		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CONTEXT);
+		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
 		EntityNameable oauth2GitHub = oauth2Reader.find(null).next();
 
 		this.getDefaultProvider().logout(contextProvider);

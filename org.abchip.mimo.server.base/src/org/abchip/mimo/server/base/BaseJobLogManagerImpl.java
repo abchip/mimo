@@ -18,10 +18,9 @@ import java.util.concurrent.ThreadFactory;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.EntityReader;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.EntityWriter;
+import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLog;
 import org.abchip.mimo.server.JobLogEntry;
@@ -90,7 +89,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 				jobLog.getEntries().add(entry);
 
 				// save
-				EntityWriter<JobLog> jobLogWriter = resourceManager.getEntityWriter(job, JobLog.class, ResourceScope.ROOT);
+				EntityWriter<JobLog> jobLogWriter = resourceManager.getEntityWriter(job, JobLog.class);
 				jobLogWriter.create(jobLog, true);
 			}
 		};
@@ -120,7 +119,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 		if (jobTarget == null)
 			return null;
 
-		EntityReader<JobLog> jobLogReader = resourceManager.getEntityReader(jobCaller, JobLog.class, ResourceScope.ROOT);
+		EntityReader<JobLog> jobLogReader = resourceManager.getEntityReader(jobCaller, JobLog.class);
 		JobLog jobLog = jobLogReader.lookup(jobTarget.getJobID());
 
 		return jobLog;

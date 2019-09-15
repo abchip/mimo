@@ -12,12 +12,10 @@
 package org.abchip.mimo.tester.base;
 
 import java.lang.annotation.Annotation;
-import java.util.List;
 
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.impl.ContextImpl;
 
 public class BaseTestContextImpl extends ContextImpl {
@@ -76,16 +74,6 @@ public class BaseTestContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public String resolveAlias(String value) {
-		return delegate.resolveAlias(value);
-	}
-
-	@Override
-	public List<String> resolveAliases(List<String> values) {
-		return delegate.resolveAliases(values);
-	}
-
-	@Override
 	public <T> void set(Class<T> klass, T object) {
 		delegate.set(klass, object);
 	}
@@ -105,9 +93,5 @@ public class BaseTestContextImpl extends ContextImpl {
 
 	public <T> void registerAdapterFactory(AdapterFactory factory, Class<T> adapterType) {
 		delegate.registerAdapterFactory(factory, adapterType);
-	}
-
-	public ContextRoot getContextRoot() {
-		return delegate.getContextRoot();
 	}
 }

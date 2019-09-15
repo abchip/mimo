@@ -388,18 +388,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJob_Resources() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getJob_Messages() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(12);
+		return (EReference)jobEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -409,7 +399,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 */
 	@Override
 	public EReference getJob_System() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(13);
+		return (EReference)jobEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -419,7 +409,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 */
 	@Override
 	public EAttribute getJob_TimeSeparator() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)jobEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -499,17 +489,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 */
 	@Override
 	public EAttribute getJobDescription_User() {
-		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getJobDescription_Resources() {
-		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -519,7 +499,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 */
 	@Override
 	public EAttribute getJobDescription_Text() {
-		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -953,7 +933,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		createEReference(jobEClass, JOB__JOB_RUN_INFO);
 		createEReference(jobEClass, JOB__JOB_THREAD);
 		createEAttribute(jobEClass, JOB__JOB_TYPE);
-		createEAttribute(jobEClass, JOB__RESOURCES);
 		createEReference(jobEClass, JOB__MESSAGES);
 		createEReference(jobEClass, JOB__SYSTEM);
 		createEAttribute(jobEClass, JOB__TIME_SEPARATOR);
@@ -966,7 +945,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 
 		jobDescriptionEClass = createEClass(JOB_DESCRIPTION);
 		createEAttribute(jobDescriptionEClass, JOB_DESCRIPTION__NAME);
-		createEAttribute(jobDescriptionEClass, JOB_DESCRIPTION__RESOURCES);
 		createEAttribute(jobDescriptionEClass, JOB_DESCRIPTION__TEXT);
 		createEAttribute(jobDescriptionEClass, JOB_DESCRIPTION__USER);
 
@@ -1084,7 +1062,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		initEReference(getJob_JobRunInfo(), this.getJobRunInfo(), null, "jobRunInfo", null, 1, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_JobThread(), theUtilPackage.getThread(), null, "jobThread", null, 0, 1, Job.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_JobType(), this.getJobType(), "jobType", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJob_Resources(), ecorePackage.getEString(), "resources", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_Messages(), this.getJobMessage(), null, "messages", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_System(), this.getSystem(), null, "system", null, 1, 1, Job.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_TimeSeparator(), ecorePackage.getEString(), "timeSeparator", ":", 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1113,7 +1090,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 
 		initEClass(jobDescriptionEClass, JobDescription.class, "JobDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJobDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, JobDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobDescription_Resources(), ecorePackage.getEString(), "resources", null, 0, -1, JobDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobDescription_Text(), ecorePackage.getEString(), "text", null, 1, 1, JobDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobDescription_User(), ecorePackage.getEString(), "user", null, 0, 1, JobDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

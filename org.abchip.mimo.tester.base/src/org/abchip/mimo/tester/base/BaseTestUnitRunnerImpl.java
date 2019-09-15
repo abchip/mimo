@@ -26,12 +26,11 @@ import org.abchip.mimo.tester.TesterFactory;
 
 public class BaseTestUnitRunnerImpl extends BaseTestRunnerImpl implements TestUnitRunner {
 
-	private String classURI;
+	private Class<?> testClass = null;
 	
-	public BaseTestUnitRunnerImpl(Context context, String classURI) {
+	public BaseTestUnitRunnerImpl(Context context, Class<?> testClass) {
 		super(context);
-		this.classURI = classURI;
-
+		this.testClass = testClass;
 	}
 	
 	@Override
@@ -39,10 +38,6 @@ public class BaseTestUnitRunnerImpl extends BaseTestRunnerImpl implements TestUn
 
 		TestRunnerEvent event = TesterFactory.eINSTANCE.createTestRunnerEvent();
 		event.setSource(this);
-
-		Class<?> testClass = getContext().getContextRoot().loadClass(classURI);
-		if (testClass == null)
-			throw new RuntimeException("Invalid runner: " + classURI);
 
 		TestResult testResult = TesterFactory.eINSTANCE.createTestResult();
 

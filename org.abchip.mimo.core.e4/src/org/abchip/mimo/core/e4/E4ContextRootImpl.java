@@ -11,14 +11,10 @@
  */
 package org.abchip.mimo.core.e4;
 
-import java.io.IOException;
 import java.net.URI;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Dictionary;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,7 +28,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
 
@@ -62,11 +57,6 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	@Override
 	protected void removeEclipseContext() {
 		this.eclipseContext = null;
-	}
-
-	@Override
-	public ContextRoot getContextRoot() {
-		return this;
 	}
 
 	@Override
@@ -163,30 +153,6 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		}
 
 		return plugins;
-	}
-
-	@Override
-	public URL getResource(Class<?> context, String path) {
-
-		Bundle bundle = FrameworkUtil.getBundle(context);
-		if (bundle == null)
-			return null;
-
-		URL resource = bundle.getResource(path);
-
-		return resource;
-	}
-
-	@Override
-	public List<URL> getResources(Class<?> context, String path) throws IOException {
-
-		Bundle bundle = FrameworkUtil.getBundle(context);
-		if (bundle == null)
-			return null;
-
-		Enumeration<URL> resources = bundle.getResources(path);
-
-		return Collections.list(resources);
 	}
 
 	@Override

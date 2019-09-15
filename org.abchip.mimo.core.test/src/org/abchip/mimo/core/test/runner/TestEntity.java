@@ -7,10 +7,9 @@ import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestFactory;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
-import org.abchip.mimo.entity.ResourceScope;
+import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -37,7 +36,7 @@ public class TestEntity {
 
 	private void testRead() {
 		try {
-			EntityReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class, ResourceScope.ROOT);
+			EntityReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class);
 
 			EntityIterator<ObjectA> entityIterator = entityReader.find(null);
 			while (entityIterator.hasNext()) {
@@ -54,7 +53,7 @@ public class TestEntity {
 
 	private void testWrite() {
 		try {
-			EntityWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class, "mimo-test");
+			EntityWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
 
 			ObjectA objectA = TestFactory.eINSTANCE.createObjectA();
 			objectA.setName("PIPPO");
@@ -85,7 +84,7 @@ public class TestEntity {
 
 	private void testDelete() {
 		try {
-			EntityWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class, "mimo-test");
+			EntityWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
 
 			EntityIterator<ObjectA> objectIterator = entityWriter.find(null);
 			while (objectIterator.hasNext()) {				

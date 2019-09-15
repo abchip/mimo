@@ -30,8 +30,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="jobThread" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//util/Thread"
         transient="true" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobType" eType="#//JobType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resources" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
         eType="#//JobMessage" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
@@ -48,8 +46,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JobDescription" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Textable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resources" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

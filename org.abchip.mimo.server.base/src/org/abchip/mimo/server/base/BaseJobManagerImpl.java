@@ -27,10 +27,8 @@ import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobCapability;
-import org.abchip.mimo.server.JobDescription;
 import org.abchip.mimo.server.JobEvent;
 import org.abchip.mimo.server.JobEventType;
 import org.abchip.mimo.server.JobListener;
@@ -75,7 +73,7 @@ public class BaseJobManagerImpl implements JobManager {
 	public JobCapability create(Identity<?> identity, String jobName) {
 
 		Job startupJob = systemManager.getJobKernel();
-		EntityReader<UserProfile> userResource = resourceManager.getEntityReader(startupJob, UserProfile.class, ResourceScope.ROOT);
+		EntityReader<UserProfile> userResource = resourceManager.getEntityReader(startupJob, UserProfile.class);
 
 		// check credential
 		UserProfile userProfile = userResource.lookup(identity.getJavaPrincipal().getName());
@@ -85,22 +83,13 @@ public class BaseJobManagerImpl implements JobManager {
 
 		Job job = systemManager.createJob(JobType.BATCH, identity.getJavaPrincipal(), jobName);
 
-		// add job description resources
-		if (userProfile.getJobDescription() != null) {
-			EntityReader<JobDescription> jobDescriptionResource = resourceManager.getEntityReader(startupJob, JobDescription.class, ResourceScope.ROOT);
-			JobDescription jobDescription = jobDescriptionResource.lookup(userProfile.getJobDescription());
-			if (jobDescription != null)
-				for (String resource : jobDescription.getResources())
-					job.getResources().add(resource);
-		}
-
 		JobEvent jobEvent = ServerFactory.eINSTANCE.createJobEvent();
 		jobEvent.setSource(job);
 		jobEvent.setType(JobEventType.STARTING);
 		fireEvent(jobEvent);
 
 		// save
-		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class, ResourceScope.ROOT);
+		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class);
 		jobWriter.create(job);
 
 		jobEvent.setType(JobEventType.STARTED);
@@ -171,7 +160,7 @@ public class BaseJobManagerImpl implements JobManager {
 		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
 		Job jobTarget = null;
 
-		EntityReader<Job> jobReader = resourceManager.getEntityReader(jobCaller, Job.class, ResourceScope.ROOT);
+		EntityReader<Job> jobReader = resourceManager.getEntityReader(jobCaller, Job.class);
 		try (EntityIterator<Job> jobs = jobReader.find(filter);) {
 
 			// first element
@@ -219,7 +208,7 @@ public class BaseJobManagerImpl implements JobManager {
 			jobListener.handleEvent(jobEvent);
 
 		// save destroy date job
-		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class, ResourceScope.ROOT);
+		EntityWriter<Job> jobWriter = resourceManager.getEntityWriter(job, Job.class);
 		job.setDestroyDate(new Date());
 		jobWriter.update(job);
 

@@ -11,9 +11,6 @@
  */
 package org.abchip.mimo.core.base.nio;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -26,7 +23,6 @@ import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
-import org.abchip.mimo.entity.ResourceHelper;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
@@ -49,21 +45,26 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 	protected void init() {
 		super.init();
 		
-		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getResourceRoot());
+		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getDataPath());
 		
 		resourceManager.registerProvider(Resource.class, this);
 		resourceManager.registerProvider(EntityNameable.class, this);
 	}
 
+	private boolean isResource(Frame<?> frame) {
+		return frame.getName().equals(Resource.class.getSimpleName());
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
-	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resourceName) {
+	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
+		
 		EntityReader<E> entityReader = null;
 		if (isResource(frame)) {
-			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextRoot);
+			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextProvider);
 		} else {
 			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
-			entityReader = new NIOEntityReaderImpl<E>(pathManager, resourceSerializer, resourceName, frame, logger);
+			entityReader = new NIOEntityReaderImpl<E>(pathManager, resourceSerializer, resource, frame, logger);
 		}
 
 		return entityReader;
@@ -71,37 +72,16 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, List<String> resources) {
+	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
 
-		List<EntityReader<E>> readers = new ArrayList<EntityReader<E>>();
-		for (String resourceName : resources) {
-			if (isResource(frame)) {
-				readers.add((EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextRoot));
-			} else {
-				ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
-				NIOEntityReaderImpl<E> resourceReader = new NIOEntityReaderImpl<E>(pathManager, resourceSerializer, resourceName, frame, logger);
-				readers.add(resourceReader);
-			}
-		}
-
-		return ResourceHelper.wrapReader(readers);
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resourceName) {
 		EntityWriter<E> resourceWriter = null;
 		if (isResource(frame)) {
 			resourceWriter = (EntityWriter<E>) new NIOResourceWriterImpl(pathManager, (Frame<Resource>) frame, contextProvider, lockManager);
 		} else {
 			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
-			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, resourceSerializer, contextProvider, resourceName, frame, logger, lockManager);
+			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, resourceSerializer, resource, frame, logger, lockManager);
 		}
 
 		return resourceWriter;
-	}
-
-	private boolean isResource(Frame<?> frame) {
-		return frame.getName().equals(Resource.class.getSimpleName());
 	}
 }

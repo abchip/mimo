@@ -18,7 +18,6 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
@@ -40,7 +39,7 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 
-		for (E entity : resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).find(null))
+		for (E entity : resourceManager.getEntityReader(contextRoot, frame).find(null))
 			System.out.println(entity);
 	}
 
@@ -54,7 +53,7 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 
 		String entityName = interpreter.nextArgument();
 
-		E entity = resourceManager.getEntityReader(contextRoot, frame, ResourceScope.CONTEXT).lookup(entityName);
+		E entity = resourceManager.getEntityReader(contextRoot, frame).lookup(entityName);
 		System.out.println(entity);
 	}
 

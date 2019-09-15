@@ -20,10 +20,10 @@ public class E4ContextChildImpl extends E4ContextImpl {
 
 	private IEclipseContext eclipseContext;
 	private Context contextParent;
-	
+
 	public E4ContextChildImpl(Context contextParent, IEclipseContext eclipseContext, ContextDescription contextDescription) {
 		super(contextDescription);
-		
+
 		this.contextParent = contextParent;
 		this.eclipseContext = eclipseContext;
 	}
@@ -37,12 +37,13 @@ public class E4ContextChildImpl extends E4ContextImpl {
 	protected void removeEclipseContext() {
 		this.eclipseContext = null;
 	}
-	
-	@Override
-	public ContextRoot getContextRoot() {
-		if(contextParent instanceof ContextRoot)
+
+	protected ContextRoot getContextRoot() {
+		if (contextParent instanceof ContextRoot)
 			return (ContextRoot) contextParent;
+		else if (contextParent instanceof E4ContextChildImpl)
+			return ((E4ContextChildImpl) contextParent).getContextRoot();
 		else
-			return contextParent.getContextRoot();
+			return null;
 	}
 }

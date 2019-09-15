@@ -123,10 +123,6 @@
         <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner/contextProvider"/>
         <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner/klass"/>
       </genOperations>
-      <genOperations ecoreOperation="tester.ecore#//TestManager/prepareUnitRunner.1">
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner.1/contextProvider"/>
-        <genParameters ecoreParameter="tester.ecore#//TestManager/prepareUnitRunner.1/classURI"/>
-      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="tester.ecore#//TestRunner">
       <genOperations ecoreOperation="tester.ecore#//TestRunner/registerListener">

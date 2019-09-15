@@ -115,10 +115,6 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="prepareUnitRunner" lowerBound="1" eType="#//TestUnitRunner">
-      <eParameters name="contextProvider" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
-      <eParameters name="classURI" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestRunner" abstract="true" interface="true"
       eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider">

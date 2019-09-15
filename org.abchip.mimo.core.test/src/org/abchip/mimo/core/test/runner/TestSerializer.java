@@ -6,7 +6,6 @@ import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -26,7 +25,7 @@ public class TestSerializer {
 	@TestStarted
 	public void start() {
 
-		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(testRunner, Resource.class, ResourceScope.ROOT);
+		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(testRunner, Resource.class);
 		String resourcePrefix = "mimo-test";
 
 		for (int i = 1; i <= 5; i++) {
@@ -46,7 +45,7 @@ public class TestSerializer {
 	
 	@TestStopped
 	public void stop() {
-		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(testRunner, Resource.class, ResourceScope.ROOT);
+		EntityWriter<Resource> resourceWriter = resourceManager.getEntityWriter(testRunner, Resource.class);
 		String resourcePrefix = "mimo-test";
 
 		for (int i = 1; i <= 5; i++) {

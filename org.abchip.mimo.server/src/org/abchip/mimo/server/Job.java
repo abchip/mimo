@@ -35,7 +35,6 @@ import org.abchip.mimo.util.DateFormat;
  *   <li>{@link org.abchip.mimo.server.Job#getJobRunInfo <em>Job Run Info</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getJobThread <em>Job Thread</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getJobType <em>Job Type</em>}</li>
- *   <li>{@link org.abchip.mimo.server.Job#getResources <em>Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getMessages <em>Messages</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getSystem <em>System</em>}</li>
  *   <li>{@link org.abchip.mimo.server.Job#getTimeSeparator <em>Time Separator</em>}</li>
@@ -340,22 +339,6 @@ public interface Job extends EntityNameable, ContextProvider {
 	 * @generated
 	 */
 	void setJobType(JobType value);
-
-	/**
-	 * Returns the value of the '<em><b>Resources</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resources</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resources</em>' attribute list.
-	 * @see org.abchip.mimo.server.ServerPackage#getJob_Resources()
-	 * @model
-	 * @generated
-	 */
-	List<String> getResources();
 
 	/**
 	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.

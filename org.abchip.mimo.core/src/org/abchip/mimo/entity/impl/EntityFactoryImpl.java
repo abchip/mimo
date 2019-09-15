@@ -88,10 +88,6 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 		switch (eDataType.getClassifierID()) {
 			case EntityPackage.RESOURCE_EVENT_TYPE:
 				return createResourceEventTypeFromString(eDataType, initialValue);
-			case EntityPackage.RESOURCE_SCOPE:
-				return createResourceScopeFromString(eDataType, initialValue);
-			case EntityPackage.RESOURCE_TYPE:
-				return createResourceTypeFromString(eDataType, initialValue);
 			case EntityPackage.SERIALIZATION_TYPE:
 				return createSerializationTypeFromString(eDataType, initialValue);
 			default:
@@ -109,10 +105,6 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 		switch (eDataType.getClassifierID()) {
 			case EntityPackage.RESOURCE_EVENT_TYPE:
 				return convertResourceEventTypeToString(eDataType, instanceValue);
-			case EntityPackage.RESOURCE_SCOPE:
-				return convertResourceScopeToString(eDataType, instanceValue);
-			case EntityPackage.RESOURCE_TYPE:
-				return convertResourceTypeToString(eDataType, instanceValue);
 			case EntityPackage.SERIALIZATION_TYPE:
 				return convertSerializationTypeToString(eDataType, instanceValue);
 			default:
@@ -214,46 +206,6 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * @generated
 	 */
 	public String convertResourceEventTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceScope createResourceScopeFromString(EDataType eDataType, String initialValue) {
-		ResourceScope result = ResourceScope.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertResourceScopeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceType createResourceTypeFromString(EDataType eDataType, String initialValue) {
-		ResourceType result = ResourceType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertResourceTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

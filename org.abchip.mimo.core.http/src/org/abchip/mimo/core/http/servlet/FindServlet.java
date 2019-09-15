@@ -23,7 +23,6 @@ import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
@@ -77,7 +76,7 @@ public class FindServlet extends BaseServlet {
 				filter = sb.toString();
 		}
 
-		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CONTEXT);
+		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
 
 		EntityIterator<E> entityIterator = null;
 		if (nrElem == null)

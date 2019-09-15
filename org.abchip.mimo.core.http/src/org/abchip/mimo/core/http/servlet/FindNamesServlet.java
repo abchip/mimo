@@ -20,7 +20,6 @@ import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.util.Strings;
 
 public class FindNamesServlet extends BaseServlet {
@@ -46,7 +45,7 @@ public class FindNamesServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame, ResourceScope.CONTEXT);
+		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
 		if (entityReader == null) {
 			response.getWriter().write("[]");
 			response.flushBuffer();

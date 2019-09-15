@@ -99,54 +99,6 @@ public interface ResourceManager extends EntityProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Class<E> klass, ResourceScope scope);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, ResourceScope scope);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frame, ResourceScope scope);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Class<E> klass, ResourceScope scope);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, ResourceScope scope);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, String frame, ResourceScope scope);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true" klassRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */

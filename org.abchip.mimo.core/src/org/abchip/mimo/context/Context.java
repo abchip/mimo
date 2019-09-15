@@ -12,9 +12,9 @@
 package org.abchip.mimo.context;
 
 import java.io.Closeable;
-
+import java.io.IOException;
 import java.lang.annotation.Annotation;
-
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -95,22 +95,6 @@ public interface Context extends Closeable, ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	String resolveAlias(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model valuesMany="true"
-	 * @generated
-	 */
-	List<String> resolveAliases(List<String> values);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model klassRequired="true" objectRequired="true"
 	 * @generated
 	 */
@@ -127,9 +111,17 @@ public interface Context extends Closeable, ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
+	 * @model dataType="org.abchip.mimo.util.JavaURL" exceptions="org.abchip.mimo.util.JavaIOException" contextRequired="true" pathRequired="true"
 	 * @generated
 	 */
-	ContextRoot getContextRoot();
+	URL getResource(Class<?> context, String path) throws IOException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="org.abchip.mimo.util.JavaURL" exceptions="org.abchip.mimo.util.JavaIOException" contextRequired="true" pathRequired="true"
+	 * @generated
+	 */
+	List<URL> getResources(Class<?> context, String path) throws IOException;
 
 } // Context

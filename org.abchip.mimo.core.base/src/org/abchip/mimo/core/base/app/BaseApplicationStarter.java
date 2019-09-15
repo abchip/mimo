@@ -312,7 +312,7 @@ public class BaseApplicationStarter {
 	}
 
 	private Object loadObject(Context context, String className) {
-		Class<?> tempClass = context.getContextRoot().loadClass(className);
+		Class<?> tempClass = this.application.getContext().loadClass(className);
 		if (tempClass == null) {
 			try {
 				tempClass = Class.forName(className);

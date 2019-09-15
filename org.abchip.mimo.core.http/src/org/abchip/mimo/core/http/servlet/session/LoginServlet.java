@@ -29,7 +29,6 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.eclipse.jetty.http.HttpHeader;
@@ -85,7 +84,7 @@ public class LoginServlet extends HttpServlet {
 
 			String entityName = "OAuth2" + provider;
 
-			EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CONTEXT);
+			EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
 
 			EntityNameable oauth2Entity = oauth2Reader.find(null).next();
 

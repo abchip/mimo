@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -57,7 +56,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobRunInfo <em>Job Run Info</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobThread <em>Job Thread</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobType <em>Job Type</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getMessages <em>Messages</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getSystem <em>System</em>}</li>
  *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getTimeSeparator <em>Time Separator</em>}</li>
@@ -244,16 +242,6 @@ public class JobImpl extends EntityNameableImpl implements Job {
 	 * @ordered
 	 */
 	protected JobType jobType = JOB_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getResources() <em>Resources</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResources()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> resources;
 
 	/**
 	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
@@ -501,19 +489,6 @@ public class JobImpl extends EntityNameableImpl implements Job {
 		jobType = newJobType == null ? JOB_TYPE_EDEFAULT : newJobType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.JOB__JOB_TYPE, oldJobType, jobType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> getResources() {
-		if (resources == null) {
-			resources = new EDataTypeUniqueEList<String>(String.class, this, ServerPackage.JOB__RESOURCES);
-		}
-		return resources;
 	}
 
 	/**
@@ -905,8 +880,6 @@ public class JobImpl extends EntityNameableImpl implements Job {
 				return getJobThread();
 			case ServerPackage.JOB__JOB_TYPE:
 				return getJobType();
-			case ServerPackage.JOB__RESOURCES:
-				return getResources();
 			case ServerPackage.JOB__MESSAGES:
 				return getMessages();
 			case ServerPackage.JOB__SYSTEM:
@@ -958,10 +931,6 @@ public class JobImpl extends EntityNameableImpl implements Job {
 				return;
 			case ServerPackage.JOB__JOB_TYPE:
 				setJobType((JobType)newValue);
-				return;
-			case ServerPackage.JOB__RESOURCES:
-				getResources().clear();
-				getResources().addAll((Collection<? extends String>)newValue);
 				return;
 			case ServerPackage.JOB__MESSAGES:
 				getMessages().clear();
@@ -1017,9 +986,6 @@ public class JobImpl extends EntityNameableImpl implements Job {
 			case ServerPackage.JOB__JOB_TYPE:
 				setJobType(JOB_TYPE_EDEFAULT);
 				return;
-			case ServerPackage.JOB__RESOURCES:
-				getResources().clear();
-				return;
 			case ServerPackage.JOB__MESSAGES:
 				getMessages().clear();
 				return;
@@ -1062,8 +1028,6 @@ public class JobImpl extends EntityNameableImpl implements Job {
 				return jobThread != null;
 			case ServerPackage.JOB__JOB_TYPE:
 				return jobType != JOB_TYPE_EDEFAULT;
-			case ServerPackage.JOB__RESOURCES:
-				return resources != null && !resources.isEmpty();
 			case ServerPackage.JOB__MESSAGES:
 				return messages != null && !messages.isEmpty();
 			case ServerPackage.JOB__SYSTEM:
@@ -1097,8 +1061,6 @@ public class JobImpl extends EntityNameableImpl implements Job {
 		result.append(jobID);
 		result.append(", jobType: ");
 		result.append(jobType);
-		result.append(", resources: ");
-		result.append(resources);
 		result.append(", timeSeparator: ");
 		result.append(timeSeparator);
 		result.append(')');

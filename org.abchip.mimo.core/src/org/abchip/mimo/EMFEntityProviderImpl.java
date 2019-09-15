@@ -11,8 +11,6 @@
  */
 package org.abchip.mimo;
 
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -34,9 +32,17 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 	@PostConstruct
 	protected void init() {
 		super.init();
-		
+
 		resourceManager.registerProvider(Frame.class, this);
 		resourceManager.registerProvider(EntityEnum.class, this);
+	}
+
+	private boolean isFrame(Frame<?> frame) {
+		return frame.getName().equals(Frame.class.getSimpleName());
+	}
+
+	private boolean isEnum(Frame<?> frame) {
+		return frame instanceof EMFFrameEnumAdapter;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -50,31 +56,8 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 			throw new UnsupportedOperationException();
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, List<String> resources) {
-		if (isFrame(frame)) {
-			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames());
-		} else if (isEnum(frame)) {
-			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
-		} else
-			throw new UnsupportedOperationException();
-	}
-
 	@Override
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
-		if (isFrame(frame)) {
-			throw new UnsupportedOperationException();
-		} else {
-			throw new UnsupportedOperationException();
-		}
-	}
-
-	private boolean isFrame(Frame<?> frame) {
-		return frame.getName().equals(Frame.class.getSimpleName());
-	}
-
-	private boolean isEnum(Frame<?> frame) {
-		return frame instanceof EMFFrameEnumAdapter;
+		throw new UnsupportedOperationException();
 	}
 }

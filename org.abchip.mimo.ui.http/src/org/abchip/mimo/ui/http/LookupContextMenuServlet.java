@@ -27,7 +27,6 @@ import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
@@ -59,7 +58,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		ContextMenu contextMenu = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CONTEXT).lookup(frameName);
+		ContextMenu contextMenu = resourceManager.getEntityReader(contextProvider, ContextMenu.class).lookup(frameName);
 		if (contextMenu == null) {
 			contextMenu = MenuFactory.eINSTANCE.createContextMenu();
 			contextMenu.setName(frameName);
@@ -82,7 +81,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		 */
 
 		for (Frame<?> ako : frame.getSuperFrames()) {
-			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextProvider, ContextMenu.class, ResourceScope.CONTEXT).lookup(ako.getName());
+			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextProvider, ContextMenu.class).lookup(ako.getName());
 			if (contextMenuAko == null)
 				continue;
 
@@ -141,7 +140,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 		String icon = null;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, ResourceScope.CONTEXT);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class);
 
 		Frame<?> frame = frameManager.getFrame(frameName);
 		if (frame == null)

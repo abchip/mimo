@@ -1006,27 +1006,6 @@ public interface EntityPackage extends EPackage {
 	int RESOURCE_EVENT_TYPE = 28;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceScope <em>Resource Scope</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.ResourceScope
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceScope()
-	 * @generated
-	 */
-	int RESOURCE_SCOPE = 29;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.ResourceType <em>Resource Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.ResourceType
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceType()
-	 * @generated
-	 */
-	int RESOURCE_TYPE = 30;
-
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1034,7 +1013,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 31;
+	int SERIALIZATION_TYPE = 29;
 
 
 	/**
@@ -1779,26 +1758,6 @@ public interface EntityPackage extends EPackage {
 	EEnum getResourceEventType();
 
 	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.ResourceScope <em>Resource Scope</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Resource Scope</em>'.
-	 * @see org.abchip.mimo.entity.ResourceScope
-	 * @generated
-	 */
-	EEnum getResourceScope();
-
-	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.ResourceType <em>Resource Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Resource Type</em>'.
-	 * @see org.abchip.mimo.entity.ResourceType
-	 * @generated
-	 */
-	EEnum getResourceType();
-
-	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2447,26 +2406,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum RESOURCE_EVENT_TYPE = eINSTANCE.getResourceEventType();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.ResourceScope <em>Resource Scope</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.ResourceScope
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceScope()
-		 * @generated
-		 */
-		EEnum RESOURCE_SCOPE = eINSTANCE.getResourceScope();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.ResourceType <em>Resource Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.ResourceType
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getResourceType()
-		 * @generated
-		 */
-		EEnum RESOURCE_TYPE = eINSTANCE.getResourceType();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.

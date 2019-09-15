@@ -32,14 +32,6 @@ public interface EntityWriter<E extends EntityNameable> extends EntityReader<E> 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getResourceName();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model entityRequired="true"
 	 * @generated
 	 */

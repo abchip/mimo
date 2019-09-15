@@ -28,7 +28,6 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceScope;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
@@ -96,7 +95,7 @@ public class LinkedInResponseServlet extends HttpServlet {
 
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2LinkedIn";
-		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName, ResourceScope.CONTEXT);
+		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
 		EntityNameable oauth2LinkedIn = oauth2Reader.find(null).next();
 
 		this.getDefaultProvider().logout(contextProvider);

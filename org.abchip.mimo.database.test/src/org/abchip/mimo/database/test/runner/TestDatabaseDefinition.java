@@ -18,7 +18,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.database.DatabaseManager;
 import org.abchip.mimo.database.connection.Connection;
 import org.abchip.mimo.database.connection.ConnectionManager;
@@ -70,10 +69,8 @@ public class TestDatabaseDefinition {
 		SchemaDef schemaDef = DatabaseDefinitionFactory.eINSTANCE.createSchemaDef();
 		schema = databaseManager.createSchema(connection, schemaName, schemaDef);
 
-		ContextRoot contextRoot = connection.getContext().getContextRoot();
-		
 		// tables
-		for (URL tableURL: contextRoot.getResources(this.getClass(), "/resources/schemas/" + schemaName + "/tables")) {
+		for (URL tableURL: connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/tables")) {
 			String fileName = files.getBaseName(tableURL.getFile());
 
 			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(tableURL);
@@ -89,7 +86,7 @@ public class TestDatabaseDefinition {
 		}
 
 		// views
-		for (URL viewURL: contextRoot.getResources(this.getClass(), "/resources/schemas/" + schemaName + "/views")) {
+		for (URL viewURL: connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/views")) {
 			String fileName = files.getBaseName(viewURL.getFile());
 
 			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(viewURL);
@@ -105,7 +102,7 @@ public class TestDatabaseDefinition {
 		}
 
 		// indices
-		for (URL indexURL: contextRoot.getResources(this.getClass(), "/resources/schemas/" + schemaName + "/indices")) {
+		for (URL indexURL: connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/indices")) {
 			String fileName = files.getBaseName(indexURL.getFile());
 
 			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(indexURL);

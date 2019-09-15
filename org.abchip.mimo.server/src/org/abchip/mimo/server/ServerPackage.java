@@ -175,22 +175,13 @@ public interface ServerPackage extends EPackage {
 	int JOB__JOB_TYPE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB__RESOURCES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 11;
-
-	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__MESSAGES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 12;
+	int JOB__MESSAGES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' reference.
@@ -199,7 +190,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__SYSTEM = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 13;
+	int JOB__SYSTEM = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Time Separator</b></em>' attribute.
@@ -208,7 +199,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__TIME_SEPARATOR = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 14;
+	int JOB__TIME_SEPARATOR = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Job</em>' class.
@@ -217,7 +208,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 15;
+	int JOB_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.server.impl.JobCapabilityImpl <em>Job Capability</em>}' class.
@@ -312,22 +303,13 @@ public interface ServerPackage extends EPackage {
 	int JOB_DESCRIPTION__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_DESCRIPTION__RESOURCES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_DESCRIPTION__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int JOB_DESCRIPTION__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -336,7 +318,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_DESCRIPTION__USER = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int JOB_DESCRIPTION__USER = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Job Description</em>' class.
@@ -345,7 +327,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int JOB_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.server.impl.JobEventImpl <em>Job Event</em>}' class.
@@ -966,17 +948,6 @@ public interface ServerPackage extends EPackage {
 	EAttribute getJob_JobType();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.server.Job#getResources <em>Resources</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Resources</em>'.
-	 * @see org.abchip.mimo.server.Job#getResources()
-	 * @see #getJob()
-	 * @generated
-	 */
-	EAttribute getJob_Resources();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.server.Job#getMessages <em>Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1094,17 +1065,6 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getJobDescription_User();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.server.JobDescription#getResources <em>Resources</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Resources</em>'.
-	 * @see org.abchip.mimo.server.JobDescription#getResources()
-	 * @see #getJobDescription()
-	 * @generated
-	 */
-	EAttribute getJobDescription_Resources();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.server.JobDescription#getText <em>Text</em>}'.
@@ -1649,14 +1609,6 @@ public interface ServerPackage extends EPackage {
 		EAttribute JOB__JOB_TYPE = eINSTANCE.getJob_JobType();
 
 		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute JOB__RESOURCES = eINSTANCE.getJob_Resources();
-
-		/**
 		 * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1747,14 +1699,6 @@ public interface ServerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute JOB_DESCRIPTION__USER = eINSTANCE.getJobDescription_User();
-
-		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute JOB_DESCRIPTION__RESOURCES = eINSTANCE.getJobDescription_Resources();
 
 		/**
 		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.

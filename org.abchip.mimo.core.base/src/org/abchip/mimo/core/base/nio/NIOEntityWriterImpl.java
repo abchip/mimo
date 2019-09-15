@@ -19,7 +19,6 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
@@ -34,7 +33,7 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 
 	private LockManager lockManager;
 
-	public NIOEntityWriterImpl(NIOPathManager fileManager, ResourceSerializer<E> resourceSerializer, ContextProvider contextProvider, String resource, Frame<E> frame, Logger logger,
+	public NIOEntityWriterImpl(NIOPathManager fileManager, ResourceSerializer<E> resourceSerializer, String resource, Frame<E> frame, Logger logger,
 			LockManager lockManager) {
 		super(fileManager, resourceSerializer, resource, frame, logger);
 		this.lockManager = lockManager;
