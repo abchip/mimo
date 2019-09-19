@@ -47,7 +47,7 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
+	public <E extends EntityNameable> EntityReader<E> doEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		if (isFrame(frame)) {
 			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, resource, EMFFrameHelper.getFrames());
 		} else if (isEnum(frame)) {
@@ -57,7 +57,7 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
+	public <E extends EntityNameable> EntityWriter<E> doEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		throw new UnsupportedOperationException();
 	}
 }

@@ -46,6 +46,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityProviderImpl() {
@@ -54,6 +55,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,6 +65,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -112,6 +115,9 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		else
 			resource = RESOURCE_MASTER;
 
+		if(resource == null || resource.isEmpty())
+			return null;
+		
 		return getEntityReader(contextProvider, frame, resource);
 	}
 
@@ -131,6 +137,20 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * @generated NOT
 	 */
 	@Override
+	public final <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
+
+		if (resource == null)
+			return getEntityReader(contextProvider, frame);
+		else
+			return doEntityReader(contextProvider, frame, resource);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
 	public final <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, String frameName, String resource) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
@@ -142,7 +162,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * 
 	 * @generated NOT
 	 */
-	public abstract <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource);
+	public abstract <E extends EntityNameable> EntityReader<E> doEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -180,6 +200,9 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		else
 			resource = RESOURCE_MASTER;
 
+		if(resource == null || resource.isEmpty())
+			return null;
+		
 		return getEntityWriter(contextProvider, frame, resource);
 	}
 
@@ -209,7 +232,21 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
-	 */	
+	 */
+	@Override
+	public final <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
+
+		if (resource == null)
+			return getEntityWriter(contextProvider, frame);
+		else
+			return doEntityWriter(contextProvider, frame, resource);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
 	protected final void checkAuthorization(ContextProvider contextProvider, String resource) {
 		ContextDescription contextDescription = contextProvider.getContextDescription();
 
@@ -219,9 +256,9 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 				throw new SecurityException("Permission denied for tenant: " + contextDescription.getTenant());
 		} else {
 			// master
-			
+
 			// TODO check user admin
-		}		
+		}
 	}
 
 	/**
@@ -229,10 +266,11 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * 
 	 * @generated NOT
 	 */
-	public abstract <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource);
+	public abstract <E extends EntityNameable> EntityWriter<E> doEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -244,6 +282,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -255,6 +294,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -266,6 +306,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -277,6 +318,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
