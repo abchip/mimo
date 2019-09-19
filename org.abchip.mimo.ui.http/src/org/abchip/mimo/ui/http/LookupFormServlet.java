@@ -26,6 +26,7 @@ import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.entity.impl.EntityProviderImpl;
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormField;
@@ -49,7 +50,7 @@ public class LookupFormServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Form form = resourceManager.getEntityReader(contextProvider, Form.class).lookup(name);
+		Form form = resourceManager.getEntityReader(contextProvider, Form.class, EntityProviderImpl.RESOURCE_MASTER).lookup(name);
 
 		if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			form = frameManager.createEntity(Form.class);

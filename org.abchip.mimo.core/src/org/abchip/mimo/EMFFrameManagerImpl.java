@@ -14,6 +14,7 @@ import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceHelper;
+import org.abchip.mimo.entity.impl.EntityProviderImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFFrameManagerImpl implements FrameManager {
@@ -40,7 +41,7 @@ public class EMFFrameManagerImpl implements FrameManager {
 
 	@SuppressWarnings("unchecked")
 	private <E extends Entity, F extends Frame<E>> EntityReader<F> _getFrameReader(ContextProvider contextProvider) {
-		EntityReader<F> frameReader = (EntityReader<F>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames());
+		EntityReader<F> frameReader = (EntityReader<F>) ResourceHelper.wrapReader(contextProvider, EntityProviderImpl.RESOURCE_MASTER, EMFFrameHelper.getFrames());
 		return frameReader;
 	}
 

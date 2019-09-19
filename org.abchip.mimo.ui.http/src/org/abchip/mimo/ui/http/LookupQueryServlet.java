@@ -22,6 +22,7 @@ import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.entity.impl.EntityProviderImpl;
 import org.abchip.mimo.ui.query.Query;
 import org.abchip.mimo.ui.query.QueryField;
 import org.abchip.mimo.util.Lists;
@@ -42,7 +43,7 @@ public class LookupQueryServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Query query = resourceManager.getEntityReader(contextProvider, Query.class).lookup(name);
+		Query query = resourceManager.getEntityReader(contextProvider, Query.class, EntityProviderImpl.RESOURCE_MASTER).lookup(name);
 
 		if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			query = frameManager.createEntity(Query.class);

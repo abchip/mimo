@@ -26,6 +26,7 @@ import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.entity.impl.EntityProviderImpl;
 import org.abchip.mimo.ui.menu.Menu;
 import org.abchip.mimo.ui.menu.MenuAction;
 import org.abchip.mimo.ui.menu.MenuGroup;
@@ -46,7 +47,7 @@ public class LookupMenuServlet extends BaseServlet {
 		String name = request.getParameter("name");
 
 		Menu menu = null;
-		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class);
+		EntityReader<Menu> menuReader = resourceManager.getEntityReader(contextProvider, Menu.class, EntityProviderImpl.RESOURCE_MASTER);
 
 		if (name == null || name.isEmpty()) {
 			menu = frameManager.createEntity(Menu.class);

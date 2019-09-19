@@ -30,6 +30,7 @@ import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.entity.impl.EntityProviderImpl;
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.menu.ContextMenu;
 import org.abchip.mimo.ui.menu.MenuAction;
@@ -58,7 +59,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		ContextMenu contextMenu = resourceManager.getEntityReader(contextProvider, ContextMenu.class).lookup(frameName);
+		ContextMenu contextMenu = resourceManager.getEntityReader(contextProvider, ContextMenu.class, EntityProviderImpl.RESOURCE_MASTER).lookup(frameName);
 		if (contextMenu == null) {
 			contextMenu = MenuFactory.eINSTANCE.createContextMenu();
 			contextMenu.setName(frameName);
@@ -81,7 +82,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		 */
 
 		for (Frame<?> ako : frame.getSuperFrames()) {
-			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextProvider, ContextMenu.class).lookup(ako.getName());
+			ContextMenu contextMenuAko = resourceManager.getEntityReader(contextProvider, ContextMenu.class, EntityProviderImpl.RESOURCE_MASTER).lookup(ako.getName());
 			if (contextMenuAko == null)
 				continue;
 
@@ -102,7 +103,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 			routeAction.setValue(slot.getText());
 			groupRoutes.getData().add(routeAction);
 		}
-		
+
 		if (!groupRoutes.getData().isEmpty())
 			contextMenu.getElements().add(groupRoutes);
 

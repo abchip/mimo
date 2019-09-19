@@ -197,14 +197,10 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public String getResourceName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract String getResourceName();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

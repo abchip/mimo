@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
@@ -41,7 +42,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 	private EntityReader<Frame<Entity>> frameReader;
 
-	private static String RESOURCE_DEFAULT = "master";
+	public static String RESOURCE_MASTER = "master";
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -109,7 +110,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		if (contextProvider.getContextDescription().isTenant())
 			resource = contextProvider.getContextDescription().getTenant();
 		else
-			resource = RESOURCE_DEFAULT;
+			resource = RESOURCE_MASTER;
 
 		return getEntityReader(contextProvider, frame, resource);
 	}
@@ -177,7 +178,7 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		if (contextProvider.getContextDescription().isTenant())
 			resource = contextProvider.getContextDescription().getTenant();
 		else
-			resource = RESOURCE_DEFAULT;
+			resource = RESOURCE_MASTER;
 
 		return getEntityWriter(contextProvider, frame, resource);
 	}
@@ -202,6 +203,25 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
 		return getEntityWriter(contextProvider, frame, resource);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */	
+	protected final void checkAuthorization(ContextProvider contextProvider, String resource) {
+		ContextDescription contextDescription = contextProvider.getContextDescription();
+
+		// check authorization
+		if (contextDescription.isTenant()) {
+			if (!contextDescription.getTenant().equals(resource))
+				throw new SecurityException("Permission denied for tenant: " + contextDescription.getTenant());
+		} else {
+			// master
+			
+			// TODO check user admin
+		}		
 	}
 
 	/**

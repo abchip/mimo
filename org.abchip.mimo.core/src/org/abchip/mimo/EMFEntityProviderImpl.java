@@ -49,9 +49,9 @@ public class EMFEntityProviderImpl extends EntityProviderImpl {
 	@Override
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		if (isFrame(frame)) {
-			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getFrames());
+			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, resource, EMFFrameHelper.getFrames());
 		} else if (isEnum(frame)) {
-			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+			return (EntityReader<E>) ResourceHelper.wrapReader(contextProvider, resource, EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
 		} else
 			throw new UnsupportedOperationException();
 	}

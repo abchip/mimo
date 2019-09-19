@@ -29,6 +29,7 @@ import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.entity.impl.EntityProviderImpl;
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
@@ -55,7 +56,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (frame == null)
 			return;
 
-		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class).lookup(name);
+		Schema schema = resourceManager.getEntityReader(contextProvider, Schema.class, EntityProviderImpl.RESOURCE_MASTER).lookup(name);
 
 		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			schema = frameManager.createEntity(Schema.class);
@@ -118,9 +119,9 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (slot.getDomain() != null) {
 			column.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 		}
-			
+
 		if (column.getView() == null) {
-			if(slot.isBoolean())
+			if (slot.isBoolean())
 				column.setView("checkbox");
 		}
 

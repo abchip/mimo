@@ -59,6 +59,9 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 	@Override
 	public <E extends EntityNameable> EntityReader<E> getEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
 		
+		// TODO
+//		this.checkAuthorization(contextProvider, resource);
+		
 		EntityReader<E> entityReader = null;
 		if (isResource(frame)) {
 			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextProvider);
@@ -73,6 +76,9 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityNameable> EntityWriter<E> getEntityWriter(ContextProvider contextProvider, Frame<E> frame, String resource) {
+	
+		// TODO
+//		this.checkAuthorization(contextProvider, resource);
 
 		EntityWriter<E> resourceWriter = null;
 		if (isResource(frame)) {
