@@ -121,7 +121,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return new EMFFrameClassAdapter(eAko);
 	}
 
-	protected EClass getEClass() {
+	public EClass getEClass() {
 		return this.eClass;
 	}
 
@@ -150,9 +150,9 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public void unsetValue(Entity entity, Slot slot) {
+	public void setValue(Entity entity, String slot, Object value) {
 		if (entity instanceof EObject)
-			unsetValue((EObject) entity, slot);
+			setValue((EObject) entity, slot, value);
 	}
 
 	private Object getValue(EObject eObject, String slotName) {
@@ -189,11 +189,20 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		return value;
 	}
 
-	private void unsetValue(EObject eObject, Slot slot) {
+	private void setValue(EObject eObject, String slot, Object value) {
 
-		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(slot.getName());
-		if (eStructuralFeature != null)
-			eObject.eUnset(eStructuralFeature);
+		EStructuralFeature eFeature = eClass.getEStructuralFeature(slot);
+		if (eFeature != null) {
+			try {
+				if(value == null)
+					eObject.eUnset(eFeature);
+				else
+					eObject.eSet(eFeature, value);
+			}
+			catch(Exception e) {
+				e.toString();
+			}
+		}
 	}
 
 	@Override

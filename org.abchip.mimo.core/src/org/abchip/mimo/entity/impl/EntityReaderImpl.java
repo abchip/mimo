@@ -168,6 +168,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -175,28 +176,38 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
-	public abstract EntityIterator<E> find(String filter);
+	public abstract EntityIterator<E> find(String filter, String fields, int nrElem);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public abstract EntityIterator<E> find(String filter, int nrElem);
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract List<String> findNames(String filter);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public E first() {
+		try (EntityIterator<E> entityIterator = find(null, null, 1)) {
+			if (entityIterator.hasNext())
+				return entityIterator.next();
+			else
+				return null;
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -204,6 +215,7 @@ public abstract class EntityReaderImpl<E extends EntityNameable> extends Minimal
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override

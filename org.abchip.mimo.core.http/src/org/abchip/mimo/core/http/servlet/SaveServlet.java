@@ -8,9 +8,7 @@
  */
 package org.abchip.mimo.core.http.servlet;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -18,14 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.util.Strings;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class SaveServlet extends BaseServlet {
 
@@ -40,26 +34,24 @@ public class SaveServlet extends BaseServlet {
 
 	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String frame = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String frame = request.getParameter("frame");
 		String json = request.getParameter("json");
 
-		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			ObjectMapper objectMapper = new ObjectMapper();
-			Map<String, Object> map = objectMapper.readValue(json, new TypeReference<Map<String, Object>>() {
-			});
-			if (!map.containsKey("eClass")) {
-				String eClass = resourceSerializer.getFrame().getURI().toString();
-				map.put("eClass", eClass);
-				json = objectMapper.writeValueAsString(map);
-			}
+		EntitySerializer<E> entitySerializer = resourceManager.createEntitySerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		/*
+		 * ObjectMapper objectMapper = new ObjectMapper(); Map<String, Object> map =
+		 * objectMapper.readValue(json, new TypeReference<Map<String, Object>>() { });
+		 * if (!map.containsKey("eClass")) { String eClass =
+		 * resourceSerializer.getFrame().getURI().toString(); map.put("eClass", eClass);
+		 * json = objectMapper.writeValueAsString(map); }
+		 */
 
-			resourceSerializer.load(new ByteArrayInputStream(json.getBytes()), false);
-			E entity = resourceSerializer.get();
+		entitySerializer.load(json, false);
+		E entity = entitySerializer.get();
 
-			EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame);
-			entityWriter.create(entity, true);
-			
-			response.setStatus(HttpServletResponse.SC_OK);
-		}
+		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frame);
+		entityWriter.create(entity, true);
+
+		response.setStatus(HttpServletResponse.SC_OK);
 	}
 }

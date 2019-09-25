@@ -27,13 +27,13 @@ import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceListener;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.entity.ResourceNotifier;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 
@@ -119,23 +119,23 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 	}
 
 	@Override
-	public <E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType) {
-		return createResourceSerializer(contextProvider, klass.getSimpleName(), serializationType);
+	public <E extends Entity> EntitySerializer<E> createEntitySerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType) {
+		return createEntitySerializer(contextProvider, klass.getSimpleName(), serializationType);
 	}
 
 	@Override
-	public <E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, String frameName, SerializationType serializationType) {
+	public <E extends Entity> EntitySerializer<E> createEntitySerializer(ContextProvider contextProvider, String frameName, SerializationType serializationType) {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) frameReader.lookup(frameName);
 		if (frame == null)
 			return null;
 
-		return createResourceSerializer(contextProvider, frame, serializationType);
+		return createEntitySerializer(contextProvider, frame, serializationType);
 	}
 
 	@Override
-	public <E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
-		return new BaseResourceSerializerImpl<E>(contextProvider, frame, serializationType);
+	public <E extends Entity> EntitySerializer<E> createEntitySerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
+		return new BaseEntitySerializerImpl<E>(contextProvider, frame, serializationType);
 	}
 
 	@Override

@@ -10,13 +10,15 @@ package org.abchip.mimo.entity.impl;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
 import java.util.List;
+
 import org.abchip.mimo.context.ContextProvider;
 
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.ResourceSerializer;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -27,19 +29,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resource Serializer</b></em>'.
+ * An implementation of the model object '<em><b>Serializer</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.entity.impl.ResourceSerializerImpl#getContextProvider <em>Context Provider</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.ResourceSerializerImpl#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.EntitySerializerImpl#getContextProvider <em>Context Provider</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.EntitySerializerImpl#getFrame <em>Frame</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEObjectImpl.Container implements ResourceSerializer<E> {
+public abstract class EntitySerializerImpl<E extends Entity> extends MinimalEObjectImpl.Container implements EntitySerializer<E> {
 	/**
 	 * The cached value of the '{@link #getContextProvider() <em>Context Provider</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -65,7 +67,7 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceSerializerImpl() {
+	protected EntitySerializerImpl() {
 		super();
 	}
 
@@ -76,7 +78,7 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EntityPackage.Literals.RESOURCE_SERIALIZER;
+		return EntityPackage.Literals.ENTITY_SERIALIZER;
 	}
 
 	/**
@@ -99,7 +101,7 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 		ContextProvider oldContextProvider = contextProvider;
 		contextProvider = newContextProvider;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.RESOURCE_SERIALIZER__CONTEXT_PROVIDER, oldContextProvider, contextProvider));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_SERIALIZER__CONTEXT_PROVIDER, oldContextProvider, contextProvider));
 	}
 
 	/**
@@ -122,7 +124,7 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 		Frame<E> oldFrame = frame;
 		frame = newFrame;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.RESOURCE_SERIALIZER__FRAME, oldFrame, frame));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_SERIALIZER__FRAME, oldFrame, frame));
 	}
 
 	/**
@@ -167,7 +169,19 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	 * @generated
 	 */
 	@Override
-	public void load(InputStream inputStream, boolean append) throws IOException {
+	public void load(InputStream content, boolean append) throws IOException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void load(String content, boolean append) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -215,11 +229,23 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	 * @generated
 	 */
 	@Override
+	public boolean isEmpty() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EntityPackage.RESOURCE_SERIALIZER__CONTEXT_PROVIDER:
+			case EntityPackage.ENTITY_SERIALIZER__CONTEXT_PROVIDER:
 				return getContextProvider();
-			case EntityPackage.RESOURCE_SERIALIZER__FRAME:
+			case EntityPackage.ENTITY_SERIALIZER__FRAME:
 				return getFrame();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -234,10 +260,10 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EntityPackage.RESOURCE_SERIALIZER__CONTEXT_PROVIDER:
+			case EntityPackage.ENTITY_SERIALIZER__CONTEXT_PROVIDER:
 				setContextProvider((ContextProvider)newValue);
 				return;
-			case EntityPackage.RESOURCE_SERIALIZER__FRAME:
+			case EntityPackage.ENTITY_SERIALIZER__FRAME:
 				setFrame((Frame<E>)newValue);
 				return;
 		}
@@ -252,10 +278,10 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EntityPackage.RESOURCE_SERIALIZER__CONTEXT_PROVIDER:
+			case EntityPackage.ENTITY_SERIALIZER__CONTEXT_PROVIDER:
 				setContextProvider((ContextProvider)null);
 				return;
-			case EntityPackage.RESOURCE_SERIALIZER__FRAME:
+			case EntityPackage.ENTITY_SERIALIZER__FRAME:
 				setFrame((Frame<E>)null);
 				return;
 		}
@@ -270,12 +296,12 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EntityPackage.RESOURCE_SERIALIZER__CONTEXT_PROVIDER:
+			case EntityPackage.ENTITY_SERIALIZER__CONTEXT_PROVIDER:
 				return contextProvider != null;
-			case EntityPackage.RESOURCE_SERIALIZER__FRAME:
+			case EntityPackage.ENTITY_SERIALIZER__FRAME:
 				return frame != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ResourceSerializerImpl
+} //EntitySerializerImpl

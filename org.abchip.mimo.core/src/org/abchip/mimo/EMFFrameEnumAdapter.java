@@ -84,7 +84,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public void unsetValue(Entity entity, Slot slot) {
+	public void setValue(Entity entity, String slot, Object value) {
 	}
 
 	@Override

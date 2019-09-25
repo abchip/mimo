@@ -118,19 +118,12 @@ public interface EntityReader<E extends EntityNameable> {
 	boolean exists(String name);
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EntityIterator<E> find(String filter);
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
-	EntityIterator<E> find(String filter, int nrElem);
+	EntityIterator<E> find(String filter, String fields, int nrElem);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,6 +132,14 @@ public interface EntityReader<E extends EntityNameable> {
 	 * @generated
 	 */
 	List<String> findNames(String filter);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	E first();
 
 	/**
 	 * <!-- begin-user-doc -->

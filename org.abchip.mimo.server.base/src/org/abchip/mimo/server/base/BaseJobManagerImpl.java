@@ -161,7 +161,7 @@ public class BaseJobManagerImpl implements JobManager {
 		Job jobTarget = null;
 
 		EntityReader<Job> jobReader = resourceManager.getEntityReader(jobCaller, Job.class);
-		try (EntityIterator<Job> jobs = jobReader.find(filter);) {
+		try (EntityIterator<Job> jobs = jobReader.find(filter, null, 0)) {
 
 			// first element
 			if (jobs.hasNext())

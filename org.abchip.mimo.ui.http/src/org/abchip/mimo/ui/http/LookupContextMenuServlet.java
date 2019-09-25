@@ -24,10 +24,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
@@ -107,34 +107,31 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (!groupRoutes.getData().isEmpty())
 			contextMenu.getElements().add(groupRoutes);
 
-		try (ResourceSerializer<ContextMenu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
+		EntitySerializer<ContextMenu> entitySerializer = resourceManager.createEntitySerializer(contextProvider, ContextMenu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
 
-			features.forEachRemaining(new Consumer<EObject>() {
+		features.forEachRemaining(new Consumer<EObject>() {
 
-				@Override
-				public void accept(EObject element) {
-					if (element instanceof MenuGroup) {
-						MenuGroup menuGroup = (MenuGroup) element;
-						if (menuGroup.getId() == null || menuGroup.getId().trim().isEmpty()) {
-							menuGroup.setId(UUID.randomUUID().toString());
-						}
-					} else if (element instanceof MenuAction) {
-						MenuAction menuAction = (MenuAction) element;
-						if (menuAction.getFilter() != null)
-							menuAction.setFilter(menuAction.getFilter().replaceAll("=", "%3D"));
-						if (menuAction.getId() == null || menuAction.getId().trim().isEmpty()) {
-							menuAction.setId(menuAction.getAction() + "&r=" + UUID.randomUUID().toString());
-						}
+			@Override
+			public void accept(EObject element) {
+				if (element instanceof MenuGroup) {
+					MenuGroup menuGroup = (MenuGroup) element;
+					if (menuGroup.getId() == null || menuGroup.getId().trim().isEmpty()) {
+						menuGroup.setId(UUID.randomUUID().toString());
+					}
+				} else if (element instanceof MenuAction) {
+					MenuAction menuAction = (MenuAction) element;
+					if (menuAction.getFilter() != null)
+						menuAction.setFilter(menuAction.getFilter().replaceAll("=", "%3D"));
+					if (menuAction.getId() == null || menuAction.getId().trim().isEmpty()) {
+						menuAction.setId(menuAction.getAction() + "&r=" + UUID.randomUUID().toString());
 					}
 				}
-			});
+			}
+		});
 
-			resourceSerializer.add(contextMenu);
-			resourceSerializer.save(response.getOutputStream());
-		}
-
-		response.flushBuffer();
+		entitySerializer.add(contextMenu);
+		entitySerializer.save(response.getOutputStream());
 	}
 
 	private String getIcon(ContextProvider contextProvider, String frameName) {

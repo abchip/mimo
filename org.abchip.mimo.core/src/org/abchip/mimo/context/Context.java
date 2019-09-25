@@ -11,7 +11,6 @@
  */
 package org.abchip.mimo.context;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.net.URL;
@@ -24,10 +23,10 @@ import java.util.List;
  *
  *
  * @see org.abchip.mimo.context.ContextPackage#getContext()
- * @model abstract="true" superTypes="org.abchip.mimo.util.JavaCloseable org.abchip.mimo.context.ContextProvider"
+ * @model abstract="true"
  * @generated
  */
-public interface Context extends Closeable, ContextProvider {
+public interface Context extends ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

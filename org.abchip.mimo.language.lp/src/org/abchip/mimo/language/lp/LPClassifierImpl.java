@@ -14,6 +14,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceManager;
@@ -73,12 +74,12 @@ public class LPClassifierImpl implements Classifier {
 	public <E extends EntityNameable> Evaluator buildEvaluator(Class<E> klass, Class<?> object) {
 
 		String[] categories = new String[languages.size()];
-		int i=0;
-		for(Language language: languages.values()) {
+		int i = 0;
+		for (Language language : languages.values()) {
 			categories[i] = language.getText().toLowerCase();
 			i++;
 		}
-			
+
 		Evaluator evaluator = new LPEvaluatorImpl(new BaseClassifierEvaluator<CharSequence>(classifier, categories, false));
 
 		return evaluator;
@@ -112,8 +113,10 @@ public class LPClassifierImpl implements Classifier {
 
 	private void loadLanguages() {
 		EntityReader<Language> languageReader = resourceManager.getEntityReader(contextRoot, Language.class);
-		for (Language language : languageReader.find(null))
-			languages.put(language.getName(), language);
+		try (EntityIterator<Language> languageIterator = languageReader.find(null, null, 0)) {
+			for (Language language : languageIterator)
+				languages.put(language.getName(), language);
+		}
 	}
 
 	@SuppressWarnings("unchecked")

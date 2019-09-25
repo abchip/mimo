@@ -5,9 +5,6 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
- * Contributors:
- *   Mattia Rocchi				- Initial API and implementation
- *
  */
 package org.abchip.mimo.core.base;
 
@@ -19,7 +16,7 @@ import org.abchip.mimo.entity.EntityNameable;
 public class BaseEntityIteratorImpl<E extends EntityNameable> implements EntityIterator<E> {
 
 	private Iterator<E> iterator;
-	private int nrElem;
+	private int nrElem = 0;
 	private E nextObject = null;
 	private int count = 0;
 	
@@ -44,7 +41,7 @@ public class BaseEntityIteratorImpl<E extends EntityNameable> implements EntityI
 		E object = nextObject;
 		
 		count++;
-		if(nrElem != -1 && count >= nrElem)
+		if(nrElem > 0 && count >= nrElem)
 			nextObject = null;
 		else 
 			doNext();

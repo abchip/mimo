@@ -45,9 +45,9 @@ public class BaseTestManagerImpl implements TestManager {
 		if (testClass == null)
 			throw new RuntimeException("Invalid runner: " + classURI);
 
-
 		Context testContext = new BaseTestContextImpl(contextProvider.getContext());
 		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, testClass);
+
 		return testRunner;
 	}
 

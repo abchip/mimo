@@ -23,10 +23,10 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
@@ -97,16 +97,12 @@ public class LookupSchemaServlet extends BaseServlet {
 			}
 		}
 
-		try (ResourceSerializer<Schema> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			if (schema != null) {
-				completeSchema(contextProvider, schema);
-				resourceSerializer.add(schema);
-			}
-
-			resourceSerializer.save(response.getOutputStream());
+		EntitySerializer<Schema> entitySerializer = resourceManager.createEntitySerializer(contextProvider, Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		if (schema != null) {
+			completeSchema(contextProvider, schema);
+			entitySerializer.add(schema);
 		}
-
-		response.flushBuffer();
+		entitySerializer.save(response.getOutputStream());
 	}
 
 	private SchemaColumn buildColumn(Slot slot) {

@@ -12,6 +12,7 @@ import edu.cmu.sphinx.result.WordResult;
 
 public class TranscriberDemo {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) throws Exception {
 		Logger cmRootLogger = Logger.getLogger("default.config");
 		cmRootLogger.setLevel(java.util.logging.Level.OFF);

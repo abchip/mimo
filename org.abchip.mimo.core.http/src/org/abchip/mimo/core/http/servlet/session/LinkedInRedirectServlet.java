@@ -31,10 +31,10 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-    public static final String DEFAULT_SCOPE = "r_liteprofile%20r_emailaddress";
-    public static final String TokenEndpoint = "https://www.linkedin.com";
-    public static final String AuthorizeUri = "/oauth/v2/authorization";
-	
+	public static final String DEFAULT_SCOPE = "r_liteprofile%20r_emailaddress";
+	public static final String TokenEndpoint = "https://www.linkedin.com";
+	public static final String AuthorizeUri = "/oauth/v2/authorization";
+
 	@Inject
 	private ResourceManager resourceManager;
 
@@ -68,7 +68,7 @@ public class LinkedInRedirectServlet extends HttpServlet {
 		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
 
 		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, "OAuth2LinkedIn");
-		EntityNameable oauth2LinkedIn = oauth2Reader.find(null).next();
+		EntityNameable oauth2LinkedIn = oauth2Reader.first();
 
 		getDefaultProvider().logout(contextProvider);
 		contextProvider.getContext().close();
@@ -82,16 +82,12 @@ public class LinkedInRedirectServlet extends HttpServlet {
 		String returnURI = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "liveReturnUrl").toString();
 		// Get user authorization code
 		try {
-			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId 
-											+ "&response_type=code" 
-											+ "&scope=" + DEFAULT_SCOPE 
-											+ "&nonce=" + UUID.randomUUID() 
-											+ "&redirect_uri="+ URLEncoder.encode(returnURI, "UTF8")
-											+ "&state=" + session.getId();
-//											+ "&state=" + URLEncoder.encode(";jsessionId=" + session.getId(), "UTF8");
+			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&nonce=" + UUID.randomUUID() + "&redirect_uri="
+					+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
+			// + "&state=" + URLEncoder.encode(";jsessionId=" + session.getId(), "UTF8");
 
-//			location = response.encodeURL(location);
-//			System.err.println(("Redirect location: " + location));
+			// location = response.encodeURL(location);
+			// System.err.println(("Redirect location: " + location));
 
 			response.sendRedirect(location);
 		} catch (Exception e) {

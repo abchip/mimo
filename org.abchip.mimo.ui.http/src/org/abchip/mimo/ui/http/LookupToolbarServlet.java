@@ -19,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 import org.abchip.mimo.ui.toolbar.Toolbar;
@@ -60,13 +60,9 @@ public class LookupToolbarServlet extends BaseServlet {
 				toolbar.getElements().addAll(toolbarAko.getElements());
 		}
 
-		try (ResourceSerializer<Toolbar> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Toolbar.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			if (toolbar != null)
-				resourceSerializer.add(toolbar);
-
-			resourceSerializer.save(response.getOutputStream());
-		}
-
-		response.flushBuffer();
+		EntitySerializer<Toolbar> entitySerializer = resourceManager.createEntitySerializer(contextProvider, Toolbar.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		if (toolbar != null)
+			entitySerializer.add(toolbar);
+		entitySerializer.save(response.getOutputStream());
 	}
 }

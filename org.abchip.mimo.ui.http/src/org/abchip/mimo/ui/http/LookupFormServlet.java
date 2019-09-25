@@ -20,10 +20,10 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
@@ -96,17 +96,12 @@ public class LookupFormServlet extends BaseServlet {
 			}
 		}
 
-		try (ResourceSerializer<Form> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Form.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			if (form != null) {
-				completeForm(contextProvider, form);
-				resourceSerializer.add(form);
-			}
-
-			resourceSerializer.save(response.getOutputStream());
+		EntitySerializer<Form> entitySerializer = resourceManager.createEntitySerializer(contextProvider, Form.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		if (form != null) {
+			completeForm(contextProvider, form);
+			entitySerializer.add(form);
 		}
-
-		response.flushBuffer();
-
+		entitySerializer.save(response.getOutputStream());
 	}
 
 	private FormField buildFormField(Slot slot) {

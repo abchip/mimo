@@ -24,8 +24,8 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityProvider;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 
 public class StatusServlet extends HttpServlet {
@@ -85,11 +85,9 @@ public class StatusServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		try (ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class,
-				SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			serializer.add(contextProvider.getContext().getContextDescription());
-			serializer.save(response.getOutputStream());
-		}
+		EntitySerializer<ContextDescription> serializer = resourceManager.createEntitySerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		serializer.add(contextProvider.getContext().getContextDescription());
+		serializer.save(response.getOutputStream());
 
 		response.flushBuffer();
 	}

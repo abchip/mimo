@@ -14,6 +14,7 @@ package org.abchip.mimo.core.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -39,8 +40,10 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 
-		for (E entity : resourceManager.getEntityReader(contextRoot, frame).find(null))
-			System.out.println(entity);
+		try (EntityIterator<E> entityIterator = resourceManager.getEntityReader(contextRoot, frame).find(null, null, 0)) {
+			for (E entity : entityIterator)
+				System.out.println(entity);
+		}
 	}
 
 	public <E extends EntityNameable> void _lookup(CommandInterpreter interpreter) throws Exception {

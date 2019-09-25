@@ -17,8 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityWriter;
-import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
 import org.abchip.mimo.util.Strings;
 
@@ -28,27 +26,25 @@ public class DeleteServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManger;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(contextProvider, request, response);
 	}
 
 	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String name = request.getParameter("name");
 
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextProvider).lookup(frameName);
-		if (frame == null)
-			return;
-
-		E entity = resourceManager.getEntityReader(contextProvider, frame).lookup(name);
-
-		EntityWriter<EntityNameable> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName);
-		entityWriter.delete(entity);
-
-		response.setStatus(HttpServletResponse.SC_OK);
+		try {
+			EntityWriter<E> entityWriter = resourceManager.getEntityWriter(contextProvider, frameName);
+			E entity = entityWriter.lookup(name);		
+			entityWriter.delete(entity);
+			
+			response.setStatus(HttpServletResponse.SC_OK);
+		}
+		catch(Exception e) {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		}
 	}
 }

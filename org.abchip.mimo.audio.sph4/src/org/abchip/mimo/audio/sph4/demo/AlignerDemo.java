@@ -28,10 +28,10 @@ public class AlignerDemo {
 		String transcript;
 		if (args.length > 1) {
 			audioUrl = new File(args[0]).toURI().toURL();
-			Scanner scanner = new Scanner(new File(args[1]));
-			scanner.useDelimiter("\\Z");
-			transcript = scanner.next();
-			scanner.close();
+			try (Scanner scanner = new Scanner(new File(args[1]))) {
+				scanner.useDelimiter("\\Z");
+				transcript = scanner.next();
+			}
 		} else {
 			audioUrl = AlignerDemo.class.getResource("10001-90210-01803.wav");
 			transcript = TEXT;

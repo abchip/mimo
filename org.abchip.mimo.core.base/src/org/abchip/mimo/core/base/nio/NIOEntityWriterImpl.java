@@ -24,18 +24,18 @@ import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.ResourceHelper;
-import org.abchip.mimo.entity.ResourceSerializer;
 
 public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityReaderImpl<E> implements EntityWriter<E> {
 
 	private LockManager lockManager;
 
-	public NIOEntityWriterImpl(NIOPathManager fileManager, ResourceSerializer<E> resourceSerializer, String resource, Frame<E> frame, Logger logger,
+	public NIOEntityWriterImpl(NIOPathManager fileManager, EntitySerializer<E> entitySerializer, String resource, Frame<E> frame, Logger logger,
 			LockManager lockManager) {
-		super(fileManager, resourceSerializer, resource, frame, logger);
+		super(fileManager, entitySerializer, resource, frame, logger);
 		this.lockManager = lockManager;
 	}
 
@@ -98,9 +98,9 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 		entityLocker.lock(LockType.WRITE);
 
 		try {
-
+			this.getEntitySerializer().add(entity);
 			ByteArrayOutputStream output = new ByteArrayOutputStream();
-			this.getResourceSerializer().save(output);
+			this.getEntitySerializer().save(output);
 			ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
 
 			if (!Files.exists(file))
@@ -111,6 +111,7 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		} finally {
+			this.getEntitySerializer().clear();
 			entityLocker.unlock(LockType.WRITE);
 		}
 	}
@@ -125,9 +126,9 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 		entityLocker.lock(LockType.WRITE);
 
 		try {
-
+			this.getEntitySerializer().add(entity);
 			ByteArrayOutputStream output = new ByteArrayOutputStream();
-			this.getResourceSerializer().save(output);
+			this.getEntitySerializer().save(output);
 			ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
 
 			if (replace)
@@ -141,6 +142,7 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 			}
 
 		} finally {
+			this.getEntitySerializer().clear();
 			entityLocker.unlock(LockType.WRITE);
 		}
 	}

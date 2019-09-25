@@ -47,12 +47,13 @@ public class FindNamesServlet extends BaseServlet {
 
 		EntityReader<E> entityReader = resourceManager.getEntityReader(contextProvider, frame);
 		if (entityReader == null) {
-			response.getWriter().write("[]");
-			response.flushBuffer();
-			
 			response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+			response.getWriter().write("[]");
+			
 			return;
 		}
+
+		response.setStatus(HttpServletResponse.SC_FOUND);
 
 		boolean first = true;
 		response.getWriter().write("[");
@@ -64,8 +65,5 @@ public class FindNamesServlet extends BaseServlet {
 			first = false;
 		}
 		response.getWriter().write("]");
-		response.flushBuffer();
-		
-		response.setStatus(HttpServletResponse.SC_FOUND);
 	}
 }

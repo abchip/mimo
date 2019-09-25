@@ -21,10 +21,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 import org.abchip.mimo.ui.menu.Menu;
@@ -53,16 +54,18 @@ public class LookupMenuServlet extends BaseServlet {
 			menu = frameManager.createEntity(Menu.class);
 			menu.setName("List Menu");
 
-			for (Menu elem : menuReader.find(null)) {
-				// build upper level group from menu
-				MenuGroup group = frameManager.createEntity(MenuGroup.class);
-				group.setId(UUID.randomUUID().toString());
-				group.setValue(elem.getName());
-				group.setIcon(elem.getIcon());
-				group.getData().addAll(elem.getElements());
+			try (EntityIterator<Menu> menuIterator = menuReader.find(null, null, 0)) {
+				for (Menu elem : menuIterator) {
+					// build upper level group from menu
+					MenuGroup group = frameManager.createEntity(MenuGroup.class);
+					group.setId(UUID.randomUUID().toString());
+					group.setValue(elem.getName());
+					group.setIcon(elem.getIcon());
+					group.getData().addAll(elem.getElements());
 
-				// append to root
-				menu.getElements().add(group);
+					// append to root
+					menu.getElements().add(group);
+				}
 			}
 		} else {
 			menu = menuReader.lookup(name);
@@ -92,13 +95,9 @@ public class LookupMenuServlet extends BaseServlet {
 			});
 		}
 
-		try (ResourceSerializer<Menu> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Menu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			if (menu != null)
-				resourceSerializer.add(menu);
-
-			resourceSerializer.save(response.getOutputStream());
-		}
-
-		response.flushBuffer();
+		EntitySerializer<Menu> entitySerializer = resourceManager.createEntitySerializer(contextProvider, Menu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		if (menu != null)
+			entitySerializer.add(menu);
+		entitySerializer.save(response.getOutputStream());
 	}
 }

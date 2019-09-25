@@ -17,6 +17,7 @@ import org.abchip.mimo.audio.AudioManager;
 import org.abchip.mimo.audio.AudioRecorder;
 import org.abchip.mimo.audio.AudioStyle;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
@@ -58,14 +59,16 @@ public class TestAudio {
 		// recordAudio();
 
 		EntityReader<Audio> audioReader = resourceManager.getEntityReader(testRunner, Audio.class);
-		for (Audio audio : audioReader.find(null)) {
+		try (EntityIterator<Audio> audioIterator = audioReader.find(null, null, 0)) {
+			for (Audio audio : audioIterator) {
 
-			asserter.assertNotNull("Audio content", audio.getContent());
+				asserter.assertNotNull("Audio content", audio.getContent());
 
-			audioManager.play(testRunner, audio, true, true);
+				audioManager.play(testRunner, audio, true, true);
 
-			Classification<Language> classification = languageManager.classifyLanguage(testRunner, audio.getText());
-			System.out.println(classification);
+				Classification<Language> classification = languageManager.classifyLanguage(testRunner, audio.getText());
+				System.out.println(classification);
+			}
 		}
 	}
 
@@ -73,15 +76,19 @@ public class TestAudio {
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following frames in the system", true, true);
 
-		for (Frame<Entity> frame : frameManger.getFrameReader(testRunner).find(null)) {
-			audioManager.play(testRunner, AudioStyle.B, frame.getName(), true, true);
+		try (EntityIterator<Frame<Entity>> frameIterator = frameManger.getFrameReader(testRunner).find(null, null, 0)) {
+			for (Frame<Entity> frame : frameIterator) {
+				audioManager.play(testRunner, AudioStyle.B, frame.getName(), true, true);
+			}
 		}
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following languages in the system", true, true);
 
 		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
-		for (Language language : languageReader.find(null)) {
-			audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
+		try (EntityIterator<Language> languageIterator = languageReader.find(null, null, 0)) {
+			for (Language language : languageIterator) {
+				audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
+			}
 		}
 	}
 

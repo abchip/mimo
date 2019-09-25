@@ -1051,7 +1051,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		authenticationUserTokenEClass.getESuperTypes().add(this.getAuthentication());
 		authenticationAnonymousEClass.getESuperTypes().add(this.getAuthentication());
 		capabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		contextEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
 		contextEClass.getESuperTypes().add(this.getContextProvider());
 		contextDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextRootEClass.getESuperTypes().add(this.getContext());

@@ -20,11 +20,11 @@ import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityReader;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.EntityWriter;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
 
@@ -66,8 +66,8 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		if (isResource(frame)) {
 			entityReader = (EntityReader<E>) new NIOResourceReaderImpl(pathManager, (Frame<Resource>) frame, contextProvider);
 		} else {
-			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
-			entityReader = new NIOEntityReaderImpl<E>(pathManager, resourceSerializer, resource, frame, logger);
+			EntitySerializer<E> entitySerializer = resourceManager.createEntitySerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
+			entityReader = new NIOEntityReaderImpl<E>(pathManager, entitySerializer, resource, frame, logger);
 		}
 
 		return entityReader;
@@ -84,8 +84,8 @@ public class NIOEntityProviderImpl extends EntityProviderImpl {
 		if (isResource(frame)) {
 			resourceWriter = (EntityWriter<E>) new NIOResourceWriterImpl(pathManager, (Frame<Resource>) frame, contextProvider, lockManager);
 		} else {
-			ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
-			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, resourceSerializer, resource, frame, logger, lockManager);
+			EntitySerializer<E> entitySerializer = resourceManager.createEntitySerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
+			resourceWriter = new NIOEntityWriterImpl<E>(pathManager, entitySerializer, resource, frame, logger, lockManager);
 		}
 
 		return resourceWriter;

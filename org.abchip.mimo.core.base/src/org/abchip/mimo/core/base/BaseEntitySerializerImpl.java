@@ -5,12 +5,10 @@
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
  *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
  */
 package org.abchip.mimo.core.base;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -26,7 +24,7 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.entity.impl.ResourceSerializerImpl;
+import org.abchip.mimo.entity.impl.EntitySerializerImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -37,11 +35,11 @@ import org.emfjson.jackson.resource.JsonResource;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerializerImpl<E> {
+public class BaseEntitySerializerImpl<E extends Entity> extends EntitySerializerImpl<E> {
 
 	private ResourceReusable resource = null;
 
-	public BaseResourceSerializerImpl(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
+	public BaseEntitySerializerImpl(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
 
 		this.setContextProvider(contextProvider);
 		this.setFrame(frame);
@@ -84,10 +82,15 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 	@SuppressWarnings("unchecked")
 	@Override
 	public E get() {
-		if (!this.resource.getContents().isEmpty())
+		if (!this.isEmpty())
 			return (E) this.resource.getContents().get(0);
 		else
 			return null;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return this.resource.getContents().isEmpty();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -103,16 +106,13 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 	}
 
 	@Override
-	public void close() throws IOException {
-		EcoreUtil.removeAll(this.resource.getContents());
-
-		this.resource.unload();
-		this.resource = null;
+	public void load(String content, boolean append) throws IOException {
+		this.load(new ByteArrayInputStream(content.getBytes()), append);
 	}
-
+	
 	@Override
-	public void load(InputStream inputStream, boolean append) throws IOException {
-		this.resource.load(inputStream, append);
+	public void load(InputStream content, boolean append) throws IOException {
+		this.resource.load(content, append);
 	}
 
 	@Override
@@ -129,7 +129,7 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 
 		public void unload();
 
-		public void load(InputStream inputStream, boolean append) throws IOException;
+		public void load(InputStream content, boolean append) throws IOException;
 	}
 
 	private class XMIProxyResourceImpl extends XMIResourceImpl implements ResourceReusable {
@@ -146,11 +146,11 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 		}
 
 		@Override
-		public void load(InputStream inputStream, boolean append) throws IOException {
+		public void load(InputStream content, boolean append) throws IOException {
 			if (append)
 				this.setLoaded(false);
 
-			super.load(inputStream, Collections.EMPTY_MAP);
+			super.load(content, Collections.EMPTY_MAP);
 		}
 
 		@Override
@@ -173,11 +173,11 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 		}
 
 		@Override
-		public void load(InputStream inputStream, boolean append) throws IOException {
+		public void load(InputStream content, boolean append) throws IOException {
 			if (append)
 				this.setLoaded(false);
 
-			super.load(inputStream, Collections.EMPTY_MAP);
+			super.load(content, Collections.EMPTY_MAP);
 		}
 
 		@Override

@@ -12,7 +12,6 @@
 package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -293,15 +292,6 @@ public interface ContextPackage extends EPackage {
 	int CONTEXT = 7;
 
 	/**
-	 * The number of structural features of the '<em>Context</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_FEATURE_COUNT = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ContextRootImpl <em>Root</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,6 +310,34 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	int CONTEXT_DESCRIPTION = 8;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.ContextProvider <em>Provider</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.ContextProvider
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextProvider()
+	 * @generated
+	 */
+	int CONTEXT_PROVIDER = 9;
+
+	/**
+	 * The number of structural features of the '<em>Provider</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_PROVIDER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_FEATURE_COUNT = CONTEXT_PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Anonymous</b></em>' attribute.
@@ -374,25 +392,6 @@ public interface ContextPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTEXT_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.context.ContextProvider <em>Provider</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.context.ContextProvider
-	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextProvider()
-	 * @generated
-	 */
-	int CONTEXT_PROVIDER = 9;
-
-	/**
-	 * The number of structural features of the '<em>Provider</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_PROVIDER_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Root</em>' class.

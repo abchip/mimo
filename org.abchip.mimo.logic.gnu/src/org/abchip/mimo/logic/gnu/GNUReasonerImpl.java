@@ -48,7 +48,7 @@ public class GNUReasonerImpl implements Reasoner {
 
 	@Override
 	public void close() {
-		if(environment != null)
+		if (environment != null)
 			environment.closeStreams();
 	}
 
@@ -56,7 +56,7 @@ public class GNUReasonerImpl implements Reasoner {
 	public List<Goal> query(String question) {
 
 		Question qQuestion = buildQuestion(question);
-		
+
 		return query(qQuestion);
 	}
 
@@ -75,8 +75,7 @@ public class GNUReasonerImpl implements Reasoner {
 		// environment.ensureLoaded(AtomTerm.get(resource.getFile()));
 
 		PrologTextLoaderState ptls = environment.getPrologTextLoaderState();
-		try {
-			InputStream inputStream = resource.openStream();
+		try (InputStream inputStream = resource.openStream()) {
 			InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
 			new PrologTextLoader(ptls, inputStreamReader);
 			inputStream.close();
@@ -96,11 +95,9 @@ public class GNUReasonerImpl implements Reasoner {
 	}
 
 	@Override
-	public void loadTheory(Theory theory) {
+	public void loadTheory(Theory theory) throws IOException {
 
-		GNUTheoryReader theoryReader = null;
-		try {
-			theoryReader = new GNUTheoryReader(theory);
+		try (GNUTheoryReader theoryReader = new GNUTheoryReader(theory)) {
 
 			PrologTextLoaderState ptls = environment.getPrologTextLoaderState();
 			new PrologTextLoader(ptls, theoryReader);
@@ -114,39 +111,32 @@ public class GNUReasonerImpl implements Reasoner {
 				throw new RuntimeException(errors.get(0));
 
 			theories.put(theory.getName(), theory);
-		} finally {
-			if (theoryReader != null)
-				try {
-					theoryReader.close();
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-				}
 		}
 	}
-	
+
 	@Override
 	public Question buildQuestion(String question) {
 
 		Question qQuestion = LogicFactory.eINSTANCE.createQuestion();
-		
+
 		StringTokenizer st = new StringTokenizer(question);
 
-		for(int x=0; st.hasMoreTokens(); x++) {
-			switch(x) {
-				case 0:
-					qQuestion.setSubject(GNUTheoryBuilder.buildTerm(st.nextToken()));
-					break;
-				case 1:
-					qQuestion.setRelation(GNUTheoryBuilder.buildTerm(st.nextToken()));
-					break;
-				case 2:
-					qQuestion.setObject(GNUTheoryBuilder.buildTerm(st.nextToken()));
-					break;
-				case 3:
-					qQuestion.setRule(GNUTheoryBuilder.buildTerm(st.nextToken()));				
-					break;
-			}				
+		for (int x = 0; st.hasMoreTokens(); x++) {
+			switch (x) {
+			case 0:
+				qQuestion.setSubject(GNUTheoryBuilder.buildTerm(st.nextToken()));
+				break;
+			case 1:
+				qQuestion.setRelation(GNUTheoryBuilder.buildTerm(st.nextToken()));
+				break;
+			case 2:
+				qQuestion.setObject(GNUTheoryBuilder.buildTerm(st.nextToken()));
+				break;
+			case 3:
+				qQuestion.setRule(GNUTheoryBuilder.buildTerm(st.nextToken()));
+				break;
+			}
 		}
-		return qQuestion;		
+		return qQuestion;
 	}
 }

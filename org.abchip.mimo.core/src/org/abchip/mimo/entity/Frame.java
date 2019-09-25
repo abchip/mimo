@@ -147,10 +147,10 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" slotRequired="true"
+	 * @model entityRequired="true" slotNameRequired="true" valueRequired="true"
 	 * @generated
 	 */
-	void unsetValue(Entity entity, Slot slot);
+	void setValue(Entity entity, String slotName, Object value);
 
 	/**
 	 * Returns the value of the '<em><b>Abstract</b></em>' attribute. <!--

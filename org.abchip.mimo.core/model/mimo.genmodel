@@ -554,18 +554,45 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/find">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find/filter"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/find.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find.1/filter"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find.1/nrElem"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find/fields"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/find/nrElem"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/findNames">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/findNames/filter"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/first"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/getResourceName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityReader/lookup">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityReader/lookup/name"/>
         </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntitySerializer">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntitySerializer/E"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference mimo.ecore#//entity/EntitySerializer/contextProvider"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference mimo.ecore#//entity/EntitySerializer/frame"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/add">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntitySerializer/add/entity"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/addAll">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntitySerializer/addAll/entities"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/clear"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/load">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntitySerializer/load/content"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntitySerializer/load/append"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/load.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntitySerializer/load.1/content"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntitySerializer/load.1/append"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/save">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntitySerializer/save/outputStream"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/get"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/getAll"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntitySerializer/isEmpty"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/EntityTyped">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityTyped/T"/>
@@ -615,9 +642,10 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/slotName"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/unsetValue">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/unsetValue/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/unsetValue/slot"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/setValue">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/slotName"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/value"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/FrameManager">
@@ -706,23 +734,23 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/getProvider.2/frame"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/getProvider.2/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createResourceSerializer">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer/contextProvider"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer/klass"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer/serializationType"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createEntitySerializer">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1/contextProvider"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1/serializationType"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.1/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createEntitySerializer.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer.1/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer.1/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer.1/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer.1/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2/contextProvider"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2/serializationType"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createResourceSerializer.2/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceManager/createEntitySerializer.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer.2/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer.2/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer.2/serializationType"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceManager/createEntitySerializer.2/E"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/ResourceNotifier">
@@ -734,29 +762,6 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/ResourceNotifier/registerListener">
           <genParameters ecoreParameter="mimo.ecore#//entity/ResourceNotifier/registerListener/listener"/>
         </genOperations>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//entity/ResourceSerializer">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/ResourceSerializer/E"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference mimo.ecore#//entity/ResourceSerializer/contextProvider"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference mimo.ecore#//entity/ResourceSerializer/frame"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/add">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/add/entity"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/addAll">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/addAll/entities"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/clear"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/load">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/load/inputStream"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/load/append"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/save">
-          <genParameters ecoreParameter="mimo.ecore#//entity/ResourceSerializer/save/outputStream"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/get"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/ResourceSerializer/getAll"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Slot">
         <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//entity/Slot/cardinality"/>

@@ -28,25 +28,23 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceManager;
-import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class LinkedInResponseServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-    public static final String TokenEndpoint = "https://www.linkedin.com";
-    public static final String TokenServiceUri = "/oauth/v2/accessToken";
+	public static final String TokenEndpoint = "https://www.linkedin.com";
+	public static final String TokenServiceUri = "/oauth/v2/accessToken";
 
 	public static final RequestConfig StandardRequestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
 
@@ -96,7 +94,7 @@ public class LinkedInResponseServlet extends HttpServlet {
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2LinkedIn";
 		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
-		EntityNameable oauth2LinkedIn = oauth2Reader.find(null).next();
+		EntityNameable oauth2LinkedIn = oauth2Reader.first();
 
 		this.getDefaultProvider().logout(contextProvider);
 		contextProvider.getContext().close();
@@ -115,31 +113,23 @@ public class LinkedInResponseServlet extends HttpServlet {
 			String returnURI = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "liveReturnUrl").toString();
 			String secret = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "secretKey").toString();
 
-            URI uri = new URIBuilder()
-                    .setScheme(TokenEndpoint.substring(0, TokenEndpoint.indexOf(":")))
-                    .setHost(TokenEndpoint.substring(TokenEndpoint.indexOf(":") + 3))
-                    .setPath(TokenServiceUri)
-                    .setParameter("client_id", clientId)
-                    .setParameter("client_secret", secret)
-                    .setParameter("grant_type", "authorization_code")
-                    .setParameter("code", authorizationCode)
-                    .setParameter("redirect_uri", returnURI)
-                    .build();
+			URI uri = new URIBuilder().setScheme(TokenEndpoint.substring(0, TokenEndpoint.indexOf(":"))).setHost(TokenEndpoint.substring(TokenEndpoint.indexOf(":") + 3))
+					.setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
+					.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();
 
 			postMethod = new HttpPost(uri);
 			postMethod.setConfig(StandardRequestConfig);
-			HttpResponse postResponse = client.execute(postMethod);
-			String responseString = new BasicResponseHandler().handleResponse(postResponse);
-			if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-				JsonFactory factory = new JsonFactory();
-				JsonParser parser = factory.createParser(responseString);
-				HashMap<?, ?> userMap = new ObjectMapper().readValue(parser, HashMap.class);
-				accessToken = (String) userMap.get("access_token");
-				idToken = accessToken;
-				// Debug.logInfo("Generated Access Token : " + accessToken, module);
-			} else {
-				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! LinkedIn get OAuth2 access token error");
-				return;
+			try (CloseableHttpResponse postResponse = client.execute(postMethod)) {
+				String responseString = new BasicResponseHandler().handleResponse(postResponse);
+				if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+					HashMap<?, ?> userMap = new ObjectMapper().readValue(responseString, HashMap.class);
+					accessToken = (String) userMap.get("access_token");
+					idToken = accessToken;
+					// Debug.logInfo("Generated Access Token : " + accessToken, module);
+				} else {
+					response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! LinkedIn get OAuth2 access token error");
+					return;
+				}
 			}
 		} catch (Exception e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());

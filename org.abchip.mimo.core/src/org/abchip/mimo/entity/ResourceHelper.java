@@ -260,13 +260,8 @@ public class ResourceHelper {
 		}
 		
 		@Override
-		public EntityIterator<E> find(String filter) {
-			return find(filter, -1);
-		}
-
-		@Override
-		public EntityIterator<E> find(String filter, int nrElem) {
-			return new QueueReaderIteratorImpl<E>(readers, filter, nrElem);
+		public EntityIterator<E> find(String filter, String fields, int nrElem) {
+			return new QueueReaderIteratorImpl<E>(readers, filter, fields, nrElem);
 		}
 		
 		public List<String> findNames(String filter) {
@@ -303,27 +298,31 @@ public class ResourceHelper {
 
 		private Queue<EntityReader<E>> readers;
 		private EntityIterator<E> currentIterator;
-		private String filter;
-		private int nrElem;
+		private String filter = null;
+		private String fields = null;
+		private int nrElem = 0;
 		private E nextObject = null;
 		private int count = 0;
 		
-		public QueueReaderIteratorImpl(List<EntityReader<E>> resources, String filter, int nrElem) {
+		public QueueReaderIteratorImpl(List<EntityReader<E>> resources, String filter, String fields, int nrElem) {
 
+			this.filter = filter;
+			this.fields = fields;
 			this.nrElem = nrElem;
 			
 			readers = new LinkedList<EntityReader<E>>();
 			for (EntityReader<E> resourceReader : resources)
 				readers.add(resourceReader);
-
-			this.filter = filter;
+			
 			if(!readers.isEmpty())
-				this.currentIterator = readers.poll().find(filter, nrElem);
+				this.currentIterator = readers.poll().find(filter, fields, nrElem);
 			doNext();
 		}
 
 		@Override
 		public void close() {
+			if(this.currentIterator != null)
+				this.currentIterator.close();
 			this.currentIterator = null;
 			this.readers = null;
 		}
@@ -338,7 +337,7 @@ public class ResourceHelper {
 			E object = nextObject;			
 			count++;
 			
-			if(nrElem != -1 && count >= nrElem)		
+			if(nrElem > 0 && count >= nrElem)		
 				nextObject = null;
 			else 
 				doNext();
@@ -362,7 +361,7 @@ public class ResourceHelper {
 			}
 
 			while (readers.peek() != null) {
-				currentIterator = readers.poll().find(filter, nrElem - count);
+				currentIterator = readers.poll().find(filter, fields, nrElem - count);
 				while (currentIterator != null && currentIterator.hasNext()) {
 					nextObject = currentIterator.next();
 					return;
@@ -393,15 +392,10 @@ public class ResourceHelper {
 		}
 
 		@Override
-		public EntityIterator<E> find(String filter) {
-			return find(filter, -1);
-		}
-
-		@Override
-		public EntityIterator<E> find(String filter, int nrElem) {
+		public EntityIterator<E> find(String filter, String fields, int nrElem) {
 
 			List<E> values = new ArrayList<E>(entities.values());
-			if(nrElem != -1)
+			if(nrElem > 0)
 				values = Lists.qINSTANCE.slice(new ArrayList<E>(values), 0, nrElem);				
 
 			Collections.sort(values, new Comparator<E>() {

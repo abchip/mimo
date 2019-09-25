@@ -23,27 +23,30 @@ public class AllphoneDemo {
 		Configuration configuration = new Configuration();
 		configuration.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
 		configuration.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
-		
+
 		Context context = new Context(configuration);
 		context.setLocalProperty("decoder->searchManager", "allphoneSearchManager");
+
 		Recognizer recognizer = context.getInstance(Recognizer.class);
-		InputStream stream = AllphoneDemo.class.getResourceAsStream("10001-90210-01803.wav");
-		stream.skip(44);
+		try (InputStream stream = AllphoneDemo.class.getResourceAsStream("10001-90210-01803.wav")) {
+			stream.skip(44);
 
-		// Simple recognition with generic model
-		recognizer.allocate();
-		context.setSpeechSource(stream, TimeFrame.INFINITE);
-		Result result;
-		while ((result = recognizer.recognize()) != null) {
-			SpeechResult speechResult = new SpeechResult(result);
-			System.out.format("Hypothesis: %s\n", speechResult.getHypothesis());
+			// Simple recognition with generic model
+			recognizer.allocate();
+			context.setSpeechSource(stream, TimeFrame.INFINITE);
+			Result result;
+			while ((result = recognizer.recognize()) != null) {
+				SpeechResult speechResult = new SpeechResult(result);
+				System.out.format("Hypothesis: %s\n", speechResult.getHypothesis());
 
-			System.out.println("List of recognized words and their times:");
-			for (WordResult r : speechResult.getWords()) {
-				System.out.println(r);
+				System.out.println("List of recognized words and their times:");
+				for (WordResult r : speechResult.getWords()) {
+					System.out.println(r);
+				}
 			}
+		} finally {
+			recognizer.deallocate();
 		}
-		recognizer.deallocate();
 
 	}
 }

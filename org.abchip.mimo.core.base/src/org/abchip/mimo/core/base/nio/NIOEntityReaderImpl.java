@@ -26,8 +26,8 @@ import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.core.base.BaseEntityIteratorImpl;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.impl.EntityReaderImpl;
 
 public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderImpl<E> {
@@ -35,13 +35,13 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 	private Logger logger;
 	private NIOPathManager pathManager;
 	private String resource;
-	private ResourceSerializer<E> resourceSerializer = null;
+	private EntitySerializer<E> entitySerializer = null;
 
-	public NIOEntityReaderImpl(NIOPathManager pathManager, ResourceSerializer<E> resourceSerializer, String resource, Frame<E> frame, Logger logger) {
-		setContextProvider(resourceSerializer.getContextProvider());
+	public NIOEntityReaderImpl(NIOPathManager pathManager, EntitySerializer<E> entitySerializer, String resource, Frame<E> frame, Logger logger) {
+		setContextProvider(entitySerializer.getContextProvider());
 		this.pathManager = pathManager;
 		this.resource = resource;
-		this.resourceSerializer = resourceSerializer;
+		this.entitySerializer = entitySerializer;
 		setFrame(frame);
 	}
 
@@ -49,8 +49,8 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 		return this.pathManager;
 	}
 
-	protected ResourceSerializer<E> getResourceSerializer() {
-		return resourceSerializer;
+	protected EntitySerializer<E> getEntitySerializer() {
+		return entitySerializer;
 	}
 
 	public String getResourceName() {
@@ -74,26 +74,21 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 		E entity = null;
 		try (InputStream inputStream = Files.newInputStream(file)) {
-			this.getResourceSerializer().load(inputStream, true);
-			entity = this.getResourceSerializer().get();
+			this.getEntitySerializer().load(inputStream, false);
+			entity = this.getEntitySerializer().get();
 			// entity = getEntitySerializer(contextProvider).deserialize(resource, frame,
 			// name, inputStream);
 		} catch (IOException e) {
 			logger.error(e);
 		} finally {
-			this.getResourceSerializer().clear();
+			this.getEntitySerializer().clear();
 		}
 
 		return entity;
 	}
 
 	@Override
-	public EntityIterator<E> find(String filter) {
-		return find(filter, -1);
-	}
-
-	@Override
-	public EntityIterator<E> find(String filter, int nrElem) {
+	public EntityIterator<E> find(String filter, String fields, int nrElem) {
 
 		List<E> entries = new ArrayList<E>();
 
@@ -101,8 +96,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 		if (folder == null)
 			return new BaseEntityIteratorImpl<E>(entries.iterator(), nrElem);
 
-		try {
-			DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder);
+		try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder)) {
 
 			int i = 0;
 			for (Path path : dirStream) {
@@ -131,7 +125,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 
 				try (InputStream inputStream = Files.newInputStream(path)) {
 
-					this.getResourceSerializer().load(inputStream, true);
+					this.getEntitySerializer().load(inputStream, true);
 					// entries.add(getEntitySerializer(contextProvider).deserialize(resource, frame,
 					// entityName, inputStream));
 					i++;
@@ -139,18 +133,15 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 					System.err.println(e.getMessage());
 				}
 
-				if (nrElem != -1 && i >= nrElem)
+				if (nrElem > 0 && i >= nrElem)
 					break;
 			}
 
-			entries.addAll(this.getResourceSerializer().getAll());
-
-			dirStream.close();
-
+			entries.addAll(this.getEntitySerializer().getAll());
 		} catch (Exception e) {
 			logger.error(e);
 		} finally {
-			this.getResourceSerializer().clear();
+			this.getEntitySerializer().clear();
 		}
 
 		Collections.sort(entries, new Comparator<E>() {
@@ -172,8 +163,7 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 		if (folder == null)
 			return names;
 
-		try {
-			DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder);
+		try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder)) {
 
 			for (Path path : dirStream) {
 				if (Files.isDirectory(path))
@@ -198,8 +188,6 @@ public class NIOEntityReaderImpl<E extends EntityNameable> extends EntityReaderI
 					names.add(entityName);
 				}
 			}
-			dirStream.close();
-
 		} catch (Exception e) {
 			logger.error(e);
 		}

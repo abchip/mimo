@@ -4,11 +4,11 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.Resource;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
@@ -33,15 +33,14 @@ public class TestResource {
 	public void start() throws IOException {
 
 		Frame<Resource> resourceFrame = frameManager.getFrame(Resource.class);
-		try (ResourceSerializer<Frame> frameSerializer = resourceManager.createResourceSerializer(testRunner, Frame.class, SerializationType.XML_METADATA_INTERCHANGE)) {
-			frameSerializer.add(resourceFrame);
-			frameSerializer.save(System.out);
-		}
-		try (ResourceSerializer<Frame> frameSerializer = resourceManager.createResourceSerializer(testRunner, Frame.class, SerializationType.XML_METADATA_INTERCHANGE)) {
-			frameSerializer.add(resourceFrame);
-			frameSerializer.save(System.out);
-		}
-		"".toString();
+		
+		EntitySerializer<Frame> frameSerializer = resourceManager.createEntitySerializer(testRunner, Frame.class, SerializationType.XML_METADATA_INTERCHANGE);
+		frameSerializer.add(resourceFrame);
+		frameSerializer.save(System.out);
+
+		frameSerializer.clear();
+		frameSerializer.add(resourceFrame);
+		frameSerializer.save(System.out);
 	}
 
 	@TestStopped

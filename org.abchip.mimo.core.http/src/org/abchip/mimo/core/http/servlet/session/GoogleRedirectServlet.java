@@ -68,7 +68,7 @@ public class GoogleRedirectServlet extends HttpServlet {
 		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
 
 		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, "OAuth2Google");
-		EntityNameable oauth2Google = oauth2Reader.find(null).next();
+		EntityNameable oauth2Google = oauth2Reader.first();
 
 		getDefaultProvider().logout(contextProvider);
 		contextProvider.getContext().close();

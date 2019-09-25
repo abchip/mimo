@@ -289,7 +289,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @generated
 	 */
 	@Override
-	public void unsetValue(Entity entity, Slot slot) {
+	public void setValue(Entity entity, String slotName, Object value) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

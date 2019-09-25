@@ -74,8 +74,8 @@ public class TestTwitter {
 		Tweet t = tweetReader.lookup("939830847619944449");
 
 		EntityReader<Frame<Entity>> frameReader = frameManager.getFrameReader(testRunner);
-
-		for (Frame<?> frame : frameReader.find(null)) {
+		EntityIterator<Frame<Entity>> frameIterator = frameReader.find(null, null, 0);
+		for (Frame<?> frame : frameIterator) {
 			String text = "The frame " + frame.getName() + " has the following properties:";
 			// audioManager.play(testRunner, AudioStyle.A, text, true, true);
 			StringBuffer sb = new StringBuffer();
@@ -87,7 +87,7 @@ public class TestTwitter {
 
 		Set<String> users = new HashSet<String>();
 		Set<String> languages = new HashSet<String>();
-		for (Tweet tweet : tweetReader.find(null)) {
+		for (Tweet tweet : tweetReader.find(null, null, 0)) {
 			users.add(tweet.getUser());
 			if (tweet.getLanguage() != null)
 				languages.add(tweet.getLanguage());
@@ -115,7 +115,7 @@ public class TestTwitter {
 
 		audioManager.play(testRunner, AudioStyle.A, "I found the following tweets in the system", true, true);
 
-		for (Tweet tweet : tweetReader.find(null)) {
+		for (Tweet tweet : tweetReader.find(null, null, 0)) {
 
 			if (tweet.getLanguage() == null)
 				continue;
@@ -140,18 +140,22 @@ public class TestTwitter {
 
 		List<Language> languages = new ArrayList<Language>();
 		EntityReader<Language> languageReader = resourceManager.getEntityReader(testRunner, Language.class);
-		for (Language language : languageReader.find(null))
-			languages.add(language);
+		try (EntityIterator<Language> languageIterator = languageReader.find(null, null, 0)) {
+			for (Language language : languageIterator)
+				languages.add(language);
+		}
 
 		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);
 		Evaluator evaluator = classifier.buildEvaluator(Language.class, String.class);
 
 		EntityReader<Tweet> tweetReader = resourceManager.getEntityReader(testRunner, Tweet.class);
-		for (Tweet tweet : tweetReader.find(null)) {
+		try (EntityIterator<Tweet> tweetIterator = tweetReader.find(null, null, 0)) {
+			for (Tweet tweet : tweetIterator) {
 
-			Language language = lookupLanguageByIso(languages, tweet.getLanguage());
-			if (language != null)
-				evaluator.evaluate(tweet.getText(), language.getText().toLowerCase());
+				Language language = lookupLanguageByIso(languages, tweet.getLanguage());
+				if (language != null)
+					evaluator.evaluate(tweet.getText(), language.getText().toLowerCase());
+			}
 		}
 
 		evaluator.printConfusionMatrix();
@@ -167,15 +171,16 @@ public class TestTwitter {
 
 	private void loadTweets() {
 
-		EntityIterator<Tweet> tweetIterator = twitterManager.search(testRunner, null, "#ai", 1000);
-		asserter.assertTrue("Count tweets", tweetIterator.hasNext());
+		try (EntityIterator<Tweet> tweetIterator = twitterManager.search(testRunner, null, "#ai", 1000)) {
+			asserter.assertTrue("Count tweets", tweetIterator.hasNext());
 
-		EntityWriter<Tweet> tweetWriter = resourceManager.getEntityWriter(testRunner, Tweet.class);
-		for (Tweet tweet : tweetIterator) {
-			try {
-				tweetWriter.create(tweet, true);
-			} catch (Exception e) {
-				System.err.println(e.getMessage());
+			EntityWriter<Tweet> tweetWriter = resourceManager.getEntityWriter(testRunner, Tweet.class);
+			for (Tweet tweet : tweetIterator) {
+				try {
+					tweetWriter.create(tweet, true);
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
 			}
 		}
 	}

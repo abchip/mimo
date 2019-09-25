@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.EntityProviderImpl;
@@ -78,15 +78,11 @@ public class LookupQueryServlet extends BaseServlet {
 				}
 			}
 		}
-		try (ResourceSerializer<Query> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-			if (query != null)
-				resourceSerializer.add(query);
-
-			resourceSerializer.save(response.getOutputStream());
-		}
-
-		response.flushBuffer();
-
+		
+		EntitySerializer<Query> entitySerializer = resourceManager.createEntitySerializer(contextProvider, Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		if (query != null)
+			entitySerializer.add(query);
+		entitySerializer.save(response.getOutputStream());
 	}
 
 	private QueryField buildField(Slot slot) {

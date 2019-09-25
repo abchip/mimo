@@ -33,20 +33,21 @@ public class BaseFilesImpl implements Files {
 
 	@Override
 	public void deleteDirectory(String path) throws IOException {
-		org.apache.commons.io.FileUtils.forceDelete(new File(path));				
+		org.apache.commons.io.FileUtils.forceDelete(new File(path));
 	}
 
 	@Override
-	public String getSeparator() {		
+	public String getSeparator() {
 		return java.nio.file.FileSystems.getDefault().getSeparator();
 	}
 
 	@Override
 	public File copyToFile(InputStream stream) throws IOException {
 		File tempFile = File.createTempFile("mimo-file", "tmp");
-	    tempFile.deleteOnExit();
-	    FileOutputStream out = new FileOutputStream(tempFile);
-	    IOUtils.copy(stream, out);
-	    return tempFile;
+		tempFile.deleteOnExit();
+		try (FileOutputStream out = new FileOutputStream(tempFile)) {
+			IOUtils.copy(stream, out);
+		}
+		return tempFile;
 	}
 }

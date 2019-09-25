@@ -28,24 +28,21 @@ public class TestEntity {
 	public void start() {
 
 		testWrite();
-		
+
 		testRead();
-		
+
 		testDelete();
 	}
 
 	private void testRead() {
-		try {
-			EntityReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class);
 
-			EntityIterator<ObjectA> entityIterator = entityReader.find(null);
+		EntityReader<ObjectA> entityReader = resourceManager.getEntityReader(testRunner, ObjectA.class);
+
+		try (EntityIterator<ObjectA> entityIterator = entityReader.find(null, null, 0)) {
 			while (entityIterator.hasNext()) {
 				ObjectA objectA = entityIterator.next();
 				asserter.assertNotNull("Read object", objectA);
 			}
-
-			entityIterator.close();
-
 		} catch (Exception exc) {
 			asserter.fail("Resource reading failed: " + exc.getMessage());
 		}
@@ -80,23 +77,19 @@ public class TestEntity {
 			asserter.fail("Resource writing failed: " + exc.getMessage());
 		}
 	}
-	
 
 	private void testDelete() {
-		try {
-			EntityWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
 
-			EntityIterator<ObjectA> objectIterator = entityWriter.find(null);
-			while (objectIterator.hasNext()) {				
+		EntityWriter<ObjectA> entityWriter = resourceManager.getEntityWriter(testRunner, ObjectA.class);
+
+		try (EntityIterator<ObjectA> objectIterator = entityWriter.find(null, null, 0)) {
+			while (objectIterator.hasNext()) {
 				ObjectA objectA = objectIterator.next();
 				entityWriter.delete(objectA);
 				asserter.assertNull("Delete object", entityWriter.lookup(objectA.getName()));
 			}
-
-			objectIterator.close();
-
 		} catch (Exception exc) {
 			asserter.fail("Resource reading failed: " + exc.getMessage());
-		}		
+		}
 	}
 }

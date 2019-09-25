@@ -176,7 +176,7 @@
       <eLiterals name="Write" value="20" literal="WRT"/>
       <eLiterals name="Execute" value="30" literal="EXC"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//util/JavaCloseable #//context/ContextProvider">
+    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//context/ContextProvider">
       <eOperations name="close" lowerBound="1"/>
       <eOperations name="get" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/get/T"/>
@@ -861,16 +861,14 @@
           <eTypeArguments eTypeParameter="#//entity/EntityReader/E"/>
         </eGenericType>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="find">
-        <eGenericType eClassifier="#//entity/EntityIterator">
-          <eTypeArguments eTypeParameter="#//entity/EntityReader/E"/>
-        </eGenericType>
-        <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="nrElem" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eOperations name="findNames" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="first">
+        <eGenericType eTypeParameter="#//entity/EntityReader/E"/>
       </eOperations>
       <eOperations name="getResourceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="lookup">
@@ -888,6 +886,48 @@
           transient="true" resolveProxies="false">
         <eGenericType eClassifier="#//entity/Frame">
           <eTypeArguments eTypeParameter="#//entity/EntityReader/E"/>
+        </eGenericType>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntitySerializer" abstract="true">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/Entity"/>
+      </eTypeParameters>
+      <eOperations name="add">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/EntitySerializer/E"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="addAll">
+        <eParameters name="entities" lowerBound="1" upperBound="-1">
+          <eGenericType eTypeParameter="#//entity/EntitySerializer/E"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="clear"/>
+      <eOperations name="load" eExceptions="#//util/JavaIOException">
+        <eParameters name="content" lowerBound="1" eType="#//util/JavaInputStream"/>
+        <eParameters name="append" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
+      <eOperations name="load" eExceptions="#//util/JavaIOException">
+        <eParameters name="content" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="append" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
+      <eOperations name="save" eExceptions="#//util/JavaIOException">
+        <eParameters name="outputStream" lowerBound="1" eType="#//util/JavaOutputStream"/>
+      </eOperations>
+      <eOperations name="get">
+        <eGenericType eTypeParameter="#//entity/EntitySerializer/E"/>
+      </eOperations>
+      <eOperations name="getAll" upperBound="-1">
+        <eGenericType eTypeParameter="#//entity/EntitySerializer/E"/>
+      </eOperations>
+      <eOperations name="isEmpty" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contextProvider" lowerBound="1"
+          eType="#//context/ContextProvider" transient="true" resolveProxies="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1"
+          transient="true" resolveProxies="false">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments eTypeParameter="#//entity/EntitySerializer/E"/>
         </eGenericType>
       </eStructuralFeatures>
     </eClassifiers>
@@ -973,9 +1013,10 @@
         <eParameters name="entity" lowerBound="1" eType="#//entity/Entity"/>
         <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="unsetValue">
+      <eOperations name="setValue">
         <eParameters name="entity" lowerBound="1" eType="#//entity/Entity"/>
-        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
+        <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           changeable="false"/>
@@ -1189,9 +1230,9 @@
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="createResourceSerializer">
-        <eGenericType eClassifier="#//entity/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer/E"/>
+      <eOperations name="createEntitySerializer">
+        <eGenericType eClassifier="#//entity/EntitySerializer">
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createEntitySerializer/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
@@ -1199,14 +1240,14 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer/E"/>
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/createEntitySerializer/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
       </eOperations>
-      <eOperations name="createResourceSerializer">
-        <eGenericType eClassifier="#//entity/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer.1/E"/>
+      <eOperations name="createEntitySerializer">
+        <eGenericType eClassifier="#//entity/EntitySerializer">
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createEntitySerializer.1/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
@@ -1214,14 +1255,14 @@
         <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer.1/E"/>
+            <eTypeArguments eTypeParameter="#//entity/ResourceManager/createEntitySerializer.1/E"/>
           </eGenericType>
         </eParameters>
         <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
       </eOperations>
-      <eOperations name="createResourceSerializer">
-        <eGenericType eClassifier="#//entity/ResourceSerializer">
-          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createResourceSerializer.2/E"/>
+      <eOperations name="createEntitySerializer">
+        <eGenericType eClassifier="#//entity/EntitySerializer">
+          <eTypeArguments eTypeParameter="#//entity/ResourceManager/createEntitySerializer.2/E"/>
         </eGenericType>
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
@@ -1255,43 +1296,9 @@
         </eParameters>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResourceSerializer" abstract="true"
-        eSuperTypes="#//util/JavaCloseable">
-      <eTypeParameters name="E">
-        <eBounds eClassifier="#//entity/Entity"/>
-      </eTypeParameters>
-      <eOperations name="add">
-        <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//entity/ResourceSerializer/E"/>
-        </eParameters>
-      </eOperations>
-      <eOperations name="addAll">
-        <eParameters name="entities" lowerBound="1" upperBound="-1">
-          <eGenericType eTypeParameter="#//entity/ResourceSerializer/E"/>
-        </eParameters>
-      </eOperations>
-      <eOperations name="clear"/>
-      <eOperations name="load" eExceptions="#//util/JavaIOException">
-        <eParameters name="inputStream" lowerBound="1" eType="#//util/JavaInputStream"/>
-        <eParameters name="append" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eOperations>
-      <eOperations name="save" eExceptions="#//util/JavaIOException">
-        <eParameters name="outputStream" lowerBound="1" eType="#//util/JavaOutputStream"/>
-      </eOperations>
-      <eOperations name="get">
-        <eGenericType eTypeParameter="#//entity/ResourceSerializer/E"/>
-      </eOperations>
-      <eOperations name="getAll" upperBound="-1">
-        <eGenericType eTypeParameter="#//entity/ResourceSerializer/E"/>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="contextProvider" lowerBound="1"
-          eType="#//context/ContextProvider" transient="true" resolveProxies="false"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1"
-          transient="true" resolveProxies="false">
-        <eGenericType eClassifier="#//entity/Frame">
-          <eTypeArguments eTypeParameter="#//entity/ResourceSerializer/E"/>
-        </eGenericType>
-      </eStructuralFeatures>
+    <eClassifiers xsi:type="ecore:EEnum" name="SerializationType">
+      <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
+      <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityNameable #//entity/Textable">
       <eOperations name="getValue" eType="#//entity/Entity">
@@ -1325,10 +1332,6 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Textable" abstract="true" interface="true">
       <eOperations name="getText" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="SerializationType">
-      <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
-      <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="net" nsURI="http://www.abchip.org/mimo/net" nsPrefix="mimo-net">

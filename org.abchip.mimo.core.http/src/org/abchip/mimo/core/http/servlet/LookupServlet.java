@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntitySerializer;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.ResourceManager;
-import org.abchip.mimo.entity.ResourceSerializer;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.util.Strings;
 
@@ -48,18 +48,15 @@ public class LookupServlet extends BaseServlet {
 			return;
 		}
 
-		try (ResourceSerializer<E> resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION)) {
-
-			E entity = resourceManager.getEntityReader(contextProvider, frame).lookup(name);
-			if (entity == null) 
-				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-			else {
-				resourceSerializer.add(entity);
-				resourceSerializer.save(response.getOutputStream());
-				response.flushBuffer();
-				
-				response.setStatus(HttpServletResponse.SC_FOUND);
-			}
+		E entity = resourceManager.getEntityReader(contextProvider, frame).lookup(name);
+		if (entity == null)
+			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+		else {
+			response.setStatus(HttpServletResponse.SC_FOUND);
+			
+			EntitySerializer<E> entitySerializer = resourceManager.createEntitySerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			entitySerializer.add(entity);
+			entitySerializer.save(response.getOutputStream());
 		}
 	}
 }

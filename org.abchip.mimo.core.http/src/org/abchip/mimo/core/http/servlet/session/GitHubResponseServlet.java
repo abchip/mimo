@@ -28,18 +28,16 @@ import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityProvider;
 import org.abchip.mimo.entity.EntityReader;
 import org.abchip.mimo.entity.ResourceManager;
-import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class GitHubResponseServlet extends HttpServlet {
@@ -47,9 +45,8 @@ public class GitHubResponseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public static final RequestConfig StandardRequestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
-    public static final String TokenEndpoint = "https://github.com";
-    public static final String TokenServiceUri = "/login/oauth/access_token";
-
+	public static final String TokenEndpoint = "https://github.com";
+	public static final String TokenServiceUri = "/login/oauth/access_token";
 
 	@Inject
 	private ResourceManager resourceManager;
@@ -103,7 +100,7 @@ public class GitHubResponseServlet extends HttpServlet {
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2GitHub";
 		EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
-		EntityNameable oauth2GitHub = oauth2Reader.find(null).next();
+		EntityNameable oauth2GitHub = oauth2Reader.first();
 
 		this.getDefaultProvider().logout(contextProvider);
 		contextProvider.getContext().close();
@@ -122,32 +119,25 @@ public class GitHubResponseServlet extends HttpServlet {
 			String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl").toString();
 			String secret = oauth2GitHub.isa().getValue(oauth2GitHub, "clientSecret").toString();
 
-            URI uri = new URIBuilder()
-                    .setScheme(TokenEndpoint.substring(0, TokenEndpoint.indexOf(":")))
-                    .setHost(TokenEndpoint.substring(TokenEndpoint.indexOf(":") + 3))
-                    .setPath(TokenServiceUri)
-                    .setParameter("client_id", clientId)
-                    .setParameter("client_secret", secret)
-                    .setParameter("code", authorizationCode)
-                    .setParameter("redirect_uri", returnURI)
-                    .build();
-			
+			URI uri = new URIBuilder().setScheme(TokenEndpoint.substring(0, TokenEndpoint.indexOf(":"))).setHost(TokenEndpoint.substring(TokenEndpoint.indexOf(":") + 3))
+					.setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("code", authorizationCode)
+					.setParameter("redirect_uri", returnURI).build();
+
 			postMethod = new HttpPost(uri);
 			postMethod.setConfig(StandardRequestConfig);
-            postMethod.setHeader("Accept", "application/json");
+			postMethod.setHeader("Accept", "application/json");
 
-			HttpResponse postResponse = client.execute(postMethod);
-			String responseString = new BasicResponseHandler().handleResponse(postResponse);
-			if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-				JsonFactory factory = new JsonFactory();
-				JsonParser parser = factory.createParser(responseString);
-				HashMap<?, ?> userMap = new ObjectMapper().readValue(parser, HashMap.class);
-				accessToken = (String) userMap.get("access_token");
-				idToken = (String) userMap.get("token_type");
-				// Debug.logInfo("Generated Access Token : " + accessToken, module);
-			} else {
-				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! GitHub get OAuth2 access token error");
-				return;
+			try (CloseableHttpResponse postResponse = client.execute(postMethod)) {
+				String responseString = new BasicResponseHandler().handleResponse(postResponse);
+				if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+					HashMap<?, ?> userMap = new ObjectMapper().readValue(responseString, HashMap.class);
+					accessToken = (String) userMap.get("access_token");
+					idToken = (String) userMap.get("token_type");
+					// Debug.logInfo("Generated Access Token : " + accessToken, module);
+				} else {
+					response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! GitHub get OAuth2 access token error");
+					return;
+				}
 			}
 		} catch (Exception e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
@@ -173,7 +163,6 @@ public class GitHubResponseServlet extends HttpServlet {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error in google response");
 			return;
 		}
-
 
 	}
 }

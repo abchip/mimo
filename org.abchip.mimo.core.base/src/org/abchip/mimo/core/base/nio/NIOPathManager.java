@@ -39,18 +39,15 @@ public class NIOPathManager {
 		this.path = Paths.get(path);
 		
 		this.resources = new HashMap<String, Resource>();
-		try {
-			this.resourceRoot = buildResource(getPath());
-//			this.resources.put(this.resourceRoot.getName(), this.resourceRoot);
+		this.resourceRoot = buildResource(getPath());
+		try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(getPath())) {
 			
-			DirectoryStream<Path> dirStream = Files.newDirectoryStream(getPath());
 			for (Path resourcePath : dirStream) {
 				if (Files.isDirectory(resourcePath)) {
 					Resource resource = buildResource(resourcePath);
 					resources.put(resource.getName(), resource);
 				}
 			}
-			dirStream.close();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
