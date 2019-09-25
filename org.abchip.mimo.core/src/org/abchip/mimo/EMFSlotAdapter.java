@@ -102,7 +102,7 @@ public class EMFSlotAdapter extends SlotImpl {
 		return element.getEType().getInstanceClassName();
 	}
 
-	protected ETypedElement getETypedElement() {
+	public ETypedElement getETypedElement() {
 		return this.element;
 	}
 

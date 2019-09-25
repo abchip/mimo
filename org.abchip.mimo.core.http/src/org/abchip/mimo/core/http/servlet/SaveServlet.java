@@ -38,14 +38,6 @@ public class SaveServlet extends BaseServlet {
 		String json = request.getParameter("json");
 
 		EntitySerializer<E> entitySerializer = resourceManager.createEntitySerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-		/*
-		 * ObjectMapper objectMapper = new ObjectMapper(); Map<String, Object> map =
-		 * objectMapper.readValue(json, new TypeReference<Map<String, Object>>() { });
-		 * if (!map.containsKey("eClass")) { String eClass =
-		 * resourceSerializer.getFrame().getURI().toString(); map.put("eClass", eClass);
-		 * json = objectMapper.writeValueAsString(map); }
-		 */
-
 		entitySerializer.load(json, false);
 		E entity = entitySerializer.get();
 

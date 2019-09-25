@@ -68,7 +68,7 @@ public interface Language extends EntityNameable, Textable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.language.LanguagePackage#getLanguage_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

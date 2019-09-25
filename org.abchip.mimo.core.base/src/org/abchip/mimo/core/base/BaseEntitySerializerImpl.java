@@ -23,6 +23,7 @@ import java.util.TimeZone;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.impl.EntitySerializerImpl;
 import org.eclipse.emf.common.util.URI;
@@ -38,11 +39,14 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 public class BaseEntitySerializerImpl<E extends Entity> extends EntitySerializerImpl<E> {
 
 	private ResourceReusable resource = null;
+	private FrameManager frameManager = null;
 
 	public BaseEntitySerializerImpl(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType) {
 
 		this.setContextProvider(contextProvider);
 		this.setFrame(frame);
+
+		this.frameManager = contextProvider.getContext().get(FrameManager.class);
 
 		switch (serializationType) {
 		case JAVA_SCRIPT_OBJECT_NOTATION:
@@ -66,6 +70,10 @@ public class BaseEntitySerializerImpl<E extends Entity> extends EntitySerializer
 			this.resource = new XMIProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
 		}
+	}
+
+	protected FrameManager getFrameManager() {
+		return this.frameManager;
 	}
 
 	@Override
