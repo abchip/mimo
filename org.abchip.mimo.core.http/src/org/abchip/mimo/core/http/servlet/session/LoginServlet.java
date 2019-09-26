@@ -87,9 +87,6 @@ public class LoginServlet extends HttpServlet {
 			EntityReader<?> oauth2Reader = resourceManager.getEntityReader(contextProvider, entityName);
 			EntityNameable oauth2Entity = oauth2Reader.first();
 
-			getDefaultProvider().logout(contextProvider);
-			contextProvider.getContext().close();
-
 			if (oauth2Entity == null) {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				return;
@@ -111,6 +108,10 @@ public class LoginServlet extends HttpServlet {
 			serializer.save(response.getOutputStream());
 
 			response.flushBuffer();
+
+			getDefaultProvider().logout(contextProvider);
+			contextProvider.getContext().close();
+			
 			return;
 		}
 
