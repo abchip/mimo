@@ -31,7 +31,6 @@ public class LogoutServlet extends BaseServlet {
 		contextProvider.getContext().close();
 		
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
-		response.flushBuffer();
 		
 		session.invalidate();
 	}
