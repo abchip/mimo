@@ -1089,6 +1089,18 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+      <eOperations name="checkFrameAutorization" lowerBound="1">
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/Entity"/>
+        </eTypeParameters>
+        <eParameters name="contextProvider" lowerBound="1" eType="#//context/ContextProvider"/>
+        <eParameters name="frame" lowerBound="1">
+          <eGenericType eClassifier="#//entity/Frame">
+            <eTypeArguments eTypeParameter="#//entity/FrameManager/checkFrameAutorization/E"/>
+          </eGenericType>
+        </eParameters>
+        <eParameters name="resource" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Nameable" abstract="true" interface="true">
       <eOperations name="getName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

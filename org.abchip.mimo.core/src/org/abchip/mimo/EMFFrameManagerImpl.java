@@ -55,4 +55,12 @@ public class EMFFrameManagerImpl implements FrameManager {
 	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
 		return (Frame<E>) EMFFrameHelper.getFrames().get(klass.getSimpleName());
 	}
+
+	@SuppressWarnings("unused")
+	@Override
+	public <E extends Entity> void checkFrameAutorization(ContextProvider contextProvider, Frame<E> frame, String resource) {
+		// TODO Auto-generated method stub
+		if(false)
+			throw new SecurityException("Permission denied for frame: " + frame.getName());
+	}
 }

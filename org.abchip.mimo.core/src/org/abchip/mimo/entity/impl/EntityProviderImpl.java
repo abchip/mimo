@@ -112,9 +112,9 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		else
 			resource = RESOURCE_MASTER;
 
-		if(resource == null || resource.isEmpty())
+		if (resource == null || resource.isEmpty())
 			return null;
-		
+
 		return getEntityReader(contextProvider, frame, resource);
 	}
 
@@ -138,8 +138,12 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 		if (resource == null)
 			return getEntityReader(contextProvider, frame);
-		else
+		else {
+
+			this.checkAuthorization(contextProvider, resource);
+
 			return doEntityReader(contextProvider, frame, resource);
+		}
 	}
 
 	/**
@@ -197,9 +201,9 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		else
 			resource = RESOURCE_MASTER;
 
-		if(resource == null || resource.isEmpty())
+		if (resource == null || resource.isEmpty())
 			return null;
-		
+
 		return getEntityWriter(contextProvider, frame, resource);
 	}
 
@@ -235,8 +239,12 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 
 		if (resource == null)
 			return getEntityWriter(contextProvider, frame);
-		else
+		else {
+
+			this.checkAuthorization(contextProvider, resource);
+
 			return doEntityWriter(contextProvider, frame, resource);
+		}
 	}
 
 	/**
@@ -244,18 +252,16 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 	 * 
 	 * @generated NOT
 	 */
-	protected final void checkAuthorization(ContextProvider contextProvider, String resource) {
+	private final void checkAuthorization(ContextProvider contextProvider, String resource) {
 		ContextDescription contextDescription = contextProvider.getContextDescription();
 
 		// check authorization
 		if (contextDescription.isTenant()) {
 			if (!contextDescription.getTenant().equals(resource))
 				throw new SecurityException("Permission denied for tenant: " + contextDescription.getTenant());
-		} else {
-			// master
-
-			// TODO check user admin
 		}
+
+		// check frame authorization
 	}
 
 	/**

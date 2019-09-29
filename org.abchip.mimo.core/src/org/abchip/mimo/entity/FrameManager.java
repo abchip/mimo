@@ -5,9 +5,6 @@
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
  *
- *
- * Contributors:
- *   Mattia Rocchi - Initial API and implementation
  */
 package org.abchip.mimo.entity;
 
@@ -63,4 +60,12 @@ public interface FrameManager {
 	 * @generated
 	 */
 	<E extends Entity> Frame<E> getFrame(Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" resourceRequired="true"
+	 * @generated
+	 */
+	<E extends Entity> void checkFrameAutorization(ContextProvider contextProvider, Frame<E> frame, String resource);
 } // FrameManager

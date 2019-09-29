@@ -1775,6 +1775,17 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(frameManagerEClass, null, "checkFrameAutorization", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(this.getEntity());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "resource", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(nameableEClass, Nameable.class, "Nameable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(nameableEClass, ecorePackage.getEString(), "getName", 1, 1, IS_UNIQUE, IS_ORDERED);
