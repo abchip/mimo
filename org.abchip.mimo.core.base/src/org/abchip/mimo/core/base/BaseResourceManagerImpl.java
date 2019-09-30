@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.MimoConstants;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
@@ -103,7 +104,9 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 
 	@Override
 	public <E extends EntityNameable> EntityReader<E> doEntityReader(ContextProvider contextProvider, Frame<E> frame, String resource) {
-		
+
+		this.checkAuthorization(contextProvider, resource);
+
 		EntityProvider resourceProvider = getProvider(frame);
 		if (resourceProvider == null)
 			return null;
@@ -216,5 +219,17 @@ public class BaseResourceManagerImpl extends EntityProviderImpl implements Resou
 		}
 
 		return entityProvider;
+	}
+	
+	private final void checkAuthorization(ContextProvider contextProvider, String resource) {
+		ContextDescription contextDescription = contextProvider.getContextDescription();
+
+		// check authorization
+		if (contextDescription.isTenant()) {
+//			if (!contextDescription.getTenant().equals(resource))
+//				throw new SecurityException("Permission denied for tenant: " + contextDescription.getTenant());
+		}
+
+		// check frame authorization
 	}
 }

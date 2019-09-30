@@ -12,7 +12,6 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
-import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
@@ -139,9 +138,6 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		if (resource == null)
 			return getEntityReader(contextProvider, frame);
 		else {
-
-			this.checkAuthorization(contextProvider, resource);
-
 			return doEntityReader(contextProvider, frame, resource);
 		}
 	}
@@ -240,28 +236,8 @@ public abstract class EntityProviderImpl extends MinimalEObjectImpl.Container im
 		if (resource == null)
 			return getEntityWriter(contextProvider, frame);
 		else {
-
-			this.checkAuthorization(contextProvider, resource);
-
 			return doEntityWriter(contextProvider, frame, resource);
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	private final void checkAuthorization(ContextProvider contextProvider, String resource) {
-		ContextDescription contextDescription = contextProvider.getContextDescription();
-
-		// check authorization
-		if (contextDescription.isTenant()) {
-			if (!contextDescription.getTenant().equals(resource))
-				throw new SecurityException("Permission denied for tenant: " + contextDescription.getTenant());
-		}
-
-		// check frame authorization
 	}
 
 	/**
