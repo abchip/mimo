@@ -217,4 +217,12 @@ public interface Slot extends EntityNameable, Textable {
 	 * @generated
 	 */
 	boolean isDate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	boolean isEnum();
 } // Slot

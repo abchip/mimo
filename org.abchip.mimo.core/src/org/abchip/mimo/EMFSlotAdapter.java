@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo;
 
+import java.util.Date;
+
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityFactory;
@@ -164,8 +166,42 @@ public class EMFSlotAdapter extends SlotImpl {
 			} else
 				"".toString();
 		}
-		
-		if(this.domain != null)
+
+		if (this.domain != null)
 			this.route = this.domain.getRoute() != null;
+	}
+
+	@Override
+	public boolean isBoolean() {
+		if (this.getDataClassName() == null)
+			return false;
+
+		if (this.getDataClassName().equals(Boolean.class.getSimpleName().toLowerCase()))
+			return true;
+
+		return false;
+	}
+
+	@Override
+	public boolean isDate() {
+		if (this.getDataClassName() == null)
+			return false;
+
+		if (this.getDataClassName().equals(Date.class.getCanonicalName()))
+			return true;
+
+		return false;
+	}
+
+	@Override
+	public boolean isEnum() {
+
+		if (this.getDataClassName() == null)
+			return false;
+
+		if (element.getEType() instanceof EEnum)
+			return true;
+
+		return false;
 	}
 }

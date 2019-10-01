@@ -1319,6 +1319,7 @@
       <eOperations name="getDataClassName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="isBoolean" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="isDate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="isEnum" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="#//entity/Cardinality"
           changeable="false" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="containment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"

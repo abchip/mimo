@@ -22,6 +22,7 @@ import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -193,14 +194,19 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 		EStructuralFeature eFeature = eClass.getEStructuralFeature(slot);
 		if (eFeature != null) {
-			try {
-				if(value == null)
-					eObject.eUnset(eFeature);
-				else
+			if (value == null)
+				eObject.eUnset(eFeature);
+			else {
+				try {
 					eObject.eSet(eFeature, value);
-			}
-			catch(Exception e) {
-				e.toString();
+				} catch (ClassCastException e) {
+					if(eFeature.getEType() instanceof EDataType) {
+						value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
+						eObject.eSet(eFeature, value);
+					}
+				} catch (Exception e) {
+					e.toString();
+				}
 			}
 		}
 	}
