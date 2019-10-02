@@ -118,6 +118,15 @@ public class LookupSchemaServlet extends BaseServlet {
 				column.setView("checkbox");
 		}
 
+		if (slot.isNumeric())
+			column.setSort("int");
+		else if (slot.isDate())
+			column.setSort("raw");
+		else if (slot.isString())
+			column.setSort("string");
+		else
+			column.setSort("raw");
+
 		return column;
 	}
 

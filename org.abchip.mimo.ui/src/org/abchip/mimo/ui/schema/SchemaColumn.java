@@ -23,6 +23,7 @@ import org.abchip.mimo.entity.Entity;
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getSort <em>Sort</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn()
@@ -107,6 +108,32 @@ public interface SchemaColumn extends Entity {
 	 * @generated
 	 */
 	void setLeftSplit(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Sort</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sort</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sort</em>' attribute.
+	 * @see #setSort(String)
+	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Sort()
+	 * @model
+	 * @generated
+	 */
+	String getSort();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#getSort <em>Sort</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sort</em>' attribute.
+	 * @see #getSort()
+	 * @generated
+	 */
+	void setSort(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.

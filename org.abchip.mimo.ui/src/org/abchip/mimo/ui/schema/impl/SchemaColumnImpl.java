@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getView <em>View</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isLeftSplit <em>Left Split</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getSort <em>Sort</em>}</li>
  * </ul>
  *
  * @generated
@@ -194,6 +195,26 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	protected boolean leftSplit = LEFT_SPLIT_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getSort() <em>Sort</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSort()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SORT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSort() <em>Sort</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSort()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sort = SORT_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -279,6 +300,29 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		leftSplit = newLeftSplit;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT, oldLeftSplit, leftSplit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSort() {
+		return sort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSort(String newSort) {
+		String oldSort = sort;
+		sort = newSort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__SORT, oldSort, sort));
 	}
 
 	/**
@@ -456,6 +500,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return getView();
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				return isLeftSplit();
+			case SchemaPackage.SCHEMA_COLUMN__SORT:
+				return getSort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -491,6 +537,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				setLeftSplit((Boolean)newValue);
+				return;
+			case SchemaPackage.SCHEMA_COLUMN__SORT:
+				setSort((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -528,6 +577,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				setLeftSplit(LEFT_SPLIT_EDEFAULT);
 				return;
+			case SchemaPackage.SCHEMA_COLUMN__SORT:
+				setSort(SORT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -556,6 +608,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				return leftSplit != LEFT_SPLIT_EDEFAULT;
+			case SchemaPackage.SCHEMA_COLUMN__SORT:
+				return SORT_EDEFAULT == null ? sort != null : !SORT_EDEFAULT.equals(sort);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -584,6 +638,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		result.append(view);
 		result.append(", leftSplit: ");
 		result.append(leftSplit);
+		result.append(", sort: ");
+		result.append(sort);
 		result.append(')');
 		return result.toString();
 	}

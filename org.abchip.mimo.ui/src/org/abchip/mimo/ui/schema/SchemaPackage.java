@@ -178,13 +178,22 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__LEFT_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Sort</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__SORT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
+	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 9;
 
 
 	/**
@@ -261,6 +270,17 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSchemaColumn_LeftSplit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#getSort <em>Sort</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sort</em>'.
+	 * @see org.abchip.mimo.ui.schema.SchemaColumn#getSort()
+	 * @see #getSchemaColumn()
+	 * @generated
+	 */
+	EAttribute getSchemaColumn_Sort();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}'.
@@ -398,6 +418,14 @@ public interface SchemaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCHEMA_COLUMN__LEFT_SPLIT = eINSTANCE.getSchemaColumn_LeftSplit();
+
+		/**
+		 * The meta object literal for the '<em><b>Sort</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA_COLUMN__SORT = eINSTANCE.getSchemaColumn_Sort();
 
 		/**
 		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.

@@ -1992,6 +1992,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isEnum", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isNumeric", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isString", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(textableEClass, Textable.class, "Textable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(textableEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);

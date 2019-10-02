@@ -204,4 +204,32 @@ public class EMFSlotAdapter extends SlotImpl {
 
 		return false;
 	}
+
+	@Override
+	public boolean isNumeric() {
+
+		if (this.getDataClassName() == null)
+			return false;
+
+		Class<?> klass = element.getEType().getInstanceClass();
+		if (klass.isPrimitive()) {
+			if (klass.getName().equals("long") || klass.getName().equals("integer") || klass.getName().equals("short") || klass.getName().equals("float") || klass.getName().equals("double"))
+				return true;
+		} else if (Number.class.isAssignableFrom(klass))
+			return true;
+
+		return false;
+	}
+
+	@Override
+	public boolean isString() {
+
+		if (this.getDataClassName() == null)
+			return false;
+
+		if (this.getDataClassName().equals(String.class.getCanonicalName()))
+			return true;
+
+		return false;
+	}
 }

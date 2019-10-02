@@ -787,6 +787,8 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isBoolean"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isDate"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isEnum"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isNumeric"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isString"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Textable">
         <genOperations ecoreOperation="mimo.ecore#//entity/Textable/getText"/>

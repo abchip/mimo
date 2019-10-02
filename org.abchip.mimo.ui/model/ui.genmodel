@@ -105,6 +105,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/id"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/view"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/leftSplit"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/sort"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Toolbar" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
