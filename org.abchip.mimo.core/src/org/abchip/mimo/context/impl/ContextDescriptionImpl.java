@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#isAnonymous <em>Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getPicture <em>Picture</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getUser <em>User</em>}</li>
  * </ul>
@@ -90,6 +91,26 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getPicture() <em>Picture</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPicture()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PICTURE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPicture() <em>Picture</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPicture()
+	 * @generated
+	 * @ordered
+	 */
+	protected String picture = PICTURE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -209,6 +230,29 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPicture() {
+		return picture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPicture(String newPicture) {
+		String oldPicture = picture;
+		picture = newPicture;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__PICTURE, oldPicture, picture));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -276,6 +320,8 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return getDataPath();
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				return getId();
+			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
+				return getPicture();
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				return getTenant();
 			case ContextPackage.CONTEXT_DESCRIPTION__USER:
@@ -299,6 +345,9 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				setId((String)newValue);
+				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
+				setPicture((String)newValue);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				setTenant((String)newValue);
@@ -326,6 +375,9 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
+				setPicture(PICTURE_EDEFAULT);
+				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				setTenant(TENANT_EDEFAULT);
 				return;
@@ -349,6 +401,8 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return DATA_PATH_EDEFAULT == null ? dataPath != null : !DATA_PATH_EDEFAULT.equals(dataPath);
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
+				return PICTURE_EDEFAULT == null ? picture != null : !PICTURE_EDEFAULT.equals(picture);
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 			case ContextPackage.CONTEXT_DESCRIPTION__USER:
@@ -372,6 +426,8 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		result.append(dataPath);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", picture: ");
+		result.append(picture);
 		result.append(", tenant: ");
 		result.append(tenant);
 		result.append(", user: ");

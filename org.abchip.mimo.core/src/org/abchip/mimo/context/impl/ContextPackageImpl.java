@@ -454,8 +454,18 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAuthenticationUserToken_User() {
+	public EAttribute getAuthenticationUserToken_Picture() {
 		return (EAttribute)authenticationUserTokenEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAuthenticationUserToken_User() {
+		return (EAttribute)authenticationUserTokenEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -564,7 +574,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_Tenant() {
+	public EAttribute getContextDescription_Picture() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -574,8 +584,18 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_User() {
+	public EAttribute getContextDescription_Tenant() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContextDescription_User() {
+		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -932,6 +952,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__PROVIDER);
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN);
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__ID_TOKEN);
+		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__PICTURE);
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__USER);
 
 		authenticationAnonymousEClass = createEClass(AUTHENTICATION_ANONYMOUS);
@@ -946,6 +967,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__ANONYMOUS);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__DATA_PATH);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__ID);
+		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__PICTURE);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__TENANT);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__USER);
 
@@ -1096,6 +1118,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getAuthenticationUserToken_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserToken_AccessToken(), ecorePackage.getEString(), "accessToken", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserToken_IdToken(), ecorePackage.getEString(), "idToken", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthenticationUserToken_Picture(), ecorePackage.getEString(), "picture", null, 0, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserToken_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationAnonymousEClass, AuthenticationAnonymous.class, "AuthenticationAnonymous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1198,6 +1221,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getContextDescription_Anonymous(), ecorePackage.getEBoolean(), "anonymous", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_DataPath(), ecorePackage.getEString(), "dataPath", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_Id(), ecorePackage.getEString(), "id", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDescription_Picture(), ecorePackage.getEString(), "picture", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_User(), ecorePackage.getEString(), "user", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

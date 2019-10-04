@@ -20,6 +20,7 @@ package org.abchip.mimo.context;
  *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getProvider <em>Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getIdToken <em>Id Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getPicture <em>Picture</em>}</li>
  *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getUser <em>User</em>}</li>
  * </ul>
  *
@@ -105,6 +106,32 @@ public interface AuthenticationUserToken extends Authentication {
 	 * @generated
 	 */
 	void setIdToken(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Picture</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Picture</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Picture</em>' attribute.
+	 * @see #setPicture(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken_Picture()
+	 * @model
+	 * @generated
+	 */
+	String getPicture();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserToken#getPicture <em>Picture</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Picture</em>' attribute.
+	 * @see #getPicture()
+	 * @generated
+	 */
+	void setPicture(String value);
 
 	/**
 	 * Returns the value of the '<em><b>User</b></em>' attribute.

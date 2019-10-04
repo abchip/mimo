@@ -22,6 +22,7 @@ import org.abchip.mimo.entity.Entity;
  *   <li>{@link org.abchip.mimo.context.ContextDescription#isAnonymous <em>Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getId <em>Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ContextDescription#getPicture <em>Picture</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getUser <em>User</em>}</li>
  * </ul>
@@ -108,6 +109,32 @@ public interface ContextDescription extends Entity {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Picture</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Picture</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Picture</em>' attribute.
+	 * @see #setPicture(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_Picture()
+	 * @model
+	 * @generated
+	 */
+	String getPicture();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getPicture <em>Picture</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Picture</em>' attribute.
+	 * @see #getPicture()
+	 * @generated
+	 */
+	void setPicture(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.

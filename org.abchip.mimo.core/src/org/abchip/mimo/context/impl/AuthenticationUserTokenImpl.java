@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getProvider <em>Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getIdToken <em>Id Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getPicture <em>Picture</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getUser <em>User</em>}</li>
  * </ul>
  *
@@ -94,6 +95,26 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 * @ordered
 	 */
 	protected String idToken = ID_TOKEN_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPicture() <em>Picture</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPicture()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PICTURE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPicture() <em>Picture</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPicture()
+	 * @generated
+	 * @ordered
+	 */
+	protected String picture = PICTURE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getUser() <em>User</em>}' attribute.
@@ -214,6 +235,29 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 * @generated
 	 */
 	@Override
+	public String getPicture() {
+		return picture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPicture(String newPicture) {
+		String oldPicture = picture;
+		picture = newPicture;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE, oldPicture, picture));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getUser() {
 		return user;
 	}
@@ -245,6 +289,8 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 				return getAccessToken();
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
 				return getIdToken();
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
+				return getPicture();
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
 				return getUser();
 		}
@@ -267,6 +313,9 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 				return;
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
 				setIdToken((String)newValue);
+				return;
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
+				setPicture((String)newValue);
 				return;
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
 				setUser((String)newValue);
@@ -292,6 +341,9 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
 				setIdToken(ID_TOKEN_EDEFAULT);
 				return;
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
+				setPicture(PICTURE_EDEFAULT);
+				return;
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
 				setUser(USER_EDEFAULT);
 				return;
@@ -313,6 +365,8 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 				return ACCESS_TOKEN_EDEFAULT == null ? accessToken != null : !ACCESS_TOKEN_EDEFAULT.equals(accessToken);
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
 				return ID_TOKEN_EDEFAULT == null ? idToken != null : !ID_TOKEN_EDEFAULT.equals(idToken);
+			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
+				return PICTURE_EDEFAULT == null ? picture != null : !PICTURE_EDEFAULT.equals(picture);
 			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
 				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
 		}
@@ -335,6 +389,8 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		result.append(accessToken);
 		result.append(", idToken: ");
 		result.append(idToken);
+		result.append(", picture: ");
+		result.append(picture);
 		result.append(", user: ");
 		result.append(user);
 		result.append(')');

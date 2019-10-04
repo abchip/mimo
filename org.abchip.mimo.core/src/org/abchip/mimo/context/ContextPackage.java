@@ -205,13 +205,22 @@ public interface ContextPackage extends EPackage {
 	int AUTHENTICATION_USER_TOKEN__ID_TOKEN = AUTHENTICATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Picture</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_USER_TOKEN__PICTURE = AUTHENTICATION_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_USER_TOKEN__USER = AUTHENTICATION_FEATURE_COUNT + 3;
+	int AUTHENTICATION_USER_TOKEN__USER = AUTHENTICATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Authentication User Token</em>' class.
@@ -220,7 +229,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_USER_TOKEN_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 4;
+	int AUTHENTICATION_USER_TOKEN_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.AuthenticationAnonymousImpl <em>Authentication Anonymous</em>}' class.
@@ -364,13 +373,22 @@ public interface ContextPackage extends EPackage {
 	int CONTEXT_DESCRIPTION__ID = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Picture</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DESCRIPTION__PICTURE = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__TENANT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int CONTEXT_DESCRIPTION__TENANT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -379,7 +397,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__USER = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int CONTEXT_DESCRIPTION__USER = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Description</em>' class.
@@ -388,7 +406,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+	int CONTEXT_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Root</em>' class.
@@ -901,6 +919,17 @@ public interface ContextPackage extends EPackage {
 	EAttribute getAuthenticationUserToken_IdToken();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getPicture <em>Picture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Picture</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationUserToken#getPicture()
+	 * @see #getAuthenticationUserToken()
+	 * @generated
+	 */
+	EAttribute getAuthenticationUserToken_Picture();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationUserToken#getUser <em>User</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1015,6 +1044,17 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContextDescription_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#getPicture <em>Picture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Picture</em>'.
+	 * @see org.abchip.mimo.context.ContextDescription#getPicture()
+	 * @see #getContextDescription()
+	 * @generated
+	 */
+	EAttribute getContextDescription_Picture();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#getTenant <em>Tenant</em>}'.
@@ -1484,6 +1524,14 @@ public interface ContextPackage extends EPackage {
 		EAttribute AUTHENTICATION_USER_TOKEN__ID_TOKEN = eINSTANCE.getAuthenticationUserToken_IdToken();
 
 		/**
+		 * The meta object literal for the '<em><b>Picture</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATION_USER_TOKEN__PICTURE = eINSTANCE.getAuthenticationUserToken_Picture();
+
+		/**
 		 * The meta object literal for the '<em><b>User</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1580,6 +1628,14 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTEXT_DESCRIPTION__ID = eINSTANCE.getContextDescription_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Picture</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_DESCRIPTION__PICTURE = eINSTANCE.getContextDescription_Picture();
 
 		/**
 		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
