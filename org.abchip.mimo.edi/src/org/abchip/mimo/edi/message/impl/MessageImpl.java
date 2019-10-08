@@ -35,10 +35,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageId <em>Message Id</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageTypeId <em>Message Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getStatus <em>Status</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getSenderId <em>Sender Id</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getFrameId <em>Frame Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getSender <em>Sender</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getFrame <em>Frame</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getBody <em>Body</em>}</li>
  * </ul>
@@ -152,24 +152,24 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	protected String messageId = MESSAGE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMessageTypeId() <em>Message Type Id</em>}' attribute.
+	 * The default value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMessageTypeId()
+	 * @see #getMessageType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MESSAGE_TYPE_ID_EDEFAULT = null;
+	protected static final String MESSAGE_TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMessageTypeId() <em>Message Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMessageTypeId()
+	 * @see #getMessageType()
 	 * @generated
 	 * @ordered
 	 */
-	protected String messageTypeId = MESSAGE_TYPE_ID_EDEFAULT;
+	protected String messageType = MESSAGE_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -192,44 +192,44 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	protected MessageStatus status = STATUS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSenderId() <em>Sender Id</em>}' attribute.
+	 * The default value of the '{@link #getSender() <em>Sender</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSenderId()
+	 * @see #getSender()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SENDER_ID_EDEFAULT = null;
+	protected static final String SENDER_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSenderId() <em>Sender Id</em>}' attribute.
+	 * The cached value of the '{@link #getSender() <em>Sender</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSenderId()
+	 * @see #getSender()
 	 * @generated
 	 * @ordered
 	 */
-	protected String senderId = SENDER_ID_EDEFAULT;
+	protected String sender = SENDER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFrameId() <em>Frame Id</em>}' attribute.
+	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFrameId()
+	 * @see #getFrame()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FRAME_ID_EDEFAULT = null;
+	protected static final String FRAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFrameId() <em>Frame Id</em>}' attribute.
+	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFrameId()
+	 * @see #getFrame()
 	 * @generated
 	 * @ordered
 	 */
-	protected String frameId = FRAME_ID_EDEFAULT;
+	protected String frame = FRAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEvent() <em>Event</em>}' attribute.
@@ -411,8 +411,8 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public String getMessageTypeId() {
-		return messageTypeId;
+	public String getMessageType() {
+		return messageType;
 	}
 
 	/**
@@ -421,34 +421,11 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public void setMessageTypeId(String newMessageTypeId) {
-		String oldMessageTypeId = messageTypeId;
-		messageTypeId = newMessageTypeId;
+	public void setMessageType(String newMessageType) {
+		String oldMessageType = messageType;
+		messageType = newMessageType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__MESSAGE_TYPE_ID, oldMessageTypeId, messageTypeId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getFrameId() {
-		return frameId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFrameId(String newFrameId) {
-		String oldFrameId = frameId;
-		frameId = newFrameId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__FRAME_ID, oldFrameId, frameId));
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__MESSAGE_TYPE, oldMessageType, messageType));
 	}
 
 	/**
@@ -503,29 +480,6 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public String getSenderId() {
-		return senderId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSenderId(String newSenderId) {
-		String oldSenderId = senderId;
-		senderId = newSenderId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__SENDER_ID, oldSenderId, senderId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public MessageStatus getStatus() {
 		return status;
 	}
@@ -549,6 +503,52 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
+	public String getSender() {
+		return sender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSender(String newSender) {
+		String oldSender = sender;
+		sender = newSender;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__SENDER, oldSender, sender));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getFrame() {
+		return frame;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFrame(String newFrame) {
+		String oldFrame = frame;
+		frame = newFrame;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__FRAME, oldFrame, frame));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MessagePackage.MESSAGE__CREATED_STAMP:
@@ -561,14 +561,14 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 				return getLastUpdatedTxStamp();
 			case MessagePackage.MESSAGE__MESSAGE_ID:
 				return getMessageId();
-			case MessagePackage.MESSAGE__MESSAGE_TYPE_ID:
-				return getMessageTypeId();
+			case MessagePackage.MESSAGE__MESSAGE_TYPE:
+				return getMessageType();
 			case MessagePackage.MESSAGE__STATUS:
 				return getStatus();
-			case MessagePackage.MESSAGE__SENDER_ID:
-				return getSenderId();
-			case MessagePackage.MESSAGE__FRAME_ID:
-				return getFrameId();
+			case MessagePackage.MESSAGE__SENDER:
+				return getSender();
+			case MessagePackage.MESSAGE__FRAME:
+				return getFrame();
 			case MessagePackage.MESSAGE__EVENT:
 				return getEvent();
 			case MessagePackage.MESSAGE__BODY:
@@ -600,17 +600,17 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 			case MessagePackage.MESSAGE__MESSAGE_ID:
 				setMessageId((String)newValue);
 				return;
-			case MessagePackage.MESSAGE__MESSAGE_TYPE_ID:
-				setMessageTypeId((String)newValue);
+			case MessagePackage.MESSAGE__MESSAGE_TYPE:
+				setMessageType((String)newValue);
 				return;
 			case MessagePackage.MESSAGE__STATUS:
 				setStatus((MessageStatus)newValue);
 				return;
-			case MessagePackage.MESSAGE__SENDER_ID:
-				setSenderId((String)newValue);
+			case MessagePackage.MESSAGE__SENDER:
+				setSender((String)newValue);
 				return;
-			case MessagePackage.MESSAGE__FRAME_ID:
-				setFrameId((String)newValue);
+			case MessagePackage.MESSAGE__FRAME:
+				setFrame((String)newValue);
 				return;
 			case MessagePackage.MESSAGE__EVENT:
 				setEvent((EntityEvent)newValue);
@@ -645,17 +645,17 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 			case MessagePackage.MESSAGE__MESSAGE_ID:
 				setMessageId(MESSAGE_ID_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE__MESSAGE_TYPE_ID:
-				setMessageTypeId(MESSAGE_TYPE_ID_EDEFAULT);
+			case MessagePackage.MESSAGE__MESSAGE_TYPE:
+				setMessageType(MESSAGE_TYPE_EDEFAULT);
 				return;
 			case MessagePackage.MESSAGE__STATUS:
 				setStatus(STATUS_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE__SENDER_ID:
-				setSenderId(SENDER_ID_EDEFAULT);
+			case MessagePackage.MESSAGE__SENDER:
+				setSender(SENDER_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE__FRAME_ID:
-				setFrameId(FRAME_ID_EDEFAULT);
+			case MessagePackage.MESSAGE__FRAME:
+				setFrame(FRAME_EDEFAULT);
 				return;
 			case MessagePackage.MESSAGE__EVENT:
 				setEvent(EVENT_EDEFAULT);
@@ -685,14 +685,14 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
 			case MessagePackage.MESSAGE__MESSAGE_ID:
 				return MESSAGE_ID_EDEFAULT == null ? messageId != null : !MESSAGE_ID_EDEFAULT.equals(messageId);
-			case MessagePackage.MESSAGE__MESSAGE_TYPE_ID:
-				return MESSAGE_TYPE_ID_EDEFAULT == null ? messageTypeId != null : !MESSAGE_TYPE_ID_EDEFAULT.equals(messageTypeId);
+			case MessagePackage.MESSAGE__MESSAGE_TYPE:
+				return MESSAGE_TYPE_EDEFAULT == null ? messageType != null : !MESSAGE_TYPE_EDEFAULT.equals(messageType);
 			case MessagePackage.MESSAGE__STATUS:
 				return status != STATUS_EDEFAULT;
-			case MessagePackage.MESSAGE__SENDER_ID:
-				return SENDER_ID_EDEFAULT == null ? senderId != null : !SENDER_ID_EDEFAULT.equals(senderId);
-			case MessagePackage.MESSAGE__FRAME_ID:
-				return FRAME_ID_EDEFAULT == null ? frameId != null : !FRAME_ID_EDEFAULT.equals(frameId);
+			case MessagePackage.MESSAGE__SENDER:
+				return SENDER_EDEFAULT == null ? sender != null : !SENDER_EDEFAULT.equals(sender);
+			case MessagePackage.MESSAGE__FRAME:
+				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
 			case MessagePackage.MESSAGE__EVENT:
 				return event != EVENT_EDEFAULT;
 			case MessagePackage.MESSAGE__BODY:
@@ -759,14 +759,14 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 		result.append(lastUpdatedTxStamp);
 		result.append(", messageId: ");
 		result.append(messageId);
-		result.append(", messageTypeId: ");
-		result.append(messageTypeId);
+		result.append(", messageType: ");
+		result.append(messageType);
 		result.append(", status: ");
 		result.append(status);
-		result.append(", senderId: ");
-		result.append(senderId);
-		result.append(", frameId: ");
-		result.append(frameId);
+		result.append(", sender: ");
+		result.append(sender);
+		result.append(", frame: ");
+		result.append(frame);
 		result.append(", event: ");
 		result.append(event);
 		result.append(", body: ");

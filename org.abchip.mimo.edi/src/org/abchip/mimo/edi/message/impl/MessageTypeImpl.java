@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getMessageTypeId <em>Message Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -112,23 +112,23 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 */
 	protected Date lastUpdatedTxStamp = LAST_UPDATED_TX_STAMP_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getMessageTypeId() <em>Message Type Id</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMessageTypeId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MESSAGE_TYPE_ID_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getMessageTypeId() <em>Message Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMessageTypeId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String messageTypeId = MESSAGE_TYPE_ID_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -269,8 +269,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @generated
 	 */
 	@Override
-	public String getMessageTypeId() {
-		return messageTypeId;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -279,11 +279,11 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @generated
 	 */
 	@Override
-	public void setMessageTypeId(String newMessageTypeId) {
-		String oldMessageTypeId = messageTypeId;
-		messageTypeId = newMessageTypeId;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID, oldMessageTypeId, messageTypeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__NAME, oldName, name));
 	}
 
 	/**
@@ -325,8 +325,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 				return getLastUpdatedStamp();
 			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
 				return getLastUpdatedTxStamp();
-			case MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID:
-				return getMessageTypeId();
+			case MessagePackage.MESSAGE_TYPE__NAME:
+				return getName();
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				return getText();
 		}
@@ -353,8 +353,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp((Date)newValue);
 				return;
-			case MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID:
-				setMessageTypeId((String)newValue);
+			case MessagePackage.MESSAGE_TYPE__NAME:
+				setName((String)newValue);
 				return;
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				setText((String)newValue);
@@ -383,8 +383,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp(LAST_UPDATED_TX_STAMP_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID:
-				setMessageTypeId(MESSAGE_TYPE_ID_EDEFAULT);
+			case MessagePackage.MESSAGE_TYPE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				setText(TEXT_EDEFAULT);
@@ -409,8 +409,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 				return LAST_UPDATED_STAMP_EDEFAULT == null ? lastUpdatedStamp != null : !LAST_UPDATED_STAMP_EDEFAULT.equals(lastUpdatedStamp);
 			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
 				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
-			case MessagePackage.MESSAGE_TYPE__MESSAGE_TYPE_ID:
-				return MESSAGE_TYPE_ID_EDEFAULT == null ? messageTypeId != null : !MESSAGE_TYPE_ID_EDEFAULT.equals(messageTypeId);
+			case MessagePackage.MESSAGE_TYPE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
@@ -473,8 +473,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		result.append(lastUpdatedStamp);
 		result.append(", lastUpdatedTxStamp: ");
 		result.append(lastUpdatedTxStamp);
-		result.append(", messageTypeId: ");
-		result.append(messageTypeId);
+		result.append(", name: ");
+		result.append(name);
 		result.append(", text: ");
 		result.append(text);
 		result.append(')');

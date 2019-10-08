@@ -19,7 +19,7 @@ import org.abchip.mimo.entity.EntityType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.message.MessageType#getMessageTypeId <em>Message Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.MessageType#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -30,31 +30,30 @@ import org.abchip.mimo.entity.EntityType;
 public interface MessageType<E extends Message> extends EntityType<E>, EntityInfo {
 
 	/**
-	 * Returns the value of the '<em><b>Message Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Message Type Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Type Id</em>' attribute.
-	 * @see #setMessageTypeId(String)
-	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_MessageTypeId()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_Name()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
-	String getMessageTypeId();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#getMessageTypeId <em>Message Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Type Id</em>' attribute.
-	 * @see #getMessageTypeId()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setMessageTypeId(String value);
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.

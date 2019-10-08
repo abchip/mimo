@@ -25,7 +25,8 @@
         <genEnumLiterals ecoreEnumLiteral="edi.ecore#//entity/EntityEvent/Delete"/>
       </genEnums>
       <genClasses ecoreClass="edi.ecore#//entity/EdiFrameSetup">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/messageType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/frame"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/entityCondition"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/entityEvent"/>
       </genClasses>
@@ -39,10 +40,10 @@
       </genEnums>
       <genClasses image="false" ecoreClass="edi.ecore#//message/Message">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/messageId"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/messageTypeId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/messageType"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/status"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/senderId"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/frameId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/sender"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/frame"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/event"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/body"/>
       </genClasses>
@@ -50,7 +51,7 @@
       <genClasses ecoreClass="edi.ecore#//message/MessageSent"/>
       <genClasses ecoreClass="edi.ecore#//message/MessageType">
         <genTypeParameters ecoreTypeParameter="edi.ecore#//message/MessageType/E"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/messageTypeId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/text"/>
       </genClasses>
     </nestedGenPackages>

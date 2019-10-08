@@ -18,7 +18,8 @@ import org.abchip.mimo.entity.EntityNameable;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType <em>Message Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getFrame <em>Frame</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityCondition <em>Entity Condition</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityEvent <em>Entity Event</em>}</li>
  * </ul>
@@ -29,31 +30,60 @@ import org.abchip.mimo.entity.EntityNameable;
  */
 public interface EdiFrameSetup extends EntityNameable {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Message Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Message Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.abchip.mimo.edi.entity.EntityPackage#getEdiFrameSetup_Name()
-	 * @model id="true" required="true"
+	 * @return the value of the '<em>Message Type</em>' attribute.
+	 * @see #setMessageType(String)
+	 * @see org.abchip.mimo.edi.entity.EntityPackage#getEdiFrameSetup_MessageType()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='MessageType'"
+	 * @generated
+	 */
+	String getMessageType();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType <em>Message Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Message Type</em>' attribute.
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	void setMessageType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Frame</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Frame</em>' attribute.
+	 * @see #setFrame(String)
+	 * @see org.abchip.mimo.edi.entity.EntityPackage#getEdiFrameSetup_Frame()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 *        annotation="mimo-ent-domain frame='Frame'"
 	 * @generated
 	 */
-	String getName();
+	String getFrame();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getFrame <em>Frame</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Frame</em>' attribute.
+	 * @see #getFrame()
 	 * @generated
 	 */
-	void setName(String value);
+	void setFrame(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Entity Condition</b></em>' attribute.

@@ -27,7 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getMessageType <em>Message Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getFrame <em>Frame</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getEntityCondition <em>Entity Condition</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getEntityEvent <em>Entity Event</em>}</li>
  * </ul>
@@ -36,29 +37,49 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSetup {
 	/**
+	 * The default value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MESSAGE_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String messageType = MESSAGE_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrame()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FRAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrame()
+	 * @generated
+	 * @ordered
+	 */
+	protected String frame = FRAME_EDEFAULT;
+
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEntityCondition() <em>Entity Condition</em>}' attribute.
@@ -125,8 +146,8 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getMessageType() {
+		return messageType;
 	}
 
 	/**
@@ -135,11 +156,34 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setMessageType(String newMessageType) {
+		String oldMessageType = messageType;
+		messageType = newMessageType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.EDI_FRAME_SETUP__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE, oldMessageType, messageType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getFrame() {
+		return frame;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFrame(String newFrame) {
+		String oldFrame = frame;
+		frame = newFrame;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.EDI_FRAME_SETUP__FRAME, oldFrame, frame));
 	}
 
 	/**
@@ -196,8 +240,10 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EntityPackage.EDI_FRAME_SETUP__NAME:
-				return getName();
+			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
+				return getMessageType();
+			case EntityPackage.EDI_FRAME_SETUP__FRAME:
+				return getFrame();
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
 				return getEntityCondition();
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_EVENT:
@@ -214,8 +260,11 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EntityPackage.EDI_FRAME_SETUP__NAME:
-				setName((String)newValue);
+			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
+				setMessageType((String)newValue);
+				return;
+			case EntityPackage.EDI_FRAME_SETUP__FRAME:
+				setFrame((String)newValue);
 				return;
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
 				setEntityCondition((EntityCondition)newValue);
@@ -235,8 +284,11 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EntityPackage.EDI_FRAME_SETUP__NAME:
-				setName(NAME_EDEFAULT);
+			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
+				setMessageType(MESSAGE_TYPE_EDEFAULT);
+				return;
+			case EntityPackage.EDI_FRAME_SETUP__FRAME:
+				setFrame(FRAME_EDEFAULT);
 				return;
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
 				setEntityCondition(ENTITY_CONDITION_EDEFAULT);
@@ -256,8 +308,10 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EntityPackage.EDI_FRAME_SETUP__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
+				return MESSAGE_TYPE_EDEFAULT == null ? messageType != null : !MESSAGE_TYPE_EDEFAULT.equals(messageType);
+			case EntityPackage.EDI_FRAME_SETUP__FRAME:
+				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
 				return entityCondition != ENTITY_CONDITION_EDEFAULT;
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_EVENT:
@@ -276,8 +330,10 @@ public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSet
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (messageType: ");
+		result.append(messageType);
+		result.append(", frame: ");
+		result.append(frame);
 		result.append(", entityCondition: ");
 		result.append(entityCondition);
 		result.append(", entityEvent: ");

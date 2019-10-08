@@ -3,9 +3,20 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="edi" nsURI="http://www.abchip.org/mimo/edi" nsPrefix="mimo-edi">
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/edi/entity" nsPrefix="mimo-edi-ent">
     <eClassifiers xsi:type="ecore:EClass" name="EdiFrameSetup" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageType" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-slot">
+          <details key="key" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+          <details key="frame" value="MessageType"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-slot">
+          <details key="key" value="true"/>
+        </eAnnotations>
         <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
           <details key="frame" value="Frame"/>
         </eAnnotations>
@@ -36,7 +47,7 @@
           <details key="key" value="true"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageTypeId" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageType" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
           <details key="frame" value="MessageType"/>
@@ -44,13 +55,13 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
           eType="#//message/MessageStatus"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="senderId" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sender" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
           <details key="frame" value="Party"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameId" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
           <details key="frame" value="Frame"/>
@@ -85,13 +96,9 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//message/Message"/>
       </eTypeParameters>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageTypeId" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true">
-        <eAnnotations source="mimo-ent-slot">
-          <details key="key" value="true"/>
-        </eAnnotations>
-      </eStructuralFeatures>
+          iD="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityType">

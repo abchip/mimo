@@ -142,7 +142,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEdiFrameSetup_Name() {
+	public EAttribute getEdiFrameSetup_MessageType() {
 		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -152,7 +152,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEdiFrameSetup_EntityCondition() {
+	public EAttribute getEdiFrameSetup_Frame() {
 		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -162,8 +162,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEdiFrameSetup_EntityEvent() {
+	public EAttribute getEdiFrameSetup_EntityCondition() {
 		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEdiFrameSetup_EntityEvent() {
+		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -216,7 +226,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Create classes and their features
 		ediFrameSetupEClass = createEClass(EDI_FRAME_SETUP);
-		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__NAME);
+		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__MESSAGE_TYPE);
+		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__FRAME);
 		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_CONDITION);
 		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_EVENT);
 
@@ -260,7 +271,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(ediFrameSetupEClass, EdiFrameSetup.class, "EdiFrameSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEdiFrameSetup_Name(), ecorePackage.getEString(), "name", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdiFrameSetup_MessageType(), ecorePackage.getEString(), "messageType", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdiFrameSetup_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdiFrameSetup_EntityCondition(), this.getEntityCondition(), "entityCondition", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdiFrameSetup_EntityEvent(), this.getEntityEvent(), "entityEvent", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -280,8 +292,32 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-slot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentslotAnnotations() {
+		String source = "mimo-ent-slot";
+		addAnnotation
+		  (getEdiFrameSetup_MessageType(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getEdiFrameSetup_Frame(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
 	}
 
 	/**
@@ -293,7 +329,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getEdiFrameSetup_Name(),
+		  (getEdiFrameSetup_MessageType(),
+		   source,
+		   new String[] {
+			   "frame", "MessageType"
+		   },
+		   new URI[] {
+			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
+		addAnnotation
+		  (getEdiFrameSetup_Frame(),
 		   source,
 		   new String[] {
 			   "frame", "Frame"
