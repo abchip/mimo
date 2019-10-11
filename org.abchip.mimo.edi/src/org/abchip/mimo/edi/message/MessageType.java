@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.edi.message;
 
+import java.util.List;
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityType;
 
@@ -21,6 +22,7 @@ import org.abchip.mimo.entity.EntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.MessageType#getEdiFrameSetups <em>Edi Frame Setups</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType()
@@ -80,4 +82,39 @@ public interface MessageType<E extends Message> extends EntityType<E>, EntityInf
 	 * @generated
 	 */
 	void setText(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Edi Frame Setups</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Edi Frame Setups</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Edi Frame Setups</em>' attribute list.
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_EdiFrameSetups()
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='EdiFrameSetup'"
+	 * @generated
+	 */
+	List<String> getEdiFrameSetups();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='MessageReceived' route='messageType'"
+	 * @generated
+	 */
+	List<String> messageReceiveds();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='MessageSent' route='messageType'"
+	 * @generated
+	 */
+	List<String> messageSents();
 } // MessageType

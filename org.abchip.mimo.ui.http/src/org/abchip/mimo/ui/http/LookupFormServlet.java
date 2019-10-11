@@ -67,9 +67,6 @@ public class LookupFormServlet extends BaseServlet {
 				if (slot.isDerived())
 					continue;
 
-				if (slot.getGroup() != null && slot.getGroup().equals("info"))
-					continue;
-
 				FormField field = buildFormField(slot);
 				if (slot.isKey()) {
 
@@ -115,6 +112,8 @@ public class LookupFormServlet extends BaseServlet {
 			label.append(c);
 		}
 		field.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
+
+		field.setGroup(slot.getGroup());
 
 		field.setTopSplit(slot.isKey());
 

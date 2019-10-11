@@ -133,13 +133,22 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__GROUP = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__HEADER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int SCHEMA_COLUMN__HEADER = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -148,7 +157,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int SCHEMA_COLUMN__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -157,16 +166,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__ID = EntityPackage.ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>View</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEMA_COLUMN__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int SCHEMA_COLUMN__ID = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Left Split</b></em>' attribute.
@@ -187,13 +187,22 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__SORT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 9;
+	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 10;
 
 
 	/**
@@ -292,6 +301,17 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSchemaColumn_Domain();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Group</em>'.
+	 * @see org.abchip.mimo.ui.schema.SchemaColumn#getGroup()
+	 * @see #getSchemaColumn()
+	 * @generated
+	 */
+	EAttribute getSchemaColumn_Group();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#getHeader <em>Header</em>}'.
@@ -434,6 +454,14 @@ public interface SchemaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCHEMA_COLUMN__DOMAIN = eINSTANCE.getSchemaColumn_Domain();
+
+		/**
+		 * The meta object literal for the '<em><b>Group</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA_COLUMN__GROUP = eINSTANCE.getSchemaColumn_Group();
 
 		/**
 		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.

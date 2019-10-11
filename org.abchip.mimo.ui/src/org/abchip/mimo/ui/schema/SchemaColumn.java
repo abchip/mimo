@@ -18,12 +18,13 @@ import org.abchip.mimo.entity.Entity;
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isAdjust <em>Adjust</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getHeader <em>Header</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getSort <em>Sort</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn()
@@ -160,6 +161,32 @@ public interface SchemaColumn extends Entity {
 	 * @generated
 	 */
 	void setDomain(Domain value);
+
+	/**
+	 * Returns the value of the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Group</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Group</em>' attribute.
+	 * @see #setGroup(String)
+	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Group()
+	 * @model
+	 * @generated
+	 */
+	String getGroup();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#getGroup <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Group</em>' attribute.
+	 * @see #getGroup()
+	 * @generated
+	 */
+	void setGroup(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

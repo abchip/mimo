@@ -16,13 +16,14 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#isContextMenu <em>Context Menu</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#isDisabled <em>Disabled</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.form.FormPackage#getFormField()
@@ -211,6 +212,32 @@ public interface FormField extends Entity {
 	 * @generated
 	 */
 	void setDomain(Domain value);
+
+	/**
+	 * Returns the value of the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Group</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Group</em>' attribute.
+	 * @see #setGroup(String)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Group()
+	 * @model
+	 * @generated
+	 */
+	String getGroup();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getGroup <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Group</em>' attribute.
+	 * @see #getGroup()
+	 * @generated
+	 */
+	void setGroup(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Icon</b></em>' attribute.

@@ -28,12 +28,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isAdjust <em>Adjust</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getView <em>View</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isLeftSplit <em>Left Split</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getSort <em>Sort</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,6 +94,26 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @ordered
 	 */
 	protected Domain domain;
+
+	/**
+	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GROUP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected String group = GROUP_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -155,26 +176,6 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	protected String id = ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getView()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VIEW_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getView()
-	 * @generated
-	 * @ordered
-	 */
-	protected String view = VIEW_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isLeftSplit() <em>Left Split</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -213,6 +214,26 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @ordered
 	 */
 	protected String sort = SORT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getView()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VIEW_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getView()
+	 * @generated
+	 * @ordered
+	 */
+	protected String view = VIEW_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -376,6 +397,29 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @generated
 	 */
 	@Override
+	public String getGroup() {
+		return group;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGroup(String newGroup) {
+		String oldGroup = group;
+		group = newGroup;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__GROUP, oldGroup, group));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getHeader() {
 		return header;
 	}
@@ -490,18 +534,20 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return isContextMenu();
 			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
 				return getDomain();
+			case SchemaPackage.SCHEMA_COLUMN__GROUP:
+				return getGroup();
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:
 				return getHeader();
 			case SchemaPackage.SCHEMA_COLUMN__ICON:
 				return getIcon();
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				return getId();
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				return getView();
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				return isLeftSplit();
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				return getSort();
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -523,6 +569,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
 				setDomain((Domain)newValue);
 				return;
+			case SchemaPackage.SCHEMA_COLUMN__GROUP:
+				setGroup((String)newValue);
+				return;
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:
 				setHeader((String)newValue);
 				return;
@@ -532,14 +581,14 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				setId((String)newValue);
 				return;
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				setView((String)newValue);
-				return;
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				setLeftSplit((Boolean)newValue);
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				setSort((String)newValue);
+				return;
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				setView((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -562,6 +611,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
 				setDomain((Domain)null);
 				return;
+			case SchemaPackage.SCHEMA_COLUMN__GROUP:
+				setGroup(GROUP_EDEFAULT);
+				return;
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -571,14 +623,14 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				setView(VIEW_EDEFAULT);
-				return;
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				setLeftSplit(LEFT_SPLIT_EDEFAULT);
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				setSort(SORT_EDEFAULT);
+				return;
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				setView(VIEW_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -598,18 +650,20 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return contextMenu != CONTEXT_MENU_EDEFAULT;
 			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
 				return domain != null;
+			case SchemaPackage.SCHEMA_COLUMN__GROUP:
+				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case SchemaPackage.SCHEMA_COLUMN__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case SchemaPackage.SCHEMA_COLUMN__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
 			case SchemaPackage.SCHEMA_COLUMN__LEFT_SPLIT:
 				return leftSplit != LEFT_SPLIT_EDEFAULT;
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				return SORT_EDEFAULT == null ? sort != null : !SORT_EDEFAULT.equals(sort);
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -628,18 +682,20 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		result.append(adjust);
 		result.append(", contextMenu: ");
 		result.append(contextMenu);
+		result.append(", group: ");
+		result.append(group);
 		result.append(", header: ");
 		result.append(header);
 		result.append(", icon: ");
 		result.append(icon);
 		result.append(", id: ");
 		result.append(id);
-		result.append(", view: ");
-		result.append(view);
 		result.append(", leftSplit: ");
 		result.append(leftSplit);
 		result.append(", sort: ");
 		result.append(sort);
+		result.append(", view: ");
+		result.append(view);
 		result.append(')');
 		return result.toString();
 	}

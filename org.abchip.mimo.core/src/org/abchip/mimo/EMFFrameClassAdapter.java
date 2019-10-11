@@ -86,6 +86,8 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				this.getSlots().add(slot);
 		}
 
+		this.slotsNumber = this.getSlots().size();
+
 		this.getKeys().addAll(keys);
 
 		// load operations
@@ -99,6 +101,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			this.getSlots().add(new EMFSlotAdapter(this, operation));
 		}
 
+		this.routesNumber = this.getSlots().size() - this.slotsNumber;
 	}
 
 	@Override
@@ -200,7 +203,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				try {
 					eObject.eSet(eFeature, value);
 				} catch (ClassCastException e) {
-					if(eFeature.getEType() instanceof EDataType) {
+					if (eFeature.getEType() instanceof EDataType) {
 						value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
 						eObject.eSet(eFeature, value);
 					}

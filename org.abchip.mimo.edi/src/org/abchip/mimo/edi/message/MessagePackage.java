@@ -490,13 +490,22 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_TYPE__TEXT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Edi Frame Setups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__EDI_FRAME_SETUPS = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 6;
+	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.
@@ -649,6 +658,17 @@ public interface MessagePackage extends EPackage {
 	EAttribute getMessageType_Text();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.edi.message.MessageType#getEdiFrameSetups <em>Edi Frame Setups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Edi Frame Setups</em>'.
+	 * @see org.abchip.mimo.edi.message.MessageType#getEdiFrameSetups()
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	EAttribute getMessageType_EdiFrameSetups();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -791,6 +811,14 @@ public interface MessagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MESSAGE_TYPE__TEXT = eINSTANCE.getMessageType_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Edi Frame Setups</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_TYPE__EDI_FRAME_SETUPS = eINSTANCE.getMessageType_EdiFrameSetups();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.

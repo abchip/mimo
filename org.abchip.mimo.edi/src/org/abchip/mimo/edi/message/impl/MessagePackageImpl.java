@@ -278,6 +278,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMessageType_EdiFrameSetups() {
+		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getMessageStatus() {
 		return messageStatusEEnum;
 	}
@@ -327,6 +337,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__NAME);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__TEXT);
+		createEAttribute(messageTypeEClass, MESSAGE_TYPE__EDI_FRAME_SETUPS);
 
 		// Create enums
 		messageStatusEEnum = createEEnum(MESSAGE_STATUS);
@@ -401,6 +412,11 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageType_Name(), ecorePackage.getEString(), "name", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageType_Text(), ecorePackage.getEString(), "text", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageType_EdiFrameSetups(), ecorePackage.getEString(), "ediFrameSetups", null, 0, -1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(messageTypeEClass, ecorePackage.getEString(), "messageReceiveds", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(messageTypeEClass, ecorePackage.getEString(), "messageSents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(messageStatusEEnum, MessageStatus.class, "MessageStatus");
@@ -456,6 +472,24 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		   new String[] {
 			   "key", "true"
 		   });
+		addAnnotation
+		  (messageTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "derived", "true"
+		   });
+		addAnnotation
+		  (messageTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "derived", "true"
+		   });
+		addAnnotation
+		  (getMessageType_EdiFrameSetups(),
+		   source,
+		   new String[] {
+			   "derived", "true"
+		   });
 	}
 
 	/**
@@ -489,6 +523,35 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		   source,
 		   new String[] {
 			   "frame", "Frame"
+		   },
+		   new URI[] {
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
+		addAnnotation
+		  (messageTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "frame", "MessageReceived",
+			   "route", "messageType"
+		   },
+		   new URI[] {
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
+		addAnnotation
+		  (messageTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "frame", "MessageSent",
+			   "route", "messageType"
+		   },
+		   new URI[] {
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
+		addAnnotation
+		  (getMessageType_EdiFrameSetups(),
+		   source,
+		   new String[] {
+			   "frame", "EdiFrameSetup"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

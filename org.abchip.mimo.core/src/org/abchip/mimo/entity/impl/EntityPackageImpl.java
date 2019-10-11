@@ -810,7 +810,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_SuperNames() {
+	public EAttribute getFrame_SlotsNumber() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -820,8 +820,28 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_TextFormula() {
+	public EAttribute getFrame_RoutesNumber() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFrame_SuperNames() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFrame_TextFormula() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1167,6 +1187,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(frameEClass, FRAME__KEYS);
 		createEAttribute(frameEClass, FRAME__NAME);
 		createEReference(frameEClass, FRAME__SLOTS);
+		createEAttribute(frameEClass, FRAME__SLOTS_NUMBER);
+		createEAttribute(frameEClass, FRAME__ROUTES_NUMBER);
 		createEAttribute(frameEClass, FRAME__SUPER_NAMES);
 		createEAttribute(frameEClass, FRAME__TEXT_FORMULA);
 
@@ -1688,6 +1710,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getFrame_Keys(), ecorePackage.getEString(), "keys", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Name(), ecorePackage.getEString(), "name", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFrame_Slots(), this.getSlot(), null, "slots", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFrame_SlotsNumber(), ecorePackage.getEInt(), "slotsNumber", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFrame_RoutesNumber(), ecorePackage.getEInt(), "routesNumber", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_SuperNames(), ecorePackage.getEString(), "superNames", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_TextFormula(), ecorePackage.getEString(), "textFormula", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -96,11 +96,38 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//message/Message"/>
       </eTypeParameters>
+      <eOperations name="messageReceiveds" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-slot">
+          <details key="derived" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+          <details key="frame" value="MessageReceived"/>
+          <details key="route" value="messageType"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="messageSents" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-slot">
+          <details key="derived" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+          <details key="frame" value="MessageSent"/>
+          <details key="route" value="messageType"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ediFrameSetups" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-slot">
+          <details key="derived" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
+          <details key="frame" value="EdiFrameSetup"/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityType">
         <eTypeArguments eTypeParameter="#//message/MessageType/E"/>
       </eGenericSuperTypes>

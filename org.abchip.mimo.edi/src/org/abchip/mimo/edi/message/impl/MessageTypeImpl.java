@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.edi.message.impl;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.edi.message.Message;
 import org.abchip.mimo.edi.message.MessagePackage;
 import org.abchip.mimo.edi.message.MessageType;
@@ -17,8 +19,10 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityTypeImpl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +38,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getEdiFrameSetups <em>Edi Frame Setups</em>}</li>
  * </ul>
  *
  * @generated
@@ -147,6 +152,15 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected String text = TEXT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getEdiFrameSetups() <em>Edi Frame Setups</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEdiFrameSetups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> ediFrameSetups;
 	/**
 	 * 
 	 */
@@ -315,6 +329,43 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @generated
 	 */
 	@Override
+	public List<String> getEdiFrameSetups() {
+		if (ediFrameSetups == null) {
+			ediFrameSetups = new EDataTypeUniqueEList<String>(String.class, this, MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS);
+		}
+		return ediFrameSetups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> messageReceiveds() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> messageSents() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
@@ -329,6 +380,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 				return getName();
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				return getText();
+			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
+				return getEdiFrameSetups();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -338,6 +391,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -358,6 +412,10 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 				return;
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				setText((String)newValue);
+				return;
+			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
+				getEdiFrameSetups().clear();
+				getEdiFrameSetups().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -389,6 +447,9 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
+			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
+				getEdiFrameSetups().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -413,6 +474,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
+				return ediFrameSetups != null && !ediFrameSetups.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -477,6 +540,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		result.append(name);
 		result.append(", text: ");
 		result.append(text);
+		result.append(", ediFrameSetups: ");
+		result.append(ediFrameSetups);
 		result.append(')');
 		return result.toString();
 	}

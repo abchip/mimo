@@ -108,7 +108,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		column.setHeader(slot.getText());
 		column.setAdjust(true);
 		column.setLeftSplit(slot.isKey());
-
+		column.setGroup(slot.getGroup());
 		if (slot.getDomain() != null) {
 			column.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 		}

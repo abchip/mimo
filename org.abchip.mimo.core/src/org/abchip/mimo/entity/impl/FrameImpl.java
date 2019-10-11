@@ -36,6 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlots <em>Slots</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlotsNumber <em>Slots Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getRoutesNumber <em>Routes Number</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSuperNames <em>Super Names</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getTextFormula <em>Text Formula</em>}</li>
  * </ul>
@@ -115,6 +117,42 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @ordered
 	 */
 	protected EList<Slot> slots;
+	/**
+	 * The default value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSlotsNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SLOTS_NUMBER_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSlotsNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int slotsNumber = SLOTS_NUMBER_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutesNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ROUTES_NUMBER_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutesNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int routesNumber = ROUTES_NUMBER_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getSuperNames() <em>Super Names</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -224,6 +262,26 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 			slots = new EObjectContainmentEList<Slot>(Slot.class, this, EntityPackage.FRAME__SLOTS);
 		}
 		return slots;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getSlotsNumber() {
+		return slotsNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getRoutesNumber() {
+		return routesNumber;
 	}
 
 	/**
@@ -347,6 +405,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 				return getName();
 			case EntityPackage.FRAME__SLOTS:
 				return getSlots();
+			case EntityPackage.FRAME__SLOTS_NUMBER:
+				return getSlotsNumber();
+			case EntityPackage.FRAME__ROUTES_NUMBER:
+				return getRoutesNumber();
 			case EntityPackage.FRAME__SUPER_NAMES:
 				return getSuperNames();
 			case EntityPackage.FRAME__TEXT_FORMULA:
@@ -373,6 +435,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EntityPackage.FRAME__SLOTS:
 				return slots != null && !slots.isEmpty();
+			case EntityPackage.FRAME__SLOTS_NUMBER:
+				return slotsNumber != SLOTS_NUMBER_EDEFAULT;
+			case EntityPackage.FRAME__ROUTES_NUMBER:
+				return routesNumber != ROUTES_NUMBER_EDEFAULT;
 			case EntityPackage.FRAME__SUPER_NAMES:
 				return superNames != null && !superNames.isEmpty();
 			case EntityPackage.FRAME__TEXT_FORMULA:
@@ -399,6 +465,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		result.append(keys);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", slotsNumber: ");
+		result.append(slotsNumber);
+		result.append(", routesNumber: ");
+		result.append(routesNumber);
 		result.append(", superNames: ");
 		result.append(superNames);
 		result.append(", textFormula: ");

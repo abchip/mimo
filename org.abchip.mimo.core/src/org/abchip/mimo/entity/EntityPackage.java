@@ -757,13 +757,31 @@ public interface EntityPackage extends EPackage {
 	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Slots Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__SLOTS_NUMBER = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Routes Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__ROUTES_NUMBER = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Super Names</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Text Formula</b></em>' attribute.
@@ -772,7 +790,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
@@ -781,7 +799,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
+	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Frame Manager</em>' class.
@@ -1481,6 +1499,28 @@ public interface EntityPackage extends EPackage {
 	EReference getFrame_Slots();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#getSlotsNumber <em>Slots Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Slots Number</em>'.
+	 * @see org.abchip.mimo.entity.Frame#getSlotsNumber()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_SlotsNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#getRoutesNumber <em>Routes Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Routes Number</em>'.
+	 * @see org.abchip.mimo.entity.Frame#getRoutesNumber()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_RoutesNumber();
+
+	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.entity.Frame#getSuperNames <em>Super Names</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2171,6 +2211,22 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FRAME__SLOTS = eINSTANCE.getFrame_Slots();
+
+		/**
+		 * The meta object literal for the '<em><b>Slots Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__SLOTS_NUMBER = eINSTANCE.getFrame_SlotsNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Routes Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__ROUTES_NUMBER = eINSTANCE.getFrame_RoutesNumber();
 
 		/**
 		 * The meta object literal for the '<em><b>Super Names</b></em>' attribute list feature.

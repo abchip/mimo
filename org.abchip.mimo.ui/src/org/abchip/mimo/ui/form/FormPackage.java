@@ -115,13 +115,31 @@ public interface FormPackage extends EPackage {
 	int FORM_FIELD__CONTEXT_MENU = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__DISABLED = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int FORM_FIELD__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__GROUP = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -130,7 +148,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int FORM_FIELD__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -139,7 +157,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int FORM_FIELD__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -148,16 +166,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>View</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORM_FIELD__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+	int FORM_FIELD__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Top Split</b></em>' attribute.
@@ -166,16 +175,16 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__TOP_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int FORM_FIELD__TOP_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__DISABLED = EntityPackage.ENTITY_FEATURE_COUNT + 7;
+	int FORM_FIELD__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -184,7 +193,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
+	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 9;
 
 
 	/**
@@ -305,6 +314,17 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFormField_Domain();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Group</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#getGroup()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_Group();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getIcon <em>Icon</em>}'.
@@ -430,6 +450,14 @@ public interface FormPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FORM_FIELD__DOMAIN = eINSTANCE.getFormField_Domain();
+
+		/**
+		 * The meta object literal for the '<em><b>Group</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__GROUP = eINSTANCE.getFormField_Group();
 
 		/**
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.

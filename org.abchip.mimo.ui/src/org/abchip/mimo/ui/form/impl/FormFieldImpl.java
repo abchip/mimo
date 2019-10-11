@@ -26,13 +26,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isContextMenu <em>Context Menu</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isDisabled <em>Disabled</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getView <em>View</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isTopSplit <em>Top Split</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,6 +65,26 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The default value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisabled()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISABLED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisabled()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean disabled = DISABLED_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,6 +93,26 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 * @ordered
 	 */
 	protected Domain domain;
+
+	/**
+	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GROUP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected String group = GROUP_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
@@ -134,26 +175,6 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getView()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VIEW_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getView()
-	 * @generated
-	 * @ordered
-	 */
-	protected String view = VIEW_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isTopSplit() <em>Top Split</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,24 +195,24 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	protected boolean topSplit = TOP_SPLIT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
+	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isDisabled()
+	 * @see #getView()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean DISABLED_EDEFAULT = false;
+	protected static final String VIEW_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
+	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isDisabled()
+	 * @see #getView()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean disabled = DISABLED_EDEFAULT;
+	protected String view = VIEW_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -401,6 +422,29 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 * @generated
 	 */
 	@Override
+	public String getGroup() {
+		return group;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGroup(String newGroup) {
+		String oldGroup = group;
+		group = newGroup;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__GROUP, oldGroup, group));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getIcon() {
 		return icon;
 	}
@@ -442,20 +486,22 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		switch (featureID) {
 			case FormPackage.FORM_FIELD__CONTEXT_MENU:
 				return isContextMenu();
+			case FormPackage.FORM_FIELD__DISABLED:
+				return isDisabled();
 			case FormPackage.FORM_FIELD__DOMAIN:
 				return getDomain();
+			case FormPackage.FORM_FIELD__GROUP:
+				return getGroup();
 			case FormPackage.FORM_FIELD__ICON:
 				return getIcon();
 			case FormPackage.FORM_FIELD__LABEL:
 				return getLabel();
 			case FormPackage.FORM_FIELD__NAME:
 				return getName();
-			case FormPackage.FORM_FIELD__VIEW:
-				return getView();
 			case FormPackage.FORM_FIELD__TOP_SPLIT:
 				return isTopSplit();
-			case FormPackage.FORM_FIELD__DISABLED:
-				return isDisabled();
+			case FormPackage.FORM_FIELD__VIEW:
+				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -471,8 +517,14 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__CONTEXT_MENU:
 				setContextMenu((Boolean)newValue);
 				return;
+			case FormPackage.FORM_FIELD__DISABLED:
+				setDisabled((Boolean)newValue);
+				return;
 			case FormPackage.FORM_FIELD__DOMAIN:
 				setDomain((Domain)newValue);
+				return;
+			case FormPackage.FORM_FIELD__GROUP:
+				setGroup((String)newValue);
 				return;
 			case FormPackage.FORM_FIELD__ICON:
 				setIcon((String)newValue);
@@ -483,14 +535,11 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__NAME:
 				setName((String)newValue);
 				return;
-			case FormPackage.FORM_FIELD__VIEW:
-				setView((String)newValue);
-				return;
 			case FormPackage.FORM_FIELD__TOP_SPLIT:
 				setTopSplit((Boolean)newValue);
 				return;
-			case FormPackage.FORM_FIELD__DISABLED:
-				setDisabled((Boolean)newValue);
+			case FormPackage.FORM_FIELD__VIEW:
+				setView((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -507,8 +556,14 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__CONTEXT_MENU:
 				setContextMenu(CONTEXT_MENU_EDEFAULT);
 				return;
+			case FormPackage.FORM_FIELD__DISABLED:
+				setDisabled(DISABLED_EDEFAULT);
+				return;
 			case FormPackage.FORM_FIELD__DOMAIN:
 				setDomain((Domain)null);
+				return;
+			case FormPackage.FORM_FIELD__GROUP:
+				setGroup(GROUP_EDEFAULT);
 				return;
 			case FormPackage.FORM_FIELD__ICON:
 				setIcon(ICON_EDEFAULT);
@@ -519,14 +574,11 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case FormPackage.FORM_FIELD__VIEW:
-				setView(VIEW_EDEFAULT);
-				return;
 			case FormPackage.FORM_FIELD__TOP_SPLIT:
 				setTopSplit(TOP_SPLIT_EDEFAULT);
 				return;
-			case FormPackage.FORM_FIELD__DISABLED:
-				setDisabled(DISABLED_EDEFAULT);
+			case FormPackage.FORM_FIELD__VIEW:
+				setView(VIEW_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -542,20 +594,22 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		switch (featureID) {
 			case FormPackage.FORM_FIELD__CONTEXT_MENU:
 				return contextMenu != CONTEXT_MENU_EDEFAULT;
+			case FormPackage.FORM_FIELD__DISABLED:
+				return disabled != DISABLED_EDEFAULT;
 			case FormPackage.FORM_FIELD__DOMAIN:
 				return domain != null;
+			case FormPackage.FORM_FIELD__GROUP:
+				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 			case FormPackage.FORM_FIELD__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case FormPackage.FORM_FIELD__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 			case FormPackage.FORM_FIELD__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case FormPackage.FORM_FIELD__VIEW:
-				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
 			case FormPackage.FORM_FIELD__TOP_SPLIT:
 				return topSplit != TOP_SPLIT_EDEFAULT;
-			case FormPackage.FORM_FIELD__DISABLED:
-				return disabled != DISABLED_EDEFAULT;
+			case FormPackage.FORM_FIELD__VIEW:
+				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -572,18 +626,20 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contextMenu: ");
 		result.append(contextMenu);
+		result.append(", disabled: ");
+		result.append(disabled);
+		result.append(", group: ");
+		result.append(group);
 		result.append(", icon: ");
 		result.append(icon);
 		result.append(", label: ");
 		result.append(label);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", view: ");
-		result.append(view);
 		result.append(", topSplit: ");
 		result.append(topSplit);
-		result.append(", disabled: ");
-		result.append(disabled);
+		result.append(", view: ");
+		result.append(view);
 		result.append(')');
 		return result.toString();
 	}
