@@ -8,7 +8,9 @@
 package org.abchip.mimo.edi.message.impl;
 
 import org.abchip.mimo.MimoPackage;
+import org.abchip.mimo.edi.EDIPackage;
 import org.abchip.mimo.edi.entity.impl.EntityPackageImpl;
+import org.abchip.mimo.edi.impl.EDIPackageImpl;
 import org.abchip.mimo.edi.message.Message;
 import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessagePackage;
@@ -123,15 +125,19 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		MimoPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.edi.entity.EntityPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EDIPackage.eNS_URI);
+		EDIPackageImpl theEDIPackage = (EDIPackageImpl)(registeredPackage instanceof EDIPackageImpl ? registeredPackage : EDIPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.edi.entity.EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.edi.entity.EntityPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMessagePackage.createPackageContents();
+		theEDIPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMessagePackage.initializePackageContents();
+		theEDIPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -420,12 +426,9 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(messageStatusEEnum, MessageStatus.class, "MessageStatus");
+		addEEnumLiteral(messageStatusEEnum, MessageStatus.READY);
 		addEEnumLiteral(messageStatusEEnum, MessageStatus.TRASMITTED);
 		addEEnumLiteral(messageStatusEEnum, MessageStatus.ERROR);
-		addEEnumLiteral(messageStatusEEnum, MessageStatus.PENDING);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -513,7 +516,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		  (getMessage_Sender(),
 		   source,
 		   new String[] {
-			   "frame", "Party"
+			   "frame", "UserLogin"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

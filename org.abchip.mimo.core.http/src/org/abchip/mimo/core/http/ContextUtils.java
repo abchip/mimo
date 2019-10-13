@@ -16,9 +16,6 @@ public class ContextUtils {
 
 	private static WeakHashMap<String, ContextProvider> contexts = new WeakHashMap<String, ContextProvider>();
 
-	// ContextProvider in HttpSession
-	public static final String CONTEXT_ATTR = "contexProvider";
-
 	public static ContextProvider getContextProvider(String contextId) {
 		return contexts.get(contextId);
 	}

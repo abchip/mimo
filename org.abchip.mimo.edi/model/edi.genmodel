@@ -11,6 +11,14 @@
   <foreignModel>edi.ecore</foreignModel>
   <genPackages prefix="EDI" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="edi.ecore#/">
+    <genClasses image="false" ecoreClass="edi.ecore#//EdiManager">
+      <genOperations ecoreOperation="edi.ecore#//EdiManager/writeMessage">
+        <genParameters ecoreParameter="edi.ecore#//EdiManager/writeMessage/contextProvider"/>
+        <genParameters ecoreParameter="edi.ecore#//EdiManager/writeMessage/entity"/>
+        <genParameters ecoreParameter="edi.ecore#//EdiManager/writeMessage/event"/>
+        <genTypeParameters ecoreTypeParameter="edi.ecore#//EdiManager/writeMessage/E"/>
+      </genOperations>
+    </genClasses>
     <nestedGenPackages prefix="Entity" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="edi.ecore#//entity">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//entity/EntityCondition">
@@ -34,9 +42,9 @@
     <nestedGenPackages prefix="Message" basePackage="org.abchip.mimo.edi" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="edi.ecore#//message">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//message/MessageStatus">
+        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Ready"/>
         <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Trasmitted"/>
         <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Error"/>
-        <genEnumLiterals ecoreEnumLiteral="edi.ecore#//message/MessageStatus/Pending"/>
       </genEnums>
       <genClasses image="false" ecoreClass="edi.ecore#//message/Message">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/messageId"/>

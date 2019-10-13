@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="edi" nsURI="http://www.abchip.org/mimo/edi" nsPrefix="mimo-edi">
+  <eClassifiers xsi:type="ecore:EClass" name="EdiManager" abstract="true" interface="true">
+    <eOperations name="writeMessage">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable"/>
+      </eTypeParameters>
+      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="entity" lowerBound="1">
+        <eGenericType eTypeParameter="#//EdiManager/writeMessage/E"/>
+      </eParameters>
+      <eParameters name="event" lowerBound="1" eType="#//entity/EntityEvent"/>
+    </eOperations>
+  </eClassifiers>
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/edi/entity" nsPrefix="mimo-edi-ent">
     <eClassifiers xsi:type="ecore:EClass" name="EdiFrameSetup" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageType" lowerBound="1"
@@ -58,7 +70,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="sender" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="mimo-ent-domain" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
-          <details key="frame" value="Party"/>
+          <details key="frame" value="UserLogin"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
@@ -88,9 +100,9 @@
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="MessageStatus">
-      <eLiterals name="Trasmitted" value="10" literal="TRS"/>
-      <eLiterals name="Error" value="20" literal="ERR"/>
-      <eLiterals name="Pending" value="30" literal="PND"/>
+      <eLiterals name="Ready" value="10" literal="RDY"/>
+      <eLiterals name="Trasmitted" value="20" literal="TRS"/>
+      <eLiterals name="Error" value="30" literal="ERR"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageType">
       <eTypeParameters name="E">

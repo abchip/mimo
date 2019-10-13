@@ -184,7 +184,7 @@ public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	 * @see #setSender(String)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Sender()
 	 * @model required="true"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 *        annotation="mimo-ent-domain frame='UserLogin'"
 	 * @generated
 	 */
 	String getSender();

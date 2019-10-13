@@ -9,12 +9,14 @@ package org.abchip.mimo.edi.entity.impl;
 
 import org.abchip.mimo.MimoPackage;
 
+import org.abchip.mimo.edi.EDIPackage;
 import org.abchip.mimo.edi.entity.EdiFrameSetup;
 import org.abchip.mimo.edi.entity.EntityCondition;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.entity.EntityFactory;
 import org.abchip.mimo.edi.entity.EntityPackage;
 
+import org.abchip.mimo.edi.impl.EDIPackageImpl;
 import org.abchip.mimo.edi.message.MessagePackage;
 
 import org.abchip.mimo.edi.message.impl.MessagePackageImpl;
@@ -107,15 +109,19 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		MimoPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MessagePackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EDIPackage.eNS_URI);
+		EDIPackageImpl theEDIPackage = (EDIPackageImpl)(registeredPackage instanceof EDIPackageImpl ? registeredPackage : EDIPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MessagePackage.eNS_URI);
 		MessagePackageImpl theMessagePackage = (MessagePackageImpl)(registeredPackage instanceof MessagePackageImpl ? registeredPackage : MessagePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEntityPackage.createPackageContents();
+		theEDIPackage.createPackageContents();
 		theMessagePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theEntityPackage.initializePackageContents();
+		theEDIPackage.initializePackageContents();
 		theMessagePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -287,9 +293,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEEnumLiteral(entityEventEEnum, EntityEvent.CREATE);
 		addEEnumLiteral(entityEventEEnum, EntityEvent.UPDATE);
 		addEEnumLiteral(entityEventEEnum, EntityEvent.DELETE);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// mimo-ent-slot

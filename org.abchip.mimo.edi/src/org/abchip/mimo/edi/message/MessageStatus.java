@@ -24,6 +24,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum MessageStatus implements Enumerator {
 	/**
+	 * The '<em><b>Ready</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #READY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	READY(10, "Ready", "RDY"), /**
 	 * The '<em><b>Trasmitted</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,7 +39,7 @@ public enum MessageStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TRASMITTED(10, "Trasmitted", "TRS"), /**
+	TRASMITTED(20, "Trasmitted", "TRS"), /**
 	 * The '<em><b>Error</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -39,15 +47,22 @@ public enum MessageStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ERROR(20, "Error", "ERR"), /**
-	 * The '<em><b>Pending</b></em>' literal object.
+	ERROR(30, "Error", "ERR");
+
+	/**
+	 * The '<em><b>Ready</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Ready</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PENDING_VALUE
+	 * @see #READY
+	 * @model name="Ready" literal="RDY"
 	 * @generated
 	 * @ordered
 	 */
-	PENDING(30, "Pending", "PND");
+	public static final int READY_VALUE = 10;
 
 	/**
 	 * The '<em><b>Trasmitted</b></em>' literal value.
@@ -62,7 +77,7 @@ public enum MessageStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TRASMITTED_VALUE = 10;
+	public static final int TRASMITTED_VALUE = 20;
 
 	/**
 	 * The '<em><b>Error</b></em>' literal value.
@@ -77,22 +92,7 @@ public enum MessageStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ERROR_VALUE = 20;
-
-	/**
-	 * The '<em><b>Pending</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Pending</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PENDING
-	 * @model name="Pending" literal="PND"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PENDING_VALUE = 30;
+	public static final int ERROR_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>Status</b></em>' enumerators.
@@ -102,9 +102,9 @@ public enum MessageStatus implements Enumerator {
 	 */
 	private static final MessageStatus[] VALUES_ARRAY =
 		new MessageStatus[] {
+			READY,
 			TRASMITTED,
 			ERROR,
-			PENDING,
 		};
 
 	/**
@@ -161,9 +161,9 @@ public enum MessageStatus implements Enumerator {
 	 */
 	public static MessageStatus get(int value) {
 		switch (value) {
+			case READY_VALUE: return READY;
 			case TRASMITTED_VALUE: return TRASMITTED;
 			case ERROR_VALUE: return ERROR;
-			case PENDING_VALUE: return PENDING;
 		}
 		return null;
 	}
