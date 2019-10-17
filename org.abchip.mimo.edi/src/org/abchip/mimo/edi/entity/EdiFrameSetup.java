@@ -22,6 +22,7 @@ import org.abchip.mimo.entity.EntityNameable;
  *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getFrame <em>Frame</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityCondition <em>Entity Condition</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityEvent <em>Entity Event</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#isEncrypt <em>Encrypt</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.entity.EntityPackage#getEdiFrameSetup()
@@ -142,5 +143,31 @@ public interface EdiFrameSetup extends EntityNameable {
 	 * @generated
 	 */
 	void setEntityEvent(EntityEvent value);
+
+	/**
+	 * Returns the value of the '<em><b>Encrypt</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Encrypt</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Encrypt</em>' attribute.
+	 * @see #setEncrypt(boolean)
+	 * @see org.abchip.mimo.edi.entity.EntityPackage#getEdiFrameSetup_Encrypt()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isEncrypt();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#isEncrypt <em>Encrypt</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Encrypt</em>' attribute.
+	 * @see #isEncrypt()
+	 * @generated
+	 */
+	void setEncrypt(boolean value);
 
 } // EdiFrameSetup

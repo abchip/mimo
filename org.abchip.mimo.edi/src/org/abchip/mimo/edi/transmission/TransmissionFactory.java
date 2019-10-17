@@ -27,22 +27,22 @@ public interface TransmissionFactory extends EFactory {
 	TransmissionFactory eINSTANCE = org.abchip.mimo.edi.transmission.impl.TransmissionFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Transmitter</em>'.
+	 * Returns a new object of class '<em>Transmission</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Transmitter</em>'.
+	 * @return a new object of class '<em>Transmission</em>'.
 	 * @generated
 	 */
-	Transmitter createTransmitter();
+	Transmission createTransmission();
 
 	/**
-	 * Returns a new object of class '<em>Transmitter Type</em>'.
+	 * Returns a new object of class '<em>Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Transmitter Type</em>'.
+	 * @return a new object of class '<em>Type</em>'.
 	 * @generated
 	 */
-	TransmitterType createTransmitterType();
+	TransmissionType createTransmissionType();
 
 	/**
 	 * Returns the package supported by this factory.

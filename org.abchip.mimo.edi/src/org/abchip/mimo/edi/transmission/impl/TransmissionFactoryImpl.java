@@ -61,8 +61,8 @@ public class TransmissionFactoryImpl extends EFactoryImpl implements Transmissio
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TransmissionPackage.TRANSMITTER: return (EObject)createTransmitter();
-			case TransmissionPackage.TRANSMITTER_TYPE: return (EObject)createTransmitterType();
+			case TransmissionPackage.TRANSMISSION: return (EObject)createTransmission();
+			case TransmissionPackage.TRANSMISSION_TYPE: return (EObject)createTransmissionType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,9 +74,9 @@ public class TransmissionFactoryImpl extends EFactoryImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
-	public Transmitter createTransmitter() {
-		TransmitterImpl transmitter = new TransmitterImpl();
-		return transmitter;
+	public Transmission createTransmission() {
+		TransmissionImpl transmission = new TransmissionImpl();
+		return transmission;
 	}
 
 	/**
@@ -85,9 +85,9 @@ public class TransmissionFactoryImpl extends EFactoryImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
-	public TransmitterType createTransmitterType() {
-		TransmitterTypeImpl transmitterType = new TransmitterTypeImpl();
-		return transmitterType;
+	public TransmissionType createTransmissionType() {
+		TransmissionTypeImpl transmissionType = new TransmissionTypeImpl();
+		return transmissionType;
 	}
 
 	/**

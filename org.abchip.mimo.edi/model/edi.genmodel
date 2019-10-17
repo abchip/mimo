@@ -37,6 +37,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/frame"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/entityCondition"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/entityEvent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//entity/EdiFrameSetup/encrypt"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Message" basePackage="org.abchip.mimo.edi" disposableProviderFactory="true"
@@ -62,7 +63,8 @@
         <genTypeParameters ecoreTypeParameter="edi.ecore#//message/MessageType/E"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/text"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/transmitter"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/transmissionType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/encrypt"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/ediFrameSetups"/>
         <genOperations ecoreOperation="edi.ecore#//message/MessageType/messageReceiveds"/>
         <genOperations ecoreOperation="edi.ecore#//message/MessageType/messageSents"/>
@@ -70,13 +72,14 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Transmission" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="edi.ecore#//transmission">
-      <genClasses ecoreClass="edi.ecore#//transmission/Transmitter">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/Transmitter/name"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/Transmitter/transmitterType"/>
-        <genOperations ecoreOperation="edi.ecore#//transmission/Transmitter/messageTypes"/>
+      <genClasses ecoreClass="edi.ecore#//transmission/Transmission">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/Transmission/transmissionId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/Transmission/transmissionType"/>
+        <genOperations ecoreOperation="edi.ecore#//transmission/Transmission/messageTypes"/>
       </genClasses>
-      <genClasses ecoreClass="edi.ecore#//transmission/TransmitterType">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/TransmitterType/name"/>
+      <genClasses ecoreClass="edi.ecore#//transmission/TransmissionType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/TransmissionType/name"/>
+        <genOperations ecoreOperation="edi.ecore#//transmission/TransmissionType/transmissions"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

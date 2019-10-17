@@ -10,9 +10,9 @@ package org.abchip.mimo.edi.transmission.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.edi.transmission.Transmission;
 import org.abchip.mimo.edi.transmission.TransmissionPackage;
-import org.abchip.mimo.edi.transmission.Transmitter;
-import org.abchip.mimo.edi.transmission.TransmitterType;
+import org.abchip.mimo.edi.transmission.TransmissionType;
 
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
@@ -27,23 +27,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Transmitter</b></em>'.
+ * An implementation of the model object '<em><b>Transmission</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterImpl#getCreatedStamp <em>Created Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterImpl#getTransmitterType <em>Transmitter Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionImpl#getCreatedStamp <em>Created Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionImpl#getTransmissionId <em>Transmission Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionImpl#getTransmissionType <em>Transmission Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements Transmitter {
+public class TransmissionImpl extends EntityTypedImpl<TransmissionType> implements Transmission {
 	/**
 	 * 
 	 */
@@ -130,51 +130,51 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	protected Date lastUpdatedTxStamp = LAST_UPDATED_TX_STAMP_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getTransmissionId() <em>Transmission Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getTransmissionId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String TRANSMISSION_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getTransmissionId() <em>Transmission Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getTransmissionId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String transmissionId = TRANSMISSION_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTransmitterType() <em>Transmitter Type</em>}' attribute.
+	 * The default value of the '{@link #getTransmissionType() <em>Transmission Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTransmitterType()
+	 * @see #getTransmissionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TRANSMITTER_TYPE_EDEFAULT = null;
+	protected static final String TRANSMISSION_TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTransmitterType() <em>Transmitter Type</em>}' attribute.
+	 * The cached value of the '{@link #getTransmissionType() <em>Transmission Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTransmitterType()
+	 * @see #getTransmissionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected String transmitterType = TRANSMITTER_TYPE_EDEFAULT;
+	protected String transmissionType = TRANSMISSION_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TransmitterImpl() {
+	protected TransmissionImpl() {
 		super();
 	}
 
@@ -185,7 +185,7 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TransmissionPackage.Literals.TRANSMITTER;
+		return TransmissionPackage.Literals.TRANSMISSION;
 	}
 
 	/**
@@ -208,7 +208,7 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 		Date oldCreatedStamp = createdStamp;
 		createdStamp = newCreatedStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER__CREATED_STAMP, oldCreatedStamp, createdStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION__CREATED_STAMP, oldCreatedStamp, createdStamp));
 	}
 
 	/**
@@ -231,7 +231,7 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 		Date oldCreatedTxStamp = createdTxStamp;
 		createdTxStamp = newCreatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
 	}
 
 	/**
@@ -254,7 +254,7 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 		Date oldLastUpdatedStamp = lastUpdatedStamp;
 		lastUpdatedStamp = newLastUpdatedStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
 	}
 
 	/**
@@ -277,7 +277,7 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 		Date oldLastUpdatedTxStamp = lastUpdatedTxStamp;
 		lastUpdatedTxStamp = newLastUpdatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
 	}
 
 	/**
@@ -286,8 +286,8 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getTransmissionId() {
+		return transmissionId;
 	}
 
 	/**
@@ -296,11 +296,11 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setTransmissionId(String newTransmissionId) {
+		String oldTransmissionId = transmissionId;
+		transmissionId = newTransmissionId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION__TRANSMISSION_ID, oldTransmissionId, transmissionId));
 	}
 
 	/**
@@ -309,8 +309,8 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	 * @generated
 	 */
 	@Override
-	public String getTransmitterType() {
-		return transmitterType;
+	public String getTransmissionType() {
+		return transmissionType;
 	}
 
 	/**
@@ -319,11 +319,11 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	 * @generated
 	 */
 	@Override
-	public void setTransmitterType(String newTransmitterType) {
-		String oldTransmitterType = transmitterType;
-		transmitterType = newTransmitterType;
+	public void setTransmissionType(String newTransmissionType) {
+		String oldTransmissionType = transmissionType;
+		transmissionType = newTransmissionType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER__TRANSMITTER_TYPE, oldTransmitterType, transmitterType));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION__TRANSMISSION_TYPE, oldTransmissionType, transmissionType));
 	}
 
 	/**
@@ -346,18 +346,18 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TransmissionPackage.TRANSMITTER__CREATED_STAMP:
+			case TransmissionPackage.TRANSMISSION__CREATED_STAMP:
 				return getCreatedStamp();
-			case TransmissionPackage.TRANSMITTER__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION__CREATED_TX_STAMP:
 				return getCreatedTxStamp();
-			case TransmissionPackage.TRANSMITTER__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMISSION__LAST_UPDATED_STAMP:
 				return getLastUpdatedStamp();
-			case TransmissionPackage.TRANSMITTER__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION__LAST_UPDATED_TX_STAMP:
 				return getLastUpdatedTxStamp();
-			case TransmissionPackage.TRANSMITTER__NAME:
-				return getName();
-			case TransmissionPackage.TRANSMITTER__TRANSMITTER_TYPE:
-				return getTransmitterType();
+			case TransmissionPackage.TRANSMISSION__TRANSMISSION_ID:
+				return getTransmissionId();
+			case TransmissionPackage.TRANSMISSION__TRANSMISSION_TYPE:
+				return getTransmissionType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -370,23 +370,23 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TransmissionPackage.TRANSMITTER__CREATED_STAMP:
+			case TransmissionPackage.TRANSMISSION__CREATED_STAMP:
 				setCreatedStamp((Date)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION__CREATED_TX_STAMP:
 				setCreatedTxStamp((Date)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMISSION__LAST_UPDATED_STAMP:
 				setLastUpdatedStamp((Date)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp((Date)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER__NAME:
-				setName((String)newValue);
+			case TransmissionPackage.TRANSMISSION__TRANSMISSION_ID:
+				setTransmissionId((String)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER__TRANSMITTER_TYPE:
-				setTransmitterType((String)newValue);
+			case TransmissionPackage.TRANSMISSION__TRANSMISSION_TYPE:
+				setTransmissionType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -400,23 +400,23 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TransmissionPackage.TRANSMITTER__CREATED_STAMP:
+			case TransmissionPackage.TRANSMISSION__CREATED_STAMP:
 				setCreatedStamp(CREATED_STAMP_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION__CREATED_TX_STAMP:
 				setCreatedTxStamp(CREATED_TX_STAMP_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMISSION__LAST_UPDATED_STAMP:
 				setLastUpdatedStamp(LAST_UPDATED_STAMP_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp(LAST_UPDATED_TX_STAMP_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER__NAME:
-				setName(NAME_EDEFAULT);
+			case TransmissionPackage.TRANSMISSION__TRANSMISSION_ID:
+				setTransmissionId(TRANSMISSION_ID_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER__TRANSMITTER_TYPE:
-				setTransmitterType(TRANSMITTER_TYPE_EDEFAULT);
+			case TransmissionPackage.TRANSMISSION__TRANSMISSION_TYPE:
+				setTransmissionType(TRANSMISSION_TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -430,18 +430,18 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TransmissionPackage.TRANSMITTER__CREATED_STAMP:
+			case TransmissionPackage.TRANSMISSION__CREATED_STAMP:
 				return CREATED_STAMP_EDEFAULT == null ? createdStamp != null : !CREATED_STAMP_EDEFAULT.equals(createdStamp);
-			case TransmissionPackage.TRANSMITTER__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION__CREATED_TX_STAMP:
 				return CREATED_TX_STAMP_EDEFAULT == null ? createdTxStamp != null : !CREATED_TX_STAMP_EDEFAULT.equals(createdTxStamp);
-			case TransmissionPackage.TRANSMITTER__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMISSION__LAST_UPDATED_STAMP:
 				return LAST_UPDATED_STAMP_EDEFAULT == null ? lastUpdatedStamp != null : !LAST_UPDATED_STAMP_EDEFAULT.equals(lastUpdatedStamp);
-			case TransmissionPackage.TRANSMITTER__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION__LAST_UPDATED_TX_STAMP:
 				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
-			case TransmissionPackage.TRANSMITTER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TransmissionPackage.TRANSMITTER__TRANSMITTER_TYPE:
-				return TRANSMITTER_TYPE_EDEFAULT == null ? transmitterType != null : !TRANSMITTER_TYPE_EDEFAULT.equals(transmitterType);
+			case TransmissionPackage.TRANSMISSION__TRANSMISSION_ID:
+				return TRANSMISSION_ID_EDEFAULT == null ? transmissionId != null : !TRANSMISSION_ID_EDEFAULT.equals(transmissionId);
+			case TransmissionPackage.TRANSMISSION__TRANSMISSION_TYPE:
+				return TRANSMISSION_TYPE_EDEFAULT == null ? transmissionType != null : !TRANSMISSION_TYPE_EDEFAULT.equals(transmissionType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -455,10 +455,10 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EntityInfo.class) {
 			switch (derivedFeatureID) {
-				case TransmissionPackage.TRANSMITTER__CREATED_STAMP: return EntityPackage.ENTITY_INFO__CREATED_STAMP;
-				case TransmissionPackage.TRANSMITTER__CREATED_TX_STAMP: return EntityPackage.ENTITY_INFO__CREATED_TX_STAMP;
-				case TransmissionPackage.TRANSMITTER__LAST_UPDATED_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP;
-				case TransmissionPackage.TRANSMITTER__LAST_UPDATED_TX_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP;
+				case TransmissionPackage.TRANSMISSION__CREATED_STAMP: return EntityPackage.ENTITY_INFO__CREATED_STAMP;
+				case TransmissionPackage.TRANSMISSION__CREATED_TX_STAMP: return EntityPackage.ENTITY_INFO__CREATED_TX_STAMP;
+				case TransmissionPackage.TRANSMISSION__LAST_UPDATED_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP;
+				case TransmissionPackage.TRANSMISSION__LAST_UPDATED_TX_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP;
 				default: return -1;
 			}
 		}
@@ -474,10 +474,10 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EntityInfo.class) {
 			switch (baseFeatureID) {
-				case EntityPackage.ENTITY_INFO__CREATED_STAMP: return TransmissionPackage.TRANSMITTER__CREATED_STAMP;
-				case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP: return TransmissionPackage.TRANSMITTER__CREATED_TX_STAMP;
-				case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP: return TransmissionPackage.TRANSMITTER__LAST_UPDATED_STAMP;
-				case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP: return TransmissionPackage.TRANSMITTER__LAST_UPDATED_TX_STAMP;
+				case EntityPackage.ENTITY_INFO__CREATED_STAMP: return TransmissionPackage.TRANSMISSION__CREATED_STAMP;
+				case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP: return TransmissionPackage.TRANSMISSION__CREATED_TX_STAMP;
+				case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP: return TransmissionPackage.TRANSMISSION__LAST_UPDATED_STAMP;
+				case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP: return TransmissionPackage.TRANSMISSION__LAST_UPDATED_TX_STAMP;
 				default: return -1;
 			}
 		}
@@ -502,12 +502,12 @@ public class TransmitterImpl extends EntityTypedImpl<TransmitterType> implements
 		result.append(lastUpdatedStamp);
 		result.append(", lastUpdatedTxStamp: ");
 		result.append(lastUpdatedTxStamp);
-		result.append(", name: ");
-		result.append(name);
-		result.append(", transmitterType: ");
-		result.append(transmitterType);
+		result.append(", transmissionId: ");
+		result.append(transmissionId);
+		result.append(", transmissionType: ");
+		result.append(transmissionType);
 		result.append(')');
 		return result.toString();
 	}
 
-} //TransmitterImpl
+} //TransmissionImpl

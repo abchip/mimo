@@ -107,13 +107,22 @@ public interface EntityPackage extends EPackage {
 	int EDI_FRAME_SETUP__ENTITY_EVENT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Encrypt</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDI_FRAME_SETUP__ENCRYPT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Edi Frame Setup</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP_FEATURE_COUNT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int EDI_FRAME_SETUP_FEATURE_COUNT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.entity.EntityCondition <em>Condition</em>}' enum.
@@ -189,6 +198,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEdiFrameSetup_EntityEvent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#isEncrypt <em>Encrypt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Encrypt</em>'.
+	 * @see org.abchip.mimo.edi.entity.EdiFrameSetup#isEncrypt()
+	 * @see #getEdiFrameSetup()
+	 * @generated
+	 */
+	EAttribute getEdiFrameSetup_Encrypt();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.entity.EntityCondition <em>Condition</em>}'.
@@ -273,6 +293,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EDI_FRAME_SETUP__ENTITY_EVENT = eINSTANCE.getEdiFrameSetup_EntityEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Encrypt</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDI_FRAME_SETUP__ENCRYPT = eINSTANCE.getEdiFrameSetup_Encrypt();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.edi.entity.EntityCondition <em>Condition</em>}' enum.

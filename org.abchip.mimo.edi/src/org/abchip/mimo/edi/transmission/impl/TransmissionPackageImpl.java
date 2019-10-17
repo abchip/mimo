@@ -21,10 +21,10 @@ import org.abchip.mimo.edi.message.MessagePackage;
 
 import org.abchip.mimo.edi.message.impl.MessagePackageImpl;
 
+import org.abchip.mimo.edi.transmission.Transmission;
 import org.abchip.mimo.edi.transmission.TransmissionFactory;
 import org.abchip.mimo.edi.transmission.TransmissionPackage;
-import org.abchip.mimo.edi.transmission.Transmitter;
-import org.abchip.mimo.edi.transmission.TransmitterType;
+import org.abchip.mimo.edi.transmission.TransmissionType;
 
 import org.eclipse.emf.common.util.URI;
 
@@ -47,14 +47,14 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass transmitterEClass = null;
+	private EClass transmissionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass transmitterTypeEClass = null;
+	private EClass transmissionTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -140,8 +140,8 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
-	public EClass getTransmitter() {
-		return transmitterEClass;
+	public EClass getTransmission() {
+		return transmissionEClass;
 	}
 
 	/**
@@ -150,8 +150,8 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTransmitter_Name() {
-		return (EAttribute)transmitterEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTransmission_TransmissionId() {
+		return (EAttribute)transmissionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -160,8 +160,8 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTransmitter_TransmitterType() {
-		return (EAttribute)transmitterEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTransmission_TransmissionType() {
+		return (EAttribute)transmissionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -170,8 +170,8 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
-	public EClass getTransmitterType() {
-		return transmitterTypeEClass;
+	public EClass getTransmissionType() {
+		return transmissionTypeEClass;
 	}
 
 	/**
@@ -180,8 +180,8 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTransmitterType_Name() {
-		return (EAttribute)transmitterTypeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTransmissionType_Name() {
+		return (EAttribute)transmissionTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -213,12 +213,12 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 		isCreated = true;
 
 		// Create classes and their features
-		transmitterEClass = createEClass(TRANSMITTER);
-		createEAttribute(transmitterEClass, TRANSMITTER__NAME);
-		createEAttribute(transmitterEClass, TRANSMITTER__TRANSMITTER_TYPE);
+		transmissionEClass = createEClass(TRANSMISSION);
+		createEAttribute(transmissionEClass, TRANSMISSION__TRANSMISSION_ID);
+		createEAttribute(transmissionEClass, TRANSMISSION__TRANSMISSION_TYPE);
 
-		transmitterTypeEClass = createEClass(TRANSMITTER_TYPE);
-		createEAttribute(transmitterTypeEClass, TRANSMITTER_TYPE__NAME);
+		transmissionTypeEClass = createEClass(TRANSMISSION_TYPE);
+		createEAttribute(transmissionTypeEClass, TRANSMISSION_TYPE__NAME);
 	}
 
 	/**
@@ -253,27 +253,29 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 
 		// Add supertypes to classes
 		EGenericType g1 = createEGenericType(theEntityPackage_1.getEntityTyped());
-		EGenericType g2 = createEGenericType(this.getTransmitterType());
+		EGenericType g2 = createEGenericType(this.getTransmissionType());
 		g1.getETypeArguments().add(g2);
-		transmitterEClass.getEGenericSuperTypes().add(g1);
+		transmissionEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theEntityPackage_1.getEntityInfo());
-		transmitterEClass.getEGenericSuperTypes().add(g1);
+		transmissionEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theEntityPackage_1.getEntityType());
-		g2 = createEGenericType(this.getTransmitter());
+		g2 = createEGenericType(this.getTransmission());
 		g1.getETypeArguments().add(g2);
-		transmitterTypeEClass.getEGenericSuperTypes().add(g1);
+		transmissionTypeEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theEntityPackage_1.getEntityInfo());
-		transmitterTypeEClass.getEGenericSuperTypes().add(g1);
+		transmissionTypeEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(transmitterEClass, Transmitter.class, "Transmitter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTransmitter_Name(), ecorePackage.getEString(), "name", null, 1, 1, Transmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransmitter_TransmitterType(), ecorePackage.getEString(), "transmitterType", null, 1, 1, Transmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(transmissionEClass, Transmission.class, "Transmission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransmission_TransmissionId(), ecorePackage.getEString(), "transmissionId", null, 1, 1, Transmission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransmission_TransmissionType(), ecorePackage.getEString(), "transmissionType", null, 1, 1, Transmission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(transmitterEClass, ecorePackage.getEString(), "messageTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(transmissionEClass, ecorePackage.getEString(), "messageTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(transmitterTypeEClass, TransmitterType.class, "TransmitterType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTransmitterType_Name(), ecorePackage.getEString(), "name", null, 1, 1, TransmitterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(transmissionTypeEClass, TransmissionType.class, "TransmissionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransmissionType_Name(), ecorePackage.getEString(), "name", null, 1, 1, TransmissionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(transmissionTypeEClass, ecorePackage.getEString(), "transmissions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -291,16 +293,22 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (transmitterEClass.getEOperations().get(0),
+		  (transmissionEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getTransmitter_Name(),
+		  (getTransmission_TransmissionId(),
 		   source,
 		   new String[] {
 			   "key", "true"
+		   });
+		addAnnotation
+		  (transmissionTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "derived", "true"
 		   });
 	}
 
@@ -313,7 +321,7 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (transmitterEClass.getEOperations().get(0),
+		  (transmissionEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "MessageType"
@@ -322,10 +330,20 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getTransmitter_TransmitterType(),
+		  (getTransmission_TransmissionType(),
 		   source,
 		   new String[] {
-			   "frame", "TransmitterType"
+			   "frame", "TransmissionType"
+		   },
+		   new URI[] {
+			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
+		addAnnotation
+		  (transmissionTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "frame", "Transmission",
+			   "route", "transmissionType"
 		   },
 		   new URI[] {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")

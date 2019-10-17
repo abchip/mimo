@@ -62,14 +62,14 @@ public interface TransmissionPackage extends EPackage {
 	TransmissionPackage eINSTANCE = org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.edi.transmission.impl.TransmitterImpl <em>Transmitter</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.edi.transmission.impl.TransmissionImpl <em>Transmission</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.edi.transmission.impl.TransmitterImpl
-	 * @see org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl#getTransmitter()
+	 * @see org.abchip.mimo.edi.transmission.impl.TransmissionImpl
+	 * @see org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl#getTransmission()
 	 * @generated
 	 */
-	int TRANSMITTER = 0;
+	int TRANSMISSION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -78,7 +78,7 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER__CREATED_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 0;
+	int TRANSMISSION__CREATED_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -87,7 +87,7 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER__CREATED_TX_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 1;
+	int TRANSMISSION__CREATED_TX_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -96,7 +96,7 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER__LAST_UPDATED_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 2;
+	int TRANSMISSION__LAST_UPDATED_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -105,44 +105,44 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 3;
+	int TRANSMISSION__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Transmission Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER__NAME = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 4;
+	int TRANSMISSION__TRANSMISSION_ID = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Transmitter Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Transmission Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER__TRANSMITTER_TYPE = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 5;
+	int TRANSMISSION__TRANSMISSION_TYPE = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The number of structural features of the '<em>Transmitter</em>' class.
+	 * The number of structural features of the '<em>Transmission</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER_FEATURE_COUNT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 6;
+	int TRANSMISSION_FEATURE_COUNT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl <em>Transmitter Type</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl
-	 * @see org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl#getTransmitterType()
+	 * @see org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl
+	 * @see org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl#getTransmissionType()
 	 * @generated
 	 */
-	int TRANSMITTER_TYPE = 1;
+	int TRANSMISSION_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -151,7 +151,7 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER_TYPE__SLOTS = EntityPackage.ENTITY_TYPE__SLOTS;
+	int TRANSMISSION_TYPE__SLOTS = EntityPackage.ENTITY_TYPE__SLOTS;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -160,7 +160,7 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER_TYPE__CREATED_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 0;
+	int TRANSMISSION_TYPE__CREATED_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -169,7 +169,7 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER_TYPE__CREATED_TX_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 1;
+	int TRANSMISSION_TYPE__CREATED_TX_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -178,7 +178,7 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER_TYPE__LAST_UPDATED_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 2;
+	int TRANSMISSION_TYPE__LAST_UPDATED_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -187,7 +187,7 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 3;
+	int TRANSMISSION_TYPE__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -196,70 +196,70 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER_TYPE__NAME = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 4;
+	int TRANSMISSION_TYPE__NAME = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Transmitter Type</em>' class.
+	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMITTER_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
+	int TRANSMISSION_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
 
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.edi.transmission.Transmitter <em>Transmitter</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.edi.transmission.Transmission <em>Transmission</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Transmitter</em>'.
-	 * @see org.abchip.mimo.edi.transmission.Transmitter
+	 * @return the meta object for class '<em>Transmission</em>'.
+	 * @see org.abchip.mimo.edi.transmission.Transmission
 	 * @generated
 	 */
-	EClass getTransmitter();
+	EClass getTransmission();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.transmission.Transmitter#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.transmission.Transmission#getTransmissionId <em>Transmission Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transmission Id</em>'.
+	 * @see org.abchip.mimo.edi.transmission.Transmission#getTransmissionId()
+	 * @see #getTransmission()
+	 * @generated
+	 */
+	EAttribute getTransmission_TransmissionId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.transmission.Transmission#getTransmissionType <em>Transmission Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transmission Type</em>'.
+	 * @see org.abchip.mimo.edi.transmission.Transmission#getTransmissionType()
+	 * @see #getTransmission()
+	 * @generated
+	 */
+	EAttribute getTransmission_TransmissionType();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.edi.transmission.TransmissionType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Type</em>'.
+	 * @see org.abchip.mimo.edi.transmission.TransmissionType
+	 * @generated
+	 */
+	EClass getTransmissionType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.transmission.TransmissionType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.edi.transmission.Transmitter#getName()
-	 * @see #getTransmitter()
+	 * @see org.abchip.mimo.edi.transmission.TransmissionType#getName()
+	 * @see #getTransmissionType()
 	 * @generated
 	 */
-	EAttribute getTransmitter_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.transmission.Transmitter#getTransmitterType <em>Transmitter Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transmitter Type</em>'.
-	 * @see org.abchip.mimo.edi.transmission.Transmitter#getTransmitterType()
-	 * @see #getTransmitter()
-	 * @generated
-	 */
-	EAttribute getTransmitter_TransmitterType();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.edi.transmission.TransmitterType <em>Transmitter Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Transmitter Type</em>'.
-	 * @see org.abchip.mimo.edi.transmission.TransmitterType
-	 * @generated
-	 */
-	EClass getTransmitterType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.transmission.TransmitterType#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.edi.transmission.TransmitterType#getName()
-	 * @see #getTransmitterType()
-	 * @generated
-	 */
-	EAttribute getTransmitterType_Name();
+	EAttribute getTransmissionType_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -284,14 +284,40 @@ public interface TransmissionPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.edi.transmission.impl.TransmitterImpl <em>Transmitter</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.transmission.impl.TransmissionImpl <em>Transmission</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.edi.transmission.impl.TransmitterImpl
-		 * @see org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl#getTransmitter()
+		 * @see org.abchip.mimo.edi.transmission.impl.TransmissionImpl
+		 * @see org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl#getTransmission()
 		 * @generated
 		 */
-		EClass TRANSMITTER = eINSTANCE.getTransmitter();
+		EClass TRANSMISSION = eINSTANCE.getTransmission();
+
+		/**
+		 * The meta object literal for the '<em><b>Transmission Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSMISSION__TRANSMISSION_ID = eINSTANCE.getTransmission_TransmissionId();
+
+		/**
+		 * The meta object literal for the '<em><b>Transmission Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSMISSION__TRANSMISSION_TYPE = eINSTANCE.getTransmission_TransmissionType();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl <em>Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl
+		 * @see org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl#getTransmissionType()
+		 * @generated
+		 */
+		EClass TRANSMISSION_TYPE = eINSTANCE.getTransmissionType();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -299,33 +325,7 @@ public interface TransmissionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSMITTER__NAME = eINSTANCE.getTransmitter_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Transmitter Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSMITTER__TRANSMITTER_TYPE = eINSTANCE.getTransmitter_TransmitterType();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl <em>Transmitter Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl
-		 * @see org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl#getTransmitterType()
-		 * @generated
-		 */
-		EClass TRANSMITTER_TYPE = eINSTANCE.getTransmitterType();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSMITTER_TYPE__NAME = eINSTANCE.getTransmitterType_Name();
+		EAttribute TRANSMISSION_TYPE__NAME = eINSTANCE.getTransmissionType_Name();
 
 	}
 

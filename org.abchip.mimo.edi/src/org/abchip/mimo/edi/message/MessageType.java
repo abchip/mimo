@@ -22,7 +22,8 @@ import org.abchip.mimo.entity.EntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getText <em>Text</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.MessageType#getTransmitter <em>Transmitter</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.MessageType#getTransmissionType <em>Transmission Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.MessageType#isEncrypt <em>Encrypt</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getEdiFrameSetups <em>Edi Frame Setups</em>}</li>
  * </ul>
  *
@@ -85,31 +86,57 @@ public interface MessageType<E extends Message> extends EntityType<E>, EntityInf
 	void setText(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Transmitter</b></em>' attribute.
+	 * Returns the value of the '<em><b>Transmission Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Transmitter</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Transmission Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transmitter</em>' attribute.
-	 * @see #setTransmitter(String)
-	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_Transmitter()
+	 * @return the value of the '<em>Transmission Type</em>' attribute.
+	 * @see #setTransmissionType(String)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_TransmissionType()
 	 * @model required="true"
-	 *        annotation="mimo-ent-domain frame='Transmitter'"
+	 *        annotation="mimo-ent-domain frame='TransmissionType'"
 	 * @generated
 	 */
-	String getTransmitter();
+	String getTransmissionType();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#getTransmitter <em>Transmitter</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#getTransmissionType <em>Transmission Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transmitter</em>' attribute.
-	 * @see #getTransmitter()
+	 * @param value the new value of the '<em>Transmission Type</em>' attribute.
+	 * @see #getTransmissionType()
 	 * @generated
 	 */
-	void setTransmitter(String value);
+	void setTransmissionType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Encrypt</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Encrypt</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Encrypt</em>' attribute.
+	 * @see #setEncrypt(boolean)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_Encrypt()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isEncrypt();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#isEncrypt <em>Encrypt</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Encrypt</em>' attribute.
+	 * @see #isEncrypt()
+	 * @generated
+	 */
+	void setEncrypt(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Edi Frame Setups</b></em>' attribute list.

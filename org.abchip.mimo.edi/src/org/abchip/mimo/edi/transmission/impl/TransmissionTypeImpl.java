@@ -8,10 +8,11 @@
 package org.abchip.mimo.edi.transmission.impl;
 
 import java.util.Date;
+import java.util.List;
 
+import org.abchip.mimo.edi.transmission.Transmission;
 import org.abchip.mimo.edi.transmission.TransmissionPackage;
-import org.abchip.mimo.edi.transmission.Transmitter;
-import org.abchip.mimo.edi.transmission.TransmitterType;
+import org.abchip.mimo.edi.transmission.TransmissionType;
 
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
@@ -26,22 +27,22 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Transmitter Type</b></em>'.
+ * An implementation of the model object '<em><b>Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getCreatedStamp <em>Created Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getCreatedStamp <em>Created Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements TransmitterType {
+public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implements TransmissionType {
 	/**
 	 * 
 	 */
@@ -152,7 +153,7 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TransmitterTypeImpl() {
+	protected TransmissionTypeImpl() {
 		super();
 	}
 
@@ -163,7 +164,7 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TransmissionPackage.Literals.TRANSMITTER_TYPE;
+		return TransmissionPackage.Literals.TRANSMISSION_TYPE;
 	}
 
 	/**
@@ -186,7 +187,7 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 		Date oldCreatedStamp = createdStamp;
 		createdStamp = newCreatedStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP, oldCreatedStamp, createdStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION_TYPE__CREATED_STAMP, oldCreatedStamp, createdStamp));
 	}
 
 	/**
@@ -209,7 +210,7 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 		Date oldCreatedTxStamp = createdTxStamp;
 		createdTxStamp = newCreatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION_TYPE__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
 	}
 
 	/**
@@ -232,7 +233,7 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 		Date oldLastUpdatedStamp = lastUpdatedStamp;
 		lastUpdatedStamp = newLastUpdatedStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
 	}
 
 	/**
@@ -255,7 +256,7 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 		Date oldLastUpdatedTxStamp = lastUpdatedTxStamp;
 		lastUpdatedTxStamp = newLastUpdatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
 	}
 
 	/**
@@ -278,7 +279,19 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION_TYPE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> transmissions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -289,15 +302,15 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_STAMP:
 				return getCreatedStamp();
-			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_TX_STAMP:
 				return getCreatedTxStamp();
-			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_STAMP:
 				return getLastUpdatedStamp();
-			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_TX_STAMP:
 				return getLastUpdatedTxStamp();
-			case TransmissionPackage.TRANSMITTER_TYPE__NAME:
+			case TransmissionPackage.TRANSMISSION_TYPE__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -311,19 +324,19 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_STAMP:
 				setCreatedStamp((Date)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_TX_STAMP:
 				setCreatedTxStamp((Date)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_STAMP:
 				setLastUpdatedStamp((Date)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp((Date)newValue);
 				return;
-			case TransmissionPackage.TRANSMITTER_TYPE__NAME:
+			case TransmissionPackage.TRANSMISSION_TYPE__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -338,19 +351,19 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_STAMP:
 				setCreatedStamp(CREATED_STAMP_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_TX_STAMP:
 				setCreatedTxStamp(CREATED_TX_STAMP_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_STAMP:
 				setLastUpdatedStamp(LAST_UPDATED_STAMP_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp(LAST_UPDATED_TX_STAMP_EDEFAULT);
 				return;
-			case TransmissionPackage.TRANSMITTER_TYPE__NAME:
+			case TransmissionPackage.TRANSMISSION_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -365,15 +378,15 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_STAMP:
 				return CREATED_STAMP_EDEFAULT == null ? createdStamp != null : !CREATED_STAMP_EDEFAULT.equals(createdStamp);
-			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_TX_STAMP:
 				return CREATED_TX_STAMP_EDEFAULT == null ? createdTxStamp != null : !CREATED_TX_STAMP_EDEFAULT.equals(createdTxStamp);
-			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_STAMP:
 				return LAST_UPDATED_STAMP_EDEFAULT == null ? lastUpdatedStamp != null : !LAST_UPDATED_STAMP_EDEFAULT.equals(lastUpdatedStamp);
-			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_TX_STAMP:
 				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
-			case TransmissionPackage.TRANSMITTER_TYPE__NAME:
+			case TransmissionPackage.TRANSMISSION_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -388,10 +401,10 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EntityInfo.class) {
 			switch (derivedFeatureID) {
-				case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP: return EntityPackage.ENTITY_INFO__CREATED_STAMP;
-				case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP: return EntityPackage.ENTITY_INFO__CREATED_TX_STAMP;
-				case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP;
-				case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP;
+				case TransmissionPackage.TRANSMISSION_TYPE__CREATED_STAMP: return EntityPackage.ENTITY_INFO__CREATED_STAMP;
+				case TransmissionPackage.TRANSMISSION_TYPE__CREATED_TX_STAMP: return EntityPackage.ENTITY_INFO__CREATED_TX_STAMP;
+				case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP;
+				case TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_TX_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP;
 				default: return -1;
 			}
 		}
@@ -407,10 +420,10 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EntityInfo.class) {
 			switch (baseFeatureID) {
-				case EntityPackage.ENTITY_INFO__CREATED_STAMP: return TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP;
-				case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP: return TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP;
-				case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP: return TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP;
-				case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP: return TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP;
+				case EntityPackage.ENTITY_INFO__CREATED_STAMP: return TransmissionPackage.TRANSMISSION_TYPE__CREATED_STAMP;
+				case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP: return TransmissionPackage.TRANSMISSION_TYPE__CREATED_TX_STAMP;
+				case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP: return TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_STAMP;
+				case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP: return TransmissionPackage.TRANSMISSION_TYPE__LAST_UPDATED_TX_STAMP;
 				default: return -1;
 			}
 		}
@@ -441,4 +454,4 @@ public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements 
 		return result.toString();
 	}
 
-} //TransmitterTypeImpl
+} //TransmissionTypeImpl

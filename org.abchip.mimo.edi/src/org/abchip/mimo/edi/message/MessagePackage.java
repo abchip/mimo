@@ -517,13 +517,22 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_TYPE__TEXT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Transmitter</b></em>' attribute.
+	 * The feature id for the '<em><b>Transmission Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__TRANSMITTER = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 6;
+	int MESSAGE_TYPE__TRANSMISSION_TYPE = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Encrypt</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__ENCRYPT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Edi Frame Setups</b></em>' attribute list.
@@ -532,7 +541,7 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__EDI_FRAME_SETUPS = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 7;
+	int MESSAGE_TYPE__EDI_FRAME_SETUPS = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class.
@@ -541,7 +550,7 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 8;
+	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.
@@ -705,15 +714,26 @@ public interface MessagePackage extends EPackage {
 	EAttribute getMessageType_Text();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.MessageType#getTransmitter <em>Transmitter</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.MessageType#getTransmissionType <em>Transmission Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transmitter</em>'.
-	 * @see org.abchip.mimo.edi.message.MessageType#getTransmitter()
+	 * @return the meta object for the attribute '<em>Transmission Type</em>'.
+	 * @see org.abchip.mimo.edi.message.MessageType#getTransmissionType()
 	 * @see #getMessageType()
 	 * @generated
 	 */
-	EAttribute getMessageType_Transmitter();
+	EAttribute getMessageType_TransmissionType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.MessageType#isEncrypt <em>Encrypt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Encrypt</em>'.
+	 * @see org.abchip.mimo.edi.message.MessageType#isEncrypt()
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	EAttribute getMessageType_Encrypt();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.edi.message.MessageType#getEdiFrameSetups <em>Edi Frame Setups</em>}'.
@@ -879,12 +899,20 @@ public interface MessagePackage extends EPackage {
 		EAttribute MESSAGE_TYPE__TEXT = eINSTANCE.getMessageType_Text();
 
 		/**
-		 * The meta object literal for the '<em><b>Transmitter</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Transmission Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE_TYPE__TRANSMITTER = eINSTANCE.getMessageType_Transmitter();
+		EAttribute MESSAGE_TYPE__TRANSMISSION_TYPE = eINSTANCE.getMessageType_TransmissionType();
+
+		/**
+		 * The meta object literal for the '<em><b>Encrypt</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_TYPE__ENCRYPT = eINSTANCE.getMessageType_Encrypt();
 
 		/**
 		 * The meta object literal for the '<em><b>Edi Frame Setups</b></em>' attribute list feature.
