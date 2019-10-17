@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class MessageImpl extends EntityTypedImpl<MessageType<?>> implements Message {
+public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implements Message {
 	/**
 	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->

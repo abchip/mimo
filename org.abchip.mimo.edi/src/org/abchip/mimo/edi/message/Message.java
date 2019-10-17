@@ -31,7 +31,7 @@ import org.abchip.mimo.entity.EntityTyped;
  * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessage()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {

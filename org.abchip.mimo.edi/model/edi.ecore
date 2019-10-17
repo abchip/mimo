@@ -51,7 +51,7 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="message" nsURI="http://www.abchip.org/mimo/edi/message" nsPrefix="mimo-edi-message">
-    <eClassifiers xsi:type="ecore:EClass" name="Message">
+    <eClassifiers xsi:type="ecore:EClass" name="Message" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageId" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true">
