@@ -22,6 +22,7 @@ import org.abchip.mimo.entity.EntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.MessageType#getTransmitter <em>Transmitter</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getEdiFrameSetups <em>Edi Frame Setups</em>}</li>
  * </ul>
  *
@@ -82,6 +83,33 @@ public interface MessageType<E extends Message> extends EntityType<E>, EntityInf
 	 * @generated
 	 */
 	void setText(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Transmitter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Transmitter</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Transmitter</em>' attribute.
+	 * @see #setTransmitter(String)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_Transmitter()
+	 * @model required="true"
+	 *        annotation="mimo-ent-domain frame='Transmitter'"
+	 * @generated
+	 */
+	String getTransmitter();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#getTransmitter <em>Transmitter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Transmitter</em>' attribute.
+	 * @see #getTransmitter()
+	 * @generated
+	 */
+	void setTransmitter(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Edi Frame Setups</b></em>' attribute list.

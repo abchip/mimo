@@ -5,29 +5,32 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi.entity.impl;
+package org.abchip.mimo.edi.transmission.impl;
 
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.edi.EDIPackage;
-import org.abchip.mimo.edi.entity.EdiFrameSetup;
-import org.abchip.mimo.edi.entity.EntityCondition;
-import org.abchip.mimo.edi.entity.EntityEvent;
-import org.abchip.mimo.edi.entity.EntityFactory;
+
 import org.abchip.mimo.edi.entity.EntityPackage;
 
+import org.abchip.mimo.edi.entity.impl.EntityPackageImpl;
+
 import org.abchip.mimo.edi.impl.EDIPackageImpl;
+
 import org.abchip.mimo.edi.message.MessagePackage;
 
 import org.abchip.mimo.edi.message.impl.MessagePackageImpl;
 
+import org.abchip.mimo.edi.transmission.TransmissionFactory;
 import org.abchip.mimo.edi.transmission.TransmissionPackage;
-import org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl;
+import org.abchip.mimo.edi.transmission.Transmitter;
+import org.abchip.mimo.edi.transmission.TransmitterType;
+
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -38,27 +41,20 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
+public class TransmissionPackageImpl extends EPackageImpl implements TransmissionPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass ediFrameSetupEClass = null;
+	private EClass transmitterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum entityConditionEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum entityEventEEnum = null;
+	private EClass transmitterTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -71,12 +67,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.edi.entity.EntityPackage#eNS_URI
+	 * @see org.abchip.mimo.edi.transmission.TransmissionPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private EntityPackageImpl() {
-		super(eNS_URI, EntityFactory.eINSTANCE);
+	private TransmissionPackageImpl() {
+		super(eNS_URI, TransmissionFactory.eINSTANCE);
 	}
 
 	/**
@@ -89,7 +85,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link EntityPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link TransmissionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,12 +94,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static EntityPackage init() {
-		if (isInited) return (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+	public static TransmissionPackage init() {
+		if (isInited) return (TransmissionPackage)EPackage.Registry.INSTANCE.getEPackage(TransmissionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredEntityPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		EntityPackageImpl theEntityPackage = registeredEntityPackage instanceof EntityPackageImpl ? (EntityPackageImpl)registeredEntityPackage : new EntityPackageImpl();
+		Object registeredTransmissionPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		TransmissionPackageImpl theTransmissionPackage = registeredTransmissionPackage instanceof TransmissionPackageImpl ? (TransmissionPackageImpl)registeredTransmissionPackage : new TransmissionPackageImpl();
 
 		isInited = true;
 
@@ -113,29 +109,29 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EDIPackage.eNS_URI);
 		EDIPackageImpl theEDIPackage = (EDIPackageImpl)(registeredPackage instanceof EDIPackageImpl ? registeredPackage : EDIPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MessagePackage.eNS_URI);
 		MessagePackageImpl theMessagePackage = (MessagePackageImpl)(registeredPackage instanceof MessagePackageImpl ? registeredPackage : MessagePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TransmissionPackage.eNS_URI);
-		TransmissionPackageImpl theTransmissionPackage = (TransmissionPackageImpl)(registeredPackage instanceof TransmissionPackageImpl ? registeredPackage : TransmissionPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theEntityPackage.createPackageContents();
-		theEDIPackage.createPackageContents();
-		theMessagePackage.createPackageContents();
 		theTransmissionPackage.createPackageContents();
+		theEDIPackage.createPackageContents();
+		theEntityPackage.createPackageContents();
+		theMessagePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theEntityPackage.initializePackageContents();
-		theEDIPackage.initializePackageContents();
-		theMessagePackage.initializePackageContents();
 		theTransmissionPackage.initializePackageContents();
+		theEDIPackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
+		theMessagePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theEntityPackage.freeze();
+		theTransmissionPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(EntityPackage.eNS_URI, theEntityPackage);
-		return theEntityPackage;
+		EPackage.Registry.INSTANCE.put(TransmissionPackage.eNS_URI, theTransmissionPackage);
+		return theTransmissionPackage;
 	}
 
 	/**
@@ -144,8 +140,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getEdiFrameSetup() {
-		return ediFrameSetupEClass;
+	public EClass getTransmitter() {
+		return transmitterEClass;
 	}
 
 	/**
@@ -154,8 +150,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEdiFrameSetup_MessageType() {
-		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTransmitter_Name() {
+		return (EAttribute)transmitterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -164,8 +160,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEdiFrameSetup_Frame() {
-		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTransmitter_TransmitterType() {
+		return (EAttribute)transmitterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -174,8 +170,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEdiFrameSetup_EntityCondition() {
-		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(2);
+	public EClass getTransmitterType() {
+		return transmitterTypeEClass;
 	}
 
 	/**
@@ -184,8 +180,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEdiFrameSetup_EntityEvent() {
-		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(3);
+	public EAttribute getTransmitterType_Name() {
+		return (EAttribute)transmitterTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -194,28 +190,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getEntityCondition() {
-		return entityConditionEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getEntityEvent() {
-		return entityEventEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EntityFactory getEntityFactory() {
-		return (EntityFactory)getEFactoryInstance();
+	public TransmissionFactory getTransmissionFactory() {
+		return (TransmissionFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -237,15 +213,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		ediFrameSetupEClass = createEClass(EDI_FRAME_SETUP);
-		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__MESSAGE_TYPE);
-		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__FRAME);
-		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_CONDITION);
-		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_EVENT);
+		transmitterEClass = createEClass(TRANSMITTER);
+		createEAttribute(transmitterEClass, TRANSMITTER__NAME);
+		createEAttribute(transmitterEClass, TRANSMITTER__TRANSMITTER_TYPE);
 
-		// Create enums
-		entityConditionEEnum = createEEnum(ENTITY_CONDITION);
-		entityEventEEnum = createEEnum(ENTITY_EVENT);
+		transmitterTypeEClass = createEClass(TRANSMITTER_TYPE);
+		createEAttribute(transmitterTypeEClass, TRANSMITTER_TYPE__NAME);
 	}
 
 	/**
@@ -279,26 +252,28 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		ediFrameSetupEClass.getESuperTypes().add(theEntityPackage_1.getEntityNameable());
+		EGenericType g1 = createEGenericType(theEntityPackage_1.getEntityTyped());
+		EGenericType g2 = createEGenericType(this.getTransmitterType());
+		g1.getETypeArguments().add(g2);
+		transmitterEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theEntityPackage_1.getEntityInfo());
+		transmitterEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theEntityPackage_1.getEntityType());
+		g2 = createEGenericType(this.getTransmitter());
+		g1.getETypeArguments().add(g2);
+		transmitterTypeEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theEntityPackage_1.getEntityInfo());
+		transmitterTypeEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(ediFrameSetupEClass, EdiFrameSetup.class, "EdiFrameSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEdiFrameSetup_MessageType(), ecorePackage.getEString(), "messageType", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEdiFrameSetup_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEdiFrameSetup_EntityCondition(), this.getEntityCondition(), "entityCondition", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEdiFrameSetup_EntityEvent(), this.getEntityEvent(), "entityEvent", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(transmitterEClass, Transmitter.class, "Transmitter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransmitter_Name(), ecorePackage.getEString(), "name", null, 1, 1, Transmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransmitter_TransmitterType(), ecorePackage.getEString(), "transmitterType", null, 1, 1, Transmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(entityConditionEEnum, EntityCondition.class, "EntityCondition");
-		addEEnumLiteral(entityConditionEEnum, EntityCondition.ALL);
-		addEEnumLiteral(entityConditionEEnum, EntityCondition.SELECTED);
-		addEEnumLiteral(entityConditionEEnum, EntityCondition.SCRIPT);
+		addEOperation(transmitterEClass, ecorePackage.getEString(), "messageTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEEnum(entityEventEEnum, EntityEvent.class, "EntityEvent");
-		addEEnumLiteral(entityEventEEnum, EntityEvent.ALL);
-		addEEnumLiteral(entityEventEEnum, EntityEvent.CREATE);
-		addEEnumLiteral(entityEventEEnum, EntityEvent.UPDATE);
-		addEEnumLiteral(entityEventEEnum, EntityEvent.DELETE);
+		initEClass(transmitterTypeEClass, TransmitterType.class, "TransmitterType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransmitterType_Name(), ecorePackage.getEString(), "name", null, 1, 1, TransmitterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -316,13 +291,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getEdiFrameSetup_MessageType(),
+		  (transmitterEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "derived", "true"
 		   });
 		addAnnotation
-		  (getEdiFrameSetup_Frame(),
+		  (getTransmitter_Name(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -338,7 +313,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getEdiFrameSetup_MessageType(),
+		  (transmitterEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "MessageType"
@@ -347,14 +322,14 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getEdiFrameSetup_Frame(),
+		  (getTransmitter_TransmitterType(),
 		   source,
 		   new String[] {
-			   "frame", "Frame"
+			   "frame", "TransmitterType"
 		   },
 		   new URI[] {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 
-} //EntityPackageImpl
+} //TransmissionPackageImpl

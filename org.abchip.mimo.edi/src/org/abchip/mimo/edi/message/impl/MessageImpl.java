@@ -39,13 +39,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getSender <em>Sender</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEntity <em>Entity</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implements Message {
+public class MessageImpl extends EntityTypedImpl<MessageType<?>> implements Message {
 	/**
 	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -230,6 +231,26 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @ordered
 	 */
 	protected String frame = FRAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEntity() <em>Entity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ENTITY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected String entity = ENTITY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEvent() <em>Event</em>}' attribute.
@@ -549,6 +570,29 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
+	public String getEntity() {
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEntity(String newEntity) {
+		String oldEntity = entity;
+		entity = newEntity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__ENTITY, oldEntity, entity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MessagePackage.MESSAGE__CREATED_STAMP:
@@ -569,6 +613,8 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 				return getSender();
 			case MessagePackage.MESSAGE__FRAME:
 				return getFrame();
+			case MessagePackage.MESSAGE__ENTITY:
+				return getEntity();
 			case MessagePackage.MESSAGE__EVENT:
 				return getEvent();
 			case MessagePackage.MESSAGE__BODY:
@@ -611,6 +657,9 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 				return;
 			case MessagePackage.MESSAGE__FRAME:
 				setFrame((String)newValue);
+				return;
+			case MessagePackage.MESSAGE__ENTITY:
+				setEntity((String)newValue);
 				return;
 			case MessagePackage.MESSAGE__EVENT:
 				setEvent((EntityEvent)newValue);
@@ -657,6 +706,9 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 			case MessagePackage.MESSAGE__FRAME:
 				setFrame(FRAME_EDEFAULT);
 				return;
+			case MessagePackage.MESSAGE__ENTITY:
+				setEntity(ENTITY_EDEFAULT);
+				return;
 			case MessagePackage.MESSAGE__EVENT:
 				setEvent(EVENT_EDEFAULT);
 				return;
@@ -693,6 +745,8 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 				return SENDER_EDEFAULT == null ? sender != null : !SENDER_EDEFAULT.equals(sender);
 			case MessagePackage.MESSAGE__FRAME:
 				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
+			case MessagePackage.MESSAGE__ENTITY:
+				return ENTITY_EDEFAULT == null ? entity != null : !ENTITY_EDEFAULT.equals(entity);
 			case MessagePackage.MESSAGE__EVENT:
 				return event != EVENT_EDEFAULT;
 			case MessagePackage.MESSAGE__BODY:
@@ -767,6 +821,8 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 		result.append(sender);
 		result.append(", frame: ");
 		result.append(frame);
+		result.append(", entity: ");
+		result.append(entity);
 		result.append(", event: ");
 		result.append(event);
 		result.append(", body: ");

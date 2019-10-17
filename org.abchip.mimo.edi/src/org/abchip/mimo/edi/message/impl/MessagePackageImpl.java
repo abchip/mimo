@@ -19,6 +19,8 @@ import org.abchip.mimo.edi.message.MessageSent;
 import org.abchip.mimo.edi.message.MessageStatus;
 import org.abchip.mimo.edi.message.MessageType;
 
+import org.abchip.mimo.edi.transmission.TransmissionPackage;
+import org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.eclipse.emf.common.util.URI;
@@ -129,16 +131,20 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		EDIPackageImpl theEDIPackage = (EDIPackageImpl)(registeredPackage instanceof EDIPackageImpl ? registeredPackage : EDIPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.edi.entity.EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.edi.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TransmissionPackage.eNS_URI);
+		TransmissionPackageImpl theTransmissionPackage = (TransmissionPackageImpl)(registeredPackage instanceof TransmissionPackageImpl ? registeredPackage : TransmissionPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMessagePackage.createPackageContents();
 		theEDIPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
+		theTransmissionPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMessagePackage.initializePackageContents();
 		theEDIPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
+		theTransmissionPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theMessagePackage.freeze();
@@ -185,7 +191,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 */
 	@Override
 	public EAttribute getMessage_Body() {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -195,7 +201,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 */
 	@Override
 	public EAttribute getMessage_Event() {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -226,6 +232,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	@Override
 	public EAttribute getMessage_Frame() {
 		return (EAttribute)messageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessage_Entity() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -284,8 +300,18 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMessageType_EdiFrameSetups() {
+	public EAttribute getMessageType_Transmitter() {
 		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessageType_EdiFrameSetups() {
+		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -333,6 +359,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createEAttribute(messageEClass, MESSAGE__STATUS);
 		createEAttribute(messageEClass, MESSAGE__SENDER);
 		createEAttribute(messageEClass, MESSAGE__FRAME);
+		createEAttribute(messageEClass, MESSAGE__ENTITY);
 		createEAttribute(messageEClass, MESSAGE__EVENT);
 		createEAttribute(messageEClass, MESSAGE__BODY);
 
@@ -343,6 +370,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__NAME);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__TEXT);
+		createEAttribute(messageTypeEClass, MESSAGE_TYPE__TRANSMITTER);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__EDI_FRAME_SETUPS);
 
 		// Create enums
@@ -402,12 +430,13 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		messageTypeEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(messageEClass, Message.class, "Message", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessage_MessageId(), ecorePackage.getEString(), "messageId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_MessageType(), ecorePackage.getEString(), "messageType", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Status(), this.getMessageStatus(), "status", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Sender(), ecorePackage.getEString(), "sender", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Entity(), ecorePackage.getEString(), "entity", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Event(), theEntityPackage.getEntityEvent(), "event", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Body(), ecorePackage.getEString(), "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -418,6 +447,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageType_Name(), ecorePackage.getEString(), "name", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageType_Text(), ecorePackage.getEString(), "text", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageType_Transmitter(), ecorePackage.getEString(), "transmitter", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageType_EdiFrameSetups(), ecorePackage.getEString(), "ediFrameSetups", null, 0, -1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(messageTypeEClass, ecorePackage.getEString(), "messageReceiveds", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -546,6 +576,15 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		   new String[] {
 			   "frame", "MessageSent",
 			   "route", "messageType"
+		   },
+		   new URI[] {
+			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
+		addAnnotation
+		  (getMessageType_Transmitter(),
+		   source,
+		   new String[] {
+			   "frame", "Transmitter"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

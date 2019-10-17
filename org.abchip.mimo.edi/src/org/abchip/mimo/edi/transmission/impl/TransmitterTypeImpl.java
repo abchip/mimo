@@ -5,46 +5,48 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.edi.message.impl;
+package org.abchip.mimo.edi.transmission.impl;
 
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
-import org.abchip.mimo.edi.message.Message;
-import org.abchip.mimo.edi.message.MessagePackage;
-import org.abchip.mimo.edi.message.MessageType;
+
+import org.abchip.mimo.edi.transmission.TransmissionPackage;
+import org.abchip.mimo.edi.transmission.Transmitter;
+import org.abchip.mimo.edi.transmission.TransmitterType;
 
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
+
 import org.abchip.mimo.entity.impl.EntityTypeImpl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Type</b></em>'.
+ * An implementation of the model object '<em><b>Transmitter Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getCreatedStamp <em>Created Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getText <em>Text</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getTransmitter <em>Transmitter</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getEdiFrameSetups <em>Edi Frame Setups</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getCreatedStamp <em>Created Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmitterTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implements MessageType<E> {
+public class TransmitterTypeImpl extends EntityTypeImpl<Transmitter> implements TransmitterType {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,6 +56,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final Date CREATED_STAMP_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -63,6 +66,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected Date createdStamp = CREATED_STAMP_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getCreatedTxStamp() <em>Created Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,6 +76,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final Date CREATED_TX_STAMP_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getCreatedTxStamp() <em>Created Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,6 +86,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected Date createdTxStamp = CREATED_TX_STAMP_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLastUpdatedStamp() <em>Last Updated Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +96,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final Date LAST_UPDATED_STAMP_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLastUpdatedStamp() <em>Last Updated Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -99,6 +106,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected Date lastUpdatedStamp = LAST_UPDATED_STAMP_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLastUpdatedTxStamp() <em>Last Updated Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,6 +116,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final Date LAST_UPDATED_TX_STAMP_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLastUpdatedTxStamp() <em>Last Updated Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,6 +126,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected Date lastUpdatedTxStamp = LAST_UPDATED_TX_STAMP_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -126,6 +136,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -135,62 +146,13 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TEXT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected String text = TEXT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTransmitter() <em>Transmitter</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransmitter()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TRANSMITTER_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTransmitter() <em>Transmitter</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransmitter()
-	 * @generated
-	 * @ordered
-	 */
-	protected String transmitter = TRANSMITTER_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getEdiFrameSetups() <em>Edi Frame Setups</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEdiFrameSetups()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> ediFrameSetups;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MessageTypeImpl() {
+	protected TransmitterTypeImpl() {
 		super();
 	}
 
@@ -201,7 +163,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MessagePackage.Literals.MESSAGE_TYPE;
+		return TransmissionPackage.Literals.TRANSMITTER_TYPE;
 	}
 
 	/**
@@ -224,7 +186,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		Date oldCreatedStamp = createdStamp;
 		createdStamp = newCreatedStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__CREATED_STAMP, oldCreatedStamp, createdStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP, oldCreatedStamp, createdStamp));
 	}
 
 	/**
@@ -247,7 +209,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		Date oldCreatedTxStamp = createdTxStamp;
 		createdTxStamp = newCreatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
 	}
 
 	/**
@@ -270,7 +232,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		Date oldLastUpdatedStamp = lastUpdatedStamp;
 		lastUpdatedStamp = newLastUpdatedStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
 	}
 
 	/**
@@ -293,7 +255,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		Date oldLastUpdatedTxStamp = lastUpdatedTxStamp;
 		lastUpdatedTxStamp = newLastUpdatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
 	}
 
 	/**
@@ -316,90 +278,7 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getText() {
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setText(String newText) {
-		String oldText = text;
-		text = newText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__TEXT, oldText, text));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getTransmitter() {
-		return transmitter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTransmitter(String newTransmitter) {
-		String oldTransmitter = transmitter;
-		transmitter = newTransmitter;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__TRANSMITTER, oldTransmitter, transmitter));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> getEdiFrameSetups() {
-		if (ediFrameSetups == null) {
-			ediFrameSetups = new EDataTypeUniqueEList<String>(String.class, this, MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS);
-		}
-		return ediFrameSetups;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> messageReceiveds() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> messageSents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMITTER_TYPE__NAME, oldName, name));
 	}
 
 	/**
@@ -410,22 +289,16 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP:
 				return getCreatedStamp();
-			case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP:
 				return getCreatedTxStamp();
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP:
 				return getLastUpdatedStamp();
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP:
 				return getLastUpdatedTxStamp();
-			case MessagePackage.MESSAGE_TYPE__NAME:
+			case TransmissionPackage.TRANSMITTER_TYPE__NAME:
 				return getName();
-			case MessagePackage.MESSAGE_TYPE__TEXT:
-				return getText();
-			case MessagePackage.MESSAGE_TYPE__TRANSMITTER:
-				return getTransmitter();
-			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
-				return getEdiFrameSetups();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -435,34 +308,23 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP:
 				setCreatedStamp((Date)newValue);
 				return;
-			case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP:
 				setCreatedTxStamp((Date)newValue);
 				return;
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP:
 				setLastUpdatedStamp((Date)newValue);
 				return;
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp((Date)newValue);
 				return;
-			case MessagePackage.MESSAGE_TYPE__NAME:
+			case TransmissionPackage.TRANSMITTER_TYPE__NAME:
 				setName((String)newValue);
-				return;
-			case MessagePackage.MESSAGE_TYPE__TEXT:
-				setText((String)newValue);
-				return;
-			case MessagePackage.MESSAGE_TYPE__TRANSMITTER:
-				setTransmitter((String)newValue);
-				return;
-			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
-				getEdiFrameSetups().clear();
-				getEdiFrameSetups().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -476,29 +338,20 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP:
 				setCreatedStamp(CREATED_STAMP_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP:
 				setCreatedTxStamp(CREATED_TX_STAMP_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP:
 				setLastUpdatedStamp(LAST_UPDATED_STAMP_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP:
 				setLastUpdatedTxStamp(LAST_UPDATED_TX_STAMP_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE_TYPE__NAME:
+			case TransmissionPackage.TRANSMITTER_TYPE__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case MessagePackage.MESSAGE_TYPE__TEXT:
-				setText(TEXT_EDEFAULT);
-				return;
-			case MessagePackage.MESSAGE_TYPE__TRANSMITTER:
-				setTransmitter(TRANSMITTER_EDEFAULT);
-				return;
-			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
-				getEdiFrameSetups().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -512,22 +365,16 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP:
 				return CREATED_STAMP_EDEFAULT == null ? createdStamp != null : !CREATED_STAMP_EDEFAULT.equals(createdStamp);
-			case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP:
 				return CREATED_TX_STAMP_EDEFAULT == null ? createdTxStamp != null : !CREATED_TX_STAMP_EDEFAULT.equals(createdTxStamp);
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP:
 				return LAST_UPDATED_STAMP_EDEFAULT == null ? lastUpdatedStamp != null : !LAST_UPDATED_STAMP_EDEFAULT.equals(lastUpdatedStamp);
-			case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP:
+			case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP:
 				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
-			case MessagePackage.MESSAGE_TYPE__NAME:
+			case TransmissionPackage.TRANSMITTER_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case MessagePackage.MESSAGE_TYPE__TEXT:
-				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-			case MessagePackage.MESSAGE_TYPE__TRANSMITTER:
-				return TRANSMITTER_EDEFAULT == null ? transmitter != null : !TRANSMITTER_EDEFAULT.equals(transmitter);
-			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
-				return ediFrameSetups != null && !ediFrameSetups.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -541,10 +388,10 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EntityInfo.class) {
 			switch (derivedFeatureID) {
-				case MessagePackage.MESSAGE_TYPE__CREATED_STAMP: return EntityPackage.ENTITY_INFO__CREATED_STAMP;
-				case MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP: return EntityPackage.ENTITY_INFO__CREATED_TX_STAMP;
-				case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP;
-				case MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP;
+				case TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP: return EntityPackage.ENTITY_INFO__CREATED_STAMP;
+				case TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP: return EntityPackage.ENTITY_INFO__CREATED_TX_STAMP;
+				case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP;
+				case TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP;
 				default: return -1;
 			}
 		}
@@ -560,10 +407,10 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EntityInfo.class) {
 			switch (baseFeatureID) {
-				case EntityPackage.ENTITY_INFO__CREATED_STAMP: return MessagePackage.MESSAGE_TYPE__CREATED_STAMP;
-				case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP: return MessagePackage.MESSAGE_TYPE__CREATED_TX_STAMP;
-				case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP: return MessagePackage.MESSAGE_TYPE__LAST_UPDATED_STAMP;
-				case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP: return MessagePackage.MESSAGE_TYPE__LAST_UPDATED_TX_STAMP;
+				case EntityPackage.ENTITY_INFO__CREATED_STAMP: return TransmissionPackage.TRANSMITTER_TYPE__CREATED_STAMP;
+				case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP: return TransmissionPackage.TRANSMITTER_TYPE__CREATED_TX_STAMP;
+				case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP: return TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_STAMP;
+				case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP: return TransmissionPackage.TRANSMITTER_TYPE__LAST_UPDATED_TX_STAMP;
 				default: return -1;
 			}
 		}
@@ -590,14 +437,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		result.append(lastUpdatedTxStamp);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", text: ");
-		result.append(text);
-		result.append(", transmitter: ");
-		result.append(transmitter);
-		result.append(", ediFrameSetups: ");
-		result.append(ediFrameSetups);
 		result.append(')');
 		return result.toString();
 	}
 
-} //MessageTypeImpl
+} //TransmitterTypeImpl

@@ -115,6 +115,10 @@ public class EMFSlotAdapter extends SlotImpl {
 			this.text = this.getName().substring(frame.getName().length());
 		else if (!frame.getSuperNames().isEmpty()) {
 			for (String superName : frame.getSuperNames()) {
+				
+				if (this.getName().toLowerCase().equals(superName.toLowerCase()))
+					break;
+				
 				if (this.getName().toLowerCase().startsWith(superName.toLowerCase())) {
 					this.text = this.getName().substring(superName.length());
 					break;

@@ -142,7 +142,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, EntityProviderImpl.RESOURCE_MASTER);
 
 		Frame<?> frame = frameManager.getFrame(domain.getFrame());
 		if (frame == null)

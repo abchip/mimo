@@ -25,12 +25,13 @@ import org.abchip.mimo.entity.EntityTyped;
  *   <li>{@link org.abchip.mimo.edi.message.Message#getStatus <em>Status</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getSender <em>Sender</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getEntity <em>Entity</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getEvent <em>Event</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessage()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
@@ -225,5 +226,31 @@ public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	 * @generated
 	 */
 	void setFrame(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Entity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entity</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entity</em>' attribute.
+	 * @see #setEntity(String)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Entity()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getEntity();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getEntity <em>Entity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Entity</em>' attribute.
+	 * @see #getEntity()
+	 * @generated
+	 */
+	void setEntity(String value);
 
 } // Message

@@ -22,6 +22,8 @@ import org.abchip.mimo.edi.message.MessagePackage;
 
 import org.abchip.mimo.edi.message.impl.MessagePackageImpl;
 
+import org.abchip.mimo.edi.transmission.TransmissionPackage;
+import org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -98,16 +100,20 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MessagePackage.eNS_URI);
 		MessagePackageImpl theMessagePackage = (MessagePackageImpl)(registeredPackage instanceof MessagePackageImpl ? registeredPackage : MessagePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TransmissionPackage.eNS_URI);
+		TransmissionPackageImpl theTransmissionPackage = (TransmissionPackageImpl)(registeredPackage instanceof TransmissionPackageImpl ? registeredPackage : TransmissionPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEDIPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theMessagePackage.createPackageContents();
+		theTransmissionPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theEDIPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theMessagePackage.initializePackageContents();
+		theTransmissionPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theEDIPackage.freeze();
@@ -185,12 +191,14 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		MessagePackage theMessagePackage = (MessagePackage)EPackage.Registry.INSTANCE.getEPackage(MessagePackage.eNS_URI);
+		TransmissionPackage theTransmissionPackage = (TransmissionPackage)EPackage.Registry.INSTANCE.getEPackage(TransmissionPackage.eNS_URI);
 		org.abchip.mimo.entity.EntityPackage theEntityPackage_1 = (org.abchip.mimo.entity.EntityPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.entity.EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theEntityPackage);
 		getESubpackages().add(theMessagePackage);
+		getESubpackages().add(theTransmissionPackage);
 
 		// Create type parameters
 

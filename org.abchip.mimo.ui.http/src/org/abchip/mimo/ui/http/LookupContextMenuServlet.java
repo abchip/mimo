@@ -135,7 +135,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 		String icon = null;
 
-		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class);
+		EntityReader<UiFrameSetup> frameSetupReader = resourceManager.getEntityReader(contextProvider, UiFrameSetup.class, EntityProviderImpl.RESOURCE_MASTER);
 
 		Frame<?> frame = frameManager.getFrame(frameName);
 		if (frame == null)
