@@ -143,4 +143,9 @@ public class NIOEntityWriterImpl<E extends EntityNameable> extends NIOEntityRead
 			entityLocker.unlock(LockType.WRITE);
 		}
 	}
+
+	@Override
+	public String nextSequence() {
+		throw new UnsupportedOperationException();
+	}
 }

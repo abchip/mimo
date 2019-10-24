@@ -623,6 +623,7 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/update">
           <genParameters ecoreParameter="mimo.ecore#//entity/EntityWriter/update/entity"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityWriter/nextSequence"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Facet"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Frame">

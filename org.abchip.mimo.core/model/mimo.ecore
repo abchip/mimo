@@ -985,6 +985,7 @@
           <eGenericType eTypeParameter="#//entity/EntityWriter/E"/>
         </eParameters>
       </eOperations>
+      <eOperations name="nextSequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eGenericSuperTypes eClassifier="#//entity/EntityReader">
         <eTypeArguments eTypeParameter="#//entity/EntityWriter/E"/>
       </eGenericSuperTypes>

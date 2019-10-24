@@ -50,4 +50,12 @@ public interface EntityWriter<E extends EntityNameable> extends EntityReader<E> 
 	 */
 	void update(E entity);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	String nextSequence();
+
 } // EntityWriter
