@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MIMO Core Http
 Bundle-SymbolicName: org.abchip.mimo.core.http;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Automatic-Module-Name: org.abchip.mimo.core.http
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

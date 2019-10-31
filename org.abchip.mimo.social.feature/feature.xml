@@ -2,7 +2,7 @@
 <feature
       id="org.abchip.mimo.social.feature"
       label="MIO Social Feature"
-      version="0.1.0.qualifier"
+      version="0.2.0.qualifier"
       provider-name="ABChip">
 
    <description url="http://www.example.com/description">

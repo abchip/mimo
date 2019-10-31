@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MIMO UI Http
 Bundle-SymbolicName: org.abchip.mimo.ui.http
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Automatic-Module-Name: org.abchip.mimo.ui.http
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
