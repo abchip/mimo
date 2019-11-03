@@ -1,0 +1,569 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.product.product.impl;
+
+import java.math.BigDecimal;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.ProductGroupOrder;
+import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Product Group Order</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getGroupOrderId <em>Group Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getJobId <em>Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getReqOrderQty <em>Req Order Qty</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getSoldOrderQty <em>Sold Order Qty</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getThruDate <em>Thru Date</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class ProductGroupOrderImpl extends BizEntityImpl implements ProductGroupOrder {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The default value of the '{@link #getGroupOrderId() <em>Group Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroupOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GROUP_ORDER_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGroupOrderId() <em>Group Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroupOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String groupOrderId = GROUP_ORDER_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date FROM_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date fromDate = FROM_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getJobId() <em>Job Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String JOB_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getJobId() <em>Job Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String jobId = JOB_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRODUCT_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String productId = PRODUCT_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getReqOrderQty() <em>Req Order Qty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReqOrderQty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal REQ_ORDER_QTY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getReqOrderQty() <em>Req Order Qty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReqOrderQty()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal reqOrderQty = REQ_ORDER_QTY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSoldOrderQty() <em>Sold Order Qty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSoldOrderQty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal SOLD_ORDER_QTY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSoldOrderQty() <em>Sold Order Qty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSoldOrderQty()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal soldOrderQty = SOLD_ORDER_QTY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATUS_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String statusId = STATUS_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThruDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date THRU_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThruDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProductGroupOrderImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ProductPackage.Literals.PRODUCT_GROUP_ORDER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getFromDate() {
+		return fromDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
+		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__FROM_DATE, oldFromDate, fromDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getGroupOrderId() {
+		return groupOrderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGroupOrderId(String newGroupOrderId) {
+		String oldGroupOrderId = groupOrderId;
+		groupOrderId = newGroupOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__GROUP_ORDER_ID, oldGroupOrderId, groupOrderId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getJobId() {
+		return jobId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setJobId(String newJobId) {
+		String oldJobId = jobId;
+		jobId = newJobId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__JOB_ID, oldJobId, jobId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getReqOrderQty() {
+		return reqOrderQty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setReqOrderQty(BigDecimal newReqOrderQty) {
+		BigDecimal oldReqOrderQty = reqOrderQty;
+		reqOrderQty = newReqOrderQty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__REQ_ORDER_QTY, oldReqOrderQty, reqOrderQty));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getSoldOrderQty() {
+		return soldOrderQty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSoldOrderQty(BigDecimal newSoldOrderQty) {
+		BigDecimal oldSoldOrderQty = soldOrderQty;
+		soldOrderQty = newSoldOrderQty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__SOLD_ORDER_QTY, oldSoldOrderQty, soldOrderQty));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getStatusId() {
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatusId(String newStatusId) {
+		String oldStatusId = statusId;
+		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__STATUS_ID, oldStatusId, statusId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getThruDate() {
+		return thruDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
+		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__THRU_DATE, oldThruDate, thruDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getProductId() {
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProductId(String newProductId) {
+		String oldProductId = productId;
+		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GROUP_ORDER__PRODUCT_ID, oldProductId, productId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ProductPackage.PRODUCT_GROUP_ORDER__GROUP_ORDER_ID:
+				return getGroupOrderId();
+			case ProductPackage.PRODUCT_GROUP_ORDER__FROM_DATE:
+				return getFromDate();
+			case ProductPackage.PRODUCT_GROUP_ORDER__JOB_ID:
+				return getJobId();
+			case ProductPackage.PRODUCT_GROUP_ORDER__PRODUCT_ID:
+				return getProductId();
+			case ProductPackage.PRODUCT_GROUP_ORDER__REQ_ORDER_QTY:
+				return getReqOrderQty();
+			case ProductPackage.PRODUCT_GROUP_ORDER__SOLD_ORDER_QTY:
+				return getSoldOrderQty();
+			case ProductPackage.PRODUCT_GROUP_ORDER__STATUS_ID:
+				return getStatusId();
+			case ProductPackage.PRODUCT_GROUP_ORDER__THRU_DATE:
+				return getThruDate();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ProductPackage.PRODUCT_GROUP_ORDER__GROUP_ORDER_ID:
+				setGroupOrderId((String)newValue);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__FROM_DATE:
+				setFromDate((Date)newValue);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__JOB_ID:
+				setJobId((String)newValue);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__PRODUCT_ID:
+				setProductId((String)newValue);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__REQ_ORDER_QTY:
+				setReqOrderQty((BigDecimal)newValue);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__SOLD_ORDER_QTY:
+				setSoldOrderQty((BigDecimal)newValue);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__STATUS_ID:
+				setStatusId((String)newValue);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__THRU_DATE:
+				setThruDate((Date)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ProductPackage.PRODUCT_GROUP_ORDER__GROUP_ORDER_ID:
+				setGroupOrderId(GROUP_ORDER_ID_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__FROM_DATE:
+				setFromDate(FROM_DATE_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__JOB_ID:
+				setJobId(JOB_ID_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__PRODUCT_ID:
+				setProductId(PRODUCT_ID_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__REQ_ORDER_QTY:
+				setReqOrderQty(REQ_ORDER_QTY_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__SOLD_ORDER_QTY:
+				setSoldOrderQty(SOLD_ORDER_QTY_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__STATUS_ID:
+				setStatusId(STATUS_ID_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_GROUP_ORDER__THRU_DATE:
+				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ProductPackage.PRODUCT_GROUP_ORDER__GROUP_ORDER_ID:
+				return GROUP_ORDER_ID_EDEFAULT == null ? groupOrderId != null : !GROUP_ORDER_ID_EDEFAULT.equals(groupOrderId);
+			case ProductPackage.PRODUCT_GROUP_ORDER__FROM_DATE:
+				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
+			case ProductPackage.PRODUCT_GROUP_ORDER__JOB_ID:
+				return JOB_ID_EDEFAULT == null ? jobId != null : !JOB_ID_EDEFAULT.equals(jobId);
+			case ProductPackage.PRODUCT_GROUP_ORDER__PRODUCT_ID:
+				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+			case ProductPackage.PRODUCT_GROUP_ORDER__REQ_ORDER_QTY:
+				return REQ_ORDER_QTY_EDEFAULT == null ? reqOrderQty != null : !REQ_ORDER_QTY_EDEFAULT.equals(reqOrderQty);
+			case ProductPackage.PRODUCT_GROUP_ORDER__SOLD_ORDER_QTY:
+				return SOLD_ORDER_QTY_EDEFAULT == null ? soldOrderQty != null : !SOLD_ORDER_QTY_EDEFAULT.equals(soldOrderQty);
+			case ProductPackage.PRODUCT_GROUP_ORDER__STATUS_ID:
+				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+			case ProductPackage.PRODUCT_GROUP_ORDER__THRU_DATE:
+				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (groupOrderId: ");
+		result.append(groupOrderId);
+		result.append(", fromDate: ");
+		result.append(fromDate);
+		result.append(", jobId: ");
+		result.append(jobId);
+		result.append(", productId: ");
+		result.append(productId);
+		result.append(", reqOrderQty: ");
+		result.append(reqOrderQty);
+		result.append(", soldOrderQty: ");
+		result.append(soldOrderQty);
+		result.append(", statusId: ");
+		result.append(statusId);
+		result.append(", thruDate: ");
+		result.append(thruDate);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ProductGroupOrderImpl

@@ -1,0 +1,386 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.product.product;
+
+import java.math.BigDecimal;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.BizEntityTyped;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Product Assoc</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductIdTo <em>Product Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductAssocTypeId <em>Product Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getInstruction <em>Instruction</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getReason <em>Reason</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getRoutingWorkEffortId <em>Routing Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getScrapFactor <em>Scrap Factor</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getThruDate <em>Thru Date</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc()
+ * @model
+ * @generated
+ */
+public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
+	/**
+	 * Returns the value of the '<em><b>Estimate Calc Method</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Estimate Calc Method</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Estimate Calc Method</em>' attribute.
+	 * @see #setEstimateCalcMethod(String)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_EstimateCalcMethod()
+	 * @model annotation="mimo-ent-domain frame='CustomMethod'"
+	 * @generated
+	 */
+	String getEstimateCalcMethod();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getEstimateCalcMethod <em>Estimate Calc Method</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Estimate Calc Method</em>' attribute.
+	 * @see #getEstimateCalcMethod()
+	 * @generated
+	 */
+	void setEstimateCalcMethod(String value);
+
+	/**
+	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>From Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Date</em>' attribute.
+	 * @see #setFromDate(Date)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_FromDate()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	Date getFromDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getFromDate <em>From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Date</em>' attribute.
+	 * @see #getFromDate()
+	 * @generated
+	 */
+	void setFromDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Instruction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Instruction</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Instruction</em>' attribute.
+	 * @see #setInstruction(String)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_Instruction()
+	 * @model
+	 * @generated
+	 */
+	String getInstruction();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getInstruction <em>Instruction</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Instruction</em>' attribute.
+	 * @see #getInstruction()
+	 * @generated
+	 */
+	void setInstruction(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quantity</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quantity</em>' attribute.
+	 * @see #setQuantity(BigDecimal)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_Quantity()
+	 * @model
+	 * @generated
+	 */
+	BigDecimal getQuantity();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getQuantity <em>Quantity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Quantity</em>' attribute.
+	 * @see #getQuantity()
+	 * @generated
+	 */
+	void setQuantity(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Reason</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reason</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reason</em>' attribute.
+	 * @see #setReason(String)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_Reason()
+	 * @model
+	 * @generated
+	 */
+	String getReason();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getReason <em>Reason</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reason</em>' attribute.
+	 * @see #getReason()
+	 * @generated
+	 */
+	void setReason(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Recurrence Info Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Recurrence Info Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Recurrence Info Id</em>' attribute.
+	 * @see #setRecurrenceInfoId(String)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_RecurrenceInfoId()
+	 * @model annotation="mimo-ent-domain frame='RecurrenceInfo'"
+	 * @generated
+	 */
+	String getRecurrenceInfoId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getRecurrenceInfoId <em>Recurrence Info Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Recurrence Info Id</em>' attribute.
+	 * @see #getRecurrenceInfoId()
+	 * @generated
+	 */
+	void setRecurrenceInfoId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Routing Work Effort Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Routing Work Effort Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Routing Work Effort Id</em>' attribute.
+	 * @see #setRoutingWorkEffortId(String)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_RoutingWorkEffortId()
+	 * @model annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @generated
+	 */
+	String getRoutingWorkEffortId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getRoutingWorkEffortId <em>Routing Work Effort Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Routing Work Effort Id</em>' attribute.
+	 * @see #getRoutingWorkEffortId()
+	 * @generated
+	 */
+	void setRoutingWorkEffortId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Scrap Factor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Scrap Factor</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scrap Factor</em>' attribute.
+	 * @see #setScrapFactor(BigDecimal)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ScrapFactor()
+	 * @model
+	 * @generated
+	 */
+	BigDecimal getScrapFactor();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getScrapFactor <em>Scrap Factor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scrap Factor</em>' attribute.
+	 * @see #getScrapFactor()
+	 * @generated
+	 */
+	void setScrapFactor(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sequence Num</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sequence Num</em>' attribute.
+	 * @see #setSequenceNum(long)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_SequenceNum()
+	 * @model
+	 * @generated
+	 */
+	long getSequenceNum();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getSequenceNum <em>Sequence Num</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sequence Num</em>' attribute.
+	 * @see #getSequenceNum()
+	 * @generated
+	 */
+	void setSequenceNum(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Thru Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Thru Date</em>' attribute.
+	 * @see #setThruDate(Date)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ThruDate()
+	 * @model
+	 * @generated
+	 */
+	Date getThruDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getThruDate <em>Thru Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Thru Date</em>' attribute.
+	 * @see #getThruDate()
+	 * @generated
+	 */
+	void setThruDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Assoc Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Assoc Type Id</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Assoc Type Id</em>' attribute.
+	 * @see #setProductAssocTypeId(String)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductAssocTypeId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='ProductAssocType'"
+	 * @generated
+	 */
+	String getProductAssocTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductAssocTypeId <em>Product Assoc Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Product Assoc Type Id</em>' attribute.
+	 * @see #getProductAssocTypeId()
+	 * @generated
+	 */
+	void setProductAssocTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Id</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Id</em>' attribute.
+	 * @see #setProductId(String)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @generated
+	 */
+	String getProductId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductId <em>Product Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @see #getProductId()
+	 * @generated
+	 */
+	void setProductId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Id To</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Id To</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Id To</em>' attribute.
+	 * @see #setProductIdTo(String)
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductIdTo()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @generated
+	 */
+	String getProductIdTo();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductIdTo <em>Product Id To</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Product Id To</em>' attribute.
+	 * @see #getProductIdTo()
+	 * @generated
+	 */
+	void setProductIdTo(String value);
+
+} // ProductAssoc

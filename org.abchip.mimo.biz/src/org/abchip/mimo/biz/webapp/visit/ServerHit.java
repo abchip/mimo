@@ -1,0 +1,468 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.webapp.visit;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.BizEntityTyped;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Server Hit</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitStartDateTime <em>Hit Start Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getInternalContentId <em>Internal Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getNumOfBytes <em>Num Of Bytes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getReferrerUrl <em>Referrer Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRequestUrl <em>Request Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRunningTimeMillis <em>Running Time Millis</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getServerHostName <em>Server Host Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getServerIpAddress <em>Server Ip Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getUserLoginId <em>User Login Id</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit()
+ * @model
+ * @generated
+ */
+public interface ServerHit extends BizEntityTyped<ServerHitType> {
+	/**
+	 * Returns the value of the '<em><b>Visit Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Visit Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Visit Id</em>' attribute.
+	 * @see #setVisitId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_VisitId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='Visit'"
+	 * @generated
+	 */
+	String getVisitId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Visit Id</em>' attribute.
+	 * @see #getVisitId()
+	 * @generated
+	 */
+	void setVisitId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Id</em>' attribute.
+	 * @see #setContentId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ContentId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getContentId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getContentId <em>Content Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content Id</em>' attribute.
+	 * @see #getContentId()
+	 * @generated
+	 */
+	void setContentId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Hit Start Date Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hit Start Date Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hit Start Date Time</em>' attribute.
+	 * @see #setHitStartDateTime(Date)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_HitStartDateTime()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	Date getHitStartDateTime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitStartDateTime <em>Hit Start Date Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hit Start Date Time</em>' attribute.
+	 * @see #getHitStartDateTime()
+	 * @generated
+	 */
+	void setHitStartDateTime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Hit Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hit Type Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hit Type Id</em>' attribute.
+	 * @see #setHitTypeId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_HitTypeId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='ServerHitType'"
+	 * @generated
+	 */
+	String getHitTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitTypeId <em>Hit Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hit Type Id</em>' attribute.
+	 * @see #getHitTypeId()
+	 * @generated
+	 */
+	void setHitTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Id By Ip Contact Mech Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id By Ip Contact Mech Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id By Ip Contact Mech Id</em>' attribute.
+	 * @see #setIdByIpContactMechId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_IdByIpContactMechId()
+	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @generated
+	 */
+	String getIdByIpContactMechId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id By Ip Contact Mech Id</em>' attribute.
+	 * @see #getIdByIpContactMechId()
+	 * @generated
+	 */
+	void setIdByIpContactMechId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Internal Content Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Internal Content Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Internal Content Id</em>' attribute.
+	 * @see #setInternalContentId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_InternalContentId()
+	 * @model annotation="mimo-ent-domain frame='Content'"
+	 * @generated
+	 */
+	String getInternalContentId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getInternalContentId <em>Internal Content Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Internal Content Id</em>' attribute.
+	 * @see #getInternalContentId()
+	 * @generated
+	 */
+	void setInternalContentId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Num Of Bytes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Num Of Bytes</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Num Of Bytes</em>' attribute.
+	 * @see #setNumOfBytes(long)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_NumOfBytes()
+	 * @model
+	 * @generated
+	 */
+	long getNumOfBytes();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getNumOfBytes <em>Num Of Bytes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Num Of Bytes</em>' attribute.
+	 * @see #getNumOfBytes()
+	 * @generated
+	 */
+	void setNumOfBytes(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Id</em>' attribute.
+	 * @see #setPartyId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_PartyId()
+	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @generated
+	 */
+	String getPartyId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getPartyId <em>Party Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @see #getPartyId()
+	 * @generated
+	 */
+	void setPartyId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Ref By Web Contact Mech Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ref By Web Contact Mech Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ref By Web Contact Mech Id</em>' attribute.
+	 * @see #setRefByWebContactMechId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_RefByWebContactMechId()
+	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @generated
+	 */
+	String getRefByWebContactMechId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ref By Web Contact Mech Id</em>' attribute.
+	 * @see #getRefByWebContactMechId()
+	 * @generated
+	 */
+	void setRefByWebContactMechId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Referrer Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Referrer Url</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Referrer Url</em>' attribute.
+	 * @see #setReferrerUrl(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ReferrerUrl()
+	 * @model
+	 * @generated
+	 */
+	String getReferrerUrl();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getReferrerUrl <em>Referrer Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Referrer Url</em>' attribute.
+	 * @see #getReferrerUrl()
+	 * @generated
+	 */
+	void setReferrerUrl(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Request Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Request Url</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Request Url</em>' attribute.
+	 * @see #setRequestUrl(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_RequestUrl()
+	 * @model
+	 * @generated
+	 */
+	String getRequestUrl();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRequestUrl <em>Request Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Request Url</em>' attribute.
+	 * @see #getRequestUrl()
+	 * @generated
+	 */
+	void setRequestUrl(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Running Time Millis</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Running Time Millis</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Running Time Millis</em>' attribute.
+	 * @see #setRunningTimeMillis(long)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_RunningTimeMillis()
+	 * @model
+	 * @generated
+	 */
+	long getRunningTimeMillis();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRunningTimeMillis <em>Running Time Millis</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Running Time Millis</em>' attribute.
+	 * @see #getRunningTimeMillis()
+	 * @generated
+	 */
+	void setRunningTimeMillis(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Server Host Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Server Host Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Server Host Name</em>' attribute.
+	 * @see #setServerHostName(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ServerHostName()
+	 * @model
+	 * @generated
+	 */
+	String getServerHostName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getServerHostName <em>Server Host Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Server Host Name</em>' attribute.
+	 * @see #getServerHostName()
+	 * @generated
+	 */
+	void setServerHostName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Server Ip Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Server Ip Address</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Server Ip Address</em>' attribute.
+	 * @see #setServerIpAddress(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ServerIpAddress()
+	 * @model
+	 * @generated
+	 */
+	String getServerIpAddress();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getServerIpAddress <em>Server Ip Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Server Ip Address</em>' attribute.
+	 * @see #getServerIpAddress()
+	 * @generated
+	 */
+	void setServerIpAddress(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status Id</em>' attribute.
+	 * @see #setStatusId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_StatusId()
+	 * @model
+	 * @generated
+	 */
+	String getStatusId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getStatusId <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @see #getStatusId()
+	 * @generated
+	 */
+	void setStatusId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User Login Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User Login Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User Login Id</em>' attribute.
+	 * @see #setUserLoginId(String)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_UserLoginId()
+	 * @model
+	 * @generated
+	 */
+	String getUserLoginId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getUserLoginId <em>User Login Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>User Login Id</em>' attribute.
+	 * @see #getUserLoginId()
+	 * @generated
+	 */
+	void setUserLoginId(String value);
+
+} // ServerHit

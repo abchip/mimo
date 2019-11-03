@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.abchip.eclipse.osgi.feature_0.1.0.201907311708.jar" id="org.abchip.eclipse.osgi.feature" version="0.1.0.201907311708"/>
+   <feature url="features/org.abchip.mimo.jetty.feature_0.1.0.201907311649.jar" id="org.abchip.mimo.jetty.feature" version="0.1.0.201907311649"/>
+   <feature url="features/org.abchip.mimo.core.feature_0.1.0.201907311649.jar" id="org.abchip.mimo.core.feature" version="0.1.0.201907311649"/>
+   <feature url="features/org.abchip.biz.feature_0.1.0.201907311649.jar" id="org.abchip.biz.feature" version="0.1.0.201907311649"/>
+</site>

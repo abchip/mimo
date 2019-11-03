@@ -1,0 +1,2044 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.party.party.impl;
+
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.abchip.mimo.biz.party.party.PartyType;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Party</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getCreatedDate <em>Created Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getExternalId <em>External Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#isIsUnread <em>Is Unread</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyTypeId <em>Party Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPreferredCurrencyUomId <em>Preferred Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyAttributes <em>Party Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyIdentifications <em>Party Identifications</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyNameHistories <em>Party Name Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyNotes <em>Party Notes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyProfileDefaults <em>Party Profile Defaults</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyRoles <em>Party Roles</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartySkills <em>Party Skills</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getSupplierProductFeatures <em>Supplier Product Features</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PARTY_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String partyId = PARTY_ID_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date CREATED_DATE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date createdDate = CREATED_DATE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getExternalId() <em>External Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExternalId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EXTERNAL_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getExternalId() <em>External Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExternalId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String externalId = EXTERNAL_ID_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isIsUnread() <em>Is Unread</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsUnread()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_UNREAD_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isIsUnread() <em>Is Unread</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsUnread()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isUnread = IS_UNREAD_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date LAST_MODIFIED_DATE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PARTY_TYPE_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String partyTypeId = PARTY_TYPE_ID_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getPreferredCurrencyUomId() <em>Preferred Currency Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreferredCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PREFERRED_CURRENCY_UOM_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getPreferredCurrencyUomId() <em>Preferred Currency Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreferredCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String preferredCurrencyUomId = PREFERRED_CURRENCY_UOM_ID_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATUS_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String statusId = STATUS_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyAttributes() <em>Party Attributes</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> partyAttributes;
+	/**
+	 * The cached value of the '{@link #getPartyIdentifications() <em>Party Identifications</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdentifications()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> partyIdentifications;
+	/**
+	 * The cached value of the '{@link #getPartyNameHistories() <em>Party Name Histories</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyNameHistories()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> partyNameHistories;
+	/**
+	 * The cached value of the '{@link #getPartyNotes() <em>Party Notes</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyNotes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> partyNotes;
+	/**
+	 * The cached value of the '{@link #getPartyProfileDefaults() <em>Party Profile Defaults</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyProfileDefaults()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> partyProfileDefaults;
+	/**
+	 * The cached value of the '{@link #getPartyRoles() <em>Party Roles</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyRoles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> partyRoles;
+	/**
+	 * The cached value of the '{@link #getPartySkills() <em>Party Skills</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartySkills()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> partySkills;
+	/**
+	 * The cached value of the '{@link #getSupplierProductFeatures() <em>Supplier Product Features</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSupplierProductFeatures()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> supplierProductFeatures;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PartyImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return PartyPackage.Literals.PARTY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreatedByUserLogin() {
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
+		String oldCreatedByUserLogin = createdByUserLogin;
+		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCreatedDate(Date newCreatedDate) {
+		Date oldCreatedDate = createdDate;
+		createdDate = newCreatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__CREATED_DATE, oldCreatedDate, createdDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDataSourceId() {
+		return dataSourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDataSourceId(String newDataSourceId) {
+		String oldDataSourceId = dataSourceId;
+		dataSourceId = newDataSourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getExternalId() {
+		return externalId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setExternalId(String newExternalId) {
+		String oldExternalId = externalId;
+		externalId = newExternalId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__EXTERNAL_ID, oldExternalId, externalId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isIsUnread() {
+		return isUnread;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsUnread(boolean newIsUnread) {
+		boolean oldIsUnread = isUnread;
+		isUnread = newIsUnread;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__IS_UNREAD, oldIsUnread, isUnread));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getLastModifiedByUserLogin() {
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
+		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLastModifiedDate(Date newLastModifiedDate) {
+		Date oldLastModifiedDate = lastModifiedDate;
+		lastModifiedDate = newLastModifiedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPreferredCurrencyUomId() {
+		return preferredCurrencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPreferredCurrencyUomId(String newPreferredCurrencyUomId) {
+		String oldPreferredCurrencyUomId = preferredCurrencyUomId;
+		preferredCurrencyUomId = newPreferredCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID, oldPreferredCurrencyUomId, preferredCurrencyUomId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getStatusId() {
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatusId(String newStatusId) {
+		String oldStatusId = statusId;
+		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__STATUS_ID, oldStatusId, statusId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getPartyAttributes() {
+		if (partyAttributes == null) {
+			partyAttributes = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_ATTRIBUTES);
+		}
+		return partyAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getPartyIdentifications() {
+		if (partyIdentifications == null) {
+			partyIdentifications = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_IDENTIFICATIONS);
+		}
+		return partyIdentifications;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getPartyNameHistories() {
+		if (partyNameHistories == null) {
+			partyNameHistories = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_NAME_HISTORIES);
+		}
+		return partyNameHistories;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getPartyNotes() {
+		if (partyNotes == null) {
+			partyNotes = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_NOTES);
+		}
+		return partyNotes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getPartyProfileDefaults() {
+		if (partyProfileDefaults == null) {
+			partyProfileDefaults = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_PROFILE_DEFAULTS);
+		}
+		return partyProfileDefaults;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getPartyRoles() {
+		if (partyRoles == null) {
+			partyRoles = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_ROLES);
+		}
+		return partyRoles;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getPartySkills() {
+		if (partySkills == null) {
+			partySkills = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__PARTY_SKILLS);
+		}
+		return partySkills;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getSupplierProductFeatures() {
+		if (supplierProductFeatures == null) {
+			supplierProductFeatures = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY__SUPPLIER_PRODUCT_FEATURES);
+		}
+		return supplierProductFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> acctgTransEntries() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> acctgTranss() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> applyingEmploymentApps() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> approverEmploymentApps() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> carrierOrderItemShipGroups() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> carrierShipmentBoxTypes() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> carrierShipmentRouteSegments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> clientTimesheets() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> committedByContentRevisions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> contentApprovals() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> costComponents() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> custRequestTypes() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> emplPositions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> finAccountTranss() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> fixedAssets() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> fromAgreements() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> fromCommunicationEvents() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> fromCustRequests() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> fromInvoices() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> fromPayments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> fromShipments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> giftCardFulfillments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> glAccountOrganizations() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> glJournals() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> glReconciliations() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> govAgencyFixedAssetRegistrations() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> internalSalesForecastHistories() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> internalSalesForecasts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> intervieweeJobInterviews() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> interviewerJobInterviews() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> inventoryItems() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> invoices() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> noteNoteDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationCustomTimePeriods() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationFinAccountTypeGlAccounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationFinAccounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationGlAccountTypeDefaults() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationInvoiceItemTypeGlAccounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationPaymentMethodTypeGlAccounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationSalesForecastHistories() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationSalesForecasts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> organizationVarianceReasonGlAccounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> originatedFromSubscriptions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> overrideOrgInvoiceItems() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> ownerContactLists() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> ownerFacilities() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> ownerFinAccounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> ownerInventoryItems() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> partyInvitations() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> partyPrefDocTypeTpls() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> partyResumes() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> paymentGlAccountTypeMaps() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> paymentMethods() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> performedByFinAccountTranss() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> productPromoCodeParties() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> productPromoUses() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> productPromos() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> productStoreShipmentMeths() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> productStores() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> quotes() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> referredByEmploymentApps() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> reorderGuidelines() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> returnHeaders() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> shipmentCostEstimates() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> shoppingLists() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> subscriptions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> supplierOrderItemShipGroups() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> surveyResponses() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> taxAuthTaxAuthorities() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> taxAuthorityInvoiceItems() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> timeEntries() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> timesheets() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> toAgreements() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> toCommunicationEvents() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> toPartyInvitationGroupAssocs() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> toPayments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> toReturnHeaders() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> toShipments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> userLoginHistories() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> userLogins() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> vendorOrderItemShipGroups() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> workEffortEventReminders() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPartyTypeId() {
+		return partyTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPartyTypeId(String newPartyTypeId) {
+		String oldPartyTypeId = partyTypeId;
+		partyTypeId = newPartyTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPartyId() {
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPartyId(String newPartyId) {
+		String oldPartyId = partyId;
+		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__PARTY_ID, oldPartyId, partyId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case PartyPackage.PARTY__PARTY_ID:
+				return getPartyId();
+			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
+				return getCreatedByUserLogin();
+			case PartyPackage.PARTY__CREATED_DATE:
+				return getCreatedDate();
+			case PartyPackage.PARTY__DATA_SOURCE_ID:
+				return getDataSourceId();
+			case PartyPackage.PARTY__DESCRIPTION:
+				return getDescription();
+			case PartyPackage.PARTY__EXTERNAL_ID:
+				return getExternalId();
+			case PartyPackage.PARTY__IS_UNREAD:
+				return isIsUnread();
+			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
+				return getLastModifiedByUserLogin();
+			case PartyPackage.PARTY__LAST_MODIFIED_DATE:
+				return getLastModifiedDate();
+			case PartyPackage.PARTY__PARTY_TYPE_ID:
+				return getPartyTypeId();
+			case PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID:
+				return getPreferredCurrencyUomId();
+			case PartyPackage.PARTY__STATUS_ID:
+				return getStatusId();
+			case PartyPackage.PARTY__PARTY_ATTRIBUTES:
+				return getPartyAttributes();
+			case PartyPackage.PARTY__PARTY_IDENTIFICATIONS:
+				return getPartyIdentifications();
+			case PartyPackage.PARTY__PARTY_NAME_HISTORIES:
+				return getPartyNameHistories();
+			case PartyPackage.PARTY__PARTY_NOTES:
+				return getPartyNotes();
+			case PartyPackage.PARTY__PARTY_PROFILE_DEFAULTS:
+				return getPartyProfileDefaults();
+			case PartyPackage.PARTY__PARTY_ROLES:
+				return getPartyRoles();
+			case PartyPackage.PARTY__PARTY_SKILLS:
+				return getPartySkills();
+			case PartyPackage.PARTY__SUPPLIER_PRODUCT_FEATURES:
+				return getSupplierProductFeatures();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case PartyPackage.PARTY__PARTY_ID:
+				setPartyId((String)newValue);
+				return;
+			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((String)newValue);
+				return;
+			case PartyPackage.PARTY__CREATED_DATE:
+				setCreatedDate((Date)newValue);
+				return;
+			case PartyPackage.PARTY__DATA_SOURCE_ID:
+				setDataSourceId((String)newValue);
+				return;
+			case PartyPackage.PARTY__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case PartyPackage.PARTY__EXTERNAL_ID:
+				setExternalId((String)newValue);
+				return;
+			case PartyPackage.PARTY__IS_UNREAD:
+				setIsUnread((Boolean)newValue);
+				return;
+			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((String)newValue);
+				return;
+			case PartyPackage.PARTY__LAST_MODIFIED_DATE:
+				setLastModifiedDate((Date)newValue);
+				return;
+			case PartyPackage.PARTY__PARTY_TYPE_ID:
+				setPartyTypeId((String)newValue);
+				return;
+			case PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID:
+				setPreferredCurrencyUomId((String)newValue);
+				return;
+			case PartyPackage.PARTY__STATUS_ID:
+				setStatusId((String)newValue);
+				return;
+			case PartyPackage.PARTY__PARTY_ATTRIBUTES:
+				getPartyAttributes().clear();
+				getPartyAttributes().addAll((Collection<? extends String>)newValue);
+				return;
+			case PartyPackage.PARTY__PARTY_IDENTIFICATIONS:
+				getPartyIdentifications().clear();
+				getPartyIdentifications().addAll((Collection<? extends String>)newValue);
+				return;
+			case PartyPackage.PARTY__PARTY_NAME_HISTORIES:
+				getPartyNameHistories().clear();
+				getPartyNameHistories().addAll((Collection<? extends String>)newValue);
+				return;
+			case PartyPackage.PARTY__PARTY_NOTES:
+				getPartyNotes().clear();
+				getPartyNotes().addAll((Collection<? extends String>)newValue);
+				return;
+			case PartyPackage.PARTY__PARTY_PROFILE_DEFAULTS:
+				getPartyProfileDefaults().clear();
+				getPartyProfileDefaults().addAll((Collection<? extends String>)newValue);
+				return;
+			case PartyPackage.PARTY__PARTY_ROLES:
+				getPartyRoles().clear();
+				getPartyRoles().addAll((Collection<? extends String>)newValue);
+				return;
+			case PartyPackage.PARTY__PARTY_SKILLS:
+				getPartySkills().clear();
+				getPartySkills().addAll((Collection<? extends String>)newValue);
+				return;
+			case PartyPackage.PARTY__SUPPLIER_PRODUCT_FEATURES:
+				getSupplierProductFeatures().clear();
+				getSupplierProductFeatures().addAll((Collection<? extends String>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case PartyPackage.PARTY__PARTY_ID:
+				setPartyId(PARTY_ID_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__CREATED_DATE:
+				setCreatedDate(CREATED_DATE_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__DATA_SOURCE_ID:
+				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__EXTERNAL_ID:
+				setExternalId(EXTERNAL_ID_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__IS_UNREAD:
+				setIsUnread(IS_UNREAD_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__LAST_MODIFIED_DATE:
+				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__PARTY_TYPE_ID:
+				setPartyTypeId(PARTY_TYPE_ID_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID:
+				setPreferredCurrencyUomId(PREFERRED_CURRENCY_UOM_ID_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__STATUS_ID:
+				setStatusId(STATUS_ID_EDEFAULT);
+				return;
+			case PartyPackage.PARTY__PARTY_ATTRIBUTES:
+				getPartyAttributes().clear();
+				return;
+			case PartyPackage.PARTY__PARTY_IDENTIFICATIONS:
+				getPartyIdentifications().clear();
+				return;
+			case PartyPackage.PARTY__PARTY_NAME_HISTORIES:
+				getPartyNameHistories().clear();
+				return;
+			case PartyPackage.PARTY__PARTY_NOTES:
+				getPartyNotes().clear();
+				return;
+			case PartyPackage.PARTY__PARTY_PROFILE_DEFAULTS:
+				getPartyProfileDefaults().clear();
+				return;
+			case PartyPackage.PARTY__PARTY_ROLES:
+				getPartyRoles().clear();
+				return;
+			case PartyPackage.PARTY__PARTY_SKILLS:
+				getPartySkills().clear();
+				return;
+			case PartyPackage.PARTY__SUPPLIER_PRODUCT_FEATURES:
+				getSupplierProductFeatures().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case PartyPackage.PARTY__PARTY_ID:
+				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
+			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
+				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
+			case PartyPackage.PARTY__CREATED_DATE:
+				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
+			case PartyPackage.PARTY__DATA_SOURCE_ID:
+				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
+			case PartyPackage.PARTY__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case PartyPackage.PARTY__EXTERNAL_ID:
+				return EXTERNAL_ID_EDEFAULT == null ? externalId != null : !EXTERNAL_ID_EDEFAULT.equals(externalId);
+			case PartyPackage.PARTY__IS_UNREAD:
+				return isUnread != IS_UNREAD_EDEFAULT;
+			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
+				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
+			case PartyPackage.PARTY__LAST_MODIFIED_DATE:
+				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
+			case PartyPackage.PARTY__PARTY_TYPE_ID:
+				return PARTY_TYPE_ID_EDEFAULT == null ? partyTypeId != null : !PARTY_TYPE_ID_EDEFAULT.equals(partyTypeId);
+			case PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID:
+				return PREFERRED_CURRENCY_UOM_ID_EDEFAULT == null ? preferredCurrencyUomId != null : !PREFERRED_CURRENCY_UOM_ID_EDEFAULT.equals(preferredCurrencyUomId);
+			case PartyPackage.PARTY__STATUS_ID:
+				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+			case PartyPackage.PARTY__PARTY_ATTRIBUTES:
+				return partyAttributes != null && !partyAttributes.isEmpty();
+			case PartyPackage.PARTY__PARTY_IDENTIFICATIONS:
+				return partyIdentifications != null && !partyIdentifications.isEmpty();
+			case PartyPackage.PARTY__PARTY_NAME_HISTORIES:
+				return partyNameHistories != null && !partyNameHistories.isEmpty();
+			case PartyPackage.PARTY__PARTY_NOTES:
+				return partyNotes != null && !partyNotes.isEmpty();
+			case PartyPackage.PARTY__PARTY_PROFILE_DEFAULTS:
+				return partyProfileDefaults != null && !partyProfileDefaults.isEmpty();
+			case PartyPackage.PARTY__PARTY_ROLES:
+				return partyRoles != null && !partyRoles.isEmpty();
+			case PartyPackage.PARTY__PARTY_SKILLS:
+				return partySkills != null && !partySkills.isEmpty();
+			case PartyPackage.PARTY__SUPPLIER_PRODUCT_FEATURES:
+				return supplierProductFeatures != null && !supplierProductFeatures.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (partyId: ");
+		result.append(partyId);
+		result.append(", createdByUserLogin: ");
+		result.append(createdByUserLogin);
+		result.append(", createdDate: ");
+		result.append(createdDate);
+		result.append(", dataSourceId: ");
+		result.append(dataSourceId);
+		result.append(", description: ");
+		result.append(description);
+		result.append(", externalId: ");
+		result.append(externalId);
+		result.append(", isUnread: ");
+		result.append(isUnread);
+		result.append(", lastModifiedByUserLogin: ");
+		result.append(lastModifiedByUserLogin);
+		result.append(", lastModifiedDate: ");
+		result.append(lastModifiedDate);
+		result.append(", partyTypeId: ");
+		result.append(partyTypeId);
+		result.append(", preferredCurrencyUomId: ");
+		result.append(preferredCurrencyUomId);
+		result.append(", statusId: ");
+		result.append(statusId);
+		result.append(", partyAttributes: ");
+		result.append(partyAttributes);
+		result.append(", partyIdentifications: ");
+		result.append(partyIdentifications);
+		result.append(", partyNameHistories: ");
+		result.append(partyNameHistories);
+		result.append(", partyNotes: ");
+		result.append(partyNotes);
+		result.append(", partyProfileDefaults: ");
+		result.append(partyProfileDefaults);
+		result.append(", partyRoles: ");
+		result.append(partyRoles);
+		result.append(", partySkills: ");
+		result.append(partySkills);
+		result.append(", supplierProductFeatures: ");
+		result.append(supplierProductFeatures);
+		result.append(')');
+		return result.toString();
+	}
+
+} //PartyImpl

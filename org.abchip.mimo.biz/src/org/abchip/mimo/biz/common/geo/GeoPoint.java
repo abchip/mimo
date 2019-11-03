@@ -1,0 +1,303 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.common.geo;
+
+import java.math.BigDecimal;
+
+import java.util.List;
+
+import org.abchip.mimo.biz.BizEntity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Geo Point</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getElevation <em>Elevation</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getElevationUomId <em>Elevation Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getGeoPointTypeEnumId <em>Geo Point Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getInformation <em>Information</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getLatitude <em>Latitude</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getLongitude <em>Longitude</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint()
+ * @model annotation="mimo-ent-frame formula='description'"
+ * @generated
+ */
+public interface GeoPoint extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Elevation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Elevation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Elevation</em>' attribute.
+	 * @see #setElevation(BigDecimal)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Elevation()
+	 * @model
+	 * @generated
+	 */
+	BigDecimal getElevation();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getElevation <em>Elevation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Elevation</em>' attribute.
+	 * @see #getElevation()
+	 * @generated
+	 */
+	void setElevation(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Elevation Uom Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Elevation Uom Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Elevation Uom Id</em>' attribute.
+	 * @see #setElevationUomId(String)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_ElevationUomId()
+	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @generated
+	 */
+	String getElevationUomId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getElevationUomId <em>Elevation Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Elevation Uom Id</em>' attribute.
+	 * @see #getElevationUomId()
+	 * @generated
+	 */
+	void setElevationUomId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Geo Point Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Geo Point Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Geo Point Id</em>' attribute.
+	 * @see #setGeoPointId(String)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_GeoPointId()
+	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getGeoPointId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getGeoPointId <em>Geo Point Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Geo Point Id</em>' attribute.
+	 * @see #getGeoPointId()
+	 * @generated
+	 */
+	void setGeoPointId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Information</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Information</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Information</em>' attribute.
+	 * @see #setInformation(String)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Information()
+	 * @model
+	 * @generated
+	 */
+	String getInformation();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getInformation <em>Information</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Information</em>' attribute.
+	 * @see #getInformation()
+	 * @generated
+	 */
+	void setInformation(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Latitude</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Latitude</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Latitude</em>' attribute.
+	 * @see #setLatitude(String)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Latitude()
+	 * @model
+	 * @generated
+	 */
+	String getLatitude();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getLatitude <em>Latitude</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Latitude</em>' attribute.
+	 * @see #getLatitude()
+	 * @generated
+	 */
+	void setLatitude(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Longitude</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Longitude</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Longitude</em>' attribute.
+	 * @see #setLongitude(String)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Longitude()
+	 * @model
+	 * @generated
+	 */
+	String getLongitude();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getLongitude <em>Longitude</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Longitude</em>' attribute.
+	 * @see #getLongitude()
+	 * @generated
+	 */
+	void setLongitude(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='Facility' route='geoPointId'"
+	 * @generated
+	 */
+	List<String> facilities();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='FacilityLocation' route='geoPointId'"
+	 * @generated
+	 */
+	List<String> facilityLocations();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='PostalAddress' route='geoPointId'"
+	 * @generated
+	 */
+	List<String> postalAddresses();
+
+	/**
+	 * Returns the value of the '<em><b>Data Source Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Source Id</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Source Id</em>' attribute.
+	 * @see #setDataSourceId(String)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_DataSourceId()
+	 * @model annotation="mimo-ent-domain frame='DataSource'"
+	 * @generated
+	 */
+	String getDataSourceId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getDataSourceId <em>Data Source Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Data Source Id</em>' attribute.
+	 * @see #getDataSourceId()
+	 * @generated
+	 */
+	void setDataSourceId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Geo Point Type Enum Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Geo Point Type Enum Id</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Geo Point Type Enum Id</em>' attribute.
+	 * @see #setGeoPointTypeEnumId(String)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_GeoPointTypeEnumId()
+	 * @model
+	 * @generated
+	 */
+	String getGeoPointTypeEnumId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.GeoPoint#getGeoPointTypeEnumId <em>Geo Point Type Enum Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Geo Point Type Enum Id</em>' attribute.
+	 * @see #getGeoPointTypeEnumId()
+	 * @generated
+	 */
+	void setGeoPointTypeEnumId(String value);
+
+} // GeoPoint

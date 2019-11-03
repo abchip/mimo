@@ -1,0 +1,2419 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.order.order.impl;
+
+import java.math.BigDecimal;
+
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.order.order.OrderType;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Order Header</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAutoOrderShoppingListId <em>Auto Order Shopping List Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCreatedBy <em>Created By</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCurrencyUom <em>Currency Uom</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getEntryDate <em>Entry Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getExternalId <em>External Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getFirstAttemptOrderId <em>First Attempt Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getGrandTotal <em>Grand Total</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getInternalCode <em>Internal Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isInvoicePerShipment <em>Invoice Per Shipment</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsRushOrder <em>Is Rush Order</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsViewed <em>Is Viewed</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isNeedsInventoryIssuance <em>Needs Inventory Issuance</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDate <em>Order Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderName <em>Order Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderTypeId <em>Order Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOriginFacilityId <em>Origin Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getPickSheetPrintedDate <em>Pick Sheet Printed Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getRemainingSubTotal <em>Remaining Sub Total</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTerminalId <em>Terminal Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTransactionId <em>Transaction Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getWebSiteId <em>Web Site Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCommunicationEventOrders <em>Communication Event Orders</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderAttributes <em>Order Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDeliverySchedules <em>Order Delivery Schedules</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderHeaderNotes <em>Order Header Notes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderHeaderWorkEfforts <em>Order Header Work Efforts</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItems <em>Order Items</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItemGroups <em>Order Item Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItemShipGroups <em>Order Item Ship Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderProductPromoCodes <em>Order Product Promo Codes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductPromoUses <em>Product Promo Uses</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTrackingCodeOrders <em>Tracking Code Orders</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements OrderHeader {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORDER_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String orderId = ORDER_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String AGREEMENT_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String agreementId = AGREEMENT_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAutoOrderShoppingListId() <em>Auto Order Shopping List Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoOrderShoppingListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAutoOrderShoppingListId() <em>Auto Order Shopping List Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoOrderShoppingListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String autoOrderShoppingListId = AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBillingAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BILLING_ACCOUNT_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBillingAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String billingAccountId = BILLING_ACCOUNT_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCreatedBy() <em>Created By</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CREATED_BY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCreatedBy() <em>Created By</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected String createdBy = CREATED_BY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCurrencyUom() <em>Currency Uom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUom()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CURRENCY_UOM_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUom() <em>Currency Uom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUom()
+	 * @generated
+	 * @ordered
+	 */
+	protected String currencyUom = CURRENCY_UOM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEntryDate() <em>Entry Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntryDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date ENTRY_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEntryDate() <em>Entry Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntryDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date entryDate = ENTRY_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getExternalId() <em>External Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExternalId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EXTERNAL_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getExternalId() <em>External Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExternalId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String externalId = EXTERNAL_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFirstAttemptOrderId() <em>First Attempt Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstAttemptOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FIRST_ATTEMPT_ORDER_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFirstAttemptOrderId() <em>First Attempt Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstAttemptOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String firstAttemptOrderId = FIRST_ATTEMPT_ORDER_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getGrandTotal() <em>Grand Total</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGrandTotal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal GRAND_TOTAL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGrandTotal() <em>Grand Total</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGrandTotal()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal grandTotal = GRAND_TOTAL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInternalCode() <em>Internal Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInternalCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERNAL_CODE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInternalCode() <em>Internal Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInternalCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected String internalCode = INTERNAL_CODE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isInvoicePerShipment() <em>Invoice Per Shipment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInvoicePerShipment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean INVOICE_PER_SHIPMENT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isInvoicePerShipment() <em>Invoice Per Shipment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInvoicePerShipment()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean invoicePerShipment = INVOICE_PER_SHIPMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsRushOrder() <em>Is Rush Order</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsRushOrder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_RUSH_ORDER_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsRushOrder() <em>Is Rush Order</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsRushOrder()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isRushOrder = IS_RUSH_ORDER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsViewed() <em>Is Viewed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsViewed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_VIEWED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsViewed() <em>Is Viewed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsViewed()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isViewed = IS_VIEWED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isNeedsInventoryIssuance() <em>Needs Inventory Issuance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isNeedsInventoryIssuance()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean NEEDS_INVENTORY_ISSUANCE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isNeedsInventoryIssuance() <em>Needs Inventory Issuance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isNeedsInventoryIssuance()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean needsInventoryIssuance = NEEDS_INVENTORY_ISSUANCE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOrderDate() <em>Order Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date ORDER_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOrderDate() <em>Order Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date orderDate = ORDER_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOrderName() <em>Order Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORDER_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOrderName() <em>Order Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String orderName = ORDER_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOrderTypeId() <em>Order Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORDER_TYPE_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOrderTypeId() <em>Order Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String orderTypeId = ORDER_TYPE_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOriginFacilityId() <em>Origin Facility Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORIGIN_FACILITY_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOriginFacilityId() <em>Origin Facility Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String originFacilityId = ORIGIN_FACILITY_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPickSheetPrintedDate() <em>Pick Sheet Printed Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPickSheetPrintedDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date PICK_SHEET_PRINTED_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPickSheetPrintedDate() <em>Pick Sheet Printed Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPickSheetPrintedDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date pickSheetPrintedDate = PICK_SHEET_PRINTED_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PRIORITY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean priority = PRIORITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRemainingSubTotal() <em>Remaining Sub Total</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemainingSubTotal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal REMAINING_SUB_TOTAL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRemainingSubTotal() <em>Remaining Sub Total</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemainingSubTotal()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal remainingSubTotal = REMAINING_SUB_TOTAL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSalesChannelEnumId() <em>Sales Channel Enum Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesChannelEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SALES_CHANNEL_ENUM_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSalesChannelEnumId() <em>Sales Channel Enum Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesChannelEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String salesChannelEnumId = SALES_CHANNEL_ENUM_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATUS_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String statusId = STATUS_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSyncStatusId() <em>Sync Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSyncStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SYNC_STATUS_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSyncStatusId() <em>Sync Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSyncStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String syncStatusId = SYNC_STATUS_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTerminalId() <em>Terminal Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTerminalId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TERMINAL_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTerminalId() <em>Terminal Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTerminalId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String terminalId = TERMINAL_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTransactionId() <em>Transaction Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTransactionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TRANSACTION_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTransactionId() <em>Transaction Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTransactionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String transactionId = TRANSACTION_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisitId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VISIT_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisitId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String visitId = VISIT_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebSiteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String WEB_SITE_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebSiteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCommunicationEventOrders() <em>Communication Event Orders</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommunicationEventOrders()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> communicationEventOrders;
+
+	/**
+	 * The cached value of the '{@link #getOrderAttributes() <em>Order Attributes</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> orderAttributes;
+
+	/**
+	 * The cached value of the '{@link #getOrderDeliverySchedules() <em>Order Delivery Schedules</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderDeliverySchedules()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> orderDeliverySchedules;
+
+	/**
+	 * The cached value of the '{@link #getOrderHeaderNotes() <em>Order Header Notes</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderHeaderNotes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> orderHeaderNotes;
+
+	/**
+	 * The cached value of the '{@link #getOrderHeaderWorkEfforts() <em>Order Header Work Efforts</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderHeaderWorkEfforts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> orderHeaderWorkEfforts;
+
+	/**
+	 * The cached value of the '{@link #getOrderItems() <em>Order Items</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderItems()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> orderItems;
+
+	/**
+	 * The cached value of the '{@link #getOrderItemGroups() <em>Order Item Groups</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderItemGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> orderItemGroups;
+
+	/**
+	 * The cached value of the '{@link #getOrderItemShipGroups() <em>Order Item Ship Groups</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderItemShipGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> orderItemShipGroups;
+
+	/**
+	 * The cached value of the '{@link #getOrderProductPromoCodes() <em>Order Product Promo Codes</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderProductPromoCodes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> orderProductPromoCodes;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoUses() <em>Product Promo Uses</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoUses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> productPromoUses;
+
+	/**
+	 * The cached value of the '{@link #getTrackingCodeOrders() <em>Tracking Code Orders</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTrackingCodeOrders()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> trackingCodeOrders;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OrderHeaderImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return OrderPackage.Literals.ORDER_HEADER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAgreementId() {
+		return agreementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAgreementId(String newAgreementId) {
+		String oldAgreementId = agreementId;
+		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__AGREEMENT_ID, oldAgreementId, agreementId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAutoOrderShoppingListId() {
+		return autoOrderShoppingListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAutoOrderShoppingListId(String newAutoOrderShoppingListId) {
+		String oldAutoOrderShoppingListId = autoOrderShoppingListId;
+		autoOrderShoppingListId = newAutoOrderShoppingListId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID, oldAutoOrderShoppingListId, autoOrderShoppingListId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getBillingAccountId() {
+		return billingAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBillingAccountId(String newBillingAccountId) {
+		String oldBillingAccountId = billingAccountId;
+		billingAccountId = newBillingAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCreatedBy(String newCreatedBy) {
+		String oldCreatedBy = createdBy;
+		createdBy = newCreatedBy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__CREATED_BY, oldCreatedBy, createdBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCurrencyUom() {
+		return currencyUom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCurrencyUom(String newCurrencyUom) {
+		String oldCurrencyUom = currencyUom;
+		currencyUom = newCurrencyUom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__CURRENCY_UOM, oldCurrencyUom, currencyUom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getEntryDate() {
+		return entryDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEntryDate(Date newEntryDate) {
+		Date oldEntryDate = entryDate;
+		entryDate = newEntryDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ENTRY_DATE, oldEntryDate, entryDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getExternalId() {
+		return externalId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setExternalId(String newExternalId) {
+		String oldExternalId = externalId;
+		externalId = newExternalId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__EXTERNAL_ID, oldExternalId, externalId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getFirstAttemptOrderId() {
+		return firstAttemptOrderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFirstAttemptOrderId(String newFirstAttemptOrderId) {
+		String oldFirstAttemptOrderId = firstAttemptOrderId;
+		firstAttemptOrderId = newFirstAttemptOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__FIRST_ATTEMPT_ORDER_ID, oldFirstAttemptOrderId, firstAttemptOrderId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getGrandTotal() {
+		return grandTotal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGrandTotal(BigDecimal newGrandTotal) {
+		BigDecimal oldGrandTotal = grandTotal;
+		grandTotal = newGrandTotal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__GRAND_TOTAL, oldGrandTotal, grandTotal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getInternalCode() {
+		return internalCode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInternalCode(String newInternalCode) {
+		String oldInternalCode = internalCode;
+		internalCode = newInternalCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__INTERNAL_CODE, oldInternalCode, internalCode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isInvoicePerShipment() {
+		return invoicePerShipment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInvoicePerShipment(boolean newInvoicePerShipment) {
+		boolean oldInvoicePerShipment = invoicePerShipment;
+		invoicePerShipment = newInvoicePerShipment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__INVOICE_PER_SHIPMENT, oldInvoicePerShipment, invoicePerShipment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isIsRushOrder() {
+		return isRushOrder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsRushOrder(boolean newIsRushOrder) {
+		boolean oldIsRushOrder = isRushOrder;
+		isRushOrder = newIsRushOrder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__IS_RUSH_ORDER, oldIsRushOrder, isRushOrder));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isIsViewed() {
+		return isViewed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsViewed(boolean newIsViewed) {
+		boolean oldIsViewed = isViewed;
+		isViewed = newIsViewed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__IS_VIEWED, oldIsViewed, isViewed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isNeedsInventoryIssuance() {
+		return needsInventoryIssuance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNeedsInventoryIssuance(boolean newNeedsInventoryIssuance) {
+		boolean oldNeedsInventoryIssuance = needsInventoryIssuance;
+		needsInventoryIssuance = newNeedsInventoryIssuance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE, oldNeedsInventoryIssuance, needsInventoryIssuance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getOrderDate() {
+		return orderDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOrderDate(Date newOrderDate) {
+		Date oldOrderDate = orderDate;
+		orderDate = newOrderDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_DATE, oldOrderDate, orderDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getOrderId() {
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOrderId(String newOrderId) {
+		String oldOrderId = orderId;
+		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_ID, oldOrderId, orderId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getOrderName() {
+		return orderName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOrderName(String newOrderName) {
+		String oldOrderName = orderName;
+		orderName = newOrderName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_NAME, oldOrderName, orderName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getOrderTypeId() {
+		return orderTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOrderTypeId(String newOrderTypeId) {
+		String oldOrderTypeId = orderTypeId;
+		orderTypeId = newOrderTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_TYPE_ID, oldOrderTypeId, orderTypeId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getOriginFacilityId() {
+		return originFacilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOriginFacilityId(String newOriginFacilityId) {
+		String oldOriginFacilityId = originFacilityId;
+		originFacilityId = newOriginFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getPickSheetPrintedDate() {
+		return pickSheetPrintedDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPickSheetPrintedDate(Date newPickSheetPrintedDate) {
+		Date oldPickSheetPrintedDate = pickSheetPrintedDate;
+		pickSheetPrintedDate = newPickSheetPrintedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE, oldPickSheetPrintedDate, pickSheetPrintedDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isPriority() {
+		return priority;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPriority(boolean newPriority) {
+		boolean oldPriority = priority;
+		priority = newPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__PRIORITY, oldPriority, priority));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getProductStoreId() {
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProductStoreId(String newProductStoreId) {
+		String oldProductStoreId = productStoreId;
+		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getRemainingSubTotal() {
+		return remainingSubTotal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRemainingSubTotal(BigDecimal newRemainingSubTotal) {
+		BigDecimal oldRemainingSubTotal = remainingSubTotal;
+		remainingSubTotal = newRemainingSubTotal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL, oldRemainingSubTotal, remainingSubTotal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSalesChannelEnumId() {
+		return salesChannelEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSalesChannelEnumId(String newSalesChannelEnumId) {
+		String oldSalesChannelEnumId = salesChannelEnumId;
+		salesChannelEnumId = newSalesChannelEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getStatusId() {
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatusId(String newStatusId) {
+		String oldStatusId = statusId;
+		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__STATUS_ID, oldStatusId, statusId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSyncStatusId() {
+		return syncStatusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSyncStatusId(String newSyncStatusId) {
+		String oldSyncStatusId = syncStatusId;
+		syncStatusId = newSyncStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__SYNC_STATUS_ID, oldSyncStatusId, syncStatusId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTerminalId() {
+		return terminalId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTerminalId(String newTerminalId) {
+		String oldTerminalId = terminalId;
+		terminalId = newTerminalId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__TERMINAL_ID, oldTerminalId, terminalId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTransactionId(String newTransactionId) {
+		String oldTransactionId = transactionId;
+		transactionId = newTransactionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__TRANSACTION_ID, oldTransactionId, transactionId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getVisitId() {
+		return visitId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVisitId(String newVisitId) {
+		String oldVisitId = visitId;
+		visitId = newVisitId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__VISIT_ID, oldVisitId, visitId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getWebSiteId() {
+		return webSiteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWebSiteId(String newWebSiteId) {
+		String oldWebSiteId = webSiteId;
+		webSiteId = newWebSiteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__WEB_SITE_ID, oldWebSiteId, webSiteId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getCommunicationEventOrders() {
+		if (communicationEventOrders == null) {
+			communicationEventOrders = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS);
+		}
+		return communicationEventOrders;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getOrderAttributes() {
+		if (orderAttributes == null) {
+			orderAttributes = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_ATTRIBUTES);
+		}
+		return orderAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getOrderDeliverySchedules() {
+		if (orderDeliverySchedules == null) {
+			orderDeliverySchedules = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES);
+		}
+		return orderDeliverySchedules;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getOrderHeaderNotes() {
+		if (orderHeaderNotes == null) {
+			orderHeaderNotes = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_HEADER_NOTES);
+		}
+		return orderHeaderNotes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getOrderHeaderWorkEfforts() {
+		if (orderHeaderWorkEfforts == null) {
+			orderHeaderWorkEfforts = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS);
+		}
+		return orderHeaderWorkEfforts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getOrderItems() {
+		if (orderItems == null) {
+			orderItems = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_ITEMS);
+		}
+		return orderItems;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getOrderItemGroups() {
+		if (orderItemGroups == null) {
+			orderItemGroups = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_ITEM_GROUPS);
+		}
+		return orderItemGroups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getOrderItemShipGroups() {
+		if (orderItemShipGroups == null) {
+			orderItemShipGroups = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS);
+		}
+		return orderItemShipGroups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getOrderProductPromoCodes() {
+		if (orderProductPromoCodes == null) {
+			orderProductPromoCodes = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES);
+		}
+		return orderProductPromoCodes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getProductPromoUses() {
+		if (productPromoUses == null) {
+			productPromoUses = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__PRODUCT_PROMO_USES);
+		}
+		return productPromoUses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> getTrackingCodeOrders() {
+		if (trackingCodeOrders == null) {
+			trackingCodeOrders = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__TRACKING_CODE_ORDERS);
+		}
+		return trackingCodeOrders;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> acquireFixedAssets() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> giftCardFulfillments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> itemIssuances() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> orderAdjustments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> orderItemChanges() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> orderItemPriceInfos() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> orderNotifications() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> orderPaymentPreferences() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> orderStatuss() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> primaryPicklistBins() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> primaryShipments() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> purchaseFixedAssetMaints() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> replacementReturnItemResponses() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> returnItems() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> shipmentReceipts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> subscriptions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<String> surveyResponses() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case OrderPackage.ORDER_HEADER__ORDER_ID:
+				return getOrderId();
+			case OrderPackage.ORDER_HEADER__AGREEMENT_ID:
+				return getAgreementId();
+			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
+				return getAutoOrderShoppingListId();
+			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
+				return getBillingAccountId();
+			case OrderPackage.ORDER_HEADER__CREATED_BY:
+				return getCreatedBy();
+			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
+				return getCurrencyUom();
+			case OrderPackage.ORDER_HEADER__ENTRY_DATE:
+				return getEntryDate();
+			case OrderPackage.ORDER_HEADER__EXTERNAL_ID:
+				return getExternalId();
+			case OrderPackage.ORDER_HEADER__FIRST_ATTEMPT_ORDER_ID:
+				return getFirstAttemptOrderId();
+			case OrderPackage.ORDER_HEADER__GRAND_TOTAL:
+				return getGrandTotal();
+			case OrderPackage.ORDER_HEADER__INTERNAL_CODE:
+				return getInternalCode();
+			case OrderPackage.ORDER_HEADER__INVOICE_PER_SHIPMENT:
+				return isInvoicePerShipment();
+			case OrderPackage.ORDER_HEADER__IS_RUSH_ORDER:
+				return isIsRushOrder();
+			case OrderPackage.ORDER_HEADER__IS_VIEWED:
+				return isIsViewed();
+			case OrderPackage.ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE:
+				return isNeedsInventoryIssuance();
+			case OrderPackage.ORDER_HEADER__ORDER_DATE:
+				return getOrderDate();
+			case OrderPackage.ORDER_HEADER__ORDER_NAME:
+				return getOrderName();
+			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
+				return getOrderTypeId();
+			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
+				return getOriginFacilityId();
+			case OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE:
+				return getPickSheetPrintedDate();
+			case OrderPackage.ORDER_HEADER__PRIORITY:
+				return isPriority();
+			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
+				return getProductStoreId();
+			case OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL:
+				return getRemainingSubTotal();
+			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
+				return getSalesChannelEnumId();
+			case OrderPackage.ORDER_HEADER__STATUS_ID:
+				return getStatusId();
+			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
+				return getSyncStatusId();
+			case OrderPackage.ORDER_HEADER__TERMINAL_ID:
+				return getTerminalId();
+			case OrderPackage.ORDER_HEADER__TRANSACTION_ID:
+				return getTransactionId();
+			case OrderPackage.ORDER_HEADER__VISIT_ID:
+				return getVisitId();
+			case OrderPackage.ORDER_HEADER__WEB_SITE_ID:
+				return getWebSiteId();
+			case OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS:
+				return getCommunicationEventOrders();
+			case OrderPackage.ORDER_HEADER__ORDER_ATTRIBUTES:
+				return getOrderAttributes();
+			case OrderPackage.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES:
+				return getOrderDeliverySchedules();
+			case OrderPackage.ORDER_HEADER__ORDER_HEADER_NOTES:
+				return getOrderHeaderNotes();
+			case OrderPackage.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS:
+				return getOrderHeaderWorkEfforts();
+			case OrderPackage.ORDER_HEADER__ORDER_ITEMS:
+				return getOrderItems();
+			case OrderPackage.ORDER_HEADER__ORDER_ITEM_GROUPS:
+				return getOrderItemGroups();
+			case OrderPackage.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS:
+				return getOrderItemShipGroups();
+			case OrderPackage.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES:
+				return getOrderProductPromoCodes();
+			case OrderPackage.ORDER_HEADER__PRODUCT_PROMO_USES:
+				return getProductPromoUses();
+			case OrderPackage.ORDER_HEADER__TRACKING_CODE_ORDERS:
+				return getTrackingCodeOrders();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case OrderPackage.ORDER_HEADER__ORDER_ID:
+				setOrderId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__AGREEMENT_ID:
+				setAgreementId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
+				setAutoOrderShoppingListId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
+				setBillingAccountId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__CREATED_BY:
+				setCreatedBy((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
+				setCurrencyUom((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ENTRY_DATE:
+				setEntryDate((Date)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__EXTERNAL_ID:
+				setExternalId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__FIRST_ATTEMPT_ORDER_ID:
+				setFirstAttemptOrderId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__GRAND_TOTAL:
+				setGrandTotal((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__INTERNAL_CODE:
+				setInternalCode((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__INVOICE_PER_SHIPMENT:
+				setInvoicePerShipment((Boolean)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__IS_RUSH_ORDER:
+				setIsRushOrder((Boolean)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__IS_VIEWED:
+				setIsViewed((Boolean)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE:
+				setNeedsInventoryIssuance((Boolean)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_DATE:
+				setOrderDate((Date)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_NAME:
+				setOrderName((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
+				setOrderTypeId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
+				setOriginFacilityId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE:
+				setPickSheetPrintedDate((Date)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__PRIORITY:
+				setPriority((Boolean)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
+				setProductStoreId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL:
+				setRemainingSubTotal((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
+				setSalesChannelEnumId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__STATUS_ID:
+				setStatusId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
+				setSyncStatusId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__TERMINAL_ID:
+				setTerminalId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__TRANSACTION_ID:
+				setTransactionId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__VISIT_ID:
+				setVisitId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__WEB_SITE_ID:
+				setWebSiteId((String)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS:
+				getCommunicationEventOrders().clear();
+				getCommunicationEventOrders().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_ATTRIBUTES:
+				getOrderAttributes().clear();
+				getOrderAttributes().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES:
+				getOrderDeliverySchedules().clear();
+				getOrderDeliverySchedules().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_HEADER_NOTES:
+				getOrderHeaderNotes().clear();
+				getOrderHeaderNotes().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS:
+				getOrderHeaderWorkEfforts().clear();
+				getOrderHeaderWorkEfforts().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_ITEMS:
+				getOrderItems().clear();
+				getOrderItems().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_ITEM_GROUPS:
+				getOrderItemGroups().clear();
+				getOrderItemGroups().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS:
+				getOrderItemShipGroups().clear();
+				getOrderItemShipGroups().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES:
+				getOrderProductPromoCodes().clear();
+				getOrderProductPromoCodes().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__PRODUCT_PROMO_USES:
+				getProductPromoUses().clear();
+				getProductPromoUses().addAll((Collection<? extends String>)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__TRACKING_CODE_ORDERS:
+				getTrackingCodeOrders().clear();
+				getTrackingCodeOrders().addAll((Collection<? extends String>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case OrderPackage.ORDER_HEADER__ORDER_ID:
+				setOrderId(ORDER_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__AGREEMENT_ID:
+				setAgreementId(AGREEMENT_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
+				setAutoOrderShoppingListId(AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
+				setBillingAccountId(BILLING_ACCOUNT_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__CREATED_BY:
+				setCreatedBy(CREATED_BY_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
+				setCurrencyUom(CURRENCY_UOM_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__ENTRY_DATE:
+				setEntryDate(ENTRY_DATE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__EXTERNAL_ID:
+				setExternalId(EXTERNAL_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__FIRST_ATTEMPT_ORDER_ID:
+				setFirstAttemptOrderId(FIRST_ATTEMPT_ORDER_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__GRAND_TOTAL:
+				setGrandTotal(GRAND_TOTAL_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__INTERNAL_CODE:
+				setInternalCode(INTERNAL_CODE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__INVOICE_PER_SHIPMENT:
+				setInvoicePerShipment(INVOICE_PER_SHIPMENT_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__IS_RUSH_ORDER:
+				setIsRushOrder(IS_RUSH_ORDER_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__IS_VIEWED:
+				setIsViewed(IS_VIEWED_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE:
+				setNeedsInventoryIssuance(NEEDS_INVENTORY_ISSUANCE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_DATE:
+				setOrderDate(ORDER_DATE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_NAME:
+				setOrderName(ORDER_NAME_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
+				setOrderTypeId(ORDER_TYPE_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
+				setOriginFacilityId(ORIGIN_FACILITY_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE:
+				setPickSheetPrintedDate(PICK_SHEET_PRINTED_DATE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__PRIORITY:
+				setPriority(PRIORITY_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
+				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL:
+				setRemainingSubTotal(REMAINING_SUB_TOTAL_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
+				setSalesChannelEnumId(SALES_CHANNEL_ENUM_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__STATUS_ID:
+				setStatusId(STATUS_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
+				setSyncStatusId(SYNC_STATUS_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__TERMINAL_ID:
+				setTerminalId(TERMINAL_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__TRANSACTION_ID:
+				setTransactionId(TRANSACTION_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__VISIT_ID:
+				setVisitId(VISIT_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__WEB_SITE_ID:
+				setWebSiteId(WEB_SITE_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS:
+				getCommunicationEventOrders().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_ATTRIBUTES:
+				getOrderAttributes().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES:
+				getOrderDeliverySchedules().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_HEADER_NOTES:
+				getOrderHeaderNotes().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS:
+				getOrderHeaderWorkEfforts().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_ITEMS:
+				getOrderItems().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_ITEM_GROUPS:
+				getOrderItemGroups().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS:
+				getOrderItemShipGroups().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES:
+				getOrderProductPromoCodes().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__PRODUCT_PROMO_USES:
+				getProductPromoUses().clear();
+				return;
+			case OrderPackage.ORDER_HEADER__TRACKING_CODE_ORDERS:
+				getTrackingCodeOrders().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case OrderPackage.ORDER_HEADER__ORDER_ID:
+				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
+			case OrderPackage.ORDER_HEADER__AGREEMENT_ID:
+				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
+			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
+				return AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT == null ? autoOrderShoppingListId != null : !AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT.equals(autoOrderShoppingListId);
+			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
+				return BILLING_ACCOUNT_ID_EDEFAULT == null ? billingAccountId != null : !BILLING_ACCOUNT_ID_EDEFAULT.equals(billingAccountId);
+			case OrderPackage.ORDER_HEADER__CREATED_BY:
+				return CREATED_BY_EDEFAULT == null ? createdBy != null : !CREATED_BY_EDEFAULT.equals(createdBy);
+			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
+				return CURRENCY_UOM_EDEFAULT == null ? currencyUom != null : !CURRENCY_UOM_EDEFAULT.equals(currencyUom);
+			case OrderPackage.ORDER_HEADER__ENTRY_DATE:
+				return ENTRY_DATE_EDEFAULT == null ? entryDate != null : !ENTRY_DATE_EDEFAULT.equals(entryDate);
+			case OrderPackage.ORDER_HEADER__EXTERNAL_ID:
+				return EXTERNAL_ID_EDEFAULT == null ? externalId != null : !EXTERNAL_ID_EDEFAULT.equals(externalId);
+			case OrderPackage.ORDER_HEADER__FIRST_ATTEMPT_ORDER_ID:
+				return FIRST_ATTEMPT_ORDER_ID_EDEFAULT == null ? firstAttemptOrderId != null : !FIRST_ATTEMPT_ORDER_ID_EDEFAULT.equals(firstAttemptOrderId);
+			case OrderPackage.ORDER_HEADER__GRAND_TOTAL:
+				return GRAND_TOTAL_EDEFAULT == null ? grandTotal != null : !GRAND_TOTAL_EDEFAULT.equals(grandTotal);
+			case OrderPackage.ORDER_HEADER__INTERNAL_CODE:
+				return INTERNAL_CODE_EDEFAULT == null ? internalCode != null : !INTERNAL_CODE_EDEFAULT.equals(internalCode);
+			case OrderPackage.ORDER_HEADER__INVOICE_PER_SHIPMENT:
+				return invoicePerShipment != INVOICE_PER_SHIPMENT_EDEFAULT;
+			case OrderPackage.ORDER_HEADER__IS_RUSH_ORDER:
+				return isRushOrder != IS_RUSH_ORDER_EDEFAULT;
+			case OrderPackage.ORDER_HEADER__IS_VIEWED:
+				return isViewed != IS_VIEWED_EDEFAULT;
+			case OrderPackage.ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE:
+				return needsInventoryIssuance != NEEDS_INVENTORY_ISSUANCE_EDEFAULT;
+			case OrderPackage.ORDER_HEADER__ORDER_DATE:
+				return ORDER_DATE_EDEFAULT == null ? orderDate != null : !ORDER_DATE_EDEFAULT.equals(orderDate);
+			case OrderPackage.ORDER_HEADER__ORDER_NAME:
+				return ORDER_NAME_EDEFAULT == null ? orderName != null : !ORDER_NAME_EDEFAULT.equals(orderName);
+			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
+				return ORDER_TYPE_ID_EDEFAULT == null ? orderTypeId != null : !ORDER_TYPE_ID_EDEFAULT.equals(orderTypeId);
+			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
+				return ORIGIN_FACILITY_ID_EDEFAULT == null ? originFacilityId != null : !ORIGIN_FACILITY_ID_EDEFAULT.equals(originFacilityId);
+			case OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE:
+				return PICK_SHEET_PRINTED_DATE_EDEFAULT == null ? pickSheetPrintedDate != null : !PICK_SHEET_PRINTED_DATE_EDEFAULT.equals(pickSheetPrintedDate);
+			case OrderPackage.ORDER_HEADER__PRIORITY:
+				return priority != PRIORITY_EDEFAULT;
+			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
+				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
+			case OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL:
+				return REMAINING_SUB_TOTAL_EDEFAULT == null ? remainingSubTotal != null : !REMAINING_SUB_TOTAL_EDEFAULT.equals(remainingSubTotal);
+			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
+				return SALES_CHANNEL_ENUM_ID_EDEFAULT == null ? salesChannelEnumId != null : !SALES_CHANNEL_ENUM_ID_EDEFAULT.equals(salesChannelEnumId);
+			case OrderPackage.ORDER_HEADER__STATUS_ID:
+				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
+				return SYNC_STATUS_ID_EDEFAULT == null ? syncStatusId != null : !SYNC_STATUS_ID_EDEFAULT.equals(syncStatusId);
+			case OrderPackage.ORDER_HEADER__TERMINAL_ID:
+				return TERMINAL_ID_EDEFAULT == null ? terminalId != null : !TERMINAL_ID_EDEFAULT.equals(terminalId);
+			case OrderPackage.ORDER_HEADER__TRANSACTION_ID:
+				return TRANSACTION_ID_EDEFAULT == null ? transactionId != null : !TRANSACTION_ID_EDEFAULT.equals(transactionId);
+			case OrderPackage.ORDER_HEADER__VISIT_ID:
+				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
+			case OrderPackage.ORDER_HEADER__WEB_SITE_ID:
+				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
+			case OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS:
+				return communicationEventOrders != null && !communicationEventOrders.isEmpty();
+			case OrderPackage.ORDER_HEADER__ORDER_ATTRIBUTES:
+				return orderAttributes != null && !orderAttributes.isEmpty();
+			case OrderPackage.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES:
+				return orderDeliverySchedules != null && !orderDeliverySchedules.isEmpty();
+			case OrderPackage.ORDER_HEADER__ORDER_HEADER_NOTES:
+				return orderHeaderNotes != null && !orderHeaderNotes.isEmpty();
+			case OrderPackage.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS:
+				return orderHeaderWorkEfforts != null && !orderHeaderWorkEfforts.isEmpty();
+			case OrderPackage.ORDER_HEADER__ORDER_ITEMS:
+				return orderItems != null && !orderItems.isEmpty();
+			case OrderPackage.ORDER_HEADER__ORDER_ITEM_GROUPS:
+				return orderItemGroups != null && !orderItemGroups.isEmpty();
+			case OrderPackage.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS:
+				return orderItemShipGroups != null && !orderItemShipGroups.isEmpty();
+			case OrderPackage.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES:
+				return orderProductPromoCodes != null && !orderProductPromoCodes.isEmpty();
+			case OrderPackage.ORDER_HEADER__PRODUCT_PROMO_USES:
+				return productPromoUses != null && !productPromoUses.isEmpty();
+			case OrderPackage.ORDER_HEADER__TRACKING_CODE_ORDERS:
+				return trackingCodeOrders != null && !trackingCodeOrders.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (orderId: ");
+		result.append(orderId);
+		result.append(", agreementId: ");
+		result.append(agreementId);
+		result.append(", autoOrderShoppingListId: ");
+		result.append(autoOrderShoppingListId);
+		result.append(", billingAccountId: ");
+		result.append(billingAccountId);
+		result.append(", createdBy: ");
+		result.append(createdBy);
+		result.append(", currencyUom: ");
+		result.append(currencyUom);
+		result.append(", entryDate: ");
+		result.append(entryDate);
+		result.append(", externalId: ");
+		result.append(externalId);
+		result.append(", firstAttemptOrderId: ");
+		result.append(firstAttemptOrderId);
+		result.append(", grandTotal: ");
+		result.append(grandTotal);
+		result.append(", internalCode: ");
+		result.append(internalCode);
+		result.append(", invoicePerShipment: ");
+		result.append(invoicePerShipment);
+		result.append(", isRushOrder: ");
+		result.append(isRushOrder);
+		result.append(", isViewed: ");
+		result.append(isViewed);
+		result.append(", needsInventoryIssuance: ");
+		result.append(needsInventoryIssuance);
+		result.append(", orderDate: ");
+		result.append(orderDate);
+		result.append(", orderName: ");
+		result.append(orderName);
+		result.append(", orderTypeId: ");
+		result.append(orderTypeId);
+		result.append(", originFacilityId: ");
+		result.append(originFacilityId);
+		result.append(", pickSheetPrintedDate: ");
+		result.append(pickSheetPrintedDate);
+		result.append(", priority: ");
+		result.append(priority);
+		result.append(", productStoreId: ");
+		result.append(productStoreId);
+		result.append(", remainingSubTotal: ");
+		result.append(remainingSubTotal);
+		result.append(", salesChannelEnumId: ");
+		result.append(salesChannelEnumId);
+		result.append(", statusId: ");
+		result.append(statusId);
+		result.append(", syncStatusId: ");
+		result.append(syncStatusId);
+		result.append(", terminalId: ");
+		result.append(terminalId);
+		result.append(", transactionId: ");
+		result.append(transactionId);
+		result.append(", visitId: ");
+		result.append(visitId);
+		result.append(", webSiteId: ");
+		result.append(webSiteId);
+		result.append(", communicationEventOrders: ");
+		result.append(communicationEventOrders);
+		result.append(", orderAttributes: ");
+		result.append(orderAttributes);
+		result.append(", orderDeliverySchedules: ");
+		result.append(orderDeliverySchedules);
+		result.append(", orderHeaderNotes: ");
+		result.append(orderHeaderNotes);
+		result.append(", orderHeaderWorkEfforts: ");
+		result.append(orderHeaderWorkEfforts);
+		result.append(", orderItems: ");
+		result.append(orderItems);
+		result.append(", orderItemGroups: ");
+		result.append(orderItemGroups);
+		result.append(", orderItemShipGroups: ");
+		result.append(orderItemShipGroups);
+		result.append(", orderProductPromoCodes: ");
+		result.append(orderProductPromoCodes);
+		result.append(", productPromoUses: ");
+		result.append(productPromoUses);
+		result.append(", trackingCodeOrders: ");
+		result.append(trackingCodeOrders);
+		result.append(')');
+		return result.toString();
+	}
+
+} //OrderHeaderImpl

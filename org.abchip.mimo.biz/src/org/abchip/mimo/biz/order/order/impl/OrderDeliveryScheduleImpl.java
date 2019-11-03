@@ -1,0 +1,738 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.order.order.impl;
+
+import java.math.BigDecimal;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
+import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Order Delivery Schedule</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getCartons <em>Cartons</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getEstimatedReadyDate <em>Estimated Ready Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getSkidsPallets <em>Skids Pallets</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalCubicSize <em>Total Cubic Size</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalCubicUomId <em>Total Cubic Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalWeight <em>Total Weight</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalWeightUomId <em>Total Weight Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getUnitsPieces <em>Units Pieces</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDeliverySchedule {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORDER_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String orderId = ORDER_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderItemSeqId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORDER_ITEM_SEQ_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderItemSeqId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCartons() <em>Cartons</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCartons()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long CARTONS_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getCartons() <em>Cartons</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCartons()
+	 * @generated
+	 * @ordered
+	 */
+	protected long cartons = CARTONS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEstimatedReadyDate() <em>Estimated Ready Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEstimatedReadyDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date ESTIMATED_READY_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEstimatedReadyDate() <em>Estimated Ready Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEstimatedReadyDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date estimatedReadyDate = ESTIMATED_READY_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSkidsPallets() <em>Skids Pallets</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSkidsPallets()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long SKIDS_PALLETS_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getSkidsPallets() <em>Skids Pallets</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSkidsPallets()
+	 * @generated
+	 * @ordered
+	 */
+	protected long skidsPallets = SKIDS_PALLETS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STATUS_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String statusId = STATUS_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTotalCubicSize() <em>Total Cubic Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalCubicSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal TOTAL_CUBIC_SIZE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTotalCubicSize() <em>Total Cubic Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalCubicSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal totalCubicSize = TOTAL_CUBIC_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTotalCubicUomId() <em>Total Cubic Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalCubicUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TOTAL_CUBIC_UOM_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTotalCubicUomId() <em>Total Cubic Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalCubicUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String totalCubicUomId = TOTAL_CUBIC_UOM_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTotalWeight() <em>Total Weight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalWeight()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal TOTAL_WEIGHT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTotalWeight() <em>Total Weight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalWeight()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal totalWeight = TOTAL_WEIGHT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTotalWeightUomId() <em>Total Weight Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalWeightUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TOTAL_WEIGHT_UOM_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTotalWeightUomId() <em>Total Weight Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalWeightUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String totalWeightUomId = TOTAL_WEIGHT_UOM_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUnitsPieces() <em>Units Pieces</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUnitsPieces()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal UNITS_PIECES_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUnitsPieces() <em>Units Pieces</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUnitsPieces()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal unitsPieces = UNITS_PIECES_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OrderDeliveryScheduleImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return OrderPackage.Literals.ORDER_DELIVERY_SCHEDULE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public long getCartons() {
+		return cartons;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCartons(long newCartons) {
+		long oldCartons = cartons;
+		cartons = newCartons;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__CARTONS, oldCartons, cartons));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getEstimatedReadyDate() {
+		return estimatedReadyDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEstimatedReadyDate(Date newEstimatedReadyDate) {
+		Date oldEstimatedReadyDate = estimatedReadyDate;
+		estimatedReadyDate = newEstimatedReadyDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__ESTIMATED_READY_DATE, oldEstimatedReadyDate, estimatedReadyDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getOrderId() {
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOrderId(String newOrderId) {
+		String oldOrderId = orderId;
+		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID, oldOrderId, orderId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getOrderItemSeqId() {
+		return orderItemSeqId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
+		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public long getSkidsPallets() {
+		return skidsPallets;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSkidsPallets(long newSkidsPallets) {
+		long oldSkidsPallets = skidsPallets;
+		skidsPallets = newSkidsPallets;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS, oldSkidsPallets, skidsPallets));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getStatusId() {
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatusId(String newStatusId) {
+		String oldStatusId = statusId;
+		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID, oldStatusId, statusId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getTotalCubicSize() {
+		return totalCubicSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTotalCubicSize(BigDecimal newTotalCubicSize) {
+		BigDecimal oldTotalCubicSize = totalCubicSize;
+		totalCubicSize = newTotalCubicSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE, oldTotalCubicSize, totalCubicSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTotalCubicUomId() {
+		return totalCubicUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTotalCubicUomId(String newTotalCubicUomId) {
+		String oldTotalCubicUomId = totalCubicUomId;
+		totalCubicUomId = newTotalCubicUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID, oldTotalCubicUomId, totalCubicUomId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getTotalWeight() {
+		return totalWeight;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTotalWeight(BigDecimal newTotalWeight) {
+		BigDecimal oldTotalWeight = totalWeight;
+		totalWeight = newTotalWeight;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT, oldTotalWeight, totalWeight));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTotalWeightUomId() {
+		return totalWeightUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTotalWeightUomId(String newTotalWeightUomId) {
+		String oldTotalWeightUomId = totalWeightUomId;
+		totalWeightUomId = newTotalWeightUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID, oldTotalWeightUomId, totalWeightUomId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getUnitsPieces() {
+		return unitsPieces;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUnitsPieces(BigDecimal newUnitsPieces) {
+		BigDecimal oldUnitsPieces = unitsPieces;
+		unitsPieces = newUnitsPieces;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES, oldUnitsPieces, unitsPieces));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
+				return getOrderId();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID:
+				return getOrderItemSeqId();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__CARTONS:
+				return getCartons();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ESTIMATED_READY_DATE:
+				return getEstimatedReadyDate();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS:
+				return getSkidsPallets();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
+				return getStatusId();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE:
+				return getTotalCubicSize();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
+				return getTotalCubicUomId();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT:
+				return getTotalWeight();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
+				return getTotalWeightUomId();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
+				return getUnitsPieces();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
+				setOrderId((String)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID:
+				setOrderItemSeqId((String)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__CARTONS:
+				setCartons((Long)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ESTIMATED_READY_DATE:
+				setEstimatedReadyDate((Date)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS:
+				setSkidsPallets((Long)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
+				setStatusId((String)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE:
+				setTotalCubicSize((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
+				setTotalCubicUomId((String)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT:
+				setTotalWeight((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
+				setTotalWeightUomId((String)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
+				setUnitsPieces((BigDecimal)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
+				setOrderId(ORDER_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID:
+				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__CARTONS:
+				setCartons(CARTONS_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ESTIMATED_READY_DATE:
+				setEstimatedReadyDate(ESTIMATED_READY_DATE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS:
+				setSkidsPallets(SKIDS_PALLETS_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
+				setStatusId(STATUS_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE:
+				setTotalCubicSize(TOTAL_CUBIC_SIZE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
+				setTotalCubicUomId(TOTAL_CUBIC_UOM_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT:
+				setTotalWeight(TOTAL_WEIGHT_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
+				setTotalWeightUomId(TOTAL_WEIGHT_UOM_ID_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
+				setUnitsPieces(UNITS_PIECES_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ID:
+				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ORDER_ITEM_SEQ_ID:
+				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__CARTONS:
+				return cartons != CARTONS_EDEFAULT;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__ESTIMATED_READY_DATE:
+				return ESTIMATED_READY_DATE_EDEFAULT == null ? estimatedReadyDate != null : !ESTIMATED_READY_DATE_EDEFAULT.equals(estimatedReadyDate);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS:
+				return skidsPallets != SKIDS_PALLETS_EDEFAULT;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
+				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE:
+				return TOTAL_CUBIC_SIZE_EDEFAULT == null ? totalCubicSize != null : !TOTAL_CUBIC_SIZE_EDEFAULT.equals(totalCubicSize);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
+				return TOTAL_CUBIC_UOM_ID_EDEFAULT == null ? totalCubicUomId != null : !TOTAL_CUBIC_UOM_ID_EDEFAULT.equals(totalCubicUomId);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT:
+				return TOTAL_WEIGHT_EDEFAULT == null ? totalWeight != null : !TOTAL_WEIGHT_EDEFAULT.equals(totalWeight);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
+				return TOTAL_WEIGHT_UOM_ID_EDEFAULT == null ? totalWeightUomId != null : !TOTAL_WEIGHT_UOM_ID_EDEFAULT.equals(totalWeightUomId);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
+				return UNITS_PIECES_EDEFAULT == null ? unitsPieces != null : !UNITS_PIECES_EDEFAULT.equals(unitsPieces);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (orderId: ");
+		result.append(orderId);
+		result.append(", orderItemSeqId: ");
+		result.append(orderItemSeqId);
+		result.append(", cartons: ");
+		result.append(cartons);
+		result.append(", estimatedReadyDate: ");
+		result.append(estimatedReadyDate);
+		result.append(", skidsPallets: ");
+		result.append(skidsPallets);
+		result.append(", statusId: ");
+		result.append(statusId);
+		result.append(", totalCubicSize: ");
+		result.append(totalCubicSize);
+		result.append(", totalCubicUomId: ");
+		result.append(totalCubicUomId);
+		result.append(", totalWeight: ");
+		result.append(totalWeight);
+		result.append(", totalWeightUomId: ");
+		result.append(totalWeightUomId);
+		result.append(", unitsPieces: ");
+		result.append(unitsPieces);
+		result.append(')');
+		return result.toString();
+	}
+
+} //OrderDeliveryScheduleImpl

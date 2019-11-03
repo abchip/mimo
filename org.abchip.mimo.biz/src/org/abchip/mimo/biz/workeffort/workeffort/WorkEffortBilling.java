@@ -1,0 +1,141 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.workeffort.workeffort;
+
+import org.abchip.mimo.biz.BizEntity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Work Effort Billing</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling#getInvoiceId <em>Invoice Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling#getPercentage <em>Percentage</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortBilling()
+ * @model
+ * @generated
+ */
+public interface WorkEffortBilling extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Id</em>' attribute.
+	 * @see #setInvoiceId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortBilling_InvoiceId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='Invoice'"
+	 * @generated
+	 */
+	String getInvoiceId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling#getInvoiceId <em>Invoice Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Invoice Id</em>' attribute.
+	 * @see #getInvoiceId()
+	 * @generated
+	 */
+	void setInvoiceId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Invoice Item Seq Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Item Seq Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
+	 * @see #setInvoiceItemSeqId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortBilling_InvoiceItemSeqId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getInvoiceItemSeqId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Invoice Item Seq Id</em>' attribute.
+	 * @see #getInvoiceItemSeqId()
+	 * @generated
+	 */
+	void setInvoiceItemSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Percentage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Percentage</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Percentage</em>' attribute.
+	 * @see #setPercentage(double)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortBilling_Percentage()
+	 * @model
+	 * @generated
+	 */
+	double getPercentage();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling#getPercentage <em>Percentage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Percentage</em>' attribute.
+	 * @see #getPercentage()
+	 * @generated
+	 */
+	void setPercentage(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Id</em>' attribute.
+	 * @see #setWorkEffortId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortBilling_WorkEffortId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @generated
+	 */
+	String getWorkEffortId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortBilling#getWorkEffortId <em>Work Effort Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Work Effort Id</em>' attribute.
+	 * @see #getWorkEffortId()
+	 * @generated
+	 */
+	void setWorkEffortId(String value);
+
+} // WorkEffortBilling

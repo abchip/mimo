@@ -1,0 +1,512 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.marketing.opportunity.impl;
+
+import java.math.BigDecimal;
+
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Sales Forecast Detail</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getSalesForecastId <em>Sales Forecast Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getSalesForecastDetailId <em>Sales Forecast Detail Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getQuantityUomId <em>Quantity Uom Id</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForecastDetail {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The default value of the '{@link #getSalesForecastId() <em>Sales Forecast Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesForecastId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SALES_FORECAST_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSalesForecastId() <em>Sales Forecast Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesForecastId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String salesForecastId = SALES_FORECAST_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSalesForecastDetailId() <em>Sales Forecast Detail Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesForecastDetailId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SALES_FORECAST_DETAIL_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSalesForecastDetailId() <em>Sales Forecast Detail Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesForecastDetailId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String salesForecastDetailId = SALES_FORECAST_DETAIL_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmount()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal AMOUNT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAmount() <em>Amount</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmount()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal amount = AMOUNT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRODUCT_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String productId = PRODUCT_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigDecimal QUANTITY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantity()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal quantity = QUANTITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantityUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String QUANTITY_UOM_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantityUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String quantityUomId = QUANTITY_UOM_ID_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SalesForecastDetailImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return OpportunityPackage.Literals.SALES_FORECAST_DETAIL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getAmount() {
+		return amount;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
+		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT, oldAmount, amount));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getProductCategoryId() {
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProductCategoryId(String newProductCategoryId) {
+		String oldProductCategoryId = productCategoryId;
+		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getProductId() {
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProductId(String newProductId) {
+		String oldProductId = productId;
+		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID, oldProductId, productId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getQuantity() {
+		return quantity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
+		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY, oldQuantity, quantity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getQuantityUomId() {
+		return quantityUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setQuantityUomId(String newQuantityUomId) {
+		String oldQuantityUomId = quantityUomId;
+		quantityUomId = newQuantityUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSalesForecastDetailId() {
+		return salesForecastDetailId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSalesForecastDetailId(String newSalesForecastDetailId) {
+		String oldSalesForecastDetailId = salesForecastDetailId;
+		salesForecastDetailId = newSalesForecastDetailId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_DETAIL_ID, oldSalesForecastDetailId, salesForecastDetailId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSalesForecastId() {
+		return salesForecastId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSalesForecastId(String newSalesForecastId) {
+		String oldSalesForecastId = salesForecastId;
+		salesForecastId = newSalesForecastId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_ID, oldSalesForecastId, salesForecastId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_ID:
+				return getSalesForecastId();
+			case OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_DETAIL_ID:
+				return getSalesForecastDetailId();
+			case OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT:
+				return getAmount();
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
+				return getProductCategoryId();
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
+				return getProductId();
+			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY:
+				return getQuantity();
+			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID:
+				return getQuantityUomId();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_ID:
+				setSalesForecastId((String)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_DETAIL_ID:
+				setSalesForecastDetailId((String)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT:
+				setAmount((BigDecimal)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((String)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
+				setProductId((String)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY:
+				setQuantity((BigDecimal)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID:
+				setQuantityUomId((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_ID:
+				setSalesForecastId(SALES_FORECAST_ID_EDEFAULT);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_DETAIL_ID:
+				setSalesForecastDetailId(SALES_FORECAST_DETAIL_ID_EDEFAULT);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT:
+				setAmount(AMOUNT_EDEFAULT);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
+				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
+				setProductId(PRODUCT_ID_EDEFAULT);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY:
+				setQuantity(QUANTITY_EDEFAULT);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID:
+				setQuantityUomId(QUANTITY_UOM_ID_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_ID:
+				return SALES_FORECAST_ID_EDEFAULT == null ? salesForecastId != null : !SALES_FORECAST_ID_EDEFAULT.equals(salesForecastId);
+			case OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_DETAIL_ID:
+				return SALES_FORECAST_DETAIL_ID_EDEFAULT == null ? salesForecastDetailId != null : !SALES_FORECAST_DETAIL_ID_EDEFAULT.equals(salesForecastDetailId);
+			case OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT:
+				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
+				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
+				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY:
+				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID:
+				return QUANTITY_UOM_ID_EDEFAULT == null ? quantityUomId != null : !QUANTITY_UOM_ID_EDEFAULT.equals(quantityUomId);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (salesForecastId: ");
+		result.append(salesForecastId);
+		result.append(", salesForecastDetailId: ");
+		result.append(salesForecastDetailId);
+		result.append(", amount: ");
+		result.append(amount);
+		result.append(", productCategoryId: ");
+		result.append(productCategoryId);
+		result.append(", productId: ");
+		result.append(productId);
+		result.append(", quantity: ");
+		result.append(quantity);
+		result.append(", quantityUomId: ");
+		result.append(quantityUomId);
+		result.append(')');
+		return result.toString();
+	}
+
+} //SalesForecastDetailImpl

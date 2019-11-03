@@ -1,0 +1,415 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.workeffort.workeffort;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.BizEntity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Work Effort Party Assignment</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getAssignedByUserLoginId <em>Assigned By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getAvailabilityStatusId <em>Availability Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getDelegateReasonEnumId <em>Delegate Reason Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getExpectationEnumId <em>Expectation Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#isMustRsvp <em>Must Rsvp</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getStatusDateTime <em>Status Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getThruDate <em>Thru Date</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment()
+ * @model
+ * @generated
+ */
+public interface WorkEffortPartyAssignment extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Assigned By User Login Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Assigned By User Login Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assigned By User Login Id</em>' attribute.
+	 * @see #setAssignedByUserLoginId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_AssignedByUserLoginId()
+	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @generated
+	 */
+	String getAssignedByUserLoginId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getAssignedByUserLoginId <em>Assigned By User Login Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Assigned By User Login Id</em>' attribute.
+	 * @see #getAssignedByUserLoginId()
+	 * @generated
+	 */
+	void setAssignedByUserLoginId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Availability Status Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Availability Status Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Availability Status Id</em>' attribute.
+	 * @see #setAvailabilityStatusId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_AvailabilityStatusId()
+	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @generated
+	 */
+	String getAvailabilityStatusId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getAvailabilityStatusId <em>Availability Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Availability Status Id</em>' attribute.
+	 * @see #getAvailabilityStatusId()
+	 * @generated
+	 */
+	void setAvailabilityStatusId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Comments</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comments</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comments</em>' attribute.
+	 * @see #setComments(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_Comments()
+	 * @model
+	 * @generated
+	 */
+	String getComments();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getComments <em>Comments</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comments</em>' attribute.
+	 * @see #getComments()
+	 * @generated
+	 */
+	void setComments(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Delegate Reason Enum Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Delegate Reason Enum Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Delegate Reason Enum Id</em>' attribute.
+	 * @see #setDelegateReasonEnumId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_DelegateReasonEnumId()
+	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @generated
+	 */
+	String getDelegateReasonEnumId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getDelegateReasonEnumId <em>Delegate Reason Enum Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Delegate Reason Enum Id</em>' attribute.
+	 * @see #getDelegateReasonEnumId()
+	 * @generated
+	 */
+	void setDelegateReasonEnumId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Expectation Enum Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Expectation Enum Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Expectation Enum Id</em>' attribute.
+	 * @see #setExpectationEnumId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_ExpectationEnumId()
+	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @generated
+	 */
+	String getExpectationEnumId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getExpectationEnumId <em>Expectation Enum Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expectation Enum Id</em>' attribute.
+	 * @see #getExpectationEnumId()
+	 * @generated
+	 */
+	void setExpectationEnumId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Facility Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Facility Id</em>' attribute.
+	 * @see #setFacilityId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_FacilityId()
+	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @generated
+	 */
+	String getFacilityId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getFacilityId <em>Facility Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @see #getFacilityId()
+	 * @generated
+	 */
+	void setFacilityId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Must Rsvp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Must Rsvp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Must Rsvp</em>' attribute.
+	 * @see #setMustRsvp(boolean)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_MustRsvp()
+	 * @model
+	 * @generated
+	 */
+	boolean isMustRsvp();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#isMustRsvp <em>Must Rsvp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Must Rsvp</em>' attribute.
+	 * @see #isMustRsvp()
+	 * @generated
+	 */
+	void setMustRsvp(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>From Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Date</em>' attribute.
+	 * @see #setFromDate(Date)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_FromDate()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	Date getFromDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getFromDate <em>From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Date</em>' attribute.
+	 * @see #getFromDate()
+	 * @generated
+	 */
+	void setFromDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Id</em>' attribute.
+	 * @see #setPartyId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_PartyId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @generated
+	 */
+	String getPartyId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getPartyId <em>Party Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @see #getPartyId()
+	 * @generated
+	 */
+	void setPartyId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Role Type Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role Type Id</em>' attribute.
+	 * @see #setRoleTypeId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_RoleTypeId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='RoleType'"
+	 * @generated
+	 */
+	String getRoleTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @see #getRoleTypeId()
+	 * @generated
+	 */
+	void setRoleTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Status Date Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status Date Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status Date Time</em>' attribute.
+	 * @see #setStatusDateTime(Date)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_StatusDateTime()
+	 * @model
+	 * @generated
+	 */
+	Date getStatusDateTime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getStatusDateTime <em>Status Date Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status Date Time</em>' attribute.
+	 * @see #getStatusDateTime()
+	 * @generated
+	 */
+	void setStatusDateTime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status Id</em>' attribute.
+	 * @see #setStatusId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_StatusId()
+	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @generated
+	 */
+	String getStatusId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getStatusId <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @see #getStatusId()
+	 * @generated
+	 */
+	void setStatusId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Thru Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Thru Date</em>' attribute.
+	 * @see #setThruDate(Date)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_ThruDate()
+	 * @model
+	 * @generated
+	 */
+	Date getThruDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getThruDate <em>Thru Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Thru Date</em>' attribute.
+	 * @see #getThruDate()
+	 * @generated
+	 */
+	void setThruDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Id</em>' attribute.
+	 * @see #setWorkEffortId(String)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_WorkEffortId()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @generated
+	 */
+	String getWorkEffortId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#getWorkEffortId <em>Work Effort Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Work Effort Id</em>' attribute.
+	 * @see #getWorkEffortId()
+	 * @generated
+	 */
+	void setWorkEffortId(String value);
+
+} // WorkEffortPartyAssignment

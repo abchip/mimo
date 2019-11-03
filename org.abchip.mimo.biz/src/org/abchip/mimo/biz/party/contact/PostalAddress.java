@@ -1,0 +1,514 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.party.contact;
+
+import java.util.List;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Postal Address</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getAddress1 <em>Address1</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getAddress2 <em>Address2</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getAttnName <em>Attn Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCity <em>City</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCityGeoId <em>City Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountryGeoId <em>Country Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountyGeoId <em>County Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getDirections <em>Directions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getGeoPointId <em>Geo Point Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumber <em>House Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumberExt <em>House Number Ext</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCode <em>Postal Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeExt <em>Postal Code Ext</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeGeoId <em>Postal Code Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getStateProvinceGeoId <em>State Province Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getToName <em>To Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress()
+ * @model
+ * @generated
+ */
+public interface PostalAddress extends ContactMech {
+	/**
+	 * Returns the value of the '<em><b>Address1</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Address1</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Address1</em>' attribute.
+	 * @see #setAddress1(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_Address1()
+	 * @model
+	 * @generated
+	 */
+	String getAddress1();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getAddress1 <em>Address1</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Address1</em>' attribute.
+	 * @see #getAddress1()
+	 * @generated
+	 */
+	void setAddress1(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Address2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Address2</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Address2</em>' attribute.
+	 * @see #setAddress2(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_Address2()
+	 * @model
+	 * @generated
+	 */
+	String getAddress2();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getAddress2 <em>Address2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Address2</em>' attribute.
+	 * @see #getAddress2()
+	 * @generated
+	 */
+	void setAddress2(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Attn Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attn Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attn Name</em>' attribute.
+	 * @see #setAttnName(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_AttnName()
+	 * @model
+	 * @generated
+	 */
+	String getAttnName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getAttnName <em>Attn Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Attn Name</em>' attribute.
+	 * @see #getAttnName()
+	 * @generated
+	 */
+	void setAttnName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>City</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>City</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>City</em>' attribute.
+	 * @see #setCity(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_City()
+	 * @model
+	 * @generated
+	 */
+	String getCity();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCity <em>City</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>City</em>' attribute.
+	 * @see #getCity()
+	 * @generated
+	 */
+	void setCity(String value);
+
+	/**
+	 * Returns the value of the '<em><b>City Geo Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>City Geo Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>City Geo Id</em>' attribute.
+	 * @see #setCityGeoId(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CityGeoId()
+	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @generated
+	 */
+	String getCityGeoId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCityGeoId <em>City Geo Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>City Geo Id</em>' attribute.
+	 * @see #getCityGeoId()
+	 * @generated
+	 */
+	void setCityGeoId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Country Geo Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Country Geo Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Country Geo Id</em>' attribute.
+	 * @see #setCountryGeoId(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CountryGeoId()
+	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @generated
+	 */
+	String getCountryGeoId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountryGeoId <em>Country Geo Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Country Geo Id</em>' attribute.
+	 * @see #getCountryGeoId()
+	 * @generated
+	 */
+	void setCountryGeoId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>County Geo Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>County Geo Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>County Geo Id</em>' attribute.
+	 * @see #setCountyGeoId(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CountyGeoId()
+	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @generated
+	 */
+	String getCountyGeoId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountyGeoId <em>County Geo Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>County Geo Id</em>' attribute.
+	 * @see #getCountyGeoId()
+	 * @generated
+	 */
+	void setCountyGeoId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Directions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Directions</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Directions</em>' attribute.
+	 * @see #setDirections(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_Directions()
+	 * @model
+	 * @generated
+	 */
+	String getDirections();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getDirections <em>Directions</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Directions</em>' attribute.
+	 * @see #getDirections()
+	 * @generated
+	 */
+	void setDirections(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Geo Point Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Geo Point Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Geo Point Id</em>' attribute.
+	 * @see #setGeoPointId(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_GeoPointId()
+	 * @model annotation="mimo-ent-domain frame='GeoPoint'"
+	 * @generated
+	 */
+	String getGeoPointId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getGeoPointId <em>Geo Point Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Geo Point Id</em>' attribute.
+	 * @see #getGeoPointId()
+	 * @generated
+	 */
+	void setGeoPointId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>House Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>House Number</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>House Number</em>' attribute.
+	 * @see #setHouseNumber(long)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_HouseNumber()
+	 * @model
+	 * @generated
+	 */
+	long getHouseNumber();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumber <em>House Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>House Number</em>' attribute.
+	 * @see #getHouseNumber()
+	 * @generated
+	 */
+	void setHouseNumber(long value);
+
+	/**
+	 * Returns the value of the '<em><b>House Number Ext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>House Number Ext</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>House Number Ext</em>' attribute.
+	 * @see #setHouseNumberExt(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_HouseNumberExt()
+	 * @model
+	 * @generated
+	 */
+	String getHouseNumberExt();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumberExt <em>House Number Ext</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>House Number Ext</em>' attribute.
+	 * @see #getHouseNumberExt()
+	 * @generated
+	 */
+	void setHouseNumberExt(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Municipality Geo Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Municipality Geo Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Municipality Geo Id</em>' attribute.
+	 * @see #setMunicipalityGeoId(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_MunicipalityGeoId()
+	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @generated
+	 */
+	String getMunicipalityGeoId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId <em>Municipality Geo Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Municipality Geo Id</em>' attribute.
+	 * @see #getMunicipalityGeoId()
+	 * @generated
+	 */
+	void setMunicipalityGeoId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Postal Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Postal Code</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Postal Code</em>' attribute.
+	 * @see #setPostalCode(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalCode()
+	 * @model
+	 * @generated
+	 */
+	String getPostalCode();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCode <em>Postal Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Postal Code</em>' attribute.
+	 * @see #getPostalCode()
+	 * @generated
+	 */
+	void setPostalCode(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Postal Code Ext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Postal Code Ext</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Postal Code Ext</em>' attribute.
+	 * @see #setPostalCodeExt(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalCodeExt()
+	 * @model
+	 * @generated
+	 */
+	String getPostalCodeExt();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeExt <em>Postal Code Ext</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Postal Code Ext</em>' attribute.
+	 * @see #getPostalCodeExt()
+	 * @generated
+	 */
+	void setPostalCodeExt(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Postal Code Geo Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Postal Code Geo Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Postal Code Geo Id</em>' attribute.
+	 * @see #setPostalCodeGeoId(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalCodeGeoId()
+	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @generated
+	 */
+	String getPostalCodeGeoId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeGeoId <em>Postal Code Geo Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Postal Code Geo Id</em>' attribute.
+	 * @see #getPostalCodeGeoId()
+	 * @generated
+	 */
+	void setPostalCodeGeoId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>State Province Geo Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>State Province Geo Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>State Province Geo Id</em>' attribute.
+	 * @see #setStateProvinceGeoId(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_StateProvinceGeoId()
+	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @generated
+	 */
+	String getStateProvinceGeoId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getStateProvinceGeoId <em>State Province Geo Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>State Province Geo Id</em>' attribute.
+	 * @see #getStateProvinceGeoId()
+	 * @generated
+	 */
+	void setStateProvinceGeoId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>To Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>To Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>To Name</em>' attribute.
+	 * @see #setToName(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_ToName()
+	 * @model
+	 * @generated
+	 */
+	String getToName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getToName <em>To Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To Name</em>' attribute.
+	 * @see #getToName()
+	 * @generated
+	 */
+	void setToName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Postal Address Boundaries</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Postal Address Boundaries</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Postal Address Boundaries</em>' attribute list.
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalAddressBoundaries()
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='PostalAddressBoundary'"
+	 * @generated
+	 */
+	List<String> getPostalAddressBoundaries();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationContactMechId'"
+	 * @generated
+	 */
+	List<String> destinationShipments();
+
+} // PostalAddress

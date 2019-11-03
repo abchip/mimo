@@ -1,0 +1,247 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.order.order;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.BizEntity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Order Status</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderStatusId <em>Order Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getChangeReason <em>Change Reason</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusDatetime <em>Status Datetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusUserLogin <em>Status User Login</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus()
+ * @model
+ * @generated
+ */
+public interface OrderStatus extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Change Reason</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Change Reason</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Change Reason</em>' attribute.
+	 * @see #setChangeReason(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_ChangeReason()
+	 * @model
+	 * @generated
+	 */
+	String getChangeReason();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getChangeReason <em>Change Reason</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Change Reason</em>' attribute.
+	 * @see #getChangeReason()
+	 * @generated
+	 */
+	void setChangeReason(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Id</em>' attribute.
+	 * @see #setOrderId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderId()
+	 * @model annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @generated
+	 */
+	String getOrderId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderId <em>Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @see #getOrderId()
+	 * @generated
+	 */
+	void setOrderId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Item Seq Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
+	 * @see #setOrderItemSeqId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderItemSeqId()
+	 * @model
+	 * @generated
+	 */
+	String getOrderItemSeqId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderItemSeqId <em>Order Item Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Item Seq Id</em>' attribute.
+	 * @see #getOrderItemSeqId()
+	 * @generated
+	 */
+	void setOrderItemSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Payment Preference Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Payment Preference Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Payment Preference Id</em>' attribute.
+	 * @see #setOrderPaymentPreferenceId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderPaymentPreferenceId()
+	 * @model annotation="mimo-ent-domain frame='OrderPaymentPreference'"
+	 * @generated
+	 */
+	String getOrderPaymentPreferenceId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Payment Preference Id</em>' attribute.
+	 * @see #getOrderPaymentPreferenceId()
+	 * @generated
+	 */
+	void setOrderPaymentPreferenceId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Status Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Status Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Status Id</em>' attribute.
+	 * @see #setOrderStatusId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderStatusId()
+	 * @model id="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getOrderStatusId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderStatusId <em>Order Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Status Id</em>' attribute.
+	 * @see #getOrderStatusId()
+	 * @generated
+	 */
+	void setOrderStatusId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Status Datetime</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status Datetime</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status Datetime</em>' attribute.
+	 * @see #setStatusDatetime(Date)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_StatusDatetime()
+	 * @model
+	 * @generated
+	 */
+	Date getStatusDatetime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusDatetime <em>Status Datetime</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status Datetime</em>' attribute.
+	 * @see #getStatusDatetime()
+	 * @generated
+	 */
+	void setStatusDatetime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status Id</em>' attribute.
+	 * @see #setStatusId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_StatusId()
+	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @generated
+	 */
+	String getStatusId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusId <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @see #getStatusId()
+	 * @generated
+	 */
+	void setStatusId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Status User Login</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status User Login</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status User Login</em>' attribute.
+	 * @see #setStatusUserLogin(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_StatusUserLogin()
+	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @generated
+	 */
+	String getStatusUserLogin();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusUserLogin <em>Status User Login</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status User Login</em>' attribute.
+	 * @see #getStatusUserLogin()
+	 * @generated
+	 */
+	void setStatusUserLogin(String value);
+
+} // OrderStatus

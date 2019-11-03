@@ -1,0 +1,248 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.order.order;
+
+import java.math.BigDecimal;
+
+import org.abchip.mimo.biz.BizEntity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Order Term</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermTypeId <em>Term Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermDays <em>Term Days</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermValue <em>Term Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTextValue <em>Text Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getUomId <em>Uom Id</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm()
+ * @model annotation="mimo-ent-frame formula='description'"
+ * @generated
+ */
+public interface OrderTerm extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTerm#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Id</em>' attribute.
+	 * @see #setOrderId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_OrderId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @generated
+	 */
+	String getOrderId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTerm#getOrderId <em>Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @see #getOrderId()
+	 * @generated
+	 */
+	void setOrderId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Item Seq Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
+	 * @see #setOrderItemSeqId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_OrderItemSeqId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getOrderItemSeqId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTerm#getOrderItemSeqId <em>Order Item Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Item Seq Id</em>' attribute.
+	 * @see #getOrderItemSeqId()
+	 * @generated
+	 */
+	void setOrderItemSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Term Days</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Term Days</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Term Days</em>' attribute.
+	 * @see #setTermDays(long)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TermDays()
+	 * @model
+	 * @generated
+	 */
+	long getTermDays();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermDays <em>Term Days</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Term Days</em>' attribute.
+	 * @see #getTermDays()
+	 * @generated
+	 */
+	void setTermDays(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Term Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Term Type Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Term Type Id</em>' attribute.
+	 * @see #setTermTypeId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TermTypeId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='TermType'"
+	 * @generated
+	 */
+	String getTermTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermTypeId <em>Term Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Term Type Id</em>' attribute.
+	 * @see #getTermTypeId()
+	 * @generated
+	 */
+	void setTermTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Term Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Term Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Term Value</em>' attribute.
+	 * @see #setTermValue(BigDecimal)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TermValue()
+	 * @model
+	 * @generated
+	 */
+	BigDecimal getTermValue();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermValue <em>Term Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Term Value</em>' attribute.
+	 * @see #getTermValue()
+	 * @generated
+	 */
+	void setTermValue(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Text Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Text Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Text Value</em>' attribute.
+	 * @see #setTextValue(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TextValue()
+	 * @model
+	 * @generated
+	 */
+	String getTextValue();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTerm#getTextValue <em>Text Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text Value</em>' attribute.
+	 * @see #getTextValue()
+	 * @generated
+	 */
+	void setTextValue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Uom Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uom Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uom Id</em>' attribute.
+	 * @see #setUomId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_UomId()
+	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @generated
+	 */
+	String getUomId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderTerm#getUomId <em>Uom Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uom Id</em>' attribute.
+	 * @see #getUomId()
+	 * @generated
+	 */
+	void setUomId(String value);
+
+} // OrderTerm

@@ -1,0 +1,412 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.order.order;
+
+import java.math.BigDecimal;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.BizEntity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Order Item Ship Grp Inv Res</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCreatedDatetime <em>Created Datetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCurrentPromisedDate <em>Current Promised Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOldPickStartDate <em>Old Pick Start Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#isPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getPromisedDatetime <em>Promised Datetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getQuantityNotAvailable <em>Quantity Not Available</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getReservedDatetime <em>Reserved Datetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getSequenceId <em>Sequence Id</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes()
+ * @model
+ * @generated
+ */
+public interface OrderItemShipGrpInvRes extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Created Datetime</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Created Datetime</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Created Datetime</em>' attribute.
+	 * @see #setCreatedDatetime(Date)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_CreatedDatetime()
+	 * @model
+	 * @generated
+	 */
+	Date getCreatedDatetime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCreatedDatetime <em>Created Datetime</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Created Datetime</em>' attribute.
+	 * @see #getCreatedDatetime()
+	 * @generated
+	 */
+	void setCreatedDatetime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Current Promised Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current Promised Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Promised Date</em>' attribute.
+	 * @see #setCurrentPromisedDate(Date)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_CurrentPromisedDate()
+	 * @model
+	 * @generated
+	 */
+	Date getCurrentPromisedDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCurrentPromisedDate <em>Current Promised Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current Promised Date</em>' attribute.
+	 * @see #getCurrentPromisedDate()
+	 * @generated
+	 */
+	void setCurrentPromisedDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inventory Item Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inventory Item Id</em>' attribute.
+	 * @see #setInventoryItemId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_InventoryItemId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='InventoryItem'"
+	 * @generated
+	 */
+	String getInventoryItemId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getInventoryItemId <em>Inventory Item Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Inventory Item Id</em>' attribute.
+	 * @see #getInventoryItemId()
+	 * @generated
+	 */
+	void setInventoryItemId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Old Pick Start Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Old Pick Start Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Old Pick Start Date</em>' attribute.
+	 * @see #setOldPickStartDate(Date)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_OldPickStartDate()
+	 * @model
+	 * @generated
+	 */
+	Date getOldPickStartDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOldPickStartDate <em>Old Pick Start Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Old Pick Start Date</em>' attribute.
+	 * @see #getOldPickStartDate()
+	 * @generated
+	 */
+	void setOldPickStartDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Priority</em>' attribute.
+	 * @see #setPriority(boolean)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_Priority()
+	 * @model
+	 * @generated
+	 */
+	boolean isPriority();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#isPriority <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Priority</em>' attribute.
+	 * @see #isPriority()
+	 * @generated
+	 */
+	void setPriority(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Id</em>' attribute.
+	 * @see #setOrderId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_OrderId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @generated
+	 */
+	String getOrderId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @see #getOrderId()
+	 * @generated
+	 */
+	void setOrderId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Item Seq Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
+	 * @see #setOrderItemSeqId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_OrderItemSeqId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getOrderItemSeqId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderItemSeqId <em>Order Item Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Item Seq Id</em>' attribute.
+	 * @see #getOrderItemSeqId()
+	 * @generated
+	 */
+	void setOrderItemSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Promised Datetime</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Promised Datetime</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Promised Datetime</em>' attribute.
+	 * @see #setPromisedDatetime(Date)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_PromisedDatetime()
+	 * @model
+	 * @generated
+	 */
+	Date getPromisedDatetime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getPromisedDatetime <em>Promised Datetime</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Promised Datetime</em>' attribute.
+	 * @see #getPromisedDatetime()
+	 * @generated
+	 */
+	void setPromisedDatetime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quantity</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quantity</em>' attribute.
+	 * @see #setQuantity(BigDecimal)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_Quantity()
+	 * @model
+	 * @generated
+	 */
+	BigDecimal getQuantity();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getQuantity <em>Quantity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Quantity</em>' attribute.
+	 * @see #getQuantity()
+	 * @generated
+	 */
+	void setQuantity(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Quantity Not Available</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quantity Not Available</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quantity Not Available</em>' attribute.
+	 * @see #setQuantityNotAvailable(BigDecimal)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_QuantityNotAvailable()
+	 * @model
+	 * @generated
+	 */
+	BigDecimal getQuantityNotAvailable();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getQuantityNotAvailable <em>Quantity Not Available</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Quantity Not Available</em>' attribute.
+	 * @see #getQuantityNotAvailable()
+	 * @generated
+	 */
+	void setQuantityNotAvailable(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Reserve Order Enum Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reserve Order Enum Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reserve Order Enum Id</em>' attribute.
+	 * @see #setReserveOrderEnumId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_ReserveOrderEnumId()
+	 * @model
+	 * @generated
+	 */
+	String getReserveOrderEnumId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reserve Order Enum Id</em>' attribute.
+	 * @see #getReserveOrderEnumId()
+	 * @generated
+	 */
+	void setReserveOrderEnumId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Reserved Datetime</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reserved Datetime</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reserved Datetime</em>' attribute.
+	 * @see #setReservedDatetime(Date)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_ReservedDatetime()
+	 * @model
+	 * @generated
+	 */
+	Date getReservedDatetime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getReservedDatetime <em>Reserved Datetime</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reserved Datetime</em>' attribute.
+	 * @see #getReservedDatetime()
+	 * @generated
+	 */
+	void setReservedDatetime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Sequence Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sequence Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sequence Id</em>' attribute.
+	 * @see #setSequenceId(long)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_SequenceId()
+	 * @model
+	 * @generated
+	 */
+	long getSequenceId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getSequenceId <em>Sequence Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sequence Id</em>' attribute.
+	 * @see #getSequenceId()
+	 * @generated
+	 */
+	void setSequenceId(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Ship Group Seq Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ship Group Seq Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
+	 * @see #setShipGroupSeqId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_ShipGroupSeqId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getShipGroupSeqId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getShipGroupSeqId <em>Ship Group Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ship Group Seq Id</em>' attribute.
+	 * @see #getShipGroupSeqId()
+	 * @generated
+	 */
+	void setShipGroupSeqId(String value);
+
+} // OrderItemShipGrpInvRes

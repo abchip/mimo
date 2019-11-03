@@ -1,0 +1,248 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.humanres.ability;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.BizEntityTyped;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Party Qual</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getQualificationDesc <em>Qualification Desc</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getTitle <em>Title</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId <em>Verif Status Id</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual()
+ * @model
+ * @generated
+ */
+public interface PartyQual extends BizEntityTyped<PartyQualType> {
+	/**
+	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>From Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Date</em>' attribute.
+	 * @see #setFromDate(Date)
+	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_FromDate()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	Date getFromDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getFromDate <em>From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Date</em>' attribute.
+	 * @see #getFromDate()
+	 * @generated
+	 */
+	void setFromDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Id</em>' attribute.
+	 * @see #setPartyId(String)
+	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_PartyId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @generated
+	 */
+	String getPartyId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyId <em>Party Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @see #getPartyId()
+	 * @generated
+	 */
+	void setPartyId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Party Qual Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Qual Type Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Qual Type Id</em>' attribute.
+	 * @see #setPartyQualTypeId(String)
+	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_PartyQualTypeId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='PartyQualType'"
+	 * @generated
+	 */
+	String getPartyQualTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Party Qual Type Id</em>' attribute.
+	 * @see #getPartyQualTypeId()
+	 * @generated
+	 */
+	void setPartyQualTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Qualification Desc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Qualification Desc</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Qualification Desc</em>' attribute.
+	 * @see #setQualificationDesc(String)
+	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_QualificationDesc()
+	 * @model
+	 * @generated
+	 */
+	String getQualificationDesc();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getQualificationDesc <em>Qualification Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Qualification Desc</em>' attribute.
+	 * @see #getQualificationDesc()
+	 * @generated
+	 */
+	void setQualificationDesc(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status Id</em>' attribute.
+	 * @see #setStatusId(String)
+	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_StatusId()
+	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @generated
+	 */
+	String getStatusId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @see #getStatusId()
+	 * @generated
+	 */
+	void setStatusId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Thru Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Thru Date</em>' attribute.
+	 * @see #setThruDate(Date)
+	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_ThruDate()
+	 * @model
+	 * @generated
+	 */
+	Date getThruDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getThruDate <em>Thru Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Thru Date</em>' attribute.
+	 * @see #getThruDate()
+	 * @generated
+	 */
+	void setThruDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Title</em>' attribute.
+	 * @see #setTitle(String)
+	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_Title()
+	 * @model
+	 * @generated
+	 */
+	String getTitle();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getTitle <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @see #getTitle()
+	 * @generated
+	 */
+	void setTitle(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Verif Status Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Verif Status Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Verif Status Id</em>' attribute.
+	 * @see #setVerifStatusId(String)
+	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_VerifStatusId()
+	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @generated
+	 */
+	String getVerifStatusId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId <em>Verif Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Verif Status Id</em>' attribute.
+	 * @see #getVerifStatusId()
+	 * @generated
+	 */
+	void setVerifStatusId(String value);
+
+} // PartyQual

@@ -1,0 +1,86 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.party.contact;
+
+import org.abchip.mimo.biz.BizEntity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Contact Mech Link</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdFrom <em>Contact Mech Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdTo <em>Contact Mech Id To</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechLink()
+ * @model
+ * @generated
+ */
+public interface ContactMechLink extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Contact Mech Id From</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contact Mech Id From</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contact Mech Id From</em>' attribute.
+	 * @see #setContactMechIdFrom(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechLink_ContactMechIdFrom()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='ContactMech'"
+	 * @generated
+	 */
+	String getContactMechIdFrom();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdFrom <em>Contact Mech Id From</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contact Mech Id From</em>' attribute.
+	 * @see #getContactMechIdFrom()
+	 * @generated
+	 */
+	void setContactMechIdFrom(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Contact Mech Id To</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contact Mech Id To</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contact Mech Id To</em>' attribute.
+	 * @see #setContactMechIdTo(String)
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechLink_ContactMechIdTo()
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='ContactMech'"
+	 * @generated
+	 */
+	String getContactMechIdTo();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdTo <em>Contact Mech Id To</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contact Mech Id To</em>' attribute.
+	 * @see #getContactMechIdTo()
+	 * @generated
+	 */
+	void setContactMechIdTo(String value);
+
+} // ContactMechLink

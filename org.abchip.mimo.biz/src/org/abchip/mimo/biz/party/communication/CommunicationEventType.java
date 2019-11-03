@@ -1,0 +1,184 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.party.communication;
+
+import java.util.List;
+
+import org.abchip.mimo.biz.BizEntityType;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Communication Event Type</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getCommunicationEventTypeId <em>Communication Event Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getParentTypeId <em>Parent Type Id</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType()
+ * @model annotation="mimo-ent-frame formula='description'"
+ * @generated
+ */
+public interface CommunicationEventType extends BizEntityType<CommunicationEvent> {
+	/**
+	 * Returns the value of the '<em><b>Contact Mech Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contact Mech Type Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contact Mech Type Id</em>' attribute.
+	 * @see #setContactMechTypeId(String)
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_ContactMechTypeId()
+	 * @model annotation="mimo-ent-domain frame='ContactMechType'"
+	 * @generated
+	 */
+	String getContactMechTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getContactMechTypeId <em>Contact Mech Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contact Mech Type Id</em>' attribute.
+	 * @see #getContactMechTypeId()
+	 * @generated
+	 */
+	void setContactMechTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Has Table</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Table</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Table</em>' attribute.
+	 * @see #setHasTable(boolean)
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_HasTable()
+	 * @model
+	 * @generated
+	 */
+	boolean isHasTable();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#isHasTable <em>Has Table</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Table</em>' attribute.
+	 * @see #isHasTable()
+	 * @generated
+	 */
+	void setHasTable(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Type Id</em>' attribute.
+	 * @see #setParentTypeId(String)
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_ParentTypeId()
+	 * @model annotation="mimo-ent-domain frame='CommunicationEventType'"
+	 * @generated
+	 */
+	String getParentTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @see #getParentTypeId()
+	 * @generated
+	 */
+	void setParentTypeId(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='CommunicationEventType' route='parentTypeId'"
+	 * @generated
+	 */
+	List<String> childCommunicationEventTypes();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='communicationEventTypeId'"
+	 * @generated
+	 */
+	List<String> communicationEvents();
+
+	/**
+	 * Returns the value of the '<em><b>Communication Event Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Communication Event Type Id</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Communication Event Type Id</em>' attribute.
+	 * @see #setCommunicationEventTypeId(String)
+	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_CommunicationEventTypeId()
+	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getCommunicationEventTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getCommunicationEventTypeId <em>Communication Event Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Communication Event Type Id</em>' attribute.
+	 * @see #getCommunicationEventTypeId()
+	 * @generated
+	 */
+	void setCommunicationEventTypeId(String value);
+
+} // CommunicationEventType

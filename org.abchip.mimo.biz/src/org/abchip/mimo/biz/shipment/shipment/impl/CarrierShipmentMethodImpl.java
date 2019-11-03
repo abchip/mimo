@@ -1,0 +1,398 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.shipment.shipment.impl;
+
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentMethod;
+import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Carrier Shipment Method</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getCarrierServiceCode <em>Carrier Service Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.CarrierShipmentMethodImpl#getSequenceNumber <em>Sequence Number</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class CarrierShipmentMethodImpl extends BizEntityImpl implements CarrierShipmentMethod {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The default value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SHIPMENT_METHOD_TYPE_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String shipmentMethodTypeId = SHIPMENT_METHOD_TYPE_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PARTY_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String partyId = PARTY_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCarrierServiceCode() <em>Carrier Service Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCarrierServiceCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CARRIER_SERVICE_CODE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCarrierServiceCode() <em>Carrier Service Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCarrierServiceCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected String carrierServiceCode = CARRIER_SERVICE_CODE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSequenceNumber() <em>Sequence Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSequenceNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long SEQUENCE_NUMBER_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getSequenceNumber() <em>Sequence Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSequenceNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected long sequenceNumber = SEQUENCE_NUMBER_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CarrierShipmentMethodImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Shipment_Package.Literals.CARRIER_SHIPMENT_METHOD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCarrierServiceCode() {
+		return carrierServiceCode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCarrierServiceCode(String newCarrierServiceCode) {
+		String oldCarrierServiceCode = carrierServiceCode;
+		carrierServiceCode = newCarrierServiceCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE, oldCarrierServiceCode, carrierServiceCode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPartyId() {
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPartyId(String newPartyId) {
+		String oldPartyId = partyId;
+		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID, oldPartyId, partyId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRoleTypeId() {
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRoleTypeId(String newRoleTypeId) {
+		String oldRoleTypeId = roleTypeId;
+		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public long getSequenceNumber() {
+		return sequenceNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSequenceNumber(long newSequenceNumber) {
+		long oldSequenceNumber = sequenceNumber;
+		sequenceNumber = newSequenceNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER, oldSequenceNumber, sequenceNumber));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getShipmentMethodTypeId() {
+		return shipmentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
+		String oldShipmentMethodTypeId = shipmentMethodTypeId;
+		shipmentMethodTypeId = newShipmentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
+				return getShipmentMethodTypeId();
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID:
+				return getPartyId();
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID:
+				return getRoleTypeId();
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE:
+				return getCarrierServiceCode();
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER:
+				return getSequenceNumber();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
+				setShipmentMethodTypeId((String)newValue);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID:
+				setPartyId((String)newValue);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID:
+				setRoleTypeId((String)newValue);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE:
+				setCarrierServiceCode((String)newValue);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER:
+				setSequenceNumber((Long)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
+				setShipmentMethodTypeId(SHIPMENT_METHOD_TYPE_ID_EDEFAULT);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID:
+				setPartyId(PARTY_ID_EDEFAULT);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID:
+				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE:
+				setCarrierServiceCode(CARRIER_SERVICE_CODE_EDEFAULT);
+				return;
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER:
+				setSequenceNumber(SEQUENCE_NUMBER_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID:
+				return SHIPMENT_METHOD_TYPE_ID_EDEFAULT == null ? shipmentMethodTypeId != null : !SHIPMENT_METHOD_TYPE_ID_EDEFAULT.equals(shipmentMethodTypeId);
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__PARTY_ID:
+				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID:
+				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE:
+				return CARRIER_SERVICE_CODE_EDEFAULT == null ? carrierServiceCode != null : !CARRIER_SERVICE_CODE_EDEFAULT.equals(carrierServiceCode);
+			case Shipment_Package.CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER:
+				return sequenceNumber != SEQUENCE_NUMBER_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (shipmentMethodTypeId: ");
+		result.append(shipmentMethodTypeId);
+		result.append(", partyId: ");
+		result.append(partyId);
+		result.append(", roleTypeId: ");
+		result.append(roleTypeId);
+		result.append(", carrierServiceCode: ");
+		result.append(carrierServiceCode);
+		result.append(", sequenceNumber: ");
+		result.append(sequenceNumber);
+		result.append(')');
+		return result.toString();
+	}
+
+} //CarrierShipmentMethodImpl

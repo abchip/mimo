@@ -1,0 +1,166 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.product.price;
+
+import java.math.BigDecimal;
+
+import org.abchip.mimo.biz.BizEntityTyped;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Product Price Action</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceActionSeqId <em>Product Price Action Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceActionTypeId <em>Product Price Action Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getRateCode <em>Rate Code</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction()
+ * @model
+ * @generated
+ */
+public interface ProductPriceAction extends BizEntityTyped<ProductPriceActionType> {
+	/**
+	 * Returns the value of the '<em><b>Amount</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Amount</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Amount</em>' attribute.
+	 * @see #setAmount(BigDecimal)
+	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_Amount()
+	 * @model
+	 * @generated
+	 */
+	BigDecimal getAmount();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getAmount <em>Amount</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Amount</em>' attribute.
+	 * @see #getAmount()
+	 * @generated
+	 */
+	void setAmount(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Price Action Seq Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Price Action Seq Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Price Action Seq Id</em>' attribute.
+	 * @see #setProductPriceActionSeqId(String)
+	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_ProductPriceActionSeqId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getProductPriceActionSeqId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceActionSeqId <em>Product Price Action Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Product Price Action Seq Id</em>' attribute.
+	 * @see #getProductPriceActionSeqId()
+	 * @generated
+	 */
+	void setProductPriceActionSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Rate Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rate Code</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rate Code</em>' attribute.
+	 * @see #setRateCode(String)
+	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_RateCode()
+	 * @model
+	 * @generated
+	 */
+	String getRateCode();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getRateCode <em>Rate Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rate Code</em>' attribute.
+	 * @see #getRateCode()
+	 * @generated
+	 */
+	void setRateCode(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Price Action Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Price Action Type Id</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Price Action Type Id</em>' attribute.
+	 * @see #setProductPriceActionTypeId(String)
+	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_ProductPriceActionTypeId()
+	 * @model annotation="mimo-ent-domain frame='ProductPriceActionType'"
+	 * @generated
+	 */
+	String getProductPriceActionTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceActionTypeId <em>Product Price Action Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Product Price Action Type Id</em>' attribute.
+	 * @see #getProductPriceActionTypeId()
+	 * @generated
+	 */
+	void setProductPriceActionTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Price Rule Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Price Rule Id</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Price Rule Id</em>' attribute.
+	 * @see #setProductPriceRuleId(String)
+	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_ProductPriceRuleId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='ProductPriceRule'"
+	 * @generated
+	 */
+	String getProductPriceRuleId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceRuleId <em>Product Price Rule Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Product Price Rule Id</em>' attribute.
+	 * @see #getProductPriceRuleId()
+	 * @generated
+	 */
+	void setProductPriceRuleId(String value);
+
+} // ProductPriceAction

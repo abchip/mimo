@@ -1,0 +1,662 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.service.schedule;
+
+import java.util.Date;
+import java.util.List;
+
+import org.abchip.mimo.biz.BizEntity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Job Sandbox</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getJobId <em>Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getAuthUserLoginId <em>Auth User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCancelDateTime <em>Cancel Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCurrentRecurrenceCount <em>Current Recurrence Count</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCurrentRetryCount <em>Current Retry Count</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getFinishDateTime <em>Finish Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getJobName <em>Job Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getJobResult <em>Job Result</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getLoaderName <em>Loader Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getMaxRecurrenceCount <em>Max Recurrence Count</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getMaxRetry <em>Max Retry</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getParentJobId <em>Parent Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getPoolId <em>Pool Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getPreviousJobId <em>Previous Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunAsUser <em>Run As User</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunByInstanceId <em>Run By Instance Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunTime <em>Run Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRuntimeDataId <em>Runtime Data Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getServiceName <em>Service Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getStartDateTime <em>Start Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getTempExprId <em>Temp Expr Id</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox()
+ * @model
+ * @generated
+ */
+public interface JobSandbox extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Job Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Job Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Job Id</em>' attribute.
+	 * @see #setJobId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_JobId()
+	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getJobId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getJobId <em>Job Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Job Id</em>' attribute.
+	 * @see #getJobId()
+	 * @generated
+	 */
+	void setJobId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Auth User Login Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auth User Login Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auth User Login Id</em>' attribute.
+	 * @see #setAuthUserLoginId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_AuthUserLoginId()
+	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @generated
+	 */
+	String getAuthUserLoginId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getAuthUserLoginId <em>Auth User Login Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Auth User Login Id</em>' attribute.
+	 * @see #getAuthUserLoginId()
+	 * @generated
+	 */
+	void setAuthUserLoginId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Cancel Date Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cancel Date Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cancel Date Time</em>' attribute.
+	 * @see #setCancelDateTime(Date)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_CancelDateTime()
+	 * @model
+	 * @generated
+	 */
+	Date getCancelDateTime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCancelDateTime <em>Cancel Date Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cancel Date Time</em>' attribute.
+	 * @see #getCancelDateTime()
+	 * @generated
+	 */
+	void setCancelDateTime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Current Recurrence Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current Recurrence Count</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Recurrence Count</em>' attribute.
+	 * @see #setCurrentRecurrenceCount(long)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_CurrentRecurrenceCount()
+	 * @model
+	 * @generated
+	 */
+	long getCurrentRecurrenceCount();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCurrentRecurrenceCount <em>Current Recurrence Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current Recurrence Count</em>' attribute.
+	 * @see #getCurrentRecurrenceCount()
+	 * @generated
+	 */
+	void setCurrentRecurrenceCount(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Current Retry Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current Retry Count</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Retry Count</em>' attribute.
+	 * @see #setCurrentRetryCount(long)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_CurrentRetryCount()
+	 * @model
+	 * @generated
+	 */
+	long getCurrentRetryCount();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCurrentRetryCount <em>Current Retry Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current Retry Count</em>' attribute.
+	 * @see #getCurrentRetryCount()
+	 * @generated
+	 */
+	void setCurrentRetryCount(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Finish Date Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Finish Date Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Finish Date Time</em>' attribute.
+	 * @see #setFinishDateTime(Date)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_FinishDateTime()
+	 * @model
+	 * @generated
+	 */
+	Date getFinishDateTime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getFinishDateTime <em>Finish Date Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Finish Date Time</em>' attribute.
+	 * @see #getFinishDateTime()
+	 * @generated
+	 */
+	void setFinishDateTime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Job Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Job Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Job Name</em>' attribute.
+	 * @see #setJobName(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_JobName()
+	 * @model
+	 * @generated
+	 */
+	String getJobName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getJobName <em>Job Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Job Name</em>' attribute.
+	 * @see #getJobName()
+	 * @generated
+	 */
+	void setJobName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Job Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Job Result</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Job Result</em>' attribute.
+	 * @see #setJobResult(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_JobResult()
+	 * @model
+	 * @generated
+	 */
+	String getJobResult();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getJobResult <em>Job Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Job Result</em>' attribute.
+	 * @see #getJobResult()
+	 * @generated
+	 */
+	void setJobResult(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Loader Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Loader Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Loader Name</em>' attribute.
+	 * @see #setLoaderName(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_LoaderName()
+	 * @model
+	 * @generated
+	 */
+	String getLoaderName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getLoaderName <em>Loader Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Loader Name</em>' attribute.
+	 * @see #getLoaderName()
+	 * @generated
+	 */
+	void setLoaderName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Recurrence Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Recurrence Count</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Recurrence Count</em>' attribute.
+	 * @see #setMaxRecurrenceCount(long)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_MaxRecurrenceCount()
+	 * @model
+	 * @generated
+	 */
+	long getMaxRecurrenceCount();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getMaxRecurrenceCount <em>Max Recurrence Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Recurrence Count</em>' attribute.
+	 * @see #getMaxRecurrenceCount()
+	 * @generated
+	 */
+	void setMaxRecurrenceCount(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Retry</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Retry</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Retry</em>' attribute.
+	 * @see #setMaxRetry(long)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_MaxRetry()
+	 * @model
+	 * @generated
+	 */
+	long getMaxRetry();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getMaxRetry <em>Max Retry</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Retry</em>' attribute.
+	 * @see #getMaxRetry()
+	 * @generated
+	 */
+	void setMaxRetry(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent Job Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent Job Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Job Id</em>' attribute.
+	 * @see #setParentJobId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_ParentJobId()
+	 * @model
+	 * @generated
+	 */
+	String getParentJobId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getParentJobId <em>Parent Job Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Job Id</em>' attribute.
+	 * @see #getParentJobId()
+	 * @generated
+	 */
+	void setParentJobId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pool Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pool Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pool Id</em>' attribute.
+	 * @see #setPoolId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_PoolId()
+	 * @model
+	 * @generated
+	 */
+	String getPoolId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getPoolId <em>Pool Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pool Id</em>' attribute.
+	 * @see #getPoolId()
+	 * @generated
+	 */
+	void setPoolId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Previous Job Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Previous Job Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Previous Job Id</em>' attribute.
+	 * @see #setPreviousJobId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_PreviousJobId()
+	 * @model
+	 * @generated
+	 */
+	String getPreviousJobId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getPreviousJobId <em>Previous Job Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Previous Job Id</em>' attribute.
+	 * @see #getPreviousJobId()
+	 * @generated
+	 */
+	void setPreviousJobId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Recurrence Info Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Recurrence Info Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Recurrence Info Id</em>' attribute.
+	 * @see #setRecurrenceInfoId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RecurrenceInfoId()
+	 * @model annotation="mimo-ent-domain frame='RecurrenceInfo'"
+	 * @generated
+	 */
+	String getRecurrenceInfoId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRecurrenceInfoId <em>Recurrence Info Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Recurrence Info Id</em>' attribute.
+	 * @see #getRecurrenceInfoId()
+	 * @generated
+	 */
+	void setRecurrenceInfoId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Run As User</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Run As User</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Run As User</em>' attribute.
+	 * @see #setRunAsUser(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RunAsUser()
+	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @generated
+	 */
+	String getRunAsUser();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunAsUser <em>Run As User</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Run As User</em>' attribute.
+	 * @see #getRunAsUser()
+	 * @generated
+	 */
+	void setRunAsUser(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Run By Instance Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Run By Instance Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Run By Instance Id</em>' attribute.
+	 * @see #setRunByInstanceId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RunByInstanceId()
+	 * @model
+	 * @generated
+	 */
+	String getRunByInstanceId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunByInstanceId <em>Run By Instance Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Run By Instance Id</em>' attribute.
+	 * @see #getRunByInstanceId()
+	 * @generated
+	 */
+	void setRunByInstanceId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Run Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Run Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Run Time</em>' attribute.
+	 * @see #setRunTime(Date)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RunTime()
+	 * @model
+	 * @generated
+	 */
+	Date getRunTime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunTime <em>Run Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Run Time</em>' attribute.
+	 * @see #getRunTime()
+	 * @generated
+	 */
+	void setRunTime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Runtime Data Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Runtime Data Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Runtime Data Id</em>' attribute.
+	 * @see #setRuntimeDataId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RuntimeDataId()
+	 * @model annotation="mimo-ent-domain frame='RuntimeData'"
+	 * @generated
+	 */
+	String getRuntimeDataId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRuntimeDataId <em>Runtime Data Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Runtime Data Id</em>' attribute.
+	 * @see #getRuntimeDataId()
+	 * @generated
+	 */
+	void setRuntimeDataId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Service Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Service Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Service Name</em>' attribute.
+	 * @see #setServiceName(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_ServiceName()
+	 * @model
+	 * @generated
+	 */
+	String getServiceName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getServiceName <em>Service Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Service Name</em>' attribute.
+	 * @see #getServiceName()
+	 * @generated
+	 */
+	void setServiceName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Start Date Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Start Date Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Start Date Time</em>' attribute.
+	 * @see #setStartDateTime(Date)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_StartDateTime()
+	 * @model
+	 * @generated
+	 */
+	Date getStartDateTime();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getStartDateTime <em>Start Date Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Start Date Time</em>' attribute.
+	 * @see #getStartDateTime()
+	 * @generated
+	 */
+	void setStartDateTime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status Id</em>' attribute.
+	 * @see #setStatusId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_StatusId()
+	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @generated
+	 */
+	String getStatusId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getStatusId <em>Status Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @see #getStatusId()
+	 * @generated
+	 */
+	void setStatusId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Temp Expr Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Temp Expr Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Temp Expr Id</em>' attribute.
+	 * @see #setTempExprId(String)
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_TempExprId()
+	 * @model annotation="mimo-ent-domain frame='TemporalExpression'"
+	 * @generated
+	 */
+	String getTempExprId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getTempExprId <em>Temp Expr Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Temp Expr Id</em>' attribute.
+	 * @see #getTempExprId()
+	 * @generated
+	 */
+	void setTempExprId(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="mimo-ent-slot derived='true'"
+	 *        annotation="mimo-ent-domain frame='ProductGroupOrder' route='jobId'"
+	 * @generated
+	 */
+	List<String> productGroupOrders();
+
+} // JobSandbox

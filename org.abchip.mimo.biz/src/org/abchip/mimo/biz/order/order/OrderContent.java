@@ -1,0 +1,195 @@
+/**
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.abchip.mimo.biz.order.order;
+
+import java.util.Date;
+
+import org.abchip.mimo.biz.BizEntityTyped;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Order Content</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderContentTypeId <em>Order Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getThruDate <em>Thru Date</em>}</li>
+ * </ul>
+ *
+ * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent()
+ * @model
+ * @generated
+ */
+public interface OrderContent extends BizEntityTyped<OrderContentType> {
+	/**
+	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Id</em>' attribute.
+	 * @see #setContentId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_ContentId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='Content'"
+	 * @generated
+	 */
+	String getContentId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderContent#getContentId <em>Content Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content Id</em>' attribute.
+	 * @see #getContentId()
+	 * @generated
+	 */
+	void setContentId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>From Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Date</em>' attribute.
+	 * @see #setFromDate(Date)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_FromDate()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	Date getFromDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderContent#getFromDate <em>From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Date</em>' attribute.
+	 * @see #getFromDate()
+	 * @generated
+	 */
+	void setFromDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Content Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Content Type Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Content Type Id</em>' attribute.
+	 * @see #setOrderContentTypeId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_OrderContentTypeId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='OrderContentType'"
+	 * @generated
+	 */
+	String getOrderContentTypeId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderContentTypeId <em>Order Content Type Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Content Type Id</em>' attribute.
+	 * @see #getOrderContentTypeId()
+	 * @generated
+	 */
+	void setOrderContentTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Id</em>' attribute.
+	 * @see #setOrderId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_OrderId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @generated
+	 */
+	String getOrderId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderId <em>Order Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @see #getOrderId()
+	 * @generated
+	 */
+	void setOrderId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Item Seq Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
+	 * @see #setOrderItemSeqId(String)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_OrderItemSeqId()
+	 * @model annotation="mimo-ent-slot key='true'"
+	 * @generated
+	 */
+	String getOrderItemSeqId();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderItemSeqId <em>Order Item Seq Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Order Item Seq Id</em>' attribute.
+	 * @see #getOrderItemSeqId()
+	 * @generated
+	 */
+	void setOrderItemSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Thru Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Thru Date</em>' attribute.
+	 * @see #setThruDate(Date)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_ThruDate()
+	 * @model
+	 * @generated
+	 */
+	Date getThruDate();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderContent#getThruDate <em>Thru Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Thru Date</em>' attribute.
+	 * @see #getThruDate()
+	 * @generated
+	 */
+	void setThruDate(Date value);
+
+} // OrderContent
